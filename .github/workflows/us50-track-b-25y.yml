@@ -1,0 +1,127 @@
+name: US50 Track B Long-Horizon
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["experiment/us50-track-b-v1.0"]
+    paths:
+      - "scripts/extract_us50_15m_hf.py"
+      - "scripts/backtest_us50_track_b_25y.py"
+      - "scripts/backtest_wyckoff_5y.py"
+      - "scripts/wyckoff_status.py"
+      - ".github/workflows/us50-track-b-25y.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    name: extract-${{ matrix.tag }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { tag: "1999_2005", start: "1999-07", end: "2005-01" }
+          - { tag: "2005_2010", start: "2005-01", end: "2010-01" }
+          - { tag: "2010_2015", start: "2010-01", end: "2015-01" }
+          - { tag: "2015_2020", start: "2015-01", end: "2020-01" }
+          - { tag: "2020_2024", start: "2020-01", end: "2024-01" }
+          - { tag: "2024_2026", start: "2024-01", end: "2026-01" }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install extraction dependencies
+        run: python -m pip install --disable-pip-version-check duckdb pandas pyarrow
+      - name: Extract US50 to 15m
+        run: |
+          python scripts/extract_us50_15m_hf.py --start "${{ matrix.start }}" --end "${{ matrix.end }}" --tag "${{ matrix.tag }}"
+      - name: Upload compressed chunk
+        uses: actions/upload-artifact@v4
+        with:
+          name: us50-${{ matrix.tag }}
+          path: |
+            data/chunks_us50/us50_15m_${{ matrix.tag }}.parquet
+            data/chunks_us50/us50_15m_${{ matrix.tag }}.json
+          retention-days: 1
+          if-no-files-found: error
+
+  backtest:
+    name: backtest-current50
+    needs: extract
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install backtest dependencies
+        run: python -m pip install --disable-pip-version-check pandas pyarrow
+      - name: Download all chunks
+        uses: actions/download-artifact@v4
+        with:
+          pattern: us50-*
+          path: data/tmp_us50_25y
+          merge-multiple: true
+      - name: Verify chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          COUNT="$(find data/tmp_us50_25y -name 'us50_15m_*.parquet' | wc -l)"
+          echo "chunk_count=$COUNT"
+          test "$COUNT" -eq 6
+      - name: Run frozen Track B
+        run: python scripts/backtest_us50_track_b_25y.py --universe current50
+      - name: Show summary
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open("data/validation/us_current50_track_b_25y.json"))
+          trades=p["trades"]
+          tp1=sum(any(e.get("type")=="TP1" for e in t.get("events",[])) for t in trades)
+          tp2=sum(any(e.get("type")=="TP2" for e in t.get("events",[])) for t in trades)
+          print(json.dumps({
+            "totals":p["totals_raw_aggregate"],
+            "cap5":p["conservative_5r_cap"],
+            "breadth":p["breadth"],
+            "tp1":tp1,
+            "tp2":tp2,
+            "tp2_rate":tp2/len(trades) if trades else None,
+            "tp2_given_tp1":tp2/tp1 if tp1 else None,
+            "errors":p["errors"]
+          },indent=2))
+          PY
+      - name: Upload result artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: result-current50
+          path: data/validation/us_current50_track_b_25y.json
+          retention-days: 7
+          if-no-files-found: error
+
+  commit:
+    name: commit-result
+    needs: backtest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download result file
+        uses: actions/download-artifact@v4
+        with:
+          name: result-current50
+          path: data/validation
+      - name: Commit validation result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/us_current50_track_b_25y.json
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "validation: add US50 long-horizon Track B result [skip ci]"
+            git push
+          fi
