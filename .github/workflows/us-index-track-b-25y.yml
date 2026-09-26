@@ -1,0 +1,128 @@
+name: US Index Track B Long-Horizon 25Y
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/extract_us_index_15m_hf.py"
+      - "scripts/backtest_us_index_track_b_25y.py"
+      - ".github/workflows/us-index-track-b-25y.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    name: extract-${{ matrix.tag }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - tag: "2000_2005"
+            start: "2000-05"
+            end: "2005-01"
+          - tag: "2005_2010"
+            start: "2005-01"
+            end: "2010-01"
+          - tag: "2010_2015"
+            start: "2010-01"
+            end: "2015-01"
+          - tag: "2015_2020"
+            start: "2015-01"
+            end: "2020-01"
+          - tag: "2020_2026"
+            start: "2020-01"
+            end: "2026-01"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install extraction dependencies
+        run: python -m pip install --disable-pip-version-check duckdb pandas pyarrow
+
+      - name: Extract SPY QQQ IWM to 15m
+        run: |
+          python scripts/extract_us_index_15m_hf.py \
+            --start "${{ matrix.start }}" \
+            --end "${{ matrix.end }}" \
+            --tag "${{ matrix.tag }}"
+
+      - name: Upload compressed 15m chunk
+        uses: actions/upload-artifact@v4
+        with:
+          name: us-index-${{ matrix.tag }}
+          path: |
+            data/chunks/us_index_15m_${{ matrix.tag }}.parquet
+            data/chunks/us_index_15m_${{ matrix.tag }}.json
+          retention-days: 1
+          if-no-files-found: error
+
+  backtest:
+    name: continuous-25y-backtest
+    needs: extract
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install backtest dependencies
+        run: python -m pip install --disable-pip-version-check pandas pyarrow
+
+      - name: Download all 15m chunks
+        uses: actions/download-artifact@v4
+        with:
+          pattern: us-index-*
+          path: data/tmp_us_index_25y
+          merge-multiple: true
+
+      - name: Verify chunks
+        shell: bash
+        run: |
+          set -euo pipefail
+          find data/tmp_us_index_25y -maxdepth 1 -type f -print
+          COUNT="$(find data/tmp_us_index_25y -name 'us_index_15m_*.parquet' | wc -l)"
+          echo "chunk_count=$COUNT"
+          test "$COUNT" -eq 5
+
+      - name: Run frozen Track B continuously across 2000-2025
+        run: python scripts/backtest_us_index_track_b_25y.py
+
+      - name: Show summary
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open("data/validation/us_index_track_b_25y.json"))
+          print(json.dumps({
+              "period":p.get("period"),
+              "totals":p.get("totals"),
+              "by_year":p.get("by_year"),
+              "by_symbol":p.get("by_symbol"),
+              "errors":p.get("errors"),
+          },ensure_ascii=False,indent=2))
+          PY
+
+      - name: Commit long-horizon result
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/us_index_track_b_25y.json
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "validation: add US index Track B long-horizon result [skip ci]"
+            git push
+          fi
