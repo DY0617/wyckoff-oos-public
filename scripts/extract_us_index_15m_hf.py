@@ -8,6 +8,7 @@ import duckdb
 import pandas as pd
 
 SYMS=("SPY","QQQ","IWM")
+SOURCE_TICKERS=("SPY","QQQ","QQQQ","IWM")
 HF_BASE="https://huggingface.co/datasets/mito0o852/OHLCV-1m/resolve/main/data"
 
 def ym(s):
@@ -30,7 +31,7 @@ def remote_15m(con,y,m):
         timezone('America/New_York', timestamp) AS et,
         open, high, low, close, volume
       FROM read_parquet('{url}')
-      WHERE ticker IN ('SPY','QQQ','IWM')
+      WHERE ticker IN ('SPY','QQQ','QQQQ','IWM')
     ),
     rth AS (
       SELECT *
@@ -88,6 +89,9 @@ def main():
             rows=remote_15m(con,y,m)
             months.append(f"{y:04d}-{m:02d}")
             for ticker,et,o,h,l,c,v in rows:
+                # QQQ traded as QQQQ on Nasdaq from 2004-12-01 through 2011-03-22.
+                if ticker=="QQQQ":
+                    ticker="QQQ"
                 if et.tzinfo is None:
                     et=et.tz_localize("America/New_York") if hasattr(et,"tz_localize") else pd.Timestamp(et,tz="America/New_York")
                 else:
