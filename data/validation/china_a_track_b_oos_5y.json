@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-09-26T01:21:10.609148+00:00",
+  "purpose": "Five-year untouched-market OOS validation of frozen Track B on China A-share equities",
+  "period": {
+    "warmup_start": "2020-01-01",
+    "evaluation_start": "2021-01-01",
+    "evaluation_end_exclusive": "2026-01-01"
+  },
+  "source": "Hugging Face neigezhu/china-a-share-1min-ohlcv; canonical per-instrument Parquet",
+  "market": "Shanghai/Shenzhen China A-share equities",
+  "IMPORTANT": [
+    "No China-market-specific parameter tuning was performed.",
+    "Source prices are unadjusted; common-factor overnight corporate-action jumps are back-adjusted using the same cleanup style as the US-stock robustness test.",
+    "4H bars use native UTC 4-hour buckets; China session contributes the morning and afternoon session portions to separate 4H buckets.",
+    "This is robustness research, not an executable China-cash short-selling simulation."
+  ],
+  "symbols": [
+    {
+      "symbol": "SH600519",
+      "exchange": "SH",
+      "code": "600519",
+      "name": "Kweichow Moutai"
+    },
+    {
+      "symbol": "SH600036",
+      "exchange": "SH",
+      "code": "600036",
+      "name": "China Merchants Bank"
+    },
+    {
+      "symbol": "SH601318",
+      "exchange": "SH",
+      "code": "601318",
+      "name": "Ping An Insurance"
+    },
+    {
+      "symbol": "SH600030",
+      "exchange": "SH",
+      "code": "600030",
+      "name": "CITIC Securities"
+    },
+    {
+      "symbol": "SH600276",
+      "exchange": "SH",
+      "code": "600276",
+      "name": "Hengrui Medicine"
+    },
+    {
+      "symbol": "SH600900",
+      "exchange": "SH",
+      "code": "600900",
+      "name": "China Yangtze Power"
+    },
+    {
+      "symbol": "SH601166",
+      "exchange": "SH",
+      "code": "601166",
+      "name": "Industrial Bank"
+    },
+    {
+      "symbol": "SH601398",
+      "exchange": "SH",
+      "code": "601398",
+      "name": "ICBC"
+    },
+    {
+      "symbol": "SZ000001",
+      "exchange": "SZ",
+      "code": "000001",
+      "name": "Ping An Bank"
+    },
+    {
+      "symbol": "SZ000858",
+      "exchange": "SZ",
+      "code": "000858",
+      "name": "Wuliangye"
+    },
+    {
+      "symbol": "SZ000333",
+      "exchange": "SZ",
+      "code": "000333",
+      "name": "Midea Group"
+    },
+    {
+      "symbol": "SZ002415",
+      "exchange": "SZ",
+      "code": "002415",
+      "name": "Hikvision"
+    }
+  ],
+  "costs": {
+    "fee_bps_per_fill": 4.0,
+    "slippage_bps_per_fill": 2.0,
+    "fixed_risk_usd": 400.0
+  },
+  "assumptions": {
+    "Track_A": "disabled",
+    "Track_B": "production defaults frozen; no OOS tuning",
+    "management": "TP1 30% => BE; TP2 30% => TP1; runner 40% confirmed 4H pivot",
+    "same_15m_bar": "STOP evaluated before TP",
+    "one_symbol_one_position": true
+  },
+  "totals": {
+    "closed": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "net_r": 0,
+    "avg_r": null,
+    "profit_factor_r": null,
+    "max_drawdown_fixed_20k": 0.0,
+    "max_consecutive_losses": 0,
+    "ending_equity_fixed_risk": 20000.0
+  },
+  "by_year": {},
+  "by_symbol": {},
+  "per_symbol": [],
+  "errors": {
+    "SH600519": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SH600036": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SH601318": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SH600030": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SH600276": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SH600900": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SH601166": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SH601398": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SZ000001": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SZ000858": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SZ000333": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
+    "SZ002415": "RuntimeError('insufficient coverage bars=23280 years=[1970]')"
+  },
+  "trades": []
+}
