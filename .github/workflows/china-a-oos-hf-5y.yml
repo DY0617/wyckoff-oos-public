@@ -2,6 +2,11 @@ name: China A-Share Untouched OOS 5Y
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/china-a-oos-hf-5y.yml"
 
 permissions:
   contents: write
