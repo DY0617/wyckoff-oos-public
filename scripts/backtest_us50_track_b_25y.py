@@ -12,7 +12,9 @@ import wyckoff_status as w
 
 CURRENT50=("SPY","QQQ","IWM","AAPL","MSFT","NVDA","AMZN","META","GOOGL","TSLA",
            "AVGO","AMD","NFLX","ORCL","JPM","BAC","GS","V","MA","XOM","CVX","JNJ",
-           "UNH","LLY","MRK","WMT","COST","HD","CAT","KO")
+           "UNH","LLY","MRK","WMT","COST","HD","CAT","KO",
+           "MSTR","COIN","HOOD","PLTR","BABA","TSM","MU","INTC","IBM","CRM","NOW","NET",
+           "SHOP","DIS","UBER","CSCO","ANET","DDOG","AMAT","VST")
 DOW2000=("MMM","AA","MO","AXP","BA","CAT","C","KO","DD","EK","XOM","GE","GM","HPQ",
          "HD","HON","INTC","IBM","IP","JNJ","JPM","MCD","MRK","MSFT","PG","SBC","UTX",
          "WMT","DIS","T")
