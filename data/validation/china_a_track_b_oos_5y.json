@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T01:21:10.609148+00:00",
+  "generated_at": "2026-09-26T01:33:06.814276+00:00",
   "purpose": "Five-year untouched-market OOS validation of frozen Track B on China A-share equities",
   "period": {
     "warmup_start": "2020-01-01",
@@ -101,33 +101,5140 @@
     "one_symbol_one_position": true
   },
   "totals": {
-    "closed": 0,
-    "wins": 0,
-    "losses": 0,
-    "win_rate": null,
-    "net_r": 0,
-    "avg_r": null,
-    "profit_factor_r": null,
-    "max_drawdown_fixed_20k": 0.0,
-    "max_consecutive_losses": 0,
-    "ending_equity_fixed_risk": 20000.0
+    "closed": 106,
+    "wins": 70,
+    "losses": 36,
+    "win_rate": 0.660377358490566,
+    "net_r": 28.30065150662204,
+    "avg_r": 0.26698727836435887,
+    "profit_factor_r": 1.75164858290963,
+    "max_drawdown_fixed_20k": 0.0740068675765689,
+    "max_consecutive_losses": 4,
+    "ending_equity_fixed_risk": 31320.260602648825
   },
-  "by_year": {},
-  "by_symbol": {},
-  "per_symbol": [],
-  "errors": {
-    "SH600519": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SH600036": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SH601318": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SH600030": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SH600276": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SH600900": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SH601166": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SH601398": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SZ000001": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SZ000858": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SZ000333": "RuntimeError('insufficient coverage bars=23280 years=[1970]')",
-    "SZ002415": "RuntimeError('insufficient coverage bars=23280 years=[1970]')"
+  "by_year": {
+    "2021": {
+      "trades": 17,
+      "wins": 15,
+      "losses": 2,
+      "net_r": 14.178141304469627,
+      "win_rate": 0.8823529411764706,
+      "avg_r": 0.834008312027625
+    },
+    "2022": {
+      "trades": 20,
+      "wins": 13,
+      "losses": 7,
+      "net_r": 5.561234403746361,
+      "win_rate": 0.65,
+      "avg_r": 0.278061720187318
+    },
+    "2023": {
+      "trades": 31,
+      "wins": 16,
+      "losses": 15,
+      "net_r": -0.05178454576461078,
+      "win_rate": 0.5161290322580645,
+      "avg_r": -0.001670469218213251
+    },
+    "2024": {
+      "trades": 22,
+      "wins": 14,
+      "losses": 8,
+      "net_r": 2.280366127161033,
+      "win_rate": 0.6363636363636364,
+      "avg_r": 0.10365300578004696
+    },
+    "2025": {
+      "trades": 16,
+      "wins": 12,
+      "losses": 4,
+      "net_r": 6.332694217009627,
+      "win_rate": 0.75,
+      "avg_r": 0.3957933885631017
+    }
   },
-  "trades": []
+  "by_symbol": {
+    "SH601318": {
+      "trades": 2,
+      "wins": 2,
+      "losses": 0,
+      "net_r": 1.8881780942962623,
+      "win_rate": 1.0,
+      "avg_r": 0.9440890471481311
+    },
+    "SH600519": {
+      "trades": 11,
+      "wins": 9,
+      "losses": 2,
+      "net_r": 9.958604304971551,
+      "win_rate": 0.8181818181818182,
+      "avg_r": 0.9053276640883229
+    },
+    "SH601398": {
+      "trades": 17,
+      "wins": 13,
+      "losses": 4,
+      "net_r": 2.102996331981714,
+      "win_rate": 0.7647058823529411,
+      "avg_r": 0.12370566658715966
+    },
+    "SH600036": {
+      "trades": 10,
+      "wins": 9,
+      "losses": 1,
+      "net_r": 7.691198909044275,
+      "win_rate": 0.9,
+      "avg_r": 0.7691198909044276
+    },
+    "SH601166": {
+      "trades": 8,
+      "wins": 2,
+      "losses": 6,
+      "net_r": -4.731346998830362,
+      "win_rate": 0.25,
+      "avg_r": -0.5914183748537952
+    },
+    "SZ002415": {
+      "trades": 8,
+      "wins": 5,
+      "losses": 3,
+      "net_r": 1.7932203727604688,
+      "win_rate": 0.625,
+      "avg_r": 0.2241525465950586
+    },
+    "SH600276": {
+      "trades": 10,
+      "wins": 5,
+      "losses": 5,
+      "net_r": 1.152187351046842,
+      "win_rate": 0.5,
+      "avg_r": 0.1152187351046842
+    },
+    "SH600900": {
+      "trades": 15,
+      "wins": 11,
+      "losses": 4,
+      "net_r": 5.854301142878867,
+      "win_rate": 0.7333333333333333,
+      "avg_r": 0.39028674285859116
+    },
+    "SZ000333": {
+      "trades": 6,
+      "wins": 3,
+      "losses": 3,
+      "net_r": 0.5639364567597496,
+      "win_rate": 0.5,
+      "avg_r": 0.09398940945995826
+    },
+    "SZ000001": {
+      "trades": 8,
+      "wins": 5,
+      "losses": 3,
+      "net_r": 1.1032739273380743,
+      "win_rate": 0.625,
+      "avg_r": 0.13790924091725928
+    },
+    "SH600030": {
+      "trades": 7,
+      "wins": 5,
+      "losses": 2,
+      "net_r": 1.8489818031165237,
+      "win_rate": 0.7142857142857143,
+      "avg_r": 0.2641402575880748
+    },
+    "SZ000858": {
+      "trades": 4,
+      "wins": 1,
+      "losses": 3,
+      "net_r": -0.9248801887419238,
+      "win_rate": 0.25,
+      "avg_r": -0.23122004718548095
+    }
+  },
+  "per_symbol": [
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 16,
+      "corporate_action_adjustments": [],
+      "closed": 11,
+      "wins": 9,
+      "losses": 2,
+      "win_rate": 0.8181818181818182,
+      "net_r": 9.958604304971551,
+      "avg_r": 0.9053276640883229,
+      "profit_factor_r": 5.754350151252247,
+      "max_drawdown_fixed_20k": 0.03636479304119041,
+      "max_consecutive_losses": 2,
+      "ending_equity_fixed_risk": 23983.44172198863
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 17,
+      "corporate_action_adjustments": [],
+      "closed": 10,
+      "wins": 9,
+      "losses": 1,
+      "win_rate": 0.9,
+      "net_r": 7.691198909044275,
+      "avg_r": 0.7691198909044276,
+      "profit_factor_r": 8.382918771168969,
+      "max_drawdown_fixed_20k": 0.019352286080104402,
+      "max_consecutive_losses": 1,
+      "ending_equity_fixed_risk": 23076.47956361771
+    },
+    {
+      "symbol": "SH601318",
+      "name": "Ping An Insurance",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 7,
+      "corporate_action_adjustments": [],
+      "closed": 2,
+      "wins": 2,
+      "losses": 0,
+      "win_rate": 1.0,
+      "net_r": 1.8881780942962623,
+      "avg_r": 0.9440890471481311,
+      "profit_factor_r": null,
+      "max_drawdown_fixed_20k": 0.0,
+      "max_consecutive_losses": 0,
+      "ending_equity_fixed_risk": 20755.271237718505
+    },
+    {
+      "symbol": "SH600030",
+      "name": "CITIC Securities",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 10,
+      "corporate_action_adjustments": [],
+      "closed": 7,
+      "wins": 5,
+      "losses": 2,
+      "win_rate": 0.7142857142857143,
+      "net_r": 1.8489818031165237,
+      "avg_r": 0.2641402575880748,
+      "profit_factor_r": 1.8746069114595296,
+      "max_drawdown_fixed_20k": 0.023790045334302172,
+      "max_consecutive_losses": 1,
+      "ending_equity_fixed_risk": 20739.592721246605
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 12,
+      "corporate_action_adjustments": [],
+      "closed": 10,
+      "wins": 5,
+      "losses": 5,
+      "win_rate": 0.5,
+      "net_r": 1.1521873510468417,
+      "avg_r": 0.11521873510468417,
+      "profit_factor_r": 1.2220581551374368,
+      "max_drawdown_fixed_20k": 0.06117868749061256,
+      "max_consecutive_losses": 3,
+      "ending_equity_fixed_risk": 20460.874940418733
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 22,
+      "corporate_action_adjustments": [],
+      "closed": 15,
+      "wins": 11,
+      "losses": 4,
+      "win_rate": 0.7333333333333333,
+      "net_r": 5.854301142878865,
+      "avg_r": 0.390286742858591,
+      "profit_factor_r": 2.381952742987154,
+      "max_drawdown_fixed_20k": 0.03179285150478271,
+      "max_consecutive_losses": 1,
+      "ending_equity_fixed_risk": 22341.720457151547
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 12,
+      "corporate_action_adjustments": [],
+      "closed": 8,
+      "wins": 2,
+      "losses": 6,
+      "win_rate": 0.25,
+      "net_r": -4.731346998830363,
+      "avg_r": -0.5914183748537953,
+      "profit_factor_r": 0.24521525404023822,
+      "max_drawdown_fixed_20k": 0.09462693997660718,
+      "max_consecutive_losses": 3,
+      "ending_equity_fixed_risk": 18107.461200467857
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 26,
+      "corporate_action_adjustments": [],
+      "closed": 17,
+      "wins": 13,
+      "losses": 4,
+      "win_rate": 0.7647058823529411,
+      "net_r": 2.102996331981714,
+      "avg_r": 0.12370566658715966,
+      "profit_factor_r": 1.5057385301111537,
+      "max_drawdown_fixed_20k": 0.04129060683510589,
+      "max_consecutive_losses": 2,
+      "ending_equity_fixed_risk": 20841.19853279269
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 12,
+      "corporate_action_adjustments": [],
+      "closed": 8,
+      "wins": 5,
+      "losses": 3,
+      "win_rate": 0.625,
+      "net_r": 1.1032739273380738,
+      "avg_r": 0.13790924091725923,
+      "profit_factor_r": 1.3494456673828765,
+      "max_drawdown_fixed_20k": 0.055130133269854005,
+      "max_consecutive_losses": 2,
+      "ending_equity_fixed_risk": 20441.30957093523
+    },
+    {
+      "symbol": "SZ000858",
+      "name": "Wuliangye",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 6,
+      "corporate_action_adjustments": [],
+      "closed": 4,
+      "wins": 1,
+      "losses": 3,
+      "win_rate": 0.25,
+      "net_r": -0.9248801887419238,
+      "avg_r": -0.23122004718548095,
+      "profit_factor_r": 0.7031135391270023,
+      "max_drawdown_fixed_20k": 0.04156292524439323,
+      "max_consecutive_losses": 2,
+      "ending_equity_fixed_risk": 19630.047924503233
+    },
+    {
+      "symbol": "SZ000333",
+      "name": "Midea Group",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 7,
+      "corporate_action_adjustments": [],
+      "closed": 6,
+      "wins": 3,
+      "losses": 3,
+      "win_rate": 0.5,
+      "net_r": 0.5639364567597495,
+      "avg_r": 0.09398940945995825,
+      "profit_factor_r": 1.1799288090604727,
+      "max_drawdown_fixed_20k": 0.03979473239088717,
+      "max_consecutive_losses": 2,
+      "ending_equity_fixed_risk": 20225.5745827039
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "bars": {
+        "15m": 23280,
+        "4h": 2910,
+        "1d": 1455
+      },
+      "setups": 16,
+      "corporate_action_adjustments": [],
+      "closed": 8,
+      "wins": 5,
+      "losses": 3,
+      "win_rate": 0.625,
+      "net_r": 1.7932203727604685,
+      "avg_r": 0.22415254659505857,
+      "profit_factor_r": 1.5706134284434294,
+      "max_drawdown_fixed_20k": 0.05877241516577777,
+      "max_consecutive_losses": 3,
+      "ending_equity_fixed_risk": 20717.288149104188
+    }
+  ],
+  "errors": {},
+  "trades": [
+    {
+      "symbol": "SH601318",
+      "name": "Ping An Insurance",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1609736400000,
+      "trigger_4h_open_ms": 1609732800000,
+      "exit_t": 1610503200000,
+      "entry": 85.04,
+      "stop": 81.49,
+      "target": 89.25,
+      "tp1": 87.47,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 112.6760563380278,
+      "reason": "STOP",
+      "pnl": 322.273081690139,
+      "r": 0.8056827042253475,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1610433900000,
+          "price": 87.47,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1610433900000,
+          "price": 85.04,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1610501400000,
+          "price": 89.25,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1610501400000,
+          "price": 87.47,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1610503200000,
+          "price": 87.47,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601318",
+      "name": "Ping An Insurance",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1610686800000,
+      "trigger_4h_open_ms": 1610683200000,
+      "exit_t": 1611540900000,
+      "entry": 86.88,
+      "stop": 89.7,
+      "target": 82.85000000000001,
+      "tp1": 84.10000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 141.8439716312053,
+      "reason": "STOP",
+      "pnl": 432.9981560283658,
+      "r": 1.0824953900709147,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1611193500000,
+          "price": 84.10000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1611193500000,
+          "price": 86.88,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1611538200000,
+          "price": 82.85000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1611538200000,
+          "price": 84.10000000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1611540900000,
+          "price": 84.10000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1611205200000,
+      "trigger_4h_open_ms": 1611201600000,
+      "exit_t": 1611624600000,
+      "entry": 2057.81,
+      "stop": 1973.39,
+      "target": 2173.33,
+      "tp1": 2150.68,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 4.738213693437583,
+      "reason": "STOP",
+      "pnl": 460.25031509121106,
+      "r": 1.1506257877280277,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1611543600000,
+          "price": 2150.68,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1611543600000,
+          "price": 2057.81,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1611553500000,
+          "price": 2173.33,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1611553500000,
+          "price": 2150.68,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1611624600000,
+          "price": 2150.68,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1611550800000,
+      "trigger_4h_open_ms": 1611547200000,
+      "exit_t": 1612920600000,
+      "entry": 5.12,
+      "stop": 5.2700000000000005,
+      "target": 4.95,
+      "tp1": 4.99,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 2666.66666666666,
+      "reason": "STOP",
+      "pnl": -416.6239999999999,
+      "r": -1.0415599999999998,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1612920600000,
+          "price": 5.2700000000000005,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1615525200000,
+      "trigger_4h_open_ms": 1615521600000,
+      "exit_t": 1616121900000,
+      "entry": 50.08,
+      "stop": 47.84,
+      "target": 53.88,
+      "tp1": 51.97,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 178.57142857142898,
+      "reason": "STOP",
+      "pnl": 467.37439285714413,
+      "r": 1.1684359821428603,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1615525200000,
+          "price": 51.97,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1615525200000,
+          "price": 50.08,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1615773600000,
+          "price": 53.88,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1615773600000,
+          "price": 51.97,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1615858200000,
+          "price": 52.21
+        },
+        {
+          "type": "TRAIL",
+          "t": 1616117400000,
+          "price": 52.51
+        },
+        {
+          "type": "STOP",
+          "t": 1616121900000,
+          "price": 52.51,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1615957200000,
+      "trigger_4h_open_ms": 1615953600000,
+      "exit_t": 1618282800000,
+      "entry": 23.89,
+      "stop": 22.48,
+      "target": 26.12,
+      "tp1": 25.310000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 283.6879432624113,
+      "reason": "STOP",
+      "pnl": -407.8927659574468,
+      "r": -1.019731914893617,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1618282800000,
+          "price": 22.48,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1620783000000,
+      "trigger_4h_open_ms": 1620777600000,
+      "exit_t": 1622079900000,
+      "entry": 60.97,
+      "stop": 58.050000000000004,
+      "target": 64.41,
+      "tp1": 63.14,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 136.98630136986327,
+      "reason": "STOP",
+      "pnl": 387.9577808219186,
+      "r": 0.9698944520547965,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1621474200000,
+          "price": 63.14,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1621474200000,
+          "price": 60.97,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1621819800000,
+          "price": 64.41,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1621819800000,
+          "price": 63.14,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1621992600000,
+          "price": 64.03
+        },
+        {
+          "type": "STOP",
+          "t": 1622079900000,
+          "price": 64.03,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1622178000000,
+      "trigger_4h_open_ms": 1622174400000,
+      "exit_t": 1622180700000,
+      "entry": 83.43,
+      "stop": 80.51,
+      "target": 86.65,
+      "tp1": 85.60000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 136.98630136986293,
+      "reason": "STOP",
+      "pnl": 326.4921917808218,
+      "r": 0.8162304794520545,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1622178000000,
+          "price": 85.60000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1622178000000,
+          "price": 83.43,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1622178000000,
+          "price": 86.65,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1622178000000,
+          "price": 85.60000000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1622180700000,
+          "price": 85.60000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1622523600000,
+      "trigger_4h_open_ms": 1622520000000,
+      "exit_t": 1622599200000,
+      "entry": 19.45,
+      "stop": 19.13,
+      "target": 19.89,
+      "tp1": 19.79,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1249.9999999999989,
+      "reason": "STOP",
+      "pnl": 433.0474999999999,
+      "r": 1.0826187499999997,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1622523600000,
+          "price": 19.79,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1622523600000,
+          "price": 19.45,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1622523600000,
+          "price": 19.89,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1622523600000,
+          "price": 19.79,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1622599200000,
+          "price": 19.79,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1624251600000,
+      "trigger_4h_open_ms": 1624248000000,
+      "exit_t": 1624411800000,
+      "entry": 20.37,
+      "stop": 20.89,
+      "target": 19.66,
+      "tp1": 20.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 769.2307692307699,
+      "reason": "BE",
+      "pnl": 66.63276923076951,
+      "r": 0.16658192307692377,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1624251600000,
+          "price": 20.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1624251600000,
+          "price": 20.37,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1624411800000,
+          "price": 20.37,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1630040400000,
+      "trigger_4h_open_ms": 1630036800000,
+      "exit_t": 1630464300000,
+      "entry": 51.7,
+      "stop": 53.89,
+      "target": 49.17,
+      "tp1": 49.51,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 182.64840182648422,
+      "reason": "STOP",
+      "pnl": 407.5498082191792,
+      "r": 1.0188745205479481,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1630287000000,
+          "price": 49.51,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1630287000000,
+          "price": 51.7,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1630287000000,
+          "price": 49.17,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1630287000000,
+          "price": 49.51,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1630464300000,
+          "price": 49.51,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1630558800000,
+      "trigger_4h_open_ms": 1630555200000,
+      "exit_t": 1631583900000,
+      "entry": 49.25,
+      "stop": 47.29,
+      "target": 52.86,
+      "tp1": 51.410000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 204.08163265306115,
+      "reason": "STOP",
+      "pnl": 657.5367755102042,
+      "r": 1.6438419387755103,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1630558800000,
+          "price": 51.410000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1630558800000,
+          "price": 49.25,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1630995300000,
+          "price": 52.86,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1630995300000,
+          "price": 51.410000000000004,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1631583000000,
+          "price": 53.13
+        },
+        {
+          "type": "STOP",
+          "t": 1631583900000,
+          "price": 53.13,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1634710500000,
+      "trigger_4h_open_ms": 1634702400000,
+      "exit_t": 1635213600000,
+      "entry": 1845.01,
+      "stop": 1776.91,
+      "target": 1949.94,
+      "tp1": 1897.47,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 5.873715124816454,
+      "reason": "BE",
+      "pnl": 79.38058854625567,
+      "r": 0.19845147136563918,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1634878800000,
+          "price": 1897.47,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1634878800000,
+          "price": 1845.01,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1635213600000,
+          "price": 1845.01,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000333",
+      "name": "Midea Group",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1635816600000,
+      "trigger_4h_open_ms": 1635811200000,
+      "exit_t": 1636594200000,
+      "entry": 72.51,
+      "stop": 75.42,
+      "target": 68.02,
+      "tp1": 70.17,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 137.45704467353968,
+      "reason": "STOP",
+      "pnl": 398.59505154639294,
+      "r": 0.9964876288659823,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1635903000000,
+          "price": 70.17,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1635903000000,
+          "price": 72.51,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1636511400000,
+          "price": 68.02,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1636511400000,
+          "price": 70.17,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1636594200000,
+          "price": 70.17,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1638853200000,
+      "trigger_4h_open_ms": 1638849600000,
+      "exit_t": 1639116900000,
+      "entry": 4.61,
+      "stop": 4.55,
+      "target": 4.67,
+      "tp1": 4.63,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6666.6666666666115,
+      "reason": "STOP",
+      "pnl": 176.32533333332907,
+      "r": 0.4408133333333227,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1638853200000,
+          "price": 4.63,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1638853200000,
+          "price": 4.61,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1638857700000,
+          "price": 4.67,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1638857700000,
+          "price": 4.63,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1639116900000,
+          "price": 4.63,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1637125200000,
+      "trigger_4h_open_ms": 1637121600000,
+      "exit_t": 1639619100000,
+      "entry": 1771.17,
+      "stop": 1727.15,
+      "target": 1844.98,
+      "tp1": 1812.98,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 9.08677873693776,
+      "reason": "STOP",
+      "pnl": 1534.3021281235806,
+      "r": 3.8357553203089516,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1637285400000,
+          "price": 1812.98,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1637285400000,
+          "price": 1771.17,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1637286300000,
+          "price": 1844.98,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1637286300000,
+          "price": 1812.98,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1637717400000,
+          "price": 1841.8400000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1638162000000,
+          "price": 1915.24
+        },
+        {
+          "type": "TRAIL",
+          "t": 1638840600000,
+          "price": 1940.26
+        },
+        {
+          "type": "TRAIL",
+          "t": 1639359000000,
+          "price": 2044.7
+        },
+        {
+          "type": "TRAIL",
+          "t": 1639531800000,
+          "price": 2086.71
+        },
+        {
+          "type": "TRAIL",
+          "t": 1639618200000,
+          "price": 2112.15
+        },
+        {
+          "type": "STOP",
+          "t": 1639619100000,
+          "price": 2112.15,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1640754000000,
+      "trigger_4h_open_ms": 1640750400000,
+      "exit_t": 1640832300000,
+      "entry": 50.93,
+      "stop": 49.46,
+      "target": 52.61,
+      "tp1": 52.11,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 272.10884353741517,
+      "reason": "STOP",
+      "pnl": 345.0574149659866,
+      "r": 0.8626435374149665,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1640754000000,
+          "price": 52.11,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1640754000000,
+          "price": 50.93,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1640827800000,
+          "price": 52.61,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1640827800000,
+          "price": 52.11,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1640832300000,
+          "price": 52.11,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1639544400000,
+      "trigger_4h_open_ms": 1639540800000,
+      "exit_t": 1641347100000,
+      "entry": 18.400000000000002,
+      "stop": 19.150000000000002,
+      "target": 17.38,
+      "tp1": 17.67,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 533.3333333333334,
+      "reason": "STOP",
+      "pnl": 565.103253333334,
+      "r": 1.412758133333335,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1639544400000,
+          "price": 17.67,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1639544400000,
+          "price": 18.400000000000002,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1640136600000,
+          "price": 17.38,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1640136600000,
+          "price": 17.67,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1640568600000,
+          "price": 17.42
+        },
+        {
+          "type": "TRAIL",
+          "t": 1640741400000,
+          "price": 17.39
+        },
+        {
+          "type": "TRAIL",
+          "t": 1640914200000,
+          "price": 17.01
+        },
+        {
+          "type": "STOP",
+          "t": 1641347100000,
+          "price": 17.01,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600030",
+      "name": "CITIC Securities",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1641964500000,
+      "trigger_4h_open_ms": 1641960000000,
+      "exit_t": 1642041000000,
+      "entry": 25.96,
+      "stop": 25.29,
+      "target": 26.69,
+      "tp1": 26.5,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 597.0149253731328,
+      "reason": "STOP",
+      "pnl": 337.6058507462675,
+      "r": 0.8440146268656687,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1642037400000,
+          "price": 26.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1642037400000,
+          "price": 25.96,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1642037400000,
+          "price": 26.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1642037400000,
+          "price": 26.5,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1642041000000,
+          "price": 26.5,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1642395600000,
+      "trigger_4h_open_ms": 1642392000000,
+      "exit_t": 1642475700000,
+      "entry": 4.72,
+      "stop": 4.79,
+      "target": 4.66,
+      "tp1": 4.69,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 5714.285714285691,
+      "reason": "STOP",
+      "pnl": 190.62514285713883,
+      "r": 0.4765628571428471,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1642395600000,
+          "price": 4.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1642395600000,
+          "price": 4.72,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1642395600000,
+          "price": 4.66,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1642395600000,
+          "price": 4.69,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1642475700000,
+          "price": 4.69,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1642741200000,
+      "trigger_4h_open_ms": 1642737600000,
+      "exit_t": 1643247900000,
+      "entry": 1901.8400000000001,
+      "stop": 1826.18,
+      "target": 1988.88,
+      "tp1": 1977.9,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 5.286809410520745,
+      "reason": "STOP",
+      "pnl": 407.21215754691974,
+      "r": 1.0180303938672994,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1642741200000,
+          "price": 1977.9,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1642741200000,
+          "price": 1901.8400000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1643247000000,
+          "price": 1988.88,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1643247000000,
+          "price": 1977.9,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1643247900000,
+          "price": 1977.9,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000333",
+      "name": "Midea Group",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1644469200000,
+      "trigger_4h_open_ms": 1644465600000,
+      "exit_t": 1644543000000,
+      "entry": 74.9,
+      "stop": 72.61,
+      "target": 79.02,
+      "tp1": 77.52,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 174.67248908296895,
+      "reason": "STOP",
+      "pnl": -415.4595633187772,
+      "r": -1.038648908296943,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1644543000000,
+          "price": 72.61,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1644296400000,
+      "trigger_4h_open_ms": 1644292800000,
+      "exit_t": 1644804900000,
+      "entry": 22.6,
+      "stop": 21.8,
+      "target": 23.52,
+      "tp1": 23.19,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 499.99999999999955,
+      "reason": "STOP",
+      "pnl": 330.73329999999936,
+      "r": 0.8268332499999984,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1644299100000,
+          "price": 23.19,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1644299100000,
+          "price": 22.6,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1644471000000,
+          "price": 23.52,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1644471000000,
+          "price": 23.19,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1644804900000,
+          "price": 23.19,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1645074000000,
+      "trigger_4h_open_ms": 1645070400000,
+      "exit_t": 1645766100000,
+      "entry": 51.18,
+      "stop": 49.730000000000004,
+      "target": 53.0,
+      "tp1": 52.25,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 275.86206896551806,
+      "reason": "STOP",
+      "pnl": -416.7023448275862,
+      "r": -1.0417558620689655,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1645766100000,
+          "price": 49.730000000000004,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1646110800000,
+      "trigger_4h_open_ms": 1646107200000,
+      "exit_t": 1646716500000,
+      "entry": 22.900000000000002,
+      "stop": 22.46,
+      "target": 23.400000000000002,
+      "tp1": 23.21,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 909.0909090909064,
+      "reason": "STOP",
+      "pnl": 377.50381818181665,
+      "r": 0.9437595454545417,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1646110800000,
+          "price": 23.21,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1646110800000,
+          "price": 22.900000000000002,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1646184600000,
+          "price": 23.400000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1646184600000,
+          "price": 23.21,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1646616600000,
+          "price": 23.400000000000002
+        },
+        {
+          "type": "STOP",
+          "t": 1646716500000,
+          "price": 23.400000000000002,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1650418200000,
+      "trigger_4h_open_ms": 1650412800000,
+      "exit_t": 1650522600000,
+      "entry": 21.61,
+      "stop": 20.98,
+      "target": 22.42,
+      "tp1": 22.04,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 634.920634920636,
+      "reason": "STOP",
+      "pnl": -416.224761904762,
+      "r": -1.040561904761905,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1650522600000,
+          "price": 20.98,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000858",
+      "name": "Wuliangye",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1657243800000,
+      "trigger_4h_open_ms": 1657238400000,
+      "exit_t": 1657504800000,
+      "entry": 193.3,
+      "stop": 187.38,
+      "target": 205.0,
+      "tp1": 199.74,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 67.56756756756738,
+      "reason": "STOP",
+      "pnl": -415.4329729729729,
+      "r": -1.0385824324324322,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1657504800000,
+          "price": 187.38,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1657170000000,
+      "trigger_4h_open_ms": 1657166400000,
+      "exit_t": 1657589400000,
+      "entry": 41.17,
+      "stop": 42.87,
+      "target": 39.300000000000004,
+      "tp1": 39.480000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 235.2941176470594,
+      "reason": "STOP",
+      "pnl": 398.9746823529416,
+      "r": 0.997436705882354,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1657503000000,
+          "price": 39.480000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1657503000000,
+          "price": 41.17,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1657506600000,
+          "price": 39.300000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1657506600000,
+          "price": 39.480000000000004,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1657589400000,
+          "price": 39.480000000000004,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1657848600000,
+      "trigger_4h_open_ms": 1657843200000,
+      "exit_t": 1658799900000,
+      "entry": 38.69,
+      "stop": 36.33,
+      "target": 41.59,
+      "tp1": 40.45,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 169.49152542372886,
+      "reason": "STOP",
+      "pnl": -407.6291525423729,
+      "r": -1.0190728813559322,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1658799900000,
+          "price": 36.33,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000858",
+      "name": "Wuliangye",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1658194200000,
+      "trigger_4h_open_ms": 1658188800000,
+      "exit_t": 1659061800000,
+      "entry": 188.77,
+      "stop": 183.13,
+      "target": 195.5,
+      "tp1": 192.74,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 70.92198581560265,
+      "reason": "STOP",
+      "pnl": -415.8255319148936,
+      "r": -1.039563829787234,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1659061800000,
+          "price": 183.13,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1657170000000,
+      "trigger_4h_open_ms": 1657166400000,
+      "exit_t": 1660195800000,
+      "entry": 14.8,
+      "stop": 15.33,
+      "target": 14.23,
+      "tp1": 14.43,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 754.7169811320764,
+      "reason": "STOP",
+      "pnl": 954.7239245283033,
+      "r": 2.386809811320758,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1657172700000,
+          "price": 14.43,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1657172700000,
+          "price": 14.8,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1657675800000,
+          "price": 14.23,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1657675800000,
+          "price": 14.43,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1658107800000,
+          "price": 13.64
+        },
+        {
+          "type": "TRAIL",
+          "t": 1658194200000,
+          "price": 13.52
+        },
+        {
+          "type": "TRAIL",
+          "t": 1659070800000,
+          "price": 12.97
+        },
+        {
+          "type": "TRAIL",
+          "t": 1659502800000,
+          "price": 12.4
+        },
+        {
+          "type": "TRAIL",
+          "t": 1660181400000,
+          "price": 12.3
+        },
+        {
+          "type": "STOP",
+          "t": 1660195800000,
+          "price": 12.3,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000858",
+      "name": "Wuliangye",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1665464400000,
+      "trigger_4h_open_ms": 1665460800000,
+      "exit_t": 1667366100000,
+      "entry": 167.45000000000002,
+      "stop": 173.29,
+      "target": 157.78,
+      "tp1": 162.29,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 68.4931506849318,
+      "reason": "STOP",
+      "pnl": 876.1541780821965,
+      "r": 2.190385445205491,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1665464400000,
+          "price": 162.29,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1665464400000,
+          "price": 167.45000000000002,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1665538200000,
+          "price": 157.78,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1665538200000,
+          "price": 162.29,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1665982800000,
+          "price": 161.36
+        },
+        {
+          "type": "TRAIL",
+          "t": 1666328400000,
+          "price": 157.78
+        },
+        {
+          "type": "TRAIL",
+          "t": 1666834200000,
+          "price": 146.94
+        },
+        {
+          "type": "TRAIL",
+          "t": 1666920600000,
+          "price": 146.11
+        },
+        {
+          "type": "STOP",
+          "t": 1667366100000,
+          "price": 146.11,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000333",
+      "name": "Midea Group",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1669685400000,
+      "trigger_4h_open_ms": 1669680000000,
+      "exit_t": 1669787100000,
+      "entry": 46.5,
+      "stop": 45.01,
+      "target": 48.54,
+      "tp1": 47.6,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 268.4563758389258,
+      "reason": "STOP",
+      "pnl": 355.80424161073796,
+      "r": 0.8895106040268449,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1669685400000,
+          "price": 47.6,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1669685400000,
+          "price": 46.5,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1669698000000,
+          "price": 48.54,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1669698000000,
+          "price": 47.6,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1669787100000,
+          "price": 47.6,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1671154200000,
+      "trigger_4h_open_ms": 1671148800000,
+      "exit_t": 1671503400000,
+      "entry": 13.19,
+      "stop": 12.86,
+      "target": 13.75,
+      "tp1": 13.52,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1212.1212121212118,
+      "reason": "STOP",
+      "pnl": -418.94545454545454,
+      "r": -1.0473636363636363,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1671503400000,
+          "price": 12.86,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1672035300000,
+      "trigger_4h_open_ms": 1672027200000,
+      "exit_t": 1672117200000,
+      "entry": 4.2700000000000005,
+      "stop": 4.22,
+      "target": 4.3,
+      "tp1": 4.29,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 7999.999999999886,
+      "reason": "STOP",
+      "pnl": 142.89759999999404,
+      "r": 0.35724399999998513,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1672110900000,
+          "price": 4.29,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1672110900000,
+          "price": 4.2700000000000005,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1672110900000,
+          "price": 4.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1672110900000,
+          "price": 4.29,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1672117200000,
+          "price": 4.29,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1671672600000,
+      "trigger_4h_open_ms": 1671667200000,
+      "exit_t": 1672194600000,
+      "entry": 33.83,
+      "stop": 32.83,
+      "target": 35.65,
+      "tp1": 34.94,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 400.0,
+      "reason": "BE",
+      "pnl": 116.88167999999992,
+      "r": 0.2922041999999998,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1672020900000,
+          "price": 34.94,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1672020900000,
+          "price": 33.83,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1672194600000,
+          "price": 33.83,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1671762600000,
+      "trigger_4h_open_ms": 1671753600000,
+      "exit_t": 1672277400000,
+      "entry": 13.02,
+      "stop": 12.6,
+      "target": 13.47,
+      "tp1": 13.34,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 952.3809523809525,
+      "reason": "BE",
+      "pnl": 76.49371428571439,
+      "r": 0.19123428571428597,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1672193700000,
+          "price": 13.34,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1672193700000,
+          "price": 13.02,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1672277400000,
+          "price": 13.02,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1673590500000,
+      "trigger_4h_open_ms": 1673582400000,
+      "exit_t": 1673836200000,
+      "entry": 4.33,
+      "stop": 4.28,
+      "target": 4.38,
+      "tp1": 4.36,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 8000.000000000028,
+      "reason": "BE",
+      "pnl": 30.388800000000693,
+      "r": 0.07597200000000173,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1673834400000,
+          "price": 4.36,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1673834400000,
+          "price": 4.33,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1673836200000,
+          "price": 4.33,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1671672600000,
+      "trigger_4h_open_ms": 1671667200000,
+      "exit_t": 1674092700000,
+      "entry": 1740.56,
+      "stop": 1674.68,
+      "target": 1816.0,
+      "tp1": 1789.95,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.071645415907722,
+      "reason": "STOP",
+      "pnl": 559.0515810564676,
+      "r": 1.3976289526411692,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1672888500000,
+          "price": 1789.95,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1672888500000,
+          "price": 1740.56,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1673227800000,
+          "price": 1816.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1673227800000,
+          "price": 1789.95,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1673400600000,
+          "price": 1822.8600000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1673487000000,
+          "price": 1829.3600000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1674091800000,
+          "price": 1882.49
+        },
+        {
+          "type": "STOP",
+          "t": 1674092700000,
+          "price": 1882.49,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1675301400000,
+      "trigger_4h_open_ms": 1675296000000,
+      "exit_t": 1675387800000,
+      "entry": 1849.16,
+      "stop": 1804.43,
+      "target": 1925.3,
+      "tp1": 1899.0900000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 8.942544153811756,
+      "reason": "STOP",
+      "pnl": -419.60343393695507,
+      "r": -1.0490085848423876,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1675387800000,
+          "price": 1804.43,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1675314000000,
+      "trigger_4h_open_ms": 1675310400000,
+      "exit_t": 1675734300000,
+      "entry": 20.88,
+      "stop": 21.22,
+      "target": 20.39,
+      "tp1": 20.68,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1176.4705882352946,
+      "reason": "STOP",
+      "pnl": -429.71764705882356,
+      "r": -1.0742941176470588,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1675734300000,
+          "price": 21.22,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1676511000000,
+      "trigger_4h_open_ms": 1676505600000,
+      "exit_t": 1676516400000,
+      "entry": 36.410000000000004,
+      "stop": 35.49,
+      "target": 37.84,
+      "tp1": 37.63,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 434.7826086956514,
+      "reason": "STOP",
+      "pnl": 538.494869565216,
+      "r": 1.34623717391304,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1676515500000,
+          "price": 37.63,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1676515500000,
+          "price": 36.410000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1676515500000,
+          "price": 37.84,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1676515500000,
+          "price": 37.63,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1676516400000,
+          "price": 37.63,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600030",
+      "name": "CITIC Securities",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1677733200000,
+      "trigger_4h_open_ms": 1677729600000,
+      "exit_t": 1678067100000,
+      "entry": 20.55,
+      "stop": 20.150000000000002,
+      "target": 21.17,
+      "tp1": 21.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1000.0000000000035,
+      "reason": "STOP",
+      "pnl": 476.0394000000015,
+      "r": 1.1900985000000037,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1677808800000,
+          "price": 21.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1677808800000,
+          "price": 20.55,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1677822300000,
+          "price": 21.17,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1677822300000,
+          "price": 21.0,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1678067100000,
+          "price": 21.0,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1677646800000,
+      "trigger_4h_open_ms": 1677643200000,
+      "exit_t": 1678168800000,
+      "entry": 43.5,
+      "stop": 42.4,
+      "target": 45.45,
+      "tp1": 44.43,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 363.63636363636317,
+      "reason": "STOP",
+      "pnl": -418.7418181818182,
+      "r": -1.0468545454545455,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1678168800000,
+          "price": 42.4,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1677733200000,
+      "trigger_4h_open_ms": 1677729600000,
+      "exit_t": 1678256100000,
+      "entry": 1815.73,
+      "stop": 1768.5900000000001,
+      "target": 1878.8,
+      "tp1": 1857.76,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 8.485362749257554,
+      "reason": "STOP",
+      "pnl": -418.24855324565135,
+      "r": -1.0456213831141283,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1678256100000,
+          "price": 1768.5900000000001,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1678856400000,
+      "trigger_4h_open_ms": 1678852800000,
+      "exit_t": 1679033700000,
+      "entry": 21.0,
+      "stop": 20.66,
+      "target": 21.46,
+      "tp1": 21.32,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1176.4705882352946,
+      "reason": "STOP",
+      "pnl": 395.9797647058831,
+      "r": 0.9899494117647077,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1679016600000,
+          "price": 21.32,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1679016600000,
+          "price": 21.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1679022900000,
+          "price": 21.46,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1679022900000,
+          "price": 21.32,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1679033700000,
+          "price": 21.32,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1679967000000,
+      "trigger_4h_open_ms": 1679961600000,
+      "exit_t": 1680230700000,
+      "entry": 4.48,
+      "stop": 4.39,
+      "target": 4.59,
+      "tp1": 4.5200000000000005,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 4444.444444444408,
+      "reason": "BE",
+      "pnl": 29.407999999999802,
+      "r": 0.0735199999999995,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1680066000000,
+          "price": 4.5200000000000005,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1680066000000,
+          "price": 4.48,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1680230700000,
+          "price": 4.48,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000333",
+      "name": "Midea Group",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1679461200000,
+      "trigger_4h_open_ms": 1679457600000,
+      "exit_t": 1681435800000,
+      "entry": 50.730000000000004,
+      "stop": 49.44,
+      "target": 53.25,
+      "tp1": 51.69,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 310.07751937984347,
+      "reason": "STOP",
+      "pnl": 724.8632558139491,
+      "r": 1.8121581395348727,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1679463900000,
+          "price": 51.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1679463900000,
+          "price": 50.730000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1680153300000,
+          "price": 53.25,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1680153300000,
+          "price": 51.69,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1680744600000,
+          "price": 53.480000000000004
+        },
+        {
+          "type": "TRAIL",
+          "t": 1680843600000,
+          "price": 53.49
+        },
+        {
+          "type": "TRAIL",
+          "t": 1681176600000,
+          "price": 53.76
+        },
+        {
+          "type": "TRAIL",
+          "t": 1681263000000,
+          "price": 54.120000000000005
+        },
+        {
+          "type": "STOP",
+          "t": 1681435800000,
+          "price": 54.120000000000005,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1682645400000,
+      "trigger_4h_open_ms": 1682640000000,
+      "exit_t": 1683163800000,
+      "entry": 17.18,
+      "stop": 16.86,
+      "target": 17.61,
+      "tp1": 17.47,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1249.9999999999989,
+      "reason": "STOP",
+      "pnl": -425.53,
+      "r": -1.063825,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1683163800000,
+          "price": 16.86,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1683522000000,
+      "trigger_4h_open_ms": 1683518400000,
+      "exit_t": 1683682200000,
+      "entry": 33.69,
+      "stop": 31.98,
+      "target": 35.84,
+      "tp1": 34.95,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 233.91812865497113,
+      "reason": "STOP",
+      "pnl": 347.52182456140525,
+      "r": 0.8688045614035131,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1683522000000,
+          "price": 34.95,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1683522000000,
+          "price": 33.69,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1683595800000,
+          "price": 35.84,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1683595800000,
+          "price": 34.95,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1683682200000,
+          "price": 34.95,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1684374300000,
+      "trigger_4h_open_ms": 1684368000000,
+      "exit_t": 1684892700000,
+      "entry": 5.08,
+      "stop": 4.82,
+      "target": 5.46,
+      "tp1": 5.2700000000000005,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1538.4615384615397,
+      "reason": "STOP",
+      "pnl": -409.13846153846157,
+      "r": -1.022846153846154,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1684892700000,
+          "price": 4.82,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1682400600000,
+      "trigger_4h_open_ms": 1682395200000,
+      "exit_t": 1684893600000,
+      "entry": 21.18,
+      "stop": 20.93,
+      "target": 21.48,
+      "tp1": 21.35,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1600.0,
+      "reason": "STOP",
+      "pnl": 1169.8076800000006,
+      "r": 2.9245192000000015,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1682475300000,
+          "price": 21.35,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1682475300000,
+          "price": 21.18,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1682563500000,
+          "price": 21.48,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1682563500000,
+          "price": 21.35,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1683163800000,
+          "price": 21.55
+        },
+        {
+          "type": "TRAIL",
+          "t": 1683250200000,
+          "price": 21.64
+        },
+        {
+          "type": "TRAIL",
+          "t": 1683595800000,
+          "price": 21.93
+        },
+        {
+          "type": "TRAIL",
+          "t": 1683855000000,
+          "price": 22.32
+        },
+        {
+          "type": "TRAIL",
+          "t": 1684200600000,
+          "price": 22.61
+        },
+        {
+          "type": "TRAIL",
+          "t": 1684386000000,
+          "price": 22.72
+        },
+        {
+          "type": "STOP",
+          "t": 1684893600000,
+          "price": 22.72,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1685064600000,
+      "trigger_4h_open_ms": 1685059200000,
+      "exit_t": 1685496600000,
+      "entry": 22.82,
+      "stop": 22.45,
+      "target": 23.32,
+      "tp1": 23.12,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1081.081081081078,
+      "reason": "STOP",
+      "pnl": -429.3643243243242,
+      "r": -1.0734108108108105,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1685496600000,
+          "price": 22.45,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1685064600000,
+      "trigger_4h_open_ms": 1685059200000,
+      "exit_t": 1685498400000,
+      "entry": 48.26,
+      "stop": 46.93,
+      "target": 50.2,
+      "tp1": 49.26,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 300.7518796992485,
+      "reason": "STOP",
+      "pnl": -417.1771428571429,
+      "r": -1.0429428571428572,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1685498400000,
+          "price": 46.93,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1686632400000,
+      "trigger_4h_open_ms": 1686628800000,
+      "exit_t": 1687743000000,
+      "entry": 1665.03,
+      "stop": 1612.72,
+      "target": 1733.55,
+      "tp1": 1705.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 7.64672146817053,
+      "reason": "STOP",
+      "pnl": 426.33754004970456,
+      "r": 1.0658438501242613,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1686706200000,
+          "price": 1705.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1686706200000,
+          "price": 1665.03,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1686707100000,
+          "price": 1733.55,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1686707100000,
+          "price": 1705.0,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1686879000000,
+          "price": 1717.08
+        },
+        {
+          "type": "TRAIL",
+          "t": 1687311000000,
+          "price": 1728.13
+        },
+        {
+          "type": "STOP",
+          "t": 1687743000000,
+          "price": 1728.13,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1686891600000,
+      "trigger_4h_open_ms": 1686888000000,
+      "exit_t": 1687743000000,
+      "entry": 45.08,
+      "stop": 43.46,
+      "target": 47.160000000000004,
+      "tp1": 46.15,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 246.91358024691397,
+      "reason": "STOP",
+      "pnl": 344.20607407407556,
+      "r": 0.8605151851851889,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1686891600000,
+          "price": 46.15,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1686891600000,
+          "price": 45.08,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1686891600000,
+          "price": 47.160000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1686891600000,
+          "price": 46.15,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1687224600000,
+          "price": 46.34
+        },
+        {
+          "type": "STOP",
+          "t": 1687743000000,
+          "price": 46.34,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000858",
+      "name": "Wuliangye",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1691112600000,
+      "trigger_4h_open_ms": 1691107200000,
+      "exit_t": 1691721000000,
+      "entry": 180.11,
+      "stop": 174.38,
+      "target": 188.57,
+      "tp1": 184.4,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 69.80802792321094,
+      "reason": "STOP",
+      "pnl": -414.84774869109947,
+      "r": -1.0371193717277487,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1691721000000,
+          "price": 174.38,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1692680400000,
+      "trigger_4h_open_ms": 1692676800000,
+      "exit_t": 1692928800000,
+      "entry": 22.03,
+      "stop": 22.330000000000002,
+      "target": 21.55,
+      "tp1": 21.8,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1333.33333333333,
+      "reason": "BE",
+      "pnl": 56.80720000000004,
+      "r": 0.1420180000000001,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1692846000000,
+          "price": 21.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1692846000000,
+          "price": 22.03,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1692928800000,
+          "price": 22.03,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1692769500000,
+      "trigger_4h_open_ms": 1692763200000,
+      "exit_t": 1692928800000,
+      "entry": 34.72,
+      "stop": 33.34,
+      "target": 36.54,
+      "tp1": 35.730000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 289.8550724637691,
+      "reason": "STOP",
+      "pnl": -411.8365217391305,
+      "r": -1.0295913043478262,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1692928800000,
+          "price": 33.34,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000333",
+      "name": "Midea Group",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1694655000000,
+      "trigger_4h_open_ms": 1694649600000,
+      "exit_t": 1694754000000,
+      "entry": 57.09,
+      "stop": 55.61,
+      "target": 58.79,
+      "tp1": 58.49,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 270.2702702702695,
+      "reason": "STOP",
+      "pnl": -418.2756756756756,
+      "r": -1.045689189189189,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1694754000000,
+          "price": 55.61,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000333",
+      "name": "Midea Group",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1697605200000,
+      "trigger_4h_open_ms": 1697601600000,
+      "exit_t": 1697697900000,
+      "entry": 55.53,
+      "stop": 54.21,
+      "target": 57.2,
+      "tp1": 56.58,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 303.03030303030295,
+      "reason": "STOP",
+      "pnl": -419.9527272727273,
+      "r": -1.0498818181818184,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1697697900000,
+          "price": 54.21,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1698025500000,
+      "trigger_4h_open_ms": 1698019200000,
+      "exit_t": 1698116400000,
+      "entry": 4.84,
+      "stop": 4.74,
+      "target": 4.98,
+      "tp1": 4.94,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 4000.000000000014,
+      "reason": "STOP",
+      "pnl": -422.9920000000001,
+      "r": -1.0574800000000002,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1698116400000,
+          "price": 4.74,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1698728400000,
+      "trigger_4h_open_ms": 1698724800000,
+      "exit_t": 1699235100000,
+      "entry": 22.37,
+      "stop": 21.75,
+      "target": 23.18,
+      "tp1": 22.88,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 645.1612903225796,
+      "reason": "BE",
+      "pnl": 81.33174193548334,
+      "r": 0.20332935483870834,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1698975000000,
+          "price": 22.88,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1698975000000,
+          "price": 22.37,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1699235100000,
+          "price": 22.37,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1698382800000,
+      "trigger_4h_open_ms": 1698379200000,
+      "exit_t": 1699839000000,
+      "entry": 43.4,
+      "stop": 42.160000000000004,
+      "target": 45.11,
+      "tp1": 44.88,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 322.58064516129167,
+      "reason": "STOP",
+      "pnl": 877.1794193548427,
+      "r": 2.1929485483871067,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1698382800000,
+          "price": 44.88,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1698382800000,
+          "price": 43.4,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1698384600000,
+          "price": 45.11,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1698384600000,
+          "price": 44.88,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1698888600000,
+          "price": 47.02
+        },
+        {
+          "type": "TRAIL",
+          "t": 1699246800000,
+          "price": 47.17
+        },
+        {
+          "type": "TRAIL",
+          "t": 1699407000000,
+          "price": 47.94
+        },
+        {
+          "type": "STOP",
+          "t": 1699839000000,
+          "price": 47.94,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1700098200000,
+      "trigger_4h_open_ms": 1700092800000,
+      "exit_t": 1700102700000,
+      "entry": 36.74,
+      "stop": 36.06,
+      "target": 37.75,
+      "tp1": 37.31,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 588.2352941176473,
+      "reason": "STOP",
+      "pnl": -425.6941176470589,
+      "r": -1.0642352941176472,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1700102700000,
+          "price": 36.06,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600030",
+      "name": "CITIC Securities",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1700530200000,
+      "trigger_4h_open_ms": 1700524800000,
+      "exit_t": 1700546400000,
+      "entry": 22.45,
+      "stop": 21.990000000000002,
+      "target": 22.95,
+      "tp1": 22.77,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 869.5652173913095,
+      "reason": "BE",
+      "pnl": 60.00208695652216,
+      "r": 0.1500052173913054,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1700531100000,
+          "price": 22.77,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1700531100000,
+          "price": 22.45,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1700546400000,
+          "price": 22.45,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1701838800000,
+      "trigger_4h_open_ms": 1701835200000,
+      "exit_t": 1702348200000,
+      "entry": 4.79,
+      "stop": 4.84,
+      "target": 4.75,
+      "tp1": 4.7700000000000005,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 8000.000000000028,
+      "reason": "STOP",
+      "pnl": 162.14079999999825,
+      "r": 0.4053519999999956,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1701838800000,
+          "price": 4.7700000000000005,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1701838800000,
+          "price": 4.79,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1701838800000,
+          "price": 4.75,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1701838800000,
+          "price": 4.7700000000000005,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1702348200000,
+          "price": 4.7700000000000005,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1699579800000,
+      "trigger_4h_open_ms": 1699574400000,
+      "exit_t": 1702431000000,
+      "entry": 22.46,
+      "stop": 23.03,
+      "target": 21.82,
+      "tp1": 22.06,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 701.7543859649119,
+      "reason": "STOP",
+      "pnl": -419.15368421052625,
+      "r": -1.0478842105263155,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1702431000000,
+          "price": 23.03,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1704171600000,
+      "trigger_4h_open_ms": 1704168000000,
+      "exit_t": 1704331800000,
+      "entry": 44.050000000000004,
+      "stop": 43.13,
+      "target": 45.77,
+      "tp1": 44.910000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 434.7826086956514,
+      "reason": "STOP",
+      "pnl": -422.74260869565217,
+      "r": -1.0568565217391304,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1704331800000,
+          "price": 43.13,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1705035600000,
+      "trigger_4h_open_ms": 1705032000000,
+      "exit_t": 1705301100000,
+      "entry": 4.86,
+      "stop": 4.96,
+      "target": 4.7700000000000005,
+      "tp1": 4.79,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 4000.000000000014,
+      "reason": "BE",
+      "pnl": 60.72240000000056,
+      "r": 0.1518060000000014,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1705035600000,
+          "price": 4.79,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1705035600000,
+          "price": 4.86,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1705301100000,
+          "price": 4.86,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1705035600000,
+      "trigger_4h_open_ms": 1705032000000,
+      "exit_t": 1705559400000,
+      "entry": 23.59,
+      "stop": 24.04,
+      "target": 23.12,
+      "tp1": 23.28,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 888.8888888888903,
+      "reason": "STOP",
+      "pnl": 293.2504888888882,
+      "r": 0.7331262222222205,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1705541400000,
+          "price": 23.28,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1705541400000,
+          "price": 23.59,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1705545000000,
+          "price": 23.12,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1705545000000,
+          "price": 23.28,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1705559400000,
+          "price": 23.28,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1709874000000,
+      "trigger_4h_open_ms": 1709870400000,
+      "exit_t": 1710120600000,
+      "entry": 43.81,
+      "stop": 45.09,
+      "target": 41.85,
+      "tp1": 42.1,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 312.4999999999997,
+      "reason": "STOP",
+      "pnl": 541.7184374999997,
+      "r": 1.3542960937499993,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1709874000000,
+          "price": 42.1,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1709874000000,
+          "price": 43.81,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1709874000000,
+          "price": 41.85,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1709874000000,
+          "price": 42.1,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1710120600000,
+          "price": 42.1,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1710207900000,
+      "trigger_4h_open_ms": 1710201600000,
+      "exit_t": 1710294300000,
+      "entry": 31.55,
+      "stop": 31.1,
+      "target": 32.25,
+      "tp1": 31.990000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 888.8888888888903,
+      "reason": "BE",
+      "pnl": 83.60960000000046,
+      "r": 0.20902400000000113,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1710219600000,
+          "price": 31.990000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1710219600000,
+          "price": 31.55,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1710294300000,
+          "price": 31.55,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1709776800000,
+      "trigger_4h_open_ms": 1709769600000,
+      "exit_t": 1710396900000,
+      "entry": 10.46,
+      "stop": 10.21,
+      "target": 10.88,
+      "tp1": 10.66,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1600.0,
+      "reason": "STOP",
+      "pnl": -419.8432,
+      "r": -1.049608,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1710396900000,
+          "price": 10.21,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600030",
+      "name": "CITIC Securities",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1710824400000,
+      "trigger_4h_open_ms": 1710820800000,
+      "exit_t": 1711074600000,
+      "entry": 20.91,
+      "stop": 20.52,
+      "target": 21.45,
+      "tp1": 21.18,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1025.641025641024,
+      "reason": "STOP",
+      "pnl": -425.49538461538447,
+      "r": -1.063738461538461,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1711074600000,
+          "price": 20.52,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1711332000000,
+      "trigger_4h_open_ms": 1711324800000,
+      "exit_t": 1711589400000,
+      "entry": 16.31,
+      "stop": 16.09,
+      "target": 16.61,
+      "tp1": 16.46,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1818.1818181818276,
+      "reason": "STOP",
+      "pnl": 318.7472727272774,
+      "r": 0.7968681818181935,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1711419300000,
+          "price": 16.46,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1711419300000,
+          "price": 16.31,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1711517400000,
+          "price": 16.61,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1711517400000,
+          "price": 16.46,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1711589400000,
+          "price": 16.46,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1711342800000,
+      "trigger_4h_open_ms": 1711339200000,
+      "exit_t": 1711589400000,
+      "entry": 5.23,
+      "stop": 5.1000000000000005,
+      "target": 5.36,
+      "tp1": 5.3100000000000005,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 3076.9230769230794,
+      "reason": "STOP",
+      "pnl": 272.8215384615387,
+      "r": 0.6820538461538468,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1711422000000,
+          "price": 5.3100000000000005,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1711422000000,
+          "price": 5.23,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1711503000000,
+          "price": 5.36,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1711503000000,
+          "price": 5.3100000000000005,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1711589400000,
+          "price": 5.3100000000000005,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1714021200000,
+      "trigger_4h_open_ms": 1714017600000,
+      "exit_t": 1714354200000,
+      "entry": 16.07,
+      "stop": 16.56,
+      "target": 15.48,
+      "tp1": 15.540000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 816.3265306122476,
+      "reason": "STOP",
+      "pnl": -415.9820408163266,
+      "r": -1.0399551020408166,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1714354200000,
+          "price": 16.56,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1717464600000,
+      "trigger_4h_open_ms": 1717459200000,
+      "exit_t": 1718071200000,
+      "entry": 5.46,
+      "stop": 5.4,
+      "target": 5.51,
+      "tp1": 5.49,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6666.66666666671,
+      "reason": "STOP",
+      "pnl": 196.17600000000206,
+      "r": 0.49044000000000515,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1717725600000,
+          "price": 5.49,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1717725600000,
+          "price": 5.46,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1717740000000,
+          "price": 5.51,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1717740000000,
+          "price": 5.49,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1718071200000,
+          "price": 5.49,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1718763300000,
+      "trigger_4h_open_ms": 1718755200000,
+      "exit_t": 1719279900000,
+      "entry": 27.95,
+      "stop": 27.490000000000002,
+      "target": 28.79,
+      "tp1": 28.37,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 869.5652173913095,
+      "reason": "STOP",
+      "pnl": 445.332521739134,
+      "r": 1.113331304347835,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1718859600000,
+          "price": 28.37,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1718859600000,
+          "price": 27.95,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1719197100000,
+          "price": 28.79,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1719197100000,
+          "price": 28.37,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1719279900000,
+          "price": 28.37,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600030",
+      "name": "CITIC Securities",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1715230800000,
+      "trigger_4h_open_ms": 1715227200000,
+      "exit_t": 1719383400000,
+      "entry": 18.93,
+      "stop": 19.6,
+      "target": 18.05,
+      "tp1": 18.44,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 597.0149253731328,
+      "reason": "STOP",
+      "pnl": 349.04370149253555,
+      "r": 0.8726092537313389,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1717378200000,
+          "price": 18.44,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1717378200000,
+          "price": 18.93,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1719295200000,
+          "price": 18.05,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1719295200000,
+          "price": 18.44,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1719383400000,
+          "price": 18.44,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1719192600000,
+      "trigger_4h_open_ms": 1719187200000,
+      "exit_t": 1719976500000,
+      "entry": 17.44,
+      "stop": 17.07,
+      "target": 17.84,
+      "tp1": 17.69,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1081.081081081078,
+      "reason": "STOP",
+      "pnl": 296.1027027027014,
+      "r": 0.7402567567567534,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1719541800000,
+          "price": 17.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1719541800000,
+          "price": 17.44,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1719802800000,
+          "price": 17.84,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1719802800000,
+          "price": 17.69,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1719976500000,
+          "price": 17.69,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1722478500000,
+      "trigger_4h_open_ms": 1722470400000,
+      "exit_t": 1722909600000,
+      "entry": 30.26,
+      "stop": 29.38,
+      "target": 31.28,
+      "tp1": 30.95,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 454.5454545454532,
+      "reason": "STOP",
+      "pnl": -416.26545454545453,
+      "r": -1.0406636363636363,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1722909600000,
+          "price": 29.38,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1722488400000,
+      "trigger_4h_open_ms": 1722484800000,
+      "exit_t": 1722921300000,
+      "entry": 10.14,
+      "stop": 9.94,
+      "target": 10.43,
+      "tp1": 10.32,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1999.9999999999893,
+      "reason": "STOP",
+      "pnl": -424.0959999999999,
+      "r": -1.0602399999999996,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1722921300000,
+          "price": 9.94,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600030",
+      "name": "CITIC Securities",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1723685400000,
+      "trigger_4h_open_ms": 1723680000000,
+      "exit_t": 1724294700000,
+      "entry": 19.1,
+      "stop": 18.650000000000002,
+      "target": 19.64,
+      "tp1": 19.42,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 888.8888888888903,
+      "reason": "STOP",
+      "pnl": -420.1333333333333,
+      "r": -1.0503333333333333,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1724294700000,
+          "price": 18.650000000000002,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1722217500000,
+      "trigger_4h_open_ms": 1722211200000,
+      "exit_t": 1724896800000,
+      "entry": 5.95,
+      "stop": 5.73,
+      "target": 6.23,
+      "tp1": 6.1000000000000005,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1818.1818181818203,
+      "reason": "STOP",
+      "pnl": 490.35236363636454,
+      "r": 1.2258809090909113,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1723774500000,
+          "price": 6.1000000000000005,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1723774500000,
+          "price": 5.95,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1724037300000,
+          "price": 6.23,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1724037300000,
+          "price": 6.1000000000000005,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1724290200000,
+          "price": 6.22
+        },
+        {
+          "type": "TRAIL",
+          "t": 1724635800000,
+          "price": 6.32
+        },
+        {
+          "type": "STOP",
+          "t": 1724896800000,
+          "price": 6.32,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1730251800000,
+      "trigger_4h_open_ms": 1730246400000,
+      "exit_t": 1730338200000,
+      "entry": 19.04,
+      "stop": 18.63,
+      "target": 19.79,
+      "tp1": 19.39,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 975.6097560975606,
+      "reason": "STOP",
+      "pnl": -422.050731707317,
+      "r": -1.0551268292682925,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1730338200000,
+          "price": 18.63,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1729560600000,
+      "trigger_4h_open_ms": 1729555200000,
+      "exit_t": 1731993300000,
+      "entry": 1540.74,
+      "stop": 1468.03,
+      "target": 1668.07,
+      "tp1": 1620.63,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 5.501306560308071,
+      "reason": "BE",
+      "pnl": 121.59940475863029,
+      "r": 0.30399851189657573,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1730955600000,
+          "price": 1620.63,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1730955600000,
+          "price": 1540.74,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1731993300000,
+          "price": 1540.74,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1733461200000,
+      "trigger_4h_open_ms": 1733457600000,
+      "exit_t": 1733796000000,
+      "entry": 49.96,
+      "stop": 51.57,
+      "target": 47.76,
+      "tp1": 48.25,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 248.4472049689442,
+      "reason": "STOP",
+      "pnl": 446.7483726708079,
+      "r": 1.1168709316770198,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1733794200000,
+          "price": 48.25,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1733794200000,
+          "price": 49.96,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1733795100000,
+          "price": 47.76,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1733795100000,
+          "price": 48.25,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1733796000000,
+          "price": 48.25,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600030",
+      "name": "CITIC Securities",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1733115600000,
+      "trigger_4h_open_ms": 1733112000000,
+      "exit_t": 1733886000000,
+      "entry": 30.3,
+      "stop": 28.900000000000002,
+      "target": 32.25,
+      "tp1": 31.330000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 285.714285714286,
+      "reason": "STOP",
+      "pnl": 362.53040000000055,
+      "r": 0.9063260000000014,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1733117400000,
+          "price": 31.330000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1733117400000,
+          "price": 30.3,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1733794200000,
+          "price": 32.25,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1733794200000,
+          "price": 31.330000000000002,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1733886000000,
+          "price": 31.330000000000002,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1734930000000,
+      "trigger_4h_open_ms": 1734926400000,
+      "exit_t": 1736388000000,
+      "entry": 1551.01,
+      "stop": 1581.79,
+      "target": 1510.71,
+      "tp1": 1530.5,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 12.995451591942832,
+      "reason": "STOP",
+      "pnl": 701.3289798570497,
+      "r": 1.7533224496426243,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1734930000000,
+          "price": 1530.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1734930000000,
+          "price": 1551.01,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1735781400000,
+          "price": 1510.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1735781400000,
+          "price": 1530.5,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1736299800000,
+          "price": 1457.29
+        },
+        {
+          "type": "TRAIL",
+          "t": 1736386200000,
+          "price": 1457.13
+        },
+        {
+          "type": "STOP",
+          "t": 1736388000000,
+          "price": 1457.13,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1736299800000,
+      "trigger_4h_open_ms": 1736294400000,
+      "exit_t": 1736733600000,
+      "entry": 6.78,
+      "stop": 6.5600000000000005,
+      "target": 7.03,
+      "tp1": 6.93,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1818.1818181818203,
+      "reason": "STOP",
+      "pnl": -414.55272727272734,
+      "r": -1.0363818181818183,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1736733600000,
+          "price": 6.5600000000000005,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1740619800000,
+      "trigger_4h_open_ms": 1740614400000,
+      "exit_t": 1740965400000,
+      "entry": 41.56,
+      "stop": 40.79,
+      "target": 42.47,
+      "tp1": 42.12,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 519.4805194805174,
+      "reason": "STOP",
+      "pnl": 319.33974025973663,
+      "r": 0.7983493506493415,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1740634200000,
+          "price": 42.12,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1740634200000,
+          "price": 41.56,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1740706200000,
+          "price": 42.47,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1740706200000,
+          "price": 42.12,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1740965400000,
+          "price": 42.12,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1744088400000,
+      "trigger_4h_open_ms": 1744084800000,
+      "exit_t": 1744162200000,
+      "entry": 6.8500000000000005,
+      "stop": 6.96,
+      "target": 6.75,
+      "tp1": 6.8,
+      "fib1618": 6.72,
+      "runner_mode": "pivot",
+      "size": 3636.363636363655,
+      "reason": "BE",
+      "pnl": 24.687272727273623,
+      "r": 0.06171818181818406,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1744088400000,
+          "price": 6.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1744088400000,
+          "price": 6.8500000000000005,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1744162200000,
+          "price": 6.8500000000000005,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH600276",
+      "name": "Hengrui Medicine",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1744338600000,
+      "trigger_4h_open_ms": 1744329600000,
+      "exit_t": 1745298000000,
+      "entry": 47.86,
+      "stop": 50.43,
+      "target": 44.21,
+      "tp1": 45.730000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 155.6420233463035,
+      "reason": "STOP",
+      "pnl": -409.1788326848249,
+      "r": -1.0229470817120623,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1745298000000,
+          "price": 50.43,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SH600900",
+      "name": "China Yangtze Power",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1749704400000,
+      "trigger_4h_open_ms": 1749700800000,
+      "exit_t": 1750037400000,
+      "entry": 30.04,
+      "stop": 29.580000000000002,
+      "target": 30.59,
+      "tp1": 30.490000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 869.5652173913095,
+      "reason": "STOP",
+      "pnl": 385.7947826086998,
+      "r": 0.9644869565217494,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1749779100000,
+          "price": 30.490000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1749779100000,
+          "price": 30.04,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1749784500000,
+          "price": 30.59,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1749784500000,
+          "price": 30.490000000000002,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1750037400000,
+          "price": 30.490000000000002,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601166",
+      "name": "Industrial Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1752803100000,
+      "trigger_4h_open_ms": 1752796800000,
+      "exit_t": 1753147800000,
+      "entry": 24.52,
+      "stop": 23.93,
+      "target": 25.45,
+      "tp1": 24.98,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 677.9661016949154,
+      "reason": "STOP",
+      "pnl": -419.7084745762712,
+      "r": -1.049271186440678,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1753147800000,
+          "price": 23.93,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1754456400000,
+      "trigger_4h_open_ms": 1754452800000,
+      "exit_t": 1754875800000,
+      "entry": 12.32,
+      "stop": 12.11,
+      "target": 12.64,
+      "tp1": 12.46,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1904.761904761897,
+      "reason": "BE",
+      "pnl": 51.79200000000012,
+      "r": 0.12948000000000032,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1754459100000,
+          "price": 12.46,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1754459100000,
+          "price": 12.32,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1754875800000,
+          "price": 12.32,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1754283600000,
+      "trigger_4h_open_ms": 1754280000000,
+      "exit_t": 1755221400000,
+      "entry": 7.54,
+      "stop": 7.37,
+      "target": 7.73,
+      "tp1": 7.65,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 2352.941176470589,
+      "reason": "STOP",
+      "pnl": 312.6277647058829,
+      "r": 0.7815694117647073,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1754283600000,
+          "price": 7.65,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1754283600000,
+          "price": 7.54,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1754370000000,
+          "price": 7.73,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1754370000000,
+          "price": 7.65,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1754616600000,
+          "price": 7.67
+        },
+        {
+          "type": "STOP",
+          "t": 1755221400000,
+          "price": 7.67,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1756863000000,
+      "trigger_4h_open_ms": 1756857600000,
+      "exit_t": 1756866600000,
+      "entry": 30.87,
+      "stop": 30.12,
+      "target": 32.27,
+      "tp1": 31.560000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 533.3333333333334,
+      "reason": "STOP",
+      "pnl": -419.5168,
+      "r": -1.048792,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1756866600000,
+          "price": 30.12,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SZ002415",
+      "name": "Hikvision",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1759124700000,
+      "trigger_4h_open_ms": 1759118400000,
+      "exit_t": 1760319900000,
+      "entry": 30.77,
+      "stop": 29.75,
+      "target": 32.09,
+      "tp1": 31.53,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 392.1568627450982,
+      "reason": "STOP",
+      "pnl": 585.9438431372556,
+      "r": 1.464859607843139,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1759199400000,
+          "price": 31.53,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1759199400000,
+          "price": 30.77,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1759973400000,
+          "price": 32.09,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1759973400000,
+          "price": 31.53,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1760319000000,
+          "price": 33.04
+        },
+        {
+          "type": "STOP",
+          "t": 1760319900000,
+          "price": 33.04,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1760590800000,
+      "trigger_4h_open_ms": 1760587200000,
+      "exit_t": 1761529500000,
+      "entry": 40.33,
+      "stop": 39.58,
+      "target": 41.36,
+      "tp1": 40.88,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 533.3333333333334,
+      "reason": "STOP",
+      "pnl": 491.2117333333346,
+      "r": 1.2280293333333365,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1760590800000,
+          "price": 40.88,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1760590800000,
+          "price": 40.33,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1760590800000,
+          "price": 41.36,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1760590800000,
+          "price": 40.88,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1761010200000,
+          "price": 40.92
+        },
+        {
+          "type": "TRAIL",
+          "t": 1761195600000,
+          "price": 41.57
+        },
+        {
+          "type": "STOP",
+          "t": 1761529500000,
+          "price": 41.57,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH600036",
+      "name": "China Merchants Bank",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1761627600000,
+      "trigger_4h_open_ms": 1761624000000,
+      "exit_t": 1761804000000,
+      "entry": 41.89,
+      "stop": 42.63,
+      "target": 41.01,
+      "tp1": 41.35,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 540.540540540539,
+      "reason": "STOP",
+      "pnl": 320.0633513513505,
+      "r": 0.8001583783783762,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1761701400000,
+          "price": 41.35,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1761701400000,
+          "price": 41.89,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1761714900000,
+          "price": 41.01,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1761714900000,
+          "price": 41.35,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1761804000000,
+          "price": 41.35,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SH601398",
+      "name": "ICBC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1762133400000,
+      "trigger_4h_open_ms": 1762128000000,
+      "exit_t": 1762738200000,
+      "entry": 7.8100000000000005,
+      "stop": 7.640000000000001,
+      "target": 8.02,
+      "tp1": 7.94,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 2352.941176470589,
+      "reason": "STOP",
+      "pnl": 415.3327058823515,
+      "r": 1.0383317647058787,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1762146000000,
+          "price": 7.94,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1762146000000,
+          "price": 7.8100000000000005,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1762221600000,
+          "price": 8.02,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1762221600000,
+          "price": 7.94,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1762479000000,
+          "price": 8.02
+        },
+        {
+          "type": "STOP",
+          "t": 1762738200000,
+          "price": 8.02,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SZ000001",
+      "name": "Ping An Bank",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1762318800000,
+      "trigger_4h_open_ms": 1762315200000,
+      "exit_t": 1762738200000,
+      "entry": 11.450000000000001,
+      "stop": 11.27,
+      "target": 11.71,
+      "tp1": 11.58,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 2222.222222222204,
+      "reason": "BE",
+      "pnl": 56.08133333333221,
+      "r": 0.14020333333333052,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1762318800000,
+          "price": 11.58,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1762318800000,
+          "price": 11.450000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1762738200000,
+          "price": 11.450000000000001,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SH600519",
+      "name": "Kweichow Moutai",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1764046800000,
+      "trigger_4h_open_ms": 1764043200000,
+      "exit_t": 1765157400000,
+      "entry": 1469.34,
+      "stop": 1489.14,
+      "target": 1434.98,
+      "tp1": 1455.18,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 20.202020202020016,
+      "reason": "STOP",
+      "pnl": 531.8310141414074,
+      "r": 1.3295775353535186,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1764046800000,
+          "price": 1455.18,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1764046800000,
+          "price": 1469.34,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1764725400000,
+          "price": 1434.98,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1764725400000,
+          "price": 1455.18,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1764898200000,
+          "price": 1435.55
+        },
+        {
+          "type": "STOP",
+          "t": 1765157400000,
+          "price": 1435.55,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    }
+  ]
 }
