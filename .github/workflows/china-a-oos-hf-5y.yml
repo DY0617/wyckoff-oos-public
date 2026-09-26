@@ -5,7 +5,10 @@ on:
   push:
     branches: [main]
     paths:
-      - "scripts/**"
+      - "scripts/backtest_china_a_oos_hf_5y.py"
+      - "scripts/backtest_wyckoff_5y.py"
+      - "scripts/wyckoff_status.py"
+      - "scripts/wyckoff_structural_state.py"
       - ".github/workflows/china-a-oos-hf-5y.yml"
 
 permissions:
