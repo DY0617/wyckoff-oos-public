@@ -75,7 +75,8 @@ def load_15m(sym):
 
     local=pd.to_datetime(agg["bucket"]).dt.tz_localize(CN)
     utc=local.dt.tz_convert(UTC)
-    ms=(utc.astype("int64")//1_000_000).astype("int64")
+    # Robust across pandas datetime64[us]/[ns]: convert via epoch seconds to milliseconds.
+    ms=utc.map(lambda x:int(x.timestamp()*1000)).astype("int64")
     out=[]
     for t,o,h,l,c,v in zip(ms,agg["open"],agg["high"],agg["low"],agg["close"],agg["volume"]):
         vals=(o,h,l,c,v)
