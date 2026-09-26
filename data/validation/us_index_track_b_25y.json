@@ -1,0 +1,6604 @@
+{
+  "generated_at": "2026-09-26T02:07:02.578833+00:00",
+  "purpose": "Long-horizon regime stress test of frozen Track B on US index ETF proxies",
+  "period": {
+    "warmup_start": "2000-05-01T00:00:00+00:00",
+    "evaluation_start": "2000-09-01T00:00:00+00:00",
+    "evaluation_end_exclusive": "2026-01-01T00:00:00+00:00"
+  },
+  "symbols": [
+    "SPY",
+    "QQQ",
+    "IWM"
+  ],
+  "proxy_note": "ETF proxies for S&P 500, Nasdaq-100, and Russell 2000; not index futures.",
+  "data": {
+    "provider": "Hugging Face mito0o852/OHLCV-1m",
+    "source": "monthly 1-minute US OHLCV parquet",
+    "session": "09:30-16:00 America/New_York only",
+    "aggregation": "1m -> 15m; 15m -> 09:30-13:30 4h + 13:30-16:00 stub; RTH daily",
+    "chunk_files": [
+      "us_index_15m_2000_2005.parquet",
+      "us_index_15m_2005_2010.parquet",
+      "us_index_15m_2010_2015.parquet",
+      "us_index_15m_2015_2020.parquet",
+      "us_index_15m_2020_2026.parquet"
+    ],
+    "split_cleanup": "common-factor overnight split detection; pre-split OHLCV back-adjusted"
+  },
+  "strategy": {
+    "Track_A": "disabled",
+    "Track_B": "production defaults frozen; no long-horizon tuning",
+    "management": "TP1 30% => BE; TP2 30% => TP1; runner 40% confirmed 4H pivot",
+    "same_15m_bar": "STOP first",
+    "one_symbol_one_position": true
+  },
+  "costs": {
+    "fee_bps_per_fill": 4.0,
+    "slippage_bps_per_fill": 2.0,
+    "fixed_risk_usd": 400.0
+  },
+  "totals": {
+    "closed": 137,
+    "wins": 103,
+    "losses": 34,
+    "win_rate": 0.7518248175182481,
+    "net_r": 50.696059569067614,
+    "avg_r": 0.3700442304311505,
+    "profit_factor_r": 2.3816515409528036,
+    "max_drawdown_fixed_20k": 0.08561136309865158,
+    "max_consecutive_losses": 3,
+    "ending_equity_fixed_risk": 40278.42382762707
+  },
+  "by_year": {
+    "2000": {
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "net_r": 0.7182642937853114,
+      "win_rate": 1.0,
+      "avg_r": 0.7182642937853114
+    },
+    "2001": {
+      "trades": 3,
+      "wins": 3,
+      "losses": 0,
+      "net_r": 2.7925558298900226,
+      "win_rate": 1.0,
+      "avg_r": 0.9308519432966742
+    },
+    "2002": {
+      "trades": 4,
+      "wins": 2,
+      "losses": 2,
+      "net_r": 0.384978721804508,
+      "win_rate": 0.5,
+      "avg_r": 0.096244680451127
+    },
+    "2003": {
+      "trades": 3,
+      "wins": 2,
+      "losses": 1,
+      "net_r": -0.6499858729464301,
+      "win_rate": 0.6666666666666666,
+      "avg_r": -0.21666195764881002
+    },
+    "2004": {
+      "trades": 3,
+      "wins": 3,
+      "losses": 0,
+      "net_r": 1.1786784665279673,
+      "win_rate": 1.0,
+      "avg_r": 0.3928928221759891
+    },
+    "2005": {
+      "trades": 3,
+      "wins": 3,
+      "losses": 0,
+      "net_r": 2.5429462444076005,
+      "win_rate": 1.0,
+      "avg_r": 0.8476487481358669
+    },
+    "2006": {
+      "trades": 10,
+      "wins": 8,
+      "losses": 2,
+      "net_r": 4.892015255760715,
+      "win_rate": 0.8,
+      "avg_r": 0.48920152557607144
+    },
+    "2007": {
+      "trades": 6,
+      "wins": 5,
+      "losses": 1,
+      "net_r": 3.9461048445811935,
+      "win_rate": 0.8333333333333334,
+      "avg_r": 0.6576841407635322
+    },
+    "2008": {
+      "trades": 3,
+      "wins": 2,
+      "losses": 1,
+      "net_r": -0.6805817910566991,
+      "win_rate": 0.6666666666666666,
+      "avg_r": -0.2268605970188997
+    },
+    "2009": {
+      "trades": 8,
+      "wins": 5,
+      "losses": 3,
+      "net_r": 1.3193182299181054,
+      "win_rate": 0.625,
+      "avg_r": 0.16491477873976318
+    },
+    "2010": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "net_r": -1.0815074285714286,
+      "win_rate": 0.0,
+      "avg_r": -1.0815074285714286
+    },
+    "2011": {
+      "trades": 7,
+      "wins": 6,
+      "losses": 1,
+      "net_r": 3.604474206643263,
+      "win_rate": 0.8571428571428571,
+      "avg_r": 0.5149248866633233
+    },
+    "2012": {
+      "trades": 7,
+      "wins": 7,
+      "losses": 0,
+      "net_r": 6.074288156127631,
+      "win_rate": 1.0,
+      "avg_r": 0.8677554508753759
+    },
+    "2013": {
+      "trades": 8,
+      "wins": 7,
+      "losses": 1,
+      "net_r": 6.544987798372254,
+      "win_rate": 0.875,
+      "avg_r": 0.8181234747965318
+    },
+    "2014": {
+      "trades": 9,
+      "wins": 3,
+      "losses": 6,
+      "net_r": -4.850248806689088,
+      "win_rate": 0.3333333333333333,
+      "avg_r": -0.5389165340765653
+    },
+    "2015": {
+      "trades": 9,
+      "wins": 7,
+      "losses": 2,
+      "net_r": 5.946989190861757,
+      "win_rate": 0.7777777777777778,
+      "avg_r": 0.6607765767624174
+    },
+    "2016": {
+      "trades": 6,
+      "wins": 4,
+      "losses": 2,
+      "net_r": 0.4955937964442042,
+      "win_rate": 0.6666666666666666,
+      "avg_r": 0.08259896607403404
+    },
+    "2017": {
+      "trades": 10,
+      "wins": 9,
+      "losses": 1,
+      "net_r": 3.304603723163938,
+      "win_rate": 0.9,
+      "avg_r": 0.3304603723163938
+    },
+    "2018": {
+      "trades": 5,
+      "wins": 4,
+      "losses": 1,
+      "net_r": 3.3529466529040173,
+      "win_rate": 0.8,
+      "avg_r": 0.6705893305808035
+    },
+    "2019": {
+      "trades": 6,
+      "wins": 5,
+      "losses": 1,
+      "net_r": 3.8404506855794214,
+      "win_rate": 0.8333333333333334,
+      "avg_r": 0.6400751142632369
+    },
+    "2020": {
+      "trades": 7,
+      "wins": 5,
+      "losses": 2,
+      "net_r": 2.262188649460703,
+      "win_rate": 0.7142857142857143,
+      "avg_r": 0.3231698070658147
+    },
+    "2021": {
+      "trades": 5,
+      "wins": 3,
+      "losses": 2,
+      "net_r": 0.30923166439996064,
+      "win_rate": 0.6,
+      "avg_r": 0.061846332879992125
+    },
+    "2022": {
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "net_r": -0.010075266010356243,
+      "win_rate": 0.5,
+      "avg_r": -0.0050376330051781215
+    },
+    "2023": {
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "net_r": 0.16651989389920596,
+      "win_rate": 1.0,
+      "avg_r": 0.16651989389920596
+    },
+    "2024": {
+      "trades": 5,
+      "wins": 4,
+      "losses": 1,
+      "net_r": 3.278385477146818,
+      "win_rate": 0.8,
+      "avg_r": 0.6556770954293636
+    },
+    "2025": {
+      "trades": 5,
+      "wins": 3,
+      "losses": 2,
+      "net_r": 1.0129369526630205,
+      "win_rate": 0.6,
+      "avg_r": 0.2025873905326041
+    }
+  },
+  "by_symbol": {
+    "SPY": {
+      "trades": 39,
+      "wins": 30,
+      "losses": 9,
+      "net_r": 11.666287786648631,
+      "win_rate": 0.7692307692307693,
+      "avg_r": 0.2991355842730418
+    },
+    "QQQ": {
+      "trades": 40,
+      "wins": 33,
+      "losses": 7,
+      "net_r": 21.53694027070747,
+      "win_rate": 0.825,
+      "avg_r": 0.5384235067676867
+    },
+    "IWM": {
+      "trades": 58,
+      "wins": 40,
+      "losses": 18,
+      "net_r": 17.49283151171151,
+      "win_rate": 0.6896551724137931,
+      "avg_r": 0.3016005433053709
+    }
+  },
+  "per_symbol": [
+    {
+      "symbol": "SPY",
+      "coverage": {
+        "first": "2000-05-01T09:30:00-04:00",
+        "last": "2025-12-31T15:45:00-05:00"
+      },
+      "bars": {
+        "15m": 167626,
+        "4h": 12910,
+        "1d": 6457
+      },
+      "setups": 48,
+      "split_adjustments": [],
+      "closed": 39,
+      "wins": 30,
+      "losses": 9,
+      "win_rate": 0.7692307692307693,
+      "net_r": 11.666287786648633,
+      "avg_r": 0.2991355842730419,
+      "profit_factor_r": 2.177700629292946,
+      "max_drawdown_fixed_20k": 0.061827762070761655,
+      "max_consecutive_losses": 3,
+      "ending_equity_fixed_risk": 24666.515114659454
+    },
+    {
+      "symbol": "QQQ",
+      "coverage": {
+        "first": "2000-05-01T09:30:00-04:00",
+        "last": "2025-12-31T15:45:00-05:00"
+      },
+      "bars": {
+        "15m": 167643,
+        "4h": 12911,
+        "1d": 6457
+      },
+      "setups": 47,
+      "split_adjustments": [],
+      "closed": 40,
+      "wins": 33,
+      "losses": 7,
+      "win_rate": 0.825,
+      "net_r": 21.53694027070747,
+      "avg_r": 0.5384235067676867,
+      "profit_factor_r": 3.874584730258097,
+      "max_drawdown_fixed_20k": 0.03381491546623405,
+      "max_consecutive_losses": 2,
+      "ending_equity_fixed_risk": 28614.77610828299
+    },
+    {
+      "symbol": "IWM",
+      "coverage": {
+        "first": "2000-05-26T09:30:00-04:00",
+        "last": "2025-12-31T15:45:00-05:00"
+      },
+      "bars": {
+        "15m": 165450,
+        "4h": 12857,
+        "1d": 6435
+      },
+      "setups": 77,
+      "split_adjustments": [],
+      "closed": 58,
+      "wins": 40,
+      "losses": 18,
+      "win_rate": 0.6896551724137931,
+      "net_r": 17.492831511711515,
+      "avg_r": 0.30160054330537095,
+      "profit_factor_r": 1.9066375693693862,
+      "max_drawdown_fixed_20k": 0.06857828299582557,
+      "max_consecutive_losses": 4,
+      "ending_equity_fixed_risk": 26997.1326046846
+    }
+  ],
+  "errors": {},
+  "trades": [
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 968347800000,
+      "trigger_4h_open_ms": 968347800000,
+      "exit_t": 968682600000,
+      "entry": 152.12,
+      "stop": 153.89000000000001,
+      "target": 150.1,
+      "tp1": 150.91,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 225.98870056497046,
+      "reason": "STOP",
+      "pnl": 287.3057175141246,
+      "r": 0.7182642937853114,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 968347800000,
+          "price": 150.91,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 968347800000,
+          "price": 152.12,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 968420700000,
+          "price": 150.1,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 968420700000,
+          "price": 150.91,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 968682600000,
+          "price": 150.91,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 991848600000,
+      "trigger_4h_open_ms": 991848600000,
+      "exit_t": 992353500000,
+      "entry": 46.34,
+      "stop": 41.67,
+      "target": 51.96,
+      "tp1": 49.76,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 85.6531049250535,
+      "reason": "STOP",
+      "pnl": 344.491991434689,
+      "r": 0.8612299785867225,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 992352600000,
+          "price": 49.76,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 992352600000,
+          "price": 46.34,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 992352600000,
+          "price": 51.96,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 992352600000,
+          "price": 49.76,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 992353500000,
+          "price": 49.76,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 992453400000,
+      "trigger_4h_open_ms": 992453400000,
+      "exit_t": 993577500000,
+      "entry": 46.97,
+      "stop": 49.99,
+      "target": 42.18,
+      "tp1": 44.32,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 132.4503311258277,
+      "reason": "STOP",
+      "pnl": 428.82267549668813,
+      "r": 1.0720566887417204,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 992525400000,
+          "price": 44.32,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 992525400000,
+          "price": 46.97,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 992544300000,
+          "price": 42.18,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 992544300000,
+          "price": 44.32,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 993577500000,
+          "price": 44.32,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 997291800000,
+      "trigger_4h_open_ms": 997291800000,
+      "exit_t": 997726500000,
+      "entry": 42.300000000000004,
+      "stop": 44.33,
+      "target": 39.4,
+      "tp1": 40.980000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 197.04433497537005,
+      "reason": "STOP",
+      "pnl": 343.7076650246319,
+      "r": 0.8592691625615798,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 997295400000,
+          "price": 40.980000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 997295400000,
+          "price": 42.300000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 997452900000,
+          "price": 39.4,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 997452900000,
+          "price": 40.980000000000004,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 997726500000,
+          "price": 40.980000000000004,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1021483800000,
+      "trigger_4h_open_ms": 1021483800000,
+      "exit_t": 1021557600000,
+      "entry": 99.51,
+      "stop": 97.61,
+      "target": 102.65,
+      "tp1": 101.60000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 210.52631578947305,
+      "reason": "STOP",
+      "pnl": 480.8726315789464,
+      "r": 1.202181578947366,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1021483800000,
+          "price": 101.60000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1021483800000,
+          "price": 99.51,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1021484700000,
+          "price": 102.65,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1021484700000,
+          "price": 101.60000000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1021557600000,
+          "price": 101.60000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1030642200000,
+      "trigger_4h_open_ms": 1030642200000,
+      "exit_t": 1031147100000,
+      "entry": 79.72,
+      "stop": 82.61,
+      "target": 75.26,
+      "tp1": 76.33,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 138.40830449826987,
+      "reason": "STOP",
+      "pnl": 500.70070588235257,
+      "r": 1.2517517647058813,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1031061600000,
+          "price": 76.33,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1031061600000,
+          "price": 79.72,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1031082300000,
+          "price": 75.26,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1031082300000,
+          "price": 76.33,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1031147100000,
+          "price": 76.33,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1031592600000,
+      "trigger_4h_open_ms": 1031592600000,
+      "exit_t": 1032355800000,
+      "entry": 77.88,
+      "stop": 74.8,
+      "target": 81.79,
+      "tp1": 80.16,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 129.87012987012994,
+      "reason": "STOP",
+      "pnl": -411.89714285714285,
+      "r": -1.029742857142857,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1032355800000,
+          "price": 74.8,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1039703400000,
+      "trigger_4h_open_ms": 1039703400000,
+      "exit_t": 1040223600000,
+      "entry": 78.96000000000001,
+      "stop": 76.58,
+      "target": 82.76,
+      "tp1": 80.85000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 168.06722689075562,
+      "reason": "STOP",
+      "pnl": -415.6847058823529,
+      "r": -1.0392117647058823,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1040223600000,
+          "price": 76.58,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1057153500000,
+      "trigger_4h_open_ms": 1057152600000,
+      "exit_t": 1057851900000,
+      "entry": 99.07000000000001,
+      "stop": 96.61,
+      "target": 102.14,
+      "tp1": 101.4,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 162.60162601625964,
+      "reason": "BE",
+      "pnl": 94.25960975609719,
+      "r": 0.235649024390243,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1057760100000,
+          "price": 101.4,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1057760100000,
+          "price": 99.07000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1057851900000,
+          "price": 99.07000000000001,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1058895000000,
+      "trigger_4h_open_ms": 1058895000000,
+      "exit_t": 1059055200000,
+      "entry": 94.27,
+      "stop": 96.57000000000001,
+      "target": 90.81,
+      "tp1": 92.55,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 173.91304347826002,
+      "reason": "BE",
+      "pnl": 70.11923478260829,
+      "r": 0.17529808695652072,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1058895000000,
+          "price": 92.55,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1058895000000,
+          "price": 94.27,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1059055200000,
+          "price": 94.27,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1060795800000,
+      "trigger_4h_open_ms": 1060795800000,
+      "exit_t": 1060955100000,
+      "entry": 97.94,
+      "stop": 96.03,
+      "target": 100.94,
+      "tp1": 99.85000000000001,
+      "fib1618": 101.74000000000001,
+      "runner_mode": "pivot",
+      "size": 209.42408376963388,
+      "reason": "STOP",
+      "pnl": -424.37319371727756,
+      "r": -1.0609329842931938,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1060955100000,
+          "price": 96.03,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1077906600000,
+      "trigger_4h_open_ms": 1077906600000,
+      "exit_t": 1078249500000,
+      "entry": 114.66,
+      "stop": 112.18,
+      "target": 118.94,
+      "tp1": 116.62,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 161.29032258064584,
+      "reason": "BE",
+      "pnl": 72.58954838709748,
+      "r": 0.1814738709677437,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1077906600000,
+          "price": 116.62,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1077906600000,
+          "price": 114.66,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1078249500000,
+          "price": 114.66,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1082482200000,
+      "trigger_4h_open_ms": 1082482200000,
+      "exit_t": 1082556900000,
+      "entry": 117.32000000000001,
+      "stop": 114.01,
+      "target": 121.15,
+      "tp1": 119.78,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 120.84592145015097,
+      "reason": "STOP",
+      "pnl": 329.7272990936547,
+      "r": 0.8243182477341368,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1082556000000,
+          "price": 119.78,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1082556000000,
+          "price": 117.32000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1082556000000,
+          "price": 121.15,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1082556000000,
+          "price": 119.78,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1082556900000,
+          "price": 119.78,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1102703400000,
+      "trigger_4h_open_ms": 1102703400000,
+      "exit_t": 1103574600000,
+      "entry": 125.86,
+      "stop": 123.56,
+      "target": 129.53,
+      "tp1": 127.69,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 173.91304347826107,
+      "reason": "BE",
+      "pnl": 69.15453913043477,
+      "r": 0.17288634782608692,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1103034600000,
+          "price": 127.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1103034600000,
+          "price": 125.86,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1103574600000,
+          "price": 125.86,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1107282600000,
+      "trigger_4h_open_ms": 1107282600000,
+      "exit_t": 1107452700000,
+      "entry": 122.0,
+      "stop": 119.75,
+      "target": 124.81,
+      "tp1": 124.3,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 177.77777777777777,
+      "reason": "STOP",
+      "pnl": 409.8005688888886,
+      "r": 1.0245014222222215,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1107282600000,
+          "price": 124.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1107282600000,
+          "price": 122.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1107282600000,
+          "price": 124.81,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1107282600000,
+          "price": 124.3,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1107452700000,
+          "price": 124.3,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1108751400000,
+      "trigger_4h_open_ms": 1108751400000,
+      "exit_t": 1109170800000,
+      "entry": 37.800000000000004,
+      "stop": 38.61,
+      "target": 36.88,
+      "tp1": 37.22,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 493.8271604938301,
+      "reason": "STOP",
+      "pnl": 314.5921975308682,
+      "r": 0.7864804938271704,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1109082600000,
+          "price": 37.22,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1109082600000,
+          "price": 37.800000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1109102400000,
+          "price": 36.88,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1109102400000,
+          "price": 37.22,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1109170800000,
+          "price": 37.22,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1128533400000,
+      "trigger_4h_open_ms": 1128533400000,
+      "exit_t": 1128540600000,
+      "entry": 122.37,
+      "stop": 123.71000000000001,
+      "target": 120.9,
+      "tp1": 121.39,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 298.5074626865664,
+      "reason": "STOP",
+      "pnl": 292.78573134328354,
+      "r": 0.7319643283582089,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1128533400000,
+          "price": 121.39,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1128533400000,
+          "price": 122.37,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1128533400000,
+          "price": 120.9,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1128533400000,
+          "price": 121.39,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1128540600000,
+          "price": 121.39,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1135701000000,
+      "trigger_4h_open_ms": 1135693800000,
+      "exit_t": 1136318400000,
+      "entry": 41.29,
+      "stop": 42.34,
+      "target": 40.0,
+      "tp1": 40.53,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 380.95238095237943,
+      "reason": "BE",
+      "pnl": 68.03382857142806,
+      "r": 0.17008457142857014,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1135953000000,
+          "price": 40.53,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1135953000000,
+          "price": 41.29,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1136318400000,
+          "price": 41.29,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1139495400000,
+      "trigger_4h_open_ms": 1139495400000,
+      "exit_t": 1139582700000,
+      "entry": 71.88,
+      "stop": 70.68,
+      "target": 73.21000000000001,
+      "tp1": 72.77,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 333.3333333333365,
+      "reason": "STOP",
+      "pnl": -428.5120000000003,
+      "r": -1.0712800000000007,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1139582700000,
+          "price": 70.68,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1142447400000,
+      "trigger_4h_open_ms": 1142447400000,
+      "exit_t": 1144341000000,
+      "entry": 40.78,
+      "stop": 40.06,
+      "target": 42.02,
+      "tp1": 41.26,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 555.5555555555565,
+      "reason": "STOP",
+      "pnl": 479.176000000001,
+      "r": 1.1979400000000024,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1142447400000,
+          "price": 41.26,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1142447400000,
+          "price": 40.78,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1143658800000,
+          "price": 42.02,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1143658800000,
+          "price": 41.26,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1143815400000,
+          "price": 41.65
+        },
+        {
+          "type": "TRAIL",
+          "t": 1144084500000,
+          "price": 41.71
+        },
+        {
+          "type": "TRAIL",
+          "t": 1144170900000,
+          "price": 41.77
+        },
+        {
+          "type": "STOP",
+          "t": 1144341000000,
+          "price": 41.77,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1145302200000,
+      "trigger_4h_open_ms": 1145295000000,
+      "exit_t": 1145886300000,
+      "entry": 74.38,
+      "stop": 73.21000000000001,
+      "target": 76.69,
+      "tp1": 75.3,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 341.88034188034555,
+      "reason": "STOP",
+      "pnl": 515.1404444444514,
+      "r": 1.2878511111111286,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1145370600000,
+          "price": 75.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1145370600000,
+          "price": 74.38,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1145453400000,
+          "price": 76.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1145453400000,
+          "price": 75.3,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1145626200000,
+          "price": 75.95
+        },
+        {
+          "type": "STOP",
+          "t": 1145886300000,
+          "price": 75.95,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1146490200000,
+      "trigger_4h_open_ms": 1146490200000,
+      "exit_t": 1146511800000,
+      "entry": 41.99,
+      "stop": 41.39,
+      "target": 42.86,
+      "tp1": 42.46,
+      "fib1618": 43.1,
+      "runner_mode": "pivot",
+      "size": 666.666666666665,
+      "reason": "STOP",
+      "pnl": -433.35199999999986,
+      "r": -1.0833799999999996,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1146511800000,
+          "price": 41.39,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1155562200000,
+      "trigger_4h_open_ms": 1155562200000,
+      "exit_t": 1156177800000,
+      "entry": 127.56,
+      "stop": 126.03,
+      "target": 129.43,
+      "tp1": 128.68,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 261.43790849673184,
+      "reason": "STOP",
+      "pnl": 377.2470065359481,
+      "r": 0.9431175163398703,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1155667500000,
+          "price": 128.68,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1155667500000,
+          "price": 127.56,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1155739500000,
+          "price": 129.43,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1155739500000,
+          "price": 128.68,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1156167000000,
+          "price": 129.31
+        },
+        {
+          "type": "STOP",
+          "t": 1156177800000,
+          "price": 129.31,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1156513500000,
+      "trigger_4h_open_ms": 1156512600000,
+      "exit_t": 1157550300000,
+      "entry": 69.7,
+      "stop": 68.7,
+      "target": 71.10000000000001,
+      "tp1": 70.62,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 400.0,
+      "reason": "STOP",
+      "pnl": 527.8070400000001,
+      "r": 1.3195176000000004,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1156874400000,
+          "price": 70.62,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1156874400000,
+          "price": 69.7,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1156879800000,
+          "price": 71.10000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1156879800000,
+          "price": 70.62,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1157463000000,
+          "price": 70.8
+        },
+        {
+          "type": "TRAIL",
+          "t": 1157549400000,
+          "price": 71.47
+        },
+        {
+          "type": "STOP",
+          "t": 1157550300000,
+          "price": 71.47,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1157737500000,
+      "trigger_4h_open_ms": 1157736600000,
+      "exit_t": 1158673500000,
+      "entry": 130.29,
+      "stop": 129.17000000000002,
+      "target": 131.85,
+      "tp1": 131.11,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 357.1428571428648,
+      "reason": "STOP",
+      "pnl": 377.4727142857249,
+      "r": 0.9436817857143123,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1158073200000,
+          "price": 131.11,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1158073200000,
+          "price": 130.29,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1158155100000,
+          "price": 131.85,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1158155100000,
+          "price": 131.11,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1158327000000,
+          "price": 131.54
+        },
+        {
+          "type": "STOP",
+          "t": 1158673500000,
+          "price": 131.54,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1166639400000,
+      "trigger_4h_open_ms": 1166639400000,
+      "exit_t": 1167404400000,
+      "entry": 44.31,
+      "stop": 44.92,
+      "target": 43.47,
+      "tp1": 43.69,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 655.7377049180334,
+      "reason": "STOP",
+      "pnl": 454.6069508196749,
+      "r": 1.1365173770491872,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1166639400000,
+          "price": 43.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1166639400000,
+          "price": 44.31,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1166722200000,
+          "price": 43.47,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1166722200000,
+          "price": 43.69,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1167329700000,
+          "price": 43.54
+        },
+        {
+          "type": "STOP",
+          "t": 1167404400000,
+          "price": 43.54,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1167244200000,
+      "trigger_4h_open_ms": 1167244200000,
+      "exit_t": 1167423300000,
+      "entry": 141.62,
+      "stop": 140.6,
+      "target": 143.24,
+      "tp1": 142.35,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 392.1568627450941,
+      "reason": "BE",
+      "pnl": 19.18611764705743,
+      "r": 0.047965294117643574,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1167246000000,
+          "price": 142.35,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1167246000000,
+          "price": 141.62,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1167423300000,
+          "price": 141.62,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1179768600000,
+      "trigger_4h_open_ms": 1179768600000,
+      "exit_t": 1180019700000,
+      "entry": 81.54,
+      "stop": 80.26,
+      "target": 83.23,
+      "tp1": 82.57000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 312.4999999999997,
+      "reason": "STOP",
+      "pnl": 352.9422499999997,
+      "r": 0.8823556249999993,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1179768600000,
+          "price": 82.57000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1179768600000,
+          "price": 81.54,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1179853200000,
+          "price": 83.23,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1179853200000,
+          "price": 82.57000000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1180019700000,
+          "price": 82.57000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1181323800000,
+      "trigger_4h_open_ms": 1181323800000,
+      "exit_t": 1182182400000,
+      "entry": 47.2,
+      "stop": 47.97,
+      "target": 45.97,
+      "tp1": 46.35,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 519.4805194805222,
+      "reason": "STOP",
+      "pnl": 471.6563116883152,
+      "r": 1.179140779220788,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1182181500000,
+          "price": 46.35,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1182181500000,
+          "price": 47.2,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1182181500000,
+          "price": 45.97,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1182181500000,
+          "price": 46.35,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1182182400000,
+          "price": 46.35,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1184347800000,
+      "trigger_4h_open_ms": 1184347800000,
+      "exit_t": 1184606100000,
+      "entry": 83.7,
+      "stop": 82.71000000000001,
+      "target": 85.03,
+      "tp1": 84.61,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 404.04040404040614,
+      "reason": "STOP",
+      "pnl": 377.75288888888963,
+      "r": 0.9443822222222241,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1184347800000,
+          "price": 84.61,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1184347800000,
+          "price": 83.7,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1184349600000,
+          "price": 85.03,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1184349600000,
+          "price": 84.61,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1184606100000,
+          "price": 84.61,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1192729500000,
+      "trigger_4h_open_ms": 1192728600000,
+      "exit_t": 1192804200000,
+      "entry": 153.98,
+      "stop": 152.16,
+      "target": 157.52,
+      "tp1": 156.4,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 219.7802197802206,
+      "reason": "STOP",
+      "pnl": -440.37010989011003,
+      "r": -1.1009252747252751,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1192804200000,
+          "price": 152.16,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1196361000000,
+      "trigger_4h_open_ms": 1196361000000,
+      "exit_t": 1196778600000,
+      "entry": 143.35,
+      "stop": 140.21,
+      "target": 148.70000000000002,
+      "tp1": 146.02,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 127.38853503184768,
+      "reason": "STOP",
+      "pnl": 454.4885095541437,
+      "r": 1.1362212738853592,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1196361000000,
+          "price": 146.02,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1196361000000,
+          "price": 143.35,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1196433000000,
+          "price": 148.70000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1196433000000,
+          "price": 146.02,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1196705700000,
+          "price": 146.69
+        },
+        {
+          "type": "STOP",
+          "t": 1196778600000,
+          "price": 146.69,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1198261800000,
+      "trigger_4h_open_ms": 1198261800000,
+      "exit_t": 1198775700000,
+      "entry": 75.79,
+      "stop": 73.05,
+      "target": 79.58,
+      "tp1": 77.84,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 145.98540145985353,
+      "reason": "STOP",
+      "pnl": 361.972087591239,
+      "r": 0.9049302189780976,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1198261800000,
+          "price": 77.84,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1198261800000,
+          "price": 75.79,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1198694700000,
+          "price": 79.58,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1198694700000,
+          "price": 77.84,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1198775700000,
+          "price": 77.84,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1208194200000,
+      "trigger_4h_open_ms": 1208194200000,
+      "exit_t": 1208268000000,
+      "entry": 135.99,
+      "stop": 139.1,
+      "target": 131.06,
+      "tp1": 133.53,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 128.61736334405205,
+      "reason": "BE",
+      "pnl": 73.98775562701029,
+      "r": 0.18496938906752572,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1208194200000,
+          "price": 133.53,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1208194200000,
+          "price": 135.99,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1208268000000,
+          "price": 135.99,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1211995800000,
+      "trigger_4h_open_ms": 1211995800000,
+      "exit_t": 1212516900000,
+      "entry": 48.84,
+      "stop": 47.65,
+      "target": 50.47,
+      "tp1": 49.71,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 336.13445378151124,
+      "reason": "BE",
+      "pnl": 67.97828571428519,
+      "r": 0.16994571428571298,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1212075900000,
+          "price": 49.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1212075900000,
+          "price": 48.84,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1212516900000,
+          "price": 48.84,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1213723800000,
+      "trigger_4h_open_ms": 1213723800000,
+      "exit_t": 1214314200000,
+      "entry": 48.43,
+      "stop": 46.82,
+      "target": 50.61,
+      "tp1": 49.910000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 248.4472049689442,
+      "reason": "STOP",
+      "pnl": -414.19875776397515,
+      "r": -1.0354968944099379,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1214314200000,
+          "price": 46.82,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1233253800000,
+      "trigger_4h_open_ms": 1233253800000,
+      "exit_t": 1234283400000,
+      "entry": 84.11,
+      "stop": 79.9,
+      "target": 90.17,
+      "tp1": 87.31,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 95.01187648456072,
+      "reason": "BE",
+      "pnl": 81.56693586698358,
+      "r": 0.20391733966745895,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1233953100000,
+          "price": 87.31,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1233953100000,
+          "price": 84.11,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1234283400000,
+          "price": 84.11,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1251912600000,
+      "trigger_4h_open_ms": 1251912600000,
+      "exit_t": 1252071000000,
+      "entry": 40.27,
+      "stop": 41.2,
+      "target": 39.2,
+      "tp1": 39.660000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 430.10752688172056,
+      "reason": "STOP",
+      "pnl": 301.12894623655905,
+      "r": 0.7528223655913976,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1251912600000,
+          "price": 39.660000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1251912600000,
+          "price": 40.27,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1251985500000,
+          "price": 39.2,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1251985500000,
+          "price": 39.660000000000004,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1252071000000,
+          "price": 39.660000000000004,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1254936600000,
+      "trigger_4h_open_ms": 1254936600000,
+      "exit_t": 1255700700000,
+      "entry": 41.39,
+      "stop": 40.59,
+      "target": 42.69,
+      "tp1": 42.03,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 500.00000000000176,
+      "reason": "STOP",
+      "pnl": 535.8294000000018,
+      "r": 1.3395735000000044,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1254943800000,
+          "price": 42.03,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1254943800000,
+          "price": 41.39,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1255354200000,
+          "price": 42.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1255354200000,
+          "price": 42.03,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1255454100000,
+          "price": 42.14
+        },
+        {
+          "type": "TRAIL",
+          "t": 1255699800000,
+          "price": 42.74
+        },
+        {
+          "type": "STOP",
+          "t": 1255700700000,
+          "price": 42.74,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1254936600000,
+      "trigger_4h_open_ms": 1254936600000,
+      "exit_t": 1255700700000,
+      "entry": 59.08,
+      "stop": 57.31,
+      "target": 61.78,
+      "tp1": 60.42,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 225.98870056497225,
+      "reason": "STOP",
+      "pnl": 485.37220338983224,
+      "r": 1.2134305084745807,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1255008600000,
+          "price": 60.42,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1255008600000,
+          "price": 59.08,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1255354200000,
+          "price": 61.78,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1255354200000,
+          "price": 60.42,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1255699800000,
+          "price": 61.6
+        },
+        {
+          "type": "STOP",
+          "t": 1255700700000,
+          "price": 61.6,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1256563800000,
+      "trigger_4h_open_ms": 1256563800000,
+      "exit_t": 1256571900000,
+      "entry": 108.36,
+      "stop": 107.18,
+      "target": 110.31,
+      "tp1": 109.42,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 338.98305084745977,
+      "reason": "STOP",
+      "pnl": -443.83864406779685,
+      "r": -1.109596610169492,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1256571900000,
+          "price": 107.18,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1259591400000,
+      "trigger_4h_open_ms": 1259591400000,
+      "exit_t": 1259613900000,
+      "entry": 109.56,
+      "stop": 108.02,
+      "target": 111.74000000000001,
+      "tp1": 110.82000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 259.7402597402587,
+      "reason": "STOP",
+      "pnl": -433.9085714285713,
+      "r": -1.0847714285714283,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1259613900000,
+          "price": 108.02,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1259593200000,
+      "trigger_4h_open_ms": 1259591400000,
+      "exit_t": 1259774100000,
+      "entry": 43.480000000000004,
+      "stop": 42.800000000000004,
+      "target": 44.49,
+      "tp1": 44.160000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 588.2352941176473,
+      "reason": "STOP",
+      "pnl": 427.26858823529375,
+      "r": 1.0681714705882344,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1259684100000,
+          "price": 44.160000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1259684100000,
+          "price": 43.480000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1259766900000,
+          "price": 44.49,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1259766900000,
+          "price": 44.160000000000004,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1259774100000,
+          "price": 44.160000000000004,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1260383400000,
+      "trigger_4h_open_ms": 1260383400000,
+      "exit_t": 1261405800000,
+      "entry": 44.01,
+      "stop": 44.84,
+      "target": 42.910000000000004,
+      "tp1": 43.32,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 481.92771084337033,
+      "reason": "STOP",
+      "pnl": -425.69156626506003,
+      "r": -1.06422891566265,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1261405800000,
+          "price": 44.84,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1272648600000,
+      "trigger_4h_open_ms": 1272648600000,
+      "exit_t": 1272983400000,
+      "entry": 119.74000000000001,
+      "stop": 117.99000000000001,
+      "target": 122.12,
+      "tp1": 120.98,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 228.57142857142858,
+      "reason": "STOP",
+      "pnl": -432.60297142857144,
+      "r": -1.0815074285714286,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1272983400000,
+          "price": 117.99000000000001,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1303407000000,
+      "trigger_4h_open_ms": 1303407000000,
+      "exit_t": 1304527500000,
+      "entry": 131.12,
+      "stop": 129.26,
+      "target": 133.99,
+      "tp1": 132.55,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 215.05376344085863,
+      "reason": "STOP",
+      "pnl": 512.5012473118245,
+      "r": 1.2812531182795612,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1303407000000,
+          "price": 132.55,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1303407000000,
+          "price": 131.12,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1303824600000,
+          "price": 133.99,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1303824600000,
+          "price": 132.55,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1303824600000,
+          "price": 132.93
+        },
+        {
+          "type": "TRAIL",
+          "t": 1303997400000,
+          "price": 134.25
+        },
+        {
+          "type": "STOP",
+          "t": 1304527500000,
+          "price": 134.25,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1305048600000,
+      "trigger_4h_open_ms": 1305048600000,
+      "exit_t": 1305639000000,
+      "entry": 84.38,
+      "stop": 82.17,
+      "target": 86.82000000000001,
+      "tp1": 86.03,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 180.9954751131227,
+      "reason": "STOP",
+      "pnl": -418.08687782805436,
+      "r": -1.0452171945701358,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1305639000000,
+          "price": 82.17,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1311082200000,
+      "trigger_4h_open_ms": 1311082200000,
+      "exit_t": 1311600600000,
+      "entry": 57.88,
+      "stop": 56.71,
+      "target": 59.36,
+      "tp1": 59.03,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 341.8803418803414,
+      "reason": "STOP",
+      "pnl": 403.0067008546996,
+      "r": 1.007516752136749,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1311168600000,
+          "price": 59.03,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1311168600000,
+          "price": 57.88,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1311350400000,
+          "price": 59.36,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1311350400000,
+          "price": 59.03,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1311600600000,
+          "price": 59.03,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1317144600000,
+      "trigger_4h_open_ms": 1317144600000,
+      "exit_t": 1317239100000,
+      "entry": 54.43,
+      "stop": 52.51,
+      "target": 57.35,
+      "tp1": 55.69,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 208.33333333333314,
+      "reason": "BE",
+      "pnl": 65.09524999999981,
+      "r": 0.1627381249999995,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1317144600000,
+          "price": 55.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1317144600000,
+          "price": 54.43,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1317239100000,
+          "price": 54.43,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1319203800000,
+      "trigger_4h_open_ms": 1319203800000,
+      "exit_t": 1319549400000,
+      "entry": 56.870000000000005,
+      "stop": 55.58,
+      "target": 58.29,
+      "tp1": 57.82,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 310.07751937984347,
+      "reason": "STOP",
+      "pnl": 316.93066666666374,
+      "r": 0.7923266666666593,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1319463000000,
+          "price": 57.82,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1319463000000,
+          "price": 56.870000000000005,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1319468400000,
+          "price": 58.29,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1319468400000,
+          "price": 57.82,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1319549400000,
+          "price": 57.82,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1320255000000,
+      "trigger_4h_open_ms": 1320255000000,
+      "exit_t": 1320346800000,
+      "entry": 58.06,
+      "stop": 59.410000000000004,
+      "target": 55.79,
+      "tp1": 56.730000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 296.29629629629596,
+      "reason": "BE",
+      "pnl": 97.64959999999972,
+      "r": 0.2441239999999993,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1320255000000,
+          "price": 56.730000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1320255000000,
+          "price": 58.06,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1320346800000,
+          "price": 58.06,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1320255000000,
+      "trigger_4h_open_ms": 1320255000000,
+      "exit_t": 1322491500000,
+      "entry": 125.27,
+      "stop": 129.87,
+      "target": 119.82000000000001,
+      "tp1": 121.83,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 86.95652173913027,
+      "reason": "STOP",
+      "pnl": 464.6930956521722,
+      "r": 1.1617327391304304,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1321551000000,
+          "price": 121.83,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1321551000000,
+          "price": 125.27,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1321885800000,
+          "price": 119.82000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1321885800000,
+          "price": 121.83,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1322490600000,
+          "price": 118.21000000000001
+        },
+        {
+          "type": "STOP",
+          "t": 1322491500000,
+          "price": 118.21000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1324564200000,
+      "trigger_4h_open_ms": 1324564200000,
+      "exit_t": 1325609100000,
+      "entry": 55.25,
+      "stop": 53.980000000000004,
+      "target": 57.19,
+      "tp1": 56.980000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 314.9606299212608,
+      "reason": "STOP",
+      "pnl": 543.5036850393724,
+      "r": 1.358759212598431,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1325601000000,
+          "price": 56.980000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1325601000000,
+          "price": 55.25,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1325602800000,
+          "price": 57.19,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1325602800000,
+          "price": 56.980000000000004,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1325609100000,
+          "price": 56.980000000000004,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1324492200000,
+      "trigger_4h_open_ms": 1324492200000,
+      "exit_t": 1325687400000,
+      "entry": 72.18,
+      "stop": 70.23,
+      "target": 75.29,
+      "tp1": 74.56,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 205.12820512820483,
+      "reason": "STOP",
+      "pnl": 515.0409435897421,
+      "r": 1.2876023589743553,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1324564200000,
+          "price": 74.56,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1324564200000,
+          "price": 72.18,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1325601000000,
+          "price": 75.29,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1325601000000,
+          "price": 74.56,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1325687400000,
+          "price": 74.56,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1328020200000,
+      "trigger_4h_open_ms": 1328020200000,
+      "exit_t": 1328884200000,
+      "entry": 131.49,
+      "stop": 129.82,
+      "target": 133.4,
+      "tp1": 132.72,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 239.52095808383007,
+      "reason": "STOP",
+      "pnl": 431.86462275448434,
+      "r": 1.079661556886211,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1328108400000,
+          "price": 132.72,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1328108400000,
+          "price": 131.49,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1328279400000,
+          "price": 133.4,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1328279400000,
+          "price": 132.72,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1328625000000,
+          "price": 133.54
+        },
+        {
+          "type": "TRAIL",
+          "t": 1328797800000,
+          "price": 134.04
+        },
+        {
+          "type": "STOP",
+          "t": 1328884200000,
+          "price": 134.04,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1340911800000,
+      "trigger_4h_open_ms": 1340904600000,
+      "exit_t": 1341582300000,
+      "entry": 76.63,
+      "stop": 75.19,
+      "target": 79.08,
+      "tp1": 77.8,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 277.7777777777782,
+      "reason": "STOP",
+      "pnl": 733.4454444444465,
+      "r": 1.833613611111116,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1340976600000,
+          "price": 77.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1340976600000,
+          "price": 76.63,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1340979300000,
+          "price": 79.08,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1340979300000,
+          "price": 77.8,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1341322200000,
+          "price": 78.98
+        },
+        {
+          "type": "TRAIL",
+          "t": 1341581400000,
+          "price": 80.75
+        },
+        {
+          "type": "STOP",
+          "t": 1341582300000,
+          "price": 80.75,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1348853400000,
+      "trigger_4h_open_ms": 1348853400000,
+      "exit_t": 1349795700000,
+      "entry": 144.36,
+      "stop": 142.73,
+      "target": 147.17000000000002,
+      "tp1": 145.76,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 245.39877300613136,
+      "reason": "BE",
+      "pnl": 60.49472392637779,
+      "r": 0.15123680981594448,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1349359200000,
+          "price": 145.76,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1349359200000,
+          "price": 144.36,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1349795700000,
+          "price": 144.36,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1350495000000,
+      "trigger_4h_open_ms": 1350495000000,
+      "exit_t": 1350659700000,
+      "entry": 144.28,
+      "stop": 142.35,
+      "target": 147.15,
+      "tp1": 146.29,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 207.25388601036195,
+      "reason": "BE",
+      "pnl": 89.01599999999911,
+      "r": 0.22253999999999777,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1350500400000,
+          "price": 146.29,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1350500400000,
+          "price": 144.28,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1350659700000,
+          "price": 144.28,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1354818600000,
+      "trigger_4h_open_ms": 1354818600000,
+      "exit_t": 1355236200000,
+      "entry": 65.62,
+      "stop": 66.51,
+      "target": 64.25,
+      "tp1": 64.94,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 449.4382022471907,
+      "reason": "BE",
+      "pnl": 56.34984269663009,
+      "r": 0.14087460674157523,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1354894200000,
+          "price": 64.94,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1354894200000,
+          "price": 65.62,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1355236200000,
+          "price": 65.62,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1362076200000,
+      "trigger_4h_open_ms": 1362076200000,
+      "exit_t": 1363613400000,
+      "entry": 150.25,
+      "stop": 148.48,
+      "target": 153.28,
+      "tp1": 151.41,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 225.98870056497046,
+      "reason": "STOP",
+      "pnl": 668.6588474576238,
+      "r": 1.6716471186440593,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1362076200000,
+          "price": 151.41,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1362076200000,
+          "price": 150.25,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1362493800000,
+          "price": 153.28,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1362493800000,
+          "price": 151.41,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1362766500000,
+          "price": 154.24
+        },
+        {
+          "type": "TRAIL",
+          "t": 1363095000000,
+          "price": 154.86
+        },
+        {
+          "type": "TRAIL",
+          "t": 1363194900000,
+          "price": 154.96
+        },
+        {
+          "type": "STOP",
+          "t": 1363613400000,
+          "price": 154.96,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1366738200000,
+      "trigger_4h_open_ms": 1366738200000,
+      "exit_t": 1367435700000,
+      "entry": 155.62,
+      "stop": 153.24,
+      "target": 159.71,
+      "tp1": 157.66,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 168.06722689075661,
+      "reason": "STOP",
+      "pnl": 457.5646050420179,
+      "r": 1.1439115126050448,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1366738200000,
+          "price": 157.66,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1366738200000,
+          "price": 155.62,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1367351100000,
+          "price": 159.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1367351100000,
+          "price": 157.66,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1367415000000,
+          "price": 158.3
+        },
+        {
+          "type": "STOP",
+          "t": 1367435700000,
+          "price": 158.3,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1366738200000,
+      "trigger_4h_open_ms": 1366738200000,
+      "exit_t": 1369245600000,
+      "entry": 68.26,
+      "stop": 66.71000000000001,
+      "target": 70.15,
+      "tp1": 69.4,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 258.0645161290327,
+      "reason": "STOP",
+      "pnl": 779.6709677419365,
+      "r": 1.9491774193548412,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1366738200000,
+          "price": 69.4,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1366738200000,
+          "price": 68.26,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1367244900000,
+          "price": 70.15,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1367244900000,
+          "price": 69.4,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1367415000000,
+          "price": 69.86
+        },
+        {
+          "type": "TRAIL",
+          "t": 1367514900000,
+          "price": 70.09
+        },
+        {
+          "type": "TRAIL",
+          "t": 1368019800000,
+          "price": 71.93
+        },
+        {
+          "type": "TRAIL",
+          "t": 1368106200000,
+          "price": 72.05
+        },
+        {
+          "type": "TRAIL",
+          "t": 1368206100000,
+          "price": 72.32000000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1368724500000,
+          "price": 73.06
+        },
+        {
+          "type": "TRAIL",
+          "t": 1368810900000,
+          "price": 73.41
+        },
+        {
+          "type": "TRAIL",
+          "t": 1369156500000,
+          "price": 73.75
+        },
+        {
+          "type": "STOP",
+          "t": 1369245600000,
+          "price": 73.75,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1369747800000,
+      "trigger_4h_open_ms": 1369747800000,
+      "exit_t": 1369837800000,
+      "entry": 97.98,
+      "stop": 96.29,
+      "target": 100.38,
+      "tp1": 99.57000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 236.6863905325447,
+      "reason": "BE",
+      "pnl": 85.00302958579915,
+      "r": 0.21250757396449788,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1369748700000,
+          "price": 99.57000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1369748700000,
+          "price": 97.98,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1369837800000,
+          "price": 97.98,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1372440600000,
+      "trigger_4h_open_ms": 1372440600000,
+      "exit_t": 1374674400000,
+      "entry": 95.75,
+      "stop": 93.53,
+      "target": 99.8,
+      "tp1": 98.7,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 180.18018018018026,
+      "reason": "STOP",
+      "pnl": 955.2879279279281,
+      "r": 2.3882198198198203,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1372687200000,
+          "price": 98.7,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1372687200000,
+          "price": 95.75,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1373290200000,
+          "price": 99.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1373290200000,
+          "price": 98.7,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1373549400000,
+          "price": 100.47
+        },
+        {
+          "type": "TRAIL",
+          "t": 1374081300000,
+          "price": 102.59
+        },
+        {
+          "type": "TRAIL",
+          "t": 1374499800000,
+          "price": 103.52
+        },
+        {
+          "type": "TRAIL",
+          "t": 1374672600000,
+          "price": 104.05
+        },
+        {
+          "type": "STOP",
+          "t": 1374674400000,
+          "price": 104.05,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1377538200000,
+      "trigger_4h_open_ms": 1377538200000,
+      "exit_t": 1377610200000,
+      "entry": 102.31,
+      "stop": 100.4,
+      "target": 104.68,
+      "tp1": 103.73,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 209.42408376963388,
+      "reason": "BE",
+      "pnl": 63.44971727748714,
+      "r": 0.15862429319371785,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1377538200000,
+          "price": 103.73,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1377538200000,
+          "price": 102.31,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1377610200000,
+          "price": 102.31,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1378215000000,
+      "trigger_4h_open_ms": 1378215000000,
+      "exit_t": 1378230300000,
+      "entry": 75.65,
+      "stop": 74.81,
+      "target": 77.27,
+      "tp1": 76.21000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 476.19047619047427,
+      "reason": "BE",
+      "pnl": 36.72342857142874,
+      "r": 0.09180857142857185,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1378215000000,
+          "price": 76.21000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1378215000000,
+          "price": 75.65,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1378230300000,
+          "price": 75.65,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1386340200000,
+      "trigger_4h_open_ms": 1386340200000,
+      "exit_t": 1386778500000,
+      "entry": 112.03,
+      "stop": 110.15,
+      "target": 114.16,
+      "tp1": 113.42,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 212.765957446809,
+      "reason": "STOP",
+      "pnl": -428.3634042553192,
+      "r": -1.070908510638298,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1386778500000,
+          "price": 110.15,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1394717400000,
+      "trigger_4h_open_ms": 1394717400000,
+      "exit_t": 1394730000000,
+      "entry": 118.5,
+      "stop": 116.65,
+      "target": 120.57000000000001,
+      "tp1": 119.86,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 216.21621621621688,
+      "reason": "STOP",
+      "pnl": -430.505945945946,
+      "r": -1.076264864864865,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1394730000000,
+          "price": 116.65,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1395754200000,
+      "trigger_4h_open_ms": 1395754200000,
+      "exit_t": 1395854100000,
+      "entry": 117.58,
+      "stop": 115.9,
+      "target": 120.26,
+      "tp1": 119.03,
+      "fib1618": 121.09,
+      "runner_mode": "pivot",
+      "size": 238.09523809523915,
+      "reason": "STOP",
+      "pnl": -433.3542857142859,
+      "r": -1.0833857142857146,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1395854100000,
+          "price": 115.9,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1394818200000,
+      "trigger_4h_open_ms": 1394818200000,
+      "exit_t": 1396272600000,
+      "entry": 186.74,
+      "stop": 189.25,
+      "target": 183.75,
+      "tp1": 184.28,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 159.36254980079738,
+      "reason": "BE",
+      "pnl": 81.96889243027954,
+      "r": 0.20492223107569885,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1395927000000,
+          "price": 184.28,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1395927000000,
+          "price": 186.74,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1396272600000,
+          "price": 186.74,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1396459800000,
+      "trigger_4h_open_ms": 1396459800000,
+      "exit_t": 1396637100000,
+      "entry": 88.31,
+      "stop": 86.17,
+      "target": 90.66,
+      "tp1": 89.89,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 186.91588785046724,
+      "reason": "STOP",
+      "pnl": -419.56785046728976,
+      "r": -1.0489196261682243,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1396637100000,
+          "price": 86.17,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1399483800000,
+      "trigger_4h_open_ms": 1399483800000,
+      "exit_t": 1399903200000,
+      "entry": 187.73,
+      "stop": 189.42000000000002,
+      "target": 184.96,
+      "tp1": 186.35,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 236.6863905325407,
+      "reason": "STOP",
+      "pnl": -453.55976331360864,
+      "r": -1.1338994082840217,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1399903200000,
+          "price": 189.42000000000002,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1400261400000,
+      "trigger_4h_open_ms": 1400261400000,
+      "exit_t": 1400511600000,
+      "entry": 188.74,
+      "stop": 190.67000000000002,
+      "target": 186.02,
+      "tp1": 187.24,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 207.25388601036195,
+      "reason": "BE",
+      "pnl": 46.37968911917081,
+      "r": 0.11594922279792703,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1400261400000,
+          "price": 187.24,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1400261400000,
+          "price": 188.74,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1400511600000,
+          "price": 188.74,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1400261400000,
+      "trigger_4h_open_ms": 1400261400000,
+      "exit_t": 1400698800000,
+      "entry": 87.58,
+      "stop": 88.8,
+      "target": 85.53,
+      "tp1": 86.60000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 327.8688524590167,
+      "reason": "STOP",
+      "pnl": -434.69770491803285,
+      "r": -1.086744262295082,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1400698800000,
+          "price": 88.8,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1408037400000,
+      "trigger_4h_open_ms": 1408037400000,
+      "exit_t": 1409857200000,
+      "entry": 193.44,
+      "stop": 190.22,
+      "target": 197.63,
+      "tp1": 195.84,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 124.2236024844721,
+      "reason": "STOP",
+      "pnl": 541.3808944099392,
+      "r": 1.353452236024848,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1408109400000,
+          "price": 195.84,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1408109400000,
+          "price": 193.44,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1408455000000,
+          "price": 197.63,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1408455000000,
+          "price": 195.84,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1408627800000,
+          "price": 197.76
+        },
+        {
+          "type": "TRAIL",
+          "t": 1408973400000,
+          "price": 198.44
+        },
+        {
+          "type": "TRAIL",
+          "t": 1409319000000,
+          "price": 199.14000000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1409664600000,
+          "price": 199.58
+        },
+        {
+          "type": "TRAIL",
+          "t": 1409751000000,
+          "price": 199.62
+        },
+        {
+          "type": "TRAIL",
+          "t": 1409850900000,
+          "price": 199.98000000000002
+        },
+        {
+          "type": "STOP",
+          "t": 1409857200000,
+          "price": 199.98000000000002,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1410456600000,
+      "trigger_4h_open_ms": 1410456600000,
+      "exit_t": 1410788700000,
+      "entry": 115.95,
+      "stop": 114.5,
+      "target": 117.8,
+      "tp1": 117.49000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 275.8620689655167,
+      "reason": "STOP",
+      "pnl": -438.143448275862,
+      "r": -1.095358620689655,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1410788700000,
+          "price": 114.5,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1425565800000,
+      "trigger_4h_open_ms": 1425565800000,
+      "exit_t": 1425657600000,
+      "entry": 210.41,
+      "stop": 208.79,
+      "target": 212.24,
+      "tp1": 211.58,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 246.9135802469129,
+      "reason": "STOP",
+      "pnl": -462.10370370370356,
+      "r": -1.155259259259259,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1425657600000,
+          "price": 208.79,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1427823000000,
+      "trigger_4h_open_ms": 1427823000000,
+      "exit_t": 1429278300000,
+      "entry": 122.99000000000001,
+      "stop": 121.3,
+      "target": 126.31,
+      "tp1": 124.64,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 236.6863905325427,
+      "reason": "STOP",
+      "pnl": 594.0394319526563,
+      "r": 1.4850985798816407,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1427981400000,
+          "price": 124.64,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1427981400000,
+          "price": 122.99000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1428935400000,
+          "price": 126.31,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1428935400000,
+          "price": 124.64,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1429277400000,
+          "price": 125.91
+        },
+        {
+          "type": "STOP",
+          "t": 1429278300000,
+          "price": 125.91,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1430501400000,
+      "trigger_4h_open_ms": 1430501400000,
+      "exit_t": 1431011700000,
+      "entry": 210.48000000000002,
+      "stop": 212.77,
+      "target": 207.01,
+      "tp1": 208.75,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 174.67248908297003,
+      "reason": "STOP",
+      "pnl": 349.4803842794808,
+      "r": 0.873700960698702,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1430851500000,
+          "price": 208.75,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1430851500000,
+          "price": 210.48000000000002,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1430937000000,
+          "price": 207.01,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1430937000000,
+          "price": 208.75,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1431011700000,
+          "price": 208.75,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1431365400000,
+      "trigger_4h_open_ms": 1431365400000,
+      "exit_t": 1432648800000,
+      "entry": 107.65,
+      "stop": 105.78,
+      "target": 110.42,
+      "tp1": 109.03,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 213.9037433155075,
+      "reason": "STOP",
+      "pnl": 390.72637433154944,
+      "r": 0.9768159358288736,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1431612000000,
+          "price": 109.03,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1431612000000,
+          "price": 107.65,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1432145700000,
+          "price": 110.42,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1432145700000,
+          "price": 109.03,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1432215000000,
+          "price": 109.21000000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1432301400000,
+          "price": 109.43
+        },
+        {
+          "type": "STOP",
+          "t": 1432648800000,
+          "price": 109.43,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1432733400000,
+      "trigger_4h_open_ms": 1432733400000,
+      "exit_t": 1433348100000,
+      "entry": 123.4,
+      "stop": 122.28,
+      "target": 125.47,
+      "tp1": 125.25,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 357.1428571428557,
+      "reason": "STOP",
+      "pnl": 630.9894285714238,
+      "r": 1.5774735714285595,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1433263500000,
+          "price": 125.25,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1433263500000,
+          "price": 123.4,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1433340900000,
+          "price": 125.47,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1433340900000,
+          "price": 125.25,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1433348100000,
+          "price": 125.25,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1434735000000,
+      "trigger_4h_open_ms": 1434735000000,
+      "exit_t": 1435255200000,
+      "entry": 108.42,
+      "stop": 107.01,
+      "target": 110.81,
+      "tp1": 110.08,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 283.68794326241203,
+      "reason": "STOP",
+      "pnl": 498.0890212765975,
+      "r": 1.2452225531914938,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1434735000000,
+          "price": 110.08,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1434735000000,
+          "price": 108.42,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1434979800000,
+          "price": 110.81,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1434979800000,
+          "price": 110.08,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1435152600000,
+          "price": 110.10000000000001
+        },
+        {
+          "type": "STOP",
+          "t": 1435255200000,
+          "price": 110.10000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1444066200000,
+      "trigger_4h_open_ms": 1444066200000,
+      "exit_t": 1446737400000,
+      "entry": 101.93,
+      "stop": 98.36,
+      "target": 105.91,
+      "tp1": 105.01,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 112.04481792717064,
+      "reason": "STOP",
+      "pnl": 776.1850532212861,
+      "r": 1.9404626330532153,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1444066200000,
+          "price": 105.01,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1444066200000,
+          "price": 101.93,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1444330800000,
+          "price": 105.91,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1444330800000,
+          "price": 105.01,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1444915800000,
+          "price": 105.14
+        },
+        {
+          "type": "TRAIL",
+          "t": 1445274900000,
+          "price": 107.06
+        },
+        {
+          "type": "TRAIL",
+          "t": 1445534100000,
+          "price": 107.18
+        },
+        {
+          "type": "TRAIL",
+          "t": 1445952600000,
+          "price": 111.93
+        },
+        {
+          "type": "TRAIL",
+          "t": 1446039000000,
+          "price": 112.2
+        },
+        {
+          "type": "TRAIL",
+          "t": 1446488100000,
+          "price": 113.03
+        },
+        {
+          "type": "TRAIL",
+          "t": 1446647400000,
+          "price": 113.94
+        },
+        {
+          "type": "TRAIL",
+          "t": 1446733800000,
+          "price": 114.27
+        },
+        {
+          "type": "STOP",
+          "t": 1446737400000,
+          "price": 114.27,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1447252200000,
+      "trigger_4h_open_ms": 1447252200000,
+      "exit_t": 1447357500000,
+      "entry": 113.44,
+      "stop": 112.41,
+      "target": 115.47,
+      "tp1": 114.45,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 388.34951456310637,
+      "reason": "STOP",
+      "pnl": -452.62524271844654,
+      "r": -1.1315631067961163,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1447357500000,
+          "price": 112.41,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1449499500000,
+      "trigger_4h_open_ms": 1449498600000,
+      "exit_t": 1449590400000,
+      "entry": 114.74000000000001,
+      "stop": 116.01,
+      "target": 112.84,
+      "tp1": 113.71000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 314.9606299212608,
+      "reason": "BE",
+      "pnl": 54.014929133858544,
+      "r": 0.13503732283464637,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1449585000000,
+          "price": 113.71000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1449585000000,
+          "price": 114.74000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1449590400000,
+          "price": 114.74000000000001,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1450377000000,
+      "trigger_4h_open_ms": 1450377000000,
+      "exit_t": 1451917800000,
+      "entry": 203.1,
+      "stop": 199.47,
+      "target": 209.97,
+      "tp1": 207.23000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 110.19283746556488,
+      "reason": "BE",
+      "pnl": 109.59080991735631,
+      "r": 0.27397702479339076,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1451401200000,
+          "price": 207.23000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1451401200000,
+          "price": 203.1,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1451917800000,
+          "price": 203.1,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1460381400000,
+      "trigger_4h_open_ms": 1460381400000,
+      "exit_t": 1461263400000,
+      "entry": 109.42,
+      "stop": 107.86,
+      "target": 111.32000000000001,
+      "tp1": 110.57000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 256.410256410256,
+      "reason": "STOP",
+      "pnl": 534.9652820512827,
+      "r": 1.3374132051282066,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1460554200000,
+          "price": 110.57000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1460554200000,
+          "price": 109.42,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1460558700000,
+          "price": 111.32000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1460558700000,
+          "price": 110.57000000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1460986200000,
+          "price": 111.55
+        },
+        {
+          "type": "TRAIL",
+          "t": 1461072600000,
+          "price": 111.56
+        },
+        {
+          "type": "TRAIL",
+          "t": 1461159000000,
+          "price": 112.59
+        },
+        {
+          "type": "TRAIL",
+          "t": 1461245400000,
+          "price": 112.68
+        },
+        {
+          "type": "STOP",
+          "t": 1461263400000,
+          "price": 112.68,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1462987800000,
+      "trigger_4h_open_ms": 1462987800000,
+      "exit_t": 1463508000000,
+      "entry": 105.65,
+      "stop": 104.18,
+      "target": 108.33,
+      "tp1": 106.98,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 272.10884353741517,
+      "reason": "BE",
+      "pnl": 74.00832653061217,
+      "r": 0.18502081632653042,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1463421600000,
+          "price": 106.98,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1463421600000,
+          "price": 105.65,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1463508000000,
+          "price": 105.65,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1462987800000,
+      "trigger_4h_open_ms": 1462987800000,
+      "exit_t": 1463665500000,
+      "entry": 205.84,
+      "stop": 203.55,
+      "target": 209.76,
+      "tp1": 207.79,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 174.67248908297003,
+      "reason": "STOP",
+      "pnl": -442.90550218340627,
+      "r": -1.1072637554585156,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1463665500000,
+          "price": 203.55,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1466605800000,
+      "trigger_4h_open_ms": 1466602200000,
+      "exit_t": 1466775000000,
+      "entry": 115.44,
+      "stop": 112.62,
+      "target": 118.64,
+      "tp1": 117.54,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 141.84397163120602,
+      "reason": "STOP",
+      "pnl": -419.40936170212774,
+      "r": -1.0485234042553193,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1466775000000,
+          "price": 112.62,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1474047000000,
+      "trigger_4h_open_ms": 1474047000000,
+      "exit_t": 1474896600000,
+      "entry": 115.62,
+      "stop": 113.4,
+      "target": 118.12,
+      "tp1": 117.46000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 180.18018018018026,
+      "reason": "STOP",
+      "pnl": 341.98796396396455,
+      "r": 0.8549699099099114,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1474291800000,
+          "price": 117.46000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1474291800000,
+          "price": 115.62,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1474485300000,
+          "price": 118.12,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1474485300000,
+          "price": 117.46000000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1474896600000,
+          "price": 117.46000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1483554600000,
+      "trigger_4h_open_ms": 1483554600000,
+      "exit_t": 1484233200000,
+      "entry": 119.57000000000001,
+      "stop": 117.95,
+      "target": 121.52,
+      "tp1": 120.76,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 246.9135802469129,
+      "reason": "STOP",
+      "pnl": 425.0361481481447,
+      "r": 1.0625903703703619,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1483627500000,
+          "price": 120.76,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1483627500000,
+          "price": 119.57000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1483717500000,
+          "price": 121.52,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1483717500000,
+          "price": 120.76,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1484145000000,
+          "price": 121.88
+        },
+        {
+          "type": "STOP",
+          "t": 1484233200000,
+          "price": 121.88,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1484317800000,
+      "trigger_4h_open_ms": 1484317800000,
+      "exit_t": 1484663400000,
+      "entry": 135.38,
+      "stop": 133.28,
+      "target": 137.96,
+      "tp1": 136.82,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 190.476190476191,
+      "reason": "BE",
+      "pnl": 51.29234285714287,
+      "r": 0.12823085714285717,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1484317800000,
+          "price": 136.82,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1484317800000,
+          "price": 135.38,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1484663400000,
+          "price": 135.38,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1489685400000,
+      "trigger_4h_open_ms": 1489685400000,
+      "exit_t": 1490104800000,
+      "entry": 135.89000000000001,
+      "stop": 134.3,
+      "target": 137.97,
+      "tp1": 137.06,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 251.5723270440246,
+      "reason": "STOP",
+      "pnl": 321.77766037735444,
+      "r": 0.8044441509433861,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1489685400000,
+          "price": 137.06,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1489685400000,
+          "price": 135.89000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1489685400000,
+          "price": 137.97,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1489685400000,
+          "price": 137.06,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1490104800000,
+          "price": 137.06,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1490895000000,
+      "trigger_4h_open_ms": 1490895000000,
+      "exit_t": 1491417900000,
+      "entry": 135.14000000000001,
+      "stop": 132.09,
+      "target": 138.72,
+      "tp1": 137.41,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 131.14754098360606,
+      "reason": "BE",
+      "pnl": 67.98995409835969,
+      "r": 0.1699748852458992,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1490967000000,
+          "price": 137.41,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1490967000000,
+          "price": 135.14000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1491417900000,
+          "price": 135.14000000000001,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1490895000000,
+      "trigger_4h_open_ms": 1490895000000,
+      "exit_t": 1491921000000,
+      "entry": 233.99,
+      "stop": 231.29,
+      "target": 237.97,
+      "tp1": 236.79,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 148.14814814814721,
+      "reason": "BE",
+      "pnl": 82.77155555555426,
+      "r": 0.20692888888888564,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1491399900000,
+          "price": 236.79,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1491399900000,
+          "price": 233.99,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1491921000000,
+          "price": 233.99,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1492796700000,
+      "trigger_4h_open_ms": 1492795800000,
+      "exit_t": 1493822700000,
+      "entry": 234.64000000000001,
+      "stop": 232.23000000000002,
+      "target": 237.35,
+      "tp1": 236.51,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 165.97510373444007,
+      "reason": "STOP",
+      "pnl": 404.7798838174242,
+      "r": 1.0119497095435606,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1493040600000,
+          "price": 236.51,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1493040600000,
+          "price": 234.64000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1493060400000,
+          "price": 237.35,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1493060400000,
+          "price": 236.51,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1493386200000,
+          "price": 237.63
+        },
+        {
+          "type": "TRAIL",
+          "t": 1493818200000,
+          "price": 238.01
+        },
+        {
+          "type": "STOP",
+          "t": 1493822700000,
+          "price": 238.01,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1494424800000,
+      "trigger_4h_open_ms": 1494423000000,
+      "exit_t": 1495027800000,
+      "entry": 139.05,
+      "stop": 136.84,
+      "target": 141.81,
+      "tp1": 140.69,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 180.99547511312153,
+      "reason": "STOP",
+      "pnl": -429.96090497737544,
+      "r": -1.0749022624434386,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1495027800000,
+          "price": 136.84,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1497879000000,
+      "trigger_4h_open_ms": 1497879000000,
+      "exit_t": 1498058100000,
+      "entry": 242.74,
+      "stop": 241.37,
+      "target": 245.01,
+      "tp1": 243.94,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 291.97080291970707,
+      "reason": "BE",
+      "pnl": 19.998832116787256,
+      "r": 0.049997080291968136,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1497880800000,
+          "price": 243.94,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1497880800000,
+          "price": 242.74,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1498058100000,
+          "price": 242.74,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1501522200000,
+      "trigger_4h_open_ms": 1501522200000,
+      "exit_t": 1501616700000,
+      "entry": 143.0,
+      "stop": 144.46,
+      "target": 141.04,
+      "tp1": 141.93,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 273.97260273972455,
+      "reason": "STOP",
+      "pnl": 319.5074520547921,
+      "r": 0.7987686301369803,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1501522200000,
+          "price": 141.93,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1501522200000,
+          "price": 143.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1501596900000,
+          "price": 141.04,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1501596900000,
+          "price": 141.93,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1501616700000,
+          "price": 141.93,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1502818200000,
+      "trigger_4h_open_ms": 1502818200000,
+      "exit_t": 1502985600000,
+      "entry": 142.46,
+      "stop": 140.62,
+      "target": 145.47,
+      "tp1": 143.93,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 217.3913043478257,
+      "reason": "BE",
+      "pnl": 58.64856521739114,
+      "r": 0.14662141304347784,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1502818200000,
+          "price": 143.93,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1502818200000,
+          "price": 142.46,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1502985600000,
+          "price": 142.46,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1520361000000,
+      "trigger_4h_open_ms": 1520361000000,
+      "exit_t": 1521043200000,
+      "entry": 269.89,
+      "stop": 264.0,
+      "target": 278.92,
+      "tp1": 275.02,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 67.91171477079811,
+      "reason": "STOP",
+      "pnl": 405.592665534806,
+      "r": 1.013981663837015,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1520605800000,
+          "price": 275.02,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1520605800000,
+          "price": 269.89,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1520861400000,
+          "price": 278.92,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1520861400000,
+          "price": 275.02,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1521043200000,
+          "price": 275.02,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1523035800000,
+      "trigger_4h_open_ms": 1523035800000,
+      "exit_t": 1524236400000,
+      "entry": 150.23,
+      "stop": 146.67000000000002,
+      "target": 156.55,
+      "tp1": 153.38,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 112.35955056179859,
+      "reason": "STOP",
+      "pnl": 530.9863595505674,
+      "r": 1.3274658988764185,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1523374200000,
+          "price": 153.38,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1523374200000,
+          "price": 150.23,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1523974500000,
+          "price": 156.55,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1523974500000,
+          "price": 153.38,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1524231000000,
+          "price": 155.4
+        },
+        {
+          "type": "STOP",
+          "t": 1524236400000,
+          "price": 155.4,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1534426200000,
+      "trigger_4h_open_ms": 1534426200000,
+      "exit_t": 1536075000000,
+      "entry": 166.3,
+      "stop": 164.82,
+      "target": 168.71,
+      "tp1": 167.59,
+      "fib1618": 169.47,
+      "runner_mode": "pivot",
+      "size": 270.27027027026696,
+      "reason": "STOP",
+      "pnl": 821.7553513513386,
+      "r": 2.0543883783783468,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1534429800000,
+          "price": 167.59,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1534429800000,
+          "price": 166.3,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1534771800000,
+          "price": 168.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1534771800000,
+          "price": 167.59,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1535031000000,
+          "price": 170.05
+        },
+        {
+          "type": "TRAIL",
+          "t": 1535390100000,
+          "price": 170.68
+        },
+        {
+          "type": "TRAIL",
+          "t": 1535549400000,
+          "price": 170.76
+        },
+        {
+          "type": "TRAIL",
+          "t": 1535722200000,
+          "price": 171.49
+        },
+        {
+          "type": "TRAIL",
+          "t": 1536067800000,
+          "price": 171.63
+        },
+        {
+          "type": "STOP",
+          "t": 1536075000000,
+          "price": 171.63,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1536680700000,
+      "trigger_4h_open_ms": 1536672600000,
+      "exit_t": 1536762600000,
+      "entry": 171.22,
+      "stop": 169.38,
+      "target": 173.39000000000001,
+      "tp1": 172.48,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 217.3913043478257,
+      "reason": "STOP",
+      "pnl": -444.42608695652166,
+      "r": -1.111065217391304,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1536762600000,
+          "price": 169.38,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1538400600000,
+      "trigger_4h_open_ms": 1538400600000,
+      "exit_t": 1538594100000,
+      "entry": 291.35,
+      "stop": 289.09000000000003,
+      "target": 293.94,
+      "tp1": 293.03000000000003,
+      "fib1618": 293.98,
+      "runner_mode": "pivot",
+      "size": 176.99115044247858,
+      "reason": "BE",
+      "pnl": 27.27037168141639,
+      "r": 0.06817592920354097,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1538575200000,
+          "price": 293.03000000000003,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1538575200000,
+          "price": 291.35,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1538594100000,
+          "price": 291.35,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1556026200000,
+      "trigger_4h_open_ms": 1556026200000,
+      "exit_t": 1556199000000,
+      "entry": 155.87,
+      "stop": 154.37,
+      "target": 158.16,
+      "tp1": 157.55,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 266.6666666666667,
+      "reason": "STOP",
+      "pnl": 446.62352000000067,
+      "r": 1.1165588000000017,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1556033400000,
+          "price": 157.55,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1556033400000,
+          "price": 155.87,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1556116200000,
+          "price": 158.16,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1556116200000,
+          "price": 157.55,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1556199000000,
+          "price": 157.55,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1561483800000,
+      "trigger_4h_open_ms": 1561483800000,
+      "exit_t": 1561664700000,
+      "entry": 153.74,
+      "stop": 156.54,
+      "target": 150.62,
+      "tp1": 151.66,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 142.8571428571437,
+      "reason": "BE",
+      "pnl": 62.8409142857152,
+      "r": 0.157102285714288,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1561486500000,
+          "price": 151.66,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1561486500000,
+          "price": 153.74,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1561664700000,
+          "price": 153.74,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1563822000000,
+      "trigger_4h_open_ms": 1563816600000,
+      "exit_t": 1564072200000,
+      "entry": 298.2,
+      "stop": 296.34000000000003,
+      "target": 301.13,
+      "tp1": 299.62,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 215.0537634408652,
+      "reason": "STOP",
+      "pnl": 325.5991827957093,
+      "r": 0.8139979569892732,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1563903000000,
+          "price": 299.62,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1563903000000,
+          "price": 298.2,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1563995700000,
+          "price": 301.13,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1563995700000,
+          "price": 299.62,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1564072200000,
+          "price": 299.62,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1567791000000,
+      "trigger_4h_open_ms": 1567791000000,
+      "exit_t": 1568818800000,
+      "entry": 147.03,
+      "stop": 143.83,
+      "target": 151.07,
+      "tp1": 149.83,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 125.00000000000044,
+      "reason": "STOP",
+      "pnl": 692.5165000000032,
+      "r": 1.7312912500000082,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1567791000000,
+          "price": 149.83,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1567791000000,
+          "price": 147.03,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1568040300000,
+          "price": 151.07,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1568040300000,
+          "price": 149.83,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1568208600000,
+          "price": 150.37
+        },
+        {
+          "type": "TRAIL",
+          "t": 1568381400000,
+          "price": 155.05
+        },
+        {
+          "type": "TRAIL",
+          "t": 1568727000000,
+          "price": 156.20000000000002
+        },
+        {
+          "type": "STOP",
+          "t": 1568818800000,
+          "price": 156.20000000000002,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1569266100000,
+      "trigger_4h_open_ms": 1569259800000,
+      "exit_t": 1569334500000,
+      "entry": 155.92000000000002,
+      "stop": 154.08,
+      "target": 158.92000000000002,
+      "tp1": 157.86,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 217.3913043478257,
+      "reason": "STOP",
+      "pnl": -440.4347826086956,
+      "r": -1.1010869565217392,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1569334500000,
+          "price": 154.08,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1573743600000,
+      "trigger_4h_open_ms": 1573741800000,
+      "exit_t": 1575297900000,
+      "entry": 158.56,
+      "stop": 156.9,
+      "target": 160.46,
+      "tp1": 159.79,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 240.96385542168724,
+      "reason": "STOP",
+      "pnl": 449.034939759036,
+      "r": 1.12258734939759,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1574693100000,
+          "price": 159.79,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1574693100000,
+          "price": 158.56,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1574694000000,
+          "price": 160.46,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1574694000000,
+          "price": 159.79,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1574865000000,
+          "price": 160.94
+        },
+        {
+          "type": "TRAIL",
+          "t": 1575297000000,
+          "price": 161.35
+        },
+        {
+          "type": "STOP",
+          "t": 1575297900000,
+          "price": 161.35,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1589909400000,
+      "trigger_4h_open_ms": 1589909400000,
+      "exit_t": 1590770700000,
+      "entry": 123.44,
+      "stop": 116.36,
+      "target": 132.94,
+      "tp1": 128.73,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 56.49717514124295,
+      "reason": "STOP",
+      "pnl": 535.0902259887005,
+      "r": 1.3377255649717512,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1589909400000,
+          "price": 128.73,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1589909400000,
+          "price": 123.44,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1589909400000,
+          "price": 132.94,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1589909400000,
+          "price": 128.73,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1589994900000,
+          "price": 129.07
+        },
+        {
+          "type": "TRAIL",
+          "t": 1590154200000,
+          "price": 131.62
+        },
+        {
+          "type": "TRAIL",
+          "t": 1590499800000,
+          "price": 132.13
+        },
+        {
+          "type": "TRAIL",
+          "t": 1590672600000,
+          "price": 136.41
+        },
+        {
+          "type": "STOP",
+          "t": 1590770700000,
+          "price": 136.41,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1593538200000,
+      "trigger_4h_open_ms": 1593538200000,
+      "exit_t": 1594220400000,
+      "entry": 139.99,
+      "stop": 135.47,
+      "target": 146.69,
+      "tp1": 144.63,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 88.49557522123874,
+      "reason": "BE",
+      "pnl": 108.24573451327373,
+      "r": 0.2706143362831843,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1593696600000,
+          "price": 144.63,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1593696600000,
+          "price": 139.99,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1594220400000,
+          "price": 139.99,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1593538200000,
+      "trigger_4h_open_ms": 1593538200000,
+      "exit_t": 1594669500000,
+      "entry": 242.99,
+      "stop": 236.46,
+      "target": 251.15,
+      "tp1": 247.87,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 61.25574272588054,
+      "reason": "STOP",
+      "pnl": 595.3079571209796,
+      "r": 1.488269892802449,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1593546300000,
+          "price": 247.87,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1593546300000,
+          "price": 242.99,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1593630900000,
+          "price": 251.15,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1593630900000,
+          "price": 247.87,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1594055700000,
+          "price": 250.71
+        },
+        {
+          "type": "TRAIL",
+          "t": 1594228500000,
+          "price": 255.27
+        },
+        {
+          "type": "TRAIL",
+          "t": 1594387800000,
+          "price": 256.61
+        },
+        {
+          "type": "TRAIL",
+          "t": 1594647000000,
+          "price": 258.25
+        },
+        {
+          "type": "STOP",
+          "t": 1594669500000,
+          "price": 258.25,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1594387800000,
+      "trigger_4h_open_ms": 1594387800000,
+      "exit_t": 1594669500000,
+      "entry": 140.09,
+      "stop": 136.55,
+      "target": 145.69,
+      "tp1": 144.56,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 112.99435028248612,
+      "reason": "BE",
+      "pnl": 132.4392542372884,
+      "r": 0.331098135593221,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1594661400000,
+          "price": 144.56,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1594661400000,
+          "price": 140.09,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1594669500000,
+          "price": 140.09,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1592328600000,
+      "trigger_4h_open_ms": 1592328600000,
+      "exit_t": 1595527200000,
+      "entry": 308.54,
+      "stop": 295.48,
+      "target": 323.41,
+      "tp1": 318.31,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 30.62787136294027,
+      "reason": "STOP",
+      "pnl": 391.35860336906524,
+      "r": 0.9783965084226631,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1594647000000,
+          "price": 318.31,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1594647000000,
+          "price": 308.54,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1595266200000,
+          "price": 323.41,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1595266200000,
+          "price": 318.31,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1595338200000,
+          "price": 319.58
+        },
+        {
+          "type": "TRAIL",
+          "t": 1595438100000,
+          "price": 322.95
+        },
+        {
+          "type": "STOP",
+          "t": 1595527200000,
+          "price": 322.95,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1599226200000,
+      "trigger_4h_open_ms": 1599226200000,
+      "exit_t": 1599228900000,
+      "entry": 155.06,
+      "stop": 152.5,
+      "target": 158.98,
+      "tp1": 156.86,
+      "fib1618": 161.58,
+      "runner_mode": "pivot",
+      "size": 156.24999999999986,
+      "reason": "STOP",
+      "pnl": -428.83375,
+      "r": -1.072084375,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1599228900000,
+          "price": 152.5,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1603459800000,
+      "trigger_4h_open_ms": 1603459800000,
+      "exit_t": 1603723500000,
+      "entry": 345.86,
+      "stop": 340.13,
+      "target": 354.02,
+      "tp1": 350.75,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 69.80802792321094,
+      "reason": "STOP",
+      "pnl": -428.7325654450261,
+      "r": -1.0718314136125653,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1603723500000,
+          "price": 340.13,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1621618200000,
+      "trigger_4h_open_ms": 1621618200000,
+      "exit_t": 1623866400000,
+      "entry": 411.24,
+      "stop": 403.08,
+      "target": 422.81,
+      "tp1": 417.90000000000003,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 49.0196078431371,
+      "reason": "STOP",
+      "pnl": 464.78055882352766,
+      "r": 1.1619513970588191,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1621863900000,
+          "price": 417.90000000000003,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1621863900000,
+          "price": 411.24,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1622835900000,
+          "price": 422.81,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1622835900000,
+          "price": 417.90000000000003,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1623245400000,
+          "price": 419.63
+        },
+        {
+          "type": "TRAIL",
+          "t": 1623345300000,
+          "price": 420.79
+        },
+        {
+          "type": "TRAIL",
+          "t": 1623677400000,
+          "price": 422.21000000000004
+        },
+        {
+          "type": "TRAIL",
+          "t": 1623763800000,
+          "price": 422.52
+        },
+        {
+          "type": "STOP",
+          "t": 1623866400000,
+          "price": 422.52,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1629826200000,
+      "trigger_4h_open_ms": 1629826200000,
+      "exit_t": 1629984600000,
+      "entry": 215.86,
+      "stop": 210.06,
+      "target": 223.84,
+      "tp1": 222.23000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 68.96551724137917,
+      "reason": "STOP",
+      "pnl": 454.47284137930944,
+      "r": 1.1361821034482735,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1629899100000,
+          "price": 222.23000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1629899100000,
+          "price": 215.86,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1629911700000,
+          "price": 223.84,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1629911700000,
+          "price": 222.23000000000002,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1629984600000,
+          "price": 222.23000000000002,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1633440600000,
+      "trigger_4h_open_ms": 1633440600000,
+      "exit_t": 1633529700000,
+      "entry": 220.68,
+      "stop": 217.07,
+      "target": 227.67000000000002,
+      "tp1": 223.53,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 110.80332409972257,
+      "reason": "STOP",
+      "pnl": -429.10249307479216,
+      "r": -1.0727562326869804,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1633529700000,
+          "price": 217.07,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1633714200000,
+      "trigger_4h_open_ms": 1633714200000,
+      "exit_t": 1633981500000,
+      "entry": 220.34,
+      "stop": 216.1,
+      "target": 225.59,
+      "tp1": 223.53,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 94.33962264150924,
+      "reason": "BE",
+      "pnl": 65.28469811320733,
+      "r": 0.16321174528301832,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1633966200000,
+          "price": 223.53,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1633966200000,
+          "price": 220.34,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1633981500000,
+          "price": 220.34,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1635442200000,
+      "trigger_4h_open_ms": 1635442200000,
+      "exit_t": 1635775200000,
+      "entry": 227.74,
+      "stop": 231.21,
+      "target": 223.73000000000002,
+      "tp1": 225.15,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 115.27377521613836,
+      "reason": "STOP",
+      "pnl": -431.742939481268,
+      "r": -1.07935734870317,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1635775200000,
+          "price": 231.21,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1650475800000,
+      "trigger_4h_open_ms": 1650475800000,
+      "exit_t": 1650637800000,
+      "entry": 201.03,
+      "stop": 195.13,
+      "target": 209.43,
+      "tp1": 208.11,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 67.79661016949146,
+      "reason": "STOP",
+      "pnl": -416.1149830508474,
+      "r": -1.0402874576271186,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1650637800000,
+          "price": 195.13,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1657215000000,
+      "trigger_4h_open_ms": 1657215000000,
+      "exit_t": 1657546200000,
+      "entry": 282.8,
+      "stop": 274.45,
+      "target": 296.57,
+      "tp1": 289.68,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 47.90419161676633,
+      "reason": "STOP",
+      "pnl": 412.08487664670497,
+      "r": 1.0302121916167624,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1657215000000,
+          "price": 289.68,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1657215000000,
+          "price": 282.8,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1657293300000,
+          "price": 296.57,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1657293300000,
+          "price": 289.68,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1657546200000,
+          "price": 289.68,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1685122200000,
+      "trigger_4h_open_ms": 1685122200000,
+      "exit_t": 1685712600000,
+      "entry": 177.27,
+      "stop": 181.04,
+      "target": 172.16,
+      "tp1": 174.47,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 106.10079575596868,
+      "reason": "BE",
+      "pnl": 66.60795755968239,
+      "r": 0.16651989389920596,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1685540700000,
+          "price": 174.47,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1685540700000,
+          "price": 177.27,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1685712600000,
+          "price": 177.27,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1701873000000,
+      "trigger_4h_open_ms": 1701873000000,
+      "exit_t": 1704205800000,
+      "entry": 387.47,
+      "stop": 381.90000000000003,
+      "target": 394.14,
+      "tp1": 391.63,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 71.81328545780978,
+      "reason": "STOP",
+      "pnl": 719.119928186713,
+      "r": 1.7977998204667824,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1702047600000,
+          "price": 391.63,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1702047600000,
+          "price": 387.47,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1702309500000,
+          "price": 394.14,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1702309500000,
+          "price": 391.63,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1702477800000,
+          "price": 393.53000000000003
+        },
+        {
+          "type": "TRAIL",
+          "t": 1702664100000,
+          "price": 399.40000000000003
+        },
+        {
+          "type": "TRAIL",
+          "t": 1702923300000,
+          "price": 402.64
+        },
+        {
+          "type": "TRAIL",
+          "t": 1703614500000,
+          "price": 405.56
+        },
+        {
+          "type": "STOP",
+          "t": 1704205800000,
+          "price": 405.56,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1707503400000,
+      "trigger_4h_open_ms": 1707503400000,
+      "exit_t": 1707834600000,
+      "entry": 193.93,
+      "stop": 189.42000000000002,
+      "target": 199.41,
+      "tp1": 196.96,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 88.69179600886936,
+      "reason": "STOP",
+      "pnl": 313.0842572062088,
+      "r": 0.782710643015522,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1707503400000,
+          "price": 196.96,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1707503400000,
+          "price": 193.93,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1707503400000,
+          "price": 199.41,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1707503400000,
+          "price": 196.96,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1707834600000,
+          "price": 196.96,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1710941400000,
+      "trigger_4h_open_ms": 1710941400000,
+      "exit_t": 1711045800000,
+      "entry": 439.19,
+      "stop": 431.73,
+      "target": 448.64,
+      "tp1": 446.3,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 53.61930294906181,
+      "reason": "STOP",
+      "pnl": 390.36379624665017,
+      "r": 0.9759094906166255,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1711027800000,
+          "price": 446.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1711027800000,
+          "price": 439.19,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1711027800000,
+          "price": 448.64,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1711027800000,
+          "price": 446.3,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1711045800000,
+          "price": 446.3,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1727964000000,
+      "trigger_4h_open_ms": 1727962200000,
+      "exit_t": 1729020600000,
+      "entry": 483.38,
+      "stop": 476.19,
+      "target": 493.7,
+      "tp1": 488.09000000000003,
+      "fib1618": 494.55,
+      "runner_mode": "pivot",
+      "size": 55.63282336578583,
+      "reason": "STOP",
+      "pnl": 339.85692350486926,
+      "r": 0.8496423087621732,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1728397800000,
+          "price": 488.09000000000003,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1728397800000,
+          "price": 483.38,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1728503100000,
+          "price": 493.7,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1728503100000,
+          "price": 488.09000000000003,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1728653400000,
+          "price": 488.17
+        },
+        {
+          "type": "TRAIL",
+          "t": 1728912600000,
+          "price": 488.84000000000003
+        },
+        {
+          "type": "STOP",
+          "t": 1729020600000,
+          "price": 488.84000000000003,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1733754600000,
+      "trigger_4h_open_ms": 1733754600000,
+      "exit_t": 1733841000000,
+      "entry": 239.45000000000002,
+      "stop": 237.21,
+      "target": 243.69,
+      "tp1": 241.67000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 178.57142857142784,
+      "reason": "STOP",
+      "pnl": -451.0707142857141,
+      "r": -1.127676785714285,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1733841000000,
+          "price": 237.21,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "QQQ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1735065000000,
+      "trigger_4h_open_ms": 1735065000000,
+      "exit_t": 1735839000000,
+      "entry": 522.6,
+      "stop": 507.83,
+      "target": 539.15,
+      "tp1": 533.16,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 27.081922816519903,
+      "reason": "STOP",
+      "pnl": -416.74361543669596,
+      "r": -1.04185903859174,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1735839000000,
+          "price": 507.83,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1750267800000,
+      "trigger_4h_open_ms": 1750267800000,
+      "exit_t": 1750771800000,
+      "entry": 212.21,
+      "stop": 216.42000000000002,
+      "target": 205.55,
+      "tp1": 208.05,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 95.01187648456039,
+      "reason": "BE",
+      "pnl": 94.45100237529662,
+      "r": 0.23612750593824156,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1750685400000,
+          "price": 208.05,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1750685400000,
+          "price": 212.21,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1750771800000,
+          "price": 212.21,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SPY",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1757352600000,
+      "trigger_4h_open_ms": 1757352600000,
+      "exit_t": 1758126600000,
+      "entry": 640.6800000000001,
+      "stop": 634.01,
+      "target": 649.48,
+      "tp1": 646.26,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 59.970014992503096,
+      "reason": "STOP",
+      "pnl": 634.864575712135,
+      "r": 1.5871614392803375,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1757352600000,
+          "price": 646.26,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1757352600000,
+          "price": 640.6800000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1757424600000,
+          "price": 649.48,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1757424600000,
+          "price": 646.26,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1757610900000,
+          "price": 649.63
+        },
+        {
+          "type": "TRAIL",
+          "t": 1757956500000,
+          "price": 655.96
+        },
+        {
+          "type": "TRAIL",
+          "t": 1758115800000,
+          "price": 658.3000000000001
+        },
+        {
+          "type": "STOP",
+          "t": 1758126600000,
+          "price": 658.3000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1761931800000,
+      "trigger_4h_open_ms": 1761931800000,
+      "exit_t": 1762451100000,
+      "entry": 247.97,
+      "stop": 252.93,
+      "target": 240.77,
+      "tp1": 241.52,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 80.64516129032245,
+      "reason": "STOP",
+      "pnl": 514.6323387096757,
+      "r": 1.286580846774189,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1762266600000,
+          "price": 241.52,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1762266600000,
+          "price": 247.97,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1762445700000,
+          "price": 240.77,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1762445700000,
+          "price": 241.52,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1762451100000,
+          "price": 241.52,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1766413800000,
+      "trigger_4h_open_ms": 1766413800000,
+      "exit_t": 1767213900000,
+      "entry": 251.46,
+      "stop": 246.04,
+      "target": 258.2,
+      "tp1": 255.51000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 73.80073800737986,
+      "reason": "STOP",
+      "pnl": -422.029520295203,
+      "r": -1.0550738007380074,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1767213900000,
+          "price": 246.04,
+          "fraction": 1.0
+        }
+      ]
+    }
+  ]
+}
