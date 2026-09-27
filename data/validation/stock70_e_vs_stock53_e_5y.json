@@ -1,0 +1,6231 @@
+{
+  "generated_at": "2026-09-27T23:54:47.795432+00:00",
+  "period": {
+    "start": "2021-04-01T00:00:00+00:00",
+    "end_exclusive": "2026-04-01T00:00:00+00:00"
+  },
+  "symbols": {
+    "E53": [
+      "AAPL",
+      "AMZN",
+      "AVGO",
+      "CRCL",
+      "MSFT",
+      "MU",
+      "SNDK",
+      "SNXX",
+      "SOXL",
+      "SPCX",
+      "AMD",
+      "BABA",
+      "INTC",
+      "JPM",
+      "KORU",
+      "MSTR",
+      "NFLX",
+      "SKHY",
+      "SOXS",
+      "V",
+      "COST",
+      "GOOGL",
+      "LLY",
+      "META",
+      "NBIS",
+      "NVDA",
+      "QQQ",
+      "TSLA",
+      "UBER",
+      "WMT",
+      "AMAT",
+      "CAT",
+      "DRAM",
+      "EWY",
+      "HD",
+      "MRVL",
+      "MUU",
+      "ORCL",
+      "SPY",
+      "TSM",
+      "AAOI",
+      "BE",
+      "COIN",
+      "CRM",
+      "CSCO",
+      "DIS",
+      "HOOD",
+      "IBM",
+      "LITE",
+      "TQQQ",
+      "DELL",
+      "SMCI",
+      "AXTI"
+    ],
+    "E70": [
+      "AAPL",
+      "AMZN",
+      "AVGO",
+      "CRCL",
+      "MSFT",
+      "MU",
+      "SNDK",
+      "SNXX",
+      "SOXL",
+      "SPCX",
+      "AMD",
+      "BABA",
+      "INTC",
+      "JPM",
+      "KORU",
+      "MSTR",
+      "NFLX",
+      "SKHY",
+      "SOXS",
+      "V",
+      "COST",
+      "GOOGL",
+      "LLY",
+      "META",
+      "NBIS",
+      "NVDA",
+      "QQQ",
+      "TSLA",
+      "UBER",
+      "WMT",
+      "AMAT",
+      "CAT",
+      "DRAM",
+      "EWY",
+      "HD",
+      "MRVL",
+      "MUU",
+      "ORCL",
+      "SPY",
+      "TSM",
+      "AAOI",
+      "BE",
+      "COIN",
+      "CRM",
+      "CSCO",
+      "DIS",
+      "HOOD",
+      "IBM",
+      "LITE",
+      "TQQQ",
+      "ARM",
+      "AXTI",
+      "BMNR",
+      "CBRS",
+      "COHR",
+      "CRDO",
+      "CRWD",
+      "CRWV",
+      "DELL",
+      "EWJ",
+      "GME",
+      "HPE",
+      "IREN",
+      "IWM",
+      "PLTR",
+      "QCOM",
+      "RKLB",
+      "SMCI",
+      "WDC",
+      "ZM"
+    ]
+  },
+  "definitions": {
+    "E": "LONG + SPY bull >=2/3 + stock 20d return >= SPY 20d return + breadth >=50%"
+  },
+  "results": {
+    "E53": {
+      "base": {
+        "trades": 197,
+        "wins": 117,
+        "losses": 80,
+        "win_rate": 0.5939086294416244,
+        "net_r": 38.0049261223858,
+        "avg_r": 0.19291840671261826,
+        "profit_factor": 1.4564706017737084,
+        "max_drawdown_r": 8.619665351227297,
+        "max_consecutive_losses": 8
+      },
+      "e": {
+        "trades": 82,
+        "wins": 49,
+        "losses": 33,
+        "win_rate": 0.5975609756097561,
+        "net_r": 21.54672427136209,
+        "avg_r": 0.2627649301385621,
+        "profit_factor": 1.6310094446820909,
+        "max_drawdown_r": 7.297816136051253,
+        "max_consecutive_losses": 6
+      }
+    },
+    "E70": {
+      "base": {
+        "trades": 251,
+        "wins": 143,
+        "losses": 108,
+        "win_rate": 0.5697211155378487,
+        "net_r": 24.17999061747331,
+        "avg_r": 0.09633462397399725,
+        "profit_factor": 1.2153347726625519,
+        "max_drawdown_r": 16.26711430319191,
+        "max_consecutive_losses": 9
+      },
+      "e": {
+        "trades": 102,
+        "wins": 56,
+        "losses": 46,
+        "win_rate": 0.5490196078431373,
+        "net_r": 7.987672746513599,
+        "avg_r": 0.07831051712268235,
+        "profit_factor": 1.1681881333829305,
+        "max_drawdown_r": 10.010709163862707,
+        "max_consecutive_losses": 5
+      }
+    },
+    "E70_extra17_contribution": {
+      "trades": 22,
+      "wins": 9,
+      "losses": 13,
+      "win_rate": 0.4090909090909091,
+      "net_r": -9.79914336521929,
+      "avg_r": -0.4454156075099677,
+      "profit_factor": 0.26576452546989227,
+      "max_drawdown_r": 9.977358496735105,
+      "max_consecutive_losses": 4
+    },
+    "E70_extra17_by_symbol": {
+      "ARM": {
+        "trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0202476758045294,
+        "avg_r": -1.0202476758045294,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 1.0202476758045294,
+        "max_consecutive_losses": 1
+      },
+      "COHR": {
+        "trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.8059731969309459,
+        "avg_r": -0.40298659846547297,
+        "profit_factor": 0.21223800679433782,
+        "max_drawdown_r": 1.0231176470588235,
+        "max_consecutive_losses": 1
+      },
+      "CRDO": {
+        "trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0181051546391753,
+        "avg_r": -1.0181051546391753,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 1.0181051546391753,
+        "max_consecutive_losses": 1
+      },
+      "CRWD": {
+        "trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.1627765916057409,
+        "avg_r": 0.5813882958028704,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_consecutive_losses": 0
+      },
+      "IREN": {
+        "trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0065193277310924,
+        "avg_r": -1.0065193277310924,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 1.0065193277310924,
+        "max_consecutive_losses": 1
+      },
+      "IWM": {
+        "trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0550738007380074,
+        "avg_r": -1.0550738007380074,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 1.0550738007380074,
+        "max_consecutive_losses": 1
+      },
+      "PLTR": {
+        "trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.8081453805700356,
+        "avg_r": -0.4040726902850178,
+        "profit_factor": 0.20891707759031125,
+        "max_drawdown_r": 1.0215684824902724,
+        "max_consecutive_losses": 1
+      },
+      "QCOM": {
+        "trades": 3,
+        "wins": 2,
+        "losses": 1,
+        "win_rate": 0.6666666666666666,
+        "net_r": -0.5796002329209262,
+        "avg_r": -0.19320007764030875,
+        "profit_factor": 0.4406793115180409,
+        "max_drawdown_r": 1.0362574545454548,
+        "max_consecutive_losses": 1
+      },
+      "RKLB": {
+        "trades": 3,
+        "wins": 1,
+        "losses": 2,
+        "win_rate": 0.3333333333333333,
+        "net_r": -0.9140480791282304,
+        "avg_r": -0.3046826930427435,
+        "profit_factor": 0.547896830683208,
+        "max_drawdown_r": 2.021768793413944,
+        "max_consecutive_losses": 2
+      },
+      "WDC": {
+        "trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0451096446700507,
+        "avg_r": -1.0451096446700507,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 1.0451096446700507,
+        "max_consecutive_losses": 1
+      },
+      "ZM": {
+        "trades": 5,
+        "wins": 2,
+        "losses": 3,
+        "win_rate": 0.4,
+        "net_r": -2.7090974636920384,
+        "avg_r": -0.5418194927384077,
+        "profit_factor": 0.12561302205125277,
+        "max_drawdown_r": 2.916724397559774,
+        "max_consecutive_losses": 2
+      }
+    }
+  },
+  "audits": {
+    "E53": [
+      {
+        "symbol": "CAT",
+        "entry_t": 1619098200000,
+        "r": 0.20414969543147105,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "NVDA",
+        "entry_t": 1619449200000,
+        "r": -1.0280145242718448,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.2183403499670784,
+          "spy_ret20": 0.06947260361863217,
+          "breadth": 0.6363636363636364,
+          "above": 28,
+          "eligible": 44
+        }
+      },
+      {
+        "symbol": "BABA",
+        "entry_t": 1619712000000,
+        "r": -1.0340336633663367,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.032584514721919255,
+          "spy_ret20": 0.0571710826282994,
+          "breadth": 0.6363636363636364,
+          "above": 28,
+          "eligible": 44
+        }
+      },
+      {
+        "symbol": "CAT",
+        "entry_t": 1621517400000,
+        "r": 1.0627180194805195,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.0187981244891815,
+          "spy_ret20": -0.012497296258021096,
+          "breadth": 0.3181818181818182,
+          "above": 14,
+          "eligible": 44
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1622729700000,
+        "r": -1.102899999999999,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.003977837761045544,
+          "spy_ret20": 0.011307590520871047,
+          "breadth": 0.6590909090909091,
+          "above": 29,
+          "eligible": 44
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1623783600000,
+        "r": 0.8493395238095247,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "V",
+        "entry_t": 1623956400000,
+        "r": 0.14223245614035235,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1624283100000,
+        "r": 0.8714463414634137,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.12505705157462343,
+          "spy_ret20": -0.0006020469596628164,
+          "breadth": 0.5,
+          "above": 22,
+          "eligible": 44
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1624640400000,
+        "r": 0.8452039491916805,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.020079013632022136,
+          "spy_ret20": 0.014437762504772689,
+          "breadth": 0.7111111111111111,
+          "above": 32,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1625163300000,
+        "r": 0.852856076555022,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "MSTR",
+        "entry_t": 1625837400000,
+        "r": -1.0199403451109286,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.20616547799992224,
+          "spy_ret20": 0.022128931265120277,
+          "breadth": 0.5777777777777777,
+          "above": 26,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "entry_t": 1625851800000,
+        "r": 1.1351422268362281,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0908134642356242,
+          "spy_ret20": 0.022128931265120277,
+          "breadth": 0.5777777777777777,
+          "above": 26,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1626787800000,
+        "r": 1.1583879358717417,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05389241342849593,
+          "spy_ret20": 0.02400000000000002,
+          "breadth": 0.4444444444444444,
+          "above": 20,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "MRVL",
+        "entry_t": 1628794800000,
+        "r": -1.041745882352941,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0673094090341011,
+          "spy_ret20": 0.01726232777790515,
+          "breadth": 0.5777777777777777,
+          "above": 26,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "ORCL",
+        "entry_t": 1629468900000,
+        "r": 0.17282731343283433,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.02194046306504971,
+          "spy_ret20": 0.009988748306505313,
+          "breadth": 0.4222222222222222,
+          "above": 19,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1630004400000,
+        "r": 0.19089033333333333,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.03508374830239924,
+          "spy_ret20": 0.022995054581918417,
+          "breadth": 0.5777777777777777,
+          "above": 26,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1631194200000,
+        "r": 0.3218550000000013,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.025632517627540485,
+          "spy_ret20": 0.01872769168210353,
+          "breadth": 0.6222222222222222,
+          "above": 28,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1632835800000,
+        "r": -1.0531569321533922,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.022739385325990513,
+          "spy_ret20": -0.016660002665600415,
+          "breadth": 0.5333333333333333,
+          "above": 24,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "V",
+        "entry_t": 1633440600000,
+        "r": 0.20647950266429865,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.0019096682506549723,
+          "spy_ret20": -0.05378978501743703,
+          "breadth": 0.2222222222222222,
+          "above": 10,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "CRM",
+        "entry_t": 1633531500000,
+        "r": 1.7481246964490373,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.024657844135278717,
+          "spy_ret20": -0.04090627214741316,
+          "breadth": 0.28888888888888886,
+          "above": 13,
+          "eligible": 45
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1634049900000,
+        "r": 0.8489155917345036,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.01364729458917835,
+          "spy_ret20": -0.026648154783231792,
+          "breadth": 0.43478260869565216,
+          "above": 20,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1635514200000,
+        "r": -1.0454166666666669,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05875000000000008,
+          "spy_ret20": 0.06780687855345313,
+          "breadth": 0.6739130434782609,
+          "above": 31,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1636641000000,
+        "r": 0.2456999999999997,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.3320898548374016,
+          "spy_ret20": 0.06552064900144772,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "CSCO",
+        "entry_t": 1636986600000,
+        "r": 0.16673347826086993,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02860246198406946,
+          "spy_ret20": 0.048067649103918475,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1637159400000,
+        "r": -1.025580198019802,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.24858115777525525,
+          "spy_ret20": 0.041182213543977886,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "ORCL",
+        "entry_t": 1637245800000,
+        "r": 0.8637587730061407,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.013554061045007781,
+          "spy_ret20": 0.03472590627763039,
+          "breadth": 0.6739130434782609,
+          "above": 31,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "MU",
+        "entry_t": 1638541800000,
+        "r": -1.0356079422382671,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.1632280701754385,
+          "spy_ret20": -0.015879846796058028,
+          "breadth": 0.391304347826087,
+          "above": 18,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1638545400000,
+        "r": 3.3967695487246656,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.01901722802228223,
+          "spy_ret20": -0.015879846796058028,
+          "breadth": 0.391304347826087,
+          "above": 18,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1639410300000,
+        "r": 0.8571392857142877,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.08388520971302427,
+          "spy_ret20": 0.014876781440676057,
+          "breadth": 0.5434782608695652,
+          "above": 25,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMD",
+        "entry_t": 1639751400000,
+        "r": 0.17667457342657408,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.08391700806131897,
+          "spy_ret20": -0.0024994125312426396,
+          "breadth": 0.45652173913043476,
+          "above": 21,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "entry_t": 1640115900000,
+        "r": 1.0177182491582495,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.058046836073741837,
+          "spy_ret20": -0.029727885353578398,
+          "breadth": 0.2608695652173913,
+          "above": 12,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1641479400000,
+        "r": -1.0679874999999999,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "MU",
+        "entry_t": 1641925800000,
+        "r": 0.19206000000000045,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.09773205517886363,
+          "spy_ret20": -0.010983408043168774,
+          "breadth": 0.391304347826087,
+          "above": 18,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1641925800000,
+        "r": 0.20119721518987402,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.030571761960326516,
+          "spy_ret20": -0.010983408043168774,
+          "breadth": 0.391304347826087,
+          "above": 18,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "entry_t": 1642098600000,
+        "r": -1.013238009344779,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.15496102757807528,
+          "spy_ret20": 0.01657351259198525,
+          "breadth": 0.5217391304347826,
+          "above": 24,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1643906700000,
+        "r": 0.9651399303135861,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": -0.16317803286067967,
+          "spy_ret20": -0.042323720969194345,
+          "breadth": 0.21739130434782608,
+          "above": 10,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1645042500000,
+        "r": 2.842694843750017,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "MSTR",
+        "entry_t": 1647009000000,
+        "r": -1.011787341772152,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.05501828707339518,
+          "spy_ret20": -0.06998907103825136,
+          "breadth": 0.17391304347826086,
+          "above": 8,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1647455400000,
+        "r": 1.2036447422680399,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.21004566210045672,
+          "spy_ret20": -0.02942650207260966,
+          "breadth": 0.17391304347826086,
+          "above": 8,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1648474200000,
+        "r": 3.0158414574898758,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.051767121278779804,
+          "spy_ret20": 0.03422591847925438,
+          "breadth": 0.5434782608695652,
+          "above": 25,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "MSTR",
+        "entry_t": 1649957400000,
+        "r": -1.0158664652567975,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.08056054282183411,
+          "spy_ret20": 0.017791143454007008,
+          "breadth": 0.1956521739130435,
+          "above": 9,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "IBM",
+        "entry_t": 1651673700000,
+        "r": 0.22949044247787662,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.017193736567393314,
+          "spy_ret20": -0.08835763387188567,
+          "breadth": 0.10869565217391304,
+          "above": 5,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1651848300000,
+        "r": -1.0515303116147308,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.01361465995612332,
+          "spy_ret20": -0.07311283785296818,
+          "breadth": 0.13043478260869565,
+          "above": 6,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SPCX",
+        "entry_t": 1658259900000,
+        "r": -1.2716999999999978,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.001100513573000672,
+          "spy_ret20": 0.04104325075627502,
+          "breadth": 0.17391304347826086,
+          "above": 8,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1658949300000,
+        "r": -1.0147061224489795,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1659118500000,
+        "r": 1.4547118808510624,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.25085427135678384,
+          "spy_ret20": 0.06743611315595754,
+          "breadth": 0.6304347826086957,
+          "above": 29,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "CSCO",
+        "entry_t": 1659965400000,
+        "r": 1.4089534285714183,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.037105323807328894,
+          "spy_ret20": 0.06367706082124114,
+          "breadth": 0.6521739130434783,
+          "above": 30,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "DIS",
+        "entry_t": 1663080300000,
+        "r": -1.0330902255639096,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.04236939531057171,
+          "spy_ret20": -0.0377230365756569,
+          "breadth": 0.4782608695652174,
+          "above": 22,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1663595100000,
+        "r": 1.421880306345737,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "SOXS",
+        "entry_t": 1666359000000,
+        "r": -1.00857476340694,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.176635822868473,
+          "spy_ret20": -0.02351495069876819,
+          "breadth": 0.21739130434782608,
+          "above": 10,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1667917800000,
+        "r": -1.033273488372093,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1668609000000,
+        "r": 0.8992931771192315,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04534869835204214,
+          "spy_ret20": 0.07382658834941003,
+          "breadth": 0.717391304347826,
+          "above": 33,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1669127400000,
+        "r": 0.1629543999999994,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10261569416499006,
+          "spy_ret20": 0.04154788301129764,
+          "breadth": 0.5869565217391305,
+          "above": 27,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1670423400000,
+        "r": 1.0403179443772617,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09385547978232411,
+          "spy_ret20": 0.03695320313733763,
+          "breadth": 0.4782608695652174,
+          "above": 22,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1670437800000,
+        "r": 0.20722449760765596,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.11698406529343175,
+          "spy_ret20": 0.03695320313733763,
+          "breadth": 0.4782608695652174,
+          "above": 22,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1670610600000,
+        "r": 0.18210908108108032,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.024207848276925237,
+          "spy_ret20": 0.05896031003608182,
+          "breadth": 0.5434782608695652,
+          "above": 25,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMD",
+        "entry_t": 1671044400000,
+        "r": -1.0221678284182305,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.02530956592733702,
+          "spy_ret20": 0.017131433777012983,
+          "breadth": 0.5869565217391305,
+          "above": 27,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1671825600000,
+        "r": 1.0604303954802319,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": -0.042277256740914315,
+          "spy_ret20": -0.053753820920003026,
+          "breadth": 0.2608695652173913,
+          "above": 12,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1674064800000,
+        "r": -1.0368031746031745,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.007131559230790563,
+          "spy_ret20": 0.02081355062235346,
+          "breadth": 0.8260869565217391,
+          "above": 38,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1674244800000,
+        "r": -1.0422438316400582,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "AAOI",
+        "entry_t": 1674746100000,
+        "r": 1.6476835294117655,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.13846153846153864,
+          "spy_ret20": 0.045599373204492144,
+          "breadth": 0.782608695652174,
+          "above": 36,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "CRM",
+        "entry_t": 1676314800000,
+        "r": -1.0308131699846859,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.11681711802072892,
+          "spy_ret20": 0.027938731294402164,
+          "breadth": 0.8043478260869565,
+          "above": 37,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1676385900000,
+        "r": -1.0302175824175825,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.060112768279374285,
+          "spy_ret20": 0.03601274876402227,
+          "breadth": 0.8913043478260869,
+          "above": 41,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "MRVL",
+        "entry_t": 1676385900000,
+        "r": -1.019455272727273,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12223315297589776,
+          "spy_ret20": 0.03601274876402227,
+          "breadth": 0.8913043478260869,
+          "above": 41,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "LITE",
+        "entry_t": 1676493000000,
+        "r": -1.0215851851851852,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.019584263872186813,
+          "spy_ret20": 0.03748491552695099,
+          "breadth": 0.8478260869565217,
+          "above": 39,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "MU",
+        "entry_t": 1676578500000,
+        "r": -1.0387456521739131,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0946735091134312,
+          "spy_ret20": 0.05733769218981455,
+          "breadth": 0.8695652173913043,
+          "above": 40,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1676644200000,
+        "r": -1.0162578313253012,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.030864197530864113,
+          "spy_ret20": 0.050555727076257995,
+          "breadth": 0.8043478260869565,
+          "above": 37,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1677767400000,
+        "r": 1.4454267403314827,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.014677237467108695,
+          "spy_ret20": -0.02871201869848694,
+          "breadth": 0.45652173913043476,
+          "above": 21,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1677768300000,
+        "r": 0.8350297734627858,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.018431204457779682,
+          "spy_ret20": -0.02871201869848694,
+          "breadth": 0.45652173913043476,
+          "above": 21,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1678800600000,
+        "r": 0.9364364737550435,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.04541087231352736,
+          "spy_ret20": -0.04815822366002498,
+          "breadth": 0.30434782608695654,
+          "above": 14,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1680184800000,
+        "r": -1.0661671476137624,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1681135200000,
+        "r": 0.9621944802207923,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.01380921587851236,
+          "spy_ret20": 0.04497050486478216,
+          "breadth": 0.6086956521739131,
+          "above": 28,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "BABA",
+        "entry_t": 1681738200000,
+        "r": -1.031938202247191,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.1354792217151093,
+          "spy_ret20": 0.04156250789081639,
+          "breadth": 0.6956521739130435,
+          "above": 32,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "NFLX",
+        "entry_t": 1681824600000,
+        "r": -1.0520484210526317,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09637561779242176,
+          "spy_ret20": 0.06108533490553936,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1683034200000,
+        "r": -1.0384840944881888,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.0054867973937712256,
+          "spy_ret20": 0.01507230799296444,
+          "breadth": 0.5652173913043478,
+          "above": 26,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1683123300000,
+        "r": 0.7715565898617567,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.016613977265083735,
+          "spy_ret20": -0.00014601026938898531,
+          "breadth": 0.5,
+          "above": 23,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1683141300000,
+        "r": 2.9883515697674454,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.012501220822345838,
+          "spy_ret20": -0.00014601026938898531,
+          "breadth": 0.5,
+          "above": 23,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1685986200000,
+        "r": 2.6642298203592794,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.070183382386235,
+          "spy_ret20": 0.05612458967840661,
+          "breadth": 0.8695652173913043,
+          "above": 40,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "HOOD",
+        "entry_t": 1687529700000,
+        "r": 1.317915652173911,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.08928571428571441,
+          "spy_ret20": 0.05421526721244185,
+          "breadth": 0.8695652173913043,
+          "above": 40,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1690205400000,
+        "r": 0.16084567164179134,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.08317929759704246,
+          "spy_ret20": 0.03585009392037386,
+          "breadth": 0.8478260869565217,
+          "above": 39,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1690299000000,
+        "r": -1.0287282392026578,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1690396200000,
+        "r": 1.0264330526315775,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.18531943815133656,
+          "spy_ret20": 0.05558259740861793,
+          "breadth": 0.9130434782608695,
+          "above": 42,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1690983000000,
+        "r": -1.0159921397379912,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.17031055900621106,
+          "spy_ret20": 0.02809747967296561,
+          "breadth": 0.8695652173913043,
+          "above": 40,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1691071200000,
+        "r": -1.0292736842105261,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07556675062972285,
+          "spy_ret20": 0.01579636232341919,
+          "breadth": 0.782608695652174,
+          "above": 36,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AAOI",
+        "entry_t": 1691087400000,
+        "r": 2.916676460176989,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05278174037089878,
+          "spy_ret20": 0.01579636232341919,
+          "breadth": 0.782608695652174,
+          "above": 36,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "INTC",
+        "entry_t": 1692023400000,
+        "r": -1.0280857142857145,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.052790346907994,
+          "spy_ret20": -0.008235398860398813,
+          "breadth": 0.45652173913043476,
+          "above": 21,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1692970200000,
+        "r": 0.7979138144329896,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.0027045823352136455,
+          "spy_ret20": -0.03438826025459685,
+          "breadth": 0.391304347826087,
+          "above": 18,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1694179800000,
+        "r": 2.0930625252525257,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1695735000000,
+        "r": -1.108506341463415,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.04631086142322105,
+          "spy_ret20": -0.017570178429366923,
+          "breadth": 0.21739130434782608,
+          "above": 10,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1695821400000,
+        "r": -1.0383508620689654,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.03031451307313371,
+          "spy_ret20": -0.038150524033249145,
+          "breadth": 0.15217391304347827,
+          "above": 7,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SOXS",
+        "entry_t": 1696269600000,
+        "r": -1.017103896103896,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.21420824295010843,
+          "spy_ret20": -0.05083503597761385,
+          "breadth": 0.2608695652173913,
+          "above": 12,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1696948200000,
+        "r": 0.8398059170013457,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1697808600000,
+        "r": -1.0366745691906005,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.07294506852801108,
+          "spy_ret20": -0.011543543265107425,
+          "breadth": 0.2826086956521739,
+          "above": 13,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1698172200000,
+        "r": -1.0248545805207327,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.0339109059296121,
+          "spy_ret20": -0.02723150247559125,
+          "breadth": 0.2608695652173913,
+          "above": 12,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1701446400000,
+        "r": -1.024566972477064,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.4257983719474012,
+          "spy_ret20": 0.07951265673054175,
+          "breadth": 0.8043478260869565,
+          "above": 37,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1701786600000,
+        "r": 0.14772616438356334,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04576295654684581,
+          "spy_ret20": 0.050590102836634676,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1701873000000,
+        "r": -1.0489166666666667,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.041625089094796675,
+          "spy_ret20": 0.04804315390795355,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1701873000000,
+        "r": 2.6473609022556333,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.198577680525164,
+          "spy_ret20": 0.04804315390795355,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "QQQ",
+        "entry_t": 1701874800000,
+        "r": 1.7977998204667824,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0489545528411246,
+          "spy_ret20": 0.04804315390795355,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1701874800000,
+        "r": 1.8401316402116408,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.13844333420983435,
+          "spy_ret20": 0.04804315390795355,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1702305000000,
+        "r": 1.9412694638694683,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03808721691933381,
+          "spy_ret20": 0.06052504206329079,
+          "breadth": 0.8695652173913043,
+          "above": 40,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "entry_t": 1702319400000,
+        "r": 1.0625774985851713,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.011820330969267268,
+          "spy_ret20": 0.06052504206329079,
+          "breadth": 0.8695652173913043,
+          "above": 40,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1704825000000,
+        "r": 0.200492121212122,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10178289325208745,
+          "spy_ret20": 0.03568232906309343,
+          "breadth": 0.8260869565217391,
+          "above": 38,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "NFLX",
+        "entry_t": 1704903300000,
+        "r": 1.4773267930250187,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06252203808180545,
+          "spy_ret20": 0.029795927237954434,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1707935400000,
+        "r": 0.8847459817351627,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10120796604635984,
+          "spy_ret20": 0.040404253079271424,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "KORU",
+        "entry_t": 1709217000000,
+        "r": 0.7990199999999997,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.20256776034236812,
+          "spy_ret20": 0.03123090086786462,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "entry_t": 1709922600000,
+        "r": 1.7234042645074175,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.012220451142346489,
+          "spy_ret20": 0.03377170966770393,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1710768600000,
+        "r": 0.821631344430214,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03434142018389297,
+          "spy_ret20": 0.015519474051200355,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "QQQ",
+        "entry_t": 1710941400000,
+        "r": 0.9759094906166255,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.026326258395151347,
+          "spy_ret20": 0.03828964850827399,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1710957600000,
+        "r": 0.29038514106583074,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06660128388017128,
+          "spy_ret20": 0.03828964850827399,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "TSM",
+        "entry_t": 1711546200000,
+        "r": 1.0688119465648824,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07915403156830703,
+          "spy_ret20": 0.023260402075482745,
+          "breadth": 0.782608695652174,
+          "above": 36,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1712167200000,
+        "r": -1.0124133333333334,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10421545667447307,
+          "spy_ret20": 0.012903855539287523,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1712239200000,
+        "r": -1.0139727403156384,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.1605388199474096,
+          "spy_ret20": 0.02407571724341917,
+          "breadth": 0.717391304347826,
+          "above": 33,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "IBM",
+        "entry_t": 1712254500000,
+        "r": 0.17048059701492702,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.005417795374036416,
+          "spy_ret20": 0.02407571724341917,
+          "breadth": 0.717391304347826,
+          "above": 33,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "EWY",
+        "entry_t": 1712256300000,
+        "r": -1.0748301886792462,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.033587311460115066,
+          "spy_ret20": 0.02407571724341917,
+          "breadth": 0.717391304347826,
+          "above": 33,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "KORU",
+        "entry_t": 1712256300000,
+        "r": -1.025074418604651,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.08284023668639073,
+          "spy_ret20": 0.02407571724341917,
+          "breadth": 0.717391304347826,
+          "above": 33,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1712842200000,
+        "r": -1.0232344827586206,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.10970873786407753,
+          "spy_ret20": -0.005127609759873031,
+          "breadth": 0.6521739130434783,
+          "above": 30,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1712854800000,
+        "r": -1.0162567823343849,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.1336219917430268,
+          "spy_ret20": -0.005127609759873031,
+          "breadth": 0.6521739130434783,
+          "above": 30,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1713792600000,
+        "r": 0.1389592380952363,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.043831718718243984,
+          "spy_ret20": -0.05173239355691328,
+          "breadth": 0.15217391304347827,
+          "above": 7,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1714053600000,
+        "r": 2.412066544671701,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": -0.009534231584706787,
+          "spy_ret20": -0.02543091813519438,
+          "breadth": 0.30434782608695654,
+          "above": 14,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1715002200000,
+        "r": 1.9407928802589192,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.0350957155879672,
+          "spy_ret20": -0.013715277777777701,
+          "breadth": 0.5434782608695652,
+          "above": 25,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1715866200000,
+        "r": -1.052120754716981,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02670639518843454,
+          "spy_ret20": 0.05846153846153834,
+          "breadth": 0.8043478260869565,
+          "above": 37,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "CSCO",
+        "entry_t": 1717681500000,
+        "r": -1.0663686746987953,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.026655383964459545,
+          "spy_ret20": 0.03373936581593173,
+          "breadth": 0.6304347826086957,
+          "above": 29,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1717696800000,
+        "r": 0.20237999999999995,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.08181818181818179,
+          "spy_ret20": 0.03373936581593173,
+          "breadth": 0.6304347826086957,
+          "above": 29,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "entry_t": 1717783200000,
+        "r": -1.0444820512820516,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.018079871838883044,
+          "spy_ret20": 0.03372068292117003,
+          "breadth": 0.7391304347826086,
+          "above": 34,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SPCX",
+        "entry_t": 1718393400000,
+        "r": 0.7865241666666505,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.005584192439862523,
+          "spy_ret20": 0.02385986106916338,
+          "breadth": 0.6739130434782609,
+          "above": 31,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1719322200000,
+        "r": 0.9974143894389493,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07112036579868186,
+          "spy_ret20": 0.03175206768704242,
+          "breadth": 0.6956521739130435,
+          "above": 32,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMD",
+        "entry_t": 1719927000000,
+        "r": 1.910997357142863,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.05727267292401517,
+          "spy_ret20": 0.0341708542713568,
+          "breadth": 0.6521739130434783,
+          "above": 30,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1720805400000,
+        "r": -1.0626032258064515,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04159769317028883,
+          "spy_ret20": 0.0363375612300012,
+          "breadth": 0.7608695652173914,
+          "above": 35,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1722533400000,
+        "r": -1.0289361073825503,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.06514348565143491,
+          "spy_ret20": 0.0026777419531123225,
+          "breadth": 0.43478260869565216,
+          "above": 20,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1722951000000,
+        "r": 1.1058840143583604,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": -0.10088970324335556,
+          "spy_ret20": -0.06830050059423065,
+          "breadth": 0.08695652173913043,
+          "above": 4,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1722955500000,
+        "r": -1.0398781042654028,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.0306849637787856,
+          "spy_ret20": -0.06830050059423065,
+          "breadth": 0.08695652173913043,
+          "above": 4,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1725629400000,
+        "r": 1.0227237827352116,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09405940594059414,
+          "spy_ret20": 0.05961631157813563,
+          "breadth": 0.45652173913043476,
+          "above": 21,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1725633000000,
+        "r": 1.9205169858156084,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09295895797493237,
+          "spy_ret20": 0.05961631157813563,
+          "breadth": 0.45652173913043476,
+          "above": 21,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "NFLX",
+        "entry_t": 1726079400000,
+        "r": 0.9329182941777395,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06289367748046404,
+          "spy_ret20": 0.029198312236287105,
+          "breadth": 0.391304347826087,
+          "above": 18,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1726253100000,
+        "r": -1.0328256720024163,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.005718646873555722,
+          "spy_ret20": 0.02802603994262398,
+          "breadth": 0.5434782608695652,
+          "above": 25,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "QQQ",
+        "entry_t": 1727964000000,
+        "r": 0.8496423087621732,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04628544136164292,
+          "spy_ret20": 0.032695519570111076,
+          "breadth": 0.6304347826086957,
+          "above": 29,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1727964000000,
+        "r": 0.9205791746031707,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12748746157579682,
+          "spy_ret20": 0.032695519570111076,
+          "breadth": 0.6304347826086957,
+          "above": 29,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1728325800000,
+        "r": 1.944957921146961,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06696364420175316,
+          "spy_ret20": 0.06010029050940924,
+          "breadth": 0.6956521739130435,
+          "above": 32,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "INTC",
+        "entry_t": 1728405000000,
+        "r": 0.2330256410256407,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.1733892090099527,
+          "spy_ret20": 0.03914571208960149,
+          "breadth": 0.5652173913043478,
+          "above": 26,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1729618200000,
+        "r": -1.0545059382422803,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.01904643787317739,
+          "spy_ret20": 0.024701544943820153,
+          "breadth": 0.6956521739130435,
+          "above": 32,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "LITE",
+        "entry_t": 1729776600000,
+        "r": -1.025496052631579,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07761732851985559,
+          "spy_ret20": 0.01391228070175421,
+          "breadth": 0.6521739130434783,
+          "above": 30,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "entry_t": 1729863000000,
+        "r": -1.071012403100775,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.013405414908579383,
+          "spy_ret20": 0.012039350678851646,
+          "breadth": 0.6739130434782609,
+          "above": 31,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1732113900000,
+        "r": -1.0448989200863932,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07852991038992485,
+          "spy_ret20": 0.01194884454501799,
+          "breadth": 0.6521739130434783,
+          "above": 30,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SPCX",
+        "entry_t": 1734445800000,
+        "r": -1.0965172413793107,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0029711375212224667,
+          "spy_ret20": 0.03675289614872024,
+          "breadth": 0.6739130434782609,
+          "above": 31,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1734552900000,
+        "r": -1.0139576271186441,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12308247608734879,
+          "spy_ret20": 0.027374434658414604,
+          "breadth": 0.6521739130434783,
+          "above": 30,
+          "eligible": 46
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1735309800000,
+        "r": 0.1779784112903221,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05252416006698524,
+          "spy_ret20": 0.0008489529580184563,
+          "breadth": 0.5957446808510638,
+          "above": 28,
+          "eligible": 47
+        }
+      },
+      {
+        "symbol": "QQQ",
+        "entry_t": 1735309800000,
+        "r": -1.04185903859174,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03976045552719398,
+          "spy_ret20": 0.0008489529580184563,
+          "breadth": 0.5957446808510638,
+          "above": 28,
+          "eligible": 47
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1735309800000,
+        "r": -1.0136357541899441,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10509833395966428,
+          "spy_ret20": 0.0008489529580184563,
+          "breadth": 0.5957446808510638,
+          "above": 28,
+          "eligible": 47
+        }
+      },
+      {
+        "symbol": "CSCO",
+        "entry_t": 1736189100000,
+        "r": 0.13502250000000082,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "TSLA",
+        "entry_t": 1736260200000,
+        "r": -1.0108391304347826,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.11247936344691323,
+          "spy_ret20": -0.018479748108339855,
+          "breadth": 0.6666666666666666,
+          "above": 32,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1736865000000,
+        "r": 1.2014460511679639,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.23042481161952622,
+          "spy_ret20": -0.042732510288065906,
+          "breadth": 0.2916666666666667,
+          "above": 14,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1738179000000,
+        "r": 0.9178995478260858,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.0015847050403844376,
+          "spy_ret20": 0.005388773388773416,
+          "breadth": 0.5625,
+          "above": 27,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1738953000000,
+        "r": -1.0142235294117647,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.026726057906458767,
+          "spy_ret20": 0.029929338225302304,
+          "breadth": 0.6041666666666666,
+          "above": 29,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1739457000000,
+        "r": 0.9950924339360282,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03645713994755462,
+          "spy_ret20": 0.03636269946237469,
+          "breadth": 0.5416666666666666,
+          "above": 26,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1739975400000,
+        "r": 0.8958541231781888,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.18132988100484781,
+          "spy_ret20": 0.02306005990929938,
+          "breadth": 0.6666666666666666,
+          "above": 32,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1740149100000,
+        "r": -1.0454026981450253,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.059065249875477344,
+          "spy_ret20": 0.00667942078701711,
+          "breadth": 0.6666666666666666,
+          "above": 32,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1740682800000,
+        "r": -1.0255068181818183,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.11471797884841362,
+          "spy_ret20": -0.01664212807490617,
+          "breadth": 0.5,
+          "above": 24,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "IBM",
+        "entry_t": 1742573700000,
+        "r": 0.21411423690205006,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.08100759092110732,
+          "spy_ret20": -0.0732482511181376,
+          "breadth": 0.2708333333333333,
+          "above": 13,
+          "eligible": 48
+        }
+      },
+      {
+        "symbol": "MSTR",
+        "entry_t": 1743607800000,
+        "r": 1.4146349094781676,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1746624600000,
+        "r": 0.8975549591280695,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.2519234437591402,
+          "spy_ret20": 0.10752155385987505,
+          "breadth": 0.5510204081632653,
+          "above": 27,
+          "eligible": 49
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1748455200000,
+        "r": 1.2764708635097486,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.11567364465915198,
+          "spy_ret20": 0.07282099684176124,
+          "breadth": 0.8367346938775511,
+          "above": 41,
+          "eligible": 49
+        }
+      },
+      {
+        "symbol": "SNDK",
+        "entry_t": 1748461500000,
+        "r": 0.795937746478872,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.18314223737217228,
+          "spy_ret20": 0.07282099684176124,
+          "breadth": 0.8367346938775511,
+          "above": 41,
+          "eligible": 49
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1749150900000,
+        "r": 1.3528220418848043,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02952526799387445,
+          "spy_ret20": 0.06639226914817464,
+          "breadth": 0.8775510204081632,
+          "above": 43,
+          "eligible": 49
+        }
+      },
+      {
+        "symbol": "AAOI",
+        "entry_t": 1750253400000,
+        "r": 2.1920622549019586,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.11916010498687657,
+          "spy_ret20": 0.004386997008101412,
+          "breadth": 0.8163265306122449,
+          "above": 40,
+          "eligible": 49
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1750426200000,
+        "r": 0.9744472727272746,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12506541077969646,
+          "spy_ret20": 0.007809996120304197,
+          "breadth": 0.8367346938775511,
+          "above": 41,
+          "eligible": 49
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1750794300000,
+        "r": -1.0654606741573034,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02006880733944949,
+          "spy_ret20": 0.029329537073564005,
+          "breadth": 0.8163265306122449,
+          "above": 40,
+          "eligible": 49
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1753209000000,
+        "r": 2.606271152368756,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04467439576707166,
+          "spy_ret20": 0.05810881308584204,
+          "breadth": 0.7959183673469388,
+          "above": 39,
+          "eligible": 49
+        }
+      },
+      {
+        "symbol": "NFLX",
+        "entry_t": 1755696600000,
+        "r": 0.17592311913357256,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02019565327013284,
+          "spy_ret20": 0.017397388801424718,
+          "breadth": 0.72,
+          "above": 36,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "NBIS",
+        "entry_t": 1755871200000,
+        "r": 0.2174320543293714,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.2680214723926382,
+          "spy_ret20": 0.0018126507258484637,
+          "breadth": 0.58,
+          "above": 29,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1755874800000,
+        "r": 0.17553090163934368,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1756128600000,
+        "r": 0.19835910447761182,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1756906200000,
+        "r": -1.0447048387096778,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0492368569813455,
+          "spy_ret20": 0.014609643632445213,
+          "breadth": 0.64,
+          "above": 32,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "CRM",
+        "entry_t": 1758648600000,
+        "r": -1.032418181818182,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.00624672550679084,
+          "spy_ret20": 0.03330388829482245,
+          "breadth": 0.86,
+          "above": 43,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "entry_t": 1759152600000,
+        "r": -1.0810596078431376,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1759760100000,
+        "r": 0.8164913114754162,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1759843800000,
+        "r": -1.0715095145631062,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.055257858629987444,
+          "spy_ret20": 0.03512638717632566,
+          "breadth": 0.82,
+          "above": 41,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "CRM",
+        "entry_t": 1759862700000,
+        "r": 0.1754339660056658,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.0258798351299937,
+          "spy_ret20": 0.03512638717632566,
+          "breadth": 0.84,
+          "above": 42,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1760535000000,
+        "r": 3.4734313157894747,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.14107365792759063,
+          "spy_ret20": 0.003439758762293188,
+          "breadth": 0.8,
+          "above": 40,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1760622300000,
+        "r": -1.0348559032716926,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0875238408418284,
+          "spy_ret20": 0.008950514275311905,
+          "breadth": 0.78,
+          "above": 39,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "entry_t": 1760982300000,
+        "r": 1.605574869684501,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03809982437255699,
+          "spy_ret20": 0.00102465191971568,
+          "breadth": 0.72,
+          "above": 36,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1761226200000,
+        "r": 1.0519490963855456,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.13689710002271527,
+          "spy_ret20": 0.010211182379281203,
+          "breadth": 0.74,
+          "above": 37,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "TSM",
+        "entry_t": 1761574500000,
+        "r": 0.2127692544987138,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07920248765319182,
+          "spy_ret20": 0.023226293917642638,
+          "breadth": 0.82,
+          "above": 41,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1763496000000,
+        "r": 0.31470720288115217,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.0024109060623329626,
+          "spy_ret20": -0.008312601486733961,
+          "breadth": 0.42,
+          "above": 21,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "entry_t": 1765549800000,
+        "r": -1.062308474576271,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.016634372829305688,
+          "spy_ret20": 0.008509797608768688,
+          "breadth": 0.66,
+          "above": 33,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1766414700000,
+        "r": 0.21528743362831854,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.5410526315789475,
+          "spy_ret20": 0.04300185432087433,
+          "breadth": 0.5,
+          "above": 25,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1766500200000,
+        "r": 1.6691688524590216,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.15717794150480024,
+          "spy_ret20": 0.0390404515522107,
+          "breadth": 0.52,
+          "above": 26,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1767105000000,
+        "r": 0.20945916876573936,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.016767280643517513,
+          "spy_ret20": 0.006084717996723832,
+          "breadth": 0.56,
+          "above": 28,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "IBM",
+        "entry_t": 1767108600000,
+        "r": -1.042694285714286,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.009268261066822103,
+          "spy_ret20": 0.006084717996723832,
+          "breadth": 0.56,
+          "above": 28,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1768573800000,
+        "r": -1.044504,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04301606922126067,
+          "spy_ret20": 0.0196211295407005,
+          "breadth": 0.54,
+          "above": 27,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "AAOI",
+        "entry_t": 1769538600000,
+        "r": -1.0117500000000001,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1769714100000,
+        "r": 2.323965163934429,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03571745890715228,
+          "spy_ret20": 0.01102000465224462,
+          "breadth": 0.56,
+          "above": 28,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1770733800000,
+        "r": 0.2049924397590361,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.18642181413466896,
+          "spy_ret20": -0.00010086600671488366,
+          "breadth": 0.56,
+          "above": 28,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1772029800000,
+        "r": -1.0376931989924436,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.004761042254250114,
+          "spy_ret20": -0.007723289688325585,
+          "breadth": 0.46,
+          "above": 23,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1772029800000,
+        "r": -1.0222701649175412,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.07734806629834257,
+          "spy_ret20": -0.007723289688325585,
+          "breadth": 0.46,
+          "above": 23,
+          "eligible": 50
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1773063000000,
+        "r": 0.8657439463955626,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "LITE",
+        "entry_t": 1773235800000,
+        "r": 0.9142861374563958,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.16373144925277505,
+          "spy_ret20": -0.02428233802167379,
+          "breadth": 0.42,
+          "above": 21,
+          "eligible": 50
+        }
+      }
+    ],
+    "E70": [
+      {
+        "symbol": "CAT",
+        "entry_t": 1619098200000,
+        "r": 0.20414969543147105,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "NVDA",
+        "entry_t": 1619449200000,
+        "r": -1.0280145242718448,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.2183403499670784,
+          "spy_ret20": 0.06947260361863217,
+          "breadth": 0.6481481481481481,
+          "above": 35,
+          "eligible": 54
+        }
+      },
+      {
+        "symbol": "BABA",
+        "entry_t": 1619712000000,
+        "r": -1.0340336633663367,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.032584514721919255,
+          "spy_ret20": 0.0571710826282994,
+          "breadth": 0.6296296296296297,
+          "above": 34,
+          "eligible": 54
+        }
+      },
+      {
+        "symbol": "HPE",
+        "entry_t": 1621258200000,
+        "r": 0.2828509090909074,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "CAT",
+        "entry_t": 1621517400000,
+        "r": 1.0627180194805195,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.0187981244891815,
+          "spy_ret20": -0.012497296258021096,
+          "breadth": 0.3333333333333333,
+          "above": 18,
+          "eligible": 54
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1622729700000,
+        "r": -1.102899999999999,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.003977837761045544,
+          "spy_ret20": 0.011307590520871047,
+          "breadth": 0.7037037037037037,
+          "above": 38,
+          "eligible": 54
+        }
+      },
+      {
+        "symbol": "WDC",
+        "entry_t": 1623763800000,
+        "r": -1.0451096446700507,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03937117417918756,
+          "spy_ret20": 0.02098187492497905,
+          "breadth": 0.7407407407407407,
+          "above": 40,
+          "eligible": 54
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1623783600000,
+        "r": 0.8493395238095247,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "V",
+        "entry_t": 1623956400000,
+        "r": 0.14223245614035235,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1624283100000,
+        "r": 0.8714463414634137,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.12505705157462343,
+          "spy_ret20": -0.0006020469596628164,
+          "breadth": 0.5,
+          "above": 27,
+          "eligible": 54
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1624640400000,
+        "r": 0.8452039491916805,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.020079013632022136,
+          "spy_ret20": 0.014437762504772689,
+          "breadth": 0.7090909090909091,
+          "above": 39,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1625163300000,
+        "r": 0.852856076555022,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "CRWD",
+        "entry_t": 1625234400000,
+        "r": 0.961889566395657,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.16283161257465606,
+          "spy_ret20": 0.0278162456425195,
+          "breadth": 0.7272727272727273,
+          "above": 40,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "MSTR",
+        "entry_t": 1625837400000,
+        "r": -1.0199403451109286,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.20616547799992224,
+          "spy_ret20": 0.022128931265120277,
+          "breadth": 0.5272727272727272,
+          "above": 29,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "entry_t": 1625851800000,
+        "r": 1.1351422268362281,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0908134642356242,
+          "spy_ret20": 0.022128931265120277,
+          "breadth": 0.5272727272727272,
+          "above": 29,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1626787800000,
+        "r": 1.1583879358717417,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05389241342849593,
+          "spy_ret20": 0.02400000000000002,
+          "breadth": 0.4,
+          "above": 22,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "MRVL",
+        "entry_t": 1628794800000,
+        "r": -1.041745882352941,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0673094090341011,
+          "spy_ret20": 0.01726232777790515,
+          "breadth": 0.5454545454545454,
+          "above": 30,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "ORCL",
+        "entry_t": 1629468900000,
+        "r": 0.17282731343283433,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.02194046306504971,
+          "spy_ret20": 0.009988748306505313,
+          "breadth": 0.36363636363636365,
+          "above": 20,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1630004400000,
+        "r": 0.19089033333333333,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.03508374830239924,
+          "spy_ret20": 0.022995054581918417,
+          "breadth": 0.6181818181818182,
+          "above": 34,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1631194200000,
+        "r": 0.3218550000000013,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.025632517627540485,
+          "spy_ret20": 0.01872769168210353,
+          "breadth": 0.6,
+          "above": 33,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1632835800000,
+        "r": -1.0531569321533922,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.022739385325990513,
+          "spy_ret20": -0.016660002665600415,
+          "breadth": 0.509090909090909,
+          "above": 28,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "IWM",
+        "entry_t": 1633440600000,
+        "r": -1.0727562326869804,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.0339518357678642,
+          "spy_ret20": -0.05378978501743703,
+          "breadth": 0.2,
+          "above": 11,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "V",
+        "entry_t": 1633440600000,
+        "r": 0.20647950266429865,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.0019096682506549723,
+          "spy_ret20": -0.05378978501743703,
+          "breadth": 0.2,
+          "above": 11,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "CRM",
+        "entry_t": 1633531500000,
+        "r": 1.7481246964490373,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.024657844135278717,
+          "spy_ret20": -0.04090627214741316,
+          "breadth": 0.2545454545454545,
+          "above": 14,
+          "eligible": 55
+        }
+      },
+      {
+        "symbol": "IWM",
+        "entry_t": 1633981500000,
+        "r": 1.0671501886792434,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.00013536073636244428,
+          "spy_ret20": -0.017238670287984537,
+          "breadth": 0.39285714285714285,
+          "above": 22,
+          "eligible": 56
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1634049900000,
+        "r": 0.8489155917345036,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.01364729458917835,
+          "spy_ret20": -0.026648154783231792,
+          "breadth": 0.375,
+          "above": 21,
+          "eligible": 56
+        }
+      },
+      {
+        "symbol": "IWM",
+        "entry_t": 1635442200000,
+        "r": -1.07935734870317,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1635514200000,
+        "r": -1.0454166666666669,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05875000000000008,
+          "spy_ret20": 0.06780687855345313,
+          "breadth": 0.6428571428571429,
+          "above": 36,
+          "eligible": 56
+        }
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1636641000000,
+        "r": 0.2456999999999997,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.3320898548374016,
+          "spy_ret20": 0.06552064900144772,
+          "breadth": 0.7192982456140351,
+          "above": 41,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "CSCO",
+        "entry_t": 1636986600000,
+        "r": 0.16673347826086993,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02860246198406946,
+          "spy_ret20": 0.048067649103918475,
+          "breadth": 0.7543859649122807,
+          "above": 43,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1637159400000,
+        "r": -1.025580198019802,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.24858115777525525,
+          "spy_ret20": 0.041182213543977886,
+          "breadth": 0.7192982456140351,
+          "above": 41,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "ORCL",
+        "entry_t": 1637245800000,
+        "r": 0.8637587730061407,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.013554061045007781,
+          "spy_ret20": 0.03472590627763039,
+          "breadth": 0.6666666666666666,
+          "above": 38,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "MU",
+        "entry_t": 1638541800000,
+        "r": -1.0356079422382671,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.1632280701754385,
+          "spy_ret20": -0.015879846796058028,
+          "breadth": 0.38596491228070173,
+          "above": 22,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1638545400000,
+        "r": 3.3967695487246656,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.01901722802228223,
+          "spy_ret20": -0.015879846796058028,
+          "breadth": 0.38596491228070173,
+          "above": 22,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1639410300000,
+        "r": 0.8571392857142877,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.08388520971302427,
+          "spy_ret20": 0.014876781440676057,
+          "breadth": 0.5087719298245614,
+          "above": 29,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "AMD",
+        "entry_t": 1639751400000,
+        "r": 0.17667457342657408,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.08391700806131897,
+          "spy_ret20": -0.0024994125312426396,
+          "breadth": 0.42105263157894735,
+          "above": 24,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "entry_t": 1640115900000,
+        "r": 1.0177182491582495,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.058046836073741837,
+          "spy_ret20": -0.029727885353578398,
+          "breadth": 0.24561403508771928,
+          "above": 14,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1641479400000,
+        "r": -1.0679874999999999,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "MU",
+        "entry_t": 1641925800000,
+        "r": 0.19206000000000045,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.09773205517886363,
+          "spy_ret20": -0.010983408043168774,
+          "breadth": 0.38596491228070173,
+          "above": 22,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1641925800000,
+        "r": 0.20119721518987402,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.030571761960326516,
+          "spy_ret20": -0.010983408043168774,
+          "breadth": 0.38596491228070173,
+          "above": 22,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "WDC",
+        "entry_t": 1641925800000,
+        "r": -1.0301704280155641,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.13305685156384994,
+          "spy_ret20": -0.010983408043168774,
+          "breadth": 0.38596491228070173,
+          "above": 22,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "entry_t": 1642098600000,
+        "r": -1.013238009344779,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.15496102757807528,
+          "spy_ret20": 0.01657351259198525,
+          "breadth": 0.5087719298245614,
+          "above": 29,
+          "eligible": 57
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1643906700000,
+        "r": 0.9651399303135861,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": -0.16317803286067967,
+          "spy_ret20": -0.042323720969194345,
+          "breadth": 0.20689655172413793,
+          "above": 12,
+          "eligible": 58
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1645042500000,
+        "r": 2.842694843750017,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "MSTR",
+        "entry_t": 1647009000000,
+        "r": -1.011787341772152,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.05501828707339518,
+          "spy_ret20": -0.06998907103825136,
+          "breadth": 0.1724137931034483,
+          "above": 10,
+          "eligible": 58
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1647455400000,
+        "r": 1.2036447422680399,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.21004566210045672,
+          "spy_ret20": -0.02942650207260966,
+          "breadth": 0.1724137931034483,
+          "above": 10,
+          "eligible": 58
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1648474200000,
+        "r": 3.0158414574898758,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.051767121278779804,
+          "spy_ret20": 0.03422591847925438,
+          "breadth": 0.5172413793103449,
+          "above": 30,
+          "eligible": 58
+        }
+      },
+      {
+        "symbol": "MSTR",
+        "entry_t": 1649957400000,
+        "r": -1.0158664652567975,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.08056054282183411,
+          "spy_ret20": 0.017791143454007008,
+          "breadth": 0.2033898305084746,
+          "above": 12,
+          "eligible": 59
+        }
+      },
+      {
+        "symbol": "IBM",
+        "entry_t": 1651673700000,
+        "r": 0.22949044247787662,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.017193736567393314,
+          "spy_ret20": -0.08835763387188567,
+          "breadth": 0.11864406779661017,
+          "above": 7,
+          "eligible": 59
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1651848300000,
+        "r": -1.0515303116147308,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.01361465995612332,
+          "spy_ret20": -0.07311283785296818,
+          "breadth": 0.13559322033898305,
+          "above": 8,
+          "eligible": 59
+        }
+      },
+      {
+        "symbol": "GME",
+        "entry_t": 1655316000000,
+        "r": 0.2168972058823534,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.37516339869281046,
+          "spy_ret20": -0.06598705744197098,
+          "breadth": 0.1,
+          "above": 6,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "ZM",
+        "entry_t": 1655386200000,
+        "r": 0.9119546407185625,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.24260094619870176,
+          "spy_ret20": -0.07137433561123763,
+          "breadth": 0.11666666666666667,
+          "above": 7,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "SPCX",
+        "entry_t": 1658259900000,
+        "r": -1.2716999999999978,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.001100513573000672,
+          "spy_ret20": 0.04104325075627502,
+          "breadth": 0.18333333333333332,
+          "above": 11,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1658949300000,
+        "r": -1.0147061224489795,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1659118500000,
+        "r": 1.4547118808510624,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.25085427135678384,
+          "spy_ret20": 0.06743611315595754,
+          "breadth": 0.5833333333333334,
+          "above": 35,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "QCOM",
+        "entry_t": 1659360600000,
+        "r": 0.26143520979020946,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.1354990215264189,
+          "spy_ret20": 0.09217170043866041,
+          "breadth": 0.6166666666666667,
+          "above": 37,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "CSCO",
+        "entry_t": 1659965400000,
+        "r": 1.4089534285714183,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.037105323807328894,
+          "spy_ret20": 0.06367706082124114,
+          "breadth": 0.65,
+          "above": 39,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "CRDO",
+        "entry_t": 1660758300000,
+        "r": -1.0181051546391753,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.25336700336700324,
+          "spy_ret20": 0.09537284894837472,
+          "breadth": 0.8166666666666667,
+          "above": 49,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "IREN",
+        "entry_t": 1661356800000,
+        "r": -1.0096193548387098,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.49857549857549865,
+          "spy_ret20": 0.05479522140646176,
+          "breadth": 0.4666666666666667,
+          "above": 28,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "DIS",
+        "entry_t": 1663080300000,
+        "r": -1.0330902255639096,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.04236939531057171,
+          "spy_ret20": -0.0377230365756569,
+          "breadth": 0.4166666666666667,
+          "above": 25,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1663595100000,
+        "r": 1.421880306345737,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "SOXS",
+        "entry_t": 1666359000000,
+        "r": -1.00857476340694,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.176635822868473,
+          "spy_ret20": -0.02351495069876819,
+          "breadth": 0.16666666666666666,
+          "above": 10,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1667917800000,
+        "r": -1.033273488372093,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1668609000000,
+        "r": 0.8992931771192315,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04534869835204214,
+          "spy_ret20": 0.07382658834941003,
+          "breadth": 0.7,
+          "above": 42,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1669127400000,
+        "r": 0.1629543999999994,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10261569416499006,
+          "spy_ret20": 0.04154788301129764,
+          "breadth": 0.5166666666666667,
+          "above": 31,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1670423400000,
+        "r": 1.0403179443772617,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09385547978232411,
+          "spy_ret20": 0.03695320313733763,
+          "breadth": 0.4166666666666667,
+          "above": 25,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1670437800000,
+        "r": 0.20722449760765596,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.11698406529343175,
+          "spy_ret20": 0.03695320313733763,
+          "breadth": 0.4166666666666667,
+          "above": 25,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1670610600000,
+        "r": 0.18210908108108032,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.024207848276925237,
+          "spy_ret20": 0.05896031003608182,
+          "breadth": 0.48333333333333334,
+          "above": 29,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AMD",
+        "entry_t": 1671044400000,
+        "r": -1.0221678284182305,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.02530956592733702,
+          "spy_ret20": 0.017131433777012983,
+          "breadth": 0.5333333333333333,
+          "above": 32,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1671825600000,
+        "r": 1.0604303954802319,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": -0.042277256740914315,
+          "spy_ret20": -0.053753820920003026,
+          "breadth": 0.23333333333333334,
+          "above": 14,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1674064800000,
+        "r": -1.0368031746031745,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.007131559230790563,
+          "spy_ret20": 0.02081355062235346,
+          "breadth": 0.7833333333333333,
+          "above": 47,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1674244800000,
+        "r": -1.0422438316400582,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "AAOI",
+        "entry_t": 1674746100000,
+        "r": 1.6476835294117655,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.13846153846153864,
+          "spy_ret20": 0.045599373204492144,
+          "breadth": 0.7666666666666667,
+          "above": 46,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "COHR",
+        "entry_t": 1675967400000,
+        "r": -1.0231176470588235,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09272540983606548,
+          "spy_ret20": 0.05127614366536126,
+          "breadth": 0.8333333333333334,
+          "above": 50,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "CRM",
+        "entry_t": 1676314800000,
+        "r": -1.0308131699846859,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.11681711802072892,
+          "spy_ret20": 0.027938731294402164,
+          "breadth": 0.7666666666666667,
+          "above": 46,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1676385900000,
+        "r": -1.0302175824175825,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.060112768279374285,
+          "spy_ret20": 0.03601274876402227,
+          "breadth": 0.85,
+          "above": 51,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "MRVL",
+        "entry_t": 1676385900000,
+        "r": -1.019455272727273,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12223315297589776,
+          "spy_ret20": 0.03601274876402227,
+          "breadth": 0.85,
+          "above": 51,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "LITE",
+        "entry_t": 1676493000000,
+        "r": -1.0215851851851852,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.019584263872186813,
+          "spy_ret20": 0.03748491552695099,
+          "breadth": 0.85,
+          "above": 51,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "MU",
+        "entry_t": 1676578500000,
+        "r": -1.0387456521739131,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0946735091134312,
+          "spy_ret20": 0.05733769218981455,
+          "breadth": 0.8833333333333333,
+          "above": 53,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1676644200000,
+        "r": -1.0162578313253012,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.030864197530864113,
+          "spy_ret20": 0.050555727076257995,
+          "breadth": 0.8166666666666667,
+          "above": 49,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1677767400000,
+        "r": 1.4454267403314827,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.014677237467108695,
+          "spy_ret20": -0.02871201869848694,
+          "breadth": 0.4,
+          "above": 24,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1677768300000,
+        "r": 0.8350297734627858,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.018431204457779682,
+          "spy_ret20": -0.02871201869848694,
+          "breadth": 0.4166666666666667,
+          "above": 25,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1678800600000,
+        "r": 0.9364364737550435,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.04541087231352736,
+          "spy_ret20": -0.04815822366002498,
+          "breadth": 0.3,
+          "above": 18,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1680184800000,
+        "r": -1.0661671476137624,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1681135200000,
+        "r": 0.9621944802207923,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.01380921587851236,
+          "spy_ret20": 0.04497050486478216,
+          "breadth": 0.5666666666666667,
+          "above": 34,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "EWJ",
+        "entry_t": 1681234200000,
+        "r": 0.8792672727272789,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.015132852366707805,
+          "spy_ret20": 0.06305791986713727,
+          "breadth": 0.7,
+          "above": 42,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "BABA",
+        "entry_t": 1681738200000,
+        "r": -1.031938202247191,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.1354792217151093,
+          "spy_ret20": 0.04156250789081639,
+          "breadth": 0.6333333333333333,
+          "above": 38,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "NFLX",
+        "entry_t": 1681824600000,
+        "r": -1.0520484210526317,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09637561779242176,
+          "spy_ret20": 0.06108533490553936,
+          "breadth": 0.6666666666666666,
+          "above": 40,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1683034200000,
+        "r": -1.0384840944881888,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.0054867973937712256,
+          "spy_ret20": 0.01507230799296444,
+          "breadth": 0.48333333333333334,
+          "above": 29,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1683123300000,
+        "r": 0.7715565898617567,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.016613977265083735,
+          "spy_ret20": -0.00014601026938898531,
+          "breadth": 0.4166666666666667,
+          "above": 25,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1683141300000,
+        "r": 2.9883515697674454,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.012501220822345838,
+          "spy_ret20": -0.00014601026938898531,
+          "breadth": 0.4166666666666667,
+          "above": 25,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "IWM",
+        "entry_t": 1685453400000,
+        "r": 0.16651989389920596,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "ZM",
+        "entry_t": 1685539800000,
+        "r": 0.20762693386773534,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06486135884546784,
+          "spy_ret20": 0.01116646210863248,
+          "breadth": 0.8,
+          "above": 48,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1685986200000,
+        "r": 2.6642298203592794,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.070183382386235,
+          "spy_ret20": 0.05612458967840661,
+          "breadth": 0.8666666666666667,
+          "above": 52,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "HOOD",
+        "entry_t": 1687529700000,
+        "r": 1.317915652173911,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.08928571428571441,
+          "spy_ret20": 0.05421526721244185,
+          "breadth": 0.8666666666666667,
+          "above": 52,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "RKLB",
+        "entry_t": 1687959000000,
+        "r": 1.1077207142857135,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.23542600896860977,
+          "spy_ret20": 0.03847802276298862,
+          "breadth": 0.9166666666666666,
+          "above": 55,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "QCOM",
+        "entry_t": 1688048100000,
+        "r": 1.0095334246575363,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.01301163291684615,
+          "spy_ret20": 0.03860342242425685,
+          "breadth": 0.8833333333333333,
+          "above": 53,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "ZM",
+        "entry_t": 1688048100000,
+        "r": -1.0337525423728815,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04667275772803414,
+          "spy_ret20": 0.03860342242425685,
+          "breadth": 0.8833333333333333,
+          "above": 53,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1690205400000,
+        "r": 0.16084567164179134,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.08317929759704246,
+          "spy_ret20": 0.03585009392037386,
+          "breadth": 0.85,
+          "above": 51,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1690299000000,
+        "r": -1.0287282392026578,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1690396200000,
+        "r": 1.0264330526315775,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.18531943815133656,
+          "spy_ret20": 0.05558259740861793,
+          "breadth": 0.9,
+          "above": 54,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1690983000000,
+        "r": -1.0159921397379912,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.17031055900621106,
+          "spy_ret20": 0.02809747967296561,
+          "breadth": 0.8666666666666667,
+          "above": 52,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "ZM",
+        "entry_t": 1690983000000,
+        "r": -1.0256969325153376,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07173305894458326,
+          "spy_ret20": 0.02809747967296561,
+          "breadth": 0.8666666666666667,
+          "above": 52,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1691071200000,
+        "r": -1.0292736842105261,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07556675062972285,
+          "spy_ret20": 0.01579636232341919,
+          "breadth": 0.7833333333333333,
+          "above": 47,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AAOI",
+        "entry_t": 1691087400000,
+        "r": 2.916676460176989,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05278174037089878,
+          "spy_ret20": 0.01579636232341919,
+          "breadth": 0.7833333333333333,
+          "above": 47,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "INTC",
+        "entry_t": 1692023400000,
+        "r": -1.0280857142857145,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.052790346907994,
+          "spy_ret20": -0.008235398860398813,
+          "breadth": 0.45,
+          "above": 27,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1692970200000,
+        "r": 0.7979138144329896,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.0027045823352136455,
+          "spy_ret20": -0.03438826025459685,
+          "breadth": 0.31666666666666665,
+          "above": 19,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1694179800000,
+        "r": 2.0930625252525257,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "WDC",
+        "entry_t": 1695054600000,
+        "r": 0.865593612565442,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.08213399503722085,
+          "spy_ret20": 0.01611424379956916,
+          "breadth": 0.4166666666666667,
+          "above": 25,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1695735000000,
+        "r": -1.108506341463415,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.04631086142322105,
+          "spy_ret20": -0.017570178429366923,
+          "breadth": 0.21666666666666667,
+          "above": 13,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1695821400000,
+        "r": -1.0383508620689654,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.03031451307313371,
+          "spy_ret20": -0.038150524033249145,
+          "breadth": 0.16666666666666666,
+          "above": 10,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "SOXS",
+        "entry_t": 1696269600000,
+        "r": -1.017103896103896,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.21420824295010843,
+          "spy_ret20": -0.05083503597761385,
+          "breadth": 0.2833333333333333,
+          "above": 17,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1696948200000,
+        "r": 0.8398059170013457,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "QCOM",
+        "entry_t": 1697556600000,
+        "r": -1.052769411764706,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1697808600000,
+        "r": -1.0366745691906005,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.07294506852801108,
+          "spy_ret20": -0.011543543265107425,
+          "breadth": 0.25,
+          "above": 15,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1698172200000,
+        "r": -1.0248545805207327,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.0339109059296121,
+          "spy_ret20": -0.02723150247559125,
+          "breadth": 0.23333333333333334,
+          "above": 14,
+          "eligible": 60
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1701446400000,
+        "r": -1.024566972477064,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.4257983719474012,
+          "spy_ret20": 0.07951265673054175,
+          "breadth": 0.819672131147541,
+          "above": 50,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1701786600000,
+        "r": 0.14772616438356334,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04576295654684581,
+          "spy_ret20": 0.050590102836634676,
+          "breadth": 0.8032786885245902,
+          "above": 49,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1701873000000,
+        "r": -1.0489166666666667,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.041625089094796675,
+          "spy_ret20": 0.04804315390795355,
+          "breadth": 0.7540983606557377,
+          "above": 46,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1701873000000,
+        "r": 2.6473609022556333,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.198577680525164,
+          "spy_ret20": 0.04804315390795355,
+          "breadth": 0.7540983606557377,
+          "above": 46,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "QQQ",
+        "entry_t": 1701874800000,
+        "r": 1.7977998204667824,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0489545528411246,
+          "spy_ret20": 0.04804315390795355,
+          "breadth": 0.7540983606557377,
+          "above": 46,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1701874800000,
+        "r": 1.8401316402116408,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.13844333420983435,
+          "spy_ret20": 0.04804315390795355,
+          "breadth": 0.7540983606557377,
+          "above": 46,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1702305000000,
+        "r": 1.9412694638694683,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03808721691933381,
+          "spy_ret20": 0.06052504206329079,
+          "breadth": 0.8852459016393442,
+          "above": 54,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "entry_t": 1702319400000,
+        "r": 1.0625774985851713,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.011820330969267268,
+          "spy_ret20": 0.06052504206329079,
+          "breadth": 0.8688524590163934,
+          "above": 53,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1704825000000,
+        "r": 0.200492121212122,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10178289325208745,
+          "spy_ret20": 0.03568232906309343,
+          "breadth": 0.819672131147541,
+          "above": 50,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "NFLX",
+        "entry_t": 1704903300000,
+        "r": 1.4773267930250187,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06252203808180545,
+          "spy_ret20": 0.029795927237954434,
+          "breadth": 0.7377049180327869,
+          "above": 45,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "CRDO",
+        "entry_t": 1705600800000,
+        "r": 1.1795358749999978,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.032266391326793986,
+          "spy_ret20": 0.00618914715469665,
+          "breadth": 0.6721311475409836,
+          "above": 41,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1707935400000,
+        "r": 0.8847459817351627,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10120796604635984,
+          "spy_ret20": 0.040404253079271424,
+          "breadth": 0.7377049180327869,
+          "above": 45,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "CRDO",
+        "entry_t": 1708535700000,
+        "r": 0.9713826086956506,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.024134790528233196,
+          "spy_ret20": 0.027341164791528927,
+          "breadth": 0.7377049180327869,
+          "above": 45,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "IREN",
+        "entry_t": 1709044200000,
+        "r": -1.0065193277310924,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.6182669789227169,
+          "spy_ret20": 0.037992081563993585,
+          "breadth": 0.7377049180327869,
+          "above": 45,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "KORU",
+        "entry_t": 1709217000000,
+        "r": 0.7990199999999997,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.20256776034236812,
+          "spy_ret20": 0.03123090086786462,
+          "breadth": 0.7704918032786885,
+          "above": 47,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "entry_t": 1709922600000,
+        "r": 1.7234042645074175,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.012220451142346489,
+          "spy_ret20": 0.03377170966770393,
+          "breadth": 0.7704918032786885,
+          "above": 47,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "GME",
+        "entry_t": 1710336600000,
+        "r": 1.3188213636363657,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "ARM",
+        "entry_t": 1710358200000,
+        "r": 0.2329577521613826,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.13084049409237386,
+          "spy_ret20": 0.031680440771349794,
+          "breadth": 0.8032786885245902,
+          "above": 49,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1710768600000,
+        "r": 0.821631344430214,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03434142018389297,
+          "spy_ret20": 0.015519474051200355,
+          "breadth": 0.7213114754098361,
+          "above": 44,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "CRWD",
+        "entry_t": 1710941400000,
+        "r": 0.2160656331877727,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.00880417657780097,
+          "spy_ret20": 0.03828964850827399,
+          "breadth": 0.7377049180327869,
+          "above": 45,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "QQQ",
+        "entry_t": 1710941400000,
+        "r": 0.9759094906166255,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.026326258395151347,
+          "spy_ret20": 0.03828964850827399,
+          "breadth": 0.7377049180327869,
+          "above": 45,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1710957600000,
+        "r": 0.29038514106583074,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06660128388017128,
+          "spy_ret20": 0.03828964850827399,
+          "breadth": 0.7377049180327869,
+          "above": 45,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "TSM",
+        "entry_t": 1711546200000,
+        "r": 1.0688119465648824,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07915403156830703,
+          "spy_ret20": 0.023260402075482745,
+          "breadth": 0.7868852459016393,
+          "above": 48,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "CRDO",
+        "entry_t": 1711993500000,
+        "r": -1.017891275167785,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1712167200000,
+        "r": -1.0124133333333334,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10421545667447307,
+          "spy_ret20": 0.012903855539287523,
+          "breadth": 0.7377049180327869,
+          "above": 45,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1712239200000,
+        "r": -1.0139727403156384,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.1605388199474096,
+          "spy_ret20": 0.02407571724341917,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "IBM",
+        "entry_t": 1712254500000,
+        "r": 0.17048059701492702,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.005417795374036416,
+          "spy_ret20": 0.02407571724341917,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "EWY",
+        "entry_t": 1712256300000,
+        "r": -1.0748301886792462,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.033587311460115066,
+          "spy_ret20": 0.02407571724341917,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "KORU",
+        "entry_t": 1712256300000,
+        "r": -1.025074418604651,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.08284023668639073,
+          "spy_ret20": 0.02407571724341917,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1712842200000,
+        "r": -1.0232344827586206,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.10970873786407753,
+          "spy_ret20": -0.005127609759873031,
+          "breadth": 0.6065573770491803,
+          "above": 37,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1712854800000,
+        "r": -1.0162567823343849,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.1336219917430268,
+          "spy_ret20": -0.005127609759873031,
+          "breadth": 0.6065573770491803,
+          "above": 37,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1713792600000,
+        "r": 0.1389592380952363,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.043831718718243984,
+          "spy_ret20": -0.05173239355691328,
+          "breadth": 0.14754098360655737,
+          "above": 9,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1714053600000,
+        "r": 2.412066544671701,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": -0.009534231584706787,
+          "spy_ret20": -0.02543091813519438,
+          "breadth": 0.26229508196721313,
+          "above": 16,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1715002200000,
+        "r": 1.9407928802589192,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.0350957155879672,
+          "spy_ret20": -0.013715277777777701,
+          "breadth": 0.5409836065573771,
+          "above": 33,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1715866200000,
+        "r": -1.052120754716981,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02670639518843454,
+          "spy_ret20": 0.05846153846153834,
+          "breadth": 0.8032786885245902,
+          "above": 49,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "CSCO",
+        "entry_t": 1717681500000,
+        "r": -1.0663686746987953,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.026655383964459545,
+          "spy_ret20": 0.03373936581593173,
+          "breadth": 0.6885245901639344,
+          "above": 42,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1717696800000,
+        "r": 0.20237999999999995,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.08181818181818179,
+          "spy_ret20": 0.03373936581593173,
+          "breadth": 0.6885245901639344,
+          "above": 42,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "TSLA",
+        "entry_t": 1717783200000,
+        "r": -1.0444820512820516,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.018079871838883044,
+          "spy_ret20": 0.03372068292117003,
+          "breadth": 0.7868852459016393,
+          "above": 48,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "SPCX",
+        "entry_t": 1718393400000,
+        "r": 0.7865241666666505,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.005584192439862523,
+          "spy_ret20": 0.02385986106916338,
+          "breadth": 0.6885245901639344,
+          "above": 42,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1719322200000,
+        "r": 0.9974143894389493,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07112036579868186,
+          "spy_ret20": 0.03175206768704242,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AMD",
+        "entry_t": 1719927000000,
+        "r": 1.910997357142863,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.05727267292401517,
+          "spy_ret20": 0.0341708542713568,
+          "breadth": 0.6721311475409836,
+          "above": 41,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1720805400000,
+        "r": -1.0626032258064515,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04159769317028883,
+          "spy_ret20": 0.0363375612300012,
+          "breadth": 0.7868852459016393,
+          "above": 48,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "PLTR",
+        "entry_t": 1722346200000,
+        "r": -1.0144082191780823,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07010268562401256,
+          "spy_ret20": 0.0012314139204909758,
+          "breadth": 0.3770491803278688,
+          "above": 23,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1722533400000,
+        "r": -1.0289361073825503,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.06514348565143491,
+          "spy_ret20": 0.0026777419531123225,
+          "breadth": 0.4426229508196721,
+          "above": 27,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1722951000000,
+        "r": 1.1058840143583604,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": -0.10088970324335556,
+          "spy_ret20": -0.06830050059423065,
+          "breadth": 0.06557377049180328,
+          "above": 4,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1722955500000,
+        "r": -1.0398781042654028,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.0306849637787856,
+          "spy_ret20": -0.06830050059423065,
+          "breadth": 0.06557377049180328,
+          "above": 4,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1725629400000,
+        "r": 1.0227237827352116,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09405940594059414,
+          "spy_ret20": 0.05961631157813563,
+          "breadth": 0.4262295081967213,
+          "above": 26,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1725633000000,
+        "r": 1.9205169858156084,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.09295895797493237,
+          "spy_ret20": 0.05961631157813563,
+          "breadth": 0.4262295081967213,
+          "above": 26,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "NFLX",
+        "entry_t": 1726079400000,
+        "r": 0.9329182941777395,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06289367748046404,
+          "spy_ret20": 0.029198312236287105,
+          "breadth": 0.36065573770491804,
+          "above": 22,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "ZM",
+        "entry_t": 1726237800000,
+        "r": 0.1815576354679802,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.1678947368421051,
+          "spy_ret20": 0.02802603994262398,
+          "breadth": 0.5245901639344263,
+          "above": 32,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1726253100000,
+        "r": -1.0328256720024163,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.005718646873555722,
+          "spy_ret20": 0.02802603994262398,
+          "breadth": 0.5245901639344263,
+          "above": 32,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "QQQ",
+        "entry_t": 1727964000000,
+        "r": 0.8496423087621732,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04628544136164292,
+          "spy_ret20": 0.032695519570111076,
+          "breadth": 0.639344262295082,
+          "above": 39,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1727964000000,
+        "r": 0.9205791746031707,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12748746157579682,
+          "spy_ret20": 0.032695519570111076,
+          "breadth": 0.639344262295082,
+          "above": 39,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1728325800000,
+        "r": 1.944957921146961,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06696364420175316,
+          "spy_ret20": 0.06010029050940924,
+          "breadth": 0.7213114754098361,
+          "above": 44,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "INTC",
+        "entry_t": 1728405000000,
+        "r": 0.2330256410256407,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.1733892090099527,
+          "spy_ret20": 0.03914571208960149,
+          "breadth": 0.6229508196721312,
+          "above": 38,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1729618200000,
+        "r": -1.0545059382422803,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.01904643787317739,
+          "spy_ret20": 0.024701544943820153,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "LITE",
+        "entry_t": 1729776600000,
+        "r": -1.025496052631579,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07761732851985559,
+          "spy_ret20": 0.01391228070175421,
+          "breadth": 0.639344262295082,
+          "above": 39,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "entry_t": 1729863000000,
+        "r": -1.071012403100775,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.013405414908579383,
+          "spy_ret20": 0.012039350678851646,
+          "breadth": 0.6557377049180327,
+          "above": 40,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "QCOM",
+        "entry_t": 1730295900000,
+        "r": -1.0362574545454548,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.06170084439083223,
+          "spy_ret20": 0.02287713868715824,
+          "breadth": 0.7704918032786885,
+          "above": 47,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "ARM",
+        "entry_t": 1730381400000,
+        "r": -1.0202476758045294,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12656934306569356,
+          "spy_ret20": 0.019530631976795387,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "CRWD",
+        "entry_t": 1730836800000,
+        "r": -1.0368029498525073,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1732113900000,
+        "r": -1.0448989200863932,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07852991038992485,
+          "spy_ret20": 0.01194884454501799,
+          "breadth": 0.6557377049180327,
+          "above": 40,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "COHR",
+        "entry_t": 1733149800000,
+        "r": -1.0181994342291372,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "CRWD",
+        "entry_t": 1733322600000,
+        "r": 0.20088702521008386,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.15453255921356468,
+          "spy_ret20": 0.05981360900012289,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "IWM",
+        "entry_t": 1733758200000,
+        "r": -1.127676785714285,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.007292500948446801,
+          "spy_ret20": 0.02070355133909829,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "SPCX",
+        "entry_t": 1734445800000,
+        "r": -1.0965172413793107,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0029711375212224667,
+          "spy_ret20": 0.03675289614872024,
+          "breadth": 0.7049180327868853,
+          "above": 43,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "ZM",
+        "entry_t": 1734532200000,
+        "r": -1.038832558139535,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07223419085033589,
+          "spy_ret20": 0.027374434658414604,
+          "breadth": 0.6885245901639344,
+          "above": 42,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1734552900000,
+        "r": -1.0139576271186441,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12308247608734879,
+          "spy_ret20": 0.027374434658414604,
+          "breadth": 0.6885245901639344,
+          "above": 42,
+          "eligible": 61
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1735309800000,
+        "r": 0.1779784112903221,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05252416006698524,
+          "spy_ret20": 0.0008489529580184563,
+          "breadth": 0.5967741935483871,
+          "above": 37,
+          "eligible": 62
+        }
+      },
+      {
+        "symbol": "QQQ",
+        "entry_t": 1735309800000,
+        "r": -1.04185903859174,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03976045552719398,
+          "spy_ret20": 0.0008489529580184563,
+          "breadth": 0.5967741935483871,
+          "above": 37,
+          "eligible": 62
+        }
+      },
+      {
+        "symbol": "TQQQ",
+        "entry_t": 1735309800000,
+        "r": -1.0136357541899441,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.10509833395966428,
+          "spy_ret20": 0.0008489529580184563,
+          "breadth": 0.5967741935483871,
+          "above": 37,
+          "eligible": 62
+        }
+      },
+      {
+        "symbol": "CSCO",
+        "entry_t": 1736189100000,
+        "r": 0.13502250000000082,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "TSLA",
+        "entry_t": 1736260200000,
+        "r": -1.0108391304347826,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.11247936344691323,
+          "spy_ret20": -0.018479748108339855,
+          "breadth": 0.6825396825396826,
+          "above": 43,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "CRWD",
+        "entry_t": 1736519400000,
+        "r": -1.0390250236966825,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.014872200859534113,
+          "spy_ret20": -0.025204247014851355,
+          "breadth": 0.5079365079365079,
+          "above": 32,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1736865000000,
+        "r": 1.2014460511679639,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.23042481161952622,
+          "spy_ret20": -0.042732510288065906,
+          "breadth": 0.2857142857142857,
+          "above": 18,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1738179000000,
+        "r": 0.9178995478260858,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.0015847050403844376,
+          "spy_ret20": 0.005388773388773416,
+          "breadth": 0.5555555555555556,
+          "above": 35,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "QCOM",
+        "entry_t": 1738938600000,
+        "r": 0.19522201183431917,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.05521625327184343,
+          "spy_ret20": 0.029929338225302304,
+          "breadth": 0.6190476190476191,
+          "above": 39,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "RKLB",
+        "entry_t": 1738938600000,
+        "r": -1.010647588424437,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.010014306151645225,
+          "spy_ret20": 0.029929338225302304,
+          "breadth": 0.6190476190476191,
+          "above": 39,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "WDC",
+        "entry_t": 1738938600000,
+        "r": 0.886565714285715,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.006168080185042224,
+          "spy_ret20": 0.029929338225302304,
+          "breadth": 0.6190476190476191,
+          "above": 39,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1738953000000,
+        "r": -1.0142235294117647,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.026726057906458767,
+          "spy_ret20": 0.029929338225302304,
+          "breadth": 0.6349206349206349,
+          "above": 40,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1739457000000,
+        "r": 0.9950924339360282,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03645713994755462,
+          "spy_ret20": 0.03636269946237469,
+          "breadth": 0.5714285714285714,
+          "above": 36,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1739975400000,
+        "r": 0.8958541231781888,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.18132988100484781,
+          "spy_ret20": 0.02306005990929938,
+          "breadth": 0.6984126984126984,
+          "above": 44,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "AVGO",
+        "entry_t": 1740149100000,
+        "r": -1.0454026981450253,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.059065249875477344,
+          "spy_ret20": 0.00667942078701711,
+          "breadth": 0.6349206349206349,
+          "above": 40,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1740682800000,
+        "r": -1.0255068181818183,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.11471797884841362,
+          "spy_ret20": -0.01664212807490617,
+          "breadth": 0.42857142857142855,
+          "above": 27,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "EWJ",
+        "entry_t": 1741797000000,
+        "r": -1.0875374999999992,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "IBM",
+        "entry_t": 1742573700000,
+        "r": 0.21411423690205006,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": -0.08100759092110732,
+          "spy_ret20": -0.0732482511181376,
+          "breadth": 0.25396825396825395,
+          "above": 16,
+          "eligible": 63
+        }
+      },
+      {
+        "symbol": "MSTR",
+        "entry_t": 1743607800000,
+        "r": 1.4146349094781676,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "COIN",
+        "entry_t": 1746624600000,
+        "r": 0.8975549591280695,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.2519234437591402,
+          "spy_ret20": 0.10752155385987505,
+          "breadth": 0.59375,
+          "above": 38,
+          "eligible": 64
+        }
+      },
+      {
+        "symbol": "PLTR",
+        "entry_t": 1748022300000,
+        "r": 0.21342310192023678,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.13524552121043332,
+          "spy_ret20": 0.06676547004793787,
+          "breadth": 0.84375,
+          "above": 54,
+          "eligible": 64
+        }
+      },
+      {
+        "symbol": "SMCI",
+        "entry_t": 1748455200000,
+        "r": 1.2764708635097486,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.11567364465915198,
+          "spy_ret20": 0.07282099684176124,
+          "breadth": 0.859375,
+          "above": 55,
+          "eligible": 64
+        }
+      },
+      {
+        "symbol": "SNDK",
+        "entry_t": 1748461500000,
+        "r": 0.795937746478872,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.18314223737217228,
+          "spy_ret20": 0.07282099684176124,
+          "breadth": 0.859375,
+          "above": 55,
+          "eligible": 64
+        }
+      },
+      {
+        "symbol": "COHR",
+        "entry_t": 1748957400000,
+        "r": 0.2171444501278775,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07248603351955318,
+          "spy_ret20": 0.04593907733578062,
+          "breadth": 0.828125,
+          "above": 53,
+          "eligible": 64
+        }
+      },
+      {
+        "symbol": "GOOGL",
+        "entry_t": 1749150900000,
+        "r": 1.3528220418848043,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02952526799387445,
+          "spy_ret20": 0.06639226914817464,
+          "breadth": 0.90625,
+          "above": 58,
+          "eligible": 64
+        }
+      },
+      {
+        "symbol": "AAOI",
+        "entry_t": 1750253400000,
+        "r": 2.1920622549019586,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.11916010498687657,
+          "spy_ret20": 0.004386997008101412,
+          "breadth": 0.8307692307692308,
+          "above": 54,
+          "eligible": 65
+        }
+      },
+      {
+        "symbol": "BE",
+        "entry_t": 1750426200000,
+        "r": 0.9744472727272746,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.12506541077969646,
+          "spy_ret20": 0.007809996120304197,
+          "breadth": 0.8461538461538461,
+          "above": 55,
+          "eligible": 65
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1750794300000,
+        "r": -1.0654606741573034,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02006880733944949,
+          "spy_ret20": 0.029329537073564005,
+          "breadth": 0.8153846153846154,
+          "above": 53,
+          "eligible": 65
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1753209000000,
+        "r": 2.606271152368756,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04467439576707166,
+          "spy_ret20": 0.05810881308584204,
+          "breadth": 0.8,
+          "above": 52,
+          "eligible": 65
+        }
+      },
+      {
+        "symbol": "IREN",
+        "entry_t": 1754415000000,
+        "r": 1.016692406417113,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.026859504132231482,
+          "spy_ret20": 0.016608138148780593,
+          "breadth": 0.6153846153846154,
+          "above": 40,
+          "eligible": 65
+        }
+      },
+      {
+        "symbol": "NFLX",
+        "entry_t": 1755696600000,
+        "r": 0.17592311913357256,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.02019565327013284,
+          "spy_ret20": 0.017397388801424718,
+          "breadth": 0.696969696969697,
+          "above": 46,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "NBIS",
+        "entry_t": 1755871200000,
+        "r": 0.2174320543293714,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.2680214723926382,
+          "spy_ret20": 0.0018126507258484637,
+          "breadth": 0.5909090909090909,
+          "above": 39,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "AMZN",
+        "entry_t": 1755874800000,
+        "r": 0.17553090163934368,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1756128600000,
+        "r": 0.19835910447761182,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "GME",
+        "entry_t": 1756218600000,
+        "r": -1.0769885714285716,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.013051990428540439,
+          "spy_ret20": 0.008713810211643747,
+          "breadth": 0.696969696969697,
+          "above": 46,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1756906200000,
+        "r": -1.0447048387096778,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0492368569813455,
+          "spy_ret20": 0.014609643632445213,
+          "breadth": 0.6515151515151515,
+          "above": 43,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "CRM",
+        "entry_t": 1758648600000,
+        "r": -1.032418181818182,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.00624672550679084,
+          "spy_ret20": 0.03330388829482245,
+          "breadth": 0.8939393939393939,
+          "above": 59,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "MSFT",
+        "entry_t": 1759152600000,
+        "r": -1.0810596078431376,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1759760100000,
+        "r": 0.8164913114754162,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "JPM",
+        "entry_t": 1759843800000,
+        "r": -1.0715095145631062,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.055257858629987444,
+          "spy_ret20": 0.03512638717632566,
+          "breadth": 0.8636363636363636,
+          "above": 57,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "CRM",
+        "entry_t": 1759862700000,
+        "r": 0.1754339660056658,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.0258798351299937,
+          "spy_ret20": 0.03512638717632566,
+          "breadth": 0.8787878787878788,
+          "above": 58,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1760535000000,
+        "r": 3.4734313157894747,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.14107365792759063,
+          "spy_ret20": 0.003439758762293188,
+          "breadth": 0.7878787878787878,
+          "above": 52,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "LLY",
+        "entry_t": 1760622300000,
+        "r": -1.0348559032716926,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0875238408418284,
+          "spy_ret20": 0.008950514275311905,
+          "breadth": 0.7878787878787878,
+          "above": 52,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "NVDA",
+        "entry_t": 1760982300000,
+        "r": 1.605574869684501,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03809982437255699,
+          "spy_ret20": 0.00102465191971568,
+          "breadth": 0.7272727272727273,
+          "above": 48,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "DELL",
+        "entry_t": 1761226200000,
+        "r": 1.0519490963855456,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.13689710002271527,
+          "spy_ret20": 0.010211182379281203,
+          "breadth": 0.7424242424242424,
+          "above": 49,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "RKLB",
+        "entry_t": 1761329700000,
+        "r": -1.0099782608695653,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.3632854385588675,
+          "spy_ret20": 0.020791853484307232,
+          "breadth": 0.7727272727272727,
+          "above": 51,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "TSM",
+        "entry_t": 1761574500000,
+        "r": 0.2127692544987138,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.07920248765319182,
+          "spy_ret20": 0.023226293917642638,
+          "breadth": 0.8484848484848485,
+          "above": 56,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "PLTR",
+        "entry_t": 1762439400000,
+        "r": -1.0215684824902724,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.023700555737169005,
+          "spy_ret20": 0.006596639279718319,
+          "breadth": 0.7121212121212122,
+          "above": 47,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1763496000000,
+        "r": 0.31470720288115217,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.0024109060623329626,
+          "spy_ret20": -0.008312601486733961,
+          "breadth": 0.3787878787878788,
+          "above": 25,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "COHR",
+        "entry_t": 1763563500000,
+        "r": -1.0121154185022028,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 1,
+          "stock_ret20": 0.14334188529338743,
+          "spy_ret20": -0.016580511567625522,
+          "breadth": 0.30303030303030304,
+          "above": 20,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "AAPL",
+        "entry_t": 1765549800000,
+        "r": -1.062308474576271,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.016634372829305688,
+          "spy_ret20": 0.008509797608768688,
+          "breadth": 0.6515151515151515,
+          "above": 43,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "HPE",
+        "entry_t": 1766154600000,
+        "r": 0.21567662337662294,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.1606016496846192,
+          "spy_ret20": 0.020870746246133054,
+          "breadth": 0.4696969696969697,
+          "above": 31,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "AXTI",
+        "entry_t": 1766414700000,
+        "r": 0.21528743362831854,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.5410526315789475,
+          "spy_ret20": 0.04300185432087433,
+          "breadth": 0.5151515151515151,
+          "above": 34,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "AMAT",
+        "entry_t": 1766500200000,
+        "r": 1.6691688524590216,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.15717794150480024,
+          "spy_ret20": 0.0390404515522107,
+          "breadth": 0.5151515151515151,
+          "above": 34,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "IWM",
+        "entry_t": 1766586600000,
+        "r": -1.0550738007380074,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.0507513703912128,
+          "spy_ret20": 0.028573564593301404,
+          "breadth": 0.5606060606060606,
+          "above": 37,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "META",
+        "entry_t": 1767105000000,
+        "r": 0.20945916876573936,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.016767280643517513,
+          "spy_ret20": 0.006084717996723832,
+          "breadth": 0.5454545454545454,
+          "above": 36,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "IBM",
+        "entry_t": 1767108600000,
+        "r": -1.042694285714286,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": -0.009268261066822103,
+          "spy_ret20": 0.006084717996723832,
+          "breadth": 0.5454545454545454,
+          "above": 36,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "UBER",
+        "entry_t": 1768573800000,
+        "r": -1.044504,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.04301606922126067,
+          "spy_ret20": 0.0196211295407005,
+          "breadth": 0.5151515151515151,
+          "above": 34,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "AAOI",
+        "entry_t": 1769538600000,
+        "r": -1.0117500000000001,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "RKLB",
+        "entry_t": 1769627700000,
+        "r": -1.0117905325443786,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.2323275251452046,
+          "spy_ret20": 0.00766388989496547,
+          "breadth": 0.5757575757575758,
+          "above": 38,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1769714100000,
+        "r": 2.323965163934429,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 3,
+          "stock_ret20": 0.03571745890715228,
+          "spy_ret20": 0.01102000465224462,
+          "breadth": 0.5606060606060606,
+          "above": 37,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "SOXL",
+        "entry_t": 1770733800000,
+        "r": 0.2049924397590361,
+        "pass": true,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.18642181413466896,
+          "spy_ret20": -0.00010086600671488366,
+          "breadth": 0.5757575757575758,
+          "above": 38,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "HD",
+        "entry_t": 1772029800000,
+        "r": -1.0376931989924436,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": -0.004761042254250114,
+          "spy_ret20": -0.007723289688325585,
+          "breadth": 0.45454545454545453,
+          "above": 30,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "WMT",
+        "entry_t": 1772029800000,
+        "r": -1.0222701649175412,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 2,
+          "stock_ret20": 0.07734806629834257,
+          "spy_ret20": -0.007723289688325585,
+          "breadth": 0.45454545454545453,
+          "above": 30,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "COST",
+        "entry_t": 1773063000000,
+        "r": 0.8657439463955626,
+        "pass": false,
+        "ctx": null
+      },
+      {
+        "symbol": "LITE",
+        "entry_t": 1773235800000,
+        "r": 0.9142861374563958,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.16373144925277505,
+          "spy_ret20": -0.02428233802167379,
+          "breadth": 0.3787878787878788,
+          "above": 25,
+          "eligible": 66
+        }
+      },
+      {
+        "symbol": "COHR",
+        "entry_t": 1773236700000,
+        "r": 0.2227082775284779,
+        "pass": false,
+        "ctx": {
+          "spy_votes": 0,
+          "stock_ret20": 0.07484115851142836,
+          "spy_ret20": -0.02428233802167379,
+          "breadth": 0.3787878787878788,
+          "above": 25,
+          "eligible": 66
+        }
+      }
+    ]
+  },
+  "note": "Same existing exact-touch 5y trades; only universe/breadth and eligibility differ. E70 breadth denominator uses available symbols with >=51 completed daily bars at each entry."
+}
