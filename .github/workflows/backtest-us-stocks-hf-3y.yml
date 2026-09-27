@@ -1,0 +1,63 @@
+name: US Stocks HF 3Y Track B Backtest
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/backtest-us-stocks-hf-3y.yml"
+      - "scripts/backtest_us_stocks_hf_3y.py"
+      - "scripts/wyckoff_status.py"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install data stack
+        run: |
+          python -m pip install --disable-pip-version-check --upgrade pip
+          python -m pip install --disable-pip-version-check pandas pyarrow requests pandas_market_calendars
+
+      - name: Syntax check
+        run: python -m py_compile scripts/backtest_us_stocks_hf_3y.py scripts/wyckoff_status.py
+
+      - name: Run 70-symbol 3Y US stock proxy backtest
+        run: python scripts/backtest_us_stocks_hf_3y.py
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us-stocks-hf-3y-track-b
+          path: |
+            data/validation/us_stocks_hf_3y_backtest.json
+            data/validation/us_stocks_hf_3y_trades.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit results
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+          git add data/validation/us_stocks_hf_3y_backtest.json data/validation/us_stocks_hf_3y_trades.json
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "data: add US stocks HF 3y Track B backtest [skip ci]"
+            git push
+          fi
