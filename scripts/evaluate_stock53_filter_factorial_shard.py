@@ -23,7 +23,7 @@ NOT_BEFORE={"DELL":datetime(2018,12,28,tzinfo=UTC),"SNDK":datetime(2025,2,24,tzi
 
 def pd(s): return datetime.strptime(s,"%Y-%m-%d").replace(tzinfo=UTC)
 EVAL_START=pd(os.environ["EVAL_START"]); EVAL_END=pd(os.environ["EVAL_END"])
-WARMUP_START=EVAL_START-timedelta(days=220)
+WARMUP_START=EVAL_START-timedelta(days=390)
 OUT=Path(os.environ["OUT"])
 BASE=Path("data/validation/stock53_track_b_hf_20y_exact_touch.json")
 
