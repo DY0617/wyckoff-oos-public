@@ -1,0 +1,60 @@
+name: Stock53 RTH vs Non-RTH Exact-Touch
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock53-rth-vs-nonrth.yml"
+      - "scripts/backtest_stock53_rth_vs_nonrth.py"
+      - "scripts/backtest_wyckoff_exact_touch_ct.py"
+      - "scripts/wyckoff_status.py"
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check pandas_market_calendars
+
+      - name: Syntax check
+        run: python -m py_compile scripts/backtest_stock53_rth_vs_nonrth.py scripts/backtest_wyckoff_exact_touch_ct.py scripts/wyckoff_status.py
+
+      - name: Run comparison
+        run: python scripts/backtest_stock53_rth_vs_nonrth.py
+
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stock53-rth-vs-nonrth
+          path: data/validation/stock53_rth_vs_nonrth_exact_touch.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit result
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock53_rth_vs_nonrth_exact_touch.json
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "validation: add stock53 RTH vs non-RTH comparison [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi
