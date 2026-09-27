@@ -8,7 +8,7 @@ const MAP = {
   MSFT:"msftususd", MU:"muususd", AMD:"amdususd", BABA:"babaususd",
   INTC:"intcususd", JPM:"jpmususd", NFLX:"nflxususd", V:"vususd",
   COST:"costususd", GOOGL:"googlususd", LLY:"llyususd", META:"fbususd",
-  NVDA:"nvdaususd", QQQ:"qqqususd", TSLA:"tslausd", UBER:"uberususd",
+  NVDA:"nvdaususd", QQQ:"qqqususd", TSLA:"tslaususd", UBER:"uberususd",
   WMT:"wmtususd", AMAT:"amatususd", CAT:"catususd", HD:"hdususd",
   MRVL:"mrvlususd", ORCL:"orclususd", SPY:"spyususd", TSM:"tsmususd",
   CRM:"crmususd", CSCO:"cscoususd", DIS:"disususd", IBM:"ibmususd"
