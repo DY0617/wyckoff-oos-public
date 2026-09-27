@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T02:33:11.658366+00:00",
+  "generated_at": "2026-09-27T02:49:22.925220+00:00",
   "purpose": "Current 53-stock Binance TradFi exact-touch RTH vs non-RTH comparison",
   "symbols": [
     "AAPL",
@@ -67,127 +67,3339 @@
     },
     "management": "TP1 30% -> BE; TP2 30% -> TP1; runner 40% confirmed 4H pivot"
   },
-  "eligible_common_symbols": [],
+  "eligible_common_symbols": [
+    "AAPL",
+    "AMZN",
+    "AVGO",
+    "CRCL",
+    "DELL",
+    "MSFT",
+    "MU",
+    "SNDK",
+    "SOXL",
+    "SPCX",
+    "AMD",
+    "BABA",
+    "INTC",
+    "JPM",
+    "KORU",
+    "MSTR",
+    "NFLX",
+    "SMCI",
+    "V",
+    "COST",
+    "GOOGL",
+    "LLY",
+    "META",
+    "NBIS",
+    "NVDA",
+    "QQQ",
+    "TSLA",
+    "UBER",
+    "WMT",
+    "AMAT",
+    "CAT",
+    "DRAM",
+    "EWY",
+    "HD",
+    "MRVL",
+    "ORCL",
+    "SPY",
+    "TSM",
+    "AAOI",
+    "AXTI",
+    "BE",
+    "COIN",
+    "CRM",
+    "CSCO",
+    "DIS",
+    "HOOD",
+    "IBM",
+    "LITE",
+    "TQQQ"
+  ],
   "totals": {
     "RTH": {
-      "closed_trades": 0,
-      "wins": 0,
-      "losses": 0,
-      "win_rate": null,
-      "net_r": 0,
-      "avg_r": null,
-      "profit_factor": null,
-      "max_drawdown_fixed_20k": 0.0,
+      "closed_trades": 16,
+      "wins": 13,
+      "losses": 3,
+      "win_rate": 0.8125,
+      "net_r": 8.523030497574995,
+      "avg_r": 0.5326894060984372,
+      "profit_factor": 3.7435890368156035,
+      "max_drawdown_fixed_20k": 0.019169067561234574,
       "by_direction": {
         "LONG": {
-          "closed_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "win_rate": null,
-          "net_r": 0,
-          "avg_r": null,
-          "profit_factor": null
+          "closed_trades": 14,
+          "wins": 12,
+          "losses": 2,
+          "win_rate": 0.8571428571428571,
+          "net_r": 8.493898330559995,
+          "avg_r": 0.6067070236114283,
+          "profit_factor": 5.056865454987287
         },
         "SHORT": {
-          "closed_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "win_rate": null,
-          "net_r": 0,
-          "avg_r": null,
-          "profit_factor": null
+          "closed_trades": 2,
+          "wins": 1,
+          "losses": 1,
+          "win_rate": 0.5,
+          "net_r": 0.0291321670149991,
+          "avg_r": 0.01456608350749955,
+          "profit_factor": 1.0287635253286502
         }
       }
     },
     "NONRTH": {
-      "closed_trades": 0,
-      "wins": 0,
-      "losses": 0,
-      "win_rate": null,
-      "net_r": 0,
-      "avg_r": null,
-      "profit_factor": null,
-      "max_drawdown_fixed_20k": 0.0,
+      "closed_trades": 26,
+      "wins": 13,
+      "losses": 13,
+      "win_rate": 0.5,
+      "net_r": -1.0528507517999939,
+      "avg_r": -0.04049425968461515,
+      "profit_factor": 0.9253488522607226,
+      "max_drawdown_fixed_20k": 0.12034121360597963,
       "by_direction": {
         "LONG": {
-          "closed_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "win_rate": null,
-          "net_r": 0,
-          "avg_r": null,
-          "profit_factor": null
+          "closed_trades": 24,
+          "wins": 11,
+          "losses": 13,
+          "win_rate": 0.4583333333333333,
+          "net_r": -2.107972242719997,
+          "avg_r": -0.08783217677999988,
+          "profit_factor": 0.8505367004273366
         },
         "SHORT": {
-          "closed_trades": 0,
-          "wins": 0,
+          "closed_trades": 2,
+          "wins": 2,
           "losses": 0,
-          "win_rate": null,
-          "net_r": 0,
-          "avg_r": null,
+          "win_rate": 1.0,
+          "net_r": 1.0551214909200033,
+          "avg_r": 0.5275607454600016,
           "profit_factor": null
         }
       }
     }
   },
-  "per_symbol": [],
+  "per_symbol": [
+    {
+      "symbol": "AAPL",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.8326869071599958,
+        "avg_r": 1.8326869071599958,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 16590,
+        "m15_rth": 3144,
+        "rth_h4": 242,
+        "rth_d1": 121,
+        "nonrth_h4": 1038,
+        "nonrth_d1": 174
+      },
+      "common_eval_start_ms": 1782849600000
+    },
+    {
+      "symbol": "AMZN",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 21963,
+        "m15_rth": 4133,
+        "rth_h4": 318,
+        "rth_d1": 159,
+        "nonrth_h4": 1374,
+        "nonrth_d1": 230
+      },
+      "common_eval_start_ms": 1778011200000
+    },
+    {
+      "symbol": "AVGO",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 0,
+        "losses": 2,
+        "win_rate": 0.0,
+        "net_r": -2.1415626301999975,
+        "avg_r": -1.0707813150999987,
+        "profit_factor": 0.0
+      },
+      "bars": {
+        "m15_all": 15247,
+        "m15_rth": 2885,
+        "rth_h4": 222,
+        "rth_d1": 111,
+        "nonrth_h4": 954,
+        "nonrth_d1": 160
+      },
+      "common_eval_start_ms": 1784145600000
+    },
+    {
+      "symbol": "CRCL",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 3.408001460355,
+        "avg_r": 1.7040007301775,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 21962,
+        "m15_rth": 4132,
+        "rth_h4": 318,
+        "rth_d1": 159,
+        "nonrth_h4": 1374,
+        "nonrth_d1": 230
+      },
+      "common_eval_start_ms": 1778011200000
+    },
+    {
+      "symbol": "DELL",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 11099,
+        "m15_rth": 2080,
+        "rth_h4": 160,
+        "rth_d1": 80,
+        "nonrth_h4": 694,
+        "nonrth_d1": 116
+      },
+      "common_eval_start_ms": 1787860800000
+    },
+    {
+      "symbol": "MSFT",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 15248,
+        "m15_rth": 2886,
+        "rth_h4": 222,
+        "rth_d1": 111,
+        "nonrth_h4": 954,
+        "nonrth_d1": 160
+      },
+      "common_eval_start_ms": 1784145600000
+    },
+    {
+      "symbol": "MU",
+      "RTH": {
+        "closed_trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0128162901500002,
+        "avg_r": -1.0128162901500002,
+        "profit_factor": 0.0
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 16496,
+        "m15_rth": 3120,
+        "rth_h4": 240,
+        "rth_d1": 120,
+        "nonrth_h4": 1032,
+        "nonrth_d1": 173
+      },
+      "common_eval_start_ms": 1782936000000
+    },
+    {
+      "symbol": "SNDK",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0363105539499982,
+        "avg_r": -1.0363105539499982,
+        "profit_factor": 0.0
+      },
+      "bars": {
+        "m15_all": 16495,
+        "m15_rth": 3119,
+        "rth_h4": 240,
+        "rth_d1": 120,
+        "nonrth_h4": 1032,
+        "nonrth_d1": 173
+      },
+      "common_eval_start_ms": 1782936000000
+    },
+    {
+      "symbol": "SOXL",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12846,
+        "m15_rth": 2390,
+        "rth_h4": 184,
+        "rth_d1": 92,
+        "nonrth_h4": 804,
+        "nonrth_d1": 135
+      },
+      "common_eval_start_ms": 1786478400000
+    },
+    {
+      "symbol": "SPCX",
+      "RTH": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.0502572203599998,
+        "avg_r": 1.0502572203599998,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": 0.934484449650002,
+        "avg_r": 0.467242224825001,
+        "profit_factor": 1.905705088326481
+      },
+      "bars": {
+        "m15_all": 12307,
+        "m15_rth": 2288,
+        "rth_h4": 176,
+        "rth_d1": 88,
+        "nonrth_h4": 770,
+        "nonrth_d1": 129
+      },
+      "common_eval_start_ms": 1786996800000
+    },
+    {
+      "symbol": "AMD",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 0.7942978614299991,
+        "avg_r": 0.7942978614299991,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 13712,
+        "m15_rth": 2574,
+        "rth_h4": 198,
+        "rth_d1": 99,
+        "nonrth_h4": 858,
+        "nonrth_d1": 144
+      },
+      "common_eval_start_ms": 1785528000000
+    },
+    {
+      "symbol": "BABA",
+      "RTH": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.710335295375,
+        "avg_r": 1.710335295375,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 2.4644732121750037,
+        "avg_r": 1.2322366060875019,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 15246,
+        "m15_rth": 2884,
+        "rth_h4": 222,
+        "rth_d1": 111,
+        "nonrth_h4": 954,
+        "nonrth_d1": 160
+      },
+      "common_eval_start_ms": 1784145600000
+    },
+    {
+      "symbol": "INTC",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 22636,
+        "m15_rth": 4264,
+        "rth_h4": 328,
+        "rth_d1": 164,
+        "nonrth_h4": 1416,
+        "nonrth_d1": 237
+      },
+      "common_eval_start_ms": 1777406400000
+    },
+    {
+      "symbol": "JPM",
+      "RTH": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.8564015406750013,
+        "avg_r": -0.42820077033750065,
+        "profit_factor": 0.19884272493952004
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -1.0020076567699994,
+        "avg_r": -0.5010038283849997,
+        "profit_factor": 0.09319612569149989
+      },
+      "bars": {
+        "m15_all": 12559,
+        "m15_rth": 2365,
+        "rth_h4": 182,
+        "rth_d1": 91,
+        "nonrth_h4": 786,
+        "nonrth_d1": 132
+      },
+      "common_eval_start_ms": 1786564800000
+    },
+    {
+      "symbol": "KORU",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 9198,
+        "m15_rth": 1766,
+        "rth_h4": 136,
+        "rth_d1": 68,
+        "nonrth_h4": 576,
+        "nonrth_d1": 97
+      },
+      "common_eval_start_ms": 1789502400000
+    },
+    {
+      "symbol": "MSTR",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 3,
+        "wins": 0,
+        "losses": 3,
+        "win_rate": 0.0,
+        "net_r": -3.1157180474999935,
+        "avg_r": -1.038572682499998,
+        "profit_factor": 0.0
+      },
+      "bars": {
+        "m15_all": 21964,
+        "m15_rth": 4134,
+        "rth_h4": 318,
+        "rth_d1": 159,
+        "nonrth_h4": 1374,
+        "nonrth_d1": 230
+      },
+      "common_eval_start_ms": 1778011200000
+    },
+    {
+      "symbol": "NFLX",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 10466,
+        "m15_rth": 1976,
+        "rth_h4": 152,
+        "rth_d1": 76,
+        "nonrth_h4": 655,
+        "nonrth_d1": 110
+      },
+      "common_eval_start_ms": 1788379200000
+    },
+    {
+      "symbol": "SMCI",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 9256,
+        "m15_rth": 1767,
+        "rth_h4": 136,
+        "rth_d1": 68,
+        "nonrth_h4": 579,
+        "nonrth_d1": 97
+      },
+      "common_eval_start_ms": 1789502400000
+    },
+    {
+      "symbol": "V",
+      "RTH": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.8355764054899968,
+        "avg_r": 1.8355764054899968,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.9868494042400131,
+        "avg_r": -0.49342470212000655,
+        "profit_factor": 0.14947671152702627
+      },
+      "bars": {
+        "m15_all": 12559,
+        "m15_rth": 2365,
+        "rth_h4": 182,
+        "rth_d1": 91,
+        "nonrth_h4": 786,
+        "nonrth_d1": 132
+      },
+      "common_eval_start_ms": 1786564800000
+    },
+    {
+      "symbol": "COST",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 10464,
+        "m15_rth": 1976,
+        "rth_h4": 152,
+        "rth_d1": 76,
+        "nonrth_h4": 655,
+        "nonrth_d1": 110
+      },
+      "common_eval_start_ms": 1788379200000
+    },
+    {
+      "symbol": "GOOGL",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 0.9521408639400036,
+        "avg_r": 0.9521408639400036,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 17641,
+        "m15_rth": 3296,
+        "rth_h4": 254,
+        "rth_d1": 127,
+        "nonrth_h4": 1104,
+        "nonrth_d1": 185
+      },
+      "common_eval_start_ms": 1782158400000
+    },
+    {
+      "symbol": "LLY",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 11215,
+        "m15_rth": 2132,
+        "rth_h4": 164,
+        "rth_d1": 82,
+        "nonrth_h4": 702,
+        "nonrth_d1": 118
+      },
+      "common_eval_start_ms": 1787688000000
+    },
+    {
+      "symbol": "META",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 17643,
+        "m15_rth": 3298,
+        "rth_h4": 254,
+        "rth_d1": 127,
+        "nonrth_h4": 1104,
+        "nonrth_d1": 185
+      },
+      "common_eval_start_ms": 1782158400000
+    },
+    {
+      "symbol": "NBIS",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 11791,
+        "m15_rth": 2236,
+        "rth_h4": 172,
+        "rth_d1": 86,
+        "nonrth_h4": 738,
+        "nonrth_d1": 124
+      },
+      "common_eval_start_ms": 1787169600000
+    },
+    {
+      "symbol": "NVDA",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 17642,
+        "m15_rth": 3297,
+        "rth_h4": 254,
+        "rth_d1": 127,
+        "nonrth_h4": 1104,
+        "nonrth_d1": 185
+      },
+      "common_eval_start_ms": 1782158400000
+    },
+    {
+      "symbol": "QQQ",
+      "RTH": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 0.1712353507200015,
+        "avg_r": 0.1712353507200015,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.058959287649997805,
+        "avg_r": -0.029479643824998902,
+        "profit_factor": 0.9507225882352699
+      },
+      "bars": {
+        "m15_all": 16591,
+        "m15_rth": 3146,
+        "rth_h4": 242,
+        "rth_d1": 121,
+        "nonrth_h4": 1038,
+        "nonrth_d1": 174
+      },
+      "common_eval_start_ms": 1782849600000
+    },
+    {
+      "symbol": "TSLA",
+      "RTH": {
+        "closed_trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.9823271935750002,
+        "avg_r": 0.9911635967875001,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 23115,
+        "m15_rth": 4342,
+        "rth_h4": 334,
+        "rth_d1": 167,
+        "nonrth_h4": 1446,
+        "nonrth_d1": 242
+      },
+      "common_eval_start_ms": 1776974400000
+    },
+    {
+      "symbol": "UBER",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12846,
+        "m15_rth": 2391,
+        "rth_h4": 184,
+        "rth_d1": 92,
+        "nonrth_h4": 804,
+        "nonrth_d1": 135
+      },
+      "common_eval_start_ms": 1786478400000
+    },
+    {
+      "symbol": "WMT",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12558,
+        "m15_rth": 2365,
+        "rth_h4": 182,
+        "rth_d1": 91,
+        "nonrth_h4": 786,
+        "nonrth_d1": 132
+      },
+      "common_eval_start_ms": 1786564800000
+    },
+    {
+      "symbol": "AMAT",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 10560,
+        "m15_rth": 2002,
+        "rth_h4": 154,
+        "rth_d1": 77,
+        "nonrth_h4": 661,
+        "nonrth_d1": 111
+      },
+      "common_eval_start_ms": 1788292800000
+    },
+    {
+      "symbol": "CAT",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 8255,
+        "m15_rth": 1560,
+        "rth_h4": 120,
+        "rth_d1": 60,
+        "nonrth_h4": 517,
+        "nonrth_d1": 87
+      },
+      "common_eval_start_ms": 1790366400000
+    },
+    {
+      "symbol": "DRAM",
+      "RTH": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.0680010525799997,
+        "avg_r": 1.0680010525799997,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12557,
+        "m15_rth": 2364,
+        "rth_h4": 182,
+        "rth_d1": 91,
+        "nonrth_h4": 786,
+        "nonrth_d1": 132
+      },
+      "common_eval_start_ms": 1786564800000
+    },
+    {
+      "symbol": "EWY",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 18607,
+        "m15_rth": 3510,
+        "rth_h4": 270,
+        "rth_d1": 135,
+        "nonrth_h4": 1164,
+        "nonrth_d1": 195
+      },
+      "common_eval_start_ms": 1781035200000
+    },
+    {
+      "symbol": "HD",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.042167818,
+        "avg_r": -1.042167818,
+        "profit_factor": 0.0
+      },
+      "bars": {
+        "m15_all": 12845,
+        "m15_rth": 2390,
+        "rth_h4": 184,
+        "rth_d1": 92,
+        "nonrth_h4": 804,
+        "nonrth_d1": 135
+      },
+      "common_eval_start_ms": 1786478400000
+    },
+    {
+      "symbol": "MRVL",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12844,
+        "m15_rth": 2389,
+        "rth_h4": 184,
+        "rth_d1": 92,
+        "nonrth_h4": 804,
+        "nonrth_d1": 135
+      },
+      "common_eval_start_ms": 1786478400000
+    },
+    {
+      "symbol": "ORCL",
+      "RTH": {
+        "closed_trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.240084981689999,
+        "avg_r": 0.6200424908449995,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12846,
+        "m15_rth": 2391,
+        "rth_h4": 184,
+        "rth_d1": 92,
+        "nonrth_h4": 804,
+        "nonrth_d1": 135
+      },
+      "common_eval_start_ms": 1786478400000
+    },
+    {
+      "symbol": "SPY",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -1.2343097083999985,
+        "avg_r": -0.6171548541999993,
+        "profit_factor": 0.0017235952137905142
+      },
+      "bars": {
+        "m15_all": 16590,
+        "m15_rth": 3145,
+        "rth_h4": 242,
+        "rth_d1": 121,
+        "nonrth_h4": 1038,
+        "nonrth_d1": 174
+      },
+      "common_eval_start_ms": 1782849600000
+    },
+    {
+      "symbol": "TSM",
+      "RTH": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.14197491704000187,
+        "avg_r": -0.07098745852000093,
+        "profit_factor": 0.8614546435053693
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 16589,
+        "m15_rth": 3144,
+        "rth_h4": 242,
+        "rth_d1": 121,
+        "nonrth_h4": 1038,
+        "nonrth_d1": 174
+      },
+      "common_eval_start_ms": 1782849600000
+    },
+    {
+      "symbol": "AAOI",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 10559,
+        "m15_rth": 2002,
+        "rth_h4": 154,
+        "rth_d1": 77,
+        "nonrth_h4": 661,
+        "nonrth_d1": 111
+      },
+      "common_eval_start_ms": 1788292800000
+    },
+    {
+      "symbol": "AXTI",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 10617,
+        "m15_rth": 2002,
+        "rth_h4": 154,
+        "rth_d1": 77,
+        "nonrth_h4": 664,
+        "nonrth_d1": 111
+      },
+      "common_eval_start_ms": 1788292800000
+    },
+    {
+      "symbol": "BE",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.8210503998000004,
+        "avg_r": -0.4105251999000002,
+        "profit_factor": 0.20891990075527506
+      },
+      "bars": {
+        "m15_all": 11790,
+        "m15_rth": 2235,
+        "rth_h4": 172,
+        "rth_d1": 86,
+        "nonrth_h4": 738,
+        "nonrth_d1": 124
+      },
+      "common_eval_start_ms": 1787169600000
+    },
+    {
+      "symbol": "COIN",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 21961,
+        "m15_rth": 4132,
+        "rth_h4": 318,
+        "rth_d1": 159,
+        "nonrth_h4": 1374,
+        "nonrth_d1": 230
+      },
+      "common_eval_start_ms": 1778011200000
+    },
+    {
+      "symbol": "CRM",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 11040,
+        "m15_rth": 2080,
+        "rth_h4": 160,
+        "rth_d1": 80,
+        "nonrth_h4": 691,
+        "nonrth_d1": 116
+      },
+      "common_eval_start_ms": 1787860800000
+    },
+    {
+      "symbol": "CSCO",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12845,
+        "m15_rth": 2390,
+        "rth_h4": 184,
+        "rth_d1": 92,
+        "nonrth_h4": 804,
+        "nonrth_d1": 135
+      },
+      "common_eval_start_ms": 1786478400000
+    },
+    {
+      "symbol": "DIS",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12846,
+        "m15_rth": 2391,
+        "rth_h4": 184,
+        "rth_d1": 92,
+        "nonrth_h4": 804,
+        "nonrth_d1": 135
+      },
+      "common_eval_start_ms": 1786478400000
+    },
+    {
+      "symbol": "HOOD",
+      "RTH": {
+        "closed_trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.4764057456500006,
+        "avg_r": 0.7382028728250003,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 22634,
+        "m15_rth": 4263,
+        "rth_h4": 328,
+        "rth_d1": 164,
+        "nonrth_h4": 1416,
+        "nonrth_d1": 237
+      },
+      "common_eval_start_ms": 1777406400000
+    },
+    {
+      "symbol": "IBM",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 11040,
+        "m15_rth": 2080,
+        "rth_h4": 160,
+        "rth_d1": 80,
+        "nonrth_h4": 691,
+        "nonrth_d1": 116
+      },
+      "common_eval_start_ms": 1787860800000
+    },
+    {
+      "symbol": "LITE",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 12847,
+        "m15_rth": 2392,
+        "rth_h4": 184,
+        "rth_d1": 92,
+        "nonrth_h4": 804,
+        "nonrth_d1": 135
+      },
+      "common_eval_start_ms": 1786478400000
+    },
+    {
+      "symbol": "TQQQ",
+      "RTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "NONRTH": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "bars": {
+        "m15_all": 8526,
+        "m15_rth": 1637,
+        "rth_h4": 126,
+        "rth_d1": 63,
+        "nonrth_h4": 534,
+        "nonrth_d1": 90
+      },
+      "common_eval_start_ms": 1790107200000
+    }
+  ],
   "errors": {
-    "AAPL": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "AMZN": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=12')",
-    "AVGO": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "CRCL": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=12')",
-    "DELL": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "MSFT": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "MU": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "SNDK": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "SNXX": "RuntimeError('insufficient common daily warmup RTH=7 NONRTH=12')",
-    "SOXL": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "SPCX": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "AMD": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "BABA": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "INTC": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=12')",
-    "JPM": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "KORU": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "MSTR": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=12')",
-    "NFLX": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "SKHY": "RuntimeError('insufficient common daily warmup RTH=7 NONRTH=12')",
-    "SMCI": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "SOXS": "RuntimeError('insufficient common daily warmup RTH=7 NONRTH=11')",
-    "V": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "COST": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "GOOGL": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=12')",
-    "LLY": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "META": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=12')",
-    "NBIS": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "NVDA": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=12')",
-    "QQQ": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "TSLA": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=12')",
-    "UBER": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "WMT": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "AMAT": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "CAT": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "DRAM": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "EWY": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "HD": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "MRVL": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=12')",
-    "MUU": "RuntimeError('insufficient common daily warmup RTH=7 NONRTH=11')",
-    "ORCL": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "SPY": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "TSM": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "AAOI": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "AXTI": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "BE": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=11')",
-    "COIN": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=12')",
-    "CRM": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "CSCO": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "DIS": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "HOOD": "RuntimeError('insufficient common daily warmup RTH=9 NONRTH=12')",
-    "IBM": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')",
-    "LITE": "RuntimeError('insufficient common daily warmup RTH=6 NONRTH=11')",
-    "TQQQ": "RuntimeError('insufficient common daily warmup RTH=8 NONRTH=11')"
+    "SNXX": "RuntimeError('insufficient common daily warmup RTH=56 NONRTH=80')",
+    "SKHY": "RuntimeError('insufficient common daily warmup RTH=55 NONRTH=79')",
+    "SOXS": "RuntimeError('insufficient common daily warmup RTH=51 NONRTH=73')",
+    "MUU": "RuntimeError('insufficient common daily warmup RTH=51 NONRTH=73')"
   },
   "trades": {
-    "RTH": [],
-    "NONRTH": []
+    "RTH": [
+      {
+        "symbol": "MU",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_t": 1787837400000,
+        "trigger_4h_open_ms": 1787837400000,
+        "exit_t": 1788763500000,
+        "entry": 957.47,
+        "stop": 1045.7,
+        "target": 845.72,
+        "tp1": 856.61,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 4.53,
+        "reason": "STOP",
+        "pnl": -405.1265160600001,
+        "r": -1.0128162901500002,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1788763500000,
+            "price": 1045.7,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "SPCX",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787664600000,
+        "trigger_4h_open_ms": 1787664600000,
+        "exit_t": 1788874200000,
+        "entry": 137.47,
+        "stop": 129.09,
+        "target": 149.72,
+        "tp1": 143.74,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 47.730000000000004,
+        "reason": "STOP",
+        "pnl": 420.10288814399996,
+        "r": 1.0502572203599998,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788193800000,
+            "price": 143.74,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788193800000,
+            "price": 137.47,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1788449400000,
+            "price": 149.72,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1788449400000,
+            "price": 143.74,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1788551100000,
+            "price": 146.01
+          },
+          {
+            "type": "STOP",
+            "t": 1788874200000,
+            "price": 146.01,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "BABA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1785245400000,
+        "trigger_4h_open_ms": 1785245400000,
+        "exit_t": 1786066200000,
+        "entry": 115.26,
+        "stop": 111.25,
+        "target": 121.98,
+        "tp1": 118.61,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 99.75,
+        "reason": "STOP",
+        "pnl": 684.13411815,
+        "r": 1.710335295375,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1785455100000,
+            "price": 118.61,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1785455100000,
+            "price": 115.26,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1785509100000,
+            "price": 121.98,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1785509100000,
+            "price": 118.61,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1785872700000,
+            "price": 125.21000000000001
+          },
+          {
+            "type": "STOP",
+            "t": 1786066200000,
+            "price": 125.21000000000001,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "JPM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787664600000,
+        "trigger_4h_open_ms": 1787664600000,
+        "exit_t": 1788826500000,
+        "entry": 356.95,
+        "stop": 349.84000000000003,
+        "target": 367.39,
+        "tp1": 363.42,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 56.25,
+        "reason": "BE",
+        "pnl": 85.02161625000045,
+        "r": 0.21255404062500113,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788687900000,
+            "price": 363.42,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788687900000,
+            "price": 356.95,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1788826500000,
+            "price": 356.95,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "JPM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1789392600000,
+        "trigger_4h_open_ms": 1789392600000,
+        "exit_t": 1789407000000,
+        "entry": 354.69,
+        "stop": 348.58,
+        "target": 362.98,
+        "tp1": 360.32,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 65.46000000000001,
+        "reason": "STOP",
+        "pnl": -427.58223252000096,
+        "r": -1.0689555813000025,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1789407000000,
+            "price": 348.58,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "V",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1786975200000,
+        "trigger_4h_open_ms": 1786973400000,
+        "exit_t": 1787835600000,
+        "entry": 361.42,
+        "stop": 354.90000000000003,
+        "target": 373.11,
+        "tp1": 367.14,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 61.34,
+        "reason": "STOP",
+        "pnl": 734.2305621959987,
+        "r": 1.8355764054899968,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1787147100000,
+            "price": 367.14,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1787147100000,
+            "price": 361.42,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1787364000000,
+            "price": 373.11,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1787364000000,
+            "price": 367.14,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1787773500000,
+            "price": 379.39
+          },
+          {
+            "type": "STOP",
+            "t": 1787835600000,
+            "price": 379.39,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "QQQ",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1783960200000,
+        "trigger_4h_open_ms": 1783949400000,
+        "exit_t": 1784131200000,
+        "entry": 712.88,
+        "stop": 698.76,
+        "target": 737.5500000000001,
+        "tp1": 723.8000000000001,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 28.32,
+        "reason": "BE",
+        "pnl": 68.49414028800061,
+        "r": 0.1712353507200015,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1784079000000,
+            "price": 723.8000000000001,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1784079000000,
+            "price": 712.88,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1784131200000,
+            "price": 712.88,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "TSLA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1777384800000,
+        "trigger_4h_open_ms": 1777383000000,
+        "exit_t": 1778810400000,
+        "entry": 381.51,
+        "stop": 362.24,
+        "target": 409.39,
+        "tp1": 394.04,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 20.75,
+        "reason": "STOP",
+        "pnl": 710.57034965,
+        "r": 1.776425874125,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1777649400000,
+            "price": 394.04,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1777649400000,
+            "price": 381.51,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1778160600000,
+            "price": 409.39,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1778160600000,
+            "price": 394.04,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1778260500000,
+            "price": 399.77
+          },
+          {
+            "type": "TRAIL",
+            "t": 1778528700000,
+            "price": 414.18
+          },
+          {
+            "type": "TRAIL",
+            "t": 1778615100000,
+            "price": 418.92
+          },
+          {
+            "type": "TRAIL",
+            "t": 1778787900000,
+            "price": 438.01
+          },
+          {
+            "type": "STOP",
+            "t": 1778810400000,
+            "price": 438.01,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "TSLA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1779371100000,
+        "trigger_4h_open_ms": 1779370200000,
+        "exit_t": 1780342200000,
+        "entry": 418.19,
+        "stop": 391.36,
+        "target": 453.56,
+        "tp1": 438.3,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 14.9,
+        "reason": "BE",
+        "pnl": 82.36052778000007,
+        "r": 0.20590131945000018,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1779829200000,
+            "price": 438.3,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1779829200000,
+            "price": 418.19,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1780342200000,
+            "price": 418.19,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "DRAM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787838300000,
+        "trigger_4h_open_ms": 1787837400000,
+        "exit_t": 1789041600000,
+        "entry": 56.46,
+        "stop": 52.7,
+        "target": 62.09,
+        "tp1": 59.29,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 106.38,
+        "reason": "STOP",
+        "pnl": 427.20042103199984,
+        "r": 1.0680010525799997,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788540300000,
+            "price": 59.29,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788540300000,
+            "price": 56.46,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1788826500000,
+            "price": 62.09,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1788826500000,
+            "price": 59.29,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1788983100000,
+            "price": 60.33
+          },
+          {
+            "type": "STOP",
+            "t": 1789041600000,
+            "price": 60.33,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "ORCL",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787232600000,
+        "trigger_4h_open_ms": 1787232600000,
+        "exit_t": 1788269400000,
+        "entry": 145.58,
+        "stop": 136.52,
+        "target": 159.35,
+        "tp1": 152.15,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 44.15,
+        "reason": "BE",
+        "pnl": 79.25460980999989,
+        "r": 0.19813652452499972,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1787817600000,
+            "price": 152.15,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1787817600000,
+            "price": 145.58,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1788269400000,
+            "price": 145.58,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "ORCL",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_t": 1789652700000,
+        "trigger_4h_open_ms": 1789651800000,
+        "exit_t": 1790316000000,
+        "entry": 149.76,
+        "stop": 158.20000000000002,
+        "target": 139.79,
+        "tp1": 141.22,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 47.39,
+        "reason": "STOP",
+        "pnl": 416.7793828659997,
+        "r": 1.0419484571649993,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1790252100000,
+            "price": 141.22,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1790252100000,
+            "price": 149.76,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1790252100000,
+            "price": 139.79,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1790252100000,
+            "price": 141.22,
+            "cause": "TP2"
+          },
+          {
+            "type": "STOP",
+            "t": 1790316000000,
+            "price": 141.22,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "TSM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1783431000000,
+        "trigger_4h_open_ms": 1783431000000,
+        "exit_t": 1784125800000,
+        "entry": 436.72,
+        "stop": 416.07,
+        "target": 477.31,
+        "tp1": 453.31,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 19.37,
+        "reason": "STOP",
+        "pnl": -409.90162538000067,
+        "r": -1.0247540634500016,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1784125800000,
+            "price": 416.07,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "TSM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787942700000,
+        "trigger_4h_open_ms": 1787938200000,
+        "exit_t": 1789042500000,
+        "entry": 418.53000000000003,
+        "stop": 403.99,
+        "target": 436.23,
+        "tp1": 429.41,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 27.51,
+        "reason": "STOP",
+        "pnl": 353.1116585639999,
+        "r": 0.8827791464099998,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788551100000,
+            "price": 429.41,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788551100000,
+            "price": 418.53000000000003,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1788768900000,
+            "price": 436.23,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1788768900000,
+            "price": 429.41,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1788983100000,
+            "price": 430.46000000000004
+          },
+          {
+            "type": "STOP",
+            "t": 1789042500000,
+            "price": 430.46000000000004,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "HOOD",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1781011800000,
+        "trigger_4h_open_ms": 1781011800000,
+        "exit_t": 1781128800000,
+        "entry": 85.75,
+        "stop": 78.62,
+        "target": 94.42,
+        "tp1": 91.08,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 56.1,
+        "reason": "BE",
+        "pnl": 83.87738765999997,
+        "r": 0.20969346914999992,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1781098200000,
+            "price": 91.08,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1781098200000,
+            "price": 85.75,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1781128800000,
+            "price": 85.75,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "HOOD",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1782739800000,
+        "trigger_4h_open_ms": 1782739800000,
+        "exit_t": 1783490400000,
+        "entry": 99.77,
+        "stop": 91.69,
+        "target": 112.64,
+        "tp1": 106.2,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 49.5,
+        "reason": "STOP",
+        "pnl": 506.68491060000025,
+        "r": 1.2667122765000007,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1782918000000,
+            "price": 106.2,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1782918000000,
+            "price": 99.77,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1782988200000,
+            "price": 112.64,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1782988200000,
+            "price": 106.2,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1783358100000,
+            "price": 109.62
+          },
+          {
+            "type": "TRAIL",
+            "t": 1783453500000,
+            "price": 111.2
+          },
+          {
+            "type": "STOP",
+            "t": 1783490400000,
+            "price": 111.2,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      }
+    ],
+    "NONRTH": [
+      {
+        "symbol": "AAPL",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1784090700000,
+        "trigger_4h_open_ms": 1784088000000,
+        "exit_t": 1784546100000,
+        "entry": 315.78000000000003,
+        "stop": 310.61,
+        "target": 323.3,
+        "tp1": 319.65000000000003,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 77.36,
+        "reason": "STOP",
+        "pnl": 733.0747628639983,
+        "r": 1.8326869071599958,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1784122200000,
+            "price": 319.65000000000003,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1784122200000,
+            "price": 315.78000000000003,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1784124000000,
+            "price": 323.3,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1784124000000,
+            "price": 319.65000000000003,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1784216700000,
+            "price": 325.15000000000003
+          },
+          {
+            "type": "TRAIL",
+            "t": 1784317500000,
+            "price": 328.14
+          },
+          {
+            "type": "TRAIL",
+            "t": 1784360700000,
+            "price": 331.6
+          },
+          {
+            "type": "TRAIL",
+            "t": 1784490300000,
+            "price": 331.89
+          },
+          {
+            "type": "STOP",
+            "t": 1784546100000,
+            "price": 331.89,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "AVGO",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1786446000000,
+        "trigger_4h_open_ms": 1786435200000,
+        "exit_t": 1786455000000,
+        "entry": 425.7,
+        "stop": 419.93,
+        "target": 433.27,
+        "tp1": 429.51,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 69.32000000000001,
+        "reason": "STOP",
+        "pnl": -435.14784295999874,
+        "r": -1.087869607399997,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1786455000000,
+            "price": 419.93,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "AVGO",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1786536900000,
+        "trigger_4h_open_ms": 1786536000000,
+        "exit_t": 1786627800000,
+        "entry": 422.09000000000003,
+        "stop": 412.78000000000003,
+        "target": 433.27,
+        "tp1": 429.51,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 42.96,
+        "reason": "STOP",
+        "pnl": -421.4772091200001,
+        "r": -1.0536930228000003,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1786627800000,
+            "price": 412.78000000000003,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "CRCL",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1778202900000,
+        "trigger_4h_open_ms": 1778198400000,
+        "exit_t": 1778495400000,
+        "entry": 114.29,
+        "stop": 108.69,
+        "target": 124.11,
+        "tp1": 119.19,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 71.42,
+        "reason": "BE",
+        "pnl": 95.12929739999981,
+        "r": 0.23782324349999953,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1778457600000,
+            "price": 119.19,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1778457600000,
+            "price": 114.29,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1778495400000,
+            "price": 114.29,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "CRCL",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787141700000,
+        "trigger_4h_open_ms": 1787140800000,
+        "exit_t": 1787374800000,
+        "entry": 72.03,
+        "stop": 69.82000000000001,
+        "target": 75.71000000000001,
+        "tp1": 73.86,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 180.99,
+        "reason": "STOP",
+        "pnl": 1268.0712867420002,
+        "r": 3.1701782168550006,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1787145300000,
+            "price": 73.86,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1787145300000,
+            "price": 72.03,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1787146200000,
+            "price": 75.71000000000001,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1787146200000,
+            "price": 73.86,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1787255100000,
+            "price": 78.94
+          },
+          {
+            "type": "TRAIL",
+            "t": 1787355900000,
+            "price": 85.64
+          },
+          {
+            "type": "STOP",
+            "t": 1787374800000,
+            "price": 85.64,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "SNDK",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1789128900000,
+        "trigger_4h_open_ms": 1789128000000,
+        "exit_t": 1789133400000,
+        "entry": 1713.55,
+        "stop": 1657.92,
+        "target": 1806.47,
+        "tp1": 1794.08,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 7.19,
+        "reason": "STOP",
+        "pnl": -414.5242215799992,
+        "r": -1.0363105539499982,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1789133400000,
+            "price": 1657.92,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "SPCX",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1788403500000,
+        "trigger_4h_open_ms": 1788393600000,
+        "exit_t": 1788794100000,
+        "entry": 140.76,
+        "stop": 138.02,
+        "target": 145.0,
+        "tp1": 143.04,
+        "fib1618": 145.74,
+        "runner_mode": "pivot",
+        "size": 145.98,
+        "reason": "STOP",
+        "pnl": 786.5040369600015,
+        "r": 1.9662600924000038,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788442200000,
+            "price": 143.04,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788442200000,
+            "price": 140.76,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1788442200000,
+            "price": 145.0,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1788442200000,
+            "price": 143.04,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1788551100000,
+            "price": 146.69
+          },
+          {
+            "type": "TRAIL",
+            "t": 1788723900000,
+            "price": 149.6
+          },
+          {
+            "type": "TRAIL",
+            "t": 1788767100000,
+            "price": 149.77
+          },
+          {
+            "type": "STOP",
+            "t": 1788794100000,
+            "price": 149.77,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "SPCX",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1789104600000,
+        "trigger_4h_open_ms": 1789099200000,
+        "exit_t": 1789494300000,
+        "entry": 148.75,
+        "stop": 143.26,
+        "target": 154.77,
+        "tp1": 153.74,
+        "fib1618": 161.39000000000001,
+        "runner_mode": "pivot",
+        "size": 72.85000000000001,
+        "reason": "STOP",
+        "pnl": -412.7102571000007,
+        "r": -1.0317756427500018,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1789494300000,
+            "price": 143.26,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "AMD",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1789516800000,
+        "trigger_4h_open_ms": 1789516800000,
+        "exit_t": 1789585200000,
+        "entry": 505.54,
+        "stop": 495.14,
+        "target": 518.62,
+        "tp1": 512.61,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 38.46,
+        "reason": "STOP",
+        "pnl": 317.71914457199966,
+        "r": 0.7942978614299991,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1789545600000,
+            "price": 512.61,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1789545600000,
+            "price": 505.54,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1789565400000,
+            "price": 518.62,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1789565400000,
+            "price": 512.61,
+            "cause": "TP2"
+          },
+          {
+            "type": "STOP",
+            "t": 1789585200000,
+            "price": 512.61,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "BABA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1784898900000,
+        "trigger_4h_open_ms": 1784894400000,
+        "exit_t": 1785301200000,
+        "entry": 112.72,
+        "stop": 110.09,
+        "target": 117.44,
+        "tp1": 115.07000000000001,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 152.09,
+        "reason": "STOP",
+        "pnl": 444.6958597460008,
+        "r": 1.111739649365002,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1785181500000,
+            "price": 115.07000000000001,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1785181500000,
+            "price": 112.72,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1785291300000,
+            "price": 117.44,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1785291300000,
+            "price": 115.07000000000001,
+            "cause": "TP2"
+          },
+          {
+            "type": "STOP",
+            "t": 1785301200000,
+            "price": 115.07000000000001,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "BABA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1786091400000,
+        "trigger_4h_open_ms": 1786089600000,
+        "exit_t": 1786418100000,
+        "entry": 126.61,
+        "stop": 123.96000000000001,
+        "target": 131.7,
+        "tp1": 129.77,
+        "fib1618": 133.19,
+        "runner_mode": "pivot",
+        "size": 150.94,
+        "reason": "STOP",
+        "pnl": 541.0934251240006,
+        "r": 1.3527335628100017,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1786183200000,
+            "price": 129.77,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1786183200000,
+            "price": 126.61,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1786377600000,
+            "price": 131.7,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1786377600000,
+            "price": 129.77,
+            "cause": "TP2"
+          },
+          {
+            "type": "STOP",
+            "t": 1786418100000,
+            "price": 129.77,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "JPM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1786757400000,
+        "trigger_4h_open_ms": 1786752000000,
+        "exit_t": 1787146200000,
+        "entry": 363.49,
+        "stop": 359.36,
+        "target": 368.81,
+        "tp1": 366.57,
+        "fib1618": 369.53000000000003,
+        "runner_mode": "pivot",
+        "size": 96.85000000000001,
+        "reason": "STOP",
+        "pnl": -441.9953134999996,
+        "r": -1.1049882837499991,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1787146200000,
+            "price": 359.36,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "JPM",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_t": 1789185600000,
+        "trigger_4h_open_ms": 1789185600000,
+        "exit_t": 1789344000000,
+        "entry": 356.53000000000003,
+        "stop": 360.77,
+        "target": 349.51,
+        "tp1": 353.65000000000003,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 94.33,
+        "reason": "BE",
+        "pnl": 41.19225079199987,
+        "r": 0.10298062697999967,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1789289100000,
+            "price": 353.65000000000003,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1789289100000,
+            "price": 356.53000000000003,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1789344000000,
+            "price": 356.53000000000003,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "MSTR",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1778647500000,
+        "trigger_4h_open_ms": 1778644800000,
+        "exit_t": 1778679000000,
+        "entry": 187.29,
+        "stop": 179.04,
+        "target": 196.9,
+        "tp1": 192.64000000000001,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 48.480000000000004,
+        "reason": "STOP",
+        "pnl": -410.61580704000005,
+        "r": -1.0265395176,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1778679000000,
+            "price": 179.04,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "MSTR",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1785484800000,
+        "trigger_4h_open_ms": 1785484800000,
+        "exit_t": 1785506400000,
+        "entry": 95.38,
+        "stop": 91.64,
+        "target": 100.13,
+        "tp1": 98.43,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 106.95,
+        "reason": "STOP",
+        "pnl": -411.9940733999995,
+        "r": -1.0299851834999987,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1785506400000,
+            "price": 91.64,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "MSTR",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1788827400000,
+        "trigger_4h_open_ms": 1788825600000,
+        "exit_t": 1788847200000,
+        "entry": 142.51,
+        "stop": 139.65,
+        "target": 147.28,
+        "tp1": 144.39000000000001,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 139.86,
+        "reason": "STOP",
+        "pnl": -423.677338559998,
+        "r": -1.059193346399995,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1788847200000,
+            "price": 139.65,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "V",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787924700000,
+        "trigger_4h_open_ms": 1787918400000,
+        "exit_t": 1788144300000,
+        "entry": 380.73,
+        "stop": 378.04,
+        "target": 385.71000000000004,
+        "tp1": 383.81,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 148.69,
+        "reason": "BE",
+        "pnl": 69.37423382399928,
+        "r": 0.1734355845599982,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788062400000,
+            "price": 383.81,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788062400000,
+            "price": 380.73,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1788144300000,
+            "price": 380.73,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "V",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1788251400000,
+        "trigger_4h_open_ms": 1788249600000,
+        "exit_t": 1788270300000,
+        "entry": 380.86,
+        "stop": 378.02,
+        "target": 385.24,
+        "tp1": 383.0,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 140.84,
+        "reason": "STOP",
+        "pnl": -464.1139955200045,
+        "r": -1.1602849888000113,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1788270300000,
+            "price": 378.02,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "GOOGL",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_t": 1786795200000,
+        "trigger_4h_open_ms": 1786795200000,
+        "exit_t": 1787062500000,
+        "entry": 347.65000000000003,
+        "stop": 351.7,
+        "target": 341.58,
+        "tp1": 344.15000000000003,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 98.76,
+        "reason": "STOP",
+        "pnl": 380.85634557600144,
+        "r": 0.9521408639400036,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1786976100000,
+            "price": 344.15000000000003,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1786976100000,
+            "price": 347.65000000000003,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1787058900000,
+            "price": 341.58,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1787058900000,
+            "price": 344.15000000000003,
+            "cause": "TP2"
+          },
+          {
+            "type": "STOP",
+            "t": 1787062500000,
+            "price": 344.15000000000003,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "QQQ",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1786493700000,
+        "trigger_4h_open_ms": 1786492800000,
+        "exit_t": 1786542300000,
+        "entry": 720.37,
+        "stop": 716.0600000000001,
+        "target": 727.94,
+        "tp1": 725.37,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 92.8,
+        "reason": "STOP",
+        "pnl": 455.0070675200013,
+        "r": 1.1375176688000033,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1786536900000,
+            "price": 725.37,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1786536900000,
+            "price": 720.37,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1786541400000,
+            "price": 727.94,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1786541400000,
+            "price": 725.37,
+            "cause": "TP2"
+          },
+          {
+            "type": "STOP",
+            "t": 1786542300000,
+            "price": 725.37,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "QQQ",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1789018200000,
+        "trigger_4h_open_ms": 1789012800000,
+        "exit_t": 1789040700000,
+        "entry": 717.84,
+        "stop": 713.47,
+        "target": 724.14,
+        "tp1": 721.32,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 91.53,
+        "reason": "STOP",
+        "pnl": -478.59078258000045,
+        "r": -1.196476956450001,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1789040700000,
+            "price": 713.47,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "HD",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787226300000,
+        "trigger_4h_open_ms": 1787212800000,
+        "exit_t": 1787837400000,
+        "entry": 339.61,
+        "stop": 330.11,
+        "target": 351.64,
+        "tp1": 346.71,
+        "fib1618": 360.77,
+        "runner_mode": "pivot",
+        "size": 42.1,
+        "reason": "STOP",
+        "pnl": -416.86712719999997,
+        "r": -1.042167818,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1787837400000,
+            "price": 330.11,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "SPY",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1784032200000,
+        "trigger_4h_open_ms": 1784030400000,
+        "exit_t": 1784035800000,
+        "entry": 749.87,
+        "stop": 745.83,
+        "target": 755.95,
+        "tp1": 752.9,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 99.0,
+        "reason": "BE",
+        "pnl": 0.8524493999991982,
+        "r": 0.0021311234999979957,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1784032200000,
+            "price": 752.9,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1784032200000,
+            "price": 749.87,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1784035800000,
+            "price": 749.87,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "SPY",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1788241500000,
+        "trigger_4h_open_ms": 1788235200000,
+        "exit_t": 1788250500000,
+        "entry": 768.71,
+        "stop": 764.82,
+        "target": 773.2,
+        "tp1": 771.29,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 102.82000000000001,
+        "reason": "STOP",
+        "pnl": -494.5763327599986,
+        "r": -1.2364408318999964,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1788250500000,
+            "price": 764.82,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "BE",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1789332300000,
+        "trigger_4h_open_ms": 1789329600000,
+        "exit_t": 1789372800000,
+        "entry": 265.3,
+        "stop": 257.05,
+        "target": 277.3,
+        "tp1": 271.46,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 48.480000000000004,
+        "reason": "STOP",
+        "pnl": -415.15411680000005,
+        "r": -1.0378852920000001,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1789372800000,
+            "price": 257.05,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "BE",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1789430400000,
+        "trigger_4h_open_ms": 1789430400000,
+        "exit_t": 1789496100000,
+        "entry": 259.18,
+        "stop": 248.24,
+        "target": 277.09000000000003,
+        "tp1": 268.13,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 36.56,
+        "reason": "BE",
+        "pnl": 86.73395687999988,
+        "r": 0.2168348921999997,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1789479000000,
+            "price": 268.13,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1789479000000,
+            "price": 259.18,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1789496100000,
+            "price": 259.18,
+            "fraction": 0.7
+          }
+        ]
+      }
+    ]
   }
 }
