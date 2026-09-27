@@ -53,11 +53,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add data/validation/us_stocks_hf_3y_backtest.json data/validation/us_stocks_hf_3y_trades.json
           if git diff --cached --quiet; then
             echo "No result changes"
           else
             git commit -m "data: add US stocks HF 3y Track B backtest [skip ci]"
+            git pull --rebase origin main
             git push
           fi
