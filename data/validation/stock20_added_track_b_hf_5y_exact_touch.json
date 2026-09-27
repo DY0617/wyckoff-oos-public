@@ -1,0 +1,3222 @@
+{
+  "generated_at": "2026-09-27T02:06:15.180508+00:00",
+  "purpose": "Five-year exact-touch validation of frozen Track B on the 20 stocks added after the original 50-stock universe",
+  "strategy": "Production Track B defaults frozen; added 20-stock universe; exact-touch entry; 30/30/40; TP1=>BE; TP2=>TP1; confirmed 4H pivot runner",
+  "period": {
+    "evaluation_start": "2021-04-01T00:00:00+00:00",
+    "evaluation_end_exclusive": "2026-04-01T00:00:00+00:00",
+    "warmup_start": "2020-10-01T00:00:00+00:00"
+  },
+  "symbols": [
+    "ARM",
+    "AXTI",
+    "BMNR",
+    "CBRS",
+    "COHR",
+    "CRDO",
+    "CRWD",
+    "CRWV",
+    "DELL",
+    "EWJ",
+    "GME",
+    "HPE",
+    "IREN",
+    "IWM",
+    "PLTR",
+    "QCOM",
+    "RKLB",
+    "SMCI",
+    "WDC",
+    "ZM"
+  ],
+  "data": {
+    "provider": "Hugging Face mito0o852/OHLCV-1m",
+    "source": "monthly 1-minute US OHLCV parquet",
+    "session": "09:30-16:00 America/New_York only",
+    "aggregation": "remote 1m -> 15m; 15m -> 09:30-13:30 4h + 13:30-16:00 stub; RTH daily",
+    "months_loaded": 66,
+    "missing_months": [],
+    "split_cleanup": "common-factor overnight split detection; pre-split OHLCV back-adjusted",
+    "entry_fill_model": "LIMIT_TOUCH: low <= planned_entry <= high",
+    "entry_pending": "4H directional cross without 15m exact touch remains pending until exact touch/invalidation/expiry"
+  },
+  "costs": {
+    "fee_bps_per_fill": 4.0,
+    "slippage_bps_per_fill": 2.0
+  },
+  "totals": {
+    "closed_trades": 70,
+    "wins": 38,
+    "losses": 32,
+    "win_rate": 0.5428571428571428,
+    "net_r": -3.918270936600325,
+    "avg_r": -0.05597529909429036,
+    "max_drawdown_fixed_20k": 0.2101959718558008
+  },
+  "breadth": {
+    "symbols_with_closed_trades": 17,
+    "positive_symbols": 6,
+    "negative_symbols": 11,
+    "flat_symbols": 0,
+    "top5_share_of_positive_r": 0.9895324086680095
+  },
+  "by_year": {
+    "2021": {
+      "trades": 10,
+      "wins": 5,
+      "losses": 5,
+      "net_r": -1.2498506170570496,
+      "win_rate": 0.5,
+      "avg_r": -0.12498506170570496
+    },
+    "2022": {
+      "trades": 10,
+      "wins": 7,
+      "losses": 3,
+      "net_r": 1.746463075445222,
+      "win_rate": 0.7,
+      "avg_r": 0.1746463075445222
+    },
+    "2023": {
+      "trades": 11,
+      "wins": 7,
+      "losses": 4,
+      "net_r": 2.7651551386504423,
+      "win_rate": 0.6363636363636364,
+      "avg_r": 0.25137773987731293
+    },
+    "2024": {
+      "trades": 18,
+      "wins": 8,
+      "losses": 10,
+      "net_r": -5.825661120336508,
+      "win_rate": 0.4444444444444444,
+      "avg_r": -0.3236478400186949
+    },
+    "2025": {
+      "trades": 19,
+      "wins": 10,
+      "losses": 9,
+      "net_r": -0.5652951582865321,
+      "win_rate": 0.5263157894736842,
+      "avg_r": -0.029752376751922743
+    },
+    "2026": {
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "net_r": -0.7890822550159007,
+      "win_rate": 0.5,
+      "avg_r": -0.39454112750795034
+    }
+  },
+  "by_symbol": {
+    "HPE": {
+      "trades": 2,
+      "wins": 2,
+      "losses": 0,
+      "net_r": 0.49852753246753034,
+      "win_rate": 1.0,
+      "avg_r": 0.24926376623376517
+    },
+    "WDC": {
+      "trades": 4,
+      "wins": 2,
+      "losses": 2,
+      "net_r": -0.32312074583445816,
+      "win_rate": 0.5,
+      "avg_r": -0.08078018645861454
+    },
+    "SMCI": {
+      "trades": 5,
+      "wins": 4,
+      "losses": 1,
+      "net_r": 1.5086519020970013,
+      "win_rate": 0.8,
+      "avg_r": 0.30173038041940026
+    },
+    "CRWD": {
+      "trades": 5,
+      "wins": 3,
+      "losses": 2,
+      "net_r": -0.6969857487556763,
+      "win_rate": 0.6,
+      "avg_r": -0.13939714975113526
+    },
+    "IWM": {
+      "trades": 6,
+      "wins": 2,
+      "losses": 4,
+      "net_r": -3.1011940852639936,
+      "win_rate": 0.3333333333333333,
+      "avg_r": -0.5168656808773323
+    },
+    "DELL": {
+      "trades": 5,
+      "wins": 4,
+      "losses": 1,
+      "net_r": 5.676411493828174,
+      "win_rate": 0.8,
+      "avg_r": 1.1352822987656348
+    },
+    "AXTI": {
+      "trades": 6,
+      "wins": 4,
+      "losses": 2,
+      "net_r": 2.721601172386983,
+      "win_rate": 0.6666666666666666,
+      "avg_r": 0.45360019539783053
+    },
+    "ZM": {
+      "trades": 6,
+      "wins": 3,
+      "losses": 3,
+      "net_r": -1.797142822973476,
+      "win_rate": 0.5,
+      "avg_r": -0.2995238038289127
+    },
+    "GME": {
+      "trades": 3,
+      "wins": 2,
+      "losses": 1,
+      "net_r": 0.45872999809014736,
+      "win_rate": 0.6666666666666666,
+      "avg_r": 0.15290999936338245
+    },
+    "QCOM": {
+      "trades": 5,
+      "wins": 3,
+      "losses": 2,
+      "net_r": -0.6228362200280958,
+      "win_rate": 0.6,
+      "avg_r": -0.12456724400561917
+    },
+    "CRDO": {
+      "trades": 4,
+      "wins": 2,
+      "losses": 2,
+      "net_r": 0.11492205388868815,
+      "win_rate": 0.5,
+      "avg_r": 0.028730513472172037
+    },
+    "IREN": {
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "net_r": -0.9994462761526892,
+      "win_rate": 0.3333333333333333,
+      "avg_r": -0.33314875871756305
+    },
+    "COHR": {
+      "trades": 5,
+      "wins": 2,
+      "losses": 3,
+      "net_r": -2.613579772133808,
+      "win_rate": 0.4,
+      "avg_r": -0.5227159544267617
+    },
+    "EWJ": {
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "net_r": -0.20827022727272027,
+      "win_rate": 0.5,
+      "avg_r": -0.10413511363636013
+    },
+    "RKLB": {
+      "trades": 4,
+      "wins": 1,
+      "losses": 3,
+      "net_r": -1.9246956675526674,
+      "win_rate": 0.25,
+      "avg_r": -0.48117391688816685
+    },
+    "ARM": {
+      "trades": 2,
+      "wins": 1,
+      "losses": 1,
+      "net_r": -0.7872899236431468,
+      "win_rate": 0.5,
+      "avg_r": -0.3936449618215734
+    },
+    "PLTR": {
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "net_r": -1.822553599748118,
+      "win_rate": 0.3333333333333333,
+      "avg_r": -0.607517866582706
+    }
+  },
+  "per_symbol": [
+    {
+      "symbol": "ARM",
+      "setups": 5,
+      "closed": 2,
+      "wins": 1,
+      "losses": 1,
+      "win_rate": 0.5,
+      "net_r": -0.7872899236431468,
+      "avg_r": -0.3936449618215734,
+      "max_drawdown_fixed_20k": 0.020310324564964167,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 16494
+      }
+    },
+    {
+      "symbol": "AXTI",
+      "setups": 8,
+      "closed": 6,
+      "wins": 4,
+      "losses": 2,
+      "win_rate": 0.6666666666666666,
+      "net_r": 2.7216011723869826,
+      "avg_r": 0.4536001953978304,
+      "max_drawdown_fixed_20k": 0.03587022173025623,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 34658
+      }
+    },
+    {
+      "symbol": "BMNR",
+      "setups": 3,
+      "closed": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "net_r": 0,
+      "avg_r": null,
+      "max_drawdown_fixed_20k": 0,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 6626
+      }
+    },
+    {
+      "symbol": "COHR",
+      "setups": 7,
+      "closed": 5,
+      "wins": 2,
+      "losses": 3,
+      "win_rate": 0.4,
+      "net_r": -2.613579772133808,
+      "avg_r": -0.5227159544267617,
+      "max_drawdown_fixed_20k": 0.056725760993245604,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 34006
+      }
+    },
+    {
+      "symbol": "CRDO",
+      "setups": 5,
+      "closed": 4,
+      "wins": 2,
+      "losses": 2,
+      "win_rate": 0.5,
+      "net_r": 0.11492205388868804,
+      "avg_r": 0.02873051347217201,
+      "max_drawdown_fixed_20k": 0.020362103092783582,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 27027
+      }
+    },
+    {
+      "symbol": "CRWD",
+      "setups": 10,
+      "closed": 5,
+      "wins": 3,
+      "losses": 2,
+      "win_rate": 0.6,
+      "net_r": -0.6969857487556762,
+      "avg_r": -0.13939714975113524,
+      "max_drawdown_fixed_20k": 0.0366357143623114,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35691
+      }
+    },
+    {
+      "symbol": "CRWV",
+      "setups": 0,
+      "closed": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": null,
+      "net_r": 0,
+      "avg_r": null,
+      "max_drawdown_fixed_20k": 0,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 6561
+      }
+    },
+    {
+      "symbol": "DELL",
+      "setups": 13,
+      "closed": 5,
+      "wins": 4,
+      "losses": 1,
+      "win_rate": 0.8,
+      "net_r": 5.676411493828175,
+      "avg_r": 1.135282298765635,
+      "max_drawdown_fixed_20k": 0.020908333333333393,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35693
+      }
+    },
+    {
+      "symbol": "EWJ",
+      "setups": 6,
+      "closed": 2,
+      "wins": 1,
+      "losses": 1,
+      "win_rate": 0.5,
+      "net_r": -0.20827022727272027,
+      "avg_r": -0.10413511363636013,
+      "max_drawdown_fixed_20k": 0.021374865604303805,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35649
+      }
+    },
+    {
+      "symbol": "GME",
+      "setups": 7,
+      "closed": 3,
+      "wins": 2,
+      "losses": 1,
+      "win_rate": 0.6666666666666666,
+      "net_r": 0.4587299980901475,
+      "avg_r": 0.15290999936338248,
+      "max_drawdown_fixed_20k": 0.020897905400810088,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35712
+      }
+    },
+    {
+      "symbol": "HPE",
+      "setups": 8,
+      "closed": 2,
+      "wins": 2,
+      "losses": 0,
+      "win_rate": 1.0,
+      "net_r": 0.49852753246753034,
+      "avg_r": 0.24926376623376517,
+      "max_drawdown_fixed_20k": 0,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35640
+      }
+    },
+    {
+      "symbol": "IREN",
+      "setups": 4,
+      "closed": 3,
+      "wins": 1,
+      "losses": 2,
+      "win_rate": 0.3333333333333333,
+      "net_r": -0.9994462761526892,
+      "avg_r": -0.33314875871756305,
+      "max_drawdown_fixed_20k": 0.040322773651395985,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 27626
+      }
+    },
+    {
+      "symbol": "IWM",
+      "setups": 15,
+      "closed": 6,
+      "wins": 2,
+      "losses": 4,
+      "win_rate": 0.3333333333333333,
+      "net_r": -3.1011940852639936,
+      "avg_r": -0.5168656808773323,
+      "max_drawdown_fixed_20k": 0.06202388170527993,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35705
+      }
+    },
+    {
+      "symbol": "PLTR",
+      "setups": 4,
+      "closed": 3,
+      "wins": 1,
+      "losses": 2,
+      "win_rate": 0.3333333333333333,
+      "net_r": -1.822553599748118,
+      "avg_r": -0.607517866582706,
+      "max_drawdown_fixed_20k": 0.03645107199496251,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35740
+      }
+    },
+    {
+      "symbol": "QCOM",
+      "setups": 12,
+      "closed": 5,
+      "wins": 3,
+      "losses": 2,
+      "win_rate": 0.6,
+      "net_r": -0.6228362200280959,
+      "avg_r": -0.12456724400561918,
+      "max_drawdown_fixed_20k": 0.040744829324456965,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35704
+      }
+    },
+    {
+      "symbol": "RKLB",
+      "setups": 9,
+      "closed": 4,
+      "wins": 1,
+      "losses": 3,
+      "win_rate": 0.25,
+      "net_r": -1.9246956675526674,
+      "avg_r": -0.48117391688816685,
+      "max_drawdown_fixed_20k": 0.059333821572495955,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 29868
+      }
+    },
+    {
+      "symbol": "SMCI",
+      "setups": 9,
+      "closed": 5,
+      "wins": 4,
+      "losses": 1,
+      "win_rate": 0.8,
+      "net_r": 1.5086519020970013,
+      "avg_r": 0.30173038041940026,
+      "max_drawdown_fixed_20k": 0.020168997426988865,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35507
+      }
+    },
+    {
+      "symbol": "WDC",
+      "setups": 9,
+      "closed": 4,
+      "wins": 2,
+      "losses": 2,
+      "win_rate": 0.5,
+      "net_r": -0.32312074583445793,
+      "avg_r": -0.08078018645861448,
+      "max_drawdown_fixed_20k": 0.04150560145371219,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35662
+      }
+    },
+    {
+      "symbol": "ZM",
+      "setups": 15,
+      "closed": 6,
+      "wins": 3,
+      "losses": 3,
+      "win_rate": 0.5,
+      "net_r": -1.797142822973476,
+      "avg_r": -0.2995238038289127,
+      "max_drawdown_fixed_20k": 0.05705689107224247,
+      "split_adjustments": [],
+      "bars": {
+        "15m": 35684
+      }
+    }
+  ],
+  "errors": {
+    "CBRS": "RuntimeError('insufficient 15m bars: 0')"
+  },
+  "trades": [
+    {
+      "symbol": "HPE",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1621258200000,
+      "trigger_4h_open_ms": 1621258200000,
+      "exit_t": 1621605600000,
+      "entry": 16.36,
+      "stop": 16.8,
+      "target": 15.72,
+      "tp1": 15.88,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 909.0909090909064,
+      "reason": "BE",
+      "pnl": 113.14036363636295,
+      "r": 0.2828509090909074,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1621431900000,
+          "price": 15.88,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1621431900000,
+          "price": 16.36,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1621605600000,
+          "price": 16.36,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "WDC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1623763800000,
+      "trigger_4h_open_ms": 1623763800000,
+      "exit_t": 1623866400000,
+      "entry": 75.04,
+      "stop": 73.07000000000001,
+      "target": 78.19,
+      "tp1": 76.37,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 203.04568527918792,
+      "reason": "STOP",
+      "pnl": -418.04385786802027,
+      "r": -1.0451096446700507,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1623866400000,
+          "price": 73.07000000000001,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1623783600000,
+      "trigger_4h_open_ms": 1623778200000,
+      "exit_t": 1624287600000,
+      "entry": 36.25,
+      "stop": 37.51,
+      "target": 34.71,
+      "tp1": 35.32,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 317.460317460318,
+      "reason": "STOP",
+      "pnl": 339.7358095238099,
+      "r": 0.8493395238095247,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1623945600000,
+          "price": 35.32,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1623945600000,
+          "price": 36.25,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1624025700000,
+          "price": 34.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1624025700000,
+          "price": 35.32,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1624287600000,
+          "price": 35.32,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "CRWD",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1625234400000,
+      "trigger_4h_open_ms": 1625232600000,
+      "exit_t": 1625751900000,
+      "entry": 251.51000000000002,
+      "stop": 244.13,
+      "target": 260.82,
+      "tp1": 257.15,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 54.20054200541988,
+      "reason": "STOP",
+      "pnl": 384.7558265582628,
+      "r": 0.961889566395657,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1625578200000,
+          "price": 257.15,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1625578200000,
+          "price": 251.51000000000002,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1625578200000,
+          "price": 260.82,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1625578200000,
+          "price": 257.15,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1625751000000,
+          "price": 258.81
+        },
+        {
+          "type": "STOP",
+          "t": 1625751900000,
+          "price": 258.81,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1633440600000,
+      "trigger_4h_open_ms": 1633440600000,
+      "exit_t": 1633529700000,
+      "entry": 220.68,
+      "stop": 217.07,
+      "target": 227.67000000000002,
+      "tp1": 223.53,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 110.80332409972257,
+      "reason": "STOP",
+      "pnl": -429.10249307479216,
+      "r": -1.0727562326869804,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1633529700000,
+          "price": 217.07,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1633981500000,
+      "trigger_4h_open_ms": 1633973400000,
+      "exit_t": 1634916600000,
+      "entry": 220.34,
+      "stop": 216.1,
+      "target": 225.59,
+      "tp1": 223.53,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 94.33962264150924,
+      "reason": "STOP",
+      "pnl": 426.8600754716973,
+      "r": 1.0671501886792434,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1634218200000,
+          "price": 223.53,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1634218200000,
+          "price": 220.34,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1634220000000,
+          "price": 225.59,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1634220000000,
+          "price": 223.53,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1634736600000,
+          "price": 223.94
+        },
+        {
+          "type": "TRAIL",
+          "t": 1634823000000,
+          "price": 224.46
+        },
+        {
+          "type": "TRAIL",
+          "t": 1634909400000,
+          "price": 225.99
+        },
+        {
+          "type": "STOP",
+          "t": 1634916600000,
+          "price": 225.99,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1635442200000,
+      "trigger_4h_open_ms": 1635442200000,
+      "exit_t": 1635775200000,
+      "entry": 227.74,
+      "stop": 231.21,
+      "target": 223.73000000000002,
+      "tp1": 225.15,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 115.27377521613836,
+      "reason": "STOP",
+      "pnl": -431.742939481268,
+      "r": -1.07935734870317,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1635775200000,
+          "price": 231.21,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DELL",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1635514200000,
+      "trigger_4h_open_ms": 1635514200000,
+      "exit_t": 1635859800000,
+      "entry": 110.44,
+      "stop": 107.56,
+      "target": 114.99000000000001,
+      "tp1": 112.71000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 138.8888888888891,
+      "reason": "STOP",
+      "pnl": -418.16666666666674,
+      "r": -1.0454166666666669,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1635859800000,
+          "price": 107.56,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1637159400000,
+      "trigger_4h_open_ms": 1637159400000,
+      "exit_t": 1637247600000,
+      "entry": 44.07,
+      "stop": 42.050000000000004,
+      "target": 47.06,
+      "tp1": 45.57,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 198.01980198019842,
+      "reason": "STOP",
+      "pnl": -410.23207920792083,
+      "r": -1.025580198019802,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1637247600000,
+          "price": 42.050000000000004,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "AXTI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1639410300000,
+      "trigger_4h_open_ms": 1639405800000,
+      "exit_t": 1640805300000,
+      "entry": 8.09,
+      "stop": 7.53,
+      "target": 8.71,
+      "tp1": 8.49,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 714.2857142857148,
+      "reason": "STOP",
+      "pnl": 342.85571428571507,
+      "r": 0.8571392857142877,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1640099700000,
+          "price": 8.49,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1640099700000,
+          "price": 8.09,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1640270700000,
+          "price": 8.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1640270700000,
+          "price": 8.49,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1640701800000,
+          "price": 8.55
+        },
+        {
+          "type": "STOP",
+          "t": 1640805300000,
+          "price": 8.55,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1641925800000,
+      "trigger_4h_open_ms": 1641925800000,
+      "exit_t": 1642604400000,
+      "entry": 44.87,
+      "stop": 42.5,
+      "target": 47.910000000000004,
+      "tp1": 46.64,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 168.77637130801705,
+      "reason": "BE",
+      "pnl": 80.4788860759496,
+      "r": 0.20119721518987402,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1642526100000,
+          "price": 46.64,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1642526100000,
+          "price": 44.87,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1642604400000,
+          "price": 44.87,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "WDC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1641925800000,
+      "trigger_4h_open_ms": 1641925800000,
+      "exit_t": 1642605300000,
+      "entry": 65.9,
+      "stop": 63.33,
+      "target": 69.36,
+      "tp1": 67.81,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 155.64202334630306,
+      "reason": "STOP",
+      "pnl": -412.06817120622566,
+      "r": -1.0301704280155641,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1642605300000,
+          "price": 63.33,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DELL",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1645042500000,
+      "trigger_4h_open_ms": 1645036200000,
+      "exit_t": 1646245800000,
+      "entry": 60.480000000000004,
+      "stop": 61.76,
+      "target": 58.25,
+      "tp1": 59.64,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 312.5000000000015,
+      "reason": "STOP",
+      "pnl": 1137.0779375000068,
+      "r": 2.842694843750017,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1645110000000,
+          "price": 59.64,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1645110000000,
+          "price": 60.480000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1645540200000,
+          "price": 58.25,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1645540200000,
+          "price": 59.64,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1645713000000,
+          "price": 58.660000000000004
+        },
+        {
+          "type": "TRAIL",
+          "t": 1645812900000,
+          "price": 56.300000000000004
+        },
+        {
+          "type": "TRAIL",
+          "t": 1646072100000,
+          "price": 53.51
+        },
+        {
+          "type": "STOP",
+          "t": 1646245800000,
+          "price": 53.51,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "ZM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1655386200000,
+      "trigger_4h_open_ms": 1655386200000,
+      "exit_t": 1655904600000,
+      "entry": 107.84,
+      "stop": 101.16,
+      "target": 116.9,
+      "tp1": 112.85000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 59.88023952095802,
+      "reason": "STOP",
+      "pnl": 364.781856287425,
+      "r": 0.9119546407185625,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1655818200000,
+          "price": 112.85000000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1655818200000,
+          "price": 107.84,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1655822700000,
+          "price": 116.9,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1655822700000,
+          "price": 112.85000000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1655904600000,
+          "price": 112.85000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "GME",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1655316000000,
+      "trigger_4h_open_ms": 1655314200000,
+      "exit_t": 1656337500000,
+      "entry": 128.35,
+      "stop": 112.03,
+      "target": 153.0,
+      "tp1": 140.67000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 24.509803921568636,
+      "reason": "BE",
+      "pnl": 86.75888235294136,
+      "r": 0.2168972058823534,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1655819100000,
+          "price": 140.67000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1655819100000,
+          "price": 128.35,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1656337500000,
+          "price": 128.35,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QCOM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1659360600000,
+      "trigger_4h_open_ms": 1659360600000,
+      "exit_t": 1660051800000,
+      "entry": 145.49,
+      "stop": 139.77,
+      "target": 156.65,
+      "tp1": 151.06,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 69.93006993006995,
+      "reason": "BE",
+      "pnl": 104.57408391608378,
+      "r": 0.26143520979020946,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1659642300000,
+          "price": 151.06,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1659642300000,
+          "price": 145.49,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1660051800000,
+          "price": 145.49,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "CRDO",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1660758300000,
+      "trigger_4h_open_ms": 1660757400000,
+      "exit_t": 1661175000000,
+      "entry": 15.120000000000001,
+      "stop": 14.15,
+      "target": 16.31,
+      "tp1": 16.15,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 412.3711340206183,
+      "reason": "STOP",
+      "pnl": -407.2420618556701,
+      "r": -1.0181051546391753,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1661175000000,
+          "price": 14.15,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "IREN",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1661356800000,
+      "trigger_4h_open_ms": 1661347800000,
+      "exit_t": 1661779800000,
+      "entry": 5.28,
+      "stop": 4.66,
+      "target": 6.24,
+      "tp1": 5.75,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 645.1612903225805,
+      "reason": "STOP",
+      "pnl": -403.8477419354839,
+      "r": -1.0096193548387098,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1661779800000,
+          "price": 4.66,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DELL",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1669127400000,
+      "trigger_4h_open_ms": 1669127400000,
+      "exit_t": 1669128300000,
+      "entry": 41.160000000000004,
+      "stop": 39.660000000000004,
+      "target": 43.42,
+      "tp1": 42.14,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 266.6666666666667,
+      "reason": "BE",
+      "pnl": 65.18175999999976,
+      "r": 0.1629543999999994,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1669127400000,
+          "price": 42.14,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1669127400000,
+          "price": 41.160000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1669128300000,
+          "price": 41.160000000000004,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1670437800000,
+      "trigger_4h_open_ms": 1670437800000,
+      "exit_t": 1671114600000,
+      "entry": 86.55,
+      "stop": 80.28,
+      "target": 95.22,
+      "tp1": 91.23,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 63.795853269537524,
+      "reason": "BE",
+      "pnl": 82.88979904306238,
+      "r": 0.20722449760765596,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1670941800000,
+          "price": 91.23,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1670941800000,
+          "price": 86.55,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1671114600000,
+          "price": 86.55,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "COHR",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1675967400000,
+      "trigger_4h_open_ms": 1675967400000,
+      "exit_t": 1676041200000,
+      "entry": 43.68,
+      "stop": 41.47,
+      "target": 46.99,
+      "tp1": 45.33,
+      "fib1618": 47.76,
+      "runner_mode": "pivot",
+      "size": 180.9954751131221,
+      "reason": "STOP",
+      "pnl": -409.2470588235294,
+      "r": -1.0231176470588235,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1676041200000,
+          "price": 41.47,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "EWJ",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1681234200000,
+      "trigger_4h_open_ms": 1681234200000,
+      "exit_t": 1681911000000,
+      "entry": 57.93,
+      "stop": 57.160000000000004,
+      "target": 59.09,
+      "tp1": 58.5,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 519.4805194805222,
+      "reason": "STOP",
+      "pnl": 351.70690909091155,
+      "r": 0.8792672727272789,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1681392600000,
+          "price": 58.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1681392600000,
+          "price": 57.93,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1681825500000,
+          "price": 59.09,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1681825500000,
+          "price": 58.5,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1681911000000,
+          "price": 58.5,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1685453400000,
+      "trigger_4h_open_ms": 1685453400000,
+      "exit_t": 1685712600000,
+      "entry": 177.27,
+      "stop": 181.04,
+      "target": 172.16,
+      "tp1": 174.47,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 106.10079575596868,
+      "reason": "BE",
+      "pnl": 66.60795755968239,
+      "r": 0.16651989389920596,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1685540700000,
+          "price": 174.47,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1685540700000,
+          "price": 177.27,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1685712600000,
+          "price": 177.27,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "ZM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1685539800000,
+      "trigger_4h_open_ms": 1685539800000,
+      "exit_t": 1686231900000,
+      "entry": 66.06,
+      "stop": 61.07,
+      "target": 71.99,
+      "tp1": 69.78,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 80.16032064128254,
+      "reason": "BE",
+      "pnl": 83.05077354709414,
+      "r": 0.20762693386773534,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1686144600000,
+          "price": 69.78,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1686144600000,
+          "price": 66.06,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1686231900000,
+          "price": 66.06,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "RKLB",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1687959000000,
+      "trigger_4h_open_ms": 1687959000000,
+      "exit_t": 1688564700000,
+      "entry": 5.54,
+      "stop": 5.26,
+      "target": 5.94,
+      "tp1": 5.73,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1428.5714285714273,
+      "reason": "STOP",
+      "pnl": 443.0882857142854,
+      "r": 1.1077207142857135,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1687961700000,
+          "price": 5.73,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1687961700000,
+          "price": 5.54,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1687965300000,
+          "price": 5.94,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1687965300000,
+          "price": 5.73,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1688563800000,
+          "price": 5.89
+        },
+        {
+          "type": "STOP",
+          "t": 1688564700000,
+          "price": 5.89,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "ZM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1688048100000,
+      "trigger_4h_open_ms": 1688045400000,
+      "exit_t": 1688652900000,
+      "entry": 67.56,
+      "stop": 65.2,
+      "target": 71.47,
+      "tp1": 69.78,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 169.49152542372886,
+      "reason": "STOP",
+      "pnl": -413.5010169491526,
+      "r": -1.0337525423728815,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1688652900000,
+          "price": 65.2,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DELL",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1685986200000,
+      "trigger_4h_open_ms": 1685986200000,
+      "exit_t": 1688654700000,
+      "entry": 45.86,
+      "stop": 44.19,
+      "target": 49.1,
+      "tp1": 47.47,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 239.52095808383208,
+      "reason": "STOP",
+      "pnl": 1065.6919281437117,
+      "r": 2.6642298203592794,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1686151800000,
+          "price": 47.47,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1686151800000,
+          "price": 45.86,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1686749400000,
+          "price": 49.1,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1686749400000,
+          "price": 47.47,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1687354200000,
+          "price": 48.5
+        },
+        {
+          "type": "TRAIL",
+          "t": 1687786200000,
+          "price": 50.25
+        },
+        {
+          "type": "TRAIL",
+          "t": 1687959000000,
+          "price": 50.6
+        },
+        {
+          "type": "TRAIL",
+          "t": 1688045400000,
+          "price": 50.74
+        },
+        {
+          "type": "TRAIL",
+          "t": 1688563800000,
+          "price": 53.49
+        },
+        {
+          "type": "STOP",
+          "t": 1688654700000,
+          "price": 53.49,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QCOM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1688048100000,
+      "trigger_4h_open_ms": 1688045400000,
+      "exit_t": 1689878700000,
+      "entry": 117.92,
+      "stop": 113.54,
+      "target": 124.95,
+      "tp1": 121.43,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 91.32420091324211,
+      "reason": "STOP",
+      "pnl": 403.8133698630145,
+      "r": 1.0095334246575363,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1689269400000,
+          "price": 121.43,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1689269400000,
+          "price": 117.92,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1689773400000,
+          "price": 124.95,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1689773400000,
+          "price": 121.43,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1689878700000,
+          "price": 121.43,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "ZM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1690983000000,
+      "trigger_4h_open_ms": 1690983000000,
+      "exit_t": 1691415900000,
+      "entry": 71.44,
+      "stop": 68.18,
+      "target": 75.10000000000001,
+      "tp1": 73.86,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 122.69938650306783,
+      "reason": "STOP",
+      "pnl": -410.278773006135,
+      "r": -1.0256969325153376,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1691415900000,
+          "price": 68.18,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "WDC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1695054600000,
+      "trigger_4h_open_ms": 1695043800000,
+      "exit_t": 1695303000000,
+      "entry": 43.910000000000004,
+      "stop": 42.0,
+      "target": 46.31,
+      "tp1": 45.32,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 209.4240837696331,
+      "reason": "STOP",
+      "pnl": 346.2374450261768,
+      "r": 0.865593612565442,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1695216600000,
+          "price": 45.32,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1695216600000,
+          "price": 43.910000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1695216600000,
+          "price": 46.31,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1695216600000,
+          "price": 45.32,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1695303000000,
+          "price": 45.32,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "QCOM",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1697556600000,
+      "trigger_4h_open_ms": 1697549400000,
+      "exit_t": 1697722200000,
+      "entry": 110.86,
+      "stop": 113.41,
+      "target": 108.07000000000001,
+      "tp1": 108.8,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 156.8627450980394,
+      "reason": "STOP",
+      "pnl": -421.10776470588235,
+      "r": -1.052769411764706,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1697722200000,
+          "price": 113.41,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "CRDO",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1705600800000,
+      "trigger_4h_open_ms": 1705588200000,
+      "exit_t": 1706209200000,
+      "entry": 18.830000000000002,
+      "stop": 17.23,
+      "target": 20.76,
+      "tp1": 19.95,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 249.99999999999977,
+      "reason": "STOP",
+      "pnl": 471.81434999999914,
+      "r": 1.1795358749999978,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1705684500000,
+          "price": 19.95,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1705684500000,
+          "price": 18.830000000000002,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1705689000000,
+          "price": 20.76,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1705689000000,
+          "price": 19.95,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1706193000000,
+          "price": 21.32
+        },
+        {
+          "type": "STOP",
+          "t": 1706209200000,
+          "price": 21.32,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "CRDO",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1708535700000,
+      "trigger_4h_open_ms": 1708525800000,
+      "exit_t": 1708957800000,
+      "entry": 21.48,
+      "stop": 20.56,
+      "target": 23.17,
+      "tp1": 22.07,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 434.7826086956514,
+      "reason": "STOP",
+      "pnl": 388.55304347826024,
+      "r": 0.9713826086956506,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1708612200000,
+          "price": 22.07,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1708612200000,
+          "price": 21.48,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1708620300000,
+          "price": 23.17,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1708620300000,
+          "price": 22.07,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1708957800000,
+          "price": 22.07,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IREN",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1709044200000,
+      "trigger_4h_open_ms": 1709044200000,
+      "exit_t": 1709217900000,
+      "entry": 7.0600000000000005,
+      "stop": 5.87,
+      "target": 8.68,
+      "tp1": 7.930000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 336.1344537815125,
+      "reason": "STOP",
+      "pnl": -402.607731092437,
+      "r": -1.0065193277310924,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1709217900000,
+          "price": 5.87,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "CRWD",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1710941400000,
+      "trigger_4h_open_ms": 1710941400000,
+      "exit_t": 1711116000000,
+      "entry": 321.87,
+      "stop": 308.13,
+      "target": 337.78000000000003,
+      "tp1": 333.06,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 29.11208151382822,
+      "reason": "BE",
+      "pnl": 86.42625327510908,
+      "r": 0.2160656331877727,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1711030500000,
+          "price": 333.06,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1711030500000,
+          "price": 321.87,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1711116000000,
+          "price": 321.87,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "GME",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1710336600000,
+      "trigger_4h_open_ms": 1710336600000,
+      "exit_t": 1711373400000,
+      "entry": 15.120000000000001,
+      "stop": 16.0,
+      "target": 13.69,
+      "tp1": 14.05,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 454.5454545454551,
+      "reason": "STOP",
+      "pnl": 527.5285454545462,
+      "r": 1.3188213636363657,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1710768600000,
+          "price": 14.05,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1710768600000,
+          "price": 15.120000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1710855000000,
+          "price": 13.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1710855000000,
+          "price": 14.05,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1711373400000,
+          "price": 14.05,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "ARM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1710358200000,
+      "trigger_4h_open_ms": 1710351000000,
+      "exit_t": 1711473300000,
+      "entry": 130.3,
+      "stop": 119.89,
+      "target": 148.41,
+      "tp1": 138.91,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 38.424591738712735,
+      "reason": "BE",
+      "pnl": 93.18310086455304,
+      "r": 0.2329577521613826,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1711373400000,
+          "price": 138.91,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1711373400000,
+          "price": 130.3,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1711473300000,
+          "price": 130.3,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "AXTI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1712167200000,
+      "trigger_4h_open_ms": 1712165400000,
+      "exit_t": 1712237400000,
+      "entry": 4.88,
+      "stop": 4.43,
+      "target": 5.64,
+      "tp1": 5.25,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 888.8888888888886,
+      "reason": "STOP",
+      "pnl": -404.9653333333333,
+      "r": -1.0124133333333334,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1712237400000,
+          "price": 4.43,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "CRDO",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1711993500000,
+      "trigger_4h_open_ms": 1711992600000,
+      "exit_t": 1712864700000,
+      "entry": 21.47,
+      "stop": 22.96,
+      "target": 19.02,
+      "tp1": 19.580000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 268.4563758389258,
+      "reason": "STOP",
+      "pnl": -407.156510067114,
+      "r": -1.017891275167785,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1712864700000,
+          "price": 22.96,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "AXTI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1717696800000,
+      "trigger_4h_open_ms": 1717695000000,
+      "exit_t": 1718288100000,
+      "entry": 3.56,
+      "stop": 3.27,
+      "target": 4.0,
+      "tp1": 3.77,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1379.310344827586,
+      "reason": "BE",
+      "pnl": 80.95199999999998,
+      "r": 0.20237999999999995,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1718029800000,
+          "price": 3.77,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1718029800000,
+          "price": 3.56,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1718288100000,
+          "price": 3.56,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "PLTR",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1722346200000,
+      "trigger_4h_open_ms": 1722346200000,
+      "exit_t": 1722605400000,
+      "entry": 27.39,
+      "stop": 25.2,
+      "target": 29.830000000000002,
+      "tp1": 29.240000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 182.6484018264839,
+      "reason": "STOP",
+      "pnl": -405.7632876712329,
+      "r": -1.0144082191780823,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1722605400000,
+          "price": 25.2,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ZM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1726237800000,
+      "trigger_4h_open_ms": 1726234200000,
+      "exit_t": 1727882100000,
+      "entry": 67.64,
+      "stop": 65.61,
+      "target": 70.37,
+      "tp1": 69.14,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 197.04433497536934,
+      "reason": "BE",
+      "pnl": 72.62305418719208,
+      "r": 0.1815576354679802,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1727184600000,
+          "price": 69.14,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1727184600000,
+          "price": 67.64,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1727882100000,
+          "price": 67.64,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "QCOM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1730295900000,
+      "trigger_4h_open_ms": 1730295000000,
+      "exit_t": 1730383200000,
+      "entry": 168.93,
+      "stop": 163.43,
+      "target": 176.11,
+      "tp1": 172.51,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 72.72727272727273,
+      "reason": "STOP",
+      "pnl": -414.5029818181819,
+      "r": -1.0362574545454548,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1730383200000,
+          "price": 163.43,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ARM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1730381400000,
+      "trigger_4h_open_ms": 1730381400000,
+      "exit_t": 1730730600000,
+      "entry": 145.76,
+      "stop": 137.37,
+      "target": 158.8,
+      "tp1": 152.22,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 47.67580452920151,
+      "reason": "STOP",
+      "pnl": -408.0990703218117,
+      "r": -1.0202476758045294,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1730730600000,
+          "price": 137.37,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "CRWD",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1730836800000,
+      "trigger_4h_open_ms": 1730831400000,
+      "exit_t": 1730903400000,
+      "entry": 306.82,
+      "stop": 316.99,
+      "target": 295.13,
+      "tp1": 298.81,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 39.331366764995025,
+      "reason": "STOP",
+      "pnl": -414.7211799410029,
+      "r": -1.0368029498525073,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1730903400000,
+          "price": 316.99,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "COHR",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1733149800000,
+      "trigger_4h_open_ms": 1733149800000,
+      "exit_t": 1733322600000,
+      "entry": 103.69,
+      "stop": 110.76,
+      "target": 92.25,
+      "tp1": 96.18,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 56.57708628005652,
+      "reason": "STOP",
+      "pnl": -407.2797736916549,
+      "r": -1.0181994342291372,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1733322600000,
+          "price": 110.76,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "CRWD",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1733322600000,
+      "trigger_4h_open_ms": 1733322600000,
+      "exit_t": 1733775300000,
+      "entry": 352.3,
+      "stop": 334.45,
+      "target": 377.35,
+      "tp1": 365.67,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 22.408963585434144,
+      "reason": "BE",
+      "pnl": 80.35481008403355,
+      "r": 0.20088702521008386,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1733337000000,
+          "price": 365.67,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1733337000000,
+          "price": 352.3,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1733775300000,
+          "price": 352.3,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1733758200000,
+      "trigger_4h_open_ms": 1733754600000,
+      "exit_t": 1733841000000,
+      "entry": 239.45000000000002,
+      "stop": 237.21,
+      "target": 243.69,
+      "tp1": 241.67000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 178.57142857142784,
+      "reason": "STOP",
+      "pnl": -451.0707142857141,
+      "r": -1.127676785714285,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1733841000000,
+          "price": 237.21,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ZM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1734532200000,
+      "trigger_4h_open_ms": 1734532200000,
+      "exit_t": 1734553800000,
+      "entry": 84.78,
+      "stop": 82.2,
+      "target": 87.72,
+      "tp1": 87.19,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 155.03875968992259,
+      "reason": "STOP",
+      "pnl": -415.533023255814,
+      "r": -1.038832558139535,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1734553800000,
+          "price": 82.2,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "CRWD",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1736519400000,
+      "trigger_4h_open_ms": 1736519400000,
+      "exit_t": 1736786700000,
+      "entry": 348.37,
+      "stop": 337.82,
+      "target": 366.59000000000003,
+      "tp1": 357.16,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 37.91469194312792,
+      "reason": "STOP",
+      "pnl": -415.61000947867296,
+      "r": -1.0390250236966825,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1736786700000,
+          "price": 337.82,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "WDC",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1738938600000,
+      "trigger_4h_open_ms": 1738938600000,
+      "exit_t": 1739293200000,
+      "entry": 65.36,
+      "stop": 61.370000000000005,
+      "target": 70.49,
+      "tp1": 68.33,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 100.25062656641617,
+      "reason": "STOP",
+      "pnl": 354.626285714286,
+      "r": 0.886565714285715,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1739199600000,
+          "price": 68.33,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1739199600000,
+          "price": 65.36,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1739291400000,
+          "price": 70.49,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1739291400000,
+          "price": 68.33,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1739293200000,
+          "price": 68.33,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "AXTI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1738953000000,
+      "trigger_4h_open_ms": 1738953000000,
+      "exit_t": 1739370600000,
+      "entry": 2.1,
+      "stop": 1.93,
+      "target": 2.35,
+      "tp1": 2.24,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 2352.941176470586,
+      "reason": "STOP",
+      "pnl": -405.6894117647059,
+      "r": -1.0142235294117647,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1739370600000,
+          "price": 1.93,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "RKLB",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1738938600000,
+      "trigger_4h_open_ms": 1738938600000,
+      "exit_t": 1739997900000,
+      "entry": 29.150000000000002,
+      "stop": 26.04,
+      "target": 33.34,
+      "tp1": 31.46,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 128.6173633440513,
+      "reason": "STOP",
+      "pnl": -404.25903536977484,
+      "r": -1.010647588424437,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1739997900000,
+          "price": 26.04,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "QCOM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1738938600000,
+      "trigger_4h_open_ms": 1738938600000,
+      "exit_t": 1740152700000,
+      "entry": 169.59,
+      "stop": 164.52,
+      "target": 176.79,
+      "tp1": 173.57,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 78.89546351084823,
+      "reason": "BE",
+      "pnl": 78.08880473372767,
+      "r": 0.19522201183431917,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1739889000000,
+          "price": 173.57,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1739889000000,
+          "price": 169.59,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1740152700000,
+          "price": 169.59,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "EWJ",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1741797000000,
+      "trigger_4h_open_ms": 1741786200000,
+      "exit_t": 1742218200000,
+      "entry": 69.55,
+      "stop": 70.51,
+      "target": 67.96000000000001,
+      "tp1": 68.36,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 416.6666666666632,
+      "reason": "STOP",
+      "pnl": -435.0149999999997,
+      "r": -1.0875374999999992,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1742218200000,
+          "price": 70.51,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "PLTR",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1748022300000,
+      "trigger_4h_open_ms": 1748021400000,
+      "exit_t": 1748623500000,
+      "entry": 125.14,
+      "stop": 118.37,
+      "target": 133.48,
+      "tp1": 130.46,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 59.08419497784346,
+      "reason": "BE",
+      "pnl": 85.36924076809471,
+      "r": 0.21342310192023678,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1748616300000,
+          "price": 130.46,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1748616300000,
+          "price": 125.14,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1748623500000,
+          "price": 125.14,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "COHR",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1748957400000,
+      "trigger_4h_open_ms": 1748957400000,
+      "exit_t": 1749843000000,
+      "entry": 77.0,
+      "stop": 73.09,
+      "target": 83.52,
+      "tp1": 80.14,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 102.30179028133001,
+      "reason": "BE",
+      "pnl": 86.857780051151,
+      "r": 0.2171444501278775,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1748961900000,
+          "price": 80.14,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1748961900000,
+          "price": 77.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1749843000000,
+          "price": 77.0,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1748455200000,
+      "trigger_4h_open_ms": 1748453400000,
+      "exit_t": 1751382000000,
+      "entry": 42.24,
+      "stop": 38.65,
+      "target": 47.800000000000004,
+      "tp1": 46.480000000000004,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 111.42061281337037,
+      "reason": "STOP",
+      "pnl": 510.58834540389944,
+      "r": 1.2764708635097486,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1750860000000,
+          "price": 46.480000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1750860000000,
+          "price": 42.24,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1750946400000,
+          "price": 47.800000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1750946400000,
+          "price": 46.480000000000004,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1751382000000,
+          "price": 46.480000000000004,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "IREN",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1754415000000,
+      "trigger_4h_open_ms": 1754415000000,
+      "exit_t": 1755005400000,
+      "entry": 16.36,
+      "stop": 14.49,
+      "target": 19.36,
+      "tp1": 17.82,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 213.9037433155081,
+      "reason": "STOP",
+      "pnl": 406.6769625668452,
+      "r": 1.016692406417113,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1754488800000,
+          "price": 17.82,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1754488800000,
+          "price": 16.36,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1754919000000,
+          "price": 19.36,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1754919000000,
+          "price": 17.82,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1755005400000,
+          "price": 17.82,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "GME",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1756218600000,
+      "trigger_4h_open_ms": 1756215000000,
+      "exit_t": 1756237500000,
+      "entry": 22.63,
+      "stop": 22.28,
+      "target": 23.2,
+      "tp1": 23.04,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1142.8571428571497,
+      "reason": "STOP",
+      "pnl": -430.79542857142866,
+      "r": -1.0769885714285716,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1756237500000,
+          "price": 22.28,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DELL",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1761226200000,
+      "trigger_4h_open_ms": 1761226200000,
+      "exit_t": 1761926400000,
+      "entry": 150.63,
+      "stop": 143.99,
+      "target": 158.5,
+      "tp1": 155.34,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 60.24096385542181,
+      "reason": "STOP",
+      "pnl": 420.7796385542182,
+      "r": 1.0519490963855456,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1761237900000,
+          "price": 155.34,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1761237900000,
+          "price": 150.63,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1761314400000,
+          "price": 158.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1761314400000,
+          "price": 155.34,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1761917400000,
+          "price": 159.12
+        },
+        {
+          "type": "STOP",
+          "t": 1761926400000,
+          "price": 159.12,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "RKLB",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1761329700000,
+      "trigger_4h_open_ms": 1761327000000,
+      "exit_t": 1762266600000,
+      "entry": 64.88,
+      "stop": 57.52,
+      "target": 73.97,
+      "tp1": 72.21000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 54.34782608695658,
+      "reason": "STOP",
+      "pnl": -403.9913043478261,
+      "r": -1.0099782608695653,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1762266600000,
+          "price": 57.52,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "PLTR",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1762439400000,
+      "trigger_4h_open_ms": 1762439400000,
+      "exit_t": 1762443000000,
+      "entry": 189.91,
+      "stop": 179.63,
+      "target": 207.52,
+      "tp1": 198.71,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 38.91050583657587,
+      "reason": "STOP",
+      "pnl": -408.62739299610894,
+      "r": -1.0215684824902724,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1762443000000,
+          "price": 179.63,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "AXTI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1760535000000,
+      "trigger_4h_open_ms": 1760535000000,
+      "exit_t": 1763045100000,
+      "entry": 4.67,
+      "stop": 3.91,
+      "target": 5.66,
+      "tp1": 5.29,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 526.3157894736844,
+      "reason": "STOP",
+      "pnl": 1389.3725263157899,
+      "r": 3.4734313157894747,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1760967000000,
+          "price": 5.29,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1760967000000,
+          "price": 4.67,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1761314400000,
+          "price": 5.66,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1761314400000,
+          "price": 5.29,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1761658200000,
+          "price": 5.75
+        },
+        {
+          "type": "TRAIL",
+          "t": 1761917400000,
+          "price": 6.7
+        },
+        {
+          "type": "TRAIL",
+          "t": 1762193700000,
+          "price": 7.73
+        },
+        {
+          "type": "TRAIL",
+          "t": 1762525800000,
+          "price": 8.290000000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1762957800000,
+          "price": 10.08
+        },
+        {
+          "type": "STOP",
+          "t": 1763045100000,
+          "price": 10.08,
+          "fraction": 0.39999999999999997
+        }
+      ]
+    },
+    {
+      "symbol": "COHR",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1763563500000,
+      "trigger_4h_open_ms": 1763562600000,
+      "exit_t": 1763739000000,
+      "entry": 144.32,
+      "stop": 130.7,
+      "target": 168.57,
+      "tp1": 156.44,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 29.368575624082222,
+      "reason": "STOP",
+      "pnl": -404.8461674008811,
+      "r": -1.0121154185022028,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1763739000000,
+          "price": 130.7,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "AXTI",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1766414700000,
+      "trigger_4h_open_ms": 1766413800000,
+      "exit_t": 1767018600000,
+      "entry": 14.290000000000001,
+      "stop": 12.030000000000001,
+      "target": 16.88,
+      "tp1": 15.97,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 176.9911504424779,
+      "reason": "BE",
+      "pnl": 86.11497345132742,
+      "r": 0.21528743362831854,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1766759400000,
+          "price": 15.97,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1766759400000,
+          "price": 14.290000000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1767018600000,
+          "price": 14.290000000000001,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "HPE",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1766154600000,
+      "trigger_4h_open_ms": 1766154600000,
+      "exit_t": 1767193200000,
+      "entry": 24.01,
+      "stop": 23.240000000000002,
+      "target": 25.41,
+      "tp1": 24.66,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 519.4805194805198,
+      "reason": "BE",
+      "pnl": 86.27064935064918,
+      "r": 0.21567662337662294,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1766413800000,
+          "price": 24.66,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1766413800000,
+          "price": 24.01,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1767193200000,
+          "price": 24.01,
+          "fraction": 0.7
+        }
+      ]
+    },
+    {
+      "symbol": "IWM",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1766586600000,
+      "trigger_4h_open_ms": 1766586600000,
+      "exit_t": 1767213900000,
+      "entry": 251.46,
+      "stop": 246.04,
+      "target": 258.2,
+      "tp1": 255.51000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 73.80073800737986,
+      "reason": "STOP",
+      "pnl": -422.029520295203,
+      "r": -1.0550738007380074,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1767213900000,
+          "price": 246.04,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "RKLB",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1769627700000,
+      "trigger_4h_open_ms": 1769625000000,
+      "exit_t": 1769796000000,
+      "entry": 87.25,
+      "stop": 78.8,
+      "target": 99.58,
+      "tp1": 93.57000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 47.33727810650886,
+      "reason": "STOP",
+      "pnl": -404.71621301775144,
+      "r": -1.0117905325443786,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1769796000000,
+          "price": 78.8,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "COHR",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1773236700000,
+      "trigger_4h_open_ms": 1773235800000,
+      "exit_t": 1774015200000,
+      "entry": 255.07,
+      "stop": 226.1,
+      "target": 300.17,
+      "tp1": 277.61,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 13.80738695201933,
+      "reason": "BE",
+      "pnl": 89.08331101139116,
+      "r": 0.2227082775284779,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1774013400000,
+          "price": 277.61,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1774013400000,
+          "price": 255.07,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1774015200000,
+          "price": 255.07,
+          "fraction": 0.7
+        }
+      ]
+    }
+  ]
+}
