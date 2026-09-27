@@ -1,0 +1,76 @@
+name: Stock32 Dukascopy vs Binance Same Window
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock32-dukascopy-vs-binance.yml"
+      - "scripts/download_stock32_dukascopy_same_window.cjs"
+      - "scripts/backtest_stock32_dukascopy_same_window.py"
+      - "scripts/backtest_wyckoff_exact_touch_ct.py"
+      - "scripts/wyckoff_status.py"
+      - "data/validation/stock53_rth_entry_timing_abc.json"
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Node dependency
+        run: npm install --no-save dukascopy-node@1.50.0
+
+      - name: Install Python dependency
+        run: python -m pip install --disable-pip-version-check pandas_market_calendars
+
+      - name: Syntax check
+        run: |
+          node --check scripts/download_stock32_dukascopy_same_window.cjs
+          python -m py_compile scripts/backtest_stock32_dukascopy_same_window.py scripts/backtest_wyckoff_exact_touch_ct.py scripts/wyckoff_status.py
+
+      - name: Download free Dukascopy 15m data
+        run: node scripts/download_stock32_dukascopy_same_window.cjs
+
+      - name: Run same-window comparison
+        run: python scripts/backtest_stock32_dukascopy_same_window.py
+
+      - name: Upload comparison
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stock32-dukascopy-vs-binance-same-window
+          path: |
+            data/validation/stock32_dukascopy_vs_binance_same_window.json
+            data/validation/dukascopy_same_window_raw/manifest.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit comparison
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock32_dukascopy_vs_binance_same_window.json
+          if git diff --cached --quiet; then
+            echo "No result changes"
+          else
+            git commit -m "validation: add free Dukascopy same-window comparison [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi
