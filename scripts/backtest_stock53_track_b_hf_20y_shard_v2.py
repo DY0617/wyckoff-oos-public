@@ -78,11 +78,11 @@ def remote_15m(con,y,m):
     ), agg AS (
       SELECT ticker,time_bucket(INTERVAL '15 minutes',et) et_bucket,
              arg_min(open,et) open,max(high) high,min(low) low,
-             arg_max(close,et) close,sum(volume) volume,
+             arg_max(close,et) close_px,sum(volume) volume,
              max(et) last_et
       FROM rth GROUP BY ticker,et_bucket
     )
-    SELECT ticker,et_bucket,open,high,low,close,volume
+    SELECT ticker,et_bucket,open,high,low,close_px,volume
     FROM agg ORDER BY ticker,et_bucket
     """
     t0=time.time()
@@ -201,6 +201,10 @@ def stats(ts):
 
 def main():
     bysym,months,missing=collect()
+    if months == 0:
+        raise RuntimeError("HF parquet load failed: zero months loaded")
+    if missing:
+        raise RuntimeError("HF parquet load incomplete: missing months=" + ",".join(missing))
     results=[]; errors={}
     old_dataset,old_filters=bt.dataset,bt.symbol_filters
     old_cap,old_risk=bt.CAP,bt.RISK
