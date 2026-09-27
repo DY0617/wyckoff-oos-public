@@ -249,6 +249,21 @@ def simulate(sym, a_params=None, b_params=None, start_ms=None, end_ms=None, fee_
             if hi<=p["seen_hi"]:continue
             z=H[hi]
             touched=(p["direction"]=="LONG" and z["h"]>=p["entry"]) or (p["direction"]=="SHORT" and z["l"]<=p["entry"])
+            if entry_mode in ("PRE15","PRE15_CONFIRM"):
+                dt=datetime.fromtimestamp(z["t"]/1000,timezone.utc)
+                try:
+                    from zoneinfo import ZoneInfo
+                    et=dt.astimezone(ZoneInfo("America/New_York"))
+                    first_rth_bucket=(et.hour==9 and et.minute==30)
+                except Exception:
+                    first_rth_bucket=False
+                if first_rth_bucket:
+                    pi=bisect.bisect_left(mt,z["t"]-15*60*1000)
+                    while pi<len(M) and M[pi]["t"]<z["t"]:
+                        zz=M[pi]
+                        if zz["l"]<=p["entry"]<=zz["h"]:
+                            touched=True; break
+                        pi+=1
             if touched:
                 ok=finish_trade(p,hi,end_ms)
                 if ok:
