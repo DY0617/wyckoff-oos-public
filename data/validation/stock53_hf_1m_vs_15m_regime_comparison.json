@@ -1,0 +1,418 @@
+{
+  "purpose": "execution-resolution sensitivity for frozen Track B using identical RTH signals",
+  "windows": {
+    "2010-2015": {
+      "start": "2010-01-01",
+      "end_exclusive": "2015-01-01",
+      "1m": {
+        "closed": 203,
+        "wins": 105,
+        "losses": 98,
+        "win_rate": 0.5172413793103449,
+        "net_r": -17.081070808098243,
+        "avg_r": -0.08414320595122288,
+        "profit_factor": 0.8339316683448498,
+        "max_drawdown_r": 25.105216564651986
+      },
+      "15m": {
+        "closed": 206,
+        "wins": 106,
+        "losses": 100,
+        "win_rate": 0.5145631067961165,
+        "net_r": -18.38986716711217,
+        "avg_r": -0.08927119984035033,
+        "profit_factor": 0.8246796137402197,
+        "max_drawdown_r": 25.221706059304367
+      },
+      "delta": {
+        "net_r": 1.3087963590139253,
+        "avg_r": 0.00512799388912745,
+        "closed": -3,
+        "common_trades": 202,
+        "changed_trade_r": 0
+      },
+      "by_direction": {
+        "LONG": {
+          "1m": {
+            "closed": 176,
+            "wins": 91,
+            "losses": 85,
+            "win_rate": 0.5170454545454546,
+            "net_r": -11.916260185309337,
+            "avg_r": -0.06770602378016669,
+            "profit_factor": 0.8663373308380119
+          },
+          "15m": {
+            "closed": 179,
+            "wins": 92,
+            "losses": 87,
+            "win_rate": 0.5139664804469274,
+            "net_r": -13.225056544323262,
+            "avg_r": -0.07388299745431991,
+            "profit_factor": 0.8549709013406431
+          }
+        },
+        "SHORT": {
+          "1m": {
+            "closed": 27,
+            "wins": 14,
+            "losses": 13,
+            "win_rate": 0.5185185185185185,
+            "net_r": -5.164810622788907,
+            "avg_r": -0.19128928232551506,
+            "profit_factor": 0.6231147162603519
+          },
+          "15m": {
+            "closed": 27,
+            "wins": 14,
+            "losses": 13,
+            "win_rate": 0.5185185185185185,
+            "net_r": -5.164810622788907,
+            "avg_r": -0.19128928232551506,
+            "profit_factor": 0.6231147162603519
+          }
+        }
+      },
+      "largest_changed_trades": []
+    },
+    "2020-2026": {
+      "start": "2020-01-01",
+      "end_exclusive": "2026-04-01",
+      "1m": {
+        "closed": 272,
+        "wins": 160,
+        "losses": 112,
+        "win_rate": 0.5882352941176471,
+        "net_r": 49.027606411541484,
+        "avg_r": 0.1802485529836084,
+        "profit_factor": 1.4208946667525804,
+        "max_drawdown_r": 13.018365661927362
+      },
+      "15m": {
+        "closed": 278,
+        "wins": 162,
+        "losses": 116,
+        "win_rate": 0.5827338129496403,
+        "net_r": 47.056846536255726,
+        "avg_r": 0.16926923214480477,
+        "profit_factor": 1.3898779383159934,
+        "max_drawdown_r": 13.018365661927358
+      },
+      "delta": {
+        "net_r": 1.9707598752857578,
+        "avg_r": 0.010979320838803625,
+        "closed": -6,
+        "common_trades": 268,
+        "changed_trade_r": 0
+      },
+      "by_direction": {
+        "LONG": {
+          "1m": {
+            "closed": 242,
+            "wins": 142,
+            "losses": 100,
+            "win_rate": 0.5867768595041323,
+            "net_r": 39.04006378838473,
+            "avg_r": 0.16132257763795343,
+            "profit_factor": 1.3749698818447051
+          },
+          "15m": {
+            "closed": 247,
+            "wins": 144,
+            "losses": 103,
+            "win_rate": 0.582995951417004,
+            "net_r": 38.10622371749995,
+            "avg_r": 0.1542762093825909,
+            "profit_factor": 1.3551690992123542
+          }
+        },
+        "SHORT": {
+          "1m": {
+            "closed": 30,
+            "wins": 18,
+            "losses": 12,
+            "win_rate": 0.6,
+            "net_r": 9.987542623156756,
+            "avg_r": 0.33291808743855855,
+            "profit_factor": 1.807461248099896
+          },
+          "15m": {
+            "closed": 31,
+            "wins": 18,
+            "losses": 13,
+            "win_rate": 0.5806451612903226,
+            "net_r": 8.950622818755777,
+            "avg_r": 0.28872976834696057,
+            "profit_factor": 1.6676586113103002
+          }
+        }
+      },
+      "largest_changed_trades": []
+    }
+  },
+  "combined_test_windows": {
+    "1m": {
+      "closed": 475,
+      "wins": 265,
+      "losses": 210,
+      "win_rate": 0.5578947368421052,
+      "net_r": 31.946535603443238,
+      "avg_r": 0.06725586442830156,
+      "profit_factor": 1.1456485080785566,
+      "max_drawdown_r": 25.105216564651986
+    },
+    "15m": {
+      "closed": 484,
+      "wins": 268,
+      "losses": 216,
+      "win_rate": 0.5537190082644629,
+      "net_r": 28.666979369143558,
+      "avg_r": 0.059229296217238755,
+      "profit_factor": 1.1270759847552598,
+      "max_drawdown_r": 25.221706059304367
+    },
+    "delta": {
+      "net_r": 3.2795562342996796,
+      "avg_r": 0.008026568211062804,
+      "closed": -9,
+      "common_trades": 470,
+      "changed_trade_r": 0
+    },
+    "by_direction": {
+      "LONG": {
+        "1m": {
+          "closed": 418,
+          "wins": 233,
+          "losses": 185,
+          "win_rate": 0.5574162679425837,
+          "net_r": 27.12380360307539,
+          "avg_r": 0.06488948230400811,
+          "profit_factor": 1.140343729163696
+        },
+        "15m": {
+          "closed": 426,
+          "wins": 236,
+          "losses": 190,
+          "win_rate": 0.5539906103286385,
+          "net_r": 24.88116717317669,
+          "avg_r": 0.05840649571168237,
+          "profit_factor": 1.1253589678749292
+        }
+      },
+      "SHORT": {
+        "1m": {
+          "closed": 57,
+          "wins": 32,
+          "losses": 25,
+          "win_rate": 0.5614035087719298,
+          "net_r": 4.822732000367848,
+          "avg_r": 0.0846093333397868,
+          "profit_factor": 1.1849703504718803
+        },
+        "15m": {
+          "closed": 58,
+          "wins": 32,
+          "losses": 26,
+          "win_rate": 0.5517241379310345,
+          "net_r": 3.7858121959668707,
+          "avg_r": 0.06527262406839432,
+          "profit_factor": 1.1396467486305693
+        }
+      }
+    },
+    "largest_changed_trades": []
+  },
+  "shard_audit": [
+    {
+      "eval_start": "2010-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2011-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "DELL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SPCX": "RuntimeError('no bars')",
+        "BABA": "RuntimeError('no bars')",
+        "KORU": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "META": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "QQQ": "RuntimeError('insufficient warmup D=7 H=14')",
+        "UBER": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')",
+        "AAOI": "RuntimeError('no bars')",
+        "BE": "RuntimeError('no bars')",
+        "HOOD": "RuntimeError('no bars')",
+        "LITE": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2011-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2012-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "DELL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SPCX": "RuntimeError('no bars')",
+        "BABA": "RuntimeError('no bars')",
+        "KORU": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "META": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "UBER": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')",
+        "AAOI": "RuntimeError('no bars')",
+        "BE": "RuntimeError('no bars')",
+        "HOOD": "RuntimeError('no bars')",
+        "LITE": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2012-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2013-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "DELL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SPCX": "RuntimeError('no bars')",
+        "BABA": "RuntimeError('no bars')",
+        "KORU": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "UBER": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')",
+        "AAOI": "RuntimeError('no bars')",
+        "BE": "RuntimeError('no bars')",
+        "COIN": "RuntimeError('insufficient warmup D=7 H=14')",
+        "HOOD": "RuntimeError('no bars')",
+        "LITE": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2013-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2014-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "DELL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SPCX": "RuntimeError('no bars')",
+        "BABA": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "UBER": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')",
+        "BE": "RuntimeError('no bars')",
+        "COIN": "RuntimeError('no bars')",
+        "HOOD": "RuntimeError('no bars')",
+        "LITE": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2014-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2015-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "DELL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SPCX": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "UBER": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')",
+        "BE": "RuntimeError('no bars')",
+        "COIN": "RuntimeError('no bars')",
+        "HOOD": "RuntimeError('no bars')",
+        "LITE": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2020-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2021-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "DRAM": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')",
+        "COIN": "RuntimeError('no bars')",
+        "HOOD": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2021-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2022-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "DRAM": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2022-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2023-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "DRAM": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2023-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2024-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('no bars')",
+        "SNXX": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "NBIS": "RuntimeError('no bars')",
+        "DRAM": "RuntimeError('no bars')",
+        "MUU": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2024-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2025-01-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "CRCL": "RuntimeError('no bars')",
+        "SNDK": "RuntimeError('insufficient warmup D=26 H=52')",
+        "SNXX": "RuntimeError('no bars')",
+        "SKHY": "RuntimeError('no bars')",
+        "DRAM": "RuntimeError('no bars')"
+      }
+    },
+    {
+      "eval_start": "2025-01-01T00:00:00+00:00",
+      "eval_end_exclusive": "2026-04-01T00:00:00+00:00",
+      "months_loaded": 22,
+      "errors": {
+        "SNXX": "RuntimeError('insufficient warmup D=45 H=90')",
+        "SKHY": "RuntimeError('no bars')",
+        "DRAM": "RuntimeError('no bars')"
+      }
+    }
+  ]
+}
