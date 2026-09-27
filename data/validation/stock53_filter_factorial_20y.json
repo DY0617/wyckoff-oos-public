@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T23:17:18.595565+00:00",
+  "generated_at": "2026-09-27T23:26:06.710777+00:00",
   "purpose": "factorial decomposition of SPY regime / relative strength / breadth filters; fixed definitions, no threshold search",
   "period": {
     "start": "2006-04-01",
@@ -1859,13 +1859,13 @@
     },
     "M_breadth_only": {
       "full_20y": {
-        "closed": 541,
-        "wins": 302,
+        "closed": 542,
+        "wins": 303,
         "losses": 239,
-        "win_rate": 0.5582255083179297,
-        "net_r": 42.32264287006068,
-        "avg_r": 0.07823039347515838,
-        "profit_factor": 1.168320122539843,
+        "win_rate": 0.559040590405904,
+        "net_r": 42.495470183493524,
+        "avg_r": 0.07840492653781093,
+        "profit_factor": 1.1690074689010936,
         "max_drawdown_fixed_20k": 0.2964923036444992,
         "max_drawdown_r": 22.314958833275444,
         "max_consecutive_losses": 8,
@@ -2008,13 +2008,13 @@
             "profit_factor": 1.9257471535813782
           },
           "2021": {
-            "closed": 29,
-            "wins": 14,
+            "closed": 30,
+            "wins": 15,
             "losses": 15,
-            "win_rate": 0.4827586206896552,
-            "net_r": -6.316588240063597,
-            "avg_r": -0.21781338758839988,
-            "profit_factor": 0.5958817558846392
+            "win_rate": 0.5,
+            "net_r": -6.143760926630762,
+            "avg_r": -0.20479203088769207,
+            "profit_factor": 0.6069387803075179
           },
           "2022": {
             "closed": 9,
@@ -2064,15 +2064,15 @@
         }
       },
       "late_2016_2026": {
-        "closed": 307,
-        "wins": 173,
+        "closed": 308,
+        "wins": 174,
         "losses": 134,
-        "win_rate": 0.5635179153094463,
-        "net_r": 34.11792586205074,
-        "avg_r": 0.11113330899690795,
-        "profit_factor": 1.2424849515179017,
-        "max_drawdown_fixed_20k": 0.21847614236688062,
-        "max_drawdown_r": 15.844836064000814,
+        "win_rate": 0.564935064935065,
+        "net_r": 34.29075317548357,
+        "avg_r": 0.1113336142061155,
+        "profit_factor": 1.2437132800771518,
+        "max_drawdown_fixed_20k": 0.21609311709720133,
+        "max_drawdown_r": 15.672008750567981,
         "max_consecutive_losses": 7,
         "positive_years": 9,
         "negative_years": 2,
@@ -2123,13 +2123,13 @@
             "profit_factor": 1.9257471535813782
           },
           "2021": {
-            "closed": 29,
-            "wins": 14,
+            "closed": 30,
+            "wins": 15,
             "losses": 15,
-            "win_rate": 0.4827586206896552,
-            "net_r": -6.316588240063597,
-            "avg_r": -0.21781338758839988,
-            "profit_factor": 0.5958817558846392
+            "win_rate": 0.5,
+            "net_r": -6.143760926630762,
+            "avg_r": -0.20479203088769207,
+            "profit_factor": 0.6069387803075179
           },
           "2022": {
             "closed": 9,
@@ -2779,13 +2779,13 @@
     },
     "CM_spy_breadth": {
       "full_20y": {
-        "closed": 523,
-        "wins": 292,
+        "closed": 524,
+        "wins": 293,
         "losses": 231,
-        "win_rate": 0.5583173996175909,
-        "net_r": 41.240715344602904,
-        "avg_r": 0.07885414023824647,
-        "profit_factor": 1.1697145776576272,
+        "win_rate": 0.5591603053435115,
+        "net_r": 41.41354265803574,
+        "avg_r": 0.07903347835503004,
+        "profit_factor": 1.1704257999112149,
         "max_drawdown_fixed_20k": 0.3285849574150456,
         "max_drawdown_r": 25.362359465085902,
         "max_consecutive_losses": 8,
@@ -2928,13 +2928,13 @@
             "profit_factor": 1.8993209526273243
           },
           "2021": {
-            "closed": 29,
-            "wins": 14,
+            "closed": 30,
+            "wins": 15,
             "losses": 15,
-            "win_rate": 0.4827586206896552,
-            "net_r": -6.316588240063597,
-            "avg_r": -0.21781338758839988,
-            "profit_factor": 0.5958817558846392
+            "win_rate": 0.5,
+            "net_r": -6.143760926630762,
+            "avg_r": -0.20479203088769207,
+            "profit_factor": 0.6069387803075179
           },
           "2022": {
             "closed": 9,
@@ -2984,15 +2984,15 @@
         }
       },
       "late_2016_2026": {
-        "closed": 299,
-        "wins": 168,
+        "closed": 300,
+        "wins": 169,
         "losses": 131,
-        "win_rate": 0.5618729096989966,
-        "net_r": 32.93554115102885,
-        "avg_r": 0.11015231154190251,
-        "profit_factor": 1.2394492671099238,
-        "max_drawdown_fixed_20k": 0.21358838291015417,
-        "max_drawdown_r": 14.794417367116964,
+        "win_rate": 0.5633333333333334,
+        "net_r": 33.108368464461684,
+        "avg_r": 0.11036122821487228,
+        "profit_factor": 1.2407057630438543,
+        "max_drawdown_fixed_20k": 0.21109325887229413,
+        "max_drawdown_r": 14.62159005368413,
         "max_consecutive_losses": 7,
         "positive_years": 9,
         "negative_years": 2,
@@ -3043,13 +3043,13 @@
             "profit_factor": 1.8993209526273243
           },
           "2021": {
-            "closed": 29,
-            "wins": 14,
+            "closed": 30,
+            "wins": 15,
             "losses": 15,
-            "win_rate": 0.4827586206896552,
-            "net_r": -6.316588240063597,
-            "avg_r": -0.21781338758839988,
-            "profit_factor": 0.5958817558846392
+            "win_rate": 0.5,
+            "net_r": -6.143760926630762,
+            "avg_r": -0.20479203088769207,
+            "profit_factor": 0.6069387803075179
           },
           "2022": {
             "closed": 9,
@@ -3239,13 +3239,13 @@
     },
     "RM_rs_breadth": {
       "full_20y": {
-        "closed": 336,
-        "wins": 196,
+        "closed": 337,
+        "wins": 197,
         "losses": 140,
-        "win_rate": 0.5833333333333334,
-        "net_r": 59.76479859148333,
-        "avg_r": 0.17787142437941467,
-        "profit_factor": 1.4065817908494023,
+        "win_rate": 0.5845697329376854,
+        "net_r": 59.93762590491616,
+        "avg_r": 0.1778564566911459,
+        "profit_factor": 1.4077575404588591,
         "max_drawdown_fixed_20k": 0.15197493399631704,
         "max_drawdown_r": 10.417325542019013,
         "max_consecutive_losses": 5,
@@ -3388,13 +3388,13 @@
             "profit_factor": 2.7146584672029377
           },
           "2021": {
-            "closed": 18,
-            "wins": 9,
+            "closed": 19,
+            "wins": 10,
             "losses": 9,
-            "win_rate": 0.5,
-            "net_r": -2.2761893746979016,
-            "avg_r": -0.12645496526099453,
-            "profit_factor": 0.7561075256674563
+            "win_rate": 0.5263157894736842,
+            "net_r": -2.1033620612650674,
+            "avg_r": -0.11070326638237198,
+            "profit_factor": 0.7746258798843476
           },
           "2022": {
             "closed": 4,
@@ -3444,15 +3444,15 @@
         }
       },
       "late_2016_2026": {
-        "closed": 195,
-        "wins": 118,
+        "closed": 196,
+        "wins": 119,
         "losses": 77,
-        "win_rate": 0.6051282051282051,
-        "net_r": 48.42643248422601,
-        "avg_r": 0.24834067940628723,
-        "profit_factor": 1.6009661541113753,
+        "win_rate": 0.6071428571428571,
+        "net_r": 48.599259797658846,
+        "avg_r": 0.24795540713091246,
+        "profit_factor": 1.6031109201110794,
         "max_drawdown_fixed_20k": 0.1270958378317687,
-        "max_drawdown_r": 7.601105930352372,
+        "max_drawdown_r": 7.434090972404283,
         "max_consecutive_losses": 5,
         "positive_years": 9,
         "negative_years": 2,
@@ -3503,13 +3503,13 @@
             "profit_factor": 2.7146584672029377
           },
           "2021": {
-            "closed": 18,
-            "wins": 9,
+            "closed": 19,
+            "wins": 10,
             "losses": 9,
-            "win_rate": 0.5,
-            "net_r": -2.2761893746979016,
-            "avg_r": -0.12645496526099453,
-            "profit_factor": 0.7561075256674563
+            "win_rate": 0.5263157894736842,
+            "net_r": -2.1033620612650674,
+            "avg_r": -0.11070326638237198,
+            "profit_factor": 0.7746258798843476
           },
           "2022": {
             "closed": 4,
@@ -3699,13 +3699,13 @@
     },
     "CRM_E_spy_rs_breadth": {
       "full_20y": {
-        "closed": 324,
-        "wins": 191,
+        "closed": 325,
+        "wins": 192,
         "losses": 133,
-        "win_rate": 0.5895061728395061,
-        "net_r": 60.995370432639405,
-        "avg_r": 0.18825731615012162,
-        "profit_factor": 1.4367678291774548,
+        "win_rate": 0.5907692307692308,
+        "net_r": 61.16819774607224,
+        "avg_r": 0.1882098392186838,
+        "profit_factor": 1.4380053888475612,
         "max_drawdown_fixed_20k": 0.16246623585929945,
         "max_drawdown_r": 11.448955713627704,
         "max_consecutive_losses": 5,
@@ -3848,13 +3848,13 @@
             "profit_factor": 2.7146584672029377
           },
           "2021": {
-            "closed": 18,
-            "wins": 9,
+            "closed": 19,
+            "wins": 10,
             "losses": 9,
-            "win_rate": 0.5,
-            "net_r": -2.2761893746979016,
-            "avg_r": -0.12645496526099453,
-            "profit_factor": 0.7561075256674563
+            "win_rate": 0.5263157894736842,
+            "net_r": -2.1033620612650674,
+            "avg_r": -0.11070326638237198,
+            "profit_factor": 0.7746258798843476
           },
           "2022": {
             "closed": 4,
@@ -3904,15 +3904,15 @@
         }
       },
       "late_2016_2026": {
-        "closed": 189,
-        "wins": 115,
+        "closed": 190,
+        "wins": 116,
         "losses": 74,
-        "win_rate": 0.6084656084656085,
-        "net_r": 47.631871955022305,
-        "avg_r": 0.25202048653450954,
-        "profit_factor": 1.615185779551159,
+        "win_rate": 0.6105263157894737,
+        "net_r": 47.80469926845514,
+        "avg_r": 0.2516036803602902,
+        "profit_factor": 1.6174179174281316,
         "max_drawdown_fixed_20k": 0.1336549323181771,
-        "max_drawdown_r": 7.601105930352372,
+        "max_drawdown_r": 7.434090972404281,
         "max_consecutive_losses": 5,
         "positive_years": 9,
         "negative_years": 2,
@@ -3963,13 +3963,13 @@
             "profit_factor": 2.7146584672029377
           },
           "2021": {
-            "closed": 18,
-            "wins": 9,
+            "closed": 19,
+            "wins": 10,
             "losses": 9,
-            "win_rate": 0.5,
-            "net_r": -2.2761893746979016,
-            "avg_r": -0.12645496526099453,
-            "profit_factor": 0.7561075256674563
+            "win_rate": 0.5263157894736842,
+            "net_r": -2.1033620612650674,
+            "avg_r": -0.11070326638237198,
+            "profit_factor": 0.7746258798843476
           },
           "2022": {
             "closed": 4,
@@ -4188,10 +4188,10 @@
       "dd_r_delta_vs_long": -5.486432762861604
     },
     "M_breadth_only": {
-      "trades_kept_vs_long": 0.7609001406469761,
-      "net_r_delta_vs_long": -1.1035964721234706,
-      "pf_delta_vs_long": 0.0372653975737578,
-      "avg_r_delta_vs_long": 0.017152701010764354,
+      "trades_kept_vs_long": 0.7623066104078763,
+      "net_r_delta_vs_long": -0.9307691586906301,
+      "pf_delta_vs_long": 0.03795274393500847,
+      "avg_r_delta_vs_long": 0.01732723407341691,
       "dd_r_delta_vs_long": -7.326523940346338
     },
     "CR_D_spy_rs": {
@@ -4202,24 +4202,24 @@
       "dd_r_delta_vs_long": -15.201844718209998
     },
     "CM_spy_breadth": {
-      "trades_kept_vs_long": 0.7355836849507735,
-      "net_r_delta_vs_long": -2.1855239975812495,
-      "pf_delta_vs_long": 0.03865985269154204,
-      "avg_r_delta_vs_long": 0.01777644777385244,
+      "trades_kept_vs_long": 0.7369901547116737,
+      "net_r_delta_vs_long": -2.012696684148416,
+      "pf_delta_vs_long": 0.0393710749451297,
+      "avg_r_delta_vs_long": 0.01795578589063601,
       "dd_r_delta_vs_long": -4.27912330853588
     },
     "RM_rs_breadth": {
-      "trades_kept_vs_long": 0.47257383966244726,
-      "net_r_delta_vs_long": 16.338559249299173,
-      "pf_delta_vs_long": 0.2755270658833171,
-      "avg_r_delta_vs_long": 0.11679373191502064,
+      "trades_kept_vs_long": 0.4739803094233474,
+      "net_r_delta_vs_long": 16.511386562732007,
+      "pf_delta_vs_long": 0.276702815492774,
+      "avg_r_delta_vs_long": 0.11677876422675186,
       "dd_r_delta_vs_long": -19.224157231602767
     },
     "CRM_E_spy_rs_breadth": {
-      "trades_kept_vs_long": 0.45569620253164556,
-      "net_r_delta_vs_long": 17.56913109045525,
-      "pf_delta_vs_long": 0.30571310421136966,
-      "avg_r_delta_vs_long": 0.1271796236857276,
+      "trades_kept_vs_long": 0.4571026722925457,
+      "net_r_delta_vs_long": 17.741958403888084,
+      "pf_delta_vs_long": 0.30695066388147607,
+      "avg_r_delta_vs_long": 0.1271321467542898,
       "dd_r_delta_vs_long": -18.192527059994077
     }
   },
@@ -4228,23 +4228,23 @@
     "months_loaded": [
       {
         "file": "shard_01.json",
-        "months_loaded": 56
+        "months_loaded": 61
       },
       {
         "file": "shard_02.json",
-        "months_loaded": 56
+        "months_loaded": 61
       },
       {
         "file": "shard_03.json",
-        "months_loaded": 56
+        "months_loaded": 61
       },
       {
         "file": "shard_04.json",
-        "months_loaded": 56
+        "months_loaded": 61
       },
       {
         "file": "shard_05.json",
-        "months_loaded": 56
+        "months_loaded": 61
       }
     ],
     "note": "Current 53-symbol universe projected backward; survivorship/post-selection bias remains. Breadth threshold fixed at 50%; filters are evaluated using only completed RTH daily bars prior to entry."
