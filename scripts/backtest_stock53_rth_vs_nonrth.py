@@ -1,5 +1,6 @@
 import json, math, sys, time, urllib.parse, urllib.request
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -171,13 +172,33 @@ def main():
     end_ms=int(get_json("/fapi/v1/time")["serverTime"])-1
     all_results=[]; errors={}
     old_cap,old_risk=bt.CAP,bt.RISK; bt.CAP=CAP;bt.RISK=RISK
+
+    def fetch_one(sym):
+        fs=sym+"USDT"
+        m=meta[fs]
+        onboard=int(m.get("onboardDate") or 0)
+        M,calls=fetch_15m(sym,onboard,end_ms)
+        return sym,m,onboard,M,calls
+
+    fetched={}
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        futs={pool.submit(fetch_one,s):s for s in SYMS}
+        for fut in as_completed(futs):
+            sym=futs[fut]
+            try:
+                sym,m,onboard,M,calls=fut.result()
+                fetched[sym]=(m,onboard,M,calls)
+                print("FETCHED",sym,len(M),"calls",calls,flush=True)
+            except Exception as e:
+                errors[sym]=repr(e)
+                print("FETCH_ERROR",sym,repr(e),flush=True)
+
     try:
         for i,sym in enumerate(SYMS,1):
-            fs=sym+"USDT"
+            if sym not in fetched:
+                continue
             try:
-                m=meta[fs]
-                onboard=int(m.get("onboardDate") or 0)
-                M,calls=fetch_15m(sym,onboard,end_ms)
+                m,onboard,M,calls=fetched[sym]
                 cal=calendar_map(onboard,end_ms)
                 R_M=rth_bars(M,cal)
                 R_H=w.enrich(agg_rth_4h(M,cal))
