@@ -154,12 +154,16 @@ def rows_for_symbol(m15, symbol):
     if x.empty:
         return [], [], []
     x = x.sort_values("bucket_t")
-    x["t"] = (x["bucket_t"].astype("int64") // 1_000_000).astype("int64")
+    # Do not assume pandas datetime storage resolution (ns/us can vary by backend).
+    # Convert through Timestamp.timestamp() so internal bar times are always epoch milliseconds.
+    x["t"] = x["bucket_t"].map(lambda z: int(pd.Timestamp(z).timestamp() * 1000)).astype("int64")
     x["ct"] = x["t"] + TF15 - 1
 
     M = [{"t": int(r.t), "o": float(r.open), "h": float(r.high), "l": float(r.low),
           "c": float(r.close), "v": float(r.volume), "ct": int(r.ct)}
          for r in x.itertuples(index=False)]
+    if M and M[0]["t"] < 1_000_000_000_000:
+        raise RuntimeError(f"timestamp unit error for {symbol}: {M[0]['t']}")
 
     local = x["bucket_t"].dt.tz_convert(NY)
     x["local_min"] = local.dt.hour * 60 + local.dt.minute
