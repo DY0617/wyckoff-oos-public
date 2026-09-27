@@ -1,0 +1,1858 @@
+{
+  "generated_at": "2026-09-27T03:50:43.596218+00:00",
+  "purpose": "Same-window comparison: Dukascopy US stock CFD bid proxy vs Binance TradFi futures RTH signal backtest",
+  "window": {
+    "source_binance_result": "data/validation/stock53_rth_entry_timing_abc.json",
+    "common_end_ms": 1790480181265,
+    "per_symbol_eval_start_ms": {
+      "AAPL": 1782849600000,
+      "AMZN": 1778011200000,
+      "AVGO": 1784145600000,
+      "MSFT": 1784145600000,
+      "MU": 1782936000000,
+      "AMD": 1785528000000,
+      "BABA": 1784145600000,
+      "INTC": 1777406400000,
+      "JPM": 1786564800000,
+      "NFLX": 1788379200000,
+      "V": 1786564800000,
+      "COST": 1788379200000,
+      "GOOGL": 1782158400000,
+      "META": 1782158400000,
+      "NVDA": 1782158400000,
+      "QQQ": 1782849600000,
+      "UBER": 1786478400000,
+      "WMT": 1786564800000,
+      "CAT": 1790366400000,
+      "HD": 1786478400000,
+      "MRVL": 1786478400000,
+      "ORCL": 1786478400000,
+      "SPY": 1782849600000,
+      "TSM": 1782849600000,
+      "CRM": 1787860800000,
+      "CSCO": 1786478400000,
+      "DIS": 1786478400000,
+      "IBM": 1787860800000
+    }
+  },
+  "assumptions": {
+    "strategy": "Track B frozen; exact planned-entry touch",
+    "structure": "NYSE RTH 15m -> RTH 4H/stub -> RTH daily",
+    "management": "TP1 30%->BE; TP2 30%->TP1; runner 40% confirmed RTH 4H pivot",
+    "fees_bps_per_fill": 4.0,
+    "slippage_bps_per_fill": 2.0,
+    "dukascopy_note": "Free Dukascopy stock CFD BID candles; not consolidated SIP cash prints.",
+    "binance_note": "Binance TradFi perpetual candles, restricted here to the same supported symbols and same per-symbol evaluation starts."
+  },
+  "requested_current53": [
+    "AAPL",
+    "AMZN",
+    "AVGO",
+    "CRCL",
+    "DELL",
+    "MSFT",
+    "MU",
+    "SNDK",
+    "SNXX",
+    "SOXL",
+    "SPCX",
+    "AMD",
+    "BABA",
+    "INTC",
+    "JPM",
+    "KORU",
+    "MSTR",
+    "NFLX",
+    "SKHY",
+    "SMCI",
+    "SOXS",
+    "V",
+    "COST",
+    "GOOGL",
+    "LLY",
+    "META",
+    "NBIS",
+    "NVDA",
+    "QQQ",
+    "TSLA",
+    "UBER",
+    "WMT",
+    "AMAT",
+    "CAT",
+    "DRAM",
+    "EWY",
+    "HD",
+    "MRVL",
+    "MUU",
+    "ORCL",
+    "SPY",
+    "TSM",
+    "AAOI",
+    "AXTI",
+    "BE",
+    "COIN",
+    "CRM",
+    "CSCO",
+    "DIS",
+    "HOOD",
+    "IBM",
+    "LITE",
+    "TQQQ"
+  ],
+  "dukascopy_supported_requested": [
+    "AAPL",
+    "AMZN",
+    "AVGO",
+    "DELL",
+    "MSFT",
+    "MU",
+    "AMD",
+    "BABA",
+    "INTC",
+    "JPM",
+    "NFLX",
+    "V",
+    "COST",
+    "GOOGL",
+    "LLY",
+    "META",
+    "NVDA",
+    "QQQ",
+    "TSLA",
+    "UBER",
+    "WMT",
+    "AMAT",
+    "CAT",
+    "HD",
+    "MRVL",
+    "ORCL",
+    "SPY",
+    "TSM",
+    "CRM",
+    "CSCO",
+    "DIS",
+    "IBM"
+  ],
+  "common_symbols": [
+    "AAPL",
+    "AMZN",
+    "AVGO",
+    "MSFT",
+    "MU",
+    "AMD",
+    "BABA",
+    "INTC",
+    "JPM",
+    "NFLX",
+    "V",
+    "COST",
+    "GOOGL",
+    "META",
+    "NVDA",
+    "QQQ",
+    "UBER",
+    "WMT",
+    "CAT",
+    "HD",
+    "MRVL",
+    "ORCL",
+    "SPY",
+    "TSM",
+    "CRM",
+    "CSCO",
+    "DIS",
+    "IBM"
+  ],
+  "unsupported_or_failed": [
+    "CRCL",
+    "DELL",
+    "SNDK",
+    "SNXX",
+    "SOXL",
+    "SPCX",
+    "KORU",
+    "MSTR",
+    "SKHY",
+    "SMCI",
+    "SOXS",
+    "LLY",
+    "NBIS",
+    "TSLA",
+    "AMAT",
+    "DRAM",
+    "EWY",
+    "MUU",
+    "AAOI",
+    "AXTI",
+    "BE",
+    "COIN",
+    "HOOD",
+    "LITE",
+    "TQQQ"
+  ],
+  "totals": {
+    "DUKASCOPY_CFD_PROXY": {
+      "closed_trades": 6,
+      "wins": 3,
+      "losses": 3,
+      "win_rate": 0.5,
+      "net_r": -1.2888677969499982,
+      "avg_r": -0.21481129949166636,
+      "profit_factor": 0.5893274063768573,
+      "max_drawdown_fixed_20k": 0.05881664145254005
+    },
+    "BINANCE_RTH_SAME_SYMBOLS": {
+      "closed_trades": 10,
+      "wins": 7,
+      "losses": 3,
+      "win_rate": 0.7,
+      "net_r": 2.9460392854099937,
+      "avg_r": 0.29460392854099937,
+      "profit_factor": 1.9483388670002604,
+      "max_drawdown_fixed_20k": 0.020495081269
+    }
+  },
+  "per_symbol": [
+    {
+      "symbol": "AAPL",
+      "eval_start_ms": 1782849600000,
+      "bars": {
+        "m15": 4418,
+        "h4": 340,
+        "d1": 170
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "eval_start_ms": 1778011200000,
+      "bars": {
+        "m15": 4366,
+        "h4": 336,
+        "d1": 168
+      },
+      "DUKASCOPY": {
+        "closed_trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.040585563799997,
+        "avg_r": -1.040585563799997,
+        "profit_factor": 0.0
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "AVGO",
+      "eval_start_ms": 1784145600000,
+      "bars": {
+        "m15": 4158,
+        "h4": 320,
+        "d1": 160
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "eval_start_ms": 1784145600000,
+      "bars": {
+        "m15": 4730,
+        "h4": 364,
+        "d1": 182
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "MU",
+      "eval_start_ms": 1782936000000,
+      "bars": {
+        "m15": 4392,
+        "h4": 338,
+        "d1": 169
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0128162901500002,
+        "avg_r": -1.0128162901500002,
+        "profit_factor": 0.0
+      }
+    },
+    {
+      "symbol": "AMD",
+      "eval_start_ms": 1785528000000,
+      "bars": {
+        "m15": 4262,
+        "h4": 328,
+        "d1": 164
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "BABA",
+      "eval_start_ms": 1784145600000,
+      "bars": {
+        "m15": 4470,
+        "h4": 344,
+        "d1": 172
+      },
+      "DUKASCOPY": {
+        "closed_trades": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0359515915999986,
+        "avg_r": -1.0359515915999986,
+        "profit_factor": 0.0
+      },
+      "BINANCE": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.710335295375,
+        "avg_r": 1.710335295375,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "INTC",
+      "eval_start_ms": 1777406400000,
+      "bars": {
+        "m15": 4236,
+        "h4": 326,
+        "d1": 163
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "JPM",
+      "eval_start_ms": 1786564800000,
+      "bars": {
+        "m15": 4392,
+        "h4": 338,
+        "d1": 169
+      },
+      "DUKASCOPY": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.9189818935799969,
+        "avg_r": -0.45949094678999847,
+        "profit_factor": 0.13458253814192067
+      },
+      "BINANCE": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.8564015406750013,
+        "avg_r": -0.42820077033750065,
+        "profit_factor": 0.19884272493952004
+      }
+    },
+    {
+      "symbol": "NFLX",
+      "eval_start_ms": 1788379200000,
+      "bars": {
+        "m15": 4730,
+        "h4": 364,
+        "d1": 182
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "V",
+      "eval_start_ms": 1786564800000,
+      "bars": {
+        "m15": 4314,
+        "h4": 332,
+        "d1": 166
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.8355764054899968,
+        "avg_r": 1.8355764054899968,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "COST",
+      "eval_start_ms": 1788379200000,
+      "bars": {
+        "m15": 3898,
+        "h4": 300,
+        "d1": 150
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "GOOGL",
+      "eval_start_ms": 1782158400000,
+      "bars": {
+        "m15": 4080,
+        "h4": 314,
+        "d1": 157
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "META",
+      "eval_start_ms": 1782158400000,
+      "bars": {
+        "m15": 4704,
+        "h4": 362,
+        "d1": 181
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "eval_start_ms": 1782158400000,
+      "bars": {
+        "m15": 4652,
+        "h4": 358,
+        "d1": 179
+      },
+      "DUKASCOPY": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 0.9297874717500011,
+        "avg_r": 0.9297874717500011,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "QQQ",
+      "eval_start_ms": 1782849600000,
+      "bars": {
+        "m15": 3716,
+        "h4": 286,
+        "d1": 143
+      },
+      "DUKASCOPY": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 0.7768637802799933,
+        "avg_r": 0.7768637802799933,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 0.1712353507200015,
+        "avg_r": 0.1712353507200015,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "UBER",
+      "eval_start_ms": 1786478400000,
+      "bars": {
+        "m15": 4184,
+        "h4": 322,
+        "d1": 161
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "WMT",
+      "eval_start_ms": 1786564800000,
+      "bars": {
+        "m15": 4418,
+        "h4": 340,
+        "d1": 170
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "CAT",
+      "eval_start_ms": 1790366400000,
+      "bars": {
+        "m15": 3664,
+        "h4": 282,
+        "d1": 141
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "HD",
+      "eval_start_ms": 1786478400000,
+      "bars": {
+        "m15": 2600,
+        "h4": 200,
+        "d1": 100
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "MRVL",
+      "eval_start_ms": 1786478400000,
+      "bars": {
+        "m15": 4108,
+        "h4": 316,
+        "d1": 158
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "ORCL",
+      "eval_start_ms": 1786478400000,
+      "bars": {
+        "m15": 3924,
+        "h4": 302,
+        "d1": 151
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.240084981689999,
+        "avg_r": 0.6200424908449995,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "SPY",
+      "eval_start_ms": 1782849600000,
+      "bars": {
+        "m15": 3846,
+        "h4": 296,
+        "d1": 148
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "TSM",
+      "eval_start_ms": 1782849600000,
+      "bars": {
+        "m15": 4054,
+        "h4": 312,
+        "d1": 156
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": -0.14197491704000187,
+        "avg_r": -0.07098745852000093,
+        "profit_factor": 0.8614546435053693
+      }
+    },
+    {
+      "symbol": "CRM",
+      "eval_start_ms": 1787860800000,
+      "bars": {
+        "m15": 4080,
+        "h4": 314,
+        "d1": 157
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "CSCO",
+      "eval_start_ms": 1786478400000,
+      "bars": {
+        "m15": 4288,
+        "h4": 330,
+        "d1": 165
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "DIS",
+      "eval_start_ms": 1786478400000,
+      "bars": {
+        "m15": 4366,
+        "h4": 336,
+        "d1": 168
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    },
+    {
+      "symbol": "IBM",
+      "eval_start_ms": 1787860800000,
+      "bars": {
+        "m15": 4548,
+        "h4": 350,
+        "d1": 175
+      },
+      "DUKASCOPY": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      },
+      "BINANCE": {
+        "closed_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null
+      }
+    }
+  ],
+  "download_manifest": {
+    "generated_at": "2026-09-27T03:49:38.897Z",
+    "from": "2026-01-01T00:00:00.000Z",
+    "to": "2026-09-27T03:36:21.265Z",
+    "provider": "Dukascopy",
+    "price_type": "bid",
+    "timeframe": "m15",
+    "symbols": {
+      "AAPL": {
+        "instrument": "aaplususd",
+        "rows": 4418,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "AMZN": {
+        "instrument": "amznususd",
+        "rows": 4366,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "AVGO": {
+        "instrument": "avgoususd",
+        "rows": 4158,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "DELL": {
+        "instrument": "dellususd",
+        "rows": 468,
+        "first": 1785763800000,
+        "last": 1790106300000
+      },
+      "AMD": {
+        "instrument": "amdususd",
+        "rows": 4262,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "BABA": {
+        "instrument": "babaususd",
+        "rows": 4470,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "MU": {
+        "instrument": "muususd",
+        "rows": 4392,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "MSFT": {
+        "instrument": "msftususd",
+        "rows": 4730,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "NFLX": {
+        "instrument": "nflxususd",
+        "rows": 4730,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "JPM": {
+        "instrument": "jpmususd",
+        "rows": 4392,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "V": {
+        "instrument": "vususd",
+        "rows": 4314,
+        "first": 1767364200000,
+        "last": 1790279100000
+      },
+      "INTC": {
+        "instrument": "intcususd",
+        "rows": 4236,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "META": {
+        "instrument": "fbususd",
+        "rows": 4704,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "LLY": {
+        "instrument": "llyususd",
+        "rows": 0,
+        "first": null,
+        "last": null
+      },
+      "GOOGL": {
+        "instrument": "googlususd",
+        "rows": 4080,
+        "first": 1767364200000,
+        "last": 1790106300000
+      },
+      "COST": {
+        "instrument": "costususd",
+        "rows": 3898,
+        "first": 1767364200000,
+        "last": 1790279100000
+      },
+      "NVDA": {
+        "instrument": "nvdaususd",
+        "rows": 4652,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "UBER": {
+        "instrument": "uberususd",
+        "rows": 4184,
+        "first": 1767623400000,
+        "last": 1790279100000
+      },
+      "QQQ": {
+        "instrument": "qqqususd",
+        "rows": 3716,
+        "first": 1767364200000,
+        "last": 1790279100000
+      },
+      "WMT": {
+        "instrument": "wmtususd",
+        "rows": 4418,
+        "first": 1767364200000,
+        "last": 1790279100000
+      },
+      "CAT": {
+        "instrument": "catususd",
+        "rows": 3664,
+        "first": 1767623400000,
+        "last": 1790279100000
+      },
+      "AMAT": {
+        "instrument": "amatususd",
+        "rows": 338,
+        "first": 1777901400000,
+        "last": 1790279100000
+      },
+      "HD": {
+        "instrument": "hdususd",
+        "rows": 2600,
+        "first": 1767623400000,
+        "last": 1790106300000
+      },
+      "ORCL": {
+        "instrument": "orclususd",
+        "rows": 3924,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "MRVL": {
+        "instrument": "mrvlususd",
+        "rows": 4108,
+        "first": 1767364200000,
+        "last": 1790279100000
+      },
+      "TSM": {
+        "instrument": "tsmususd",
+        "rows": 4054,
+        "first": 1767364200000,
+        "last": 1790279100000
+      },
+      "SPY": {
+        "instrument": "spyususd",
+        "rows": 3846,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "CRM": {
+        "instrument": "crmususd",
+        "rows": 4080,
+        "first": 1767364200000,
+        "last": 1790279100000
+      },
+      "DIS": {
+        "instrument": "disususd",
+        "rows": 4366,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "IBM": {
+        "instrument": "ibmususd",
+        "rows": 4548,
+        "first": 1767364200000,
+        "last": 1790365500000
+      },
+      "CSCO": {
+        "instrument": "cscoususd",
+        "rows": 4288,
+        "first": 1767364200000,
+        "last": 1790365500000
+      }
+    },
+    "errors": {
+      "TSLA": "[object Object]"
+    }
+  },
+  "errors": {
+    "DELL": "RuntimeError('insufficient D=18 H=36 M=468')",
+    "LLY": "RuntimeError('insufficient D=0 H=0 M=0')",
+    "TSLA": "RuntimeError('download missing')",
+    "AMAT": "RuntimeError('insufficient D=13 H=26 M=338')"
+  },
+  "trades": {
+    "DUKASCOPY": [
+      {
+        "symbol": "AMZN",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787664600000,
+        "trigger_4h_open_ms": 1787664600000,
+        "exit_t": 1787837400000,
+        "entry": 263.52,
+        "stop": 255.87,
+        "target": 273.2,
+        "tp1": 269.23,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 52.28,
+        "reason": "STOP",
+        "pnl": -416.2342255199988,
+        "r": -1.040585563799997,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1787837400000,
+            "price": 255.87,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "BABA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787319000000,
+        "trigger_4h_open_ms": 1787319000000,
+        "exit_t": 1787320800000,
+        "entry": 124.92,
+        "stop": 120.82000000000001,
+        "target": 132.54,
+        "tp1": 129.46,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 97.56,
+        "reason": "STOP",
+        "pnl": -414.38063663999947,
+        "r": -1.0359515915999986,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1787320800000,
+            "price": 120.82000000000001,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "JPM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1787759100000,
+        "trigger_4h_open_ms": 1787751000000,
+        "exit_t": 1788531300000,
+        "entry": 357.28000000000003,
+        "stop": 349.35,
+        "target": 366.24,
+        "tp1": 362.49,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 50.44,
+        "reason": "BE",
+        "pnl": 57.16497352799968,
+        "r": 0.14291243381999919,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788463800000,
+            "price": 362.49,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788463800000,
+            "price": 357.28000000000003,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1788531300000,
+            "price": 357.28000000000003,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "JPM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1789392600000,
+        "trigger_4h_open_ms": 1789392600000,
+        "exit_t": 1789585200000,
+        "entry": 353.81,
+        "stop": 347.03000000000003,
+        "target": 362.81,
+        "tp1": 358.25,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 58.99,
+        "reason": "STOP",
+        "pnl": -424.75773095999847,
+        "r": -1.0618943273999961,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1789585200000,
+            "price": 347.03000000000003,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "NVDA",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_t": 1784554200000,
+        "trigger_4h_open_ms": 1784554200000,
+        "exit_t": 1785504600000,
+        "entry": 205.58,
+        "stop": 214.93,
+        "target": 191.15,
+        "tp1": 199.24,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 42.78,
+        "reason": "STOP",
+        "pnl": 371.91498870000044,
+        "r": 0.9297874717500011,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1785161700000,
+            "price": 199.24,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1785161700000,
+            "price": 205.58,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1785334500000,
+            "price": 191.15,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1785334500000,
+            "price": 199.24,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1785440700000,
+            "price": 198.82
+          },
+          {
+            "type": "STOP",
+            "t": 1785504600000,
+            "price": 198.82,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "QQQ",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_t": 1788447600000,
+        "trigger_4h_open_ms": 1788442200000,
+        "exit_t": 1789997400000,
+        "entry": 714.76,
+        "stop": 725.72,
+        "target": 702.69,
+        "tp1": 706.5500000000001,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 36.49,
+        "reason": "STOP",
+        "pnl": 310.7455121119973,
+        "r": 0.7768637802799933,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1789392600000,
+            "price": 706.5500000000001,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1789392600000,
+            "price": 714.76,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1789585200000,
+            "price": 702.69,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1789585200000,
+            "price": 706.5500000000001,
+            "cause": "TP2"
+          },
+          {
+            "type": "STOP",
+            "t": 1789997400000,
+            "price": 706.5500000000001,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      }
+    ],
+    "BINANCE": [
+      {
+        "symbol": "MU",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1787837400000,
+        "planned_entry": 957.47,
+        "actual_entry": 957.47,
+        "trigger_4h_open_ms": 1787837400000,
+        "exit_t": 1788763500000,
+        "entry": 957.47,
+        "stop": 1045.7,
+        "target": 845.72,
+        "tp1": 856.61,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 4.53,
+        "reason": "STOP",
+        "pnl": -405.1265160600001,
+        "r": -1.0128162901500002,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1788763500000,
+            "price": 1045.7,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "BABA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1785245400000,
+        "planned_entry": 115.26,
+        "actual_entry": 115.26,
+        "trigger_4h_open_ms": 1785245400000,
+        "exit_t": 1786066200000,
+        "entry": 115.26,
+        "stop": 111.25,
+        "target": 121.98,
+        "tp1": 118.61,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 99.75,
+        "reason": "STOP",
+        "pnl": 684.13411815,
+        "r": 1.710335295375,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1785455100000,
+            "price": 118.61,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1785455100000,
+            "price": 115.26,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1785509100000,
+            "price": 121.98,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1785509100000,
+            "price": 118.61,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1785872700000,
+            "price": 125.21000000000001
+          },
+          {
+            "type": "STOP",
+            "t": 1786066200000,
+            "price": 125.21000000000001,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "JPM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1787664600000,
+        "planned_entry": 356.95,
+        "actual_entry": 356.95,
+        "trigger_4h_open_ms": 1787664600000,
+        "exit_t": 1788826500000,
+        "entry": 356.95,
+        "stop": 349.84000000000003,
+        "target": 367.39,
+        "tp1": 363.42,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 56.25,
+        "reason": "BE",
+        "pnl": 85.02161625000045,
+        "r": 0.21255404062500113,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788687900000,
+            "price": 363.42,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788687900000,
+            "price": 356.95,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1788826500000,
+            "price": 356.95,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "JPM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1789392600000,
+        "planned_entry": 354.69,
+        "actual_entry": 354.69,
+        "trigger_4h_open_ms": 1789392600000,
+        "exit_t": 1789407000000,
+        "entry": 354.69,
+        "stop": 348.58,
+        "target": 362.98,
+        "tp1": 360.32,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 65.46000000000001,
+        "reason": "STOP",
+        "pnl": -427.58223252000096,
+        "r": -1.0689555813000025,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1789407000000,
+            "price": 348.58,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "V",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1786975200000,
+        "planned_entry": 361.42,
+        "actual_entry": 361.42,
+        "trigger_4h_open_ms": 1786973400000,
+        "exit_t": 1787835600000,
+        "entry": 361.42,
+        "stop": 354.90000000000003,
+        "target": 373.11,
+        "tp1": 367.14,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 61.34,
+        "reason": "STOP",
+        "pnl": 734.2305621959987,
+        "r": 1.8355764054899968,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1787147100000,
+            "price": 367.14,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1787147100000,
+            "price": 361.42,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1787364000000,
+            "price": 373.11,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1787364000000,
+            "price": 367.14,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1787773500000,
+            "price": 379.39
+          },
+          {
+            "type": "STOP",
+            "t": 1787835600000,
+            "price": 379.39,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "QQQ",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1783960200000,
+        "planned_entry": 712.88,
+        "actual_entry": 712.88,
+        "trigger_4h_open_ms": 1783949400000,
+        "exit_t": 1784131200000,
+        "entry": 712.88,
+        "stop": 698.76,
+        "target": 737.5500000000001,
+        "tp1": 723.8000000000001,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 28.32,
+        "reason": "BE",
+        "pnl": 68.49414028800061,
+        "r": 0.1712353507200015,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1784079000000,
+            "price": 723.8000000000001,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1784079000000,
+            "price": 712.88,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1784131200000,
+            "price": 712.88,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "ORCL",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1787232600000,
+        "planned_entry": 145.58,
+        "actual_entry": 145.58,
+        "trigger_4h_open_ms": 1787232600000,
+        "exit_t": 1788269400000,
+        "entry": 145.58,
+        "stop": 136.52,
+        "target": 159.35,
+        "tp1": 152.15,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 44.15,
+        "reason": "BE",
+        "pnl": 79.25460980999989,
+        "r": 0.19813652452499972,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1787817600000,
+            "price": 152.15,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1787817600000,
+            "price": 145.58,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1788269400000,
+            "price": 145.58,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "ORCL",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1789652700000,
+        "planned_entry": 149.76,
+        "actual_entry": 149.76,
+        "trigger_4h_open_ms": 1789651800000,
+        "exit_t": 1790316000000,
+        "entry": 149.76,
+        "stop": 158.20000000000002,
+        "target": 139.79,
+        "tp1": 141.22,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 47.39,
+        "reason": "STOP",
+        "pnl": 416.7793828659997,
+        "r": 1.0419484571649993,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1790252100000,
+            "price": 141.22,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1790252100000,
+            "price": 149.76,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1790252100000,
+            "price": 139.79,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1790252100000,
+            "price": 141.22,
+            "cause": "TP2"
+          },
+          {
+            "type": "STOP",
+            "t": 1790316000000,
+            "price": 141.22,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "TSM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1783431000000,
+        "planned_entry": 436.72,
+        "actual_entry": 436.72,
+        "trigger_4h_open_ms": 1783431000000,
+        "exit_t": 1784125800000,
+        "entry": 436.72,
+        "stop": 416.07,
+        "target": 477.31,
+        "tp1": 453.31,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 19.37,
+        "reason": "STOP",
+        "pnl": -409.90162538000067,
+        "r": -1.0247540634500016,
+        "events": [
+          {
+            "type": "STOP",
+            "t": 1784125800000,
+            "price": 416.07,
+            "fraction": 1.0
+          }
+        ]
+      },
+      {
+        "symbol": "TSM",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_mode": "RTH",
+        "entry_t": 1787942700000,
+        "planned_entry": 418.53000000000003,
+        "actual_entry": 418.53000000000003,
+        "trigger_4h_open_ms": 1787938200000,
+        "exit_t": 1789042500000,
+        "entry": 418.53000000000003,
+        "stop": 403.99,
+        "target": 436.23,
+        "tp1": 429.41,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 27.51,
+        "reason": "STOP",
+        "pnl": 353.1116585639999,
+        "r": 0.8827791464099998,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1788551100000,
+            "price": 429.41,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1788551100000,
+            "price": 418.53000000000003,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1788768900000,
+            "price": 436.23,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1788768900000,
+            "price": 429.41,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1788983100000,
+            "price": 430.46000000000004
+          },
+          {
+            "type": "STOP",
+            "t": 1789042500000,
+            "price": 430.46000000000004,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      }
+    ]
+  }
+}
