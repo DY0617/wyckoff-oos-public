@@ -50,7 +50,7 @@ def get_json(path, params=None, tries=6):
 def fetch_15m(symbol,start_ms,end_ms):
     out=[]; cursor=int(start_ms); calls=0
     while cursor<=end_ms:
-        rows=get_json("/fapi/v1/klines",{"symbol":symbol+"USDT","interval":"15m","startTime":cursor,"endTime":end_ms,"limit":1500})
+        rows=get_json("/fapi/v1/klines",{"symbol":symbol+"USDT","interval":"15m","startTime":cursor,"endTime":end_ms,"limit":1000})
         calls+=1
         if not rows: break
         for x in rows:
@@ -60,7 +60,7 @@ def fetch_15m(symbol,start_ms,end_ms):
         nxt=int(rows[-1][0])+TF15
         if nxt<=cursor: break
         cursor=nxt
-        if len(rows)<1500: break
+        if len(rows)<1000: break
         time.sleep(.025)
     d={x["t"]:x for x in out}
     return [d[k] for k in sorted(d)],calls
