@@ -374,8 +374,43 @@ def intact_liquidity(bars, i, direction):
     return None
 
 
+def precompute_liquidity_refs(bars):
+    # Exact equivalent of intact_liquidity(), but each bar is processed once.
+    # refs[direction][i] is the most recent eligible pivot that remained untouched
+    # through bar i-1; bar i itself is allowed to sweep it.
+    refs = {"LONG": [None] * len(bars), "SHORT": [None] * len(bars)}
+    active = {"LONG": [], "SHORT": []}
+
+    for i in range(len(bars)):
+        k = i - PIVOT_RIGHT - 1
+        if k >= PIVOT_LEFT:
+            for direction in ("LONG", "SHORT"):
+                if is_pivot(bars, k, direction):
+                    level = bars[k]["l"] if direction == "LONG" else bars[k]["h"]
+                    active[direction].append((k, level))
+
+        cutoff = i - LIQUIDITY_LOOKBACK
+        for direction in ("LONG", "SHORT"):
+            if active[direction]:
+                active[direction] = [(pk, lv) for pk, lv in active[direction] if pk >= cutoff]
+                if active[direction]:
+                    refs[direction][i] = active[direction][-1]
+
+        # Current bar may sweep a level; it remains valid for this bar but is consumed
+        # for subsequent bars, matching the original all(k+1 .. i-1) intact test.
+        if active["LONG"]:
+            cur_low = bars[i]["l"]
+            active["LONG"] = [(pk, lv) for pk, lv in active["LONG"] if cur_low > lv]
+        if active["SHORT"]:
+            cur_high = bars[i]["h"]
+            active["SHORT"] = [(pk, lv) for pk, lv in active["SHORT"] if cur_high < lv]
+
+    return refs
+
+
 def build_setups(symbol, h1, h4, d1, btc_d1):
     h4_closes = [x["ct"] for x in h4]
+    liquidity_refs = precompute_liquidity_refs(h1)
     setups = []
     used_retests = set()
     start_i = max(100, LIQUIDITY_LOOKBACK + PIVOT_RIGHT + 1)
@@ -390,7 +425,7 @@ def build_setups(symbol, h1, h4, d1, btc_d1):
 
         candidates = []
         for direction in ("LONG", "SHORT"):
-            ref = intact_liquidity(h1, i, direction)
+            ref = liquidity_refs[direction][i]
             if ref is None:
                 continue
             pivot_i, level = ref
