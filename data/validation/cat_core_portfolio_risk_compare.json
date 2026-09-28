@@ -1,0 +1,94 @@
+{
+  "note": "Realized-equity portfolio simulation. Existing position initial risk is conservatively held against the cap until exit; no mark-to-market intratrade equity path is reconstructed.",
+  "allocation": "At each same-timestamp entry group, available class/total initial-risk budget is split equally; target risk is a per-trade ceiling.",
+  "versions": {
+    "v0.3": [
+      {
+        "target_risk": 0.005,
+        "class_cap": 0.02,
+        "total_cap": 0.03,
+        "accepted": 315,
+        "skipped": 325,
+        "final_equity": 1.2957201420275355,
+        "total_return": 0.2957201420275355,
+        "cagr": 0.053371548911964606,
+        "max_realized_drawdown": -0.12891569425865035,
+        "return_over_dd": 2.2939033430190165,
+        "wins": 129,
+        "losses": 186
+      },
+      {
+        "target_risk": 0.0035,
+        "class_cap": 0.015,
+        "total_cap": 0.025,
+        "accepted": 361,
+        "skipped": 279,
+        "final_equity": 1.2216838190649462,
+        "total_return": 0.22168381906494616,
+        "cagr": 0.04100565111134369,
+        "max_realized_drawdown": -0.10389722726370287,
+        "return_over_dd": 2.133683688230559,
+        "wins": 142,
+        "losses": 219
+      },
+      {
+        "target_risk": 0.0025,
+        "class_cap": 0.01,
+        "total_cap": 0.02,
+        "accepted": 340,
+        "skipped": 300,
+        "final_equity": 1.184358427662461,
+        "total_return": 0.18435842766246102,
+        "cagr": 0.034542771890323065,
+        "max_realized_drawdown": -0.07785623673057773,
+        "return_over_dd": 2.3679339691235675,
+        "wins": 131,
+        "losses": 209
+      }
+    ],
+    "v0.4": [
+      {
+        "target_risk": 0.005,
+        "class_cap": 0.02,
+        "total_cap": 0.03,
+        "accepted": 252,
+        "skipped": 235,
+        "final_equity": 1.648133476011387,
+        "total_return": 0.648133476011387,
+        "cagr": 0.10572577876003852,
+        "max_realized_drawdown": -0.11447822326003732,
+        "return_over_dd": 5.661631160532179,
+        "wins": 99,
+        "losses": 153
+      },
+      {
+        "target_risk": 0.0035,
+        "class_cap": 0.015,
+        "total_cap": 0.025,
+        "accepted": 268,
+        "skipped": 219,
+        "final_equity": 1.4824759065645288,
+        "total_return": 0.48247590656452877,
+        "cagr": 0.08241475941304088,
+        "max_realized_drawdown": -0.08482035654229836,
+        "return_over_dd": 5.688208895041922,
+        "wins": 102,
+        "losses": 166
+      },
+      {
+        "target_risk": 0.0025,
+        "class_cap": 0.01,
+        "total_cap": 0.02,
+        "accepted": 265,
+        "skipped": 222,
+        "final_equity": 1.3434615230225522,
+        "total_return": 0.3434615230225522,
+        "cagr": 0.06118758706136207,
+        "max_realized_drawdown": -0.06737704313939352,
+        "return_over_dd": 5.097604570031058,
+        "wins": 103,
+        "losses": 162
+      }
+    ]
+  }
+}
