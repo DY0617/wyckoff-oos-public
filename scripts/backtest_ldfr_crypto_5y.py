@@ -1,19 +1,21 @@
 import bisect
+import csv
+import io
 import json
 import math
 import os
 import statistics
 import time
-import urllib.parse
 import urllib.request
+import zipfile
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
 UTC = timezone.utc
-FAPI = "https://fapi.binance.com/fapi/v1/klines"
+VISION = "https://data.binance.vision/data/futures/um"
 SYMBOLS = ("BTCUSDT", "ETHUSDT")
-INTERVAL_MS = {"1h": 60 * 60 * 1000, "4h": 4 * 60 * 60 * 1000}
+HOUR_MS = 60 * 60 * 1000
 
 # LDFR v0.1 -- frozen before first test.
 EVAL_START = datetime(2021, 9, 28, tzinfo=UTC)
@@ -45,60 +47,115 @@ def ms(dt):
     return int(dt.timestamp() * 1000)
 
 
-def fetch_klines(symbol, interval, start_dt, end_dt):
-    step = INTERVAL_MS[interval]
-    cur = ms(start_dt)
-    end = ms(end_dt)
+def norm_ts(x):
+    v = int(x)
+    return v // 1000 if v > 100_000_000_000_000 else v
+
+
+def month_iter(start_dt, end_dt):
+    y, m = start_dt.year, start_dt.month
+    while (y, m) <= (end_dt.year, end_dt.month):
+        yield y, m
+        if m == 12:
+            y, m = y + 1, 1
+        else:
+            m += 1
+
+
+def download_zip_rows(url, required=True):
+    last_err = None
+    for attempt in range(6):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "ldfr-backtest/0.1"})
+            with urllib.request.urlopen(req, timeout=45) as r:
+                raw = r.read()
+            with zipfile.ZipFile(io.BytesIO(raw)) as zf:
+                names = zf.namelist()
+                if not names:
+                    raise RuntimeError("empty zip")
+                text = zf.read(names[0]).decode("utf-8")
+            rows = []
+            for row in csv.reader(io.StringIO(text)):
+                if not row or not row[0].lstrip("-").isdigit():
+                    continue
+                ot = norm_ts(row[0])
+                ct = norm_ts(row[6])
+                rows.append({
+                    "t": ot,
+                    "ct": ct,
+                    "o": float(row[1]),
+                    "h": float(row[2]),
+                    "l": float(row[3]),
+                    "c": float(row[4]),
+                    "v": float(row[5]),
+                })
+            return rows
+        except urllib.error.HTTPError as e:
+            last_err = e
+            if e.code == 404 and not required:
+                return []
+            time.sleep(min(15, 2 + attempt * 2))
+        except Exception as e:
+            last_err = e
+            time.sleep(min(15, 2 + attempt * 2))
+    if required:
+        raise RuntimeError(f"Binance Vision download failed: {url}: {last_err!r}")
+    return []
+
+
+def fetch_vision_1h(symbol, start_dt, end_dt):
     rows = []
-    while cur < end:
-        params = urllib.parse.urlencode({
-            "symbol": symbol,
-            "interval": interval,
-            "startTime": cur,
-            "endTime": end - 1,
-            "limit": 1500,
+    # Completed months through the month before EVAL_END.
+    last_full_month = datetime(end_dt.year, end_dt.month, 1, tzinfo=UTC)
+    for y, m in month_iter(start_dt, last_full_month):
+        month_start = datetime(y, m, 1, tzinfo=UTC)
+        if month_start >= last_full_month:
+            break
+        url = f"{VISION}/monthly/klines/{symbol}/1h/{symbol}-1h-{y:04d}-{m:02d}.zip"
+        part = download_zip_rows(url, required=True)
+        print("VISION_MONTH", symbol, f"{y:04d}-{m:02d}", len(part), flush=True)
+        rows.extend(part)
+
+    # Current partial month: daily archives up to end_dt-1 day.
+    cur = last_full_month
+    while cur < end_dt:
+        nxt = cur.timestamp() + 24 * 60 * 60
+        if nxt > end_dt.timestamp():
+            break
+        url = f"{VISION}/daily/klines/{symbol}/1h/{symbol}-1h-{cur:%Y-%m-%d}.zip"
+        part = download_zip_rows(url, required=True)
+        print("VISION_DAY", symbol, cur.strftime("%Y-%m-%d"), len(part), flush=True)
+        rows.extend(part)
+        cur = datetime.fromtimestamp(nxt, UTC)
+
+    lo, hi = ms(start_dt), ms(end_dt)
+    dedup = {x["t"]: x for x in rows if lo <= x["t"] < hi}
+    out = [dedup[k] for k in sorted(dedup)]
+    if not out:
+        raise RuntimeError(f"No Binance Vision rows for {symbol}")
+    return out
+
+
+def aggregate_4h(h1):
+    groups = defaultdict(list)
+    for x in h1:
+        bucket = (x["t"] // (4 * HOUR_MS)) * (4 * HOUR_MS)
+        groups[bucket].append(x)
+    out = []
+    for t in sorted(groups):
+        a = sorted(groups[t], key=lambda z: z["t"])
+        if len(a) != 4 or any(a[i]["t"] != t + i * HOUR_MS for i in range(4)):
+            continue
+        out.append({
+            "t": t,
+            "ct": a[-1]["ct"],
+            "o": a[0]["o"],
+            "h": max(z["h"] for z in a),
+            "l": min(z["l"] for z in a),
+            "c": a[-1]["c"],
+            "v": sum(z["v"] for z in a),
         })
-        url = FAPI + "?" + params
-        payload = None
-        last_err = None
-        for attempt in range(7):
-            try:
-                req = urllib.request.Request(url, headers={"User-Agent": "ldfr-backtest/0.1"})
-                with urllib.request.urlopen(req, timeout=30) as r:
-                    payload = json.loads(r.read().decode("utf-8"))
-                break
-            except Exception as e:
-                last_err = e
-                time.sleep(min(20, 2 + attempt * 2))
-        if payload is None:
-            raise RuntimeError(f"Binance fetch failed {symbol} {interval}: {last_err!r}")
-        if isinstance(payload, dict):
-            raise RuntimeError(f"Binance API error {symbol} {interval}: {payload}")
-        if not payload:
-            break
-        for x in payload:
-            ot = int(x[0])
-            if ot >= end:
-                continue
-            rows.append({
-                "t": ot,
-                "ct": int(x[6]),
-                "o": float(x[1]),
-                "h": float(x[2]),
-                "l": float(x[3]),
-                "c": float(x[4]),
-                "v": float(x[5]),
-            })
-        last_open = int(payload[-1][0])
-        nxt = last_open + step
-        if nxt <= cur:
-            break
-        cur = nxt
-        if len(payload) < 1500:
-            break
-        time.sleep(0.03)
-    dedup = {x["t"]: x for x in rows}
-    return [dedup[k] for k in sorted(dedup)]
+    return out
 
 
 def ema(values, n):
@@ -441,10 +498,10 @@ def main():
     setup_counts = {}
     source_counts = {}
     for symbol in SYMBOLS:
-        print("FETCH", symbol, "1h", flush=True)
-        h1 = enrich_1h(fetch_klines(symbol, "1h", WARMUP_START, EVAL_END))
-        print("FETCH", symbol, "4h", flush=True)
-        h4 = enrich_4h(fetch_klines(symbol, "4h", WARMUP_START, EVAL_END))
+        print("FETCH_VISION", symbol, "1h", flush=True)
+        raw1 = fetch_vision_1h(symbol, WARMUP_START, EVAL_END)
+        h1 = enrich_1h(raw1)
+        h4 = enrich_4h(aggregate_4h(raw1))
         source_counts[symbol] = {"1h_bars": len(h1), "4h_bars": len(h4)}
         setups = build_setups(symbol, h1, h4)
         setup_counts[symbol] = len(setups)
@@ -463,7 +520,7 @@ def main():
     out = {
         "strategy": "LDFR_v0.1",
         "status": "FROZEN_BASELINE_FIRST_TEST",
-        "market": "Binance USDT-M perpetual",
+        "market": "Binance Vision USDT-M perpetual",
         "symbols": list(SYMBOLS),
         "period": {"warmup_start": WARMUP_START.isoformat(), "eval_start": EVAL_START.isoformat(), "eval_end_exclusive": EVAL_END.isoformat()},
         "logic": {
