@@ -45,6 +45,66 @@
     "BTCUSDT": 0,
     "ETHUSDT": 1
   },
+  "funnel_counts": {
+    "BTCUSDT": {
+      "TOTAL": {
+        "sweep": 4209,
+        "regime": 1155,
+        "displacement": 101,
+        "fvg": 6,
+        "retest": 2,
+        "confirmation": 0,
+        "final_regime": 0
+      },
+      "LONG": {
+        "sweep": 2063,
+        "regime": 580,
+        "displacement": 42,
+        "fvg": 0,
+        "retest": 0,
+        "confirmation": 0,
+        "final_regime": 0
+      },
+      "SHORT": {
+        "sweep": 2146,
+        "regime": 575,
+        "displacement": 59,
+        "fvg": 6,
+        "retest": 2,
+        "confirmation": 0,
+        "final_regime": 0
+      }
+    },
+    "ETHUSDT": {
+      "TOTAL": {
+        "sweep": 4089,
+        "regime": 1153,
+        "displacement": 77,
+        "fvg": 6,
+        "retest": 1,
+        "confirmation": 1,
+        "final_regime": 1
+      },
+      "LONG": {
+        "sweep": 1920,
+        "regime": 556,
+        "displacement": 31,
+        "fvg": 4,
+        "retest": 1,
+        "confirmation": 1,
+        "final_regime": 1
+      },
+      "SHORT": {
+        "sweep": 2169,
+        "regime": 597,
+        "displacement": 46,
+        "fvg": 2,
+        "retest": 0,
+        "confirmation": 0,
+        "final_regime": 0
+      }
+    }
+  },
   "summary": {
     "trades": 1,
     "long": 1,
