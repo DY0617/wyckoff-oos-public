@@ -1,0 +1,54 @@
+name: M1-RS Loss Streak Regimes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/m1-rs-loss-streak-regimes.yml"
+      - "scripts/diagnose_m1_rs_loss_streak_regimes.py"
+      - "scripts/merge_m1_rs_loss_streak_regimes.py"
+
+jobs:
+  diagnose:
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        window: [w1,w2,w3,w4,w5]
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: Run window
+        env:
+          WINDOW: "${{ matrix.window }}"
+          OUT: "data/validation/m1_rs_loss_streak_regimes/${{ matrix.window }}.json"
+        run: python scripts/diagnose_m1_rs_loss_streak_regimes.py
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: m1-rs-loss-streak-regime-${{ matrix.window }}
+          path: data/validation/m1_rs_loss_streak_regimes/${{ matrix.window }}.json
+          if-no-files-found: error
+
+  merge:
+    needs: diagnose
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: m1-rs-loss-streak-regime-*
+          path: data/validation/m1_rs_loss_streak_regimes
+          merge-multiple: true
+      - name: Merge
+        run: python scripts/merge_m1_rs_loss_streak_regimes.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m1-rs-loss-streak-regimes
+          path: data/validation/m1_rs_loss_streak_regimes.json
