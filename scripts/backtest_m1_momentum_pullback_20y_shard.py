@@ -127,14 +127,14 @@ def day_key(z):
 def detect_splits(bars):
     byday=defaultdict(list)
     for z in bars:byday[day_key(z)].append(z)
-    days=sorted(byday);common=(2,3,4,5,7,10,15,20);ev=[]
+    days=sorted(byday);common=(1.5,2,3,4,5,7,10,15,20);ev=[]
     for i in range(1,len(days)):
         prev=byday[days[i-1]][-1]["c"];op=byday[days[i]][0]["o"]
         if prev<=0 or op<=0 or (days[i]-days[i-1]).days>14:continue
         ratio=prev/op;mag=ratio if ratio>=1 else 1/ratio
-        if mag<1.7:continue
-        f=min(common,key=lambda q:abs(mag/q))
-        if abs(mag/f-1.0)<=.08:
+        if mag<1.35:continue
+        f=min(common,key=lambda q:abs(mag/q-1.0))
+        if abs(mag/f-1.0)<=.05:
             pm,vm=((1/f,f) if ratio>1 else (f,1/f));ev.append((days[i],pm,vm))
     return ev
 
