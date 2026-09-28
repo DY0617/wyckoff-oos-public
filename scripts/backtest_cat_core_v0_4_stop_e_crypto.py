@@ -30,7 +30,7 @@ def sim(sym,D,bench):
         stop=entry-dist
         if stop<=0 or stop>=entry:
             st["invalid"]+=1;i+=1;continue
-        risk=entry-stop;mults.append(risk/x["atr14"])
+        initial_stop=stop;risk=entry-stop;mults.append(risk/x["atr14"])
         realized=-base.cost(entry)/risk;hi_c=entry;exit_i=i+1;exit_px=None;reason="END";j=i+1
         while j<len(D) and D[j]["t"]<hi:
             b=D[j];exit_i=j
@@ -43,7 +43,7 @@ def sim(sym,D,bench):
             b=D[min(exit_i,len(D)-1)];exit_px=b["c"];reason="END_MARK"
             realized+=(exit_px-entry)/risk-base.cost(exit_px)/risk
         trades.append({"symbol":sym,"signal_t":x["ct"],"entry_t":e["t"],"exit_t":D[exit_i]["ct"],
-                       "entry":entry,"breakout_support":support,"raw_structural_stop":raw_stop,"initial_stop":stop,
+                       "entry":entry,"breakout_support":support,"raw_structural_stop":raw_stop,"initial_stop":initial_stop,
                        "raw_risk_atr":raw_dist/x["atr14"],
                        "exit":exit_px,"initial_risk":risk,"risk_atr":risk/x["atr14"],
                        "risk_pct":risk/entry,"r":realized,"reason":reason,
