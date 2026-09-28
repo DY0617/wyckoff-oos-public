@@ -1,0 +1,28 @@
+name: CAT-Core v0.3 Stock30 5Y
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/cat-core-v0-3-stock30-5y.yml","scripts/backtest_cat_core_v0_3_stock30_5y.py","strategy/cat_core_v0_3_frozen.md"]
+permissions: {contents: write}
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install duckdb
+      - run: python -m py_compile scripts/backtest_cat_core_v0_3_stock30_5y.py
+      - env: {OUT: data/validation/cat_core_v0_3_stock30_5y.json}
+        run: python scripts/backtest_cat_core_v0_3_stock30_5y.py
+      - uses: actions/upload-artifact@v4
+        with: {name: cat-core-v0-3-stock30-5y, path: data/validation/cat_core_v0_3_stock30_5y.json, retention-days: 30}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/cat_core_v0_3_stock30_5y.json
+          git commit -m "research: add CAT-Core v0.3 stock30 result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
