@@ -1,0 +1,157 @@
+{
+  "strategy": "LDFR_v0.1",
+  "status": "FROZEN_BASELINE_FIRST_TEST",
+  "market": "Binance Vision USDT-M perpetual",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "period": {
+    "warmup_start": "2021-06-01T00:00:00+00:00",
+    "eval_start": "2021-09-28T00:00:00+00:00",
+    "eval_end_exclusive": "2026-09-28T00:00:00+00:00"
+  },
+  "logic": {
+    "regime": "closed 4H close>EMA50, EMA20>EMA50, EMA20 5-bar slope>0 for long; exact inverse short",
+    "liquidity_sweep": "1H current extreme breaches prior 20-bar extreme and closes back inside",
+    "displacement": "within 3 bars: range>=1.5 ATR14, body/range>=0.6, CLV long>=0.75/short<=0.25",
+    "fvg": "3-candle FVG >= 0.15 ATR14",
+    "retest": "FVG midpoint touch within 8 bars without close through far edge",
+    "confirmation": "within 2 bars after retest: close beyond prior candle high/low; entry next 1H open",
+    "stop": "sweep extreme +/- 0.15 ATR14",
+    "management": "TP1 1.5R on 50%, remainder stop->BE; TP2 3.0R exits rest",
+    "ambiguity": "same 1H bar stop checked before targets",
+    "costs": {
+      "fee_bps_per_fill": 4.0,
+      "slippage_bps_per_fill": 2.0
+    },
+    "positioning": "fixed 1R reference risk per trade; one open position per symbol"
+  },
+  "data_counts": {
+    "BTCUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "ETHUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    }
+  },
+  "setup_counts": {
+    "BTCUSDT": 0,
+    "ETHUSDT": 1
+  },
+  "summary": {
+    "trades": 1,
+    "long": 1,
+    "short": 0,
+    "wins": 0,
+    "losses": 1,
+    "win_rate": 0.0,
+    "total_r": -1.0640670584329368,
+    "avg_r": -1.0640670584329368,
+    "median_r": -1.0640670584329368,
+    "avg_win_r": null,
+    "avg_loss_r": -1.0640670584329368,
+    "profit_factor": 0.0,
+    "max_drawdown_r": -1.0640670584329368,
+    "max_losing_streak": 1,
+    "tp1_rate": 0.0,
+    "tp2_rate": 0.0,
+    "avg_risk_pct": 0.018556588610636485
+  },
+  "splits": {
+    "development_2021-09-28_2024-09-27": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0640670584329368,
+      "avg_r": -1.0640670584329368,
+      "median_r": -1.0640670584329368,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0640670584329368,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0640670584329368,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.018556588610636485
+    }
+  },
+  "years": {
+    "2023": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0640670584329368,
+      "avg_r": -1.0640670584329368,
+      "median_r": -1.0640670584329368,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0640670584329368,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0640670584329368,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.018556588610636485
+    }
+  },
+  "symbols_summary": {
+    "ETHUSDT": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0640670584329368,
+      "avg_r": -1.0640670584329368,
+      "median_r": -1.0640670584329368,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0640670584329368,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0640670584329368,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.018556588610636485
+    }
+  },
+  "trades": [
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "sweep_t": 1687525200000,
+      "displacement_t": 1687532400000,
+      "retest_t": 1687554000000,
+      "confirmation_t": 1687561200000,
+      "entry_t": 1687564800000,
+      "exit_t": 1687795200000,
+      "entry": 1892.57844,
+      "stop": 1857.4586404755598,
+      "tp1": 1945.2581392866603,
+      "tp2": 1997.9378385733205,
+      "risk_pct": 0.018556588610636485,
+      "r": -1.0640670584329368,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1687795200000,
+          "price": 1857.4586404755598,
+          "fraction": 1.0
+        }
+      ]
+    }
+  ]
+}
