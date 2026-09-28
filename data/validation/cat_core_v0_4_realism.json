@@ -1,0 +1,274 @@
+{
+  "strategy": "CAT-Core v0.4 realism layer",
+  "signal_rules_changed": false,
+  "funding": {
+    "method": "actual Binance Vision settlement rates; long funding R approximated with entry notional because funding archive lacks settlement mark price",
+    "crypto_before": {
+      "trades": 122,
+      "wins": 39,
+      "losses": 83,
+      "win_rate": 0.319672131147541,
+      "total_r": 74.57894819343186,
+      "avg_r": 0.6113028540445234,
+      "profit_factor": 2.057034163144538,
+      "max_drawdown_r": -26.489282198438836,
+      "max_losing_streak": 13
+    },
+    "crypto_after": {
+      "trades": 122,
+      "wins": 38,
+      "losses": 84,
+      "win_rate": 0.3114754098360656,
+      "total_r": 67.0940571337785,
+      "avg_r": 0.549951287981791,
+      "profit_factor": 1.9148883314679002,
+      "max_drawdown_r": -27.15046782154835,
+      "max_losing_streak": 13
+    },
+    "per_symbol": {
+      "BTCUSDT": {
+        "funding_r": -2.012949456703074,
+        "before": {
+          "trades": 13,
+          "wins": 7,
+          "losses": 6,
+          "win_rate": 0.5384615384615384,
+          "total_r": 14.280000077306328,
+          "avg_r": 1.0984615444081791,
+          "profit_factor": 3.7900014135242834,
+          "max_drawdown_r": -2.7746237393772915,
+          "max_losing_streak": 2
+        },
+        "after": {
+          "trades": 13,
+          "wins": 6,
+          "losses": 7,
+          "win_rate": 0.46153846153846156,
+          "total_r": 12.267050620603253,
+          "avg_r": 0.9436192785079426,
+          "profit_factor": 3.140330226774966,
+          "max_drawdown_r": -3.093683554244124,
+          "max_losing_streak": 3
+        }
+      },
+      "ETHUSDT": {
+        "funding_r": -1.839671053500492,
+        "before": {
+          "trades": 15,
+          "wins": 6,
+          "losses": 9,
+          "win_rate": 0.4,
+          "total_r": 3.396740429740149,
+          "avg_r": 0.2264493619826766,
+          "profit_factor": 1.4583004142053384,
+          "max_drawdown_r": -3.725527335762102,
+          "max_losing_streak": 3
+        },
+        "after": {
+          "trades": 15,
+          "wins": 6,
+          "losses": 9,
+          "win_rate": 0.4,
+          "total_r": 1.5570693762396568,
+          "avg_r": 0.10380462508264379,
+          "profit_factor": 1.1917770508829308,
+          "max_drawdown_r": -4.39866521641622,
+          "max_losing_streak": 3
+        }
+      },
+      "BNBUSDT": {
+        "funding_r": 0.6381841472626061,
+        "before": {
+          "trades": 18,
+          "wins": 8,
+          "losses": 10,
+          "win_rate": 0.4444444444444444,
+          "total_r": 8.813560813095233,
+          "avg_r": 0.4896422673941796,
+          "profit_factor": 1.9783055783534471,
+          "max_drawdown_r": -4.543464606043592,
+          "max_losing_streak": 5
+        },
+        "after": {
+          "trades": 18,
+          "wins": 8,
+          "losses": 10,
+          "win_rate": 0.4444444444444444,
+          "total_r": 9.45174496035784,
+          "avg_r": 0.5250969422421021,
+          "profit_factor": 2.0587644129281704,
+          "max_drawdown_r": -4.341280969336583,
+          "max_losing_streak": 5
+        }
+      },
+      "SOLUSDT": {
+        "funding_r": -1.0302134748198017,
+        "before": {
+          "trades": 17,
+          "wins": 5,
+          "losses": 12,
+          "win_rate": 0.29411764705882354,
+          "total_r": 16.257361834586074,
+          "avg_r": 0.956315402034475,
+          "profit_factor": 2.6741825671785007,
+          "max_drawdown_r": -4.093370087892662,
+          "max_losing_streak": 4
+        },
+        "after": {
+          "trades": 17,
+          "wins": 5,
+          "losses": 12,
+          "win_rate": 0.29411764705882354,
+          "total_r": 15.227148359766275,
+          "avg_r": 0.8957146093980162,
+          "profit_factor": 2.5281313170106112,
+          "max_drawdown_r": -4.666542390151513,
+          "max_losing_streak": 4
+        }
+      },
+      "XRPUSDT": {
+        "funding_r": -0.5800743233761813,
+        "before": {
+          "trades": 16,
+          "wins": 3,
+          "losses": 13,
+          "win_rate": 0.1875,
+          "total_r": 18.039775859277558,
+          "avg_r": 1.1274859912048474,
+          "profit_factor": 2.4916569330790574,
+          "max_drawdown_r": -8.698128292963176,
+          "max_losing_streak": 5
+        },
+        "after": {
+          "trades": 16,
+          "wins": 3,
+          "losses": 13,
+          "win_rate": 0.1875,
+          "total_r": 17.459701535901377,
+          "avg_r": 1.091231345993836,
+          "profit_factor": 2.4110099395036513,
+          "max_drawdown_r": -8.951017689613211,
+          "max_losing_streak": 5
+        }
+      },
+      "ADAUSDT": {
+        "funding_r": -0.990867502469088,
+        "before": {
+          "trades": 7,
+          "wins": 5,
+          "losses": 2,
+          "win_rate": 0.7142857142857143,
+          "total_r": 21.825976332951736,
+          "avg_r": 3.117996618993105,
+          "profit_factor": 24.476256577674853,
+          "max_drawdown_r": -0.7652665597287012,
+          "max_losing_streak": 1
+        },
+        "after": {
+          "trades": 7,
+          "wins": 5,
+          "losses": 2,
+          "win_rate": 0.7142857142857143,
+          "total_r": 20.835108830482646,
+          "avg_r": 2.976444118640378,
+          "profit_factor": 21.82586534733903,
+          "max_drawdown_r": -0.7925213656986472,
+          "max_losing_streak": 1
+        }
+      },
+      "DOGEUSDT": {
+        "funding_r": -0.922689058797005,
+        "before": {
+          "trades": 20,
+          "wins": 2,
+          "losses": 18,
+          "win_rate": 0.1,
+          "total_r": -2.910904904042845,
+          "avg_r": -0.14554524520214224,
+          "profit_factor": 0.8219534754954925,
+          "max_drawdown_r": -10.691215813350682,
+          "max_losing_streak": 11
+        },
+        "after": {
+          "trades": 20,
+          "wins": 2,
+          "losses": 18,
+          "win_rate": 0.1,
+          "total_r": -3.83359396283985,
+          "avg_r": -0.1916796981419925,
+          "profit_factor": 0.7719845138124775,
+          "max_drawdown_r": -11.066623845889033,
+          "max_losing_streak": 11
+        }
+      },
+      "LINKUSDT": {
+        "funding_r": -0.7466103372503156,
+        "before": {
+          "trades": 16,
+          "wins": 3,
+          "losses": 13,
+          "win_rate": 0.1875,
+          "total_r": -5.123562249482374,
+          "avg_r": -0.3202226405926484,
+          "profit_factor": 0.48417657896986604,
+          "max_drawdown_r": -5.123562249482374,
+          "max_losing_streak": 4
+        },
+        "after": {
+          "trades": 16,
+          "wins": 3,
+          "losses": 13,
+          "win_rate": 0.1875,
+          "total_r": -5.87017258673269,
+          "avg_r": -0.36688578667079313,
+          "profit_factor": 0.4359034596808576,
+          "max_drawdown_r": -5.870172586732688,
+          "max_losing_streak": 4
+        }
+      }
+    }
+  },
+  "portfolio_config": {
+    "target_risk": 0.0035,
+    "class_cap": 0.015,
+    "total_cap": 0.025
+  },
+  "base_portfolio": {
+    "final_equity": 1.4958896424060604,
+    "total_return": 0.49588964240606037,
+    "accepted": 234,
+    "skipped_budget": 253,
+    "skipped_corr": 0,
+    "realized_dd": -0.09370098504082447,
+    "stress": {
+      "max_daily_low_stress_drawdown": -0.09289120949737073,
+      "worst": {
+        "date": "2023-07-16",
+        "equity_stress": 0.9415693883910823,
+        "peak_reference": 1.0379894873131572
+      }
+    }
+  },
+  "corr80_portfolio": {
+    "rule": "skip new same-asset-class entry when trailing 60-session return correlation with any open position >= 0.80",
+    "final_equity": 1.4746255837852031,
+    "total_return": 0.47462558378520314,
+    "accepted": 216,
+    "skipped_budget": 210,
+    "skipped_corr": 61,
+    "realized_dd": -0.07544459770590273,
+    "stress": {
+      "max_daily_low_stress_drawdown": -0.07527358345889068,
+      "worst": {
+        "date": "2023-06-10",
+        "equity_stress": 0.9579352619440704,
+        "peak_reference": 1.0359120760572376
+      }
+    }
+  },
+  "caveats": [
+    "daily-low stress combines each symbol's session low on the same date, even if lows occurred at different intraday times; it is a conservative stress bound, not synchronized tick-level MDD",
+    "stock history is cash RTH proxy; separate recent Binance TradFi comparison is used for execution-domain validation",
+    "funding adjustment uses actual settlement rates but entry-price notional as the funding mark proxy"
+  ]
+}
