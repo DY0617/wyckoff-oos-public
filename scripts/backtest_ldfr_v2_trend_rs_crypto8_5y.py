@@ -40,6 +40,8 @@ TP1_FRACTION = 0.50
 FEE_BPS = 4.0
 SLIPPAGE_BPS = 2.0
 COST_BPS = FEE_BPS + SLIPPAGE_BPS
+_SELECTOR_CACHE = {}
+_DAILY_CLOSES_CACHE = {}
 OUT = Path(os.environ.get("OUT", "data/validation/ldfr_v2_trend_rs_crypto8_5y.json"))
 
 
@@ -248,16 +250,24 @@ def enrich_1d(bars):
 
 
 def selector(d1, btc_d1, asof_ct, direction, symbol):
-    d1_closes = [x["ct"] for x in d1]
-    btc_closes = [x["ct"] for x in btc_d1]
+    day_key = asof_ct // (24 * HOUR_MS)
+    cache_key = (id(d1), id(btc_d1), day_key, direction, symbol)
+    if cache_key in _SELECTOR_CACHE:
+        return _SELECTOR_CACHE[cache_key]
+    d1_closes = _DAILY_CLOSES_CACHE.setdefault(id(d1), [x["ct"] for x in d1])
+    btc_closes = _DAILY_CLOSES_CACHE.setdefault(id(btc_d1), [x["ct"] for x in btc_d1])
     i = bisect.bisect_right(d1_closes, asof_ct) - 1
     b = bisect.bisect_right(btc_closes, asof_ct) - 1
     if i < 200 or b < 200:
-        return False, None
+        out = (False, None)
+        _SELECTOR_CACHE[cache_key] = out
+        return out
     x = d1[i]
     m = btc_d1[b]
     if x.get("ret30") is None or m.get("ret30") is None or x.get("ema50_slope10") is None:
-        return False, None
+        out = (False, None)
+        _SELECTOR_CACHE[cache_key] = out
+        return out
 
     if direction == "LONG":
         market_ok = m["c"] > m["ema200"]
@@ -268,7 +278,7 @@ def selector(d1, btc_d1, asof_ct, direction, symbol):
         trend_ok = x["c"] < x["ema50"] < x["ema200"] and x["ema50_slope10"] < 0
         rs_ok = True if symbol == "BTCUSDT" else x["ret30"] < m["ret30"]
 
-    return bool(market_ok and trend_ok and rs_ok), {
+    out = (bool(market_ok and trend_ok and rs_ok), {
         "symbol_ret30": x["ret30"],
         "btc_ret30": m["ret30"],
         "symbol_close": x["c"],
@@ -276,7 +286,9 @@ def selector(d1, btc_d1, asof_ct, direction, symbol):
         "symbol_ema200": x["ema200"],
         "btc_close": m["c"],
         "btc_ema200": m["ema200"],
-    }
+    })
+    _SELECTOR_CACHE[cache_key] = out
+    return out
 
 
 def regime(h4, h4_closes, asof_ct, direction):
@@ -765,7 +777,9 @@ def main():
         h1 = h1_by_symbol[symbol]
         h4 = h4_by_symbol[symbol]
         d1 = d1_by_symbol[symbol]
-        funnel_counts[symbol] = diagnostic_funnel(symbol, h1, h4, d1, btc_d1)
+        # Strategy result first; full funnel is intentionally skipped in the fast run
+        # because it duplicates the expensive structural scan without changing trades.
+        funnel_counts[symbol] = {"skipped_in_fast_run": True}
         setups = build_setups(symbol, h1, h4, d1, btc_d1)
         setup_counts[symbol] = len(setups)
         trades = simulate_symbol(symbol, h1, setups)
