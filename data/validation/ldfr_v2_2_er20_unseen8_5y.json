@@ -1,0 +1,1280 @@
+{
+  "strategy": "LDFR_v2.2_ER20_TREND_RS_LIQUIDITY",
+  "status": "FROZEN_V2_2_UNSEEN8_OOS",
+  "market": "Binance Vision USDT-M perpetual",
+  "symbols": [
+    "AVAXUSDT",
+    "ATOMUSDT",
+    "NEARUSDT",
+    "AAVEUSDT",
+    "ALGOUSDT",
+    "VETUSDT",
+    "THETAUSDT",
+    "SANDUSDT"
+  ],
+  "benchmark": "BTCUSDT",
+  "universe_test": "8 previously unused symbols; exact frozen v2.2 rules; BTC used only as benchmark",
+  "period": {
+    "warmup_start": "2020-10-01T00:00:00+00:00",
+    "eval_start": "2021-09-28T00:00:00+00:00",
+    "eval_end_exclusive": "2026-09-28T00:00:00+00:00"
+  },
+  "logic": {
+    "market_selector": "prior completed BTC 1D close above EMA200 for longs, below EMA200 for shorts",
+    "symbol_trend": "prior completed 1D: long close>EMA50>EMA200 and EMA50 slope10>0; exact inverse short; ER20>=0.30 required",
+    "relative_strength": "30D return must exceed BTC for alt longs and trail BTC for alt shorts; BTC exempt from self-comparison",
+    "local_regime": "closed 4H close>EMA50, EMA20>EMA50, EMA20 5-bar slope>0 for long; exact inverse short",
+    "liquidity_sweep": "most recent intact confirmed 2L/2R swing within 72 bars; sweep penetration 0.05-1.0 ATR and close back inside",
+    "displacement": "within 3 bars: range>=1.5 ATR14, body/range>=0.6, directional CLV, AND close breaks pre-sweep 5-bar structure (MSS)",
+    "fvg": "3-candle FVG >= 0.15 ATR14 on displacement bar or within next 2 bars",
+    "entry": "first valid FVG midpoint retest within 8 bars; daily selector and 4H regime must still agree",
+    "stop": "sweep extreme +/- 0.15 ATR14 measured on sweep bar",
+    "management": "TP1 1.5R on 50%, remainder stop->BE; TP2 3.0R exits rest",
+    "ambiguity": "same 1H bar stop checked before targets, including retest/entry bar",
+    "costs": {
+      "fee_bps_per_fill": 4.0,
+      "slippage_bps_per_fill": 2.0,
+      "implementation": "charged once per fill via combined cost"
+    },
+    "positioning": "fixed 1R reference risk per trade; one open position per symbol"
+  },
+  "data_counts": {
+    "BTCUSDT": {
+      "1h_bars": 52488,
+      "4h_bars": 13122,
+      "1d_bars": 2187,
+      "first_1h_open": "2020-10-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "AVAXUSDT": {
+      "1h_bars": 52488,
+      "4h_bars": 13122,
+      "1d_bars": 2187,
+      "first_1h_open": "2020-10-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "ATOMUSDT": {
+      "1h_bars": 52488,
+      "4h_bars": 13122,
+      "1d_bars": 2187,
+      "first_1h_open": "2020-10-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "NEARUSDT": {
+      "1h_bars": 52024,
+      "4h_bars": 13006,
+      "1d_bars": 2167,
+      "first_1h_open": "2020-10-15T08:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "AAVEUSDT": {
+      "1h_bars": 52121,
+      "4h_bars": 13030,
+      "1d_bars": 2171,
+      "first_1h_open": "2020-10-16T07:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "ALGOUSDT": {
+      "1h_bars": 52488,
+      "4h_bars": 13122,
+      "1d_bars": 2187,
+      "first_1h_open": "2020-10-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "VETUSDT": {
+      "1h_bars": 52368,
+      "4h_bars": 13092,
+      "1d_bars": 2182,
+      "first_1h_open": "2020-10-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "THETAUSDT": {
+      "1h_bars": 52488,
+      "4h_bars": 13122,
+      "1d_bars": 2187,
+      "first_1h_open": "2020-10-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "SANDUSDT": {
+      "1h_bars": 49577,
+      "4h_bars": 12394,
+      "1d_bars": 2065,
+      "first_1h_open": "2021-01-25T07:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    }
+  },
+  "setup_counts": {
+    "AVAXUSDT": 1,
+    "ATOMUSDT": 0,
+    "NEARUSDT": 1,
+    "AAVEUSDT": 5,
+    "ALGOUSDT": 1,
+    "VETUSDT": 4,
+    "THETAUSDT": 3,
+    "SANDUSDT": 4
+  },
+  "funnel_counts": {
+    "AVAXUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "ATOMUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "NEARUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "AAVEUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "ALGOUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "VETUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "THETAUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "SANDUSDT": {
+      "skipped_in_fast_run": true
+    }
+  },
+  "summary": {
+    "trades": 19,
+    "long": 3,
+    "short": 16,
+    "wins": 11,
+    "losses": 8,
+    "win_rate": 0.5789473684210527,
+    "total_r": 8.241226601206309,
+    "avg_r": 0.4337487684845426,
+    "median_r": 0.681898960031537,
+    "avg_win_r": 1.5254771634236108,
+    "avg_loss_r": -1.0673777745566764,
+    "profit_factor": 1.9651253283577612,
+    "max_drawdown_r": -4.712272067044285,
+    "max_losing_streak": 3,
+    "tp1_rate": 0.5789473684210527,
+    "tp2_rate": 0.3157894736842105,
+    "avg_risk_pct": 0.03180045123314662
+  },
+  "splits": {
+    "development_2021-09-28_2024-09-27": {
+      "trades": 11,
+      "long": 2,
+      "short": 9,
+      "wins": 7,
+      "losses": 4,
+      "win_rate": 0.6363636363636364,
+      "total_r": 6.667253597598316,
+      "avg_r": 0.6061139634180287,
+      "median_r": 0.712289881493258,
+      "avg_win_r": 1.5648161884704912,
+      "avg_loss_r": -1.0716149304237805,
+      "profit_factor": 2.5554219636902795,
+      "max_drawdown_r": -3.6577803449448005,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.6363636363636364,
+      "tp2_rate": 0.36363636363636365,
+      "avg_risk_pct": 0.0361134618331874
+    },
+    "oos_2025-09-28_2026-09-27": {
+      "trades": 7,
+      "long": 0,
+      "short": 7,
+      "wins": 4,
+      "losses": 3,
+      "win_rate": 0.5714285714285714,
+      "total_r": 2.6284647257074765,
+      "avg_r": 0.3754949608153538,
+      "median_r": 0.681898960031537,
+      "avg_win_r": 1.4566338695915704,
+      "avg_loss_r": -1.0660235842196017,
+      "profit_factor": 1.8218907363203987,
+      "max_drawdown_r": -2.4891035059419706,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.5714285714285714,
+      "tp2_rate": 0.2857142857142857,
+      "avg_risk_pct": 0.02645409092777527
+    },
+    "validation_2024-09-28_2025-09-27": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0544917220994843,
+      "avg_r": -1.0544917220994843,
+      "median_r": -1.0544917220994843,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0544917220994843,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0544917220994843,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.02178185677029755
+    }
+  },
+  "years": {
+    "2021": {
+      "trades": 2,
+      "long": 1,
+      "short": 1,
+      "wins": 2,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 2.9479293702406917,
+      "avg_r": 1.4739646851203458,
+      "median_r": 1.4739646851203458,
+      "avg_win_r": 1.4739646851203458,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.5,
+      "avg_risk_pct": 0.05626100262810492
+    },
+    "2022": {
+      "trades": 7,
+      "long": 0,
+      "short": 7,
+      "wins": 5,
+      "losses": 2,
+      "win_rate": 0.7142857142857143,
+      "total_r": 5.795840630349364,
+      "avg_r": 0.8279772329070519,
+      "median_r": 0.712289881493258,
+      "avg_win_r": 1.601156789810549,
+      "avg_loss_r": -1.104971659351691,
+      "profit_factor": 3.6226195854425347,
+      "max_drawdown_r": -2.209943318703381,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.7142857142857143,
+      "tp2_rate": 0.42857142857142855,
+      "avg_risk_pct": 0.03169619782087139
+    },
+    "2023": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0371792725039062,
+      "avg_r": -1.0371792725039062,
+      "median_r": -1.0371792725039062,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0371792725039062,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0371792725039062,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.03280546380116936
+    },
+    "2024": {
+      "trades": 2,
+      "long": 2,
+      "short": 0,
+      "wins": 0,
+      "losses": 2,
+      "win_rate": 0.0,
+      "total_r": -2.0938288525873183,
+      "avg_r": -1.0469144262936592,
+      "median_r": -1.0469144262936592,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0469144262936592,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -2.0938288525873183,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.025914541565940037
+    },
+    "2025": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 0.681898960031537,
+      "avg_r": 0.681898960031537,
+      "median_r": 0.681898960031537,
+      "avg_win_r": 0.681898960031537,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.017505204888971778
+    },
+    "2026": {
+      "trades": 6,
+      "long": 0,
+      "short": 6,
+      "wins": 3,
+      "losses": 3,
+      "win_rate": 0.5,
+      "total_r": 1.9465657656759396,
+      "avg_r": 0.3244276276126566,
+      "median_r": -0.16272096620330667,
+      "avg_win_r": 1.7148788394449148,
+      "avg_loss_r": -1.0660235842196017,
+      "profit_factor": 1.6086687619583173,
+      "max_drawdown_r": -2.4891035059419706,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.5,
+      "tp2_rate": 0.3333333333333333,
+      "avg_risk_pct": 0.027945571934242523
+    }
+  },
+  "symbols_summary": {
+    "AAVEUSDT": {
+      "trades": 5,
+      "long": 2,
+      "short": 3,
+      "wins": 2,
+      "losses": 3,
+      "win_rate": 0.4,
+      "total_r": -0.19245414547560913,
+      "avg_r": -0.038490829095121824,
+      "median_r": -1.0344091791234478,
+      "avg_win_r": 1.4678919431175783,
+      "avg_loss_r": -1.0427460105702553,
+      "profit_factor": 0.9384784202721427,
+      "max_drawdown_r": -2.093828852587318,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.4,
+      "tp2_rate": 0.2,
+      "avg_risk_pct": 0.032128530515708166
+    },
+    "ALGOUSDT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0985033233174364,
+      "avg_r": -1.0985033233174364,
+      "median_r": -1.0985033233174364,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0985033233174364,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0985033233174364,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.012256989439563614
+    },
+    "AVAXUSDT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 0.7089672467168344,
+      "avg_r": 0.7089672467168344,
+      "median_r": 0.7089672467168344,
+      "avg_win_r": 0.7089672467168344,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.02892768452008661
+    },
+    "NEARUSDT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 0.628679376750319,
+      "avg_r": 0.628679376750319,
+      "median_r": 0.628679376750319,
+      "avg_win_r": 0.628679376750319,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.009854593562681683
+    },
+    "SANDUSDT": {
+      "trades": 4,
+      "long": 1,
+      "short": 3,
+      "wins": 3,
+      "losses": 1,
+      "win_rate": 0.75,
+      "total_r": 2.5625305545495793,
+      "avg_r": 0.6406326386373948,
+      "median_r": 0.6970944207623975,
+      "avg_win_r": 1.2092296015891668,
+      "avg_loss_r": -1.0651582502179209,
+      "profit_factor": 3.4057744978507287,
+      "max_drawdown_r": -1.0651582502179209,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.75,
+      "tp2_rate": 0.25,
+      "avg_risk_pct": 0.0366868102783664
+    },
+    "THETAUSDT": {
+      "trades": 3,
+      "long": 0,
+      "short": 3,
+      "wins": 1,
+      "losses": 2,
+      "win_rate": 0.3333333333333333,
+      "total_r": 0.15067416724331406,
+      "avg_r": 0.05022472241443802,
+      "median_r": -1.0328100685801138,
+      "avg_win_r": 2.220663508327334,
+      "avg_loss_r": -1.03499467054201,
+      "profit_factor": 1.0727898275864591,
+      "max_drawdown_r": -2.06998934108402,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.3333333333333333,
+      "tp2_rate": 0.3333333333333333,
+      "avg_risk_pct": 0.03638868325240115
+    },
+    "VETUSDT": {
+      "trades": 4,
+      "long": 0,
+      "short": 4,
+      "wins": 3,
+      "losses": 1,
+      "win_rate": 0.75,
+      "total_r": 5.481332724739307,
+      "avg_r": 1.3703331811848267,
+      "median_r": 2.2123694877724267,
+      "avg_win_r": 2.2194886582875246,
+      "avg_loss_r": -1.1771332501232679,
+      "profit_factor": 5.6565099780889785,
+      "max_drawdown_r": -1.1771332501232679,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.75,
+      "tp2_rate": 0.75,
+      "avg_risk_pct": 0.034153340614561024
+    }
+  },
+  "trades": [
+    {
+      "symbol": "SANDUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1637128800000,
+      "swept_level": 3.17964,
+      "penetration_atr": 0.44367856516002235,
+      "sweep_t": 1637143200000,
+      "mss_level": 3.43199,
+      "selector": {
+        "symbol_ret30": 3.4903367617783676,
+        "btc_ret30": -0.023800316542813227,
+        "er20": 0.4804110071299524,
+        "symbol_close": 3.24813,
+        "symbol_ema50": 1.723566823649418,
+        "symbol_ema200": 0.9314353579824828,
+        "btc_close": 60106.03,
+        "btc_ema200": 48830.42595487265
+      },
+      "displacement_t": 1637146800000,
+      "fvg_t": 1637150400000,
+      "retest_t": 1637154000000,
+      "entry_t": 1637154000000,
+      "exit_t": 1637233200000,
+      "entry": 3.3534100000000002,
+      "stop": 3.0877940107805606,
+      "tp1": 3.75183398382916,
+      "tp2": 4.15025796765832,
+      "risk_pct": 0.07920772861637546,
+      "r": 2.2334999632427053,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1637190000000,
+          "price": 3.75183398382916,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1637233200000,
+          "price": 4.15025796765832,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1639108800000,
+      "swept_level": 180.16,
+      "penetration_atr": 0.09603284667465137,
+      "sweep_t": 1639141200000,
+      "mss_level": 172.57,
+      "selector": {
+        "symbol_ret30": -0.4759826623916399,
+        "btc_ret30": -0.29055701852171867,
+        "er20": 0.46914538893710356,
+        "symbol_close": 176.51,
+        "symbol_ema50": 265.32083924543406,
+        "symbol_ema200": 302.8397494734152,
+        "btc_close": 47539.76,
+        "btc_ema200": 50092.81873504019
+      },
+      "displacement_t": 1639144800000,
+      "fvg_t": 1639148400000,
+      "retest_t": 1639166400000,
+      "entry_t": 1639166400000,
+      "exit_t": 1639220400000,
+      "entry": 175.14499999999998,
+      "stop": 180.97982898208377,
+      "tp1": 166.39275652687428,
+      "tp2": 157.6405130537486,
+      "risk_pct": 0.033314276639834384,
+      "r": 0.7144294069979865,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1639177200000,
+          "price": 166.39275652687428,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1639220400000,
+          "price": 175.14499999999998,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SANDUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1650632400000,
+      "swept_level": 2.7986,
+      "penetration_atr": 0.1358240509190386,
+      "sweep_t": 1650837600000,
+      "mss_level": 2.663,
+      "selector": {
+        "symbol_ret30": -0.13623244179334226,
+        "btc_ret30": -0.10366039469315547,
+        "er20": 0.3776768621165577,
+        "symbol_close": 2.6934,
+        "symbol_ema50": 3.11234224295227,
+        "symbol_ema200": 3.1643671379500122,
+        "btc_close": 39415.1,
+        "btc_ema200": 44187.663417149
+      },
+      "displacement_t": 1650844800000,
+      "fvg_t": 1650848400000,
+      "retest_t": 1650855600000,
+      "entry_t": 1650855600000,
+      "exit_t": 1650916800000,
+      "entry": 2.72205,
+      "stop": 2.807648790774798,
+      "tp1": 2.593651813837803,
+      "tp2": 2.4652536276756054,
+      "risk_pct": 0.03144644322286444,
+      "r": 0.712289881493258,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1650870000000,
+          "price": 2.593651813837803,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1650916800000,
+          "price": 2.72205,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "VETUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1651208400000,
+      "swept_level": 0.05138,
+      "penetration_atr": 0.19466470055118315,
+      "sweep_t": 1651219200000,
+      "mss_level": 0.05065,
+      "selector": {
+        "symbol_ret30": -0.31086142322097365,
+        "btc_ret30": -0.16208863629174264,
+        "er20": 0.36567784862766844,
+        "symbol_close": 0.05152,
+        "symbol_ema50": 0.05970799137003937,
+        "symbol_ema200": 0.07549922011705915,
+        "btc_close": 39732.5,
+        "btc_ema200": 43952.93235700921
+      },
+      "displacement_t": 1651226400000,
+      "fvg_t": 1651230000000,
+      "retest_t": 1651237200000,
+      "entry_t": 1651237200000,
+      "exit_t": 1651359600000,
+      "entry": 0.050140000000000004,
+      "stop": 0.0516101722446072,
+      "tp1": 0.04793474163308921,
+      "tp2": 0.04572948326617842,
+      "risk_pct": 0.029321345125791667,
+      "r": 2.2104241831641134,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1651258800000,
+          "price": 0.04793474163308921,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1651359600000,
+          "price": 0.04572948326617842,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "THETAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1652036400000,
+      "swept_level": 2.145,
+      "penetration_atr": 0.11256616123529506,
+      "sweep_t": 1652054400000,
+      "mss_level": 2.069,
+      "selector": {
+        "symbol_ret30": -0.3733092876465284,
+        "btc_ret30": -0.19411213094257052,
+        "er20": 0.367811655731378,
+        "symbol_close": 2.085,
+        "symbol_ema50": 2.8969993056699797,
+        "symbol_ema200": 3.969629531249275,
+        "btc_close": 34032.0,
+        "btc_ema200": 43312.34768272624
+      },
+      "displacement_t": 1652061600000,
+      "fvg_t": 1652065200000,
+      "retest_t": 1652068800000,
+      "entry_t": 1652068800000,
+      "exit_t": 1652108400000,
+      "entry": 2.0755,
+      "stop": 2.156662748305259,
+      "tp1": 1.9537558775421113,
+      "tp2": 1.8320117550842228,
+      "risk_pct": 0.03910515456769889,
+      "r": 2.220663508327334,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1652090400000,
+          "price": 1.9537558775421113,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1652108400000,
+          "price": 1.8320117550842228,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "VETUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1652227200000,
+      "swept_level": 0.03996,
+      "penetration_atr": 0.1505380224829389,
+      "sweep_t": 1652238000000,
+      "mss_level": 0.03766,
+      "selector": {
+        "symbol_ret30": -0.40314378178455845,
+        "btc_ret30": -0.26431405492116833,
+        "er20": 0.46868342564976573,
+        "symbol_close": 0.03873,
+        "symbol_ema50": 0.054312853374094555,
+        "symbol_ema200": 0.07214599378943844,
+        "btc_close": 31002.1,
+        "btc_ema200": 43059.27208691968
+      },
+      "displacement_t": 1652248800000,
+      "fvg_t": 1652252400000,
+      "retest_t": 1652263200000,
+      "entry_t": 1652263200000,
+      "exit_t": 1652270400000,
+      "entry": 0.037805,
+      "stop": 0.04037924946057112,
+      "tp1": 0.03394362580914331,
+      "tp2": 0.030082251618286628,
+      "risk_pct": 0.06809283059307297,
+      "r": 2.2337269993177213,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1652270400000,
+          "price": 0.03394362580914331,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1652270400000,
+          "price": 0.030082251618286628,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "THETAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1653760800000,
+      "swept_level": 1.133,
+      "penetration_atr": 0.5148997772604719,
+      "sweep_t": 1653778800000,
+      "mss_level": 1.111,
+      "selector": {
+        "symbol_ret30": -0.5924050632911393,
+        "btc_ret30": -0.2696457559932046,
+        "er20": 0.42615658362989317,
+        "symbol_close": 1.127,
+        "symbol_ema50": 2.0125478388325244,
+        "symbol_ema200": 3.488003641658014,
+        "btc_close": 29018.8,
+        "btc_ema200": 40834.19487547764
+      },
+      "displacement_t": 1653786000000,
+      "fvg_t": 1653789600000,
+      "retest_t": 1653796800000,
+      "entry_t": 1653796800000,
+      "exit_t": 1653840000000,
+      "entry": 1.106,
+      "stop": 1.1472045071154988,
+      "tp1": 1.0441932393267521,
+      "tp2": 0.9823864786535039,
+      "risk_pct": 0.03725543138833519,
+      "r": -1.0328100685801138,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1653840000000,
+          "price": 1.1472045071154988,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "NEARUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1671681600000,
+      "swept_level": 1.32,
+      "penetration_atr": 0.07855387276000032,
+      "sweep_t": 1671706800000,
+      "mss_level": 1.292,
+      "selector": {
+        "symbol_ret30": -0.16174582798459558,
+        "btc_ret30": 0.06635389589805363,
+        "er20": 0.3851590106007068,
+        "symbol_close": 1.306,
+        "symbol_ema50": 1.9204326981722784,
+        "symbol_ema200": 3.909596341643828,
+        "btc_close": 16819.6,
+        "btc_ema200": 21978.887304244297
+      },
+      "displacement_t": 1671717600000,
+      "fvg_t": 1671717600000,
+      "retest_t": 1671739200000,
+      "entry_t": 1671739200000,
+      "exit_t": 1671742800000,
+      "entry": 1.31,
+      "stop": 1.322909517567113,
+      "tp1": 1.2906357236493307,
+      "tp2": 1.271271447298661,
+      "risk_pct": 0.009854593562681683,
+      "r": 0.628679376750319,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1671739200000,
+          "price": 1.2906357236493307,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1671742800000,
+          "price": 1.31,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "VETUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1671699600000,
+      "swept_level": 0.01637,
+      "penetration_atr": 0.09554935766346474,
+      "sweep_t": 1671710400000,
+      "mss_level": 0.0161,
+      "selector": {
+        "symbol_ret30": -0.07614213197969544,
+        "btc_ret30": 0.06635389589805363,
+        "er20": 0.3863965267727936,
+        "symbol_close": 0.01638,
+        "symbol_ema50": 0.019320411163662565,
+        "symbol_ema200": 0.027680174977759722,
+        "btc_close": 16819.6,
+        "btc_ema200": 21978.887304244297
+      },
+      "displacement_t": 1671717600000,
+      "fvg_t": 1671717600000,
+      "retest_t": 1671739200000,
+      "entry_t": 1671739200000,
+      "exit_t": 1671739200000,
+      "entry": 0.016285,
+      "stop": 0.01639569869266189,
+      "tp1": 0.01611895196100717,
+      "tp2": 0.015952903922014334,
+      "risk_pct": 0.006797586285654835,
+      "r": -1.1771332501232679,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1671739200000,
+          "price": 0.01639569869266189,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "THETAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1678417200000,
+      "swept_level": 0.8998,
+      "penetration_atr": 0.28165016037187646,
+      "sweep_t": 1678428000000,
+      "mss_level": 0.8675,
+      "selector": {
+        "symbol_ret30": -0.2615165956023744,
+        "btc_ret30": -0.12420537055448666,
+        "er20": 0.40781425539882665,
+        "symbol_close": 0.8833,
+        "symbol_ema50": 1.0629160171596754,
+        "symbol_ema200": 1.1733328705534132,
+        "btc_close": 20348.3,
+        "btc_ema200": 21769.646163688507
+      },
+      "displacement_t": 1678438800000,
+      "fvg_t": 1678442400000,
+      "retest_t": 1678446000000,
+      "entry_t": 1678446000000,
+      "exit_t": 1678464000000,
+      "entry": 0.8775999999999999,
+      "stop": 0.9063900750319062,
+      "tp1": 0.8344148874521407,
+      "tp2": 0.7912297749042813,
+      "risk_pct": 0.03280546380116936,
+      "r": -1.0371792725039062,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1678464000000,
+          "price": 0.9063900750319062,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1709964000000,
+      "swept_level": 129.69,
+      "penetration_atr": 0.45289812623248404,
+      "sweep_t": 1709978400000,
+      "mss_level": 132.36,
+      "selector": {
+        "symbol_ret30": 0.5769779044903776,
+        "btc_ret30": 0.5381467394001742,
+        "er20": 0.5031152647975078,
+        "symbol_close": 132.75,
+        "symbol_ema50": 102.04592116874784,
+        "symbol_ema200": 90.33332124072444,
+        "btc_close": 68180.2,
+        "btc_ema200": 41495.2611920581
+      },
+      "displacement_t": 1709982000000,
+      "fvg_t": 1709985600000,
+      "retest_t": 1709992800000,
+      "entry_t": 1709992800000,
+      "exit_t": 1710075600000,
+      "entry": 132.39,
+      "stop": 128.41204770199008,
+      "tp1": 138.35692844701487,
+      "tp2": 144.32385689402972,
+      "risk_pct": 0.030047226361582528,
+      "r": -1.0393371304878338,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1710075600000,
+          "price": 128.41204770199008,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1733522400000,
+      "swept_level": 279.7,
+      "penetration_atr": 0.07811783248378992,
+      "sweep_t": 1733533200000,
+      "mss_level": 291.39,
+      "selector": {
+        "symbol_ret30": 0.6232943750359836,
+        "btc_ret30": 0.32048997154005243,
+        "er20": 0.5456830706758194,
+        "symbol_close": 281.95,
+        "symbol_ema50": 184.6469742337146,
+        "symbol_ema200": 142.21067748162002,
+        "btc_close": 99802.5,
+        "btc_ema200": 69879.01681929691
+      },
+      "displacement_t": 1733544000000,
+      "fvg_t": 1733544000000,
+      "retest_t": 1733558400000,
+      "entry_t": 1733558400000,
+      "exit_t": 1733590800000,
+      "entry": 284.525,
+      "stop": 278.32751720243107,
+      "tp1": 293.82122419635334,
+      "tp2": 303.1174483927067,
+      "risk_pct": 0.02178185677029755,
+      "r": -1.0544917220994843,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1733590800000,
+          "price": 278.32751720243107,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SANDUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1762214400000,
+      "swept_level": 0.18532,
+      "penetration_atr": 0.08596527843681896,
+      "sweep_t": 1762228800000,
+      "mss_level": 0.17821,
+      "selector": {
+        "symbol_ret30": -0.34663072776280324,
+        "btc_ret30": -0.12913835832314335,
+        "er20": 0.34481421146536345,
+        "symbol_close": 0.1818,
+        "symbol_ema50": 0.2349988458628165,
+        "symbol_ema200": 0.2814467657710101,
+        "btc_close": 106544.0,
+        "btc_ema200": 108321.11718831402
+      },
+      "displacement_t": 1762232400000,
+      "fvg_t": 1762236000000,
+      "retest_t": 1762264800000,
+      "entry_t": 1762264800000,
+      "exit_t": 1762268400000,
+      "entry": 0.182995,
+      "stop": 0.18619836496865738,
+      "tp1": 0.17818995254701392,
+      "tp2": 0.17338490509402782,
+      "risk_pct": 0.017505204888971778,
+      "r": 0.681898960031537,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1762264800000,
+          "price": 0.17818995254701392,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1762268400000,
+          "price": 0.182995,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1770105600000,
+      "swept_level": 129.03,
+      "penetration_atr": 0.1602881419106733,
+      "sweep_t": 1770130800000,
+      "mss_level": 125.53,
+      "selector": {
+        "symbol_ret30": -0.21315095381218185,
+        "btc_ret30": -0.13138909309261582,
+        "er20": 0.47881725642268513,
+        "symbol_close": 128.28,
+        "symbol_ema50": 162.1695654884373,
+        "symbol_ema200": 205.61500506768016,
+        "btc_close": 78692.5,
+        "btc_ema200": 97536.29160554882
+      },
+      "displacement_t": 1770138000000,
+      "fvg_t": 1770141600000,
+      "retest_t": 1770159600000,
+      "entry_t": 1770159600000,
+      "exit_t": 1770318000000,
+      "entry": 124.625,
+      "stop": 129.6107444110562,
+      "tp1": 117.1463833834157,
+      "tp2": 109.66776676683139,
+      "risk_pct": 0.04000597320807384,
+      "r": 2.22135447923717,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1770289200000,
+          "price": 117.1463833834157,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1770318000000,
+          "price": 109.66776676683139,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "VETUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1770267600000,
+      "swept_level": 0.008253,
+      "penetration_atr": 0.27917956402136346,
+      "sweep_t": 1770282000000,
+      "mss_level": 0.008024,
+      "selector": {
+        "symbol_ret30": -0.33823529411764697,
+        "btc_ret30": -0.22046973856989383,
+        "er20": 0.5098070483176528,
+        "symbol_close": 0.008325,
+        "symbol_ema50": 0.010832527397472045,
+        "symbol_ema200": 0.016401916422490063,
+        "btc_close": 73137.4,
+        "btc_ema200": 97078.72116708347
+      },
+      "displacement_t": 1770285600000,
+      "fvg_t": 1770289200000,
+      "retest_t": 1770300000000,
+      "entry_t": 1770300000000,
+      "exit_t": 1770321600000,
+      "entry": 0.0080595,
+      "stop": 0.008320640698856794,
+      "tp1": 0.00766778895171481,
+      "tp2": 0.00727607790342962,
+      "risk_pct": 0.03240160045372462,
+      "r": 2.21431479238074,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1770303600000,
+          "price": 0.00766778895171481,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1770321600000,
+          "price": 0.00727607790342962,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SANDUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1770541200000,
+      "swept_level": 0.08781,
+      "penetration_atr": 0.24589654582515713,
+      "sweep_t": 1770555600000,
+      "mss_level": 0.08583,
+      "selector": {
+        "symbol_ret30": -0.2484508955097191,
+        "btc_ret30": -0.23946461556032417,
+        "er20": 0.37725971941090264,
+        "symbol_close": 0.08854,
+        "symbol_ema50": 0.12283713754243099,
+        "symbol_ema200": 0.18944966238012304,
+        "btc_close": 69254.2,
+        "btc_ema200": 96206.80156384938
+      },
+      "displacement_t": 1770566400000,
+      "fvg_t": 1770570000000,
+      "retest_t": 1770580800000,
+      "entry_t": 1770580800000,
+      "exit_t": 1770606000000,
+      "entry": 0.08674499999999999,
+      "stop": 0.08835740429609884,
+      "tp1": 0.08432639355585171,
+      "tp2": 0.08190778711170343,
+      "risk_pct": 0.018587864385253925,
+      "r": -1.0651582502179209,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1770606000000,
+          "price": 0.08835740429609884,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1780941600000,
+      "swept_level": 64.72,
+      "penetration_atr": 0.17984523731795765,
+      "sweep_t": 1780952400000,
+      "mss_level": 63.57,
+      "selector": {
+        "symbol_ret30": -0.33514303612445184,
+        "btc_ret30": -0.2103007665129648,
+        "er20": 0.631901840490798,
+        "symbol_close": 63.68,
+        "symbol_ema50": 86.83587662721654,
+        "symbol_ema200": 127.79891639717279,
+        "btc_close": 63298.5,
+        "btc_ema200": 79912.21117954735
+      },
+      "displacement_t": 1780963200000,
+      "fvg_t": 1780966800000,
+      "retest_t": 1780977600000,
+      "entry_t": 1780977600000,
+      "exit_t": 1781254800000,
+      "entry": 62.785,
+      "stop": 65.01344807100767,
+      "tp1": 59.44232789348848,
+      "tp2": 56.09965578697697,
+      "risk_pct": 0.035493319598752515,
+      "r": -1.0344091791234478,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1781254800000,
+          "price": 65.01344807100767,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1780941600000,
+      "swept_level": 6.859,
+      "penetration_atr": 0.21981932750065367,
+      "sweep_t": 1780952400000,
+      "mss_level": 6.746,
+      "selector": {
+        "symbol_ret30": -0.3119256790871453,
+        "btc_ret30": -0.2103007665129648,
+        "er20": 0.5501244625480871,
+        "symbol_close": 6.814,
+        "symbol_ema50": 8.886081497651888,
+        "symbol_ema200": 11.576185307029316,
+        "btc_close": 63298.5,
+        "btc_ema200": 79912.21117954735
+      },
+      "displacement_t": 1780963200000,
+      "fvg_t": 1780966800000,
+      "retest_t": 1780977600000,
+      "entry_t": 1780977600000,
+      "exit_t": 1781204400000,
+      "entry": 6.7005,
+      "stop": 6.89432995012684,
+      "tp1": 6.409755074809739,
+      "tp2": 6.119010149619479,
+      "risk_pct": 0.02892768452008661,
+      "r": 0.7089672467168344,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1781125200000,
+          "price": 6.409755074809739,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1781204400000,
+          "price": 6.7005,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ALGOUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1781352000000,
+      "swept_level": 0.0893,
+      "penetration_atr": 0.1118312080574661,
+      "sweep_t": 1781362800000,
+      "mss_level": 0.0882,
+      "selector": {
+        "symbol_ret30": -0.2597623089983022,
+        "btc_ret30": -0.19853244425722338,
+        "er20": 0.33992583436341156,
+        "symbol_close": 0.0872,
+        "symbol_ema50": 0.10660668076742237,
+        "symbol_ema200": 0.12123655802680192,
+        "btc_close": 63547.0,
+        "btc_ema200": 79071.88246617549
+      },
+      "displacement_t": 1781366400000,
+      "fvg_t": 1781370000000,
+      "retest_t": 1781377200000,
+      "entry_t": 1781377200000,
+      "exit_t": 1781391600000,
+      "entry": 0.08845,
+      "stop": 0.0895341307159294,
+      "tp1": 0.08682380392610589,
+      "tp2": 0.0851976078522118,
+      "risk_pct": 0.012256989439563614,
+      "r": -1.0985033233174364,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1781391600000,
+          "price": 0.0895341307159294,
+          "fraction": 1.0
+        }
+      ]
+    }
+  ]
+}
