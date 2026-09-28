@@ -1,0 +1,27 @@
+name: CAT-Core v0.4 Funding Only
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cat-core-v0-4-funding-only.yml"
+      - "scripts/analyze_cat_core_v0_4_funding_only.py"
+permissions: {contents: write}
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python scripts/analyze_cat_core_v0_4_funding_only.py
+      - uses: actions/upload-artifact@v4
+        with: {name: cat-core-v0-4-funding-only, path: data/validation/cat_core_v0_4_funding_only.json, retention-days: 30}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/cat_core_v0_4_funding_only.json
+          git commit -m "research: add CAT-Core v0.4 funding impact [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
