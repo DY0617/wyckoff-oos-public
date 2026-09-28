@@ -134,7 +134,7 @@ def detect_splits(bars):
         ratio=prev/op;mag=ratio if ratio>=1 else 1/ratio
         if mag<1.7:continue
         f=min(common,key=lambda q:abs(mag/q))
-        if abs(mag/f)<=.08:
+        if abs(mag/f-1.0)<=.08:
             pm,vm=((1/f,f) if ratio>1 else (f,1/f));ev.append((days[i],pm,vm))
     return ev
 
