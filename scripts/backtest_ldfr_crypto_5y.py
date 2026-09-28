@@ -123,7 +123,10 @@ def fetch_vision_1h(symbol, start_dt, end_dt):
         if nxt > end_dt.timestamp():
             break
         url = f"{VISION}/daily/klines/{symbol}/1h/{symbol}-1h-{cur:%Y-%m-%d}.zip"
-        part = download_zip_rows(url, required=True)
+        part = download_zip_rows(url, required=False)
+        if not part:
+            print("VISION_DAY_NOT_YET_PUBLISHED", symbol, cur.strftime("%Y-%m-%d"), flush=True)
+            break
         print("VISION_DAY", symbol, cur.strftime("%Y-%m-%d"), len(part), flush=True)
         rows.extend(part)
         cur = datetime.fromtimestamp(nxt, UTC)
@@ -502,7 +505,12 @@ def main():
         raw1 = fetch_vision_1h(symbol, WARMUP_START, EVAL_END)
         h1 = enrich_1h(raw1)
         h4 = enrich_4h(aggregate_4h(raw1))
-        source_counts[symbol] = {"1h_bars": len(h1), "4h_bars": len(h4)}
+        source_counts[symbol] = {
+            "1h_bars": len(h1),
+            "4h_bars": len(h4),
+            "first_1h_open": datetime.fromtimestamp(h1[0]["t"] / 1000, UTC).isoformat() if h1 else None,
+            "last_1h_close": datetime.fromtimestamp(h1[-1]["ct"] / 1000, UTC).isoformat() if h1 else None,
+        }
         setups = build_setups(symbol, h1, h4)
         setup_counts[symbol] = len(setups)
         trades = simulate_symbol(symbol, h1, setups)
