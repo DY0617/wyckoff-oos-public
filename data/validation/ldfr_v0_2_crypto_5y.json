@@ -1,0 +1,640 @@
+{
+  "strategy": "LDFR_v0.2",
+  "status": "FROZEN_V0_2_FIRST_TEST",
+  "market": "Binance Vision USDT-M perpetual",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT"
+  ],
+  "period": {
+    "warmup_start": "2021-06-01T00:00:00+00:00",
+    "eval_start": "2021-09-28T00:00:00+00:00",
+    "eval_end_exclusive": "2026-09-28T00:00:00+00:00"
+  },
+  "logic": {
+    "regime": "closed 4H close>EMA50, EMA20>EMA50, EMA20 5-bar slope>0 for long; exact inverse short",
+    "liquidity_sweep": "1H current extreme breaches prior 20-bar extreme and closes back inside",
+    "displacement": "within 3 bars: range>=1.5 ATR14, body/range>=0.6, CLV long>=0.75/short<=0.25",
+    "fvg": "3-candle FVG >= 0.15 ATR14 on displacement bar or within next 2 bars",
+    "retest": "FVG midpoint touch within 8 bars without close through far edge",
+    "confirmation": "within 2 bars after retest: close beyond prior candle high/low; entry next 1H open",
+    "stop": "sweep extreme +/- 0.15 ATR14",
+    "management": "TP1 1.5R on 50%, remainder stop->BE; TP2 3.0R exits rest",
+    "ambiguity": "same 1H bar stop checked before targets",
+    "costs": {
+      "fee_bps_per_fill": 4.0,
+      "slippage_bps_per_fill": 2.0
+    },
+    "positioning": "fixed 1R reference risk per trade; one open position per symbol"
+  },
+  "data_counts": {
+    "BTCUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "ETHUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    }
+  },
+  "setup_counts": {
+    "BTCUSDT": 5,
+    "ETHUSDT": 5
+  },
+  "funnel_counts": {
+    "BTCUSDT": {
+      "TOTAL": {
+        "sweep": 4209,
+        "regime": 1155,
+        "displacement": 101,
+        "fvg": 63,
+        "retest": 32,
+        "confirmation": 7,
+        "final_regime": 5
+      },
+      "LONG": {
+        "sweep": 2063,
+        "regime": 580,
+        "displacement": 42,
+        "fvg": 21,
+        "retest": 15,
+        "confirmation": 3,
+        "final_regime": 3
+      },
+      "SHORT": {
+        "sweep": 2146,
+        "regime": 575,
+        "displacement": 59,
+        "fvg": 42,
+        "retest": 17,
+        "confirmation": 4,
+        "final_regime": 2
+      }
+    },
+    "ETHUSDT": {
+      "TOTAL": {
+        "sweep": 4089,
+        "regime": 1153,
+        "displacement": 77,
+        "fvg": 48,
+        "retest": 24,
+        "confirmation": 7,
+        "final_regime": 7
+      },
+      "LONG": {
+        "sweep": 1920,
+        "regime": 556,
+        "displacement": 31,
+        "fvg": 23,
+        "retest": 15,
+        "confirmation": 2,
+        "final_regime": 2
+      },
+      "SHORT": {
+        "sweep": 2169,
+        "regime": 597,
+        "displacement": 46,
+        "fvg": 25,
+        "retest": 9,
+        "confirmation": 5,
+        "final_regime": 5
+      }
+    }
+  },
+  "summary": {
+    "trades": 10,
+    "long": 5,
+    "short": 5,
+    "wins": 6,
+    "losses": 4,
+    "win_rate": 0.6,
+    "total_r": 1.3222637953245846,
+    "avg_r": 0.13222637953245847,
+    "median_r": 0.6840191371798394,
+    "avg_win_r": 0.9444939079867103,
+    "avg_loss_r": -1.0861749131489193,
+    "profit_factor": 1.3043395173552716,
+    "max_drawdown_r": -3.645145874559945,
+    "max_losing_streak": 3,
+    "tp1_rate": 0.6,
+    "tp2_rate": 0.1,
+    "avg_risk_pct": 0.02088582203609006
+  },
+  "splits": {
+    "development_2021-09-28_2024-09-27": {
+      "trades": 7,
+      "long": 4,
+      "short": 3,
+      "wins": 4,
+      "losses": 3,
+      "win_rate": 0.5714285714285714,
+      "total_r": -0.410710329214121,
+      "avg_r": -0.05867290417344585,
+      "median_r": 0.6958506116868993,
+      "avg_win_r": 0.7070705670482424,
+      "avg_loss_r": -1.0796641991356968,
+      "profit_factor": 0.8731981266203244,
+      "max_drawdown_r": -3.2389925974070906,
+      "max_losing_streak": 3,
+      "tp1_rate": 0.5714285714285714,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.02396976305984203
+    },
+    "oos_2025-09-28_2026-09-27": {
+      "trades": 2,
+      "long": 1,
+      "short": 1,
+      "wins": 2,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 2.838681179727292,
+      "avg_r": 1.419340589863646,
+      "median_r": 1.419340589863646,
+      "avg_win_r": 1.419340589863646,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.5,
+      "avg_risk_pct": 0.014826473955311031
+    },
+    "validation_2024-09-28_2025-09-27": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.1057070551885866,
+      "avg_r": -1.1057070551885866,
+      "median_r": -1.1057070551885866,
+      "avg_win_r": null,
+      "avg_loss_r": -1.1057070551885866,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.1057070551885866,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.011416931031384336
+    }
+  },
+  "years": {
+    "2021": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 0.6958506116868993,
+      "avg_r": 0.6958506116868993,
+      "median_r": 0.6958506116868993,
+      "avg_win_r": 0.6958506116868993,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.022346623261390954
+    },
+    "2022": {
+      "trades": 2,
+      "long": 0,
+      "short": 2,
+      "wins": 2,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 1.4328778784703384,
+      "avg_r": 0.7164389392351692,
+      "median_r": 0.7164389392351692,
+      "avg_win_r": 0.7164389392351692,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.03771885382294832
+    },
+    "2023": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0640670584329368,
+      "avg_r": -1.0640670584329368,
+      "median_r": -1.0640670584329368,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0640670584329368,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0640670584329368,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.018556588610636485
+    },
+    "2024": {
+      "trades": 3,
+      "long": 2,
+      "short": 1,
+      "wins": 1,
+      "losses": 2,
+      "win_rate": 0.3333333333333333,
+      "total_r": -1.475371760938422,
+      "avg_r": -0.49179058697947403,
+      "median_r": -1.086840347334615,
+      "avg_win_r": 0.699553778035732,
+      "avg_loss_r": -1.087462769487077,
+      "profit_factor": 0.3216449324355675,
+      "max_drawdown_r": -2.174925538974154,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.3333333333333333,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.017149140633656707
+    },
+    "2025": {
+      "trades": 2,
+      "long": 0,
+      "short": 2,
+      "wins": 1,
+      "losses": 1,
+      "win_rate": 0.5,
+      "total_r": 1.060786461865926,
+      "avg_r": 0.530393230932963,
+      "median_r": 0.530393230932963,
+      "avg_win_r": 2.1664935170545125,
+      "avg_loss_r": -1.1057070551885866,
+      "profit_factor": 1.959373874742077,
+      "max_drawdown_r": -1.1057070551885866,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.5,
+      "tp2_rate": 0.5,
+      "avg_risk_pct": 0.012779227573853903
+    },
+    "2026": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 0.6721876626727796,
+      "avg_r": 0.6721876626727796,
+      "median_r": 0.6721876626727796,
+      "avg_win_r": 0.6721876626727796,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.015511423794298594
+    }
+  },
+  "symbols_summary": {
+    "BTCUSDT": {
+      "trades": 5,
+      "long": 3,
+      "short": 2,
+      "wins": 2,
+      "losses": 3,
+      "win_rate": 0.4,
+      "total_r": -1.8852282044401092,
+      "avg_r": -0.37704564088802184,
+      "median_r": -1.086840347334615,
+      "avg_win_r": 0.6977021948613157,
+      "avg_loss_r": -1.0935441980542469,
+      "profit_factor": 0.42534613361017237,
+      "max_drawdown_r": -2.581078816127009,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.4,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.017042195238749083
+    },
+    "ETHUSDT": {
+      "trades": 5,
+      "long": 2,
+      "short": 3,
+      "wins": 4,
+      "losses": 1,
+      "win_rate": 0.8,
+      "total_r": 3.207491999764694,
+      "avg_r": 0.6414983999529388,
+      "median_r": 0.7077952594572157,
+      "avg_win_r": 1.0678897645494076,
+      "avg_loss_r": -1.0640670584329368,
+      "profit_factor": 4.014370169948125,
+      "max_drawdown_r": -1.0640670584329368,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.8,
+      "tp2_rate": 0.2,
+      "avg_risk_pct": 0.024729448833431037
+    }
+  },
+  "trades": [
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "sweep_t": 1633831200000,
+      "displacement_t": 1633838400000,
+      "fvg_t": 1633842000000,
+      "retest_t": 1633870800000,
+      "confirmation_t": 1633870800000,
+      "entry_t": 1633874400000,
+      "exit_t": 1634065200000,
+      "entry": 55256.559102,
+      "stop": 54021.76159302682,
+      "tp1": 57108.755365459765,
+      "tp2": 58960.95162891953,
+      "risk_pct": 0.022346623261390954,
+      "r": 0.6958506116868993,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1633935600000,
+          "price": 57108.755365459765,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1634065200000,
+          "price": 55256.559102,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "SHORT",
+      "sweep_t": 1652187600000,
+      "displacement_t": 1652191200000,
+      "fvg_t": 1652194800000,
+      "retest_t": 1652205600000,
+      "confirmation_t": 1652209200000,
+      "entry_t": 1652212800000,
+      "exit_t": 1652274000000,
+      "entry": 2352.669372,
+      "stop": 2463.9620296007374,
+      "tp1": 2185.7303855988935,
+      "tp2": 2018.791399197787,
+      "risk_pct": 0.0473048439892461,
+      "r": 0.7250826190131228,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1652270400000,
+          "price": 2185.7303855988935,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1652274000000,
+          "price": 2352.669372,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "SHORT",
+      "sweep_t": 1668088800000,
+      "displacement_t": 1668099600000,
+      "fvg_t": 1668103200000,
+      "retest_t": 1668121200000,
+      "confirmation_t": 1668121200000,
+      "entry_t": 1668124800000,
+      "exit_t": 1668171600000,
+      "entry": 1298.04034,
+      "stop": 1334.5579319060523,
+      "tp1": 1243.2639521409214,
+      "tp2": 1188.487564281843,
+      "risk_pct": 0.028132863656650534,
+      "r": 0.7077952594572157,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1668132000000,
+          "price": 1243.2639521409214,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1668171600000,
+          "price": 1298.04034,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "sweep_t": 1687525200000,
+      "displacement_t": 1687528800000,
+      "fvg_t": 1687532400000,
+      "retest_t": 1687554000000,
+      "confirmation_t": 1687561200000,
+      "entry_t": 1687564800000,
+      "exit_t": 1687795200000,
+      "entry": 1892.57844,
+      "stop": 1857.4586404755598,
+      "tp1": 1945.2581392866603,
+      "tp2": 1997.9378385733205,
+      "risk_pct": 0.018556588610636485,
+      "r": -1.0640670584329368,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1687795200000,
+          "price": 1857.4586404755598,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "sweep_t": 1706180400000,
+      "displacement_t": 1706184000000,
+      "fvg_t": 1706187600000,
+      "retest_t": 1706191200000,
+      "confirmation_t": 1706194800000,
+      "entry_t": 1706198400000,
+      "exit_t": 1706259600000,
+      "entry": 39785.641279999996,
+      "stop": 40339.242593208495,
+      "tp1": 38955.239310187244,
+      "tp2": 38124.8373403745,
+      "risk_pct": 0.01391460073025871,
+      "r": -1.086840347334615,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1706259600000,
+          "price": 40339.242593208495,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "sweep_t": 1706878800000,
+      "displacement_t": 1706886000000,
+      "fvg_t": 1706889600000,
+      "retest_t": 1706893200000,
+      "confirmation_t": 1706900400000,
+      "entry_t": 1706904000000,
+      "exit_t": 1707084000000,
+      "entry": 43052.80884,
+      "stop": 42470.26095739536,
+      "tp1": 43926.63066390695,
+      "tp2": 44800.45248781391,
+      "risk_pct": 0.013531007576523044,
+      "r": -1.0880851916395389,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1707084000000,
+          "price": 42470.26095739536,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "sweep_t": 1727042400000,
+      "displacement_t": 1727042400000,
+      "fvg_t": 1727046000000,
+      "retest_t": 1727049600000,
+      "confirmation_t": 1727053200000,
+      "entry_t": 1727056800000,
+      "exit_t": 1727686800000,
+      "entry": 63801.65778,
+      "stop": 62270.30228296424,
+      "tp1": 66098.69102555363,
+      "tp2": 68395.72427110728,
+      "risk_pct": 0.02400181359418837,
+      "r": 0.699553778035732,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1727445600000,
+          "price": 66098.69102555363,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1727686800000,
+          "price": 63801.65778,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "sweep_t": 1758636000000,
+      "displacement_t": 1758646800000,
+      "fvg_t": 1758650400000,
+      "retest_t": 1758672000000,
+      "confirmation_t": 1758679200000,
+      "entry_t": 1758682800000,
+      "exit_t": 1758722400000,
+      "entry": 112047.68598000001,
+      "stop": 113326.92668305988,
+      "tp1": 110128.82492541021,
+      "tp2": 108209.9638708204,
+      "risk_pct": 0.011416931031384336,
+      "r": -1.1057070551885866,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1758722400000,
+          "price": 113326.92668305988,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "SHORT",
+      "sweep_t": 1762066800000,
+      "displacement_t": 1762074000000,
+      "fvg_t": 1762077600000,
+      "retest_t": 1762081200000,
+      "confirmation_t": 1762088400000,
+      "entry_t": 1762092000000,
+      "exit_t": 1762149600000,
+      "entry": 3865.686708,
+      "stop": 3920.3534098073333,
+      "tp1": 3783.6866552890006,
+      "tp2": 3701.686602578001,
+      "risk_pct": 0.014141524116323469,
+      "r": 2.1664935170545125,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1762135200000,
+          "price": 3783.6866552890006,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1762149600000,
+          "price": 3701.686602578001,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "sweep_t": 1783814400000,
+      "displacement_t": 1783818000000,
+      "fvg_t": 1783821600000,
+      "retest_t": 1783836000000,
+      "confirmation_t": 1783843200000,
+      "entry_t": 1783846800000,
+      "exit_t": 1783904400000,
+      "entry": 1804.650858,
+      "stop": 1776.6581537408174,
+      "tp1": 1846.6399143887738,
+      "tp2": 1888.6289707775477,
+      "risk_pct": 0.015511423794298594,
+      "r": 0.6721876626727796,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1783900800000,
+          "price": 1846.6399143887738,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1783904400000,
+          "price": 1804.650858,
+          "fraction": 0.5
+        }
+      ]
+    }
+  ]
+}
