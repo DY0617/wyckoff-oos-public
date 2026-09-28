@@ -336,6 +336,82 @@ def build_setups(symbol, h1, h4):
     return setups
 
 
+def diagnostic_funnel(h1, h4):
+    h4_closes = [x["ct"] for x in h4]
+    keys = ("sweep", "regime", "displacement", "fvg", "retest", "confirmation", "final_regime")
+    out = {"TOTAL": {k: 0 for k in keys}, "LONG": {k: 0 for k in keys}, "SHORT": {k: 0 for k in keys}}
+
+    def inc(direction, key):
+        out["TOTAL"][key] += 1
+        out[direction][key] += 1
+
+    start_i = max(SWEEP_LOOKBACK, 60)
+    for i in range(start_i, len(h1) - 2):
+        bar = h1[i]
+        if bar["ct"] < ms(EVAL_START) or bar["ct"] >= ms(EVAL_END):
+            continue
+        prev = h1[i - SWEEP_LOOKBACK:i]
+        prev_low = min(x["l"] for x in prev)
+        prev_high = max(x["h"] for x in prev)
+        candidates = []
+        if bar["l"] < prev_low and bar["c"] > prev_low:
+            candidates.append("LONG")
+        if bar["h"] > prev_high and bar["c"] < prev_high:
+            candidates.append("SHORT")
+
+        for direction in candidates:
+            inc(direction, "sweep")
+            reg_ok, _ = regime(h4, h4_closes, bar["ct"], direction)
+            if not reg_ok:
+                continue
+            inc(direction, "regime")
+
+            any_disp = False
+            disp_i = None
+            gap = None
+            for j in range(i, min(len(h1), i + DISPLACEMENT_WINDOW + 1)):
+                if displacement_ok(h1[j], direction):
+                    any_disp = True
+                    g = fvg_for(h1, j, direction)
+                    if g is not None:
+                        disp_i, gap = j, g
+                        break
+            if not any_disp:
+                continue
+            inc(direction, "displacement")
+            if disp_i is None:
+                continue
+            inc(direction, "fvg")
+
+            retest_i = None
+            for k in range(disp_i + 1, min(len(h1), disp_i + RETEST_WINDOW + 1)):
+                q = h1[k]
+                touched = q["l"] <= gap["mid"] <= q["h"]
+                valid = q["c"] > gap["low"] if direction == "LONG" else q["c"] < gap["high"]
+                if touched and valid:
+                    retest_i = k
+                    break
+            if retest_i is None:
+                continue
+            inc(direction, "retest")
+
+            conf_i = None
+            for k in range(retest_i, min(len(h1) - 1, retest_i + CONFIRM_WINDOW + 1)):
+                q, p = h1[k], h1[k - 1]
+                ok = q["c"] > p["h"] if direction == "LONG" else q["c"] < p["l"]
+                if ok:
+                    conf_i = k
+                    break
+            if conf_i is None:
+                continue
+            inc(direction, "confirmation")
+
+            reg2, _ = regime(h4, h4_closes, h1[conf_i]["ct"], direction)
+            if reg2:
+                inc(direction, "final_regime")
+    return out
+
+
 def fill_cost(notional):
     return notional * COST_BPS / 10000.0
 
@@ -499,6 +575,7 @@ def split_name(tms):
 def main():
     all_trades = []
     setup_counts = {}
+    funnel_counts = {}
     source_counts = {}
     for symbol in SYMBOLS:
         print("FETCH_VISION", symbol, "1h", flush=True)
@@ -511,6 +588,7 @@ def main():
             "first_1h_open": datetime.fromtimestamp(h1[0]["t"] / 1000, UTC).isoformat() if h1 else None,
             "last_1h_close": datetime.fromtimestamp(h1[-1]["ct"] / 1000, UTC).isoformat() if h1 else None,
         }
+        funnel_counts[symbol] = diagnostic_funnel(h1, h4)
         setups = build_setups(symbol, h1, h4)
         setup_counts[symbol] = len(setups)
         trades = simulate_symbol(symbol, h1, setups)
@@ -546,6 +624,7 @@ def main():
         },
         "data_counts": source_counts,
         "setup_counts": setup_counts,
+        "funnel_counts": funnel_counts,
         "summary": metrics(all_trades),
         "splits": {k: metrics(v) for k, v in sorted(by_split.items())},
         "years": {k: metrics(v) for k, v in sorted(by_year.items())},
@@ -554,7 +633,7 @@ def main():
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out, indent=2, allow_nan=False), encoding="utf-8")
-    print(json.dumps({"summary": out["summary"], "splits": out["splits"], "setup_counts": setup_counts}, indent=2), flush=True)
+    print(json.dumps({"summary": out["summary"], "splits": out["splits"], "setup_counts": setup_counts, "funnel_counts": funnel_counts}, indent=2), flush=True)
 
 
 if __name__ == "__main__":
