@@ -377,13 +377,15 @@ def simulate_portfolio(adj,dailies,signals,policy):
                         skipped_symbol_cd+=1
                         continue
 
-                # Breadth slope filter: current signal already has breadth>=50;
-                # additionally reject if breadth fell >=10pp over prior 5 market sessions.
+                # Breadth slope filter uses only the completed SIGNAL day.
+                # This avoids looking at the entry day's still-forming RTH session.
                 if policy.get("breadth_slope_pp") is not None:
                     look=policy.get("breadth_slope_sessions",5)
-                    if di_global>=look:
-                        d0=all_dates[di_global-look]
-                        b0=bseries.get(d0);b1=bseries.get(d)
+                    sd=datetime.fromisoformat(chosen["signal_date"]).date()
+                    si_global=sess_idx.get(sd)
+                    if si_global is not None and si_global>=look:
+                        d0=all_dates[si_global-look]
+                        b0=bseries.get(d0);b1=bseries.get(sd)
                         if b0 is not None and b1 is not None and (b1-b0)<=-policy["breadth_slope_pp"]:
                             skipped_breadth_slope+=1
                             continue
