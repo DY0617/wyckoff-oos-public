@@ -14,7 +14,8 @@ from pathlib import Path
 
 UTC = timezone.utc
 VISION = "https://data.binance.vision/data/futures/um"
-SYMBOLS = ("AVAXUSDT", "ATOMUSDT", "NEARUSDT", "AAVEUSDT", "ALGOUSDT", "VETUSDT", "THETAUSDT", "SANDUSDT")\nBENCHMARK = "BTCUSDT"
+SYMBOLS = ("AVAXUSDT", "ATOMUSDT", "NEARUSDT", "AAVEUSDT", "ALGOUSDT", "VETUSDT", "THETAUSDT", "SANDUSDT")
+BENCHMARK = "BTCUSDT"
 HOUR_MS = 60 * 60 * 1000
 
 # LDFR v2.2 Trend Efficiency + Relative Strength + Liquidity Execution -- frozen before first test.
@@ -840,7 +841,8 @@ def main():
         "strategy": "LDFR_v2.2_ER20_TREND_RS_LIQUIDITY",
         "status": "FROZEN_V2_2_UNSEEN8_OOS",
         "market": "Binance Vision USDT-M perpetual",
-        "symbols": list(SYMBOLS),\n        "benchmark": BENCHMARK,
+        "symbols": list(SYMBOLS),
+        "benchmark": BENCHMARK,
         "universe_test": "8 previously unused symbols; exact frozen v2.2 rules; BTC used only as benchmark",
         "period": {"warmup_start": WARMUP_START.isoformat(), "eval_start": EVAL_START.isoformat(), "eval_end_exclusive": EVAL_END.isoformat()},
         "logic": {
