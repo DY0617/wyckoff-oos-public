@@ -1,0 +1,5313 @@
+{
+  "generated_at": "2026-09-28T03:09:47.104571+00:00",
+  "strategy": "M1_B2_aux_indicators",
+  "period": {
+    "start": "2006-04-01",
+    "end_exclusive": "2026-04-01"
+  },
+  "fixed_filters": {
+    "ADX_DMI": "ADX14>=20 and +DI14>-DI14 on completed signal day",
+    "RVOL": "signal-day volume / 20-session SMA volume >=1.20",
+    "ATR": "mean ATR14 over last 5 sessions <=90% of mean ATR14 over last 20, and signal-day true range >= ATR14",
+    "RS_slope": "20-session slope of stock/SPY price ratio >0",
+    "RSI_control": "50<=RSI14<=70",
+    "MACD_control": "MACD>signal and MACD>0"
+  },
+  "results": {
+    "adx20_dmi": {
+      "full_20y": {
+        "closed": 259,
+        "wins": 104,
+        "losses": 155,
+        "win_rate": 0.4015444015444015,
+        "net_r": 131.6403170705261,
+        "avg_r": 0.5082637724730737,
+        "profit_factor": 2.078037869398405,
+        "max_drawdown_r": 15.046948486125473,
+        "max_drawdown_fixed_20k": 0.13654413495875684,
+        "max_consecutive_losses": 9,
+        "positive_years": 12,
+        "negative_years": 9,
+        "by_year": {
+          "2006": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": -0.8369379013331035,
+            "avg_r": -0.09299310014812262,
+            "profit_factor": 0.7493145090522559
+          },
+          "2007": {
+            "closed": 16,
+            "wins": 4,
+            "losses": 12,
+            "win_rate": 0.25,
+            "net_r": -1.3331263504742257,
+            "avg_r": -0.0833203969046391,
+            "profit_factor": 0.8274428737476722
+          },
+          "2008": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.9553425085275534,
+            "avg_r": -0.9553425085275534,
+            "profit_factor": 0.0
+          },
+          "2009": {
+            "closed": 6,
+            "wins": 4,
+            "losses": 2,
+            "win_rate": 0.6666666666666666,
+            "net_r": 15.06058010404575,
+            "avg_r": 2.510096684007625,
+            "profit_factor": 11.90177197833797
+          },
+          "2010": {
+            "closed": 10,
+            "wins": 6,
+            "losses": 4,
+            "win_rate": 0.6,
+            "net_r": 7.876514044355877,
+            "avg_r": 0.7876514044355878,
+            "profit_factor": 3.1815379268350887
+          },
+          "2011": {
+            "closed": 12,
+            "wins": 1,
+            "losses": 11,
+            "win_rate": 0.08333333333333333,
+            "net_r": -7.8014143722760965,
+            "avg_r": -0.6501178643563413,
+            "profit_factor": 0.06893098257901688
+          },
+          "2012": {
+            "closed": 13,
+            "wins": 6,
+            "losses": 7,
+            "win_rate": 0.46153846153846156,
+            "net_r": 4.195403987635391,
+            "avg_r": 0.32272338366426084,
+            "profit_factor": 1.6746181640161146
+          },
+          "2013": {
+            "closed": 16,
+            "wins": 9,
+            "losses": 7,
+            "win_rate": 0.5625,
+            "net_r": 20.286694296659498,
+            "avg_r": 1.2679183935412186,
+            "profit_factor": 4.552686706802042
+          },
+          "2014": {
+            "closed": 20,
+            "wins": 7,
+            "losses": 13,
+            "win_rate": 0.35,
+            "net_r": -4.0112942935859826,
+            "avg_r": -0.20056471467929912,
+            "profit_factor": 0.6510431045705367
+          },
+          "2015": {
+            "closed": 15,
+            "wins": 7,
+            "losses": 8,
+            "win_rate": 0.4666666666666667,
+            "net_r": 2.998006693460931,
+            "avg_r": 0.1998671128973954,
+            "profit_factor": 1.4392817943581342
+          },
+          "2016": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": 2.7152374443461693,
+            "avg_r": 0.22626978702884745,
+            "profit_factor": 1.3547112135229136
+          },
+          "2017": {
+            "closed": 22,
+            "wins": 12,
+            "losses": 10,
+            "win_rate": 0.5454545454545454,
+            "net_r": 14.62410038110087,
+            "avg_r": 0.664731835504585,
+            "profit_factor": 2.940940050590416
+          },
+          "2018": {
+            "closed": 8,
+            "wins": 3,
+            "losses": 5,
+            "win_rate": 0.375,
+            "net_r": 9.15519845240368,
+            "avg_r": 1.14439980655046,
+            "profit_factor": 3.1291144432856033
+          },
+          "2019": {
+            "closed": 13,
+            "wins": 6,
+            "losses": 7,
+            "win_rate": 0.46153846153846156,
+            "net_r": 37.65032703486929,
+            "avg_r": 2.896179002682253,
+            "profit_factor": 7.549660069626318
+          },
+          "2020": {
+            "closed": 14,
+            "wins": 8,
+            "losses": 6,
+            "win_rate": 0.5714285714285714,
+            "net_r": 22.5936755695871,
+            "avg_r": 1.6138339692562214,
+            "profit_factor": 7.8215502165689506
+          },
+          "2021": {
+            "closed": 20,
+            "wins": 4,
+            "losses": 16,
+            "win_rate": 0.2,
+            "net_r": -1.0772890027070576,
+            "avg_r": -0.05386445013535288,
+            "profit_factor": 0.9230976848064514
+          },
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.887129902388189,
+            "avg_r": -0.4435649511940945,
+            "profit_factor": 0.14062610420546062
+          },
+          "2023": {
+            "closed": 18,
+            "wins": 6,
+            "losses": 12,
+            "win_rate": 0.3333333333333333,
+            "net_r": -2.3416706096146447,
+            "avg_r": -0.13009281164525804,
+            "profit_factor": 0.7260662182656646
+          },
+          "2024": {
+            "closed": 16,
+            "wins": 8,
+            "losses": 8,
+            "win_rate": 0.5,
+            "net_r": 12.835249479204757,
+            "avg_r": 0.8022030924502973,
+            "profit_factor": 3.6465569675078844
+          },
+          "2025": {
+            "closed": 13,
+            "wins": 3,
+            "losses": 10,
+            "win_rate": 0.23076923076923078,
+            "net_r": 2.312866352663641,
+            "avg_r": 0.17791279635874163,
+            "profit_factor": 1.3090741898226133
+          },
+          "2026": {
+            "closed": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.3333333333333333,
+            "net_r": -1.4193318288999928,
+            "avg_r": -0.4731106096333309,
+            "profit_factor": 0.2900865738523363
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 141,
+        "wins": 56,
+        "losses": 85,
+        "win_rate": 0.3971631205673759,
+        "net_r": 96.16123337056563,
+        "avg_r": 0.6819945629118129,
+        "profit_factor": 2.446657479664007,
+        "max_drawdown_r": 15.046948486125473,
+        "max_drawdown_fixed_20k": 0.10385355110778266,
+        "max_consecutive_losses": 9,
+        "positive_years": 7,
+        "negative_years": 4,
+        "by_year": {
+          "2016": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": 2.7152374443461693,
+            "avg_r": 0.22626978702884745,
+            "profit_factor": 1.3547112135229136
+          },
+          "2017": {
+            "closed": 22,
+            "wins": 12,
+            "losses": 10,
+            "win_rate": 0.5454545454545454,
+            "net_r": 14.62410038110087,
+            "avg_r": 0.664731835504585,
+            "profit_factor": 2.940940050590416
+          },
+          "2018": {
+            "closed": 8,
+            "wins": 3,
+            "losses": 5,
+            "win_rate": 0.375,
+            "net_r": 9.15519845240368,
+            "avg_r": 1.14439980655046,
+            "profit_factor": 3.1291144432856033
+          },
+          "2019": {
+            "closed": 13,
+            "wins": 6,
+            "losses": 7,
+            "win_rate": 0.46153846153846156,
+            "net_r": 37.65032703486929,
+            "avg_r": 2.896179002682253,
+            "profit_factor": 7.549660069626318
+          },
+          "2020": {
+            "closed": 14,
+            "wins": 8,
+            "losses": 6,
+            "win_rate": 0.5714285714285714,
+            "net_r": 22.5936755695871,
+            "avg_r": 1.6138339692562214,
+            "profit_factor": 7.8215502165689506
+          },
+          "2021": {
+            "closed": 20,
+            "wins": 4,
+            "losses": 16,
+            "win_rate": 0.2,
+            "net_r": -1.0772890027070576,
+            "avg_r": -0.05386445013535288,
+            "profit_factor": 0.9230976848064514
+          },
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.887129902388189,
+            "avg_r": -0.4435649511940945,
+            "profit_factor": 0.14062610420546062
+          },
+          "2023": {
+            "closed": 18,
+            "wins": 6,
+            "losses": 12,
+            "win_rate": 0.3333333333333333,
+            "net_r": -2.3416706096146447,
+            "avg_r": -0.13009281164525804,
+            "profit_factor": 0.7260662182656646
+          },
+          "2024": {
+            "closed": 16,
+            "wins": 8,
+            "losses": 8,
+            "win_rate": 0.5,
+            "net_r": 12.835249479204757,
+            "avg_r": 0.8022030924502973,
+            "profit_factor": 3.6465569675078844
+          },
+          "2025": {
+            "closed": 13,
+            "wins": 3,
+            "losses": 10,
+            "win_rate": 0.23076923076923078,
+            "net_r": 2.312866352663641,
+            "avg_r": 0.17791279635874163,
+            "profit_factor": 1.3090741898226133
+          },
+          "2026": {
+            "closed": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.3333333333333333,
+            "net_r": -1.4193318288999928,
+            "avg_r": -0.4731106096333309,
+            "profit_factor": 0.2900865738523363
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 52,
+        "wins": 19,
+        "losses": 33,
+        "win_rate": 0.36538461538461536,
+        "net_r": 10.49998349096557,
+        "avg_r": 0.2019227594416456,
+        "profit_factor": 1.4390926914224782,
+        "max_drawdown_r": 5.9671460900732045,
+        "max_drawdown_fixed_20k": 0.11899742933532198,
+        "max_consecutive_losses": 7,
+        "positive_years": 2,
+        "negative_years": 3,
+        "by_year": {
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.887129902388189,
+            "avg_r": -0.4435649511940945,
+            "profit_factor": 0.14062610420546062
+          },
+          "2023": {
+            "closed": 18,
+            "wins": 6,
+            "losses": 12,
+            "win_rate": 0.3333333333333333,
+            "net_r": -2.3416706096146447,
+            "avg_r": -0.13009281164525804,
+            "profit_factor": 0.7260662182656646
+          },
+          "2024": {
+            "closed": 16,
+            "wins": 8,
+            "losses": 8,
+            "win_rate": 0.5,
+            "net_r": 12.835249479204757,
+            "avg_r": 0.8022030924502973,
+            "profit_factor": 3.6465569675078844
+          },
+          "2025": {
+            "closed": 13,
+            "wins": 3,
+            "losses": 10,
+            "win_rate": 0.23076923076923078,
+            "net_r": 2.312866352663641,
+            "avg_r": 0.17791279635874163,
+            "profit_factor": 1.3090741898226133
+          },
+          "2026": {
+            "closed": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.3333333333333333,
+            "net_r": -1.4193318288999928,
+            "avg_r": -0.4731106096333309,
+            "profit_factor": 0.2900865738523363
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 32,
+        "wins": 12,
+        "losses": 20,
+        "win_rate": 0.375,
+        "net_r": 13.728784002968405,
+        "avg_r": 0.42902450009276266,
+        "profit_factor": 1.9578910712248618,
+        "max_drawdown_r": 4.892589926475754,
+        "max_drawdown_fixed_20k": 0.07129833820445293,
+        "max_consecutive_losses": 6,
+        "positive_years": 2,
+        "negative_years": 1,
+        "by_year": {
+          "2024": {
+            "closed": 16,
+            "wins": 8,
+            "losses": 8,
+            "win_rate": 0.5,
+            "net_r": 12.835249479204757,
+            "avg_r": 0.8022030924502973,
+            "profit_factor": 3.6465569675078844
+          },
+          "2025": {
+            "closed": 13,
+            "wins": 3,
+            "losses": 10,
+            "win_rate": 0.23076923076923078,
+            "net_r": 2.312866352663641,
+            "avg_r": 0.17791279635874163,
+            "profit_factor": 1.3090741898226133
+          },
+          "2026": {
+            "closed": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.3333333333333333,
+            "net_r": -1.4193318288999928,
+            "avg_r": -0.4731106096333309,
+            "profit_factor": 0.2900865738523363
+          }
+        }
+      },
+      "signals_seen_in_shards": 1649,
+      "cap_block_events_in_shards": 22251
+    },
+    "adx_atr": {
+      "full_20y": {
+        "closed": 19,
+        "wins": 6,
+        "losses": 13,
+        "win_rate": 0.3157894736842105,
+        "net_r": 30.965958357779705,
+        "avg_r": 1.6297872819884056,
+        "profit_factor": 4.128221331934284,
+        "max_drawdown_r": 3.4132690976674422,
+        "max_drawdown_fixed_20k": 0.06566959404041274,
+        "max_consecutive_losses": 5,
+        "positive_years": 5,
+        "negative_years": 9,
+        "by_year": {
+          "2006": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -2.14396793864724,
+            "avg_r": -1.07198396932362,
+            "profit_factor": 0.0
+          },
+          "2007": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0264087580424113,
+            "avg_r": -1.0264087580424113,
+            "profit_factor": 0.0
+          },
+          "2009": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 5.14677684874368,
+            "avg_r": 5.14677684874368,
+            "profit_factor": null
+          },
+          "2010": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.3975625270416034,
+            "avg_r": -0.3975625270416034,
+            "profit_factor": 0.0
+          },
+          "2011": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.5505776715783284,
+            "avg_r": -0.5505776715783284,
+            "profit_factor": 0.0
+          },
+          "2012": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.4264069564504593,
+            "avg_r": -0.4264069564504593,
+            "profit_factor": 0.0
+          },
+          "2015": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0113305316168861,
+            "avg_r": -1.0113305316168861,
+            "profit_factor": 0.0
+          },
+          "2017": {
+            "closed": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.6666666666666666,
+            "net_r": 12.191823077339262,
+            "avg_r": 4.063941025779754,
+            "profit_factor": 12.866775356539009
+          },
+          "2018": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -1.0623517158934157,
+            "avg_r": -0.5311758579467079,
+            "profit_factor": 0.0
+          },
+          "2020": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 10.551916689197787,
+            "avg_r": 10.551916689197787,
+            "profit_factor": null
+          },
+          "2021": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0227389009183265,
+            "avg_r": -1.0227389009183265,
+            "profit_factor": 0.0
+          },
+          "2023": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.590916412008461,
+            "avg_r": 1.7954582060042306,
+            "profit_factor": 19.04986417307593
+          },
+          "2025": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 8.157092311063622,
+            "avg_r": 8.157092311063622,
+            "profit_factor": null
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.031221980384433,
+            "avg_r": -1.031221980384433,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 11,
+        "wins": 5,
+        "losses": 6,
+        "win_rate": 0.45454545454545453,
+        "net_r": 31.375435892412955,
+        "avg_r": 2.8523123538557233,
+        "profit_factor": 8.224954483665345,
+        "max_drawdown_r": 1.0312219803844336,
+        "max_drawdown_fixed_20k": 0.020547828219603253,
+        "max_consecutive_losses": 1,
+        "positive_years": 4,
+        "negative_years": 3,
+        "by_year": {
+          "2017": {
+            "closed": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.6666666666666666,
+            "net_r": 12.191823077339262,
+            "avg_r": 4.063941025779754,
+            "profit_factor": 12.866775356539009
+          },
+          "2018": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -1.0623517158934157,
+            "avg_r": -0.5311758579467079,
+            "profit_factor": 0.0
+          },
+          "2020": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 10.551916689197787,
+            "avg_r": 10.551916689197787,
+            "profit_factor": null
+          },
+          "2021": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0227389009183265,
+            "avg_r": -1.0227389009183265,
+            "profit_factor": 0.0
+          },
+          "2023": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.590916412008461,
+            "avg_r": 1.7954582060042306,
+            "profit_factor": 19.04986417307593
+          },
+          "2025": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 8.157092311063622,
+            "avg_r": 8.157092311063622,
+            "profit_factor": null
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.031221980384433,
+            "avg_r": -1.031221980384433,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 4,
+        "wins": 2,
+        "losses": 2,
+        "win_rate": 0.5,
+        "net_r": 10.716786742687649,
+        "avg_r": 2.6791966856719123,
+        "profit_factor": 9.711657508073387,
+        "max_drawdown_r": 1.0312219803844336,
+        "max_drawdown_fixed_20k": 0.01670048964670693,
+        "max_consecutive_losses": 1,
+        "positive_years": 2,
+        "negative_years": 1,
+        "by_year": {
+          "2023": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.590916412008461,
+            "avg_r": 1.7954582060042306,
+            "profit_factor": 19.04986417307593
+          },
+          "2025": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 8.157092311063622,
+            "avg_r": 8.157092311063622,
+            "profit_factor": null
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.031221980384433,
+            "avg_r": -1.031221980384433,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 2,
+        "wins": 1,
+        "losses": 1,
+        "win_rate": 0.5,
+        "net_r": 7.125870330679189,
+        "avg_r": 3.5629351653395944,
+        "profit_factor": 7.91012261785063,
+        "max_drawdown_r": 1.0312219803844327,
+        "max_drawdown_fixed_20k": 0.017731663317498047,
+        "max_consecutive_losses": 1,
+        "positive_years": 1,
+        "negative_years": 1,
+        "by_year": {
+          "2025": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 8.157092311063622,
+            "avg_r": 8.157092311063622,
+            "profit_factor": null
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.031221980384433,
+            "avg_r": -1.031221980384433,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "signals_seen_in_shards": 35,
+      "cap_block_events_in_shards": 0
+    },
+    "adx_rs": {
+      "full_20y": {
+        "closed": 250,
+        "wins": 104,
+        "losses": 146,
+        "win_rate": 0.416,
+        "net_r": 108.75174660448256,
+        "avg_r": 0.43500698641793023,
+        "profit_factor": 1.9226460914261891,
+        "max_drawdown_r": 15.779095349089488,
+        "max_drawdown_fixed_20k": 0.19092148616237828,
+        "max_consecutive_losses": 9,
+        "positive_years": 12,
+        "negative_years": 9,
+        "by_year": {
+          "2006": {
+            "closed": 8,
+            "wins": 4,
+            "losses": 4,
+            "win_rate": 0.5,
+            "net_r": -0.015384476624003794,
+            "avg_r": -0.0019230595780004743,
+            "profit_factor": 0.9938878790230028
+          },
+          "2007": {
+            "closed": 16,
+            "wins": 4,
+            "losses": 12,
+            "win_rate": 0.25,
+            "net_r": -3.619032212808957,
+            "avg_r": -0.2261895133005598,
+            "profit_factor": 0.5625852742171311
+          },
+          "2008": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.9553425085275534,
+            "avg_r": -0.9553425085275534,
+            "profit_factor": 0.0
+          },
+          "2009": {
+            "closed": 6,
+            "wins": 4,
+            "losses": 2,
+            "win_rate": 0.6666666666666666,
+            "net_r": 15.06058010404575,
+            "avg_r": 2.510096684007625,
+            "profit_factor": 11.90177197833797
+          },
+          "2010": {
+            "closed": 9,
+            "wins": 6,
+            "losses": 3,
+            "win_rate": 0.6666666666666666,
+            "net_r": 7.620049465308471,
+            "avg_r": 0.8466721628120523,
+            "profit_factor": 3.9279914185249973
+          },
+          "2011": {
+            "closed": 11,
+            "wins": 1,
+            "losses": 10,
+            "win_rate": 0.09090909090909091,
+            "net_r": -6.889044981918559,
+            "avg_r": -0.6262768165380508,
+            "profit_factor": 0.07735387621916628
+          },
+          "2012": {
+            "closed": 13,
+            "wins": 6,
+            "losses": 7,
+            "win_rate": 0.46153846153846156,
+            "net_r": 4.195403987635391,
+            "avg_r": 0.32272338366426084,
+            "profit_factor": 1.6746181640161146
+          },
+          "2013": {
+            "closed": 16,
+            "wins": 9,
+            "losses": 7,
+            "win_rate": 0.5625,
+            "net_r": 17.191086943548672,
+            "avg_r": 1.074442933971792,
+            "profit_factor": 3.9939016979691
+          },
+          "2014": {
+            "closed": 21,
+            "wins": 6,
+            "losses": 15,
+            "win_rate": 0.2857142857142857,
+            "net_r": -8.848762884888542,
+            "avg_r": -0.42136966118516866,
+            "profit_factor": 0.3234068181508409
+          },
+          "2015": {
+            "closed": 16,
+            "wins": 6,
+            "losses": 10,
+            "win_rate": 0.375,
+            "net_r": -3.6912086056045372,
+            "avg_r": -0.23070053785028358,
+            "profit_factor": 0.5832187379388412
+          },
+          "2016": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 3.9356148482386812,
+            "avg_r": 0.3279679040198901,
+            "profit_factor": 1.5485247992151987
+          },
+          "2017": {
+            "closed": 22,
+            "wins": 11,
+            "losses": 11,
+            "win_rate": 0.5,
+            "net_r": 7.6699920187967265,
+            "avg_r": 0.34863600085439667,
+            "profit_factor": 1.9583137113165516
+          },
+          "2018": {
+            "closed": 7,
+            "wins": 3,
+            "losses": 4,
+            "win_rate": 0.42857142857142855,
+            "net_r": 9.201932183178409,
+            "avg_r": 1.3145617404540584,
+            "profit_factor": 3.163496276027089
+          },
+          "2019": {
+            "closed": 12,
+            "wins": 6,
+            "losses": 6,
+            "win_rate": 0.5,
+            "net_r": 38.682801984829716,
+            "avg_r": 3.223566832069143,
+            "profit_factor": 9.202521158704169
+          },
+          "2020": {
+            "closed": 12,
+            "wins": 9,
+            "losses": 3,
+            "win_rate": 0.75,
+            "net_r": 24.233194539840774,
+            "avg_r": 2.0194328783200644,
+            "profit_factor": 11.504313939991654
+          },
+          "2021": {
+            "closed": 18,
+            "wins": 4,
+            "losses": 14,
+            "win_rate": 0.2222222222222222,
+            "net_r": -6.140832104103038,
+            "avg_r": -0.34115733911683543,
+            "profit_factor": 0.42208055721518534
+          },
+          "2022": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 0.14516803769292974,
+            "avg_r": 0.14516803769292974,
+            "profit_factor": null
+          },
+          "2023": {
+            "closed": 18,
+            "wins": 6,
+            "losses": 12,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.2647447597138255,
+            "avg_r": -0.23693026442854587,
+            "profit_factor": 0.5133280032231872
+          },
+          "2024": {
+            "closed": 16,
+            "wins": 9,
+            "losses": 7,
+            "win_rate": 0.5625,
+            "net_r": 14.77260973609539,
+            "avg_r": 0.9232881085059619,
+            "profit_factor": 3.939854704490548
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 3.178290421654418,
+            "avg_r": 0.2889354928776744,
+            "profit_factor": 1.4802650865972573
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7106251321937513,
+            "avg_r": -0.6776562830484378,
+            "profit_factor": 0.17625101034396315
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 133,
+        "wins": 58,
+        "losses": 75,
+        "win_rate": 0.43609022556390975,
+        "net_r": 88.70340177431643,
+        "avg_r": 0.6669428704835823,
+        "profit_factor": 2.4594917404895944,
+        "max_drawdown_r": 11.145281412492949,
+        "max_drawdown_fixed_20k": 0.0833456980073014,
+        "max_consecutive_losses": 8,
+        "positive_years": 8,
+        "negative_years": 3,
+        "by_year": {
+          "2016": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 3.9356148482386812,
+            "avg_r": 0.3279679040198901,
+            "profit_factor": 1.5485247992151987
+          },
+          "2017": {
+            "closed": 22,
+            "wins": 11,
+            "losses": 11,
+            "win_rate": 0.5,
+            "net_r": 7.6699920187967265,
+            "avg_r": 0.34863600085439667,
+            "profit_factor": 1.9583137113165516
+          },
+          "2018": {
+            "closed": 7,
+            "wins": 3,
+            "losses": 4,
+            "win_rate": 0.42857142857142855,
+            "net_r": 9.201932183178409,
+            "avg_r": 1.3145617404540584,
+            "profit_factor": 3.163496276027089
+          },
+          "2019": {
+            "closed": 12,
+            "wins": 6,
+            "losses": 6,
+            "win_rate": 0.5,
+            "net_r": 38.682801984829716,
+            "avg_r": 3.223566832069143,
+            "profit_factor": 9.202521158704169
+          },
+          "2020": {
+            "closed": 12,
+            "wins": 9,
+            "losses": 3,
+            "win_rate": 0.75,
+            "net_r": 24.233194539840774,
+            "avg_r": 2.0194328783200644,
+            "profit_factor": 11.504313939991654
+          },
+          "2021": {
+            "closed": 18,
+            "wins": 4,
+            "losses": 14,
+            "win_rate": 0.2222222222222222,
+            "net_r": -6.140832104103038,
+            "avg_r": -0.34115733911683543,
+            "profit_factor": 0.42208055721518534
+          },
+          "2022": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 0.14516803769292974,
+            "avg_r": 0.14516803769292974,
+            "profit_factor": null
+          },
+          "2023": {
+            "closed": 18,
+            "wins": 6,
+            "losses": 12,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.2647447597138255,
+            "avg_r": -0.23693026442854587,
+            "profit_factor": 0.5133280032231872
+          },
+          "2024": {
+            "closed": 16,
+            "wins": 9,
+            "losses": 7,
+            "win_rate": 0.5625,
+            "net_r": 14.77260973609539,
+            "avg_r": 0.9232881085059619,
+            "profit_factor": 3.939854704490548
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 3.178290421654418,
+            "avg_r": 0.2889354928776744,
+            "profit_factor": 1.4802650865972573
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7106251321937513,
+            "avg_r": -0.6776562830484378,
+            "profit_factor": 0.17625101034396315
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 50,
+        "wins": 20,
+        "losses": 30,
+        "win_rate": 0.4,
+        "net_r": 11.12069830353516,
+        "avg_r": 0.2224139660707032,
+        "profit_factor": 1.4692989965050163,
+        "max_drawdown_r": 5.317976631433067,
+        "max_drawdown_fixed_20k": 0.10269418864469611,
+        "max_consecutive_losses": 6,
+        "positive_years": 3,
+        "negative_years": 2,
+        "by_year": {
+          "2022": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 0.14516803769292974,
+            "avg_r": 0.14516803769292974,
+            "profit_factor": null
+          },
+          "2023": {
+            "closed": 18,
+            "wins": 6,
+            "losses": 12,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.2647447597138255,
+            "avg_r": -0.23693026442854587,
+            "profit_factor": 0.5133280032231872
+          },
+          "2024": {
+            "closed": 16,
+            "wins": 9,
+            "losses": 7,
+            "win_rate": 0.5625,
+            "net_r": 14.77260973609539,
+            "avg_r": 0.9232881085059619,
+            "profit_factor": 3.939854704490548
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 3.178290421654418,
+            "avg_r": 0.2889354928776744,
+            "profit_factor": 1.4802650865972573
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7106251321937513,
+            "avg_r": -0.6776562830484378,
+            "profit_factor": 0.17625101034396315
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 31,
+        "wins": 13,
+        "losses": 18,
+        "win_rate": 0.41935483870967744,
+        "net_r": 15.240275025556056,
+        "avg_r": 0.4916217750179373,
+        "profit_factor": 2.02055469098577,
+        "max_drawdown_r": 5.317976631433071,
+        "max_drawdown_fixed_20k": 0.0753700170645638,
+        "max_consecutive_losses": 5,
+        "positive_years": 2,
+        "negative_years": 1,
+        "by_year": {
+          "2024": {
+            "closed": 16,
+            "wins": 9,
+            "losses": 7,
+            "win_rate": 0.5625,
+            "net_r": 14.77260973609539,
+            "avg_r": 0.9232881085059619,
+            "profit_factor": 3.939854704490548
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 3.178290421654418,
+            "avg_r": 0.2889354928776744,
+            "profit_factor": 1.4802650865972573
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7106251321937513,
+            "avg_r": -0.6776562830484378,
+            "profit_factor": 0.17625101034396315
+          }
+        }
+      },
+      "signals_seen_in_shards": 1356,
+      "cap_block_events_in_shards": 17470
+    },
+    "adx_rvol": {
+      "full_20y": {
+        "closed": 155,
+        "wins": 57,
+        "losses": 98,
+        "win_rate": 0.36774193548387096,
+        "net_r": 7.377766798173682,
+        "avg_r": 0.04759849547208827,
+        "profit_factor": 1.1098899588481068,
+        "max_drawdown_r": 17.385840817064274,
+        "max_drawdown_fixed_20k": 0.3477168163412851,
+        "max_consecutive_losses": 13,
+        "positive_years": 10,
+        "negative_years": 9,
+        "by_year": {
+          "2006": {
+            "closed": 8,
+            "wins": 2,
+            "losses": 6,
+            "win_rate": 0.25,
+            "net_r": -3.5681347596589843,
+            "avg_r": -0.44601684495737304,
+            "profit_factor": 0.29564597241037405
+          },
+          "2007": {
+            "closed": 10,
+            "wins": 1,
+            "losses": 9,
+            "win_rate": 0.1,
+            "net_r": -4.7996896164668845,
+            "avg_r": -0.47996896164668845,
+            "profit_factor": 0.053633715241499756
+          },
+          "2009": {
+            "closed": 5,
+            "wins": 5,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 5.642204172901482,
+            "avg_r": 1.1284408345802963,
+            "profit_factor": null
+          },
+          "2010": {
+            "closed": 7,
+            "wins": 1,
+            "losses": 6,
+            "win_rate": 0.14285714285714285,
+            "net_r": -0.6656454861222285,
+            "avg_r": -0.09509221230317551,
+            "profit_factor": 0.7448171146333361
+          },
+          "2011": {
+            "closed": 5,
+            "wins": 1,
+            "losses": 4,
+            "win_rate": 0.2,
+            "net_r": -2.918509313135563,
+            "avg_r": -0.5837018626271127,
+            "profit_factor": 0.08769074096506667
+          },
+          "2012": {
+            "closed": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "net_r": -0.9575943883026602,
+            "avg_r": -0.31919812943422005,
+            "profit_factor": 0.0
+          },
+          "2013": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -6.8764448478308795,
+            "avg_r": -0.45842965652205864,
+            "profit_factor": 0.19755546912528377
+          },
+          "2014": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 1.24058012259792,
+            "avg_r": 0.11278001114526547,
+            "profit_factor": 1.2429265249648418
+          },
+          "2015": {
+            "closed": 4,
+            "wins": 3,
+            "losses": 1,
+            "win_rate": 0.75,
+            "net_r": 1.4551226153983545,
+            "avg_r": 0.36378065384958863,
+            "profit_factor": 8.79182989526891
+          },
+          "2016": {
+            "closed": 6,
+            "wins": 4,
+            "losses": 2,
+            "win_rate": 0.6666666666666666,
+            "net_r": 2.846353115182418,
+            "avg_r": 0.4743921858637363,
+            "profit_factor": 24.030233468268868
+          },
+          "2017": {
+            "closed": 12,
+            "wins": 7,
+            "losses": 5,
+            "win_rate": 0.5833333333333334,
+            "net_r": 7.336967306493592,
+            "avg_r": 0.6114139422077993,
+            "profit_factor": 4.448630960431279
+          },
+          "2018": {
+            "closed": 6,
+            "wins": 2,
+            "losses": 4,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.500177311485133,
+            "avg_r": 0.08336288524752217,
+            "profit_factor": 1.1364888630106627
+          },
+          "2019": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 14.162792372121364,
+            "avg_r": 1.2875265792837605,
+            "profit_factor": 3.436003296556565
+          },
+          "2020": {
+            "closed": 8,
+            "wins": 4,
+            "losses": 4,
+            "win_rate": 0.5,
+            "net_r": 1.8251384292584047,
+            "avg_r": 0.2281423036573006,
+            "profit_factor": 1.6284386544944731
+          },
+          "2021": {
+            "closed": 15,
+            "wins": 3,
+            "losses": 12,
+            "win_rate": 0.2,
+            "net_r": -8.071358742685556,
+            "avg_r": -0.5380905828457038,
+            "profit_factor": 0.06226278130528019
+          },
+          "2023": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.782790288951564,
+            "avg_r": -0.39856585741263034,
+            "profit_factor": 0.21202112149841817
+          },
+          "2024": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 0.7623442453908228,
+            "avg_r": 0.06930402230825662,
+            "profit_factor": 1.1720448012092213
+          },
+          "2025": {
+            "closed": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "net_r": 5.252301402171785,
+            "avg_r": 1.050460280434357,
+            "profit_factor": 4.233780004782566
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 87,
+        "wins": 37,
+        "losses": 50,
+        "win_rate": 0.42528735632183906,
+        "net_r": 18.825878298793125,
+        "avg_r": 0.2163894057332543,
+        "profit_factor": 1.5175901236122655,
+        "max_drawdown_r": 13.528244465356673,
+        "max_drawdown_fixed_20k": 0.17589475283962921,
+        "max_consecutive_losses": 13,
+        "positive_years": 7,
+        "negative_years": 3,
+        "by_year": {
+          "2016": {
+            "closed": 6,
+            "wins": 4,
+            "losses": 2,
+            "win_rate": 0.6666666666666666,
+            "net_r": 2.846353115182418,
+            "avg_r": 0.4743921858637363,
+            "profit_factor": 24.030233468268868
+          },
+          "2017": {
+            "closed": 12,
+            "wins": 7,
+            "losses": 5,
+            "win_rate": 0.5833333333333334,
+            "net_r": 7.336967306493592,
+            "avg_r": 0.6114139422077993,
+            "profit_factor": 4.448630960431279
+          },
+          "2018": {
+            "closed": 6,
+            "wins": 2,
+            "losses": 4,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.500177311485133,
+            "avg_r": 0.08336288524752217,
+            "profit_factor": 1.1364888630106627
+          },
+          "2019": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 14.162792372121364,
+            "avg_r": 1.2875265792837605,
+            "profit_factor": 3.436003296556565
+          },
+          "2020": {
+            "closed": 8,
+            "wins": 4,
+            "losses": 4,
+            "win_rate": 0.5,
+            "net_r": 1.8251384292584047,
+            "avg_r": 0.2281423036573006,
+            "profit_factor": 1.6284386544944731
+          },
+          "2021": {
+            "closed": 15,
+            "wins": 3,
+            "losses": 12,
+            "win_rate": 0.2,
+            "net_r": -8.071358742685556,
+            "avg_r": -0.5380905828457038,
+            "profit_factor": 0.06226278130528019
+          },
+          "2023": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.782790288951564,
+            "avg_r": -0.39856585741263034,
+            "profit_factor": 0.21202112149841817
+          },
+          "2024": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 0.7623442453908228,
+            "avg_r": 0.06930402230825662,
+            "profit_factor": 1.1720448012092213
+          },
+          "2025": {
+            "closed": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "net_r": 5.252301402171785,
+            "avg_r": 1.050460280434357,
+            "profit_factor": 4.233780004782566
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 29,
+        "wins": 12,
+        "losses": 17,
+        "win_rate": 0.41379310344827586,
+        "net_r": 0.2258085069377696,
+        "avg_r": 0.007786500239233434,
+        "profit_factor": 1.0171965715966942,
+        "max_drawdown_r": 5.217296464140347,
+        "max_drawdown_fixed_20k": 0.1043459292828069,
+        "max_consecutive_losses": 5,
+        "positive_years": 2,
+        "negative_years": 2,
+        "by_year": {
+          "2023": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.782790288951564,
+            "avg_r": -0.39856585741263034,
+            "profit_factor": 0.21202112149841817
+          },
+          "2024": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 0.7623442453908228,
+            "avg_r": 0.06930402230825662,
+            "profit_factor": 1.1720448012092213
+          },
+          "2025": {
+            "closed": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "net_r": 5.252301402171785,
+            "avg_r": 1.050460280434357,
+            "profit_factor": 4.233780004782566
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 17,
+        "wins": 8,
+        "losses": 9,
+        "win_rate": 0.47058823529411764,
+        "net_r": 5.008598795889333,
+        "avg_r": 0.2946234585817255,
+        "profit_factor": 1.7093000975220671,
+        "max_drawdown_r": 3.6170863249311824,
+        "max_drawdown_fixed_20k": 0.06799787646755476,
+        "max_consecutive_losses": 2,
+        "positive_years": 2,
+        "negative_years": 1,
+        "by_year": {
+          "2024": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 0.7623442453908228,
+            "avg_r": 0.06930402230825662,
+            "profit_factor": 1.1720448012092213
+          },
+          "2025": {
+            "closed": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "net_r": 5.252301402171785,
+            "avg_r": 1.050460280434357,
+            "profit_factor": 4.233780004782566
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "signals_seen_in_shards": 355,
+      "cap_block_events_in_shards": 1969
+    },
+    "adx_rvol_atr": {
+      "full_20y": {
+        "closed": 6,
+        "wins": 1,
+        "losses": 5,
+        "win_rate": 0.16666666666666666,
+        "net_r": -0.23998178759317035,
+        "avg_r": -0.03999696459886173,
+        "profit_factor": 0.9375403466216892,
+        "max_drawdown_r": 2.819450010051585,
+        "max_drawdown_fixed_20k": 0.05638900020103156,
+        "max_consecutive_losses": 4,
+        "positive_years": 1,
+        "negative_years": 4,
+        "by_year": {
+          "2006": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.016341461880176,
+            "avg_r": -1.016341461880176,
+            "profit_factor": 0.0
+          },
+          "2010": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.3975625270416034,
+            "avg_r": -0.3975625270416034,
+            "profit_factor": 0.0
+          },
+          "2015": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0113305316168861,
+            "avg_r": -1.0113305316168861,
+            "profit_factor": 0.0
+          },
+          "2018": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.2079916338638217,
+            "avg_r": 1.6039958169319108,
+            "profit_factor": 9.137660034179575
+          },
+          "2021": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0227389009183265,
+            "avg_r": -1.0227389009183265,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 3,
+        "wins": 1,
+        "losses": 2,
+        "win_rate": 0.3333333333333333,
+        "net_r": 2.185252732945495,
+        "avg_r": 0.7284175776484983,
+        "profit_factor": 2.5422181177478973,
+        "max_drawdown_r": 1.0227389009183265,
+        "max_drawdown_fixed_20k": 0.01922152799820047,
+        "max_consecutive_losses": 1,
+        "positive_years": 1,
+        "negative_years": 1,
+        "by_year": {
+          "2018": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.2079916338638217,
+            "avg_r": 1.6039958169319108,
+            "profit_factor": 9.137660034179575
+          },
+          "2021": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0227389009183265,
+            "avg_r": -1.0227389009183265,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_drawdown_fixed_20k": 0.0,
+        "max_consecutive_losses": 0,
+        "positive_years": 0,
+        "negative_years": 0,
+        "by_year": {}
+      },
+      "2024_2026": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_drawdown_fixed_20k": 0.0,
+        "max_consecutive_losses": 0,
+        "positive_years": 0,
+        "negative_years": 0,
+        "by_year": {}
+      },
+      "signals_seen_in_shards": 11,
+      "cap_block_events_in_shards": 0
+    },
+    "adx_rvol_rs": {
+      "full_20y": {
+        "closed": 148,
+        "wins": 57,
+        "losses": 91,
+        "win_rate": 0.38513513513513514,
+        "net_r": 1.7167191306907406,
+        "avg_r": 0.011599453585748248,
+        "profit_factor": 1.0280836007338583,
+        "max_drawdown_r": 12.706919395109946,
+        "max_drawdown_fixed_20k": 0.2233445218676482,
+        "max_consecutive_losses": 12,
+        "positive_years": 10,
+        "negative_years": 9,
+        "by_year": {
+          "2006": {
+            "closed": 7,
+            "wins": 2,
+            "losses": 5,
+            "win_rate": 0.2857142857142857,
+            "net_r": -2.55192667774513,
+            "avg_r": -0.36456095396359,
+            "profit_factor": 0.36983515575327996
+          },
+          "2007": {
+            "closed": 10,
+            "wins": 1,
+            "losses": 9,
+            "win_rate": 0.1,
+            "net_r": -4.7996896164668845,
+            "avg_r": -0.47996896164668845,
+            "profit_factor": 0.053633715241499756
+          },
+          "2009": {
+            "closed": 5,
+            "wins": 5,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 5.642204172901482,
+            "avg_r": 1.1284408345802963,
+            "profit_factor": null
+          },
+          "2010": {
+            "closed": 7,
+            "wins": 1,
+            "losses": 6,
+            "win_rate": 0.14285714285714285,
+            "net_r": -0.6656454861222285,
+            "avg_r": -0.09509221230317551,
+            "profit_factor": 0.7448171146333361
+          },
+          "2011": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.122380112658806,
+            "avg_r": -0.5305950281647015,
+            "profit_factor": 0.11674437990178141
+          },
+          "2012": {
+            "closed": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "net_r": -0.9575943883026602,
+            "avg_r": -0.31919812943422005,
+            "profit_factor": 0.0
+          },
+          "2013": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": -3.398357630264934,
+            "avg_r": -0.28319646918874447,
+            "profit_factor": 0.33251458527627753
+          },
+          "2014": {
+            "closed": 10,
+            "wins": 3,
+            "losses": 7,
+            "win_rate": 0.3,
+            "net_r": 2.1687703463232246,
+            "avg_r": 0.21687703463232247,
+            "profit_factor": 1.5190156943593431
+          },
+          "2015": {
+            "closed": 4,
+            "wins": 3,
+            "losses": 1,
+            "win_rate": 0.75,
+            "net_r": 1.4551226153983545,
+            "avg_r": 0.36378065384958863,
+            "profit_factor": 8.79182989526891
+          },
+          "2016": {
+            "closed": 6,
+            "wins": 4,
+            "losses": 2,
+            "win_rate": 0.6666666666666666,
+            "net_r": 2.846353115182418,
+            "avg_r": 0.4743921858637363,
+            "profit_factor": 24.030233468268868
+          },
+          "2017": {
+            "closed": 12,
+            "wins": 7,
+            "losses": 5,
+            "win_rate": 0.5833333333333334,
+            "net_r": 6.317442083929288,
+            "avg_r": 0.5264535069941073,
+            "profit_factor": 3.0074320231511646
+          },
+          "2018": {
+            "closed": 6,
+            "wins": 2,
+            "losses": 4,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.500177311485133,
+            "avg_r": 0.08336288524752217,
+            "profit_factor": 1.1364888630106627
+          },
+          "2019": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 2.4928571062311393,
+            "avg_r": 0.22662337329373994,
+            "profit_factor": 1.4287719518205388
+          },
+          "2020": {
+            "closed": 8,
+            "wins": 4,
+            "losses": 4,
+            "win_rate": 0.5,
+            "net_r": 1.8251384292584047,
+            "avg_r": 0.2281423036573006,
+            "profit_factor": 1.6284386544944731
+          },
+          "2021": {
+            "closed": 14,
+            "wins": 3,
+            "losses": 11,
+            "win_rate": 0.21428571428571427,
+            "net_r": -7.036273042307367,
+            "avg_r": -0.5025909315933833,
+            "profit_factor": 0.07077383969132009
+          },
+          "2023": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.782790288951564,
+            "avg_r": -0.39856585741263034,
+            "profit_factor": 0.21202112149841817
+          },
+          "2024": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 0.5370566423023586,
+            "avg_r": 0.048823331118396235,
+            "profit_factor": 1.1153381154087447
+          },
+          "2025": {
+            "closed": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "net_r": 5.252301402171785,
+            "avg_r": 1.050460280434357,
+            "profit_factor": 4.233780004782566
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 86,
+        "wins": 37,
+        "losses": 49,
+        "win_rate": 0.43023255813953487,
+        "net_r": 6.946215907628321,
+        "avg_r": 0.08076995241428281,
+        "profit_factor": 1.1898812144205688,
+        "max_drawdown_r": 12.706919395109948,
+        "max_drawdown_fixed_20k": 0.19786065502644565,
+        "max_consecutive_losses": 12,
+        "positive_years": 7,
+        "negative_years": 3,
+        "by_year": {
+          "2016": {
+            "closed": 6,
+            "wins": 4,
+            "losses": 2,
+            "win_rate": 0.6666666666666666,
+            "net_r": 2.846353115182418,
+            "avg_r": 0.4743921858637363,
+            "profit_factor": 24.030233468268868
+          },
+          "2017": {
+            "closed": 12,
+            "wins": 7,
+            "losses": 5,
+            "win_rate": 0.5833333333333334,
+            "net_r": 6.317442083929288,
+            "avg_r": 0.5264535069941073,
+            "profit_factor": 3.0074320231511646
+          },
+          "2018": {
+            "closed": 6,
+            "wins": 2,
+            "losses": 4,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.500177311485133,
+            "avg_r": 0.08336288524752217,
+            "profit_factor": 1.1364888630106627
+          },
+          "2019": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 2.4928571062311393,
+            "avg_r": 0.22662337329373994,
+            "profit_factor": 1.4287719518205388
+          },
+          "2020": {
+            "closed": 8,
+            "wins": 4,
+            "losses": 4,
+            "win_rate": 0.5,
+            "net_r": 1.8251384292584047,
+            "avg_r": 0.2281423036573006,
+            "profit_factor": 1.6284386544944731
+          },
+          "2021": {
+            "closed": 14,
+            "wins": 3,
+            "losses": 11,
+            "win_rate": 0.21428571428571427,
+            "net_r": -7.036273042307367,
+            "avg_r": -0.5025909315933833,
+            "profit_factor": 0.07077383969132009
+          },
+          "2023": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.782790288951564,
+            "avg_r": -0.39856585741263034,
+            "profit_factor": 0.21202112149841817
+          },
+          "2024": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 0.5370566423023586,
+            "avg_r": 0.048823331118396235,
+            "profit_factor": 1.1153381154087447
+          },
+          "2025": {
+            "closed": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "net_r": 5.252301402171785,
+            "avg_r": 1.050460280434357,
+            "profit_factor": 4.233780004782566
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 29,
+        "wins": 12,
+        "losses": 17,
+        "win_rate": 0.41379310344827586,
+        "net_r": 0.0005209038493053861,
+        "avg_r": 1.7962201700185727e-05,
+        "profit_factor": 1.000039000591109,
+        "max_drawdown_r": 5.4310570942718215,
+        "max_drawdown_fixed_20k": 0.10862114188543655,
+        "max_consecutive_losses": 5,
+        "positive_years": 2,
+        "negative_years": 2,
+        "by_year": {
+          "2023": {
+            "closed": 12,
+            "wins": 4,
+            "losses": 8,
+            "win_rate": 0.3333333333333333,
+            "net_r": -4.782790288951564,
+            "avg_r": -0.39856585741263034,
+            "profit_factor": 0.21202112149841817
+          },
+          "2024": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 0.5370566423023586,
+            "avg_r": 0.048823331118396235,
+            "profit_factor": 1.1153381154087447
+          },
+          "2025": {
+            "closed": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "net_r": 5.252301402171785,
+            "avg_r": 1.050460280434357,
+            "profit_factor": 4.233780004782566
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 17,
+        "wins": 8,
+        "losses": 9,
+        "win_rate": 0.47058823529411764,
+        "net_r": 4.78331119280087,
+        "avg_r": 0.2813712466353453,
+        "profit_factor": 1.6564519331294552,
+        "max_drawdown_r": 3.8423739280196467,
+        "max_drawdown_fixed_20k": 0.07223307497495347,
+        "max_consecutive_losses": 2,
+        "positive_years": 2,
+        "negative_years": 1,
+        "by_year": {
+          "2024": {
+            "closed": 11,
+            "wins": 5,
+            "losses": 6,
+            "win_rate": 0.45454545454545453,
+            "net_r": 0.5370566423023586,
+            "avg_r": 0.048823331118396235,
+            "profit_factor": 1.1153381154087447
+          },
+          "2025": {
+            "closed": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 0.6,
+            "net_r": 5.252301402171785,
+            "avg_r": 1.050460280434357,
+            "profit_factor": 4.233780004782566
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "signals_seen_in_shards": 321,
+      "cap_block_events_in_shards": 1433
+    },
+    "all4_adx_rvol_atr_rs": {
+      "full_20y": {
+        "closed": 6,
+        "wins": 1,
+        "losses": 5,
+        "win_rate": 0.16666666666666666,
+        "net_r": -0.23998178759317035,
+        "avg_r": -0.03999696459886173,
+        "profit_factor": 0.9375403466216892,
+        "max_drawdown_r": 2.819450010051585,
+        "max_drawdown_fixed_20k": 0.05638900020103156,
+        "max_consecutive_losses": 4,
+        "positive_years": 1,
+        "negative_years": 4,
+        "by_year": {
+          "2006": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.016341461880176,
+            "avg_r": -1.016341461880176,
+            "profit_factor": 0.0
+          },
+          "2010": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.3975625270416034,
+            "avg_r": -0.3975625270416034,
+            "profit_factor": 0.0
+          },
+          "2015": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0113305316168861,
+            "avg_r": -1.0113305316168861,
+            "profit_factor": 0.0
+          },
+          "2018": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.2079916338638217,
+            "avg_r": 1.6039958169319108,
+            "profit_factor": 9.137660034179575
+          },
+          "2021": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0227389009183265,
+            "avg_r": -1.0227389009183265,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 3,
+        "wins": 1,
+        "losses": 2,
+        "win_rate": 0.3333333333333333,
+        "net_r": 2.185252732945495,
+        "avg_r": 0.7284175776484983,
+        "profit_factor": 2.5422181177478973,
+        "max_drawdown_r": 1.0227389009183265,
+        "max_drawdown_fixed_20k": 0.01922152799820047,
+        "max_consecutive_losses": 1,
+        "positive_years": 1,
+        "negative_years": 1,
+        "by_year": {
+          "2018": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.2079916338638217,
+            "avg_r": 1.6039958169319108,
+            "profit_factor": 9.137660034179575
+          },
+          "2021": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0227389009183265,
+            "avg_r": -1.0227389009183265,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_drawdown_fixed_20k": 0.0,
+        "max_consecutive_losses": 0,
+        "positive_years": 0,
+        "negative_years": 0,
+        "by_year": {}
+      },
+      "2024_2026": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_drawdown_fixed_20k": 0.0,
+        "max_consecutive_losses": 0,
+        "positive_years": 0,
+        "negative_years": 0,
+        "by_year": {}
+      },
+      "signals_seen_in_shards": 11,
+      "cap_block_events_in_shards": 0
+    },
+    "all6_including_rsi_macd": {
+      "full_20y": {
+        "closed": 1,
+        "wins": 0,
+        "losses": 1,
+        "win_rate": 0.0,
+        "net_r": -1.0113305316168861,
+        "avg_r": -1.0113305316168861,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 1.0113305316168861,
+        "max_drawdown_fixed_20k": 0.020226610632337723,
+        "max_consecutive_losses": 1,
+        "positive_years": 0,
+        "negative_years": 1,
+        "by_year": {
+          "2015": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0113305316168861,
+            "avg_r": -1.0113305316168861,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_drawdown_fixed_20k": 0.0,
+        "max_consecutive_losses": 0,
+        "positive_years": 0,
+        "negative_years": 0,
+        "by_year": {}
+      },
+      "2022_2026": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_drawdown_fixed_20k": 0.0,
+        "max_consecutive_losses": 0,
+        "positive_years": 0,
+        "negative_years": 0,
+        "by_year": {}
+      },
+      "2024_2026": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_drawdown_fixed_20k": 0.0,
+        "max_consecutive_losses": 0,
+        "positive_years": 0,
+        "negative_years": 0,
+        "by_year": {}
+      },
+      "signals_seen_in_shards": 2,
+      "cap_block_events_in_shards": 0
+    },
+    "atr_contract_expand": {
+      "full_20y": {
+        "closed": 41,
+        "wins": 13,
+        "losses": 28,
+        "win_rate": 0.3170731707317073,
+        "net_r": 26.291245818361922,
+        "avg_r": 0.6412498980088274,
+        "profit_factor": 2.0876755021460625,
+        "max_drawdown_r": 7.860449926768416,
+        "max_drawdown_fixed_20k": 0.15254284660494624,
+        "max_consecutive_losses": 6,
+        "positive_years": 7,
+        "negative_years": 11,
+        "by_year": {
+          "2006": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -2.14396793864724,
+            "avg_r": -1.07198396932362,
+            "profit_factor": 0.0
+          },
+          "2007": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.45623591158202836,
+            "avg_r": -0.22811795579101418,
+            "profit_factor": 0.5555027098052328
+          },
+          "2009": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 4.129660010997675,
+            "avg_r": 2.0648300054988376,
+            "profit_factor": 5.060162862065347
+          },
+          "2010": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.3975625270416034,
+            "avg_r": -0.3975625270416034,
+            "profit_factor": 0.0
+          },
+          "2011": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -1.5742665774298705,
+            "avg_r": -0.7871332887149353,
+            "profit_factor": 0.0
+          },
+          "2012": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.4264069564504593,
+            "avg_r": -0.4264069564504593,
+            "profit_factor": 0.0
+          },
+          "2014": {
+            "closed": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.4036834272691098,
+            "avg_r": -0.1345611424230366,
+            "profit_factor": 0.7322311246666069
+          },
+          "2015": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -1.5622017832741226,
+            "avg_r": -0.7811008916370613,
+            "profit_factor": 0.0
+          },
+          "2016": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -1.444922112488251,
+            "avg_r": -0.36123052812206274,
+            "profit_factor": 0.6304335263085826
+          },
+          "2017": {
+            "closed": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "net_r": 11.167807945504427,
+            "avg_r": 2.7919519863761066,
+            "profit_factor": 6.44397598058727
+          },
+          "2018": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -0.3100503305322908,
+            "avg_r": -0.0775125826330727,
+            "profit_factor": 0.8512487638409127
+          },
+          "2019": {
+            "closed": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "net_r": -2.1767623131150495,
+            "avg_r": -0.7255874377050165,
+            "profit_factor": 0.0
+          },
+          "2020": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 10.551916689197787,
+            "avg_r": 10.551916689197787,
+            "profit_factor": null
+          },
+          "2021": {
+            "closed": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "net_r": -3.063978678124966,
+            "avg_r": -1.0213262260416553,
+            "profit_factor": 0.0
+          },
+          "2023": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.590916412008461,
+            "avg_r": 1.7954582060042306,
+            "profit_factor": 19.04986417307593
+          },
+          "2024": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 1.8457485934029951,
+            "avg_r": 1.8457485934029951,
+            "profit_factor": null
+          },
+          "2025": {
+            "closed": 2,
+            "wins": 2,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 8.654375508222923,
+            "avg_r": 4.327187754111462,
+            "profit_factor": null
+          },
+          "2026": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 0.31085921498264635,
+            "avg_r": 0.15542960749132317,
+            "profit_factor": 1.3014474292593725
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 26,
+        "wins": 10,
+        "losses": 16,
+        "win_rate": 0.38461538461538464,
+        "net_r": 29.125910929058684,
+        "avg_r": 1.120227343425334,
+        "profit_factor": 3.006408058530585,
+        "max_drawdown_r": 3.49632865530325,
+        "max_drawdown_fixed_20k": 0.06992657310606483,
+        "max_consecutive_losses": 4,
+        "positive_years": 6,
+        "negative_years": 4,
+        "by_year": {
+          "2016": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -1.444922112488251,
+            "avg_r": -0.36123052812206274,
+            "profit_factor": 0.6304335263085826
+          },
+          "2017": {
+            "closed": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "net_r": 11.167807945504427,
+            "avg_r": 2.7919519863761066,
+            "profit_factor": 6.44397598058727
+          },
+          "2018": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -0.3100503305322908,
+            "avg_r": -0.0775125826330727,
+            "profit_factor": 0.8512487638409127
+          },
+          "2019": {
+            "closed": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "net_r": -2.1767623131150495,
+            "avg_r": -0.7255874377050165,
+            "profit_factor": 0.0
+          },
+          "2020": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 10.551916689197787,
+            "avg_r": 10.551916689197787,
+            "profit_factor": null
+          },
+          "2021": {
+            "closed": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "net_r": -3.063978678124966,
+            "avg_r": -1.0213262260416553,
+            "profit_factor": 0.0
+          },
+          "2023": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.590916412008461,
+            "avg_r": 1.7954582060042306,
+            "profit_factor": 19.04986417307593
+          },
+          "2024": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 1.8457485934029951,
+            "avg_r": 1.8457485934029951,
+            "profit_factor": null
+          },
+          "2025": {
+            "closed": 2,
+            "wins": 2,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 8.654375508222923,
+            "avg_r": 4.327187754111462,
+            "profit_factor": null
+          },
+          "2026": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 0.31085921498264635,
+            "avg_r": 0.15542960749132317,
+            "profit_factor": 1.3014474292593725
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 7,
+        "wins": 5,
+        "losses": 2,
+        "win_rate": 0.7142857142857143,
+        "net_r": 14.401899728617025,
+        "avg_r": 2.057414246945289,
+        "profit_factor": 12.707279515189972,
+        "max_drawdown_r": 1.0312219803844336,
+        "max_drawdown_fixed_20k": 0.01608995535288677,
+        "max_consecutive_losses": 1,
+        "positive_years": 4,
+        "negative_years": 0,
+        "by_year": {
+          "2023": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 3.590916412008461,
+            "avg_r": 1.7954582060042306,
+            "profit_factor": 19.04986417307593
+          },
+          "2024": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 1.8457485934029951,
+            "avg_r": 1.8457485934029951,
+            "profit_factor": null
+          },
+          "2025": {
+            "closed": 2,
+            "wins": 2,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 8.654375508222923,
+            "avg_r": 4.327187754111462,
+            "profit_factor": null
+          },
+          "2026": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 0.31085921498264635,
+            "avg_r": 0.15542960749132317,
+            "profit_factor": 1.3014474292593725
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 5,
+        "wins": 4,
+        "losses": 1,
+        "win_rate": 0.8,
+        "net_r": 10.810983316608564,
+        "avg_r": 2.162196663321713,
+        "profit_factor": 11.483662608295354,
+        "max_drawdown_r": 1.0312219803844336,
+        "max_drawdown_fixed_20k": 0.01704495644756406,
+        "max_consecutive_losses": 1,
+        "positive_years": 3,
+        "negative_years": 0,
+        "by_year": {
+          "2024": {
+            "closed": 1,
+            "wins": 1,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 1.8457485934029951,
+            "avg_r": 1.8457485934029951,
+            "profit_factor": null
+          },
+          "2025": {
+            "closed": 2,
+            "wins": 2,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 8.654375508222923,
+            "avg_r": 4.327187754111462,
+            "profit_factor": null
+          },
+          "2026": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": 0.31085921498264635,
+            "avg_r": 0.15542960749132317,
+            "profit_factor": 1.3014474292593725
+          }
+        }
+      },
+      "signals_seen_in_shards": 65,
+      "cap_block_events_in_shards": 0
+    },
+    "baseline": {
+      "full_20y": {
+        "closed": 302,
+        "wins": 130,
+        "losses": 172,
+        "win_rate": 0.4304635761589404,
+        "net_r": 156.4555769715374,
+        "avg_r": 0.5180648244090642,
+        "profit_factor": 2.149909847763946,
+        "max_drawdown_r": 12.522868732618235,
+        "max_drawdown_fixed_20k": 0.17037784163241884,
+        "max_consecutive_losses": 11,
+        "positive_years": 15,
+        "negative_years": 6,
+        "by_year": {
+          "2006": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 0.7208242230727713,
+            "avg_r": 0.08009158034141903,
+            "profit_factor": 1.2015044439681961
+          },
+          "2007": {
+            "closed": 20,
+            "wins": 5,
+            "losses": 15,
+            "win_rate": 0.25,
+            "net_r": 5.518488228535664,
+            "avg_r": 0.2759244114267832,
+            "profit_factor": 1.527111833834817
+          },
+          "2008": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -1.6014201884648023,
+            "avg_r": -0.8007100942324011,
+            "profit_factor": 0.0
+          },
+          "2009": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 4.76080199656365,
+            "avg_r": 0.43280018150578636,
+            "profit_factor": 2.024072383654436
+          },
+          "2010": {
+            "closed": 11,
+            "wins": 7,
+            "losses": 4,
+            "win_rate": 0.6363636363636364,
+            "net_r": 8.296708057404176,
+            "avg_r": 0.7542461870367433,
+            "profit_factor": 3.3184220130885183
+          },
+          "2011": {
+            "closed": 20,
+            "wins": 6,
+            "losses": 14,
+            "win_rate": 0.3,
+            "net_r": -5.275179006611918,
+            "avg_r": -0.2637589503305959,
+            "profit_factor": 0.5245962778982105
+          },
+          "2012": {
+            "closed": 15,
+            "wins": 6,
+            "losses": 9,
+            "win_rate": 0.4,
+            "net_r": 1.5354734114308382,
+            "avg_r": 0.10236489409538921,
+            "profit_factor": 1.21813550063757
+          },
+          "2013": {
+            "closed": 23,
+            "wins": 12,
+            "losses": 11,
+            "win_rate": 0.5217391304347826,
+            "net_r": 13.110306188905653,
+            "avg_r": 0.5700133125611153,
+            "profit_factor": 2.1044367689481476
+          },
+          "2014": {
+            "closed": 21,
+            "wins": 8,
+            "losses": 13,
+            "win_rate": 0.38095238095238093,
+            "net_r": 6.711678344751494,
+            "avg_r": 0.31960373070245207,
+            "profit_factor": 1.716811830614878
+          },
+          "2015": {
+            "closed": 14,
+            "wins": 8,
+            "losses": 6,
+            "win_rate": 0.5714285714285714,
+            "net_r": 8.021745049736476,
+            "avg_r": 0.5729817892668911,
+            "profit_factor": 2.734888498532386
+          },
+          "2016": {
+            "closed": 21,
+            "wins": 7,
+            "losses": 14,
+            "win_rate": 0.3333333333333333,
+            "net_r": -2.5406910054143736,
+            "avg_r": -0.12098528597211303,
+            "profit_factor": 0.8207671282809584
+          },
+          "2017": {
+            "closed": 16,
+            "wins": 12,
+            "losses": 4,
+            "win_rate": 0.75,
+            "net_r": 26.062307956763743,
+            "avg_r": 1.628894247297734,
+            "profit_factor": 8.970518796444608
+          },
+          "2018": {
+            "closed": 13,
+            "wins": 6,
+            "losses": 7,
+            "win_rate": 0.46153846153846156,
+            "net_r": 9.704448316202997,
+            "avg_r": 0.7464960243233075,
+            "profit_factor": 2.78197549585067
+          },
+          "2019": {
+            "closed": 16,
+            "wins": 7,
+            "losses": 9,
+            "win_rate": 0.4375,
+            "net_r": 35.22891663003154,
+            "avg_r": 2.2018072893769713,
+            "profit_factor": 5.775918087521881
+          },
+          "2020": {
+            "closed": 15,
+            "wins": 9,
+            "losses": 6,
+            "win_rate": 0.6,
+            "net_r": 15.34690009029114,
+            "avg_r": 1.023126672686076,
+            "profit_factor": 5.747555667110197
+          },
+          "2021": {
+            "closed": 19,
+            "wins": 6,
+            "losses": 13,
+            "win_rate": 0.3157894736842105,
+            "net_r": 11.823907118563174,
+            "avg_r": 0.6223109009770091,
+            "profit_factor": 2.06774782675238
+          },
+          "2022": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7205681636328847,
+            "avg_r": -0.6801420409082212,
+            "profit_factor": 0.050656455268202526
+          },
+          "2023": {
+            "closed": 20,
+            "wins": 8,
+            "losses": 12,
+            "win_rate": 0.4,
+            "net_r": -0.42866038930375455,
+            "avg_r": -0.021433019465187726,
+            "profit_factor": 0.9477544749004431
+          },
+          "2024": {
+            "closed": 17,
+            "wins": 8,
+            "losses": 9,
+            "win_rate": 0.47058823529411764,
+            "net_r": 9.207520028249,
+            "avg_r": 0.5416188251911177,
+            "profit_factor": 2.57713154300738
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 14.505580571834205,
+            "avg_r": 1.3186891428940186,
+            "profit_factor": 4.278474594806746
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "net_r": -1.5335104873713854,
+            "avg_r": -0.38337762184284635,
+            "profit_factor": 0.328541119809505
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 156,
+        "wins": 70,
+        "losses": 86,
+        "win_rate": 0.44871794871794873,
+        "net_r": 114.65615066621339,
+        "avg_r": 0.7349753247834192,
+        "profit_factor": 2.681404839525243,
+        "max_drawdown_r": 10.387513287483358,
+        "max_drawdown_fixed_20k": 0.19212744559349484,
+        "max_consecutive_losses": 9,
+        "positive_years": 7,
+        "negative_years": 4,
+        "by_year": {
+          "2016": {
+            "closed": 21,
+            "wins": 7,
+            "losses": 14,
+            "win_rate": 0.3333333333333333,
+            "net_r": -2.5406910054143736,
+            "avg_r": -0.12098528597211303,
+            "profit_factor": 0.8207671282809584
+          },
+          "2017": {
+            "closed": 16,
+            "wins": 12,
+            "losses": 4,
+            "win_rate": 0.75,
+            "net_r": 26.062307956763743,
+            "avg_r": 1.628894247297734,
+            "profit_factor": 8.970518796444608
+          },
+          "2018": {
+            "closed": 13,
+            "wins": 6,
+            "losses": 7,
+            "win_rate": 0.46153846153846156,
+            "net_r": 9.704448316202997,
+            "avg_r": 0.7464960243233075,
+            "profit_factor": 2.78197549585067
+          },
+          "2019": {
+            "closed": 16,
+            "wins": 7,
+            "losses": 9,
+            "win_rate": 0.4375,
+            "net_r": 35.22891663003154,
+            "avg_r": 2.2018072893769713,
+            "profit_factor": 5.775918087521881
+          },
+          "2020": {
+            "closed": 15,
+            "wins": 9,
+            "losses": 6,
+            "win_rate": 0.6,
+            "net_r": 15.34690009029114,
+            "avg_r": 1.023126672686076,
+            "profit_factor": 5.747555667110197
+          },
+          "2021": {
+            "closed": 19,
+            "wins": 6,
+            "losses": 13,
+            "win_rate": 0.3157894736842105,
+            "net_r": 11.823907118563174,
+            "avg_r": 0.6223109009770091,
+            "profit_factor": 2.06774782675238
+          },
+          "2022": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7205681636328847,
+            "avg_r": -0.6801420409082212,
+            "profit_factor": 0.050656455268202526
+          },
+          "2023": {
+            "closed": 20,
+            "wins": 8,
+            "losses": 12,
+            "win_rate": 0.4,
+            "net_r": -0.42866038930375455,
+            "avg_r": -0.021433019465187726,
+            "profit_factor": 0.9477544749004431
+          },
+          "2024": {
+            "closed": 17,
+            "wins": 8,
+            "losses": 9,
+            "win_rate": 0.47058823529411764,
+            "net_r": 9.207520028249,
+            "avg_r": 0.5416188251911177,
+            "profit_factor": 2.57713154300738
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 14.505580571834205,
+            "avg_r": 1.3186891428940186,
+            "profit_factor": 4.278474594806746
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "net_r": -1.5335104873713854,
+            "avg_r": -0.38337762184284635,
+            "profit_factor": 0.328541119809505
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 56,
+        "wins": 23,
+        "losses": 33,
+        "win_rate": 0.4107142857142857,
+        "net_r": 19.03036155977518,
+        "avg_r": 0.3398278849959854,
+        "profit_factor": 1.8057925743978465,
+        "max_drawdown_r": 7.68497317156312,
+        "max_drawdown_fixed_20k": 0.1536994634312623,
+        "max_consecutive_losses": 9,
+        "positive_years": 2,
+        "negative_years": 3,
+        "by_year": {
+          "2022": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7205681636328847,
+            "avg_r": -0.6801420409082212,
+            "profit_factor": 0.050656455268202526
+          },
+          "2023": {
+            "closed": 20,
+            "wins": 8,
+            "losses": 12,
+            "win_rate": 0.4,
+            "net_r": -0.42866038930375455,
+            "avg_r": -0.021433019465187726,
+            "profit_factor": 0.9477544749004431
+          },
+          "2024": {
+            "closed": 17,
+            "wins": 8,
+            "losses": 9,
+            "win_rate": 0.47058823529411764,
+            "net_r": 9.207520028249,
+            "avg_r": 0.5416188251911177,
+            "profit_factor": 2.57713154300738
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 14.505580571834205,
+            "avg_r": 1.3186891428940186,
+            "profit_factor": 4.278474594806746
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "net_r": -1.5335104873713854,
+            "avg_r": -0.38337762184284635,
+            "profit_factor": 0.328541119809505
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 32,
+        "wins": 14,
+        "losses": 18,
+        "win_rate": 0.4375,
+        "net_r": 22.17959011271182,
+        "avg_r": 0.6931121910222444,
+        "profit_factor": 2.767793448418471,
+        "max_drawdown_r": 3.0149014154598337,
+        "max_drawdown_fixed_20k": 0.05365931471205582,
+        "max_consecutive_losses": 4,
+        "positive_years": 2,
+        "negative_years": 1,
+        "by_year": {
+          "2024": {
+            "closed": 17,
+            "wins": 8,
+            "losses": 9,
+            "win_rate": 0.47058823529411764,
+            "net_r": 9.207520028249,
+            "avg_r": 0.5416188251911177,
+            "profit_factor": 2.57713154300738
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 14.505580571834205,
+            "avg_r": 1.3186891428940186,
+            "profit_factor": 4.278474594806746
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 2,
+            "losses": 2,
+            "win_rate": 0.5,
+            "net_r": -1.5335104873713854,
+            "avg_r": -0.38337762184284635,
+            "profit_factor": 0.328541119809505
+          }
+        }
+      },
+      "signals_seen_in_shards": 2672,
+      "cap_block_events_in_shards": 47234
+    },
+    "macd_bull": {
+      "full_20y": {
+        "closed": 235,
+        "wins": 92,
+        "losses": 143,
+        "win_rate": 0.39148936170212767,
+        "net_r": 11.907975764828722,
+        "avg_r": 0.0506722372971435,
+        "profit_factor": 1.1232231542651134,
+        "max_drawdown_r": 11.945202567157075,
+        "max_drawdown_fixed_20k": 0.22761588789144713,
+        "max_consecutive_losses": 8,
+        "positive_years": 10,
+        "negative_years": 11,
+        "by_year": {
+          "2006": {
+            "closed": 7,
+            "wins": 3,
+            "losses": 4,
+            "win_rate": 0.42857142857142855,
+            "net_r": 0.3280323615272207,
+            "avg_r": 0.0468617659324601,
+            "profit_factor": 1.0942173468142666
+          },
+          "2007": {
+            "closed": 18,
+            "wins": 4,
+            "losses": 14,
+            "win_rate": 0.2222222222222222,
+            "net_r": -5.23786643417385,
+            "avg_r": -0.290992579676325,
+            "profit_factor": 0.4019328008730438
+          },
+          "2008": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -0.5807904183619514,
+            "avg_r": -0.5807904183619514,
+            "profit_factor": 0.0
+          },
+          "2009": {
+            "closed": 8,
+            "wins": 2,
+            "losses": 6,
+            "win_rate": 0.25,
+            "net_r": 3.225108997530809,
+            "avg_r": 0.40313862469135114,
+            "profit_factor": 1.8920501950969437
+          },
+          "2010": {
+            "closed": 11,
+            "wins": 6,
+            "losses": 5,
+            "win_rate": 0.5454545454545454,
+            "net_r": 4.074055172462881,
+            "avg_r": 0.3703686520420801,
+            "profit_factor": 2.255354206078351
+          },
+          "2011": {
+            "closed": 14,
+            "wins": 5,
+            "losses": 9,
+            "win_rate": 0.35714285714285715,
+            "net_r": -1.3653880885517145,
+            "avg_r": -0.09752772061083674,
+            "profit_factor": 0.7665862750603182
+          },
+          "2012": {
+            "closed": 9,
+            "wins": 2,
+            "losses": 7,
+            "win_rate": 0.2222222222222222,
+            "net_r": -3.2651555074349456,
+            "avg_r": -0.36279505638166065,
+            "profit_factor": 0.3774766715701549
+          },
+          "2013": {
+            "closed": 15,
+            "wins": 7,
+            "losses": 8,
+            "win_rate": 0.4666666666666667,
+            "net_r": 0.7332125063667896,
+            "avg_r": 0.04888083375778597,
+            "profit_factor": 1.1541738599103517
+          },
+          "2014": {
+            "closed": 16,
+            "wins": 6,
+            "losses": 10,
+            "win_rate": 0.375,
+            "net_r": -0.6150782151185596,
+            "avg_r": -0.03844238844490998,
+            "profit_factor": 0.8984976618974192
+          },
+          "2015": {
+            "closed": 14,
+            "wins": 7,
+            "losses": 7,
+            "win_rate": 0.5,
+            "net_r": -2.6313942502925896,
+            "avg_r": -0.18795673216375638,
+            "profit_factor": 0.5215776477734009
+          },
+          "2016": {
+            "closed": 9,
+            "wins": 3,
+            "losses": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -1.4110529961409983,
+            "avg_r": -0.1567836662378887,
+            "profit_factor": 0.6768317889076031
+          },
+          "2017": {
+            "closed": 13,
+            "wins": 10,
+            "losses": 3,
+            "win_rate": 0.7692307692307693,
+            "net_r": 11.68053037800339,
+            "avg_r": 0.8985023367694915,
+            "profit_factor": 9.174989113999413
+          },
+          "2018": {
+            "closed": 19,
+            "wins": 5,
+            "losses": 14,
+            "win_rate": 0.2631578947368421,
+            "net_r": -8.49362040829361,
+            "avg_r": -0.44703265306808476,
+            "profit_factor": 0.2679578618471698
+          },
+          "2019": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 0.21280441914461334,
+            "avg_r": 0.023644935460512592,
+            "profit_factor": 1.0880140625589834
+          },
+          "2020": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 6.934171062415382,
+            "avg_r": 0.5778475885346152,
+            "profit_factor": 2.6823528357195627
+          },
+          "2021": {
+            "closed": 15,
+            "wins": 5,
+            "losses": 10,
+            "win_rate": 0.3333333333333333,
+            "net_r": 1.187470257241175,
+            "avg_r": 0.07916468381607834,
+            "profit_factor": 1.1609232164682788
+          },
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.8616364419738519,
+            "avg_r": -0.43081822098692596,
+            "profit_factor": 0.14418692072265657
+          },
+          "2023": {
+            "closed": 14,
+            "wins": 5,
+            "losses": 9,
+            "win_rate": 0.35714285714285715,
+            "net_r": -2.41573801822355,
+            "avg_r": -0.17255271558739643,
+            "profit_factor": 0.6116451423853136
+          },
+          "2024": {
+            "closed": 15,
+            "wins": 6,
+            "losses": 9,
+            "win_rate": 0.4,
+            "net_r": 4.632670808381926,
+            "avg_r": 0.3088447205587951,
+            "profit_factor": 1.8798253628441886
+          },
+          "2025": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 6.252319524007305,
+            "avg_r": 0.5210266270006088,
+            "profit_factor": 2.3218081572139835
+          },
+          "2026": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.4746789436871487,
+            "avg_r": -0.23733947184357435,
+            "profit_factor": 0.5285023954319598
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 122,
+        "wins": 50,
+        "losses": 72,
+        "win_rate": 0.4098360655737705,
+        "net_r": 17.24323964087463,
+        "avg_r": 0.14133802984323468,
+        "profit_factor": 1.348024920281503,
+        "max_drawdown_r": 11.945202567157075,
+        "max_drawdown_fixed_20k": 0.1965862754429826,
+        "max_consecutive_losses": 7,
+        "positive_years": 6,
+        "negative_years": 5,
+        "by_year": {
+          "2016": {
+            "closed": 9,
+            "wins": 3,
+            "losses": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -1.4110529961409983,
+            "avg_r": -0.1567836662378887,
+            "profit_factor": 0.6768317889076031
+          },
+          "2017": {
+            "closed": 13,
+            "wins": 10,
+            "losses": 3,
+            "win_rate": 0.7692307692307693,
+            "net_r": 11.68053037800339,
+            "avg_r": 0.8985023367694915,
+            "profit_factor": 9.174989113999413
+          },
+          "2018": {
+            "closed": 19,
+            "wins": 5,
+            "losses": 14,
+            "win_rate": 0.2631578947368421,
+            "net_r": -8.49362040829361,
+            "avg_r": -0.44703265306808476,
+            "profit_factor": 0.2679578618471698
+          },
+          "2019": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 0.21280441914461334,
+            "avg_r": 0.023644935460512592,
+            "profit_factor": 1.0880140625589834
+          },
+          "2020": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 6.934171062415382,
+            "avg_r": 0.5778475885346152,
+            "profit_factor": 2.6823528357195627
+          },
+          "2021": {
+            "closed": 15,
+            "wins": 5,
+            "losses": 10,
+            "win_rate": 0.3333333333333333,
+            "net_r": 1.187470257241175,
+            "avg_r": 0.07916468381607834,
+            "profit_factor": 1.1609232164682788
+          },
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.8616364419738519,
+            "avg_r": -0.43081822098692596,
+            "profit_factor": 0.14418692072265657
+          },
+          "2023": {
+            "closed": 14,
+            "wins": 5,
+            "losses": 9,
+            "win_rate": 0.35714285714285715,
+            "net_r": -2.41573801822355,
+            "avg_r": -0.17255271558739643,
+            "profit_factor": 0.6116451423853136
+          },
+          "2024": {
+            "closed": 15,
+            "wins": 6,
+            "losses": 9,
+            "win_rate": 0.4,
+            "net_r": 4.632670808381926,
+            "avg_r": 0.3088447205587951,
+            "profit_factor": 1.8798253628441886
+          },
+          "2025": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 6.252319524007305,
+            "avg_r": 0.5210266270006088,
+            "profit_factor": 2.3218081572139835
+          },
+          "2026": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.4746789436871487,
+            "avg_r": -0.23733947184357435,
+            "profit_factor": 0.5285023954319598
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 45,
+        "wins": 18,
+        "losses": 27,
+        "win_rate": 0.4,
+        "net_r": 7.13293692850468,
+        "avg_r": 0.15850970952232624,
+        "profit_factor": 1.3912840655675796,
+        "max_drawdown_r": 4.878484934290979,
+        "max_drawdown_fixed_20k": 0.09756969868581963,
+        "max_consecutive_losses": 5,
+        "positive_years": 2,
+        "negative_years": 3,
+        "by_year": {
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.8616364419738519,
+            "avg_r": -0.43081822098692596,
+            "profit_factor": 0.14418692072265657
+          },
+          "2023": {
+            "closed": 14,
+            "wins": 5,
+            "losses": 9,
+            "win_rate": 0.35714285714285715,
+            "net_r": -2.41573801822355,
+            "avg_r": -0.17255271558739643,
+            "profit_factor": 0.6116451423853136
+          },
+          "2024": {
+            "closed": 15,
+            "wins": 6,
+            "losses": 9,
+            "win_rate": 0.4,
+            "net_r": 4.632670808381926,
+            "avg_r": 0.3088447205587951,
+            "profit_factor": 1.8798253628441886
+          },
+          "2025": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 6.252319524007305,
+            "avg_r": 0.5210266270006088,
+            "profit_factor": 2.3218081572139835
+          },
+          "2026": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.4746789436871487,
+            "avg_r": -0.23733947184357435,
+            "profit_factor": 0.5285023954319598
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 29,
+        "wins": 12,
+        "losses": 17,
+        "win_rate": 0.41379310344827586,
+        "net_r": 10.410311388702082,
+        "avg_r": 0.3589762547828304,
+        "profit_factor": 1.9461926260146427,
+        "max_drawdown_r": 2.6070031972970207,
+        "max_drawdown_fixed_20k": 0.0477187580017972,
+        "max_consecutive_losses": 4,
+        "positive_years": 2,
+        "negative_years": 1,
+        "by_year": {
+          "2024": {
+            "closed": 15,
+            "wins": 6,
+            "losses": 9,
+            "win_rate": 0.4,
+            "net_r": 4.632670808381926,
+            "avg_r": 0.3088447205587951,
+            "profit_factor": 1.8798253628441886
+          },
+          "2025": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 6.252319524007305,
+            "avg_r": 0.5210266270006088,
+            "profit_factor": 2.3218081572139835
+          },
+          "2026": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.4746789436871487,
+            "avg_r": -0.23733947184357435,
+            "profit_factor": 0.5285023954319598
+          }
+        }
+      },
+      "signals_seen_in_shards": 831,
+      "cap_block_events_in_shards": 11410
+    },
+    "rs_ratio_slope20": {
+      "full_20y": {
+        "closed": 291,
+        "wins": 127,
+        "losses": 164,
+        "win_rate": 0.436426116838488,
+        "net_r": 149.85281558234996,
+        "avg_r": 0.514958129148969,
+        "profit_factor": 2.155097975868387,
+        "max_drawdown_r": 11.82806239806984,
+        "max_drawdown_fixed_20k": 0.13854537682546678,
+        "max_consecutive_losses": 9,
+        "positive_years": 14,
+        "negative_years": 7,
+        "by_year": {
+          "2006": {
+            "closed": 8,
+            "wins": 4,
+            "losses": 4,
+            "win_rate": 0.5,
+            "net_r": 1.7357009052085461,
+            "avg_r": 0.21696261315106827,
+            "profit_factor": 1.6773900862460218
+          },
+          "2007": {
+            "closed": 19,
+            "wins": 5,
+            "losses": 14,
+            "win_rate": 0.2631578947368421,
+            "net_r": 6.013752037770764,
+            "avg_r": 0.31651326514582967,
+            "profit_factor": 1.6029410909998318
+          },
+          "2008": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -1.6014201884648023,
+            "avg_r": -0.8007100942324011,
+            "profit_factor": 0.0
+          },
+          "2009": {
+            "closed": 9,
+            "wins": 5,
+            "losses": 4,
+            "win_rate": 0.5555555555555556,
+            "net_r": 7.86451058063107,
+            "avg_r": 0.8738345089590077,
+            "profit_factor": 4.319864058149527
+          },
+          "2010": {
+            "closed": 11,
+            "wins": 7,
+            "losses": 4,
+            "win_rate": 0.6363636363636364,
+            "net_r": 10.377088491562764,
+            "avg_r": 0.9433716810511604,
+            "profit_factor": 3.899760992450047
+          },
+          "2011": {
+            "closed": 17,
+            "wins": 5,
+            "losses": 12,
+            "win_rate": 0.29411764705882354,
+            "net_r": -2.702693045363847,
+            "avg_r": -0.15898194384493217,
+            "profit_factor": 0.7011009885039885
+          },
+          "2012": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -5.035701640512863,
+            "avg_r": -0.3357134427008575,
+            "profit_factor": 0.397226989298566
+          },
+          "2013": {
+            "closed": 25,
+            "wins": 11,
+            "losses": 14,
+            "win_rate": 0.44,
+            "net_r": 14.073303232081576,
+            "avg_r": 0.5629321292832631,
+            "profit_factor": 2.3007664340893483
+          },
+          "2014": {
+            "closed": 21,
+            "wins": 8,
+            "losses": 13,
+            "win_rate": 0.38095238095238093,
+            "net_r": 6.008460419872978,
+            "avg_r": 0.2861171628510942,
+            "profit_factor": 1.6127096526892877
+          },
+          "2015": {
+            "closed": 13,
+            "wins": 9,
+            "losses": 4,
+            "win_rate": 0.6923076923076923,
+            "net_r": 10.283693574119933,
+            "avg_r": 0.7910533518553795,
+            "profit_factor": 3.895876139682372
+          },
+          "2016": {
+            "closed": 19,
+            "wins": 7,
+            "losses": 12,
+            "win_rate": 0.3684210526315789,
+            "net_r": -1.8458846708659775,
+            "avg_r": -0.09715182478241986,
+            "profit_factor": 0.8630705892638506
+          },
+          "2017": {
+            "closed": 15,
+            "wins": 12,
+            "losses": 3,
+            "win_rate": 0.8,
+            "net_r": 27.121484798760694,
+            "avg_r": 1.8080989865840462,
+            "profit_factor": 13.268492853075493
+          },
+          "2018": {
+            "closed": 13,
+            "wins": 6,
+            "losses": 7,
+            "win_rate": 0.46153846153846156,
+            "net_r": 9.707518795889897,
+            "avg_r": 0.7467322150684536,
+            "profit_factor": 2.78354490195064
+          },
+          "2019": {
+            "closed": 16,
+            "wins": 7,
+            "losses": 9,
+            "win_rate": 0.4375,
+            "net_r": 36.31977682194321,
+            "avg_r": 2.2699860513714505,
+            "profit_factor": 5.559565175830634
+          },
+          "2020": {
+            "closed": 12,
+            "wins": 9,
+            "losses": 3,
+            "win_rate": 0.75,
+            "net_r": 14.813011575352983,
+            "avg_r": 1.2344176312794153,
+            "profit_factor": 7.420966238207752
+          },
+          "2021": {
+            "closed": 19,
+            "wins": 6,
+            "losses": 13,
+            "win_rate": 0.3157894736842105,
+            "net_r": 3.140168104608382,
+            "avg_r": 0.1652720055057043,
+            "profit_factor": 1.2967740074086276
+          },
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.8616364419738519,
+            "avg_r": -0.43081822098692596,
+            "profit_factor": 0.14418692072265657
+          },
+          "2023": {
+            "closed": 21,
+            "wins": 8,
+            "losses": 13,
+            "win_rate": 0.38095238095238093,
+            "net_r": -2.852733978201433,
+            "avg_r": -0.13584447515244918,
+            "profit_factor": 0.6802046245821067
+          },
+          "2024": {
+            "closed": 19,
+            "wins": 9,
+            "losses": 10,
+            "win_rate": 0.47368421052631576,
+            "net_r": 11.21316311222487,
+            "avg_r": 0.5901664795907826,
+            "profit_factor": 2.6637043930259727
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 8.79187822989882,
+            "avg_r": 0.7992616572635292,
+            "profit_factor": 2.43475129760438
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7106251321937513,
+            "avg_r": -0.6776562830484378,
+            "profit_factor": 0.17625101034396315
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 151,
+        "wins": 69,
+        "losses": 82,
+        "win_rate": 0.45695364238410596,
+        "net_r": 102.83612121544384,
+        "avg_r": 0.6810339153340652,
+        "profit_factor": 2.5106690651496293,
+        "max_drawdown_r": 8.911565945126345,
+        "max_drawdown_fixed_20k": 0.17823131890252716,
+        "max_consecutive_losses": 7,
+        "positive_years": 7,
+        "negative_years": 4,
+        "by_year": {
+          "2016": {
+            "closed": 19,
+            "wins": 7,
+            "losses": 12,
+            "win_rate": 0.3684210526315789,
+            "net_r": -1.8458846708659775,
+            "avg_r": -0.09715182478241986,
+            "profit_factor": 0.8630705892638506
+          },
+          "2017": {
+            "closed": 15,
+            "wins": 12,
+            "losses": 3,
+            "win_rate": 0.8,
+            "net_r": 27.121484798760694,
+            "avg_r": 1.8080989865840462,
+            "profit_factor": 13.268492853075493
+          },
+          "2018": {
+            "closed": 13,
+            "wins": 6,
+            "losses": 7,
+            "win_rate": 0.46153846153846156,
+            "net_r": 9.707518795889897,
+            "avg_r": 0.7467322150684536,
+            "profit_factor": 2.78354490195064
+          },
+          "2019": {
+            "closed": 16,
+            "wins": 7,
+            "losses": 9,
+            "win_rate": 0.4375,
+            "net_r": 36.31977682194321,
+            "avg_r": 2.2699860513714505,
+            "profit_factor": 5.559565175830634
+          },
+          "2020": {
+            "closed": 12,
+            "wins": 9,
+            "losses": 3,
+            "win_rate": 0.75,
+            "net_r": 14.813011575352983,
+            "avg_r": 1.2344176312794153,
+            "profit_factor": 7.420966238207752
+          },
+          "2021": {
+            "closed": 19,
+            "wins": 6,
+            "losses": 13,
+            "win_rate": 0.3157894736842105,
+            "net_r": 3.140168104608382,
+            "avg_r": 0.1652720055057043,
+            "profit_factor": 1.2967740074086276
+          },
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.8616364419738519,
+            "avg_r": -0.43081822098692596,
+            "profit_factor": 0.14418692072265657
+          },
+          "2023": {
+            "closed": 21,
+            "wins": 8,
+            "losses": 13,
+            "win_rate": 0.38095238095238093,
+            "net_r": -2.852733978201433,
+            "avg_r": -0.13584447515244918,
+            "profit_factor": 0.6802046245821067
+          },
+          "2024": {
+            "closed": 19,
+            "wins": 9,
+            "losses": 10,
+            "win_rate": 0.47368421052631576,
+            "net_r": 11.21316311222487,
+            "avg_r": 0.5901664795907826,
+            "profit_factor": 2.6637043930259727
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 8.79187822989882,
+            "avg_r": 0.7992616572635292,
+            "profit_factor": 2.43475129760438
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7106251321937513,
+            "avg_r": -0.6776562830484378,
+            "profit_factor": 0.17625101034396315
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 57,
+        "wins": 22,
+        "losses": 35,
+        "win_rate": 0.38596491228070173,
+        "net_r": 13.580045789754653,
+        "avg_r": 0.23824641736411672,
+        "profit_factor": 1.5205958539734303,
+        "max_drawdown_r": 6.168673510452432,
+        "max_drawdown_fixed_20k": 0.12337347020904872,
+        "max_consecutive_losses": 7,
+        "positive_years": 2,
+        "negative_years": 3,
+        "by_year": {
+          "2022": {
+            "closed": 2,
+            "wins": 1,
+            "losses": 1,
+            "win_rate": 0.5,
+            "net_r": -0.8616364419738519,
+            "avg_r": -0.43081822098692596,
+            "profit_factor": 0.14418692072265657
+          },
+          "2023": {
+            "closed": 21,
+            "wins": 8,
+            "losses": 13,
+            "win_rate": 0.38095238095238093,
+            "net_r": -2.852733978201433,
+            "avg_r": -0.13584447515244918,
+            "profit_factor": 0.6802046245821067
+          },
+          "2024": {
+            "closed": 19,
+            "wins": 9,
+            "losses": 10,
+            "win_rate": 0.47368421052631576,
+            "net_r": 11.21316311222487,
+            "avg_r": 0.5901664795907826,
+            "profit_factor": 2.6637043930259727
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 8.79187822989882,
+            "avg_r": 0.7992616572635292,
+            "profit_factor": 2.43475129760438
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7106251321937513,
+            "avg_r": -0.6776562830484378,
+            "profit_factor": 0.17625101034396315
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 34,
+        "wins": 13,
+        "losses": 21,
+        "win_rate": 0.38235294117647056,
+        "net_r": 17.29441620992994,
+        "avg_r": 0.508659300292057,
+        "profit_factor": 2.0703129742810082,
+        "max_drawdown_r": 4.289971441038734,
+        "max_drawdown_fixed_20k": 0.07214073802480027,
+        "max_consecutive_losses": 6,
+        "positive_years": 2,
+        "negative_years": 1,
+        "by_year": {
+          "2024": {
+            "closed": 19,
+            "wins": 9,
+            "losses": 10,
+            "win_rate": 0.47368421052631576,
+            "net_r": 11.21316311222487,
+            "avg_r": 0.5901664795907826,
+            "profit_factor": 2.6637043930259727
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 8.79187822989882,
+            "avg_r": 0.7992616572635292,
+            "profit_factor": 2.43475129760438
+          },
+          "2026": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7106251321937513,
+            "avg_r": -0.6776562830484378,
+            "profit_factor": 0.17625101034396315
+          }
+        }
+      },
+      "signals_seen_in_shards": 2149,
+      "cap_block_events_in_shards": 36572
+    },
+    "rsi50_70": {
+      "full_20y": {
+        "closed": 298,
+        "wins": 127,
+        "losses": 171,
+        "win_rate": 0.4261744966442953,
+        "net_r": 173.23291398226328,
+        "avg_r": 0.5813185032961855,
+        "profit_factor": 2.264674286571252,
+        "max_drawdown_r": 11.933532786813352,
+        "max_drawdown_fixed_20k": 0.1733313007844902,
+        "max_consecutive_losses": 15,
+        "positive_years": 16,
+        "negative_years": 5,
+        "by_year": {
+          "2006": {
+            "closed": 8,
+            "wins": 4,
+            "losses": 4,
+            "win_rate": 0.5,
+            "net_r": 1.6428113236191757,
+            "avg_r": 0.20535141545239696,
+            "profit_factor": 1.6187087926810693
+          },
+          "2007": {
+            "closed": 19,
+            "wins": 4,
+            "losses": 15,
+            "win_rate": 0.21052631578947367,
+            "net_r": 5.174807401507476,
+            "avg_r": 0.27235828428986714,
+            "profit_factor": 1.4848652973119676
+          },
+          "2008": {
+            "closed": 2,
+            "wins": 0,
+            "losses": 2,
+            "win_rate": 0.0,
+            "net_r": -1.6014201884648023,
+            "avg_r": -0.8007100942324011,
+            "profit_factor": 0.0
+          },
+          "2009": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 4.76080199656365,
+            "avg_r": 0.43280018150578636,
+            "profit_factor": 2.024072383654436
+          },
+          "2010": {
+            "closed": 11,
+            "wins": 7,
+            "losses": 4,
+            "win_rate": 0.6363636363636364,
+            "net_r": 8.296708057404176,
+            "avg_r": 0.7542461870367433,
+            "profit_factor": 3.3184220130885183
+          },
+          "2011": {
+            "closed": 20,
+            "wins": 6,
+            "losses": 14,
+            "win_rate": 0.3,
+            "net_r": -5.275179006611918,
+            "avg_r": -0.2637589503305959,
+            "profit_factor": 0.5245962778982105
+          },
+          "2012": {
+            "closed": 15,
+            "wins": 6,
+            "losses": 9,
+            "win_rate": 0.4,
+            "net_r": 1.5354734114308382,
+            "avg_r": 0.10236489409538921,
+            "profit_factor": 1.21813550063757
+          },
+          "2013": {
+            "closed": 22,
+            "wins": 12,
+            "losses": 10,
+            "win_rate": 0.5454545454545454,
+            "net_r": 17.845201678031895,
+            "avg_r": 0.8111455308196316,
+            "profit_factor": 2.5271385476084656
+          },
+          "2014": {
+            "closed": 21,
+            "wins": 8,
+            "losses": 13,
+            "win_rate": 0.38095238095238093,
+            "net_r": 6.711678344751494,
+            "avg_r": 0.31960373070245207,
+            "profit_factor": 1.716811830614878
+          },
+          "2015": {
+            "closed": 13,
+            "wins": 7,
+            "losses": 6,
+            "win_rate": 0.5384615384615384,
+            "net_r": 9.238195434883169,
+            "avg_r": 0.710630418067936,
+            "profit_factor": 3.3448213145182355
+          },
+          "2016": {
+            "closed": 21,
+            "wins": 7,
+            "losses": 14,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.8812984205547632,
+            "avg_r": -0.041966591454988725,
+            "profit_factor": 0.9378288637142934
+          },
+          "2017": {
+            "closed": 16,
+            "wins": 12,
+            "losses": 4,
+            "win_rate": 0.75,
+            "net_r": 24.68710172561728,
+            "avg_r": 1.54294385785108,
+            "profit_factor": 8.54994564027883
+          },
+          "2018": {
+            "closed": 14,
+            "wins": 6,
+            "losses": 8,
+            "win_rate": 0.42857142857142855,
+            "net_r": 9.671815061528246,
+            "avg_r": 0.6908439329663033,
+            "profit_factor": 2.50268177288097
+          },
+          "2019": {
+            "closed": 16,
+            "wins": 7,
+            "losses": 9,
+            "win_rate": 0.4375,
+            "net_r": 35.22891663003154,
+            "avg_r": 2.2018072893769713,
+            "profit_factor": 5.775918087521881
+          },
+          "2020": {
+            "closed": 15,
+            "wins": 9,
+            "losses": 6,
+            "win_rate": 0.6,
+            "net_r": 15.34690009029114,
+            "avg_r": 1.023126672686076,
+            "profit_factor": 5.747555667110197
+          },
+          "2021": {
+            "closed": 19,
+            "wins": 6,
+            "losses": 13,
+            "win_rate": 0.3157894736842105,
+            "net_r": 11.280410509202214,
+            "avg_r": 0.5937058162738008,
+            "profit_factor": 1.9710106312845255
+          },
+          "2022": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7205681636328847,
+            "avg_r": -0.6801420409082212,
+            "profit_factor": 0.050656455268202526
+          },
+          "2023": {
+            "closed": 20,
+            "wins": 8,
+            "losses": 12,
+            "win_rate": 0.4,
+            "net_r": -0.9804073050381666,
+            "avg_r": -0.04902036525190833,
+            "profit_factor": 0.8880363192207729
+          },
+          "2024": {
+            "closed": 17,
+            "wins": 8,
+            "losses": 9,
+            "win_rate": 0.47058823529411764,
+            "net_r": 20.535299003071476,
+            "avg_r": 1.2079587648865573,
+            "profit_factor": 4.067674362399838
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 8.901796228992156,
+            "avg_r": 0.8092542026356505,
+            "profit_factor": 2.786639309826025
+          },
+          "2026": {
+            "closed": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.6666666666666666,
+            "net_r": 3.833870169639895,
+            "avg_r": 1.2779567232132985,
+            "profit_factor": 3.9690157610673524
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 156,
+        "wins": 69,
+        "losses": 87,
+        "win_rate": 0.4423076923076923,
+        "net_r": 124.90383552914813,
+        "avg_r": 0.8006656123663342,
+        "profit_factor": 2.766730360908947,
+        "max_drawdown_r": 10.56612362887688,
+        "max_drawdown_fixed_20k": 0.19212744559349484,
+        "max_consecutive_losses": 9,
+        "positive_years": 8,
+        "negative_years": 3,
+        "by_year": {
+          "2016": {
+            "closed": 21,
+            "wins": 7,
+            "losses": 14,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.8812984205547632,
+            "avg_r": -0.041966591454988725,
+            "profit_factor": 0.9378288637142934
+          },
+          "2017": {
+            "closed": 16,
+            "wins": 12,
+            "losses": 4,
+            "win_rate": 0.75,
+            "net_r": 24.68710172561728,
+            "avg_r": 1.54294385785108,
+            "profit_factor": 8.54994564027883
+          },
+          "2018": {
+            "closed": 14,
+            "wins": 6,
+            "losses": 8,
+            "win_rate": 0.42857142857142855,
+            "net_r": 9.671815061528246,
+            "avg_r": 0.6908439329663033,
+            "profit_factor": 2.50268177288097
+          },
+          "2019": {
+            "closed": 16,
+            "wins": 7,
+            "losses": 9,
+            "win_rate": 0.4375,
+            "net_r": 35.22891663003154,
+            "avg_r": 2.2018072893769713,
+            "profit_factor": 5.775918087521881
+          },
+          "2020": {
+            "closed": 15,
+            "wins": 9,
+            "losses": 6,
+            "win_rate": 0.6,
+            "net_r": 15.34690009029114,
+            "avg_r": 1.023126672686076,
+            "profit_factor": 5.747555667110197
+          },
+          "2021": {
+            "closed": 19,
+            "wins": 6,
+            "losses": 13,
+            "win_rate": 0.3157894736842105,
+            "net_r": 11.280410509202214,
+            "avg_r": 0.5937058162738008,
+            "profit_factor": 1.9710106312845255
+          },
+          "2022": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7205681636328847,
+            "avg_r": -0.6801420409082212,
+            "profit_factor": 0.050656455268202526
+          },
+          "2023": {
+            "closed": 20,
+            "wins": 8,
+            "losses": 12,
+            "win_rate": 0.4,
+            "net_r": -0.9804073050381666,
+            "avg_r": -0.04902036525190833,
+            "profit_factor": 0.8880363192207729
+          },
+          "2024": {
+            "closed": 17,
+            "wins": 8,
+            "losses": 9,
+            "win_rate": 0.47058823529411764,
+            "net_r": 20.535299003071476,
+            "avg_r": 1.2079587648865573,
+            "profit_factor": 4.067674362399838
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 8.901796228992156,
+            "avg_r": 0.8092542026356505,
+            "profit_factor": 2.786639309826025
+          },
+          "2026": {
+            "closed": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.6666666666666666,
+            "net_r": 3.833870169639895,
+            "avg_r": 1.2779567232132985,
+            "profit_factor": 3.9690157610673524
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 55,
+        "wins": 22,
+        "losses": 33,
+        "win_rate": 0.4,
+        "net_r": 29.569989933032478,
+        "avg_r": 0.5376361806005905,
+        "profit_factor": 2.202519761276373,
+        "max_drawdown_r": 7.863583512956643,
+        "max_drawdown_fixed_20k": 0.15727167025913313,
+        "max_consecutive_losses": 9,
+        "positive_years": 3,
+        "negative_years": 2,
+        "by_year": {
+          "2022": {
+            "closed": 4,
+            "wins": 1,
+            "losses": 3,
+            "win_rate": 0.25,
+            "net_r": -2.7205681636328847,
+            "avg_r": -0.6801420409082212,
+            "profit_factor": 0.050656455268202526
+          },
+          "2023": {
+            "closed": 20,
+            "wins": 8,
+            "losses": 12,
+            "win_rate": 0.4,
+            "net_r": -0.9804073050381666,
+            "avg_r": -0.04902036525190833,
+            "profit_factor": 0.8880363192207729
+          },
+          "2024": {
+            "closed": 17,
+            "wins": 8,
+            "losses": 9,
+            "win_rate": 0.47058823529411764,
+            "net_r": 20.535299003071476,
+            "avg_r": 1.2079587648865573,
+            "profit_factor": 4.067674362399838
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 8.901796228992156,
+            "avg_r": 0.8092542026356505,
+            "profit_factor": 2.786639309826025
+          },
+          "2026": {
+            "closed": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.6666666666666666,
+            "net_r": 3.833870169639895,
+            "avg_r": 1.2779567232132985,
+            "profit_factor": 3.9690157610673524
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 31,
+        "wins": 13,
+        "losses": 18,
+        "win_rate": 0.41935483870967744,
+        "net_r": 33.27096540170353,
+        "avg_r": 1.0732569484420493,
+        "profit_factor": 3.565657653313997,
+        "max_drawdown_r": 3.8416827227782733,
+        "max_drawdown_fixed_20k": 0.06521955575074372,
+        "max_consecutive_losses": 5,
+        "positive_years": 3,
+        "negative_years": 0,
+        "by_year": {
+          "2024": {
+            "closed": 17,
+            "wins": 8,
+            "losses": 9,
+            "win_rate": 0.47058823529411764,
+            "net_r": 20.535299003071476,
+            "avg_r": 1.2079587648865573,
+            "profit_factor": 4.067674362399838
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 3,
+            "losses": 8,
+            "win_rate": 0.2727272727272727,
+            "net_r": 8.901796228992156,
+            "avg_r": 0.8092542026356505,
+            "profit_factor": 2.786639309826025
+          },
+          "2026": {
+            "closed": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 0.6666666666666666,
+            "net_r": 3.833870169639895,
+            "avg_r": 1.2779567232132985,
+            "profit_factor": 3.9690157610673524
+          }
+        }
+      },
+      "signals_seen_in_shards": 2517,
+      "cap_block_events_in_shards": 44719
+    },
+    "rvol12": {
+      "full_20y": {
+        "closed": 208,
+        "wins": 81,
+        "losses": 127,
+        "win_rate": 0.3894230769230769,
+        "net_r": 25.894430732013273,
+        "avg_r": 0.1244924554423715,
+        "profit_factor": 1.3043017238207792,
+        "max_drawdown_r": 16.655773480138176,
+        "max_drawdown_fixed_20k": 0.28927590622610455,
+        "max_consecutive_losses": 14,
+        "positive_years": 10,
+        "negative_years": 9,
+        "by_year": {
+          "2006": {
+            "closed": 9,
+            "wins": 2,
+            "losses": 7,
+            "win_rate": 0.2222222222222222,
+            "net_r": 0.9540457263287823,
+            "avg_r": 0.10600508070319803,
+            "profit_factor": 1.179131588985971
+          },
+          "2007": {
+            "closed": 13,
+            "wins": 3,
+            "losses": 10,
+            "win_rate": 0.23076923076923078,
+            "net_r": -2.283867845931096,
+            "avg_r": -0.1756821419946997,
+            "profit_factor": 0.6620577441055344
+          },
+          "2009": {
+            "closed": 5,
+            "wins": 5,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 5.642204172901482,
+            "avg_r": 1.1284408345802963,
+            "profit_factor": null
+          },
+          "2010": {
+            "closed": 9,
+            "wins": 3,
+            "losses": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": 1.9708009995915725,
+            "avg_r": 0.21897788884350805,
+            "profit_factor": 1.78034881635496
+          },
+          "2011": {
+            "closed": 12,
+            "wins": 3,
+            "losses": 9,
+            "win_rate": 0.25,
+            "net_r": -6.590793558835179,
+            "avg_r": -0.5492327965695982,
+            "profit_factor": 0.14994448215050474
+          },
+          "2012": {
+            "closed": 8,
+            "wins": 2,
+            "losses": 6,
+            "win_rate": 0.25,
+            "net_r": -1.2081224099709595,
+            "avg_r": -0.15101530124636994,
+            "profit_factor": 0.6215760159832939
+          },
+          "2013": {
+            "closed": 21,
+            "wins": 8,
+            "losses": 13,
+            "win_rate": 0.38095238095238093,
+            "net_r": -4.159564452808452,
+            "avg_r": -0.1980744977527834,
+            "profit_factor": 0.5335342703269309
+          },
+          "2014": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -0.15161571556717024,
+            "avg_r": -0.010107714371144683,
+            "profit_factor": 0.978424669423561
+          },
+          "2015": {
+            "closed": 6,
+            "wins": 4,
+            "losses": 2,
+            "win_rate": 0.6666666666666666,
+            "net_r": 3.7909154107554928,
+            "avg_r": 0.6318192351259154,
+            "profit_factor": 4.938684448153085
+          },
+          "2016": {
+            "closed": 10,
+            "wins": 5,
+            "losses": 5,
+            "win_rate": 0.5,
+            "net_r": 3.753330263915109,
+            "avg_r": 0.3753330263915109,
+            "profit_factor": 2.289679908876896
+          },
+          "2017": {
+            "closed": 14,
+            "wins": 9,
+            "losses": 5,
+            "win_rate": 0.6428571428571429,
+            "net_r": 8.118136100865234,
+            "avg_r": 0.5798668643475168,
+            "profit_factor": 4.944192855342263
+          },
+          "2018": {
+            "closed": 6,
+            "wins": 5,
+            "losses": 1,
+            "win_rate": 0.8333333333333334,
+            "net_r": 8.611083445515533,
+            "avg_r": 1.4351805742525887,
+            "profit_factor": 22.843594872832423
+          },
+          "2019": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 13.176921268074558,
+            "avg_r": 1.0980767723395466,
+            "profit_factor": 3.2257031727225605
+          },
+          "2020": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 4.071960135188774,
+            "avg_r": 0.45244001502097486,
+            "profit_factor": 2.443727794523489
+          },
+          "2021": {
+            "closed": 18,
+            "wins": 5,
+            "losses": 13,
+            "win_rate": 0.2777777777777778,
+            "net_r": -7.1755033150575604,
+            "avg_r": -0.39863907305875335,
+            "profit_factor": 0.2134095911613057
+          },
+          "2023": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -5.903414931939313,
+            "avg_r": -0.39356099546262086,
+            "profit_factor": 0.18764157293972256
+          },
+          "2024": {
+            "closed": 14,
+            "wins": 6,
+            "losses": 8,
+            "win_rate": 0.42857142857142855,
+            "net_r": -0.44707910117829464,
+            "avg_r": -0.03193422151273533,
+            "profit_factor": 0.9289228865144092
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 4.731041391838034,
+            "avg_r": 0.43009467198527584,
+            "profit_factor": 1.9768452462578439
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 110,
+        "wins": 47,
+        "losses": 63,
+        "win_rate": 0.42727272727272725,
+        "net_r": 27.9304284055488,
+        "avg_r": 0.2539129855049891,
+        "profit_factor": 1.6551499088974213,
+        "max_drawdown_r": 16.655773480138176,
+        "max_drawdown_fixed_20k": 0.18909957393425889,
+        "max_consecutive_losses": 14,
+        "positive_years": 6,
+        "negative_years": 4,
+        "by_year": {
+          "2016": {
+            "closed": 10,
+            "wins": 5,
+            "losses": 5,
+            "win_rate": 0.5,
+            "net_r": 3.753330263915109,
+            "avg_r": 0.3753330263915109,
+            "profit_factor": 2.289679908876896
+          },
+          "2017": {
+            "closed": 14,
+            "wins": 9,
+            "losses": 5,
+            "win_rate": 0.6428571428571429,
+            "net_r": 8.118136100865234,
+            "avg_r": 0.5798668643475168,
+            "profit_factor": 4.944192855342263
+          },
+          "2018": {
+            "closed": 6,
+            "wins": 5,
+            "losses": 1,
+            "win_rate": 0.8333333333333334,
+            "net_r": 8.611083445515533,
+            "avg_r": 1.4351805742525887,
+            "profit_factor": 22.843594872832423
+          },
+          "2019": {
+            "closed": 12,
+            "wins": 5,
+            "losses": 7,
+            "win_rate": 0.4166666666666667,
+            "net_r": 13.176921268074558,
+            "avg_r": 1.0980767723395466,
+            "profit_factor": 3.2257031727225605
+          },
+          "2020": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 4.071960135188774,
+            "avg_r": 0.45244001502097486,
+            "profit_factor": 2.443727794523489
+          },
+          "2021": {
+            "closed": 18,
+            "wins": 5,
+            "losses": 13,
+            "win_rate": 0.2777777777777778,
+            "net_r": -7.1755033150575604,
+            "avg_r": -0.39863907305875335,
+            "profit_factor": 0.2134095911613057
+          },
+          "2023": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -5.903414931939313,
+            "avg_r": -0.39356099546262086,
+            "profit_factor": 0.18764157293972256
+          },
+          "2024": {
+            "closed": 14,
+            "wins": 6,
+            "losses": 8,
+            "win_rate": 0.42857142857142855,
+            "net_r": -0.44707910117829464,
+            "avg_r": -0.03193422151273533,
+            "profit_factor": 0.9289228865144092
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 4.731041391838034,
+            "avg_r": 0.43009467198527584,
+            "profit_factor": 1.9768452462578439
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 41,
+        "wins": 14,
+        "losses": 27,
+        "win_rate": 0.34146341463414637,
+        "net_r": -2.625499492952848,
+        "avg_r": -0.06403657299884995,
+        "profit_factor": 0.8647088796797281,
+        "max_drawdown_r": 9.132320057936298,
+        "max_drawdown_fixed_20k": 0.1826464011587258,
+        "max_consecutive_losses": 6,
+        "positive_years": 1,
+        "negative_years": 3,
+        "by_year": {
+          "2023": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -5.903414931939313,
+            "avg_r": -0.39356099546262086,
+            "profit_factor": 0.18764157293972256
+          },
+          "2024": {
+            "closed": 14,
+            "wins": 6,
+            "losses": 8,
+            "win_rate": 0.42857142857142855,
+            "net_r": -0.44707910117829464,
+            "avg_r": -0.03193422151273533,
+            "profit_factor": 0.9289228865144092
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 4.731041391838034,
+            "avg_r": 0.43009467198527584,
+            "profit_factor": 1.9768452462578439
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 26,
+        "wins": 10,
+        "losses": 16,
+        "win_rate": 0.38461538461538464,
+        "net_r": 3.277915438986465,
+        "avg_r": 0.12607367073024867,
+        "profit_factor": 1.2700253443147185,
+        "max_drawdown_r": 6.423012248696373,
+        "max_drawdown_fixed_20k": 0.1207466878592554,
+        "max_consecutive_losses": 5,
+        "positive_years": 1,
+        "negative_years": 2,
+        "by_year": {
+          "2024": {
+            "closed": 14,
+            "wins": 6,
+            "losses": 8,
+            "win_rate": 0.42857142857142855,
+            "net_r": -0.44707910117829464,
+            "avg_r": -0.03193422151273533,
+            "profit_factor": 0.9289228865144092
+          },
+          "2025": {
+            "closed": 11,
+            "wins": 4,
+            "losses": 7,
+            "win_rate": 0.36363636363636365,
+            "net_r": 4.731041391838034,
+            "avg_r": 0.43009467198527584,
+            "profit_factor": 1.9768452462578439
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "signals_seen_in_shards": 592,
+      "cap_block_events_in_shards": 6806
+    },
+    "rvol_rs": {
+      "full_20y": {
+        "closed": 191,
+        "wins": 79,
+        "losses": 112,
+        "win_rate": 0.41361256544502617,
+        "net_r": 36.44521759014627,
+        "avg_r": 0.19081265754003282,
+        "profit_factor": 1.4991580083915643,
+        "max_drawdown_r": 17.583947640144633,
+        "max_drawdown_fixed_20k": 0.1868247164047581,
+        "max_consecutive_losses": 13,
+        "positive_years": 12,
+        "negative_years": 7,
+        "by_year": {
+          "2006": {
+            "closed": 8,
+            "wins": 2,
+            "losses": 6,
+            "win_rate": 0.25,
+            "net_r": 1.7769305508159614,
+            "avg_r": 0.22211631885199518,
+            "profit_factor": 1.3946047490068192
+          },
+          "2007": {
+            "closed": 12,
+            "wins": 3,
+            "losses": 9,
+            "win_rate": 0.25,
+            "net_r": -2.005205050905929,
+            "avg_r": -0.1671004209088274,
+            "profit_factor": 0.6544388062989989
+          },
+          "2009": {
+            "closed": 5,
+            "wins": 5,
+            "losses": 0,
+            "win_rate": 1.0,
+            "net_r": 5.642204172901482,
+            "avg_r": 1.1284408345802963,
+            "profit_factor": null
+          },
+          "2010": {
+            "closed": 9,
+            "wins": 3,
+            "losses": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": 1.9708009995915725,
+            "avg_r": 0.21897788884350805,
+            "profit_factor": 1.78034881635496
+          },
+          "2011": {
+            "closed": 9,
+            "wins": 3,
+            "losses": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -3.147687368876779,
+            "avg_r": -0.34974304098630876,
+            "profit_factor": 0.26972252671562585
+          },
+          "2012": {
+            "closed": 7,
+            "wins": 2,
+            "losses": 5,
+            "win_rate": 0.2857142857142857,
+            "net_r": 1.7290942640702576,
+            "avg_r": 0.24701346629575108,
+            "profit_factor": 1.7939189480255104
+          },
+          "2013": {
+            "closed": 18,
+            "wins": 7,
+            "losses": 11,
+            "win_rate": 0.3888888888888889,
+            "net_r": -2.375136407015896,
+            "avg_r": -0.13195202261199424,
+            "profit_factor": 0.6549660496313521
+          },
+          "2014": {
+            "closed": 15,
+            "wins": 5,
+            "losses": 10,
+            "win_rate": 0.3333333333333333,
+            "net_r": 8.291391389321488,
+            "avg_r": 0.5527594259547659,
+            "profit_factor": 2.30280044227133
+          },
+          "2015": {
+            "closed": 6,
+            "wins": 4,
+            "losses": 2,
+            "win_rate": 0.6666666666666666,
+            "net_r": 3.7909154107554928,
+            "avg_r": 0.6318192351259154,
+            "profit_factor": 4.938684448153085
+          },
+          "2016": {
+            "closed": 9,
+            "wins": 5,
+            "losses": 4,
+            "win_rate": 0.5555555555555556,
+            "net_r": 4.074629711842103,
+            "avg_r": 0.4527366346491226,
+            "profit_factor": 3.1664271469275715
+          },
+          "2017": {
+            "closed": 13,
+            "wins": 9,
+            "losses": 4,
+            "win_rate": 0.6923076923076923,
+            "net_r": 8.09540049260169,
+            "avg_r": 0.6227231148155147,
+            "profit_factor": 4.665487007861401
+          },
+          "2018": {
+            "closed": 7,
+            "wins": 4,
+            "losses": 3,
+            "win_rate": 0.5714285714285714,
+            "net_r": 6.688301589372831,
+            "avg_r": 0.95547165562469,
+            "profit_factor": 4.587330720047627
+          },
+          "2019": {
+            "closed": 10,
+            "wins": 5,
+            "losses": 5,
+            "win_rate": 0.5,
+            "net_r": 2.909952347629766,
+            "avg_r": 0.2909952347629766,
+            "profit_factor": 1.6441689496341427
+          },
+          "2020": {
+            "closed": 8,
+            "wins": 5,
+            "losses": 3,
+            "win_rate": 0.625,
+            "net_r": 6.438847180175628,
+            "avg_r": 0.8048558975219535,
+            "profit_factor": 5.185379039980961
+          },
+          "2021": {
+            "closed": 17,
+            "wins": 4,
+            "losses": 13,
+            "win_rate": 0.23529411764705882,
+            "net_r": -8.202287429396716,
+            "avg_r": -0.4824874958468656,
+            "profit_factor": 0.06744909034781693
+          },
+          "2023": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -5.903414931939313,
+            "avg_r": -0.39356099546262086,
+            "profit_factor": 0.18764157293972256
+          },
+          "2024": {
+            "closed": 13,
+            "wins": 5,
+            "losses": 8,
+            "win_rate": 0.38461538461538464,
+            "net_r": -0.5176196237856812,
+            "avg_r": -0.03981689413736009,
+            "profit_factor": 0.9176816941123628
+          },
+          "2025": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 8.194147144661583,
+            "avg_r": 0.910460793851287,
+            "profit_factor": 2.9902593818422973
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2016_2026": {
+        "closed": 102,
+        "wins": 45,
+        "losses": 57,
+        "win_rate": 0.4411764705882353,
+        "net_r": 20.77190962948862,
+        "avg_r": 0.20364617283812372,
+        "profit_factor": 1.526093434518491,
+        "max_drawdown_r": 17.58394764014465,
+        "max_drawdown_fixed_20k": 0.22415146879439393,
+        "max_consecutive_losses": 13,
+        "positive_years": 6,
+        "negative_years": 4,
+        "by_year": {
+          "2016": {
+            "closed": 9,
+            "wins": 5,
+            "losses": 4,
+            "win_rate": 0.5555555555555556,
+            "net_r": 4.074629711842103,
+            "avg_r": 0.4527366346491226,
+            "profit_factor": 3.1664271469275715
+          },
+          "2017": {
+            "closed": 13,
+            "wins": 9,
+            "losses": 4,
+            "win_rate": 0.6923076923076923,
+            "net_r": 8.09540049260169,
+            "avg_r": 0.6227231148155147,
+            "profit_factor": 4.665487007861401
+          },
+          "2018": {
+            "closed": 7,
+            "wins": 4,
+            "losses": 3,
+            "win_rate": 0.5714285714285714,
+            "net_r": 6.688301589372831,
+            "avg_r": 0.95547165562469,
+            "profit_factor": 4.587330720047627
+          },
+          "2019": {
+            "closed": 10,
+            "wins": 5,
+            "losses": 5,
+            "win_rate": 0.5,
+            "net_r": 2.909952347629766,
+            "avg_r": 0.2909952347629766,
+            "profit_factor": 1.6441689496341427
+          },
+          "2020": {
+            "closed": 8,
+            "wins": 5,
+            "losses": 3,
+            "win_rate": 0.625,
+            "net_r": 6.438847180175628,
+            "avg_r": 0.8048558975219535,
+            "profit_factor": 5.185379039980961
+          },
+          "2021": {
+            "closed": 17,
+            "wins": 4,
+            "losses": 13,
+            "win_rate": 0.23529411764705882,
+            "net_r": -8.202287429396716,
+            "avg_r": -0.4824874958468656,
+            "profit_factor": 0.06744909034781693
+          },
+          "2023": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -5.903414931939313,
+            "avg_r": -0.39356099546262086,
+            "profit_factor": 0.18764157293972256
+          },
+          "2024": {
+            "closed": 13,
+            "wins": 5,
+            "losses": 8,
+            "win_rate": 0.38461538461538464,
+            "net_r": -0.5176196237856812,
+            "avg_r": -0.03981689413736009,
+            "profit_factor": 0.9176816941123628
+          },
+          "2025": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 8.194147144661583,
+            "avg_r": 0.910460793851287,
+            "profit_factor": 2.9902593818422973
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2022_2026": {
+        "closed": 38,
+        "wins": 13,
+        "losses": 25,
+        "win_rate": 0.34210526315789475,
+        "net_r": 0.7670657372633152,
+        "avg_r": 0.02018594045429777,
+        "profit_factor": 1.0410674214746152,
+        "max_drawdown_r": 9.142070952217164,
+        "max_drawdown_fixed_20k": 0.18284141904434317,
+        "max_consecutive_losses": 6,
+        "positive_years": 1,
+        "negative_years": 3,
+        "by_year": {
+          "2023": {
+            "closed": 15,
+            "wins": 4,
+            "losses": 11,
+            "win_rate": 0.26666666666666666,
+            "net_r": -5.903414931939313,
+            "avg_r": -0.39356099546262086,
+            "profit_factor": 0.18764157293972256
+          },
+          "2024": {
+            "closed": 13,
+            "wins": 5,
+            "losses": 8,
+            "win_rate": 0.38461538461538464,
+            "net_r": -0.5176196237856812,
+            "avg_r": -0.03981689413736009,
+            "profit_factor": 0.9176816941123628
+          },
+          "2025": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 8.194147144661583,
+            "avg_r": 0.910460793851287,
+            "profit_factor": 2.9902593818422973
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "2024_2026": {
+        "closed": 23,
+        "wins": 9,
+        "losses": 14,
+        "win_rate": 0.391304347826087,
+        "net_r": 6.670480669202629,
+        "avg_r": 0.29002089866098385,
+        "profit_factor": 1.584555695433208,
+        "max_drawdown_r": 6.43276314297724,
+        "max_drawdown_fixed_20k": 0.1209299956504432,
+        "max_consecutive_losses": 4,
+        "positive_years": 1,
+        "negative_years": 2,
+        "by_year": {
+          "2024": {
+            "closed": 13,
+            "wins": 5,
+            "losses": 8,
+            "win_rate": 0.38461538461538464,
+            "net_r": -0.5176196237856812,
+            "avg_r": -0.03981689413736009,
+            "profit_factor": 0.9176816941123628
+          },
+          "2025": {
+            "closed": 9,
+            "wins": 4,
+            "losses": 5,
+            "win_rate": 0.4444444444444444,
+            "net_r": 8.194147144661583,
+            "avg_r": 0.910460793851287,
+            "profit_factor": 2.9902593818422973
+          },
+          "2026": {
+            "closed": 1,
+            "wins": 0,
+            "losses": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0060468516732741,
+            "avg_r": -1.0060468516732741,
+            "profit_factor": 0.0
+          }
+        }
+      },
+      "signals_seen_in_shards": 518,
+      "cap_block_events_in_shards": 5285
+    }
+  },
+  "comparison_vs_baseline": {
+    "adx20_dmi": {
+      "delta_trades": -43,
+      "delta_net_r": -24.815259901011302,
+      "delta_avg_r": -0.009801051935990457,
+      "delta_pf": -0.07187197836554082,
+      "delta_mdd_r": 2.5240797535072375,
+      "delta_max_loss_streak": -2
+    },
+    "adx_atr": {
+      "delta_trades": -283,
+      "delta_net_r": -125.4896186137577,
+      "delta_avg_r": 1.1117224575793414,
+      "delta_pf": 1.9783114841703386,
+      "delta_mdd_r": -9.109599634950794,
+      "delta_max_loss_streak": -6
+    },
+    "adx_rs": {
+      "delta_trades": -52,
+      "delta_net_r": -47.703830367054834,
+      "delta_avg_r": -0.08305783799113398,
+      "delta_pf": -0.22726375633775664,
+      "delta_mdd_r": 3.2562266164712526,
+      "delta_max_loss_streak": -2
+    },
+    "adx_rvol": {
+      "delta_trades": -147,
+      "delta_net_r": -149.0778101733637,
+      "delta_avg_r": -0.47046632893697593,
+      "delta_pf": -1.040019888915839,
+      "delta_mdd_r": 4.862972084446039,
+      "delta_max_loss_streak": 2
+    },
+    "adx_rvol_atr": {
+      "delta_trades": -296,
+      "delta_net_r": -156.69555875913056,
+      "delta_avg_r": -0.5580617890079259,
+      "delta_pf": -1.2123695011422566,
+      "delta_mdd_r": -9.70341872256665,
+      "delta_max_loss_streak": -7
+    },
+    "adx_rvol_rs": {
+      "delta_trades": -154,
+      "delta_net_r": -154.73885784084666,
+      "delta_avg_r": -0.506465370823316,
+      "delta_pf": -1.1218262470300875,
+      "delta_mdd_r": 0.18405066249171043,
+      "delta_max_loss_streak": 1
+    },
+    "all4_adx_rvol_atr_rs": {
+      "delta_trades": -296,
+      "delta_net_r": -156.69555875913056,
+      "delta_avg_r": -0.5580617890079259,
+      "delta_pf": -1.2123695011422566,
+      "delta_mdd_r": -9.70341872256665,
+      "delta_max_loss_streak": -7
+    },
+    "all6_including_rsi_macd": {
+      "delta_trades": -301,
+      "delta_net_r": -157.4669075031543,
+      "delta_avg_r": -1.5293953560259503,
+      "delta_pf": -2.149909847763946,
+      "delta_mdd_r": -11.511538201001349,
+      "delta_max_loss_streak": -10
+    },
+    "atr_contract_expand": {
+      "delta_trades": -261,
+      "delta_net_r": -130.16433115317548,
+      "delta_avg_r": 0.12318507359976316,
+      "delta_pf": -0.062234345617883324,
+      "delta_mdd_r": -4.6624188058498195,
+      "delta_max_loss_streak": -5
+    },
+    "baseline": {
+      "delta_trades": 0,
+      "delta_net_r": 0.0,
+      "delta_avg_r": 0.0,
+      "delta_pf": 0.0,
+      "delta_mdd_r": 0.0,
+      "delta_max_loss_streak": 0
+    },
+    "macd_bull": {
+      "delta_trades": -67,
+      "delta_net_r": -144.54760120670866,
+      "delta_avg_r": -0.4673925871119207,
+      "delta_pf": -1.0266866934988323,
+      "delta_mdd_r": -0.5776661654611601,
+      "delta_max_loss_streak": -3
+    },
+    "rs_ratio_slope20": {
+      "delta_trades": -11,
+      "delta_net_r": -6.602761389187435,
+      "delta_avg_r": -0.003106695260095216,
+      "delta_pf": 0.0051881281044412475,
+      "delta_mdd_r": -0.6948063345483959,
+      "delta_max_loss_streak": -2
+    },
+    "rsi50_70": {
+      "delta_trades": -4,
+      "delta_net_r": 16.777337010725887,
+      "delta_avg_r": 0.0632536788871213,
+      "delta_pf": 0.11476443880730614,
+      "delta_mdd_r": -0.5893359458048835,
+      "delta_max_loss_streak": 4
+    },
+    "rvol12": {
+      "delta_trades": -94,
+      "delta_net_r": -130.56114623952413,
+      "delta_avg_r": -0.3935723689666927,
+      "delta_pf": -0.8456081239431665,
+      "delta_mdd_r": 4.132904747519941,
+      "delta_max_loss_streak": 3
+    },
+    "rvol_rs": {
+      "delta_trades": -111,
+      "delta_net_r": -120.01035938139113,
+      "delta_avg_r": -0.32725216686903136,
+      "delta_pf": -0.6507518393723815,
+      "delta_mdd_r": 5.061078907526397,
+      "delta_max_loss_streak": 2
+    }
+  },
+  "predeclared_success_screen": {
+    "criteria": "closed>=200, net_r>=130, PF>=2.30, avg_r>=0.55, max_consecutive_losses<=8",
+    "passing": []
+  },
+  "validation": {
+    "expected_baseline": {
+      "closed": 302,
+      "net_r": 156.4555769715374,
+      "profit_factor": 2.149909847763946,
+      "max_drawdown_r": 12.522868732618235,
+      "max_consecutive_losses": 11
+    },
+    "note": "Baseline should reproduce the previously validated M1-B2 full state-machine result."
+  },
+  "limitations": [
+    "Current 53-symbol universe is projected backward, so survivorship/post-selection bias remains.",
+    "All indicator thresholds were fixed before this run; no parameter sweep is performed.",
+    "All filters use only the completed signal-day data and earlier information.",
+    "RSI and MACD are included as overlap/control indicators, not because they were expected to be independent alpha sources."
+  ]
+}
