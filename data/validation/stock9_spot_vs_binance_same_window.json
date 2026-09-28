@@ -1,0 +1,612 @@
+{
+  "generated_at": "2026-09-28T08:28:13.510814+00:00",
+  "purpose": "Same-symbol, same-evaluation-window spot-vs-Binance TradFi comparison",
+  "symbols": [
+    "AAPL",
+    "AMZN",
+    "AVGO",
+    "AMD",
+    "INTC",
+    "META",
+    "MSFT",
+    "NVDA",
+    "TSLA"
+  ],
+  "period": {
+    "end_exclusive": "2026-09-26T00:00:00Z",
+    "per_symbol_eval_start_ms": {
+      "AAPL": 1782849600000,
+      "AMZN": 1778011200000,
+      "AVGO": 1784145600000,
+      "AMD": 1785528000000,
+      "INTC": 1777406400000,
+      "META": 1782158400000,
+      "MSFT": 1784145600000,
+      "NVDA": 1782158400000,
+      "TSLA": 1776974400000
+    }
+  },
+  "data": {
+    "SPOT": "HF/Finnhub 1m->15m through 2026-03-25 stitched to getdata-finance public GitHub 15m cash sample from 2026-03-26 through 2026-09-25; RTH only",
+    "BINANCE": "Binance USD-M TradFi perpetual 15m via existing public export proxy; RTH bars build structure, all 15m bars manage positions",
+    "note": "Spot and Binance use their own native prices; this is a native-market backtest comparison, not cross-market execution simulation."
+  },
+  "shared_rules": {
+    "track": "B frozen",
+    "entry_fill": "exact planned-price touch low<=entry<=high",
+    "fees_bps_per_fill": 4.0,
+    "slippage_bps_per_fill": 2.0,
+    "management": "TP1 30%=>BE; TP2 30%=>TP1; 40% confirmed 4H pivot runner"
+  },
+  "totals": {
+    "SPOT": {
+      "wins": 3,
+      "losses": 0,
+      "win_rate": 1.0,
+      "net_r": 3.201714763729166,
+      "avg_r": 1.0672382545763888,
+      "profit_factor": null,
+      "max_drawdown_fixed_20k": 0.0
+    },
+    "BINANCE": {
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "net_r": 1.5491528536349992,
+      "avg_r": 1.5491528536349992,
+      "profit_factor": null,
+      "max_drawdown_fixed_20k": 0.0
+    }
+  },
+  "per_symbol": {
+    "AAPL": {
+      "eval_start_ms": 1782849600000,
+      "SPOT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 16552,
+          "h4": 346,
+          "d1": 173,
+          "first": 1775484000000,
+          "last": 1790379900000
+        }
+      }
+    },
+    "AMZN": {
+      "eval_start_ms": 1778011200000,
+      "SPOT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 21925,
+          "h4": 458,
+          "d1": 229,
+          "first": 1770648300000,
+          "last": 1790379900000
+        }
+      }
+    },
+    "AVGO": {
+      "eval_start_ms": 1784145600000,
+      "SPOT": {
+        "trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.2143380855756483,
+        "avg_r": 1.2143380855756483,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 15209,
+          "h4": 318,
+          "d1": 159,
+          "first": 1776692700000,
+          "last": 1790379900000
+        }
+      }
+    },
+    "AMD": {
+      "eval_start_ms": 1785528000000,
+      "SPOT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 13674,
+          "h4": 286,
+          "d1": 143,
+          "first": 1778074200000,
+          "last": 1790379900000
+        }
+      }
+    },
+    "INTC": {
+      "eval_start_ms": 1777406400000,
+      "SPOT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 22598,
+          "h4": 472,
+          "d1": 236,
+          "first": 1770042600000,
+          "last": 1790379900000
+        }
+      }
+    },
+    "META": {
+      "eval_start_ms": 1782158400000,
+      "SPOT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 1,
+        "wins": 1,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.5491528536349992,
+        "avg_r": 1.5491528536349992,
+        "profit_factor": null,
+        "data": {
+          "m15": 17606,
+          "h4": 368,
+          "d1": 184,
+          "first": 1774535400000,
+          "last": 1790379900000
+        }
+      }
+    },
+    "MSFT": {
+      "eval_start_ms": 1784145600000,
+      "SPOT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 15210,
+          "h4": 318,
+          "d1": 159,
+          "first": 1776691800000,
+          "last": 1790379900000
+        }
+      }
+    },
+    "NVDA": {
+      "eval_start_ms": 1782158400000,
+      "SPOT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 17605,
+          "h4": 368,
+          "d1": 184,
+          "first": 1774536300000,
+          "last": 1790379900000
+        }
+      }
+    },
+    "TSLA": {
+      "eval_start_ms": 1776974400000,
+      "SPOT": {
+        "trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 1.0,
+        "net_r": 1.9873766781535176,
+        "avg_r": 0.9936883390767588,
+        "profit_factor": null,
+        "data": {
+          "m15": 4784,
+          "h4": 368,
+          "d1": 184,
+          "first": 1767364200000,
+          "last": 1790365500000
+        }
+      },
+      "BINANCE": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "data": {
+          "m15": 23078,
+          "h4": 482,
+          "d1": 241,
+          "first": 1769610600000,
+          "last": 1790379900000
+        }
+      }
+    }
+  },
+  "errors": {},
+  "trades": {
+    "SPOT": [
+      {
+        "symbol": "TSLA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1777384800000,
+        "trigger_4h_open_ms": 1777383000000,
+        "exit_t": 1778851800000,
+        "entry": 387.49,
+        "stop": 367.96,
+        "target": 415.59000000000003,
+        "tp1": 402.11,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 20.481310803891418,
+        "reason": "STOP",
+        "pnl": 712.6235330261129,
+        "r": 1.7815588325652822,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1777650300000,
+            "price": 402.11,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1777650300000,
+            "price": 387.49,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1778160600000,
+            "price": 415.59000000000003,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1778160600000,
+            "price": 402.11,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1778528700000,
+            "price": 419.62
+          },
+          {
+            "type": "TRAIL",
+            "t": 1778615100000,
+            "price": 424.83
+          },
+          {
+            "type": "TRAIL",
+            "t": 1778787900000,
+            "price": 443.65000000000003
+          },
+          {
+            "type": "STOP",
+            "t": 1778851800000,
+            "price": 443.65000000000003,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      },
+      {
+        "symbol": "TSLA",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1779370200000,
+        "trigger_4h_open_ms": 1779370200000,
+        "exit_t": 1780342200000,
+        "entry": 424.24,
+        "stop": 397.04,
+        "target": 459.48,
+        "tp1": 444.61,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 14.705882352941183,
+        "reason": "BE",
+        "pnl": 82.32713823529419,
+        "r": 0.20581784558823546,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1779888600000,
+            "price": 444.61,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1779888600000,
+            "price": 424.24,
+            "cause": "TP1"
+          },
+          {
+            "type": "BE",
+            "t": 1780342200000,
+            "price": 424.24,
+            "fraction": 0.7
+          }
+        ]
+      },
+      {
+        "symbol": "AVGO",
+        "track": "B",
+        "direction": "LONG",
+        "source": null,
+        "entry_t": 1784899800000,
+        "trigger_4h_open_ms": 1784899800000,
+        "exit_t": 1786471200000,
+        "entry": 383.46000000000004,
+        "stop": 360.79,
+        "target": 413.16,
+        "tp1": 401.62,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 17.644464049404487,
+        "reason": "STOP",
+        "pnl": 485.7352342302593,
+        "r": 1.2143380855756483,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1785850200000,
+            "price": 401.62,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1785850200000,
+            "price": 383.46000000000004,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1785856500000,
+            "price": 413.16,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1785856500000,
+            "price": 401.62,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1786045500000,
+            "price": 407.88
+          },
+          {
+            "type": "TRAIL",
+            "t": 1786391100000,
+            "price": 417.58
+          },
+          {
+            "type": "STOP",
+            "t": 1786471200000,
+            "price": 417.58,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      }
+    ],
+    "BINANCE": [
+      {
+        "symbol": "META",
+        "track": "B",
+        "direction": "SHORT",
+        "source": null,
+        "entry_t": 1786714200000,
+        "trigger_4h_open_ms": 1786714200000,
+        "exit_t": 1787585400000,
+        "entry": 599.02,
+        "stop": 615.22,
+        "target": 581.17,
+        "tp1": 586.72,
+        "fib1618": null,
+        "runner_mode": "pivot",
+        "size": 24.69,
+        "reason": "STOP",
+        "pnl": 619.6611414539997,
+        "r": 1.5491528536349992,
+        "events": [
+          {
+            "type": "TP1",
+            "t": 1786973400000,
+            "price": 586.72,
+            "fraction": 0.3
+          },
+          {
+            "type": "BE_MOVE",
+            "t": 1786973400000,
+            "price": 599.02,
+            "cause": "TP1"
+          },
+          {
+            "type": "TP2",
+            "t": 1786973400000,
+            "price": 581.17,
+            "fraction": 0.3
+          },
+          {
+            "type": "STOP_TO_TP1",
+            "t": 1786973400000,
+            "price": 586.72,
+            "cause": "TP2"
+          },
+          {
+            "type": "TRAIL",
+            "t": 1787168700000,
+            "price": 557.67
+          },
+          {
+            "type": "TRAIL",
+            "t": 1787341500000,
+            "price": 557.13
+          },
+          {
+            "type": "STOP",
+            "t": 1787585400000,
+            "price": 557.13,
+            "fraction": 0.39999999999999997
+          }
+        ]
+      }
+    ]
+  }
+}
