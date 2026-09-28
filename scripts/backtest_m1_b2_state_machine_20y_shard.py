@@ -279,6 +279,7 @@ def simulate_portfolio(adj,dailies,signals):
     all_dates=sorted(set(d for g in sessions.values() for d in g))
     openpos={}
     used_signals=set()
+    last_exit_date={}
     trades=[]
     skipped_cap=0
 
@@ -305,7 +306,7 @@ def simulate_portfolio(adj,dailies,signals):
                     exit_fill=raw*(1-SLIPPAGE_BPS/10000)
                     exiting.append((s,close_trade(pos,bar["t"],exit_fill,"STOP")))
             for s,tr in exiting:
-                trades.append(tr);del openpos[s]
+                trades.append(tr);del openpos[s];last_exit_date[s]=d
 
             # 2) Find symbols whose oldest still-valid pending buy stop triggers now.
             candidates=[]
@@ -316,6 +317,9 @@ def simulate_portfolio(adj,dailies,signals):
                 for sig in orders:
                     sid=(s,sig["signal_t"])
                     if sid in used_signals:continue
+                    led=last_exit_date.get(s)
+                    if led is not None and datetime.fromisoformat(sig["signal_date"]).date()<=led:
+                        used_signals.add(sid);continue
                     # Ignore signals that became obsolete because a later portfolio fill in same symbol occurred.
                     if bar["o"]>=sig["entry_stop"] or bar["h"]>=sig["entry_stop"]:
                         chosen=sig;break
@@ -352,7 +356,7 @@ def simulate_portfolio(adj,dailies,signals):
                     raw_exit=bar["o"] if bar["o"]<pos["stop"] else pos["stop"]
                     exit_fill=raw_exit*(1-SLIPPAGE_BPS/10000)
                     trades.append(close_trade(pos,bar["t"],exit_fill,"STOP"))
-                    del openpos[s]
+                    del openpos[s];last_exit_date[s]=d
 
         # 3) End-of-session trailing stop update / time stop.
         for s,pos in list(openpos.items()):
@@ -365,7 +369,7 @@ def simulate_portfolio(adj,dailies,signals):
             if pos["hold_days"]>=MAX_HOLD_DAYS:
                 exit_fill=x["c"]*(1-SLIPPAGE_BPS/10000)
                 trades.append(close_trade(pos,x["ct"],exit_fill,"TIME"))
-                del openpos[s]
+                del openpos[s];last_exit_date[s]=d
 
     return trades,skipped_cap
 
