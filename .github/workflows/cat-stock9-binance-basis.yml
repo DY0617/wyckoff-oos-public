@@ -1,0 +1,33 @@
+name: CAT Stock9 Binance Basis Calibration
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cat-stock9-binance-basis.yml"
+      - "scripts/analyze_cat_stock9_binance_basis.py"
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install duckdb
+      - run: python -m py_compile scripts/analyze_cat_stock9_binance_basis.py
+      - run: python scripts/analyze_cat_stock9_binance_basis.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cat-stock9-binance-basis
+          path: data/validation/cat_stock9_binance_basis_calibration.json
+          retention-days: 30
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/cat_stock9_binance_basis_calibration.json
+          git commit -m "research: add CAT stock-futures basis calibration [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
