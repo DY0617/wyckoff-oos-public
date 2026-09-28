@@ -1,0 +1,4724 @@
+{
+  "strategy": "LDFR_v1.0_STRUCTURAL",
+  "status": "STRUCTURAL_REDESIGN_DISCOVERY_TEST",
+  "market": "Binance Vision USDT-M perpetual",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "ADAUSDT",
+    "DOGEUSDT",
+    "LINKUSDT"
+  ],
+  "universe_test": "8 liquid USDT-M perpetuals; structural-liquidity discovery test",
+  "period": {
+    "warmup_start": "2021-06-01T00:00:00+00:00",
+    "eval_start": "2021-09-28T00:00:00+00:00",
+    "eval_end_exclusive": "2026-09-28T00:00:00+00:00"
+  },
+  "logic": {
+    "regime": "closed 4H close>EMA50, EMA20>EMA50, EMA20 5-bar slope>0 for long; exact inverse short",
+    "liquidity_sweep": "most recent intact confirmed 2L/2R swing within 72 bars; sweep penetration 0.05-1.0 ATR and close back inside",
+    "displacement": "within 3 bars: range>=1.5 ATR14, body/range>=0.6, directional CLV, AND close breaks pre-sweep 5-bar structure (MSS)",
+    "fvg": "3-candle FVG >= 0.15 ATR14 on displacement bar or within next 2 bars",
+    "retest": "FVG midpoint limit entry on first valid touch within 8 bars without close through far edge; 4H regime rechecked",
+    "confirmation": "MSS is embedded in displacement; no extra post-retest chase confirmation",
+    "stop": "sweep extreme +/- 0.15 ATR14 measured on sweep bar",
+    "management": "TP1 1.5R on 50%, remainder stop->BE; TP2 3.0R exits rest",
+    "ambiguity": "same 1H bar stop checked before targets, including retest/entry bar",
+    "costs": {
+      "fee_bps_per_fill": 4.0,
+      "slippage_bps_per_fill": 2.0,
+      "implementation": "charged once per fill via combined cost"
+    },
+    "positioning": "fixed 1R reference risk per trade; one open position per symbol"
+  },
+  "data_counts": {
+    "BTCUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "ETHUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "BNBUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "SOLUSDT": {
+      "1h_bars": 46536,
+      "4h_bars": 11634,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "XRPUSDT": {
+      "1h_bars": 46536,
+      "4h_bars": 11634,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "ADAUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "DOGEUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "LINKUSDT": {
+      "1h_bars": 46656,
+      "4h_bars": 11664,
+      "first_1h_open": "2021-06-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    }
+  },
+  "setup_counts": {
+    "BTCUSDT": 23,
+    "ETHUSDT": 16,
+    "BNBUSDT": 13,
+    "SOLUSDT": 19,
+    "XRPUSDT": 17,
+    "ADAUSDT": 14,
+    "DOGEUSDT": 12,
+    "LINKUSDT": 15
+  },
+  "funnel_counts": {
+    "BTCUSDT": {
+      "TOTAL": {
+        "intact_liquidity": 81857,
+        "sweep": 3325,
+        "regime": 1238,
+        "displacement": 108,
+        "mss": 63,
+        "fvg": 46,
+        "retest": 23
+      },
+      "LONG": {
+        "intact_liquidity": 41106,
+        "sweep": 1661,
+        "regime": 648,
+        "displacement": 57,
+        "mss": 30,
+        "fvg": 19,
+        "retest": 9
+      },
+      "SHORT": {
+        "intact_liquidity": 40751,
+        "sweep": 1664,
+        "regime": 590,
+        "displacement": 51,
+        "mss": 33,
+        "fvg": 27,
+        "retest": 14
+      }
+    },
+    "ETHUSDT": {
+      "TOTAL": {
+        "intact_liquidity": 82037,
+        "sweep": 3320,
+        "regime": 1199,
+        "displacement": 73,
+        "mss": 43,
+        "fvg": 32,
+        "retest": 16
+      },
+      "LONG": {
+        "intact_liquidity": 41360,
+        "sweep": 1642,
+        "regime": 587,
+        "displacement": 37,
+        "mss": 25,
+        "fvg": 21,
+        "retest": 12
+      },
+      "SHORT": {
+        "intact_liquidity": 40677,
+        "sweep": 1678,
+        "regime": 612,
+        "displacement": 36,
+        "mss": 18,
+        "fvg": 11,
+        "retest": 4
+      }
+    },
+    "BNBUSDT": {
+      "TOTAL": {
+        "intact_liquidity": 81739,
+        "sweep": 3030,
+        "regime": 1120,
+        "displacement": 86,
+        "mss": 55,
+        "fvg": 46,
+        "retest": 13
+      },
+      "LONG": {
+        "intact_liquidity": 41315,
+        "sweep": 1564,
+        "regime": 602,
+        "displacement": 43,
+        "mss": 30,
+        "fvg": 27,
+        "retest": 8
+      },
+      "SHORT": {
+        "intact_liquidity": 40424,
+        "sweep": 1466,
+        "regime": 518,
+        "displacement": 43,
+        "mss": 25,
+        "fvg": 19,
+        "retest": 5
+      }
+    },
+    "SOLUSDT": {
+      "TOTAL": {
+        "intact_liquidity": 81109,
+        "sweep": 3092,
+        "regime": 1115,
+        "displacement": 86,
+        "mss": 55,
+        "fvg": 43,
+        "retest": 20
+      },
+      "LONG": {
+        "intact_liquidity": 40785,
+        "sweep": 1562,
+        "regime": 541,
+        "displacement": 39,
+        "mss": 22,
+        "fvg": 19,
+        "retest": 8
+      },
+      "SHORT": {
+        "intact_liquidity": 40324,
+        "sweep": 1530,
+        "regime": 574,
+        "displacement": 47,
+        "mss": 33,
+        "fvg": 24,
+        "retest": 12
+      }
+    },
+    "XRPUSDT": {
+      "TOTAL": {
+        "intact_liquidity": 82205,
+        "sweep": 3153,
+        "regime": 1102,
+        "displacement": 64,
+        "mss": 38,
+        "fvg": 34,
+        "retest": 17
+      },
+      "LONG": {
+        "intact_liquidity": 41169,
+        "sweep": 1647,
+        "regime": 494,
+        "displacement": 26,
+        "mss": 19,
+        "fvg": 17,
+        "retest": 10
+      },
+      "SHORT": {
+        "intact_liquidity": 41036,
+        "sweep": 1506,
+        "regime": 608,
+        "displacement": 38,
+        "mss": 19,
+        "fvg": 17,
+        "retest": 7
+      }
+    },
+    "ADAUSDT": {
+      "TOTAL": {
+        "intact_liquidity": 81202,
+        "sweep": 3110,
+        "regime": 1122,
+        "displacement": 79,
+        "mss": 42,
+        "fvg": 37,
+        "retest": 14
+      },
+      "LONG": {
+        "intact_liquidity": 40560,
+        "sweep": 1608,
+        "regime": 439,
+        "displacement": 36,
+        "mss": 19,
+        "fvg": 18,
+        "retest": 7
+      },
+      "SHORT": {
+        "intact_liquidity": 40642,
+        "sweep": 1502,
+        "regime": 683,
+        "displacement": 43,
+        "mss": 23,
+        "fvg": 19,
+        "retest": 7
+      }
+    },
+    "DOGEUSDT": {
+      "TOTAL": {
+        "intact_liquidity": 82316,
+        "sweep": 3214,
+        "regime": 1134,
+        "displacement": 62,
+        "mss": 40,
+        "fvg": 35,
+        "retest": 12
+      },
+      "LONG": {
+        "intact_liquidity": 41247,
+        "sweep": 1657,
+        "regime": 462,
+        "displacement": 28,
+        "mss": 17,
+        "fvg": 15,
+        "retest": 6
+      },
+      "SHORT": {
+        "intact_liquidity": 41069,
+        "sweep": 1557,
+        "regime": 672,
+        "displacement": 34,
+        "mss": 23,
+        "fvg": 20,
+        "retest": 6
+      }
+    },
+    "LINKUSDT": {
+      "TOTAL": {
+        "intact_liquidity": 80547,
+        "sweep": 3213,
+        "regime": 1142,
+        "displacement": 88,
+        "mss": 52,
+        "fvg": 39,
+        "retest": 15
+      },
+      "LONG": {
+        "intact_liquidity": 40639,
+        "sweep": 1659,
+        "regime": 590,
+        "displacement": 44,
+        "mss": 23,
+        "fvg": 15,
+        "retest": 8
+      },
+      "SHORT": {
+        "intact_liquidity": 39908,
+        "sweep": 1554,
+        "regime": 552,
+        "displacement": 44,
+        "mss": 29,
+        "fvg": 24,
+        "retest": 7
+      }
+    }
+  },
+  "summary": {
+    "trades": 128,
+    "long": 67,
+    "short": 61,
+    "wins": 55,
+    "losses": 73,
+    "win_rate": 0.4296875,
+    "total_r": 0.030061956361341347,
+    "avg_r": 0.00023485903407297927,
+    "median_r": -1.035195855491604,
+    "avg_win_r": 1.4267057920303348,
+    "avg_loss_r": -1.0745035151411928,
+    "profit_factor": 1.000383253861514,
+    "max_drawdown_r": -20.76803659107304,
+    "max_losing_streak": 13,
+    "tp1_rate": 0.4296875,
+    "tp2_rate": 0.21875,
+    "avg_risk_pct": 0.021119685502164604
+  },
+  "splits": {
+    "development_2021-09-28_2024-09-27": {
+      "trades": 65,
+      "long": 33,
+      "short": 32,
+      "wins": 25,
+      "losses": 40,
+      "win_rate": 0.38461538461538464,
+      "total_r": -5.039721765043931,
+      "avg_r": -0.07753418100067587,
+      "median_r": -1.0343377501381459,
+      "avg_win_r": 1.5107832312905085,
+      "avg_loss_r": -1.0702325636826662,
+      "profit_factor": 0.8822750788926131,
+      "max_drawdown_r": -14.85189872472255,
+      "max_losing_streak": 13,
+      "tp1_rate": 0.38461538461538464,
+      "tp2_rate": 0.2153846153846154,
+      "avg_risk_pct": 0.024336837026159464
+    },
+    "oos_2025-09-28_2026-09-27": {
+      "trades": 37,
+      "long": 22,
+      "short": 15,
+      "wins": 18,
+      "losses": 19,
+      "win_rate": 0.4864864864864865,
+      "total_r": 7.666588426141051,
+      "avg_r": 0.2072050925984068,
+      "median_r": -1.0410197925805253,
+      "avg_win_r": 1.5700992452474947,
+      "avg_loss_r": -1.0839577888586236,
+      "profit_factor": 1.3722512612159028,
+      "max_drawdown_r": -5.277062687770227,
+      "max_losing_streak": 5,
+      "tp1_rate": 0.4864864864864865,
+      "tp2_rate": 0.2972972972972973,
+      "avg_risk_pct": 0.016858352411432093
+    },
+    "validation_2024-09-28_2025-09-27": {
+      "trades": 26,
+      "long": 12,
+      "short": 14,
+      "wins": 12,
+      "losses": 14,
+      "win_rate": 0.46153846153846156,
+      "total_r": -2.5968047047357783,
+      "avg_r": -0.09987710402829916,
+      "median_r": -1.0423753181015476,
+      "avg_win_r": 1.036454280412567,
+      "avg_loss_r": -1.0738754335490415,
+      "profit_factor": 0.8272741469415511,
+      "max_drawdown_r": -4.475538258811932,
+      "max_losing_streak": 3,
+      "tp1_rate": 0.46153846153846156,
+      "tp2_rate": 0.11538461538461539,
+      "avg_risk_pct": 0.01914101147514295
+    }
+  },
+  "years": {
+    "2021": {
+      "trades": 5,
+      "long": 4,
+      "short": 1,
+      "wins": 2,
+      "losses": 3,
+      "win_rate": 0.4,
+      "total_r": -1.780231335945098,
+      "avg_r": -0.3560462671890196,
+      "median_r": -1.0360071488455198,
+      "avg_win_r": 0.6936968791671545,
+      "avg_loss_r": -1.0558750314264689,
+      "profit_factor": 0.43799178155264706,
+      "max_drawdown_r": -3.1676250942794066,
+      "max_losing_streak": 3,
+      "tp1_rate": 0.4,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.022562656138225327
+    },
+    "2022": {
+      "trades": 25,
+      "long": 9,
+      "short": 16,
+      "wins": 9,
+      "losses": 16,
+      "win_rate": 0.36,
+      "total_r": 1.2296897498802335,
+      "avg_r": 0.04918758999520934,
+      "median_r": -1.0343845621376886,
+      "avg_win_r": 2.0170551078723022,
+      "avg_loss_r": -1.0577378888106554,
+      "profit_factor": 1.0726603539312871,
+      "max_drawdown_r": -8.404989019587967,
+      "max_losing_streak": 8,
+      "tp1_rate": 0.36,
+      "tp2_rate": 0.32,
+      "avg_risk_pct": 0.027549610421468206
+    },
+    "2023": {
+      "trades": 19,
+      "long": 14,
+      "short": 5,
+      "wins": 7,
+      "losses": 12,
+      "win_rate": 0.3684210526315789,
+      "total_r": -2.5796133627829136,
+      "avg_r": -0.13576912435699545,
+      "median_r": -1.0365316501347004,
+      "avg_win_r": 1.4952790330451795,
+      "avg_loss_r": -1.0872138828415976,
+      "profit_factor": 0.8022764576275839,
+      "max_drawdown_r": -5.780016060006382,
+      "max_losing_streak": 5,
+      "tp1_rate": 0.3684210526315789,
+      "tp2_rate": 0.21052631578947367,
+      "avg_risk_pct": 0.0187005172312531
+    },
+    "2024": {
+      "trades": 22,
+      "long": 7,
+      "short": 15,
+      "wins": 10,
+      "losses": 12,
+      "win_rate": 0.45454545454545453,
+      "total_r": -1.4545115135747775,
+      "avg_r": -0.06611415970794443,
+      "median_r": -1.0262736032646163,
+      "avg_win_r": 1.1379487061785651,
+      "avg_loss_r": -1.0694998812800358,
+      "profit_factor": 0.8866673153316967,
+      "max_drawdown_r": -3.8672963423516706,
+      "max_losing_streak": 3,
+      "tp1_rate": 0.45454545454545453,
+      "tp2_rate": 0.13636363636363635,
+      "avg_risk_pct": 0.02653985843827942
+    },
+    "2025": {
+      "trades": 30,
+      "long": 18,
+      "short": 12,
+      "wins": 12,
+      "losses": 18,
+      "win_rate": 0.4,
+      "total_r": -3.897698820170802,
+      "avg_r": -0.1299232940056934,
+      "median_r": -1.0491955596336129,
+      "avg_win_r": 1.281323934229622,
+      "avg_loss_r": -1.0707547794959038,
+      "profit_factor": 0.7977699212841564,
+      "max_drawdown_r": -9.200841474789046,
+      "max_losing_streak": 7,
+      "tp1_rate": 0.4,
+      "tp2_rate": 0.16666666666666666,
+      "avg_risk_pct": 0.01839246958511215
+    },
+    "2026": {
+      "trades": 27,
+      "long": 15,
+      "short": 12,
+      "wins": 15,
+      "losses": 12,
+      "win_rate": 0.5555555555555556,
+      "total_r": 8.512427238954698,
+      "avg_r": 0.3152750829242481,
+      "median_r": 0.6625906707612457,
+      "avg_win_r": 1.4470400885750678,
+      "avg_loss_r": -1.0994311741392764,
+      "profit_factor": 1.6452145011577552,
+      "max_drawdown_r": -3.344083148144369,
+      "max_losing_streak": 3,
+      "tp1_rate": 0.5555555555555556,
+      "tp2_rate": 0.2962962962962963,
+      "avg_risk_pct": 0.015215014905922843
+    }
+  },
+  "symbols_summary": {
+    "ADAUSDT": {
+      "trades": 14,
+      "long": 7,
+      "short": 7,
+      "wins": 4,
+      "losses": 10,
+      "win_rate": 0.2857142857142857,
+      "total_r": -3.363206728417047,
+      "avg_r": -0.2402290520297891,
+      "median_r": -1.0429940297126907,
+      "avg_win_r": 1.8234823844110721,
+      "avg_loss_r": -1.0657136266061336,
+      "profit_factor": 0.684417404033061,
+      "max_drawdown_r": -5.638707749605609,
+      "max_losing_streak": 5,
+      "tp1_rate": 0.2857142857142857,
+      "tp2_rate": 0.21428571428571427,
+      "avg_risk_pct": 0.023680027737383532
+    },
+    "BNBUSDT": {
+      "trades": 13,
+      "long": 8,
+      "short": 5,
+      "wins": 5,
+      "losses": 8,
+      "win_rate": 0.38461538461538464,
+      "total_r": -0.757761256684158,
+      "avg_r": -0.05828932743724292,
+      "median_r": -1.0589903887609355,
+      "avg_win_r": 1.5902585308448616,
+      "avg_loss_r": -1.0886317388635582,
+      "profit_factor": 0.9129915528786624,
+      "max_drawdown_r": -4.6867985771013085,
+      "max_losing_streak": 4,
+      "tp1_rate": 0.38461538461538464,
+      "tp2_rate": 0.23076923076923078,
+      "avg_risk_pct": 0.018308356376190625
+    },
+    "BTCUSDT": {
+      "trades": 23,
+      "long": 9,
+      "short": 14,
+      "wins": 13,
+      "losses": 10,
+      "win_rate": 0.5652173913043478,
+      "total_r": 6.09184533505636,
+      "avg_r": 0.26486284065462434,
+      "median_r": 0.5434380066110158,
+      "avg_win_r": 1.3219657182972573,
+      "avg_loss_r": -1.1093709002807985,
+      "profit_factor": 1.5491261158476775,
+      "max_drawdown_r": -2.209610913445366,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.5652173913043478,
+      "tp2_rate": 0.2608695652173913,
+      "avg_risk_pct": 0.014614916594656005
+    },
+    "DOGEUSDT": {
+      "trades": 12,
+      "long": 6,
+      "short": 6,
+      "wins": 5,
+      "losses": 7,
+      "win_rate": 0.4166666666666667,
+      "total_r": -1.028031431325201,
+      "avg_r": -0.08566928594376676,
+      "median_r": -1.0258300106833778,
+      "avg_win_r": 1.2938099147032516,
+      "avg_loss_r": -1.0710115721202083,
+      "profit_factor": 0.8628757738296652,
+      "max_drawdown_r": -4.955306135955139,
+      "max_losing_streak": 3,
+      "tp1_rate": 0.4166666666666667,
+      "tp2_rate": 0.16666666666666666,
+      "avg_risk_pct": 0.02990754661994435
+    },
+    "ETHUSDT": {
+      "trades": 15,
+      "long": 11,
+      "short": 4,
+      "wins": 9,
+      "losses": 6,
+      "win_rate": 0.6,
+      "total_r": 5.4425520341995774,
+      "avg_r": 0.36283680227997184,
+      "median_r": 0.6417446842276257,
+      "avg_win_r": 1.3271679607857398,
+      "avg_loss_r": -1.0836599354786804,
+      "profit_factor": 1.837063340631158,
+      "max_drawdown_r": -2.1098595852959336,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.6,
+      "tp2_rate": 0.26666666666666666,
+      "avg_risk_pct": 0.016023041845108894
+    },
+    "LINKUSDT": {
+      "trades": 15,
+      "long": 8,
+      "short": 7,
+      "wins": 8,
+      "losses": 7,
+      "win_rate": 0.5333333333333333,
+      "total_r": 5.510409320442573,
+      "avg_r": 0.3673606213628382,
+      "median_r": 0.7098450232303679,
+      "avg_win_r": 1.6244465389865896,
+      "avg_loss_r": -1.069308998778592,
+      "profit_factor": 1.7361775991700896,
+      "max_drawdown_r": -3.264113323383163,
+      "max_losing_streak": 3,
+      "tp1_rate": 0.5333333333333333,
+      "tp2_rate": 0.3333333333333333,
+      "avg_risk_pct": 0.023759587112561313
+    },
+    "SOLUSDT": {
+      "trades": 19,
+      "long": 8,
+      "short": 11,
+      "wins": 4,
+      "losses": 15,
+      "win_rate": 0.21052631578947367,
+      "total_r": -10.23827430861827,
+      "avg_r": -0.5388565425588563,
+      "median_r": -1.0398348572663876,
+      "avg_win_r": 1.393089007641765,
+      "avg_loss_r": -1.0540420226123552,
+      "profit_factor": 0.35244363513809057,
+      "max_drawdown_r": -10.37817016682555,
+      "max_losing_streak": 6,
+      "tp1_rate": 0.21052631578947367,
+      "tp2_rate": 0.10526315789473684,
+      "avg_risk_pct": 0.028659924590900703
+    },
+    "XRPUSDT": {
+      "trades": 17,
+      "long": 10,
+      "short": 7,
+      "wins": 7,
+      "losses": 10,
+      "win_rate": 0.4117647058823529,
+      "total_r": -1.6274710082924926,
+      "avg_r": -0.09573358872308779,
+      "median_r": -1.0386932348333118,
+      "avg_win_r": 1.2937932098411118,
+      "avg_loss_r": -1.0684023477180276,
+      "profit_factor": 0.847672460495003,
+      "max_drawdown_r": -7.828473935885537,
+      "max_losing_streak": 5,
+      "tp1_rate": 0.4117647058823529,
+      "tp2_rate": 0.17647058823529413,
+      "avg_risk_pct": 0.017498769432625582
+    }
+  },
+  "trades": [
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1633809600000,
+      "swept_level": 54342.36,
+      "penetration_atr": 0.5418602871690338,
+      "sweep_t": 1633831200000,
+      "mss_level": 55237.95,
+      "displacement_t": 1633838400000,
+      "fvg_t": 1633842000000,
+      "retest_t": 1633870800000,
+      "entry_t": 1633870800000,
+      "exit_t": 1634065200000,
+      "entry": 55319.259999999995,
+      "stop": 54034.185729131124,
+      "tp1": 57246.8714063033,
+      "tp2": 59174.482812606606,
+      "risk_pct": 0.023230142103651975,
+      "r": 0.6978929763517726,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1633957200000,
+          "price": 57246.8714063033,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1634065200000,
+          "price": 55319.259999999995,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1634785200000,
+      "swept_level": 4150.0,
+      "penetration_atr": 0.7279659740649838,
+      "sweep_t": 1634796000000,
+      "mss_level": 4249.0,
+      "displacement_t": 1634806800000,
+      "fvg_t": 1634806800000,
+      "retest_t": 1634814000000,
+      "entry_t": 1634814000000,
+      "exit_t": 1634817600000,
+      "entry": 4188.08,
+      "stop": 4104.387053348494,
+      "tp1": 4313.619419977258,
+      "tp2": 4439.158839954517,
+      "risk_pct": 0.019983607441000587,
+      "r": 0.6895007819825363,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1634814000000,
+          "price": 4313.619419977258,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1634817600000,
+          "price": 4188.08,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1635156000000,
+      "swept_level": 205.5,
+      "penetration_atr": 0.10221465502676359,
+      "sweep_t": 1635166800000,
+      "mss_level": 212.891,
+      "displacement_t": 1635170400000,
+      "fvg_t": 1635174000000,
+      "retest_t": 1635181200000,
+      "entry_t": 1635181200000,
+      "exit_t": 1635256800000,
+      "entry": 211.457,
+      "stop": 204.52533752415943,
+      "tp1": 221.85449371376086,
+      "tp2": 232.2519874275217,
+      "risk_pct": 0.03278048244248508,
+      "r": -1.0360071488455198,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1635256800000,
+          "price": 204.52533752415943,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1636534800000,
+      "swept_level": 4705.11,
+      "penetration_atr": 0.10198122196527207,
+      "sweep_t": 1636545600000,
+      "mss_level": 4760.84,
+      "displacement_t": 1636549200000,
+      "fvg_t": 1636552800000,
+      "retest_t": 1636567200000,
+      "entry_t": 1636567200000,
+      "exit_t": 1636570800000,
+      "entry": 4774.405,
+      "stop": 4695.078312386693,
+      "tp1": 4893.395031419959,
+      "tp2": 5012.38506283992,
+      "risk_pct": 0.016614989221338913,
+      "r": -1.071623940925512,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1636570800000,
+          "price": 4695.078312386693,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1637398800000,
+      "swept_level": 28.544,
+      "penetration_atr": 0.09900629852279665,
+      "sweep_t": 1637409600000,
+      "mss_level": 28.152,
+      "displacement_t": 1637420400000,
+      "fvg_t": 1637424000000,
+      "retest_t": 1637431200000,
+      "entry_t": 1637431200000,
+      "exit_t": 1637524800000,
+      "entry": 28.064999999999998,
+      "stop": 28.632026929380572,
+      "tp1": 27.214459605929136,
+      "tp2": 26.363919211858274,
+      "risk_pct": 0.020204059482650083,
+      "r": -1.059994004508375,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1637524800000,
+          "price": 28.632026929380572,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1641369600000,
+      "swept_level": 25.305,
+      "penetration_atr": 0.1067225755728147,
+      "sweep_t": 1641384000000,
+      "mss_level": 26.074,
+      "displacement_t": 1641387600000,
+      "fvg_t": 1641391200000,
+      "retest_t": 1641405600000,
+      "entry_t": 1641405600000,
+      "exit_t": 1641412800000,
+      "entry": 25.991,
+      "stop": 25.17269676817937,
+      "tp1": 27.218454847730943,
+      "tp2": 28.445909695461886,
+      "risk_pct": 0.03148409956602781,
+      "r": -1.0375144773565268,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1641412800000,
+          "price": 25.17269676817937,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1644656400000,
+      "swept_level": 1.0779,
+      "penetration_atr": 0.12313282927973475,
+      "sweep_t": 1644667200000,
+      "mss_level": 1.0491,
+      "displacement_t": 1644670800000,
+      "fvg_t": 1644674400000,
+      "retest_t": 1644699600000,
+      "entry_t": 1644699600000,
+      "exit_t": 1644890400000,
+      "entry": 1.0540500000000002,
+      "stop": 1.0825582129627216,
+      "tp1": 1.0112876805559181,
+      "tp2": 0.9685253611118358,
+      "risk_pct": 0.02704635734805885,
+      "r": -1.0449682668448559,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1644890400000,
+          "price": 1.0825582129627216,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1646114400000,
+      "swept_level": 2881.0,
+      "penetration_atr": 0.6637052326961256,
+      "sweep_t": 1646128800000,
+      "mss_level": 2934.41,
+      "displacement_t": 1646139600000,
+      "fvg_t": 1646139600000,
+      "retest_t": 1646146800000,
+      "entry_t": 1646146800000,
+      "exit_t": 1646319600000,
+      "entry": 2936.425,
+      "stop": 2845.6910864233337,
+      "tp1": 3072.5258703649997,
+      "tp2": 3208.6267407299997,
+      "risk_pct": 0.030899448675401724,
+      "r": -1.0382356443704217,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1646319600000,
+          "price": 2845.6910864233337,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1646168400000,
+      "swept_level": 15.057,
+      "penetration_atr": 0.5368163181096747,
+      "sweep_t": 1646179200000,
+      "mss_level": 15.412,
+      "displacement_t": 1646190000000,
+      "fvg_t": 1646193600000,
+      "retest_t": 1646204400000,
+      "entry_t": 1646204400000,
+      "exit_t": 1646319600000,
+      "entry": 15.2835,
+      "stop": 14.857409670849053,
+      "tp1": 15.922635493726421,
+      "tp2": 16.56177098745284,
+      "risk_pct": 0.02787910682441501,
+      "r": -1.0424429858301307,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1646319600000,
+          "price": 14.857409670849053,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1646582400000,
+      "swept_level": 39340.0,
+      "penetration_atr": 0.4500037952157292,
+      "sweep_t": 1646668800000,
+      "mss_level": 37963.1,
+      "displacement_t": 1646679600000,
+      "fvg_t": 1646679600000,
+      "retest_t": 1646690400000,
+      "entry_t": 1646690400000,
+      "exit_t": 1646794800000,
+      "entry": 38261.0,
+      "stop": 39619.99940963809,
+      "tp1": 36222.50088554286,
+      "tp2": 34184.00177108573,
+      "risk_pct": 0.03551918166378533,
+      "r": -1.0343845621376886,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1646794800000,
+          "price": 39619.99940963809,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1647154800000,
+      "swept_level": 2590.91,
+      "penetration_atr": 0.24470059754285983,
+      "sweep_t": 1647169200000,
+      "mss_level": 2568.69,
+      "displacement_t": 1647172800000,
+      "fvg_t": 1647172800000,
+      "retest_t": 1647190800000,
+      "entry_t": 1647190800000,
+      "exit_t": 1647208800000,
+      "entry": 2576.25,
+      "stop": 2597.507145491921,
+      "tp1": 2544.3642817621185,
+      "tp2": 2512.4785635242365,
+      "risk_pct": 0.008251196697494871,
+      "r": 2.1059165502842307,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1647201600000,
+          "price": 2544.3642817621185,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1647208800000,
+          "price": 2512.4785635242365,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1647496800000,
+      "swept_level": 86.7,
+      "penetration_atr": 0.1343288365876737,
+      "sweep_t": 1647511200000,
+      "mss_level": 88.95,
+      "displacement_t": 1647518400000,
+      "fvg_t": 1647522000000,
+      "retest_t": 1647550800000,
+      "entry_t": 1647550800000,
+      "exit_t": 1647561600000,
+      "entry": 88.195,
+      "stop": 86.36133396961021,
+      "tp1": 90.94549904558465,
+      "tp2": 93.69599809116933,
+      "risk_pct": 0.020791042920684608,
+      "r": -1.0571171623654407,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1647561600000,
+          "price": 86.36133396961021,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1648094400000,
+      "swept_level": 406.16,
+      "penetration_atr": 0.41731105967554805,
+      "sweep_t": 1648126800000,
+      "mss_level": 412.9,
+      "displacement_t": 1648134000000,
+      "fvg_t": 1648137600000,
+      "retest_t": 1648166400000,
+      "entry_t": 1648166400000,
+      "exit_t": 1648425600000,
+      "entry": 411.505,
+      "stop": 404.4199115466787,
+      "tp1": 422.13263267998195,
+      "tp2": 432.7602653599639,
+      "risk_pct": 0.01721750271156196,
+      "r": 2.1789534812827895,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1648411200000,
+          "price": 422.13263267998195,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1648425600000,
+          "price": 432.7602653599639,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1648177200000,
+      "swept_level": 43843.3,
+      "penetration_atr": 0.8863115103440512,
+      "sweep_t": 1648195200000,
+      "mss_level": 44195.0,
+      "displacement_t": 1648206000000,
+      "fvg_t": 1648209600000,
+      "retest_t": 1648231200000,
+      "entry_t": 1648231200000,
+      "exit_t": 1648418400000,
+      "entry": 44370.25,
+      "stop": 43529.70963833767,
+      "tp1": 45631.06054249349,
+      "tp2": 46891.87108498699,
+      "risk_pct": 0.018943782414170076,
+      "r": 2.1853046778375984,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1648411200000,
+          "price": 45631.06054249349,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1648418400000,
+          "price": 46891.87108498699,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1649394000000,
+      "swept_level": 1.0968,
+      "penetration_atr": 0.21138854216198136,
+      "sweep_t": 1649404800000,
+      "mss_level": 1.0809,
+      "displacement_t": 1649415600000,
+      "fvg_t": 1649419200000,
+      "retest_t": 1649426400000,
+      "entry_t": 1649426400000,
+      "exit_t": 1649458800000,
+      "entry": 1.0808499999999999,
+      "stop": 1.1012449438934167,
+      "tp1": 1.0502575841598747,
+      "tp2": 1.0196651683197495,
+      "risk_pct": 0.01886935642634666,
+      "r": 2.18775482627566,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1649440800000,
+          "price": 1.0502575841598747,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1649458800000,
+          "price": 1.0196651683197495,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1650103200000,
+      "swept_level": 40496.5,
+      "penetration_atr": 0.35966826632804433,
+      "sweep_t": 1650121200000,
+      "mss_level": 40293.3,
+      "displacement_t": 1650121200000,
+      "fvg_t": 1650124800000,
+      "retest_t": 1650139200000,
+      "entry_t": 1650139200000,
+      "exit_t": 1650142800000,
+      "entry": 40293.55,
+      "stop": 40599.23619545596,
+      "tp1": 39835.02070681607,
+      "tp2": 39376.49141363213,
+      "risk_pct": 0.007586479609167154,
+      "r": -1.1587761319901229,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1650142800000,
+          "price": 40599.23619545596,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1650106800000,
+      "swept_level": 0.9562,
+      "penetration_atr": 0.18504315265309734,
+      "sweep_t": 1650121200000,
+      "mss_level": 0.9489,
+      "displacement_t": 1650121200000,
+      "fvg_t": 1650124800000,
+      "retest_t": 1650142800000,
+      "entry_t": 1650142800000,
+      "exit_t": 1650200400000,
+      "entry": 0.9477,
+      "stop": 0.9585538082452885,
+      "tp1": 0.9314192876320673,
+      "tp2": 0.9151385752641346,
+      "risk_pct": 0.011452789116058328,
+      "r": -1.1053779704873323,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1650200400000,
+          "price": 0.9585538082452885,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1650186000000,
+      "swept_level": 40520.0,
+      "penetration_atr": 0.30326852928802706,
+      "sweep_t": 1650200400000,
+      "mss_level": 40262.1,
+      "displacement_t": 1650211200000,
+      "fvg_t": 1650214800000,
+      "retest_t": 1650225600000,
+      "entry_t": 1650225600000,
+      "exit_t": 1650254400000,
+      "entry": 40284.45,
+      "stop": 40600.858463923214,
+      "tp1": 39809.83730411517,
+      "tp2": 39335.224608230346,
+      "risk_pct": 0.0078543572997327,
+      "r": 2.098568562358904,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1650236400000,
+          "price": 39809.83730411517,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1650254400000,
+          "price": 39335.224608230346,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1652162400000,
+      "swept_level": 0.11586,
+      "penetration_atr": 0.32525303297341296,
+      "sweep_t": 1652180400000,
+      "mss_level": 0.112,
+      "displacement_t": 1652191200000,
+      "fvg_t": 1652194800000,
+      "retest_t": 1652202000000,
+      "entry_t": 1652202000000,
+      "exit_t": 1652252400000,
+      "entry": 0.11363000000000001,
+      "stop": 0.11739423837453615,
+      "tp1": 0.1079836424381958,
+      "tp2": 0.10233728487639158,
+      "risk_pct": 0.03312715281647576,
+      "r": 2.2151259391322276,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1652216400000,
+          "price": 0.1079836424381958,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1652252400000,
+          "price": 0.10233728487639158,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1652227200000,
+      "swept_level": 8.811,
+      "penetration_atr": 0.10873764563459648,
+      "sweep_t": 1652245200000,
+      "mss_level": 8.373,
+      "displacement_t": 1652248800000,
+      "fvg_t": 1652252400000,
+      "retest_t": 1652256000000,
+      "entry_t": 1652256000000,
+      "exit_t": 1652299200000,
+      "entry": 8.345500000000001,
+      "stop": 8.88952241287837,
+      "tp1": 7.529466380682449,
+      "tp2": 6.713432761364897,
+      "risk_pct": 0.06518751577237647,
+      "r": 2.23294156725361,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1652270400000,
+          "price": 7.529466380682449,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1652299200000,
+          "price": 6.713432761364897,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1652227200000,
+      "swept_level": 68.3,
+      "penetration_atr": 0.0532320749509217,
+      "sweep_t": 1652245200000,
+      "mss_level": 64.95,
+      "displacement_t": 1652248800000,
+      "fvg_t": 1652252400000,
+      "retest_t": 1652256000000,
+      "entry_t": 1652256000000,
+      "exit_t": 1652270400000,
+      "entry": 64.60499999999999,
+      "stop": 68.83449899368682,
+      "tp1": 58.26075150946974,
+      "tp2": 51.916503018939494,
+      "risk_pct": 0.0654670535359002,
+      "r": 2.233020169418241,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1652270400000,
+          "price": 58.26075150946974,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1652270400000,
+          "price": 51.916503018939494,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1652202000000,
+      "swept_level": 31788.0,
+      "penetration_atr": 0.18477962555749908,
+      "sweep_t": 1652245200000,
+      "mss_level": 30612.2,
+      "displacement_t": 1652248800000,
+      "fvg_t": 1652252400000,
+      "retest_t": 1652270400000,
+      "entry_t": 1652270400000,
+      "exit_t": 1652274000000,
+      "entry": 30932.2,
+      "stop": 32006.862759599873,
+      "tp1": 29320.205860600192,
+      "tp2": 27708.211721200383,
+      "risk_pct": 0.03474252589857406,
+      "r": 0.7159101970074591,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1652270400000,
+          "price": 29320.205860600192,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1652274000000,
+          "price": 30932.2,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1656878400000,
+      "swept_level": 33.68,
+      "penetration_atr": 0.4130842370257853,
+      "sweep_t": 1656892800000,
+      "mss_level": 32.75,
+      "displacement_t": 1656900000000,
+      "fvg_t": 1656903600000,
+      "retest_t": 1656914400000,
+      "entry_t": 1656914400000,
+      "exit_t": 1656932400000,
+      "entry": 32.945,
+      "stop": 33.95262441243462,
+      "tp1": 31.433563381348065,
+      "tp2": 29.92212676269613,
+      "risk_pct": 0.0305850481843868,
+      "r": -1.0398348572663876,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1656932400000,
+          "price": 33.95262441243462,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1657702800000,
+      "swept_level": 227.45,
+      "penetration_atr": 0.7531591894651498,
+      "sweep_t": 1657713600000,
+      "mss_level": 223.73,
+      "displacement_t": 1657713600000,
+      "fvg_t": 1657717200000,
+      "retest_t": 1657720800000,
+      "entry_t": 1657720800000,
+      "exit_t": 1657753200000,
+      "entry": 222.51999999999998,
+      "stop": 229.71641444725827,
+      "tp1": 211.72537832911254,
+      "tp2": 200.9307566582251,
+      "risk_pct": 0.032340528704198686,
+      "r": -1.0377051447852244,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1657753200000,
+          "price": 229.71641444725827,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1657702800000,
+      "swept_level": 0.06177,
+      "penetration_atr": 0.6254795823604413,
+      "sweep_t": 1657713600000,
+      "mss_level": 0.06074,
+      "displacement_t": 1657713600000,
+      "fvg_t": 1657717200000,
+      "retest_t": 1657720800000,
+      "entry_t": 1657720800000,
+      "exit_t": 1657821600000,
+      "entry": 0.06007,
+      "stop": 0.06248909326931453,
+      "tp1": 0.056441360096028195,
+      "tp2": 0.0528127201920564,
+      "risk_pct": 0.040271238044190666,
+      "r": -1.0303979416148865,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1657821600000,
+          "price": 0.06248909326931453,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1659589200000,
+      "swept_level": 39.73,
+      "penetration_atr": 0.14898737674051066,
+      "sweep_t": 1659618000000,
+      "mss_level": 38.3,
+      "displacement_t": 1659628800000,
+      "fvg_t": 1659632400000,
+      "retest_t": 1659636000000,
+      "entry_t": 1659636000000,
+      "exit_t": 1659668400000,
+      "entry": 38.489999999999995,
+      "stop": 39.93067967050742,
+      "tp1": 36.32898049423885,
+      "tp2": 34.16796098847771,
+      "risk_pct": 0.037429973252985936,
+      "r": -1.0326598679536665,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1659668400000,
+          "price": 39.93067967050742,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1660500000000,
+      "swept_level": 44.43,
+      "penetration_atr": 0.13607536971532783,
+      "sweep_t": 1660521600000,
+      "mss_level": 45.82,
+      "displacement_t": 1660528800000,
+      "fvg_t": 1660532400000,
+      "retest_t": 1660539600000,
+      "entry_t": 1660539600000,
+      "exit_t": 1660543200000,
+      "entry": 46.0,
+      "stop": 44.24079027506417,
+      "tp1": 48.63881458740374,
+      "tp2": 51.27762917480749,
+      "risk_pct": 0.03824368967251802,
+      "r": -1.030777725587558,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1660543200000,
+          "price": 44.24079027506417,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1663671600000,
+      "swept_level": 270.88,
+      "penetration_atr": 0.19193679218588716,
+      "sweep_t": 1663689600000,
+      "mss_level": 265.63,
+      "displacement_t": 1663693200000,
+      "fvg_t": 1663696800000,
+      "retest_t": 1663700400000,
+      "entry_t": 1663700400000,
+      "exit_t": 1663783200000,
+      "entry": 268.21500000000003,
+      "stop": 271.7173084206374,
+      "tp1": 262.961537369044,
+      "tp2": 257.708074738088,
+      "risk_pct": 0.013057839496811692,
+      "r": -1.0924988168213434,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1663783200000,
+          "price": 271.7173084206374,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1664514000000,
+      "swept_level": 283.26,
+      "penetration_atr": 0.5710174266032688,
+      "sweep_t": 1664535600000,
+      "mss_level": 288.19,
+      "displacement_t": 1664546400000,
+      "fvg_t": 1664550000000,
+      "retest_t": 1664557200000,
+      "entry_t": 1664557200000,
+      "exit_t": 1664568000000,
+      "entry": 285.865,
+      "stop": 281.66901185288816,
+      "tp1": 292.1589822206678,
+      "tp2": 298.45296444133555,
+      "risk_pct": 0.014678215756080134,
+      "r": -1.081153805771858,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1664568000000,
+          "price": 281.66901185288816,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1664874000000,
+      "swept_level": 19805.4,
+      "penetration_atr": 0.6509277371096773,
+      "sweep_t": 1664978400000,
+      "mss_level": 20149.8,
+      "displacement_t": 1664985600000,
+      "fvg_t": 1664989200000,
+      "retest_t": 1664992800000,
+      "entry_t": 1664992800000,
+      "exit_t": 1665144000000,
+      "entry": 20082.25,
+      "stop": 19684.324671912833,
+      "tp1": 20679.137992130753,
+      "tp2": 21276.0259842615,
+      "risk_pct": 0.019814778129301606,
+      "r": -1.059960859787043,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1665144000000,
+          "price": 19684.324671912833,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1674388800000,
+      "swept_level": 0.08522,
+      "penetration_atr": 0.18714032539686634,
+      "sweep_t": 1674399600000,
+      "mss_level": 0.08777,
+      "displacement_t": 1674403200000,
+      "fvg_t": 1674406800000,
+      "retest_t": 1674414000000,
+      "entry_t": 1674414000000,
+      "exit_t": 1674597600000,
+      "entry": 0.08975,
+      "stop": 0.08482366173656043,
+      "tp1": 0.09713950739515934,
+      "tp2": 0.10452901479031869,
+      "risk_pct": 0.05488956282383916,
+      "r": -1.0212620797518692,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1674597600000,
+          "price": 0.08482366173656043,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1674388800000,
+      "swept_level": 301.43,
+      "penetration_atr": 0.16565993138507765,
+      "sweep_t": 1674399600000,
+      "mss_level": 306.21,
+      "displacement_t": 1674406800000,
+      "fvg_t": 1674410400000,
+      "retest_t": 1674432000000,
+      "entry_t": 1674432000000,
+      "exit_t": 1674482400000,
+      "entry": 305.28499999999997,
+      "stop": 300.6297028486414,
+      "tp1": 312.26794572703784,
+      "tp2": 319.2508914540757,
+      "risk_pct": 0.015249020264207486,
+      "r": -1.0780935802568667,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1674482400000,
+          "price": 300.6297028486414,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1676530800000,
+      "swept_level": 24427.0,
+      "penetration_atr": 0.332165137256313,
+      "sweep_t": 1676552400000,
+      "mss_level": 24678.0,
+      "displacement_t": 1676559600000,
+      "fvg_t": 1676563200000,
+      "retest_t": 1676577600000,
+      "entry_t": 1676577600000,
+      "exit_t": 1676584800000,
+      "entry": 24577.3,
+      "stop": 24331.19554766712,
+      "tp1": 24946.456678499315,
+      "tp2": 25315.613356998634,
+      "risk_pct": 0.010013486116574167,
+      "r": -1.1192383845575797,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1676584800000,
+          "price": 24331.19554766712,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1676530800000,
+      "swept_level": 1675.55,
+      "penetration_atr": 0.47631405988676,
+      "sweep_t": 1676552400000,
+      "mss_level": 1693.88,
+      "displacement_t": 1676559600000,
+      "fvg_t": 1676563200000,
+      "retest_t": 1676577600000,
+      "entry_t": 1676577600000,
+      "exit_t": 1676584800000,
+      "entry": 1686.42,
+      "stop": 1666.3455721058294,
+      "tp1": 1716.531641841256,
+      "tp2": 1746.643283682512,
+      "risk_pct": 0.011903575558977383,
+      "r": -1.100210046028144,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1676584800000,
+          "price": 1666.3455721058294,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1679274000000,
+      "swept_level": 21.587,
+      "penetration_atr": 0.472365133696568,
+      "sweep_t": 1679284800000,
+      "mss_level": 23.0,
+      "displacement_t": 1679295600000,
+      "fvg_t": 1679299200000,
+      "retest_t": 1679328000000,
+      "entry_t": 1679328000000,
+      "exit_t": 1679511600000,
+      "entry": 22.733,
+      "stop": 21.253659608017603,
+      "tp1": 24.952010587973597,
+      "tp2": 27.171021175947192,
+      "risk_pct": 0.06507457845345521,
+      "r": -1.0178403806911835,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1679511600000,
+          "price": 21.253659608017603,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1681653600000,
+      "swept_level": 7.9,
+      "penetration_atr": 0.4614107340580693,
+      "sweep_t": 1681693200000,
+      "mss_level": 8.198,
+      "displacement_t": 1681696800000,
+      "fvg_t": 1681700400000,
+      "retest_t": 1681722000000,
+      "entry_t": 1681722000000,
+      "exit_t": 1681891200000,
+      "entry": 8.086500000000001,
+      "stop": 7.841696041481407,
+      "tp1": 8.45370593777789,
+      "tp2": 8.820911875555781,
+      "risk_pct": 0.030273166205230132,
+      "r": 0.7099109350979371,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1681801200000,
+          "price": 8.45370593777789,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1681891200000,
+          "price": 8.086500000000001,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1685556000000,
+      "swept_level": 0.07169,
+      "penetration_atr": 0.690044482450745,
+      "sweep_t": 1685577600000,
+      "mss_level": 0.07116,
+      "displacement_t": 1685584800000,
+      "fvg_t": 1685588400000,
+      "retest_t": 1685602800000,
+      "entry_t": 1685602800000,
+      "exit_t": 1685635200000,
+      "entry": 0.07144500000000001,
+      "stop": 0.07200651809556029,
+      "tp1": 0.07060272285665958,
+      "tp2": 0.06976044571331917,
+      "risk_pct": 0.007859445665340874,
+      "r": -1.1532825238186764,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1685635200000,
+          "price": 0.07200651809556029,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1687165200000,
+      "swept_level": 26350.2,
+      "penetration_atr": 0.2154200671040547,
+      "sweep_t": 1687186800000,
+      "mss_level": 26569.7,
+      "displacement_t": 1687194000000,
+      "fvg_t": 1687194000000,
+      "retest_t": 1687201200000,
+      "entry_t": 1687201200000,
+      "exit_t": 1687219200000,
+      "entry": 26458.85,
+      "stop": 26312.541830086833,
+      "tp1": 26678.312254869747,
+      "tp2": 26897.774509739495,
+      "risk_pct": 0.005529649622457716,
+      "r": 2.0316380585694964,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1687201200000,
+          "price": 26678.312254869747,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1687219200000,
+          "price": 26897.774509739495,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1687485600000,
+      "swept_level": 1861.77,
+      "penetration_atr": 0.15410718881858468,
+      "sweep_t": 1687525200000,
+      "mss_level": 1888.28,
+      "displacement_t": 1687532400000,
+      "fvg_t": 1687532400000,
+      "retest_t": 1687554000000,
+      "entry_t": 1687554000000,
+      "exit_t": 1687705200000,
+      "entry": 1879.115,
+      "stop": 1858.1982392276352,
+      "tp1": 1910.4901411585472,
+      "tp2": 1941.8652823170944,
+      "risk_pct": 0.011131176523185007,
+      "r": 0.6417446842276257,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1687665600000,
+          "price": 1910.4901411585472,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1687705200000,
+          "price": 1879.115,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1688670000000,
+      "swept_level": 0.4697,
+      "penetration_atr": 0.10023605023249378,
+      "sweep_t": 1688680800000,
+      "mss_level": 0.4655,
+      "displacement_t": 1688684400000,
+      "fvg_t": 1688688000000,
+      "retest_t": 1688709600000,
+      "entry_t": 1688709600000,
+      "exit_t": 1688832000000,
+      "entry": 0.4659,
+      "stop": 0.4706985870339148,
+      "tp1": 0.45870211944912775,
+      "tp2": 0.45150423889825547,
+      "risk_pct": 0.010299607284642276,
+      "r": -1.11710929660098,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1688832000000,
+          "price": 0.4706985870339148,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1689861600000,
+      "swept_level": 0.7771,
+      "penetration_atr": 0.43001664306165477,
+      "sweep_t": 1689883200000,
+      "mss_level": 0.7965,
+      "displacement_t": 1689886800000,
+      "fvg_t": 1689890400000,
+      "retest_t": 1689894000000,
+      "entry_t": 1689894000000,
+      "exit_t": 1689930000000,
+      "entry": 0.7945500000000001,
+      "stop": 0.7688721753802705,
+      "tp1": 0.8330667369295944,
+      "tp2": 0.8715834738591888,
+      "risk_pct": 0.032317443357535156,
+      "r": -1.0365316501347004,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1689930000000,
+          "price": 0.7688721753802705,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1691060400000,
+      "swept_level": 7.321,
+      "penetration_atr": 0.13786126686830577,
+      "sweep_t": 1691071200000,
+      "mss_level": 7.226,
+      "displacement_t": 1691074800000,
+      "fvg_t": 1691078400000,
+      "retest_t": 1691082000000,
+      "entry_t": 1691082000000,
+      "exit_t": 1691179200000,
+      "entry": 7.263,
+      "stop": 7.3397924531717065,
+      "tp1": 7.14781132024244,
+      "tp2": 7.03262264048488,
+      "risk_pct": 0.0105731038374923,
+      "r": 2.1378544722492214,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1691096400000,
+          "price": 7.14781132024244,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1691179200000,
+          "price": 7.03262264048488,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1692694800000,
+      "swept_level": 6.238,
+      "penetration_atr": 0.34825308073921263,
+      "sweep_t": 1692705600000,
+      "mss_level": 6.162,
+      "displacement_t": 1692709200000,
+      "fvg_t": 1692712800000,
+      "retest_t": 1692716400000,
+      "entry_t": 1692716400000,
+      "exit_t": 1692738000000,
+      "entry": 6.1775,
+      "stop": 6.259460818652987,
+      "tp1": 6.0545587720205205,
+      "tp2": 5.93161754404104,
+      "risk_pct": 0.013267635556938367,
+      "r": 2.1609043441142766,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1692720000000,
+          "price": 6.0545587720205205,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1692738000000,
+          "price": 5.93161754404104,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1694876400000,
+      "swept_level": 6.184,
+      "penetration_atr": 0.0727962688600788,
+      "sweep_t": 1694890800000,
+      "mss_level": 6.243,
+      "displacement_t": 1694898000000,
+      "fvg_t": 1694901600000,
+      "retest_t": 1694926800000,
+      "entry_t": 1694926800000,
+      "exit_t": 1694955600000,
+      "entry": 6.24,
+      "stop": 6.17481836449798,
+      "tp1": 6.33777245325303,
+      "tp2": 6.43554490650606,
+      "risk_pct": 0.010445774920195485,
+      "r": -1.1142789830498803,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1694955600000,
+          "price": 6.17481836449798,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1697144400000,
+      "swept_level": 7.245,
+      "penetration_atr": 0.09108343132643956,
+      "sweep_t": 1697166000000,
+      "mss_level": 7.176,
+      "displacement_t": 1697166000000,
+      "fvg_t": 1697169600000,
+      "retest_t": 1697173200000,
+      "entry_t": 1697173200000,
+      "exit_t": 1697198400000,
+      "entry": 7.172000000000001,
+      "stop": 7.260881050668529,
+      "tp1": 7.038678423997208,
+      "tp2": 6.9053568479944145,
+      "risk_pct": 0.012392784532700598,
+      "r": -1.0974305385148577,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1697198400000,
+          "price": 7.260881050668529,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1698685200000,
+      "swept_level": 34050.0,
+      "penetration_atr": 0.16067278794624237,
+      "sweep_t": 1698739200000,
+      "mss_level": 34390.6,
+      "displacement_t": 1698739200000,
+      "fvg_t": 1698742800000,
+      "retest_t": 1698753600000,
+      "entry_t": 1698753600000,
+      "exit_t": 1698847200000,
+      "entry": 34329.9,
+      "stop": 33985.805330251285,
+      "tp1": 34846.04200462307,
+      "tp2": 35362.18400924615,
+      "risk_pct": 0.01002317716476646,
+      "r": 0.6298274828506174,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1698840000000,
+          "price": 34846.04200462307,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1698847200000,
+          "price": 34329.9,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1699423200000,
+      "swept_level": 35172.7,
+      "penetration_atr": 0.5672148369822179,
+      "sweep_t": 1699455600000,
+      "mss_level": 35485.0,
+      "displacement_t": 1699466400000,
+      "fvg_t": 1699470000000,
+      "retest_t": 1699473600000,
+      "entry_t": 1699473600000,
+      "exit_t": 1699495200000,
+      "entry": 35501.9,
+      "stop": 35046.634328608954,
+      "tp1": 36184.79850708657,
+      "tp2": 36867.69701417314,
+      "risk_pct": 0.012823698770799516,
+      "r": 2.1550732542070827,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1699495200000,
+          "price": 36184.79850708657,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1699495200000,
+          "price": 36867.69701417314,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1700888400000,
+      "swept_level": 0.3885,
+      "penetration_atr": 0.12936760440654402,
+      "sweep_t": 1700906400000,
+      "mss_level": 0.3936,
+      "displacement_t": 1700913600000,
+      "fvg_t": 1700917200000,
+      "retest_t": 1700920800000,
+      "entry_t": 1700920800000,
+      "exit_t": 1701007200000,
+      "entry": 0.391,
+      "stop": 0.3876362053716984,
+      "tp1": 0.3960456919424524,
+      "tp2": 0.40109138388490484,
+      "risk_pct": 0.008603055315349382,
+      "r": -1.1388853288760084,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1701007200000,
+          "price": 0.3876362053716984,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1703520000000,
+      "swept_level": 15.31,
+      "penetration_atr": 0.6117250745401376,
+      "sweep_t": 1703534400000,
+      "mss_level": 15.673,
+      "displacement_t": 1703541600000,
+      "fvg_t": 1703545200000,
+      "retest_t": 1703548800000,
+      "entry_t": 1703548800000,
+      "exit_t": 1703566800000,
+      "entry": 15.5245,
+      "stop": 15.173027098795313,
+      "tp1": 16.05170935180703,
+      "tp2": 16.57891870361406,
+      "risk_pct": 0.0226398854201222,
+      "r": -1.0524038018184247,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1703566800000,
+          "price": 15.173027098795313,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1704859200000,
+      "swept_level": 0.5189,
+      "penetration_atr": 0.4071142218504918,
+      "sweep_t": 1704880800000,
+      "mss_level": 0.499,
+      "displacement_t": 1704888000000,
+      "fvg_t": 1704891600000,
+      "retest_t": 1704898800000,
+      "entry_t": 1704898800000,
+      "exit_t": 1704916800000,
+      "entry": 0.5041,
+      "stop": 0.5241000984721417,
+      "tp1": 0.47409985229178747,
+      "tp2": 0.44409970458357495,
+      "risk_pct": 0.03967486306713287,
+      "r": -1.0308458510813132,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1704916800000,
+          "price": 0.5241000984721417,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1706169600000,
+      "swept_level": 40175.1,
+      "penetration_atr": 0.5324226681195688,
+      "sweep_t": 1706180400000,
+      "mss_level": 39865.3,
+      "displacement_t": 1706184000000,
+      "fvg_t": 1706187600000,
+      "retest_t": 1706191200000,
+      "entry_t": 1706191200000,
+      "exit_t": 1706259600000,
+      "entry": 40012.350000000006,
+      "stop": 40335.18820877062,
+      "tp1": 39528.09268684409,
+      "tp2": 39043.83537368817,
+      "risk_pct": 0.008068464080980303,
+      "r": -1.1493271911922798,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1706259600000,
+          "price": 40335.18820877062,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1706698800000,
+      "swept_level": 0.4974,
+      "penetration_atr": 0.38724090844787906,
+      "sweep_t": 1706713200000,
+      "mss_level": 0.5057,
+      "displacement_t": 1706720400000,
+      "fvg_t": 1706724000000,
+      "retest_t": 1706727600000,
+      "entry_t": 1706727600000,
+      "exit_t": 1706734800000,
+      "entry": 0.5115000000000001,
+      "stop": 0.49393161057672585,
+      "tp1": 0.5378525841349113,
+      "tp2": 0.5642051682698227,
+      "risk_pct": 0.03434680239154293,
+      "r": -1.0343377501381459,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1706734800000,
+          "price": 0.49393161057672585,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1709550000000,
+      "swept_level": 0.15917,
+      "penetration_atr": 0.22717388873452896,
+      "sweep_t": 1709560800000,
+      "mss_level": 0.16938,
+      "displacement_t": 1709568000000,
+      "fvg_t": 1709571600000,
+      "retest_t": 1709575200000,
+      "entry_t": 1709575200000,
+      "exit_t": 1709614800000,
+      "entry": 0.17286,
+      "stop": 0.15701162670240737,
+      "tp1": 0.19663255994638898,
+      "tp2": 0.22040511989277795,
+      "risk_pct": 0.09168328877468844,
+      "r": 0.7364614642805953,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1709596800000,
+          "price": 0.19663255994638898,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1709614800000,
+          "price": 0.17286,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1710694800000,
+      "swept_level": 0.6246,
+      "penetration_atr": 0.09526598580829307,
+      "sweep_t": 1710712800000,
+      "mss_level": 0.6183,
+      "displacement_t": 1710720000000,
+      "fvg_t": 1710723600000,
+      "retest_t": 1710727200000,
+      "entry_t": 1710727200000,
+      "exit_t": 1710738000000,
+      "entry": 0.6152,
+      "stop": 0.6264021772263112,
+      "tp1": 0.5983967341605332,
+      "tp2": 0.5815934683210663,
+      "risk_pct": 0.018209000692963634,
+      "r": -1.0665014747834958,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1710738000000,
+          "price": 0.6264021772263112,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1716152400000,
+      "swept_level": 3051.3,
+      "penetration_atr": 0.3203163432278878,
+      "sweep_t": 1716166800000,
+      "mss_level": 3083.98,
+      "displacement_t": 1716177600000,
+      "fvg_t": 1716181200000,
+      "retest_t": 1716199200000,
+      "entry_t": 1716199200000,
+      "exit_t": 1716231600000,
+      "entry": 3110.675,
+      "stop": 3042.1378887191086,
+      "tp1": 3213.4806669213376,
+      "tp2": 3316.286333842675,
+      "risk_pct": 0.02203287430570266,
+      "r": 2.194185930385197,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1716231600000,
+          "price": 3213.4806669213376,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1716231600000,
+          "price": 3316.286333842675,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1717290000000,
+      "swept_level": 167.245,
+      "penetration_atr": 0.12158684395630884,
+      "sweep_t": 1717419600000,
+      "mss_level": 164.589,
+      "displacement_t": 1717423200000,
+      "fvg_t": 1717426800000,
+      "retest_t": 1717434000000,
+      "entry_t": 1717434000000,
+      "exit_t": 1717513200000,
+      "entry": 165.7685,
+      "stop": 167.60238977687933,
+      "tp1": 163.01766533468097,
+      "tp2": 160.26683066936195,
+      "risk_pct": 0.011062956936205286,
+      "r": -1.1090700959173772,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1717513200000,
+          "price": 167.60238977687933,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1718352000000,
+      "swept_level": 67250.0,
+      "penetration_atr": 0.10232968544232829,
+      "sweep_t": 1718366400000,
+      "mss_level": 66755.8,
+      "displacement_t": 1718377200000,
+      "fvg_t": 1718384400000,
+      "retest_t": 1718398800000,
+      "entry_t": 1718398800000,
+      "exit_t": 1718877600000,
+      "entry": 66041.1,
+      "stop": 67343.45572633126,
+      "tp1": 64087.566410503125,
+      "tp2": 62134.03282100624,
+      "risk_pct": 0.01972038210040799,
+      "r": 0.6895992520839557,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1718737200000,
+          "price": 64087.566410503125,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1718877600000,
+          "price": 66041.1,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1721257200000,
+      "swept_level": 0.435,
+      "penetration_atr": 0.14532095003458087,
+      "sweep_t": 1721278800000,
+      "mss_level": 0.4433,
+      "displacement_t": 1721282400000,
+      "fvg_t": 1721286000000,
+      "retest_t": 1721289600000,
+      "entry_t": 1721289600000,
+      "exit_t": 1721311200000,
+      "entry": 0.4405,
+      "stop": 0.43357746137102043,
+      "tp1": 0.4508838079434694,
+      "tp2": 0.4612676158869387,
+      "risk_pct": 0.01571518417475498,
+      "r": -1.075759270540888,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1721311200000,
+          "price": 0.43357746137102043,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1721570400000,
+      "swept_level": 171.207,
+      "penetration_atr": 0.3035478732747265,
+      "sweep_t": 1721584800000,
+      "mss_level": 177.266,
+      "displacement_t": 1721588400000,
+      "fvg_t": 1721595600000,
+      "retest_t": 1721624400000,
+      "entry_t": 1721624400000,
+      "exit_t": 1721872800000,
+      "entry": 179.76049999999998,
+      "stop": 170.08787716307168,
+      "tp1": 194.2694342553924,
+      "tp2": 208.77836851078487,
+      "risk_pct": 0.05380838858886295,
+      "r": -1.0217013554479193,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1721872800000,
+          "price": 170.08787716307168,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1722589200000,
+      "swept_level": 0.5789,
+      "penetration_atr": 0.2228733592036473,
+      "sweep_t": 1722603600000,
+      "mss_level": 0.5663,
+      "displacement_t": 1722607200000,
+      "fvg_t": 1722610800000,
+      "retest_t": 1722618000000,
+      "entry_t": 1722618000000,
+      "exit_t": 1722790800000,
+      "entry": 0.5661,
+      "stop": 0.582413358694487,
+      "tp1": 0.5416299619582696,
+      "tp2": 0.5171599239165393,
+      "risk_pct": 0.02881709714624079,
+      "r": 2.2097080541124527,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1722715200000,
+          "price": 0.5416299619582696,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1722790800000,
+          "price": 0.5171599239165393,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1725001200000,
+      "swept_level": 0.5654,
+      "penetration_atr": 0.5429341713456279,
+      "sweep_t": 1725019200000,
+      "mss_level": 0.5608,
+      "displacement_t": 1725026400000,
+      "fvg_t": 1725030000000,
+      "retest_t": 1725037200000,
+      "entry_t": 1725037200000,
+      "exit_t": 1725062400000,
+      "entry": 0.55725,
+      "stop": 0.5680801808333767,
+      "tp1": 0.5410047287499349,
+      "tp2": 0.5247594574998699,
+      "risk_pct": 0.019435048601842482,
+      "r": -1.0623441213852296,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1725062400000,
+          "price": 0.5680801808333767,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1725008400000,
+      "swept_level": 139.987,
+      "penetration_atr": 0.44667286112072374,
+      "sweep_t": 1725019200000,
+      "mss_level": 138.31,
+      "displacement_t": 1725026400000,
+      "fvg_t": 1725030000000,
+      "retest_t": 1725040800000,
+      "entry_t": 1725040800000,
+      "exit_t": 1725328800000,
+      "entry": 136.8135,
+      "stop": 140.91405646942331,
+      "tp1": 130.66266529586505,
+      "tp2": 124.51183059173007,
+      "risk_pct": 0.029971870242507574,
+      "r": 0.7104124584555236,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1725181200000,
+          "price": 130.66266529586505,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1725328800000,
+          "price": 136.8135,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1725768000000,
+      "swept_level": 54544.8,
+      "penetration_atr": 0.5464642438409854,
+      "sweep_t": 1725786000000,
+      "mss_level": 54232.1,
+      "displacement_t": 1725796800000,
+      "fvg_t": 1725800400000,
+      "retest_t": 1725814800000,
+      "entry_t": 1725814800000,
+      "exit_t": 1725818400000,
+      "entry": 54427.1,
+      "stop": 54742.601140444924,
+      "tp1": 53953.848289332615,
+      "tp2": 53480.59657866522,
+      "risk_pct": 0.005796765590026386,
+      "r": 0.5434380066110158,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1725814800000,
+          "price": 53953.848289332615,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1725818400000,
+          "price": 54427.1,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1725768000000,
+      "swept_level": 2303.9,
+      "penetration_atr": 0.3151932433267514,
+      "sweep_t": 1725786000000,
+      "mss_level": 2282.22,
+      "displacement_t": 1725796800000,
+      "fvg_t": 1725800400000,
+      "retest_t": 1725829200000,
+      "entry_t": 1725829200000,
+      "exit_t": 1725832800000,
+      "entry": 2288.6949999999997,
+      "stop": 2311.4270824841474,
+      "tp1": 2254.5968762737784,
+      "tp2": 2220.4987525475567,
+      "risk_pct": 0.009932333702895174,
+      "r": -1.121417527470932,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1725832800000,
+          "price": 2311.4270824841474,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1727013600000,
+      "swept_level": 62435.0,
+      "penetration_atr": 0.25019949071947906,
+      "sweep_t": 1727042400000,
+      "mss_level": 63300.0,
+      "displacement_t": 1727042400000,
+      "fvg_t": 1727046000000,
+      "retest_t": 1727049600000,
+      "entry_t": 1727049600000,
+      "exit_t": 1727690400000,
+      "entry": 63342.8,
+      "stop": 62281.445926014516,
+      "tp1": 64934.83111097824,
+      "tp2": 66526.86222195646,
+      "risk_pct": 0.016755717681969963,
+      "r": 0.6779326558326872,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1727359200000,
+          "price": 64934.83111097824,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1727690400000,
+          "price": 63342.8,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1727852400000,
+      "swept_level": 61926.7,
+      "penetration_atr": 0.7648958448026502,
+      "sweep_t": 1727884800000,
+      "mss_level": 60495.0,
+      "displacement_t": 1727895600000,
+      "fvg_t": 1727895600000,
+      "retest_t": 1727913600000,
+      "entry_t": 1727913600000,
+      "exit_t": 1728068400000,
+      "entry": 61059.3,
+      "stop": 62438.99182769332,
+      "tp1": 58989.76225846003,
+      "tp2": 56920.22451692006,
+      "risk_pct": 0.02259593260475167,
+      "r": -1.0537069029541914,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1728068400000,
+          "price": 62438.99182769332,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1732258800000,
+      "swept_level": 0.854,
+      "penetration_atr": 0.06755438099657804,
+      "sweep_t": 1732269600000,
+      "mss_level": 0.8955,
+      "displacement_t": 1732273200000,
+      "fvg_t": 1732276800000,
+      "retest_t": 1732280400000,
+      "entry_t": 1732280400000,
+      "exit_t": 1732294800000,
+      "entry": 0.8829,
+      "stop": 0.8494913933204328,
+      "tp1": 0.9330129100193509,
+      "tp2": 0.9831258200387017,
+      "risk_pct": 0.03783962700143532,
+      "r": 2.216937213826012,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1732291200000,
+          "price": 0.9330129100193509,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1732294800000,
+          "price": 0.9831258200387017,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1733788800000,
+      "swept_level": 1.0361,
+      "penetration_atr": 0.05789205467222901,
+      "sweep_t": 1733824800000,
+      "mss_level": 0.9964,
+      "displacement_t": 1733832000000,
+      "fvg_t": 1733835600000,
+      "retest_t": 1733839200000,
+      "entry_t": 1733839200000,
+      "exit_t": 1733864400000,
+      "entry": 1.0083,
+      "stop": 1.0429229553453165,
+      "tp1": 0.9563655669820251,
+      "tp2": 0.9044311339640503,
+      "risk_pct": 0.03433795035735056,
+      "r": 0.7155032432043335,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1733842800000,
+          "price": 0.9563655669820251,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1733864400000,
+          "price": 1.0083,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1734271200000,
+      "swept_level": 1.0944,
+      "penetration_atr": 0.0958268293668678,
+      "sweep_t": 1734289200000,
+      "mss_level": 1.0802,
+      "displacement_t": 1734296400000,
+      "fvg_t": 1734300000000,
+      "retest_t": 1734318000000,
+      "entry_t": 1734318000000,
+      "exit_t": 1734332400000,
+      "entry": 1.077,
+      "stop": 1.0977349207136284,
+      "tp1": 1.0458976189295572,
+      "tp2": 1.0147952378591145,
+      "risk_pct": 0.019252479771242784,
+      "r": -1.0629296330788738,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1734332400000,
+          "price": 1.0977349207136284,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1734796800000,
+      "swept_level": 187.36,
+      "penetration_atr": 0.13795552314923246,
+      "sweep_t": 1734868800000,
+      "mss_level": 182.63,
+      "displacement_t": 1734876000000,
+      "fvg_t": 1734879600000,
+      "retest_t": 1734890400000,
+      "entry_t": 1734890400000,
+      "exit_t": 1734980400000,
+      "entry": 183.375,
+      "stop": 188.21579585214195,
+      "tp1": 176.11380622178706,
+      "tp2": 168.85261244357415,
+      "risk_pct": 0.0263983413886405,
+      "r": -1.0460574013697834,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1734980400000,
+          "price": 188.21579585214195,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1735549200000,
+      "swept_level": 0.32285,
+      "penetration_atr": 0.09705722205485001,
+      "sweep_t": 1735560000000,
+      "mss_level": 0.31772,
+      "displacement_t": 1735563600000,
+      "fvg_t": 1735567200000,
+      "retest_t": 1735578000000,
+      "entry_t": 1735578000000,
+      "exit_t": 1735581600000,
+      "entry": 0.31786,
+      "stop": 0.323715463215619,
+      "tp1": 0.30907680517657143,
+      "tp2": 0.3002936103531429,
+      "risk_pct": 0.018421516440001978,
+      "r": 0.6853087829938788,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1735578000000,
+          "price": 0.30907680517657143,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1735581600000,
+          "price": 0.31786,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1735952400000,
+      "swept_level": 3581.44,
+      "penetration_atr": 0.5275988639811141,
+      "sweep_t": 1735984800000,
+      "mss_level": 3609.83,
+      "displacement_t": 1735992000000,
+      "fvg_t": 1735992000000,
+      "retest_t": 1736002800000,
+      "entry_t": 1736002800000,
+      "exit_t": 1736085600000,
+      "entry": 3595.58,
+      "stop": 3567.5951715661427,
+      "tp1": 3637.557242650786,
+      "tp2": 3679.5344853015717,
+      "risk_pct": 0.007783119394884073,
+      "r": 0.5953701732343023,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1736002800000,
+          "price": 3637.557242650786,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1736085600000,
+          "price": 3595.58,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1736157600000,
+      "swept_level": 3631.34,
+      "penetration_atr": 0.35983379487218786,
+      "sweep_t": 1736168400000,
+      "mss_level": 3663.08,
+      "displacement_t": 1736175600000,
+      "fvg_t": 1736175600000,
+      "retest_t": 1736182800000,
+      "entry_t": 1736182800000,
+      "exit_t": 1736258400000,
+      "entry": 3660.9399999999996,
+      "stop": 3619.5233949178,
+      "tp1": 3723.064907623299,
+      "tp2": 3785.1898152465983,
+      "risk_pct": 0.011313106765530047,
+      "r": -1.1054716587291729,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1736258400000,
+          "price": 3619.5233949178,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1736398800000,
+      "swept_level": 700.55,
+      "penetration_atr": 0.13726452534382655,
+      "sweep_t": 1736420400000,
+      "mss_level": 688.2,
+      "displacement_t": 1736427600000,
+      "fvg_t": 1736431200000,
+      "retest_t": 1736434800000,
+      "entry_t": 1736434800000,
+      "exit_t": 1736488800000,
+      "entry": 692.8,
+      "stop": 702.1614410038625,
+      "tp1": 678.7578384942062,
+      "tp2": 664.7156769884124,
+      "risk_pct": 0.013512472580632973,
+      "r": 0.6616431592949195,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1736452800000,
+          "price": 678.7578384942062,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1736488800000,
+          "price": 692.8,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1736694000000,
+      "swept_level": 20.249,
+      "penetration_atr": 0.799416083517853,
+      "sweep_t": 1736726400000,
+      "mss_level": 19.575,
+      "displacement_t": 1736733600000,
+      "fvg_t": 1736737200000,
+      "retest_t": 1736740800000,
+      "entry_t": 1736740800000,
+      "exit_t": 1736830800000,
+      "entry": 19.689,
+      "stop": 20.47465102152384,
+      "tp1": 18.51052346771424,
+      "tp2": 17.33204693542848,
+      "risk_pct": 0.03990304340107878,
+      "r": 0.7203771058616156,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1736762400000,
+          "price": 18.51052346771424,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1736830800000,
+          "price": 19.689,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1737518400000,
+      "swept_level": 3.1501,
+      "penetration_atr": 0.21358940410853838,
+      "sweep_t": 1737532800000,
+      "mss_level": 3.1912,
+      "displacement_t": 1737543600000,
+      "fvg_t": 1737547200000,
+      "retest_t": 1737550800000,
+      "entry_t": 1737550800000,
+      "exit_t": 1737568800000,
+      "entry": 3.19735,
+      "stop": 3.134609233539945,
+      "tp1": 3.291461149690083,
+      "tp2": 3.385572299380166,
+      "risk_pct": 0.019622739599998502,
+      "r": -1.0605535404567104,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1737568800000,
+          "price": 3.134609233539945,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1738695600000,
+      "swept_level": 588.07,
+      "penetration_atr": 0.2071566020857507,
+      "sweep_t": 1738846800000,
+      "mss_level": 575.14,
+      "displacement_t": 1738854000000,
+      "fvg_t": 1738857600000,
+      "retest_t": 1738861200000,
+      "entry_t": 1738861200000,
+      "exit_t": 1739019600000,
+      "entry": 578.2550000000001,
+      "stop": 590.13890786095,
+      "tp1": 560.4291382085753,
+      "tp2": 542.6032764171505,
+      "risk_pct": 0.02055132746098153,
+      "r": -1.0589903887609355,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1739019600000,
+          "price": 590.13890786095,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1739775600000,
+      "swept_level": 96421.9,
+      "penetration_atr": 0.15679852668240496,
+      "sweep_t": 1739793600000,
+      "mss_level": 95862.8,
+      "displacement_t": 1739804400000,
+      "fvg_t": 1739808000000,
+      "retest_t": 1739822400000,
+      "entry_t": 1739822400000,
+      "exit_t": 1739826000000,
+      "entry": 96125.0,
+      "stop": 96535.5808793896,
+      "tp1": 95509.1286809156,
+      "tp2": 94893.2573618312,
+      "risk_pct": 0.004271322542414559,
+      "r": 0.46950657133501206,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1739822400000,
+          "price": 95509.1286809156,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1739826000000,
+          "price": 96125.0,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1739844000000,
+      "swept_level": 96296.5,
+      "penetration_atr": 0.3510466390476061,
+      "sweep_t": 1739883600000,
+      "mss_level": 95000.0,
+      "displacement_t": 1739894400000,
+      "fvg_t": 1739898000000,
+      "retest_t": 1739912400000,
+      "entry_t": 1739912400000,
+      "exit_t": 1739973600000,
+      "entry": 94975.95000000001,
+      "stop": 96528.43521825512,
+      "tp1": 92647.22217261734,
+      "tp2": 90318.49434523468,
+      "risk_pct": 0.016346087807019682,
+      "r": -1.0740120612936306,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1739973600000,
+          "price": 96528.43521825512,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1743606000000,
+      "swept_level": 610.0,
+      "penetration_atr": 0.3916768063468669,
+      "sweep_t": 1743624000000,
+      "mss_level": 597.6,
+      "displacement_t": 1743631200000,
+      "fvg_t": 1743634800000,
+      "retest_t": 1743638400000,
+      "entry_t": 1743638400000,
+      "exit_t": 1744005600000,
+      "entry": 593.825,
+      "stop": 612.8212563701538,
+      "tp1": 565.3306154447694,
+      "tp2": 536.8362308895387,
+      "risk_pct": 0.031989654140788595,
+      "r": 2.2138378720251644,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1743958800000,
+          "price": 565.3306154447694,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1744005600000,
+          "price": 536.8362308895387,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1744520400000,
+      "swept_level": 0.6408,
+      "penetration_atr": 0.06812076009431059,
+      "sweep_t": 1744531200000,
+      "mss_level": 0.6528,
+      "displacement_t": 1744534800000,
+      "fvg_t": 1744538400000,
+      "retest_t": 1744542000000,
+      "entry_t": 1744542000000,
+      "exit_t": 1744549200000,
+      "entry": 0.64975,
+      "stop": 0.6391990140465817,
+      "tp1": 0.6655764789301275,
+      "tp2": 0.681402957860255,
+      "risk_pct": 0.016238531671286343,
+      "r": -1.0732983070816613,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1744549200000,
+          "price": 0.6391990140465817,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1744509600000,
+      "swept_level": 2.1337,
+      "penetration_atr": 0.33989836897483444,
+      "sweep_t": 1744520400000,
+      "mss_level": 2.1734,
+      "displacement_t": 1744531200000,
+      "fvg_t": 1744534800000,
+      "retest_t": 1744560000000,
+      "entry_t": 1744560000000,
+      "exit_t": 1744570800000,
+      "entry": 2.1609,
+      "stop": 2.1217371404112497,
+      "tp1": 2.219644289383125,
+      "tp2": 2.27838857876625,
+      "risk_pct": 0.01812340209577033,
+      "r": -1.0656127338817947,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1744570800000,
+          "price": 2.1217371404112497,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1744520400000,
+      "swept_level": 0.1638,
+      "penetration_atr": 0.2685240284977377,
+      "sweep_t": 1744531200000,
+      "mss_level": 0.16699,
+      "displacement_t": 1744534800000,
+      "fvg_t": 1744538400000,
+      "retest_t": 1744563600000,
+      "entry_t": 1744563600000,
+      "exit_t": 1744570800000,
+      "entry": 0.16555,
+      "stop": 0.1630674536632926,
+      "tp1": 0.16927381950506112,
+      "tp2": 0.17299763901012224,
+      "risk_pct": 0.014995749542177072,
+      "r": -1.0794226755338157,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1744570800000,
+          "price": 0.1630674536632926,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1745571600000,
+      "swept_level": 1763.08,
+      "penetration_atr": 0.37785163414973094,
+      "sweep_t": 1745586000000,
+      "mss_level": 1802.0,
+      "displacement_t": 1745589600000,
+      "fvg_t": 1745593200000,
+      "retest_t": 1745596800000,
+      "entry_t": 1745596800000,
+      "exit_t": 1745730000000,
+      "entry": 1789.19,
+      "stop": 1752.923946582621,
+      "tp1": 1843.5890801260684,
+      "tp2": 1897.988160252137,
+      "risk_pct": 0.02026953728635807,
+      "r": 0.6903478592186383,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1745712000000,
+          "price": 1843.5890801260684,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1745730000000,
+          "price": 1789.19,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1746370800000,
+      "swept_level": 14.172,
+      "penetration_atr": 0.10737929022630852,
+      "sweep_t": 1746392400000,
+      "mss_level": 13.955,
+      "displacement_t": 1746396000000,
+      "fvg_t": 1746399600000,
+      "retest_t": 1746406800000,
+      "entry_t": 1746406800000,
+      "exit_t": 1746496800000,
+      "entry": 14.0095,
+      "stop": 14.20076300892105,
+      "tp1": 13.722605486618422,
+      "tp2": 13.435710973236844,
+      "risk_pct": 0.013652379379781695,
+      "r": 2.1634532336841503,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1746439200000,
+          "price": 13.722605486618422,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1746496800000,
+          "price": 13.435710973236844,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1750219200000,
+      "swept_level": 2545.1,
+      "penetration_atr": 0.09053909032990475,
+      "sweep_t": 1750233600000,
+      "mss_level": 2511.35,
+      "displacement_t": 1750240800000,
+      "fvg_t": 1750244400000,
+      "retest_t": 1750255200000,
+      "entry_t": 1750255200000,
+      "exit_t": 1750269600000,
+      "entry": 2517.92,
+      "stop": 2551.077671647354,
+      "tp1": 2468.1834925289695,
+      "tp2": 2418.446985057939,
+      "risk_pct": 0.013168675592295906,
+      "r": 0.6593246630904904,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1750266000000,
+          "price": 2468.1834925289695,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1750269600000,
+          "price": 2517.92,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1751205600000,
+      "swept_level": 2.179,
+      "penetration_atr": 0.21260097832704747,
+      "sweep_t": 1751230800000,
+      "mss_level": 2.1945,
+      "displacement_t": 1751234400000,
+      "fvg_t": 1751238000000,
+      "retest_t": 1751245200000,
+      "entry_t": 1751245200000,
+      "exit_t": 1751263200000,
+      "entry": 2.1976500000000003,
+      "stop": 2.175588905834956,
+      "tp1": 2.230741641247567,
+      "tp2": 2.263833282495134,
+      "risk_pct": 0.010038493010736256,
+      "r": -1.118939855107394,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1751263200000,
+          "price": 2.175588905834956,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1751277600000,
+      "swept_level": 2.1679,
+      "penetration_atr": 0.5184821240982851,
+      "sweep_t": 1751295600000,
+      "mss_level": 2.1882,
+      "displacement_t": 1751306400000,
+      "fvg_t": 1751310000000,
+      "retest_t": 1751335200000,
+      "entry_t": 1751335200000,
+      "exit_t": 1751396400000,
+      "entry": 2.22675,
+      "stop": 2.1587459272547687,
+      "tp1": 2.328756109117847,
+      "tp2": 2.430762218235694,
+      "risk_pct": 0.030539608283476523,
+      "r": -1.0386932348333118,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1751396400000,
+          "price": 2.1587459272547687,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1755050400000,
+      "swept_level": 3.2055,
+      "penetration_atr": 0.13960239155253681,
+      "sweep_t": 1755064800000,
+      "mss_level": 3.2568,
+      "displacement_t": 1755072000000,
+      "fvg_t": 1755072000000,
+      "retest_t": 1755093600000,
+      "entry_t": 1755093600000,
+      "exit_t": 1755097200000,
+      "entry": 3.234,
+      "stop": 3.1965797353123624,
+      "tp1": 3.290130397031456,
+      "tp2": 3.3462607940629128,
+      "risk_pct": 0.011570891987519354,
+      "r": 0.6458414871822861,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1755093600000,
+          "price": 3.290130397031456,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1755097200000,
+          "price": 3.234,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1757811600000,
+      "swept_level": 929.68,
+      "penetration_atr": 0.2790215087454712,
+      "sweep_t": 1757822400000,
+      "mss_level": 938.77,
+      "displacement_t": 1757826000000,
+      "fvg_t": 1757829600000,
+      "retest_t": 1757836800000,
+      "entry_t": 1757836800000,
+      "exit_t": 1757858400000,
+      "entry": 937.385,
+      "stop": 927.3736105534958,
+      "tp1": 952.4020841697562,
+      "tp2": 967.4191683395125,
+      "risk_pct": 0.01068012550499971,
+      "r": -1.1117582301947895,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1757858400000,
+          "price": 927.3736105534958,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1758574800000,
+      "swept_level": 220.98,
+      "penetration_atr": 0.1218971468475614,
+      "sweep_t": 1758585600000,
+      "mss_level": 215.98,
+      "displacement_t": 1758592800000,
+      "fvg_t": 1758592800000,
+      "retest_t": 1758607200000,
+      "entry_t": 1758607200000,
+      "exit_t": 1758643200000,
+      "entry": 218.535,
+      "stop": 221.6491636856462,
+      "tp1": 213.8637544715307,
+      "tp2": 209.19250894306143,
+      "risk_pct": 0.014250182742563846,
+      "r": -1.0848094464105167,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1758643200000,
+          "price": 221.6491636856462,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1759377600000,
+      "swept_level": 2.9526,
+      "penetration_atr": 0.3110860131944195,
+      "sweep_t": 1759413600000,
+      "mss_level": 2.9953,
+      "displacement_t": 1759420800000,
+      "fvg_t": 1759424400000,
+      "retest_t": 1759453200000,
+      "entry_t": 1759453200000,
+      "exit_t": 1759590000000,
+      "entry": 3.0111,
+      "stop": 2.941335418657066,
+      "tp1": 3.115746872014401,
+      "tp2": 3.2203937440288017,
+      "risk_pct": 0.023169134649441717,
+      "r": -1.0511930435536967,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1759590000000,
+          "price": 2.941335418657066,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1759478400000,
+      "swept_level": 0.851,
+      "penetration_atr": 0.42236803144048657,
+      "sweep_t": 1759496400000,
+      "mss_level": 0.8599,
+      "displacement_t": 1759503600000,
+      "fvg_t": 1759507200000,
+      "retest_t": 1759514400000,
+      "entry_t": 1759514400000,
+      "exit_t": 1759564800000,
+      "entry": 0.8673500000000001,
+      "stop": 0.8466635503535556,
+      "tp1": 0.8983796744696668,
+      "tp2": 0.9294093489393336,
+      "risk_pct": 0.02385017541528161,
+      "r": -1.0497140953517314,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1759564800000,
+          "price": 0.8466635503535556,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1759478400000,
+      "swept_level": 0.2535,
+      "penetration_atr": 0.30705503787255434,
+      "sweep_t": 1759500000000,
+      "mss_level": 0.25782,
+      "displacement_t": 1759503600000,
+      "fvg_t": 1759507200000,
+      "retest_t": 1759514400000,
+      "entry_t": 1759514400000,
+      "exit_t": 1759546800000,
+      "entry": 0.25877,
+      "stop": 0.25216033940711297,
+      "tp1": 0.26868449088933055,
+      "tp2": 0.2785989817786611,
+      "risk_pct": 0.02554260769365473,
+      "r": -1.046380324577357,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1759546800000,
+          "price": 0.25216033940711297,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1759478400000,
+      "swept_level": 22.223,
+      "penetration_atr": 0.161422505043441,
+      "sweep_t": 1759492800000,
+      "mss_level": 22.421,
+      "displacement_t": 1759503600000,
+      "fvg_t": 1759507200000,
+      "retest_t": 1759514400000,
+      "entry_t": 1759514400000,
+      "exit_t": 1759543200000,
+      "entry": 22.4975,
+      "stop": 22.167052084659264,
+      "tp1": 22.9931718730111,
+      "tp2": 23.4888437460222,
+      "risk_pct": 0.01468820603803686,
+      "r": -1.0810982003719487,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1759543200000,
+          "price": 22.167052084659264,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1759471200000,
+      "swept_level": 227.42,
+      "penetration_atr": 0.1764718350408621,
+      "sweep_t": 1759500000000,
+      "mss_level": 231.7,
+      "displacement_t": 1759503600000,
+      "fvg_t": 1759507200000,
+      "retest_t": 1759514400000,
+      "entry_t": 1759514400000,
+      "exit_t": 1759586400000,
+      "entry": 232.3,
+      "stop": 226.64300252226985,
+      "tp1": 240.78549621659525,
+      "tp2": 249.2709924331905,
+      "risk_pct": 0.024352120007447946,
+      "r": -1.0486770239154943,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1759586400000,
+          "price": 226.64300252226985,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1759759200000,
+      "swept_level": 1210.24,
+      "penetration_atr": 0.5771067356731177,
+      "sweep_t": 1759798800000,
+      "mss_level": 1231.4,
+      "displacement_t": 1759809600000,
+      "fvg_t": 1759813200000,
+      "retest_t": 1759824000000,
+      "entry_t": 1759824000000,
+      "exit_t": 1759838400000,
+      "entry": 1234.3600000000001,
+      "stop": 1201.5339717509255,
+      "tp1": 1283.599042373612,
+      "tp2": 1332.838084747224,
+      "risk_pct": 0.026593561237462832,
+      "r": 2.203526295457957,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1759827600000,
+          "price": 1283.599042373612,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1759838400000,
+          "price": 1332.838084747224,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1761555600000,
+      "swept_level": 2.6038,
+      "penetration_atr": 0.1563295138172626,
+      "sweep_t": 1761573600000,
+      "mss_level": 2.6424,
+      "displacement_t": 1761577200000,
+      "fvg_t": 1761580800000,
+      "retest_t": 1761598800000,
+      "entry_t": 1761598800000,
+      "exit_t": 1761681600000,
+      "entry": 2.6436,
+      "stop": 2.596353855480762,
+      "tp1": 2.7144692167788573,
+      "tp2": 2.785338433557715,
+      "risk_pct": 0.01787189609594426,
+      "r": -1.066544526442962,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1761681600000,
+          "price": 2.596353855480762,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1762160400000,
+      "swept_level": 3739.98,
+      "penetration_atr": 0.1925876534363431,
+      "sweep_t": 1762178400000,
+      "mss_level": 3650.13,
+      "displacement_t": 1762182000000,
+      "fvg_t": 1762185600000,
+      "retest_t": 1762189200000,
+      "entry_t": 1762189200000,
+      "exit_t": 1762275600000,
+      "entry": 3664.5,
+      "stop": 3753.108032027224,
+      "tp1": 3531.587951959164,
+      "tp2": 3398.675903918328,
+      "risk_pct": 0.024180115166386684,
+      "r": 2.2017224448067085,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1762232400000,
+          "price": 3531.587951959164,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1762275600000,
+          "price": 3398.675903918328,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1762160400000,
+      "swept_level": 107881.4,
+      "penetration_atr": 0.5029367284922365,
+      "sweep_t": 1762171200000,
+      "mss_level": 106618.7,
+      "displacement_t": 1762182000000,
+      "fvg_t": 1762185600000,
+      "retest_t": 1762192800000,
+      "entry_t": 1762192800000,
+      "exit_t": 1762264800000,
+      "entry": 107037.8,
+      "stop": 108316.962288453,
+      "tp1": 105119.05656732051,
+      "tp2": 103200.31313464102,
+      "risk_pct": 0.011950565953831201,
+      "r": 2.1509363455642205,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1762232400000,
+          "price": 105119.05656732051,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1762264800000,
+          "price": 103200.31313464102,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1763535600000,
+      "swept_level": 91987.2,
+      "penetration_atr": 0.39592473438636366,
+      "sweep_t": 1763564400000,
+      "mss_level": 91006.4,
+      "displacement_t": 1763564400000,
+      "fvg_t": 1763568000000,
+      "retest_t": 1763586000000,
+      "entry_t": 1763586000000,
+      "exit_t": 1763600400000,
+      "entry": 90604.45,
+      "stop": 92484.96841908836,
+      "tp1": 87783.67237136746,
+      "tp2": 84962.89474273492,
+      "risk_pct": 0.020755254505582885,
+      "r": -1.0584166844293437,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1763600400000,
+          "price": 92484.96841908836,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1767337200000,
+      "swept_level": 12.837,
+      "penetration_atr": 0.1264978462529434,
+      "sweep_t": 1767362400000,
+      "mss_level": 13.158,
+      "displacement_t": 1767369600000,
+      "fvg_t": 1767373200000,
+      "retest_t": 1767376800000,
+      "entry_t": 1767376800000,
+      "exit_t": 1767852000000,
+      "entry": 13.201,
+      "stop": 12.802027344962056,
+      "tp1": 13.799458982556917,
+      "tp2": 14.397917965113834,
+      "risk_pct": 0.030222911524728766,
+      "r": 0.7098450232303679,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1767574800000,
+          "price": 13.799458982556917,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1767852000000,
+          "price": 13.201,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1767351600000,
+      "swept_level": 867.1,
+      "penetration_atr": 0.3706788390791663,
+      "sweep_t": 1767362400000,
+      "mss_level": 874.94,
+      "displacement_t": 1767369600000,
+      "fvg_t": 1767373200000,
+      "retest_t": 1767391200000,
+      "entry_t": 1767391200000,
+      "exit_t": 1767852000000,
+      "entry": 883.845,
+      "stop": 864.9789589150472,
+      "tp1": 912.1440616274292,
+      "tp2": 940.4431232548585,
+      "risk_pct": 0.0213454181275595,
+      "r": 0.6933318461634778,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1767639600000,
+          "price": 912.1440616274292,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1767852000000,
+          "price": 883.845,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1768212000000,
+      "swept_level": 138.94,
+      "penetration_atr": 0.26841843771380347,
+      "sweep_t": 1768226400000,
+      "mss_level": 140.24,
+      "displacement_t": 1768230000000,
+      "fvg_t": 1768233600000,
+      "retest_t": 1768237200000,
+      "entry_t": 1768237200000,
+      "exit_t": 1768251600000,
+      "entry": 141.41000000000003,
+      "stop": 138.39440985929596,
+      "tp1": 145.93338521105613,
+      "tp2": 150.4567704221122,
+      "risk_pct": 0.021325154803083675,
+      "r": -1.0556715727543735,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1768251600000,
+          "price": 138.39440985929596,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1768838400000,
+      "swept_level": 134.6,
+      "penetration_atr": 0.06115557035820799,
+      "sweep_t": 1768849200000,
+      "mss_level": 133.2,
+      "displacement_t": 1768860000000,
+      "fvg_t": 1768860000000,
+      "retest_t": 1768878000000,
+      "entry_t": 1768878000000,
+      "exit_t": 1768885200000,
+      "entry": 134.26,
+      "stop": 134.77263805171094,
+      "tp1": 133.49104292243356,
+      "tp2": 132.72208584486714,
+      "risk_pct": 0.003818248560337785,
+      "r": 1.9370697793603462,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1768878000000,
+          "price": 133.49104292243356,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1768885200000,
+          "price": 132.72208584486714,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1768971600000,
+      "swept_level": 0.12632,
+      "penetration_atr": 0.2076370515348624,
+      "sweep_t": 1769007600000,
+      "mss_level": 0.12148,
+      "displacement_t": 1769011200000,
+      "fvg_t": 1769014800000,
+      "retest_t": 1769018400000,
+      "entry_t": 1769018400000,
+      "exit_t": 1769022000000,
+      "entry": 0.12356,
+      "stop": 0.1268022760373909,
+      "tp1": 0.11869658594391368,
+      "tp2": 0.11383317188782735,
+      "risk_pct": 0.02624049884583105,
+      "r": -1.0463308379330085,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1769022000000,
+          "price": 0.1268022760373909,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1770537600000,
+      "swept_level": 1.4624,
+      "penetration_atr": 0.282791892148936,
+      "sweep_t": 1770555600000,
+      "mss_level": 1.4183,
+      "displacement_t": 1770566400000,
+      "fvg_t": 1770566400000,
+      "retest_t": 1770573600000,
+      "entry_t": 1770573600000,
+      "exit_t": 1770602400000,
+      "entry": 1.4506999999999999,
+      "stop": 1.4717355948858608,
+      "tp1": 1.4191466076712085,
+      "tp2": 1.387593215342417,
+      "risk_pct": 0.014500306669787643,
+      "r": 0.6676931295884052,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1770598800000,
+          "price": 1.4191466076712085,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1770602400000,
+          "price": 1.4506999999999999,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1771232400000,
+      "swept_level": 86.2,
+      "penetration_atr": 0.15069209071685563,
+      "sweep_t": 1771243200000,
+      "mss_level": 84.4,
+      "displacement_t": 1771246800000,
+      "fvg_t": 1771250400000,
+      "retest_t": 1771264800000,
+      "entry_t": 1771264800000,
+      "exit_t": 1771282800000,
+      "entry": 84.91499999999999,
+      "stop": 86.49931108788101,
+      "tp1": 82.53853336817846,
+      "tp2": 80.16206673635693,
+      "risk_pct": 0.018657611586657477,
+      "r": -1.064916914007265,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1771282800000,
+          "price": 86.49931108788101,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1775696400000,
+      "swept_level": 2160.0,
+      "penetration_atr": 0.15041600564755225,
+      "sweep_t": 1775739600000,
+      "mss_level": 2196.53,
+      "displacement_t": 1775746800000,
+      "fvg_t": 1775750400000,
+      "retest_t": 1775775600000,
+      "entry_t": 1775775600000,
+      "exit_t": 1775930400000,
+      "entry": 2186.71,
+      "stop": 2154.807190821741,
+      "tp1": 2234.5642137673885,
+      "tp2": 2282.4184275347766,
+      "risk_pct": 0.014589410199916244,
+      "r": 2.16639855984193,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1775829600000,
+          "price": 2234.5642137673885,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1775930400000,
+          "price": 2282.4184275347766,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1776315600000,
+      "swept_level": 1.3995,
+      "penetration_atr": 0.10444479219853282,
+      "sweep_t": 1776344400000,
+      "mss_level": 1.4228,
+      "displacement_t": 1776351600000,
+      "fvg_t": 1776355200000,
+      "retest_t": 1776358800000,
+      "entry_t": 1776358800000,
+      "exit_t": 1776366000000,
+      "entry": 1.41355,
+      "stop": 1.3963329849397441,
+      "tp1": 1.439375522590384,
+      "tp2": 1.465201045180768,
+      "risk_pct": 0.01217998306409817,
+      "r": 2.1501276955201876,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1776362400000,
+          "price": 1.439375522590384,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1776366000000,
+          "price": 1.465201045180768,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1777698000000,
+      "swept_level": 0.10732,
+      "penetration_atr": 0.28475782104444347,
+      "sweep_t": 1777723200000,
+      "mss_level": 0.10807,
+      "displacement_t": 1777726800000,
+      "fvg_t": 1777730400000,
+      "retest_t": 1777755600000,
+      "entry_t": 1777755600000,
+      "exit_t": 1777856400000,
+      "entry": 0.108085,
+      "stop": 0.10699937968451766,
+      "tp1": 0.10971343047322352,
+      "tp2": 0.11134186094644703,
+      "risk_pct": 0.010044134852036306,
+      "r": 2.1291772910332623,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1777856400000,
+          "price": 0.10971343047322352,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1777856400000,
+          "price": 0.11134186094644703,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1777827600000,
+      "swept_level": 78514.2,
+      "penetration_atr": 0.2271271356311837,
+      "sweep_t": 1777849200000,
+      "mss_level": 79428.9,
+      "displacement_t": 1777856400000,
+      "fvg_t": 1777860000000,
+      "retest_t": 1777888800000,
+      "entry_t": 1777888800000,
+      "exit_t": 1777888800000,
+      "entry": 79015.65,
+      "stop": 78390.99660826933,
+      "tp1": 79952.63008759599,
+      "tp2": 80889.61017519199,
+      "risk_pct": 0.007905438881166783,
+      "r": -1.1511942290160226,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1777888800000,
+          "price": 78390.99660826933,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1777842000000,
+      "swept_level": 0.10765,
+      "penetration_atr": 0.14340603148250491,
+      "sweep_t": 1777852800000,
+      "mss_level": 0.10963,
+      "displacement_t": 1777856400000,
+      "fvg_t": 1777860000000,
+      "retest_t": 1777888800000,
+      "entry_t": 1777888800000,
+      "exit_t": 1778119200000,
+      "entry": 0.11024500000000001,
+      "stop": 0.10740448226679228,
+      "tp1": 0.1145057765998116,
+      "tp2": 0.1187665531996232,
+      "risk_pct": 0.025765501684500258,
+      "r": 0.702976096076294,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1778014800000,
+          "price": 0.1145057765998116,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1778119200000,
+          "price": 0.11024500000000001,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "LINKUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1778270400000,
+      "swept_level": 10.287,
+      "penetration_atr": 0.18402041229599694,
+      "sweep_t": 1778281200000,
+      "mss_level": 10.491,
+      "displacement_t": 1778288400000,
+      "fvg_t": 1778288400000,
+      "retest_t": 1778317200000,
+      "entry_t": 1778317200000,
+      "exit_t": 1778436000000,
+      "entry": 10.3955,
+      "stop": 10.25432771464691,
+      "tp1": 10.607258428029635,
+      "tp2": 10.81901685605927,
+      "risk_pct": 0.013580134226645151,
+      "r": 2.1602856304015376,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1778425200000,
+          "price": 10.607258428029635,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1778436000000,
+          "price": 10.81901685605927,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1778410800000,
+      "swept_level": 2317.68,
+      "penetration_atr": 0.5519850234815622,
+      "sweep_t": 1778443200000,
+      "mss_level": 2367.66,
+      "displacement_t": 1778450400000,
+      "fvg_t": 1778454000000,
+      "retest_t": 1778457600000,
+      "entry_t": 1778457600000,
+      "exit_t": 1778508000000,
+      "entry": 2350.9300000000003,
+      "stop": 2307.92570431976,
+      "tp1": 2415.4364435203606,
+      "tp2": 2479.9428870407214,
+      "risk_pct": 0.018292461145266073,
+      "r": -1.0650007953478995,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1778508000000,
+          "price": 2307.92570431976,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1779336000000,
+      "swept_level": 0.1061,
+      "penetration_atr": 0.3014318500496216,
+      "sweep_t": 1779350400000,
+      "mss_level": 0.10476,
+      "displacement_t": 1779357600000,
+      "fvg_t": 1779357600000,
+      "retest_t": 1779386400000,
+      "entry_t": 1779386400000,
+      "exit_t": 1779451200000,
+      "entry": 0.10541500000000001,
+      "stop": 0.10647440622977906,
+      "tp1": 0.10382589065533143,
+      "tp2": 0.10223678131066284,
+      "risk_pct": 0.010049862256595888,
+      "r": -1.1200046216118456,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1779451200000,
+          "price": 0.10647440622977906,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1779768000000,
+      "swept_level": 657.22,
+      "penetration_atr": 0.5217903832276207,
+      "sweep_t": 1779778800000,
+      "mss_level": 660.23,
+      "displacement_t": 1779789600000,
+      "fvg_t": 1779793200000,
+      "retest_t": 1779807600000,
+      "entry_t": 1779807600000,
+      "exit_t": 1779814800000,
+      "entry": 660.095,
+      "stop": 655.1342957482335,
+      "tp1": 667.5360563776499,
+      "tp2": 674.9771127552996,
+      "risk_pct": 0.007515136839040615,
+      "r": -1.159077731184625,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1779814800000,
+          "price": 655.1342957482335,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1779868800000,
+      "swept_level": 76038.0,
+      "penetration_atr": 0.33902695449620995,
+      "sweep_t": 1779883200000,
+      "mss_level": 75666.0,
+      "displacement_t": 1779886800000,
+      "fvg_t": 1779890400000,
+      "retest_t": 1779894000000,
+      "entry_t": 1779894000000,
+      "exit_t": 1779940800000,
+      "entry": 75395.5,
+      "stop": 76207.4870168618,
+      "tp1": 74177.51947470728,
+      "tp2": 72959.53894941458,
+      "risk_pct": 0.010769701333127404,
+      "r": 2.139926297254523,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1779930000000,
+          "price": 74177.51947470728,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1779940800000,
+          "price": 72959.53894941458,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1782018000000,
+      "swept_level": 72.96,
+      "penetration_atr": 0.4208460016015364,
+      "sweep_t": 1782028800000,
+      "mss_level": 73.83,
+      "displacement_t": 1782032400000,
+      "fvg_t": 1782036000000,
+      "retest_t": 1782043200000,
+      "entry_t": 1782043200000,
+      "exit_t": 1782075600000,
+      "entry": 73.52000000000001,
+      "stop": 72.62089377145726,
+      "tp1": 74.86865934281414,
+      "tp2": 76.21731868562826,
+      "risk_pct": 0.012229410072670685,
+      "r": -1.09752411170034,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1782075600000,
+          "price": 72.62089377145726,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1782410400000,
+      "swept_level": 1.0472,
+      "penetration_atr": 0.06928314182876039,
+      "sweep_t": 1782428400000,
+      "mss_level": 1.0275,
+      "displacement_t": 1782439200000,
+      "fvg_t": 1782439200000,
+      "retest_t": 1782464400000,
+      "entry_t": 1782464400000,
+      "exit_t": 1782482400000,
+      "entry": 1.0359,
+      "stop": 1.050048525953596,
+      "tp1": 1.014677211069606,
+      "tp2": 0.9934544221392119,
+      "risk_pct": 0.013658196692341015,
+      "r": 0.6625906707612457,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1782478800000,
+          "price": 1.014677211069606,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1782482400000,
+          "price": 1.0359,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1783411200000,
+      "swept_level": 576.91,
+      "penetration_atr": 0.3842329198561275,
+      "sweep_t": 1783432800000,
+      "mss_level": 582.8,
+      "displacement_t": 1783436400000,
+      "fvg_t": 1783440000000,
+      "retest_t": 1783447200000,
+      "entry_t": 1783447200000,
+      "exit_t": 1783472400000,
+      "entry": 582.7850000000001,
+      "stop": 575.0468798048975,
+      "tp1": 594.3921802926541,
+      "tp2": 605.999360585308,
+      "risk_pct": 0.013277830066152393,
+      "r": -1.0897762131328235,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1783472400000,
+          "price": 575.0468798048975,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1783882800000,
+      "swept_level": 77.76,
+      "penetration_atr": 0.7988052755361097,
+      "sweep_t": 1783900800000,
+      "mss_level": 76.42,
+      "displacement_t": 1783904400000,
+      "fvg_t": 1783908000000,
+      "retest_t": 1783929600000,
+      "entry_t": 1783929600000,
+      "exit_t": 1784030400000,
+      "entry": 76.7,
+      "stop": 78.27074558590854,
+      "tp1": 74.3438816211372,
+      "tp2": 71.98776324227438,
+      "risk_pct": 0.02047908195447901,
+      "r": 0.6918536233329496,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1783976400000,
+          "price": 74.3438816211372,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1784030400000,
+          "price": 76.7,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "SOLUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1785312000000,
+      "swept_level": 74.3,
+      "penetration_atr": 0.3316748598385833,
+      "sweep_t": 1785348000000,
+      "mss_level": 72.88,
+      "displacement_t": 1785351600000,
+      "fvg_t": 1785355200000,
+      "retest_t": 1785369600000,
+      "entry_t": 1785369600000,
+      "exit_t": 1785416400000,
+      "entry": 73.285,
+      "stop": 74.59045002691673,
+      "tp1": 71.3268249596249,
+      "tp2": 69.3686499192498,
+      "risk_pct": 0.01781333188124078,
+      "r": -1.0679652749525044,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1785416400000,
+          "price": 74.59045002691673,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1786291200000,
+      "swept_level": 1.0455,
+      "penetration_atr": 0.48378925568521486,
+      "sweep_t": 1786312800000,
+      "mss_level": 1.0389,
+      "displacement_t": 1786316400000,
+      "fvg_t": 1786316400000,
+      "retest_t": 1786323600000,
+      "entry_t": 1786323600000,
+      "exit_t": 1786399200000,
+      "entry": 1.03925,
+      "stop": 1.0482511099539693,
+      "tp1": 1.025748335069046,
+      "tp2": 1.012246670138092,
+      "risk_pct": 0.008661159445724608,
+      "r": 2.112800420406208,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1786366800000,
+          "price": 1.025748335069046,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1786399200000,
+          "price": 1.012246670138092,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1786669200000,
+      "swept_level": 0.1833,
+      "penetration_atr": 0.15239629760305728,
+      "sweep_t": 1786698000000,
+      "mss_level": 0.1812,
+      "displacement_t": 1786701600000,
+      "fvg_t": 1786705200000,
+      "retest_t": 1786726800000,
+      "entry_t": 1786726800000,
+      "exit_t": 1786960800000,
+      "entry": 0.1809,
+      "stop": 0.18369685517608925,
+      "tp1": 0.17670471723586614,
+      "tp2": 0.17250943447173228,
+      "risk_pct": 0.0154607804095591,
+      "r": 2.173734254338283,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1786813200000,
+          "price": 0.17670471723586614,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1786960800000,
+          "price": 0.17250943447173228,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ADAUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1788847200000,
+      "swept_level": 0.2155,
+      "penetration_atr": 0.22662591442015756,
+      "sweep_t": 1788872400000,
+      "mss_level": 0.2217,
+      "displacement_t": 1788879600000,
+      "fvg_t": 1788879600000,
+      "retest_t": 1788894000000,
+      "entry_t": 1788894000000,
+      "exit_t": 1788966000000,
+      "entry": 0.2207,
+      "stop": 0.2143366814061461,
+      "tp1": 0.23024497789078088,
+      "tp2": 0.23978995578156176,
+      "risk_pct": 0.02883243585796972,
+      "r": -1.0410197925805253,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1788966000000,
+          "price": 0.2143366814061461,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "XRPUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1788897600000,
+      "swept_level": 1.4128,
+      "penetration_atr": 0.21070760975956498,
+      "sweep_t": 1788915600000,
+      "mss_level": 1.4263,
+      "displacement_t": 1788926400000,
+      "fvg_t": 1788930000000,
+      "retest_t": 1788944400000,
+      "entry_t": 1788944400000,
+      "exit_t": 1788966000000,
+      "entry": 1.4202,
+      "stop": 1.4081779052049321,
+      "tp1": 1.4382331421926016,
+      "tp2": 1.4562662843852032,
+      "risk_pct": 0.008465071676572154,
+      "r": 0.6077910113169972,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1788955200000,
+          "price": 1.4382331421926016,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1788966000000,
+          "price": 1.4202,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "BTCUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1789318800000,
+      "swept_level": 77387.0,
+      "penetration_atr": 0.19745960666376378,
+      "sweep_t": 1789333200000,
+      "mss_level": 77083.2,
+      "displacement_t": 1789336800000,
+      "fvg_t": 1789340400000,
+      "retest_t": 1789347600000,
+      "entry_t": 1789347600000,
+      "exit_t": 1789351200000,
+      "entry": 77063.05,
+      "stop": 77458.08982108487,
+      "tp1": 76470.4902683727,
+      "tp2": 75877.9305367454,
+      "risk_pct": 0.005126189802828531,
+      "r": -1.2346919954500835,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1789351200000,
+          "price": 77458.08982108487,
+          "fraction": 1.0
+        }
+      ]
+    }
+  ]
+}
