@@ -223,7 +223,7 @@ def make_signals(dailies):
             if not (x["c"]>x["ema50"]>x["ema200"]):continue
             win=D[i-4:i+1]
             if not any(z["l"]<=z["ema20"] for z in win):continue
-            if not (min(z["c"] for z in win)>min(z["ema50"] for z in win)):continue
+            if not all(z["c"]>z["ema50"] for z in win):continue
             if not (x["c"]>x["ema20"] and x["c"]>prev["c"] and x["clv"]>=.60):continue
             entry=x["h"]
             stop=min(z["l"] for z in win)-STOP_ATR_PAD*x["atr14"]
