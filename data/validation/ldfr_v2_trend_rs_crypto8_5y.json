@@ -107,260 +107,28 @@
   },
   "funnel_counts": {
     "BTCUSDT": {
-      "TOTAL": {
-        "intact_liquidity": 81857,
-        "sweep": 3325,
-        "daily_selection": 1039,
-        "regime": 536,
-        "displacement": 49,
-        "mss": 25,
-        "fvg": 15,
-        "retest": 9
-      },
-      "LONG": {
-        "intact_liquidity": 41106,
-        "sweep": 1661,
-        "daily_selection": 587,
-        "regime": 318,
-        "displacement": 32,
-        "mss": 14,
-        "fvg": 6,
-        "retest": 4
-      },
-      "SHORT": {
-        "intact_liquidity": 40751,
-        "sweep": 1664,
-        "daily_selection": 452,
-        "regime": 218,
-        "displacement": 17,
-        "mss": 11,
-        "fvg": 9,
-        "retest": 5
-      }
+      "skipped_in_fast_run": true
     },
     "ETHUSDT": {
-      "TOTAL": {
-        "intact_liquidity": 82037,
-        "sweep": 3320,
-        "daily_selection": 598,
-        "regime": 335,
-        "displacement": 19,
-        "mss": 11,
-        "fvg": 9,
-        "retest": 3
-      },
-      "LONG": {
-        "intact_liquidity": 41360,
-        "sweep": 1642,
-        "daily_selection": 243,
-        "regime": 123,
-        "displacement": 7,
-        "mss": 4,
-        "fvg": 4,
-        "retest": 1
-      },
-      "SHORT": {
-        "intact_liquidity": 40677,
-        "sweep": 1678,
-        "daily_selection": 355,
-        "regime": 212,
-        "displacement": 12,
-        "mss": 7,
-        "fvg": 5,
-        "retest": 2
-      }
+      "skipped_in_fast_run": true
     },
     "BNBUSDT": {
-      "TOTAL": {
-        "intact_liquidity": 81739,
-        "sweep": 3030,
-        "daily_selection": 494,
-        "regime": 245,
-        "displacement": 18,
-        "mss": 8,
-        "fvg": 6,
-        "retest": 2
-      },
-      "LONG": {
-        "intact_liquidity": 41315,
-        "sweep": 1564,
-        "daily_selection": 289,
-        "regime": 146,
-        "displacement": 6,
-        "mss": 3,
-        "fvg": 3,
-        "retest": 2
-      },
-      "SHORT": {
-        "intact_liquidity": 40424,
-        "sweep": 1466,
-        "daily_selection": 205,
-        "regime": 99,
-        "displacement": 12,
-        "mss": 5,
-        "fvg": 3,
-        "retest": 0
-      }
+      "skipped_in_fast_run": true
     },
     "SOLUSDT": {
-      "TOTAL": {
-        "intact_liquidity": 81109,
-        "sweep": 3092,
-        "daily_selection": 690,
-        "regime": 384,
-        "displacement": 31,
-        "mss": 20,
-        "fvg": 17,
-        "retest": 8
-      },
-      "LONG": {
-        "intact_liquidity": 40785,
-        "sweep": 1562,
-        "daily_selection": 305,
-        "regime": 173,
-        "displacement": 15,
-        "mss": 11,
-        "fvg": 9,
-        "retest": 3
-      },
-      "SHORT": {
-        "intact_liquidity": 40324,
-        "sweep": 1530,
-        "daily_selection": 385,
-        "regime": 211,
-        "displacement": 16,
-        "mss": 9,
-        "fvg": 8,
-        "retest": 5
-      }
+      "skipped_in_fast_run": true
     },
     "XRPUSDT": {
-      "TOTAL": {
-        "intact_liquidity": 82205,
-        "sweep": 3153,
-        "daily_selection": 474,
-        "regime": 270,
-        "displacement": 18,
-        "mss": 13,
-        "fvg": 12,
-        "retest": 6
-      },
-      "LONG": {
-        "intact_liquidity": 41169,
-        "sweep": 1647,
-        "daily_selection": 191,
-        "regime": 99,
-        "displacement": 8,
-        "mss": 6,
-        "fvg": 6,
-        "retest": 3
-      },
-      "SHORT": {
-        "intact_liquidity": 41036,
-        "sweep": 1506,
-        "daily_selection": 283,
-        "regime": 171,
-        "displacement": 10,
-        "mss": 7,
-        "fvg": 6,
-        "retest": 3
-      }
+      "skipped_in_fast_run": true
     },
     "ADAUSDT": {
-      "TOTAL": {
-        "intact_liquidity": 81202,
-        "sweep": 3110,
-        "daily_selection": 578,
-        "regime": 318,
-        "displacement": 28,
-        "mss": 15,
-        "fvg": 12,
-        "retest": 3
-      },
-      "LONG": {
-        "intact_liquidity": 40560,
-        "sweep": 1608,
-        "daily_selection": 127,
-        "regime": 53,
-        "displacement": 7,
-        "mss": 3,
-        "fvg": 3,
-        "retest": 2
-      },
-      "SHORT": {
-        "intact_liquidity": 40642,
-        "sweep": 1502,
-        "daily_selection": 451,
-        "regime": 265,
-        "displacement": 21,
-        "mss": 12,
-        "fvg": 9,
-        "retest": 1
-      }
+      "skipped_in_fast_run": true
     },
     "DOGEUSDT": {
-      "TOTAL": {
-        "intact_liquidity": 82316,
-        "sweep": 3214,
-        "daily_selection": 580,
-        "regime": 341,
-        "displacement": 14,
-        "mss": 9,
-        "fvg": 8,
-        "retest": 3
-      },
-      "LONG": {
-        "intact_liquidity": 41247,
-        "sweep": 1657,
-        "daily_selection": 158,
-        "regime": 88,
-        "displacement": 3,
-        "mss": 2,
-        "fvg": 2,
-        "retest": 2
-      },
-      "SHORT": {
-        "intact_liquidity": 41069,
-        "sweep": 1557,
-        "daily_selection": 422,
-        "regime": 253,
-        "displacement": 11,
-        "mss": 7,
-        "fvg": 6,
-        "retest": 1
-      }
+      "skipped_in_fast_run": true
     },
     "LINKUSDT": {
-      "TOTAL": {
-        "intact_liquidity": 80547,
-        "sweep": 3213,
-        "daily_selection": 612,
-        "regime": 324,
-        "displacement": 21,
-        "mss": 14,
-        "fvg": 12,
-        "retest": 1
-      },
-      "LONG": {
-        "intact_liquidity": 40639,
-        "sweep": 1659,
-        "daily_selection": 246,
-        "regime": 135,
-        "displacement": 4,
-        "mss": 0,
-        "fvg": 0,
-        "retest": 0
-      },
-      "SHORT": {
-        "intact_liquidity": 39908,
-        "sweep": 1554,
-        "daily_selection": 366,
-        "regime": 189,
-        "displacement": 17,
-        "mss": 14,
-        "fvg": 12,
-        "retest": 1
-      }
+      "skipped_in_fast_run": true
     }
   },
   "summary": {
