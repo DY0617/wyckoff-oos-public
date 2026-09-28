@@ -1,0 +1,572 @@
+{
+  "strategy": "LDFR_v2.2_ER20_TREND_RS_LIQUIDITY",
+  "status": "FROZEN_V2_2_UNSEEN8B_OOS",
+  "market": "Binance Vision USDT-M perpetual",
+  "symbols": [
+    "OPUSDT",
+    "ARBUSDT",
+    "SUIUSDT",
+    "INJUSDT",
+    "ICPUSDT",
+    "CRVUSDT",
+    "MANAUSDT",
+    "APTUSDT"
+  ],
+  "benchmark": "BTCUSDT",
+  "universe_test": "second 8-symbol untouched OOS set; exact frozen v2.2 rules; BTC benchmark-only",
+  "period": {
+    "warmup_start": "2020-10-01T00:00:00+00:00",
+    "eval_start": "2021-09-28T00:00:00+00:00",
+    "eval_end_exclusive": "2026-09-28T00:00:00+00:00"
+  },
+  "logic": {
+    "market_selector": "prior completed BTC 1D close above EMA200 for longs, below EMA200 for shorts",
+    "symbol_trend": "prior completed 1D: long close>EMA50>EMA200 and EMA50 slope10>0; exact inverse short; ER20>=0.30 required",
+    "relative_strength": "30D return must exceed BTC for alt longs and trail BTC for alt shorts; BTC exempt from self-comparison",
+    "local_regime": "closed 4H close>EMA50, EMA20>EMA50, EMA20 5-bar slope>0 for long; exact inverse short",
+    "liquidity_sweep": "most recent intact confirmed 2L/2R swing within 72 bars; sweep penetration 0.05-1.0 ATR and close back inside",
+    "displacement": "within 3 bars: range>=1.5 ATR14, body/range>=0.6, directional CLV, AND close breaks pre-sweep 5-bar structure (MSS)",
+    "fvg": "3-candle FVG >= 0.15 ATR14 on displacement bar or within next 2 bars",
+    "entry": "first valid FVG midpoint retest within 8 bars; daily selector and 4H regime must still agree",
+    "stop": "sweep extreme +/- 0.15 ATR14 measured on sweep bar",
+    "management": "TP1 1.5R on 50%, remainder stop->BE; TP2 3.0R exits rest",
+    "ambiguity": "same 1H bar stop checked before targets, including retest/entry bar",
+    "costs": {
+      "fee_bps_per_fill": 4.0,
+      "slippage_bps_per_fill": 2.0,
+      "implementation": "charged once per fill via combined cost"
+    },
+    "positioning": "fixed 1R reference risk per trade; one open position per symbol"
+  },
+  "data_counts": {
+    "BTCUSDT": {
+      "1h_bars": 52488,
+      "4h_bars": 13122,
+      "1d_bars": 2187,
+      "first_1h_open": "2020-10-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "OPUSDT": {
+      "1h_bars": 37882,
+      "4h_bars": 9470,
+      "1d_bars": 1578,
+      "first_1h_open": "2022-06-01T14:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "ARBUSDT": {
+      "1h_bars": 30801,
+      "4h_bars": 7700,
+      "1d_bars": 1283,
+      "first_1h_open": "2023-03-23T15:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "SUIUSDT": {
+      "1h_bars": 29816,
+      "4h_bars": 7454,
+      "1d_bars": 1242,
+      "first_1h_open": "2023-05-03T16:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "INJUSDT": {
+      "1h_bars": 36046,
+      "4h_bars": 9011,
+      "1d_bars": 1501,
+      "first_1h_open": "2022-08-17T02:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "ICPUSDT": {
+      "1h_bars": 46531,
+      "4h_bars": 11632,
+      "1d_bars": 1937,
+      "first_1h_open": "2021-05-11T03:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "CRVUSDT": {
+      "1h_bars": 52488,
+      "4h_bars": 13122,
+      "1d_bars": 2187,
+      "first_1h_open": "2020-10-01T00:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "MANAUSDT": {
+      "1h_bars": 48401,
+      "4h_bars": 12100,
+      "1d_bars": 2016,
+      "first_1h_open": "2021-03-15T07:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    },
+    "APTUSDT": {
+      "1h_bars": 34534,
+      "4h_bars": 8633,
+      "1d_bars": 1438,
+      "first_1h_open": "2022-10-19T02:00:00+00:00",
+      "last_1h_close": "2026-09-26T23:59:59.999000+00:00"
+    }
+  },
+  "setup_counts": {
+    "OPUSDT": 1,
+    "ARBUSDT": 1,
+    "SUIUSDT": 0,
+    "INJUSDT": 1,
+    "ICPUSDT": 0,
+    "CRVUSDT": 0,
+    "MANAUSDT": 1,
+    "APTUSDT": 1
+  },
+  "funnel_counts": {
+    "OPUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "ARBUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "SUIUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "INJUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "ICPUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "CRVUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "MANAUSDT": {
+      "skipped_in_fast_run": true
+    },
+    "APTUSDT": {
+      "skipped_in_fast_run": true
+    }
+  },
+  "summary": {
+    "trades": 5,
+    "long": 2,
+    "short": 3,
+    "wins": 3,
+    "losses": 2,
+    "win_rate": 0.6,
+    "total_r": 1.4612643821965496,
+    "avg_r": 0.2922528764393099,
+    "median_r": 0.7007617216689698,
+    "avg_win_r": 1.2167918349047167,
+    "avg_loss_r": -1.0945555612588,
+    "profit_factor": 1.6675149411858152,
+    "max_drawdown_r": -2.1891111225176005,
+    "max_losing_streak": 2,
+    "tp1_rate": 0.6,
+    "tp2_rate": 0.2,
+    "avg_risk_pct": 0.031175021695548172
+  },
+  "splits": {
+    "development_2021-09-28_2024-09-27": {
+      "trades": 2,
+      "long": 2,
+      "short": 0,
+      "wins": 2,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 2.9178363137695755,
+      "avg_r": 1.4589181568847878,
+      "median_r": 1.4589181568847878,
+      "avg_win_r": 1.4589181568847878,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.5,
+      "avg_risk_pct": 0.03130016575175029
+    },
+    "oos_2025-09-28_2026-09-27": {
+      "trades": 3,
+      "long": 0,
+      "short": 3,
+      "wins": 1,
+      "losses": 2,
+      "win_rate": 0.3333333333333333,
+      "total_r": -1.4565719315730257,
+      "avg_r": -0.48552397719100854,
+      "median_r": -1.0788722355944642,
+      "avg_win_r": 0.7325391909445745,
+      "avg_loss_r": -1.0945555612588,
+      "profit_factor": 0.3346286003526918,
+      "max_drawdown_r": -2.1891111225176,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.3333333333333333,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.03109159232474676
+    }
+  },
+  "years": {
+    "2024": {
+      "trades": 2,
+      "long": 2,
+      "short": 0,
+      "wins": 2,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 2.9178363137695755,
+      "avg_r": 1.4589181568847878,
+      "median_r": 1.4589181568847878,
+      "avg_win_r": 1.4589181568847878,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.5,
+      "avg_risk_pct": 0.03130016575175029
+    },
+    "2025": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 0.7325391909445745,
+      "avg_r": 0.7325391909445745,
+      "median_r": 0.7325391909445745,
+      "avg_win_r": 0.7325391909445745,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.06699864848575943
+    },
+    "2026": {
+      "trades": 2,
+      "long": 0,
+      "short": 2,
+      "wins": 0,
+      "losses": 2,
+      "win_rate": 0.0,
+      "total_r": -2.1891111225176,
+      "avg_r": -1.0945555612588,
+      "median_r": -1.0945555612588,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0945555612588,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -2.1891111225176,
+      "max_losing_streak": 2,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.013138064244240424
+    }
+  },
+  "symbols_summary": {
+    "APTUSDT": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 2.2170745921006056,
+      "avg_r": 2.2170745921006056,
+      "median_r": 2.2170745921006056,
+      "avg_win_r": 2.2170745921006056,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 1.0,
+      "avg_risk_pct": 0.038004259638493264
+    },
+    "ARBUSDT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 0.7325391909445745,
+      "avg_r": 0.7325391909445745,
+      "median_r": 0.7325391909445745,
+      "avg_win_r": 0.7325391909445745,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.06699864848575943
+    },
+    "INJUSDT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0788722355944642,
+      "avg_r": -1.0788722355944642,
+      "median_r": -1.0788722355944642,
+      "avg_win_r": null,
+      "avg_loss_r": -1.0788722355944642,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0788722355944642,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.015331106756900532
+    },
+    "MANAUSDT": {
+      "trades": 1,
+      "long": 1,
+      "short": 0,
+      "wins": 1,
+      "losses": 0,
+      "win_rate": 1.0,
+      "total_r": 0.7007617216689698,
+      "avg_r": 0.7007617216689698,
+      "median_r": 0.7007617216689698,
+      "avg_win_r": 0.7007617216689698,
+      "avg_loss_r": null,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_rate": 1.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.024596071865007327
+    },
+    "OPUSDT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate": 0.0,
+      "total_r": -1.110238886923136,
+      "avg_r": -1.110238886923136,
+      "median_r": -1.110238886923136,
+      "avg_win_r": null,
+      "avg_loss_r": -1.110238886923136,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.110238886923136,
+      "max_losing_streak": 1,
+      "tp1_rate": 0.0,
+      "tp2_rate": 0.0,
+      "avg_risk_pct": 0.010945021731580318
+    }
+  },
+  "trades": [
+    {
+      "symbol": "MANAUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1709341200000,
+      "swept_level": 0.6525,
+      "penetration_atr": 0.07581408194914577,
+      "sweep_t": 1709355600000,
+      "mss_level": 0.6794,
+      "selector": {
+        "symbol_ret30": 0.5422747278202456,
+        "btc_ret30": 0.4668671655643144,
+        "er20": 0.5744800449690836,
+        "symbol_close": 0.6658,
+        "symbol_ema50": 0.4965150012969346,
+        "symbol_ema200": 0.4522079722024549,
+        "btc_close": 62430.6,
+        "btc_ema200": 39752.87812101023
+      },
+      "displacement_t": 1709362800000,
+      "fvg_t": 1709366400000,
+      "retest_t": 1709370000000,
+      "entry_t": 1709370000000,
+      "exit_t": 1709395200000,
+      "entry": 0.6658999999999999,
+      "stop": 0.6495214757450916,
+      "tp1": 0.6904677863823625,
+      "tp2": 0.7150355727647251,
+      "risk_pct": 0.024596071865007327,
+      "r": 0.7007617216689698,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1709377200000,
+          "price": 0.6904677863823625,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1709395200000,
+          "price": 0.6658999999999999,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "APTUSDT",
+      "direction": "LONG",
+      "liquidity_pivot_t": 1711299600000,
+      "swept_level": 15.876,
+      "penetration_atr": 0.5196521478476966,
+      "sweep_t": 1711371600000,
+      "mss_level": 16.417,
+      "selector": {
+        "symbol_ret30": 0.7924611001534081,
+        "btc_ret30": 0.3247662585012574,
+        "er20": 0.3613516726099507,
+        "symbol_close": 16.358,
+        "symbol_ema50": 12.40395349072429,
+        "symbol_ema200": 9.498132022368972,
+        "btc_close": 67260.9,
+        "btc_ema200": 45391.46980009508
+      },
+      "displacement_t": 1711378800000,
+      "fvg_t": 1711382400000,
+      "retest_t": 1711389600000,
+      "entry_t": 1711389600000,
+      "exit_t": 1711440000000,
+      "entry": 16.3545,
+      "stop": 15.732959335742263,
+      "tp1": 17.28681099638661,
+      "tp2": 18.219121992773218,
+      "risk_pct": 0.038004259638493264,
+      "r": 2.2170745921006056,
+      "reason": "TP2",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1711407600000,
+          "price": 17.28681099638661,
+          "fraction": 0.5
+        },
+        {
+          "type": "TP2",
+          "t": 1711440000000,
+          "price": 18.219121992773218,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "ARBUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1763377200000,
+      "swept_level": 0.2422,
+      "penetration_atr": 0.1634390014375364,
+      "sweep_t": 1763388000000,
+      "mss_level": 0.2302,
+      "selector": {
+        "symbol_ret30": -0.22390516957523876,
+        "btc_ret30": -0.11427956374684389,
+        "er20": 0.36493256262042395,
+        "symbol_close": 0.2357,
+        "symbol_ema50": 0.32544755490829924,
+        "symbol_ema200": 0.4065752275843381,
+        "btc_close": 94221.7,
+        "btc_ema200": 107401.65095649265
+      },
+      "displacement_t": 1763398800000,
+      "fvg_t": 1763406000000,
+      "retest_t": 1763427600000,
+      "entry_t": 1763427600000,
+      "exit_t": 1765296000000,
+      "entry": 0.22825,
+      "stop": 0.2435424415168746,
+      "tp1": 0.20531133772468813,
+      "tp2": 0.18237267544937624,
+      "risk_pct": 0.06699864848575943,
+      "r": 0.7325391909445745,
+      "reason": "BE",
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1763708400000,
+          "price": 0.20531133772468813,
+          "fraction": 0.5
+        },
+        {
+          "type": "BE",
+          "t": 1765296000000,
+          "price": 0.22825,
+          "fraction": 0.5
+        }
+      ]
+    },
+    {
+      "symbol": "INJUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1770732000000,
+      "swept_level": 3.082,
+      "penetration_atr": 0.0793946392634434,
+      "sweep_t": 1770742800000,
+      "mss_level": 3.028,
+      "selector": {
+        "symbol_ret30": -0.3933384674624567,
+        "btc_ret30": -0.22503802382236693,
+        "er20": 0.4562180579216358,
+        "symbol_close": 3.151,
+        "symbol_ema50": 4.491947606008523,
+        "symbol_ema200": 7.755234350327379,
+        "btc_close": 70110.5,
+        "btc_ema200": 95691.80548823047
+      },
+      "displacement_t": 1770746400000,
+      "fvg_t": 1770750000000,
+      "retest_t": 1770760800000,
+      "entry_t": 1770760800000,
+      "exit_t": 1770775200000,
+      "entry": 3.044,
+      "stop": 3.0906678889680053,
+      "tp1": 2.973998166547992,
+      "tp2": 2.9039963330959844,
+      "risk_pct": 0.015331106756900532,
+      "r": -1.0788722355944642,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1770775200000,
+          "price": 3.0906678889680053,
+          "fraction": 1.0
+        }
+      ]
+    },
+    {
+      "symbol": "OPUSDT",
+      "direction": "SHORT",
+      "liquidity_pivot_t": 1785218400000,
+      "swept_level": 0.088,
+      "penetration_atr": 0.3778720550823945,
+      "sweep_t": 1785229200000,
+      "mss_level": 0.0868,
+      "selector": {
+        "symbol_ret30": -0.13505461767626614,
+        "btc_ret30": 0.062008023293216974,
+        "er20": 0.3424657534246571,
+        "symbol_close": 0.0871,
+        "symbol_ema50": 0.10222583678870496,
+        "symbol_ema200": 0.1785940286072277,
+        "btc_close": 63720.8,
+        "btc_ema200": 73409.28972633017
+      },
+      "displacement_t": 1785236400000,
+      "fvg_t": 1785240000000,
+      "retest_t": 1785247200000,
+      "entry_t": 1785247200000,
+      "exit_t": 1785254400000,
+      "entry": 0.08760000000000001,
+      "stop": 0.08855878390368645,
+      "tp1": 0.08616182414447035,
+      "tp2": 0.0847236482889407,
+      "risk_pct": 0.010945021731580318,
+      "r": -1.110238886923136,
+      "reason": "STOP",
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1785254400000,
+          "price": 0.08855878390368645,
+          "fraction": 1.0
+        }
+      ]
+    }
+  ]
+}
