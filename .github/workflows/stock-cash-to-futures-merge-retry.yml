@@ -1,4 +1,5 @@
 name: Stock Cash-to-Futures Merge Retry
+# latest-shards
 
 on:
   workflow_dispatch:
@@ -25,7 +26,7 @@ jobs:
           pattern: stock-cash-to-futures-*
           path: data/validation/stock_cash_to_futures_shards
           merge-multiple: true
-          run-id: 36591628965
+          run-id: 36593772651
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: python scripts/merge_stock_track_b_e_cash_to_binance_futures_exec_v1.py
       - uses: actions/upload-artifact@v4
