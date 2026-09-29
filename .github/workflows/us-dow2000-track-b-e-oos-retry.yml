@@ -1,0 +1,45 @@
+name: US Dow2000 Track-B E OOS Retry
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/us-dow2000-track-b-e-oos-retry.yml"
+      - "scripts/backtest_us_dow2000_track_b_e_15_25_60_oos_v1.py"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check pandas pyarrow
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: dow2000-oos-*
+          path: data/tmp_us30x2_25y
+          merge-multiple: true
+          run-id: 36565492689
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m py_compile scripts/backtest_us_dow2000_track_b_e_15_25_60_oos_v1.py scripts/backtest_us_30x2_track_b_25y.py scripts/backtest_wyckoff_runner_sweep_engine.py scripts/wyckoff_status.py
+      - run: python scripts/backtest_us_dow2000_track_b_e_15_25_60_oos_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dow2000-track-b-e-oos-result
+          path: data/validation/us_dow2000_track_b_e_15_25_60_oos_v1.json
+          retention-days: 30
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/us_dow2000_track_b_e_15_25_60_oos_v1.json
+          git commit -m "research: add Dow2000 Track-B E OOS result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
