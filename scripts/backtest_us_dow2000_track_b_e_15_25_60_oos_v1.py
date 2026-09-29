@@ -1,4 +1,4 @@
-import json, sys
+import json, os, sys
 from bisect import bisect_left
 from collections import defaultdict
 from datetime import datetime, timezone
@@ -12,7 +12,8 @@ import wyckoff_status as w
 UTC=timezone.utc
 DOW=base.DOW2000
 ALL=tuple(list(DOW)+["SPY"])
-OUT=Path("data/validation/us_dow2000_track_b_e_15_25_60_oos_v1.json")
+OUT=Path(os.environ.get("OUT","data/validation/us_dow2000_track_b_e_15_25_60_oos_v1.json"))
+TRADE_SYMS=tuple(x for x in os.environ.get("TRADE_SYMS","").split(",") if x) or DOW
 
 def ret20(D,i):
     if i<20 or D[i-20]["c"]<=0:return None
@@ -82,7 +83,7 @@ def main():
                 errors[sym]=repr(e)
                 print("PREP_ERROR",sym,repr(e),flush=True)
 
-        for sym in DOW:
+        for sym in TRADE_SYMS:
             if sym not in cache:continue
             D,H,M=cache[sym]
             first=datetime.fromtimestamp(M[0]["t"]/1000,UTC)
@@ -130,7 +131,8 @@ def main():
     out={
       "purpose":"Independent-universe OOS validation of stock Track-B E + 15/25/60",
       "universe":"DJIA constituents frozen at 2000-01",
-      "symbols":list(DOW),
+      "symbols":list(TRADE_SYMS),
+      "breadth_universe":list(DOW),
       "period":{"start":base.GLOBAL_EVAL_START.isoformat(),"end_exclusive":base.EVAL_END.isoformat()},
       "data":{"chunks":[p.name for p in files],"session":"US RTH","provider":"Hugging Face mito0o852/OHLCV-1m"},
       "strategy":{
