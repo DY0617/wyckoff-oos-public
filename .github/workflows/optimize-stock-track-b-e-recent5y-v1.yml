@@ -1,0 +1,39 @@
+name: Optimize Stock Track-B E Recent 5Y v1
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/optimize-stock-track-b-e-recent5y-v1.yml"
+      - "scripts/optimize_stock_track_b_e_recent5y_v1.py"
+      - "strategy/stock_track_b_e_recent5y_param_opt_v1_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python -m py_compile scripts/optimize_stock_track_b_e_recent5y_v1.py scripts/evaluate_stock70_e_vs_stock53_e_5y.py scripts/wyckoff_status.py
+      - run: python scripts/optimize_stock_track_b_e_recent5y_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock-track-b-e-recent5y-param-opt-v1
+          path: data/validation/stock_track_b_e_recent5y_param_opt_v1.json
+          retention-days: 30
+          if-no-files-found: error
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock_track_b_e_recent5y_param_opt_v1.json
+          git commit -m "research: add recent-5Y stock parameter optimization result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
