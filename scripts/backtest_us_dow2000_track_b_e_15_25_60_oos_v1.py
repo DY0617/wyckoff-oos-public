@@ -71,7 +71,10 @@ def main():
                 splits=base.detect_splits(bars)
                 bars=base.apply_splits(bars,splits)
                 H=w.enrich(base.aggregate_4h(bars))
-                D=w.enrich(base.aggregate_daily(bars))
+                daily=base.aggregate_daily(bars)
+                for z in daily:
+                    z["ct"]=z["t"]+390*60_000-1
+                D=w.enrich(daily)
                 M=bars
                 cache[sym]=(D,H,M)
                 dailies[sym]=D
