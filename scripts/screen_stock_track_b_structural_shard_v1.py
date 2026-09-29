@@ -45,10 +45,10 @@ GRID={
   "ema_gap_atr_max":(1.50,3.00),
   "trigger_window":(6,12),
 }
-CONFIGS=[("baseline",{})]
+STAGE1_CONFIGS=[("baseline",{})]
 for p,(lo,hi) in GRID.items():
-    CONFIGS.append((f"{p}__low",{p:lo}))
-    CONFIGS.append((f"{p}__high",{p:hi}))
+    STAGE1_CONFIGS.append((f"{p}__low",{p:lo}))
+    STAGE1_CONFIGS.append((f"{p}__high",{p:hi}))
 
 def month_iter(a,b):
     y,m=a.year,a.month
@@ -195,12 +195,18 @@ def overlay_state(sym,dailies,entry_t):
     return votes>=2 and rr>=sr and br is not None and br>=.50
 
 def main():
+    configs=STAGE1_CONFIGS
+    config_file=os.environ.get("CONFIG_FILE")
+    if config_file:
+        z=json.loads(Path(config_file).read_text())
+        configs=[(x["name"],x["overrides"]) for x in z["stage2_configs"]]
+        print("USING_CONFIG_FILE",config_file,"n",len(configs),flush=True)
     raw=collect_15m()
     dailies=build_context()
     old_dataset,old_filters=bt.dataset,bt.symbol_filters
     old_cap,old_risk=bt.CAP,bt.RISK
     bt.CAP=20000.;bt.RISK=400.
-    output={name:[] for name,_ in CONFIGS};errors={}
+    output={name:[] for name,_ in configs};errors={}
     try:
         for sym in TRADE_SYMS:
             try:
@@ -213,7 +219,7 @@ def main():
                 bt.symbol_filters=lambda _s:(0.01,0.,0.)
                 def tf(_sym,p,trigger_open_ms):
                     return p["direction"]=="LONG" and bool(overlay_state(sym,dailies,trigger_open_ms))
-                for name,ov in CONFIGS:
+                for name,ov in configs:
                     bt._CACHE.clear()
                     r=bt.simulate(sym,a_params=A_OFF,b_params=ov,start_ms=START_MS,end_ms=END_MS,
                                   fee_bps=FEE_BPS,slippage_bps=SLIPPAGE_BPS,
@@ -233,7 +239,7 @@ def main():
       "trade_symbols":list(TRADE_SYMS),
       "period":{"start":START.isoformat(),"end_exclusive":END.isoformat()},
       "baseline":BASE,"grid":GRID,
-      "configs":{name:ov for name,ov in CONFIGS},
+      "configs":{name:ov for name,ov in configs},
       "trades":output,"errors":errors
     }
     OUT.parent.mkdir(parents=True,exist_ok=True)
