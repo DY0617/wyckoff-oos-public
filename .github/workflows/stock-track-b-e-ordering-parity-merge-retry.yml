@@ -1,0 +1,39 @@
+name: Stock Track-B E Ordering Parity Merge Retry
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock-track-b-e-ordering-parity-merge-retry.yml"
+      - "scripts/merge_stock_track_b_e_ordering_parity.py"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: stock-e-parity-*
+          path: data/validation/stock_track_b_e_ordering_parity_shards
+          merge-multiple: true
+          run-id: 36579584099
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python scripts/merge_stock_track_b_e_ordering_parity.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock-e-ordering-parity-26y
+          path: data/validation/stock_track_b_e_ordering_parity_26y.json
+          retention-days: 30
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock_track_b_e_ordering_parity_26y.json
+          git commit -m "research: add stock Track-B E ordering parity [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
