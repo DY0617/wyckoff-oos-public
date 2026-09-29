@@ -1,0 +1,73 @@
+name: Stock Track-B E Cash to Binance Futures Exec v1 Sharded
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock-track-b-e-cash-to-binance-futures-exec-v1-sharded.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  shard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        include:
+          - {id: "01", syms: "AAPL,AMZN,AVGO,CRCL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
+          - {id: "02", syms: "AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SOXS,V"}
+          - {id: "03", syms: "COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT"}
+          - {id: "04", syms: "AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM"}
+          - {id: "05", syms: "AAOI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python -m py_compile scripts/backtest_stock_track_b_e_cash_to_binance_futures_exec_v1.py scripts/backtest_stock9_spot_vs_binance_same_window.py scripts/backtest_stock50_track_b_hf_5y_exact_touch.py scripts/backtest_wyckoff_stock_filter_engine.py scripts/wyckoff_status.py
+      - name: Run shard
+        env:
+          TRADE_SYMS: "${{ matrix.syms }}"
+          OUT: "data/validation/stock_cash_to_futures_shards/report_${{ matrix.id }}.json"
+          TRADES_OUT: "data/validation/stock_cash_to_futures_shards/trades_${{ matrix.id }}.json"
+        run: python scripts/backtest_stock_track_b_e_cash_to_binance_futures_exec_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock-cash-to-futures-${{ matrix.id }}
+          path: |
+            data/validation/stock_cash_to_futures_shards/report_${{ matrix.id }}.json
+            data/validation/stock_cash_to_futures_shards/trades_${{ matrix.id }}.json
+          retention-days: 7
+          if-no-files-found: error
+
+  merge:
+    needs: shard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: stock-cash-to-futures-*
+          path: data/validation/stock_cash_to_futures_shards
+          merge-multiple: true
+      - run: python scripts/merge_stock_track_b_e_cash_to_binance_futures_exec_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock-cash-to-futures-final
+          path: |
+            data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1_sharded.json
+            data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1_sharded_trades.json
+          retention-days: 30
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1_sharded.json data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1_sharded_trades.json
+          git commit -m "research: add sharded cash-to-Binance stock-futures execution result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
