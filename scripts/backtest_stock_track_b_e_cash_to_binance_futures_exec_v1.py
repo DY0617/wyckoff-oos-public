@@ -229,7 +229,9 @@ def exchange_universe():
         if not m:continue
         if m.get("status") not in (None,"TRADING"):continue
         syms.append(s)
-    if REQUESTED:\n        syms=[s for s in syms if s in set(REQUESTED)]\n    return syms,meta
+    if REQUESTED:
+        syms=[s for s in syms if s in set(REQUESTED)]
+    return syms,meta
 
 def cash_engine(sym,M,daily,eval_start,eval_end):
     bars=cashhist.apply_splits(M,cashhist.detect_splits(M))
