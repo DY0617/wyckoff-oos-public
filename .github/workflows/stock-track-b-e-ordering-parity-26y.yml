@@ -1,0 +1,80 @@
+name: Stock Track-B E Ordering Parity 26Y
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock-track-b-e-ordering-parity-26y.yml"
+      - "scripts/backtest_wyckoff_stock_filter_engine.py"
+      - "scripts/stock_track_b_e_ordering_parity_shard.py"
+      - "scripts/merge_stock_track_b_e_ordering_parity.py"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  shard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        include:
+          - {id: "01", syms: "MMM,AA,MO,AXP,BA"}
+          - {id: "02", syms: "CAT,C,KO,DD,EK"}
+          - {id: "03", syms: "XOM,GE,GM,HPQ,HD"}
+          - {id: "04", syms: "HON,INTC,IBM,IP,JNJ"}
+          - {id: "05", syms: "JPM,MCD,MRK,MSFT,PG"}
+          - {id: "06", syms: "SBC,UTX,WMT,DIS,T"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check pandas pyarrow
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: dow2000-oos-*
+          path: data/tmp_us30x2_25y
+          merge-multiple: true
+          run-id: 36565492689
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m py_compile scripts/backtest_wyckoff_stock_filter_engine.py scripts/stock_track_b_e_ordering_parity_shard.py scripts/merge_stock_track_b_e_ordering_parity.py scripts/backtest_us_30x2_track_b_25y.py scripts/wyckoff_status.py
+      - name: Run parity shard
+        env:
+          TRADE_SYMS: "${{ matrix.syms }}"
+          OUT: "data/validation/stock_track_b_e_ordering_parity_shards/shard_${{ matrix.id }}.json"
+        run: python scripts/stock_track_b_e_ordering_parity_shard.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock-e-parity-${{ matrix.id }}
+          path: data/validation/stock_track_b_e_ordering_parity_shards/shard_${{ matrix.id }}.json
+          retention-days: 7
+          if-no-files-found: error
+
+  merge:
+    needs: shard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: stock-e-parity-*
+          path: data/validation/stock_track_b_e_ordering_parity_shards
+          merge-multiple: true
+      - run: python scripts/merge_stock_track_b_e_ordering_parity.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock-e-ordering-parity-26y
+          path: data/validation/stock_track_b_e_ordering_parity_26y.json
+          retention-days: 30
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock_track_b_e_ordering_parity_26y.json
+          git commit -m "research: add stock Track-B E ordering parity [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
