@@ -26,6 +26,7 @@ TRADES_OUT=Path(os.environ.get("TRADES_OUT","data/validation/stock_track_b_e_cas
 REQUESTED=tuple(x for x in os.environ.get("TRADE_SYMS","").split(",") if x)
 STOCK50=tuple(cashhist.SYMS)
 DAILY_UNIVERSE=tuple(dict.fromkeys(STOCK50+("SPY",)))
+DAILY_CACHE=Path("data/validation/stock50_e_daily_recent_cache.json")
 A_OFF={"climax_spread_min":999.0,"climax_volume_min":999.0}
 FEE_BPS=4.0
 SLIP_BPS=2.0
@@ -176,6 +177,16 @@ def enrich_daily(rows):
     return out
 
 def load_daily_universe():
+    if DAILY_CACHE.exists():
+        raw=json.loads(DAILY_CACHE.read_text(encoding="utf-8"))
+        out={}
+        for s,rows in raw.get("symbols",{}).items():
+            q=[]
+            for z in rows:
+                x=dict(z);x["date"]=date.fromisoformat(x["date"]);q.append(x)
+            if len(q)>=55:out[s]=q
+        print("DAILY_CACHE_LOADED",len(out),flush=True)
+        return out
     out={}
     with ThreadPoolExecutor(max_workers=12) as ex:
         futs={ex.submit(fetch_stooq_daily,s):s for s in DAILY_UNIVERSE}
@@ -198,8 +209,11 @@ def latest_daily_idx(rows,entry_t):
 def estate(sym,daily,ts):
     D=daily.get(sym);S=daily.get("SPY")
     if not D or not S:return None
+    local_day=datetime.fromtimestamp(ts/1000,UTC).astimezone(NY).date()
     i=latest_daily_idx(D,ts);si=latest_daily_idx(S,ts)
     if i<50 or si<50:return None
+    # Do not use stale series as if they were current breadth / RS data.
+    if (local_day-D[i]["date"]).days>7 or (local_day-S[si]["date"]).days>7:return None
     rr=D[i].get("ret20");sr=S[si].get("ret20")
     if rr is None or sr is None:return None
     s=S[si]
@@ -208,7 +222,7 @@ def estate(sym,daily,ts):
     for u,U in daily.items():
         if u=="SPY" and u not in STOCK50:continue
         ui=latest_daily_idx(U,ts)
-        if ui>=50 and U[ui].get("ema50") is not None:
+        if ui>=50 and U[ui].get("ema50") is not None and (local_day-U[ui]["date"]).days<=7:
             eligible+=1;above+=int(U[ui]["c"]>U[ui]["ema50"])
     breadth=above/eligible if eligible else None
     return {"spy_regime":votes>=2,"rs_ok":rr>=sr,
