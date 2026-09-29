@@ -1,9 +1,25 @@
 import json
 from pathlib import Path
-import sys
+CAP=20000.0
+RISK=400.0
 
-sys.path.insert(0,str(Path(__file__).parent))
-import backtest_us_30x2_track_b_25y as base
+def trade_summary(ts):
+    ts=sorted(ts,key=lambda x:x["exit_t"])
+    wins=sum(t["pnl"]>0 for t in ts);losses=sum(t["pnl"]<0 for t in ts)
+    gw=sum(max(t["r"],0) for t in ts);gl=-sum(min(t["r"],0) for t in ts)
+    eq=CAP;peak=CAP;mdd=0.0;streak=max_streak=0
+    for t in ts:
+        eq+=t["pnl"];peak=max(peak,eq);mdd=max(mdd,(peak-eq)/peak if peak else 0.0)
+        if t["pnl"]<0:streak+=1;max_streak=max(max_streak,streak)
+        else:streak=0
+    net=sum(t["r"] for t in ts)
+    return {"closed":len(ts),"wins":wins,"losses":losses,
+            "win_rate":wins/len(ts) if ts else None,
+            "net_r":net,"avg_r":net/len(ts) if ts else None,
+            "profit_factor_r":gw/gl if gl>0 else None,
+            "max_drawdown_fixed_20k":mdd,
+            "max_consecutive_losses":max_streak,
+            "ending_equity_fixed_risk":eq}
 
 ROOT=Path("data/validation/stock_track_b_e_ordering_parity_shards")
 OUT=Path("data/validation/stock_track_b_e_ordering_parity_26y.json")
@@ -23,7 +39,7 @@ def main():
         errors.update(o.get("errors",{}))
         for m in audit:audit[m]["filtered"]+=o.get("filter_audit",{}).get(m,{}).get("filtered",0)
 
-    summaries={m:base.trade_summary([{**t,"direction":"LONG"} for t in ts]) for m,ts in modes.items()}
+    summaries={m:trade_summary(ts) for m,ts in modes.items()}
     sets={m:{key(t) for t in ts} for m,ts in modes.items()}
     parity={}
     maps={m:{key(t):t for t in ts} for m,ts in modes.items()}
