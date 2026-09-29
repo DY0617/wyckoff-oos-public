@@ -1,0 +1,120 @@
+{
+  "strategy": "Wyckoff Track-B 15/25/60 + 4H pivot runner robustness audit",
+  "source": "data/validation/wyckoff_track_b_runner60_check_v1_trades.json",
+  "evaluation_period": {
+    "start": "2021-09-23T00:00:00Z",
+    "end": "2026-09-21T20:00:00Z",
+    "midpoint": "2024-03-23T10:00:00Z"
+  },
+  "candidate": "15_25_60__PIVOT",
+  "comparator": "20_30_50__PIVOT",
+  "summary": {
+    "candidate": {
+      "trades": 146,
+      "net_r": 56.694261378711765,
+      "avg_r": 0.38831685875829974,
+      "profit_factor": 2.2025604329350683,
+      "max_drawdown": 0.08154358968291262,
+      "max_losing_streak": 3,
+      "win_rate": 0.684931506849315
+    },
+    "comparator": {
+      "trades": 146,
+      "net_r": 53.315748935351515,
+      "avg_r": 0.3651763625709008,
+      "profit_factor": 2.131160530636089,
+      "max_drawdown": 0.08121161024084116,
+      "max_losing_streak": 3,
+      "win_rate": 0.6917808219178082
+    },
+    "delta_net_r": 3.37851244336025
+  },
+  "period_split": {
+    "first_half": {
+      "candidate": {
+        "trades": 69,
+        "net_r": 30.384516588079784,
+        "profit_factor": 2.390990177104052,
+        "max_drawdown": 0.05164503064399076,
+        "max_losing_streak": 3
+      },
+      "comparator": {
+        "trades": 69,
+        "net_r": 28.921851500463042,
+        "profit_factor": 2.3240299948227205,
+        "max_drawdown": 0.051606512079523346,
+        "max_losing_streak": 3
+      },
+      "delta_net_r": 1.462665087616742
+    },
+    "second_half": {
+      "candidate": {
+        "trades": 77,
+        "net_r": 26.30974479063199,
+        "profit_factor": 2.039877085672685,
+        "max_drawdown": 0.13060680555355733,
+        "max_losing_streak": 3
+      },
+      "comparator": {
+        "trades": 77,
+        "net_r": 24.393897434888494,
+        "profit_factor": 1.9645719666779136,
+        "max_drawdown": 0.12788830610198212,
+        "max_losing_streak": 3
+      },
+      "delta_net_r": 1.915847355743496
+    }
+  },
+  "leave_one_symbol_out": {
+    "without_BTC": {
+      "candidate_net_r": 48.58067858818425,
+      "candidate_pf": 2.3321901847095172,
+      "comparator_net_r": 46.0117362560815,
+      "delta_net_r": 2.568942332102751
+    },
+    "without_ETH": {
+      "candidate_net_r": 31.716256426687522,
+      "candidate_pf": 1.8412688605067533,
+      "comparator_net_r": 28.520782342290016,
+      "delta_net_r": 3.195474084397506
+    },
+    "without_BNB": {
+      "candidate_net_r": 47.179263538794274,
+      "candidate_pf": 2.323070953448923,
+      "comparator_net_r": 44.16845305427152,
+      "delta_net_r": 3.010810484522755
+    },
+    "without_SOL": {
+      "candidate_net_r": 42.60658558246927,
+      "candidate_pf": 2.3479813611184404,
+      "comparator_net_r": 41.246275153411524,
+      "delta_net_r": 1.360310429057746
+    }
+  },
+  "yearly_candidate_net_r": {
+    "2021": 4.61679305567701,
+    "2022": 4.625525361769508,
+    "2023": 11.37854228619227,
+    "2024": 11.735516408574256,
+    "2025": 9.419521024437746,
+    "2026": 14.918363242060988
+  },
+  "yearly_delta_vs_20_30_50": {
+    "2021": 0.465307417938002,
+    "2022": 0.198717053607501,
+    "2023": -0.189144164744248,
+    "2024": 1.698624957420753,
+    "2025": 0.576737622724752,
+    "2026": 0.628269556413497
+  },
+  "interpretation": {
+    "all_years_positive": true,
+    "both_halves_positive": true,
+    "both_halves_improve_vs_20_30_50": true,
+    "every_loso_positive": true,
+    "every_loso_improves_vs_20_30_50": true,
+    "weakest_loso_profit_factor": 1.8412688605067533,
+    "improvement_years": "5 of 6",
+    "caveat": "This is robustness within the same 5-year research dataset, not a fully untouched out-of-sample validation."
+  }
+}
