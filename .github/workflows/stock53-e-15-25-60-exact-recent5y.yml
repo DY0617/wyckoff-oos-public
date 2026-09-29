@@ -1,0 +1,49 @@
+name: Stock53 Track-B E 15-25-60 Exact Recent 5Y
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock53-e-15-25-60-exact-recent5y.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python -m py_compile scripts/evaluate_stock53_e_management_shard.py scripts/evaluate_stock53_filter_factorial_shard.py scripts/wyckoff_status.py
+      - name: Run exact recent 5Y
+        env:
+          EVAL_START: "2021-04-01"
+          EVAL_END: "2026-04-01"
+          OUT: "data/validation/stock53_e_15_25_60_exact_recent5y.json"
+        run: python scripts/evaluate_stock53_e_management_shard.py
+      - run: |
+          python - <<'PY'
+          import json
+          p="data/validation/stock53_e_15_25_60_exact_recent5y.json"
+          o=json.load(open(p))
+          keep={
+            "period":o["period"],
+            "eligible_trades":o["eligible_trades"],
+            "filter":o["filter"],
+            "modes":{k:{"summary":v["summary"],"years":v["years"]} for k,v in o["modes"].items()}
+          }
+          json.dump(keep,open(p,"w"),ensure_ascii=False,indent=2)
+          PY
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock53_e_15_25_60_exact_recent5y.json
+          git commit -m "research: add exact recent 5Y stock Track-B E management result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
