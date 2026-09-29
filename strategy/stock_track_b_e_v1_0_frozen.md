@@ -101,3 +101,48 @@ Pre-registered Dow2000 OOS survival criteria all passed:
 - The current-53 research universe has survivorship/post-selection bias.
 - Filter E is applied to completed Track-B trade candidates in the historical research pipeline; future engine versions should integrate eligibility before order creation and verify parity.
 - Historical performance is not a guarantee of future profitability.
+
+
+## Live-ordering parity addendum
+
+Validated on the frozen Dow2000 OOS universe, 2000-01 through 2026-01.
+
+Three ordering semantics were compared:
+- POST: historical research method — create/suppress Track-B trades first, then apply E at entry time.
+- PRE_TRIGGER: keep the technical setup pending, then evaluate LONG + E immediately at the trigger bar before entry.
+- PRE_SETUP: require E when the pending setup is first created.
+
+### Result
+POST and PRE_TRIGGER matched exactly:
+- 303 closed trades in both
+- win rate 68.3168% in both
+- net +99.2129R in both
+- PF 2.0386 in both
+- max DD 11.2515% in both
+- max losing streak 6 in both
+- exact trade-set match: true
+- common trades: 303
+- only-POST trades: 0
+- only-PRE_TRIGGER trades: 0
+- maximum absolute PnL difference on common trades: 0
+
+PRE_SETUP did not match:
+- 322 trades
+- +99.7819R
+- PF 1.9413
+- max DD 10.0961%
+- 279 trades common with POST
+- 24 POST-only and 43 PRE_SETUP-only trades
+
+### Frozen production ordering
+Therefore Stock Track B-E v1.0 uses PRE_TRIGGER semantics:
+1. Track-B technical setup may remain pending independent of E.
+2. When planned Entry is actually touched in the eligible RTH trigger bar, evaluate LONG + E using only information available before that entry:
+   - SPY bull regime
+   - stock RS20 >= SPY RS20
+   - breadth >= 50%
+3. Enter / emit the actionable Entry alert only if E passes.
+4. If E fails at that trigger, reject that trigger/setup; do not count it as a trade.
+5. Then manage the accepted position with frozen 15/25/60 rules.
+
+This ordering preserves exact parity with the validated historical research result.
