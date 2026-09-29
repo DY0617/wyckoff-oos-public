@@ -1,14 +1,18 @@
-import json, math, statistics, sys
+import json, math, os, statistics, sys
 from itertools import product
 from datetime import datetime, timezone
 from pathlib import Path
 
+os.environ.setdefault("EVAL_START","2021-04-01")
+os.environ.setdefault("EVAL_END","2026-04-01")
+os.environ.setdefault("OUT","/tmp/stock53_filter_unused.json")
+
 sys.path.insert(0,str(Path(__file__).parent))
-import evaluate_stock70_e_vs_53_e_5y as src
+import evaluate_stock53_filter_factorial_shard as src
+import wyckoff_status as w
 
 UTC=timezone.utc
-BASE50=Path("data/validation/stock50_track_b_hf_5y_exact_touch.json")
-ADD20=Path("data/validation/stock20_added_track_b_hf_5y_exact_touch.json")
+BASE=Path("data/validation/stock53_track_b_hf_20y_exact_touch.json")
 OUT=Path("data/validation/stock_track_b_e_recent5y_param_opt_v1.json")
 
 START_MS=int(datetime(2021,4,1,tzinfo=UTC).timestamp()*1000)
@@ -139,17 +143,25 @@ def neighbor(a,b):
     return diff==1
 
 def main():
-    b50=json.loads(BASE50.read_text());a20=json.loads(ADD20.read_text())
-    set53=set(src.SYMS53)
-    trades=[x for x in (b50["trades"]+a20["trades"]) if x["symbol"] in set53 and START_MS<=x["entry_t"]<END_MS]
+    base=json.loads(BASE.read_text())
+    trades=[x for x in base["trades"] if START_MS<=x["entry_t"]<END_MS]
     trades=sorted(trades,key=lambda x:(x["entry_t"],x["symbol"]))
     print("BASE_TRADES",len(trades),flush=True)
-    dailies=src.collect()
+
+    by,months=src.collect()
+    dailies={}
+    for s in src.SYMS:
+        bars=src.apply_splits(by[s],src.detect_splits(by[s]))
+        if bars:
+            dailies[s]=w.enrich(bars)
+    if "SPY" not in dailies:
+        raise RuntimeError("SPY daily missing")
+
     # Precompute contexts for each lookback.
     ctx={}
     for lb in LOOKBACKS:
         for t in trades:
-            ctx[(t["symbol"],t["entry_t"],lb)]=context(t,dailies,src.SYMS53,lb)
+            ctx[(t["symbol"],t["entry_t"],lb)]=context(t,dailies,src.SYMS,lb)
     # Precompute management R for every base trade.
     managed={}
     for mode in MODES:
@@ -198,7 +210,7 @@ def main():
     out={
       "generated_at":datetime.now(UTC).isoformat(),
       "period":{"start":"2021-04-01","mid":"2023-10-01","end_exclusive":"2026-04-01"},
-      "base_trades":len(trades),
+      "base_trades":len(trades),"months_loaded":months,
       "grid":{"spy_votes_min":list(VOTES),"rs_lookback":list(LOOKBACKS),"breadth_min":list(BREADTHS),"management":list(MODES),"combinations":len(rows)},
       "constraints":{"min_trades":40,"min_pf_each_half":1.20,"positive_each_half":True,"max_losing_streak":7,"max_dd_r":10},
       "baseline":baseline,
