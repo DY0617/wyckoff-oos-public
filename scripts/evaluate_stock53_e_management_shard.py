@@ -103,7 +103,9 @@ def main():
             yrs[str(datetime.fromtimestamp(t["entry_t"]/1000,timezone.utc).year)].append(t)
         modes[name]={
           "summary":summarize(xs),
-          "years":{k:summarize(v) for k,v in sorted(yrs.items())}
+          "years":{k:summarize(v) for k,v in sorted(yrs.items())},
+          "trades":[{"symbol":t["symbol"],"entry_t":t["entry_t"],"exit_t":t["exit_t"],
+                     "pnl_recalc":t["pnl_recalc"],"r_recalc":t["r_recalc"]} for t in xs]
         }
 
     out={
