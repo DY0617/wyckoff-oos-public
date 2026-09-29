@@ -21,8 +21,9 @@ END_MS=int(datetime(2026,9,29,tzinfo=UTC).timestamp()*1000)-1
 CASH_WARMUP_MONTHS=("2025-10","2025-11","2025-12","2026-01","2026-02","2026-03")
 HF_BASE="https://huggingface.co/datasets/mito0o852/OHLCV-1m/resolve/main/data"
 GETDATA_BASE="https://raw.githubusercontent.com/getdata-finance"
-OUT=Path("data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1.json")
-TRADES_OUT=Path("data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1_trades.json")
+OUT=Path(os.environ.get("OUT","data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1.json"))
+TRADES_OUT=Path(os.environ.get("TRADES_OUT","data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1_trades.json"))
+REQUESTED=tuple(x for x in os.environ.get("TRADE_SYMS","").split(",") if x)
 STOCK50=tuple(cashhist.SYMS)
 DAILY_UNIVERSE=tuple(dict.fromkeys(STOCK50+("SPY",)))
 A_OFF={"climax_spread_min":999.0,"climax_volume_min":999.0}
