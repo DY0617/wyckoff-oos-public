@@ -142,6 +142,11 @@ def simulate(sym, a_params=None, b_params=None, start_ms=None, end_ms=None, fee_
                 if p["track"]=="B" and b_scale_mode not in ("fixed_50_50","fixed_tp2") and tp1 is not None and ((direction=="LONG" and stop<tp1) or (direction=="SHORT" and stop>tp1)):
                     stop=tp1
                     events.append({"type":"STOP_TO_TP1","t":z["t"],"price":tp1,"cause":"TP2"})
+                # If TP2 fully closes the position (e.g. 50/50 or 100%-TP2 research modes),
+                # stop scanning immediately so holding time and subsequent setup availability are correct.
+                if remain<=1e-12:
+                    remain=0
+                    break
             if p["track"]!="B":
                 one_r=entry+sign*risk
                 # Preserve validated Track A management: +1R on a closed 15m candle => BE.
