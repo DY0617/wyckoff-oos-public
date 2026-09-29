@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install --disable-pip-version-check duckdb
-      - run: python -m py_compile scripts/optimize_stock_track_b_e_recent5y_v1.py scripts/evaluate_stock70_e_vs_stock53_e_5y.py scripts/wyckoff_status.py
+      - run: python -m py_compile scripts/optimize_stock_track_b_e_recent5y_v1.py scripts/evaluate_stock70_e_vs_53_e_5y.py scripts/wyckoff_status.py
       - run: python scripts/optimize_stock_track_b_e_recent5y_v1.py
       - uses: actions/upload-artifact@v4
         with:
