@@ -1,0 +1,39 @@
+name: Stock Track-B E Cash to Binance Futures Exec v1
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock-track-b-e-cash-to-binance-futures-exec-v1.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python -m py_compile scripts/backtest_stock_track_b_e_cash_to_binance_futures_exec_v1.py scripts/backtest_stock9_spot_vs_binance_same_window.py scripts/backtest_stock50_track_b_hf_5y_exact_touch.py scripts/backtest_wyckoff_stock_filter_engine.py scripts/wyckoff_status.py
+      - run: python scripts/backtest_stock_track_b_e_cash_to_binance_futures_exec_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock-track-b-e-cash-to-binance-futures-exec-v1
+          path: |
+            data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1.json
+            data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1_trades.json
+          retention-days: 30
+          if-no-files-found: error
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1.json data/validation/stock_track_b_e_cash_to_binance_futures_exec_v1_trades.json
+          git commit -m "research: add cash-to-Binance stock-futures execution result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
