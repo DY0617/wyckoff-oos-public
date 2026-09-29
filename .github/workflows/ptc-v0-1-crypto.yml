@@ -1,0 +1,32 @@
+name: PTC v0.1 Crypto Pilot
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ptc-v0-1-crypto.yml"
+      - "scripts/backtest_ptc_v0_1_crypto.py"
+      - "strategy/ptc_v0_1_frozen.md"
+permissions: {contents: write}
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python -m py_compile scripts/backtest_ptc_v0_1_crypto.py
+      - run: python scripts/backtest_ptc_v0_1_crypto.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ptc-v0-1-crypto
+          path: data/validation/ptc_v0_1_crypto_pilot.json
+          retention-days: 30
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/ptc_v0_1_crypto_pilot.json
+          git commit -m "research: add PTC v0.1 crypto result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
