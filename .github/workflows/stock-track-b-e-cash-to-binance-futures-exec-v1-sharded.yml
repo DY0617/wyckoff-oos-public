@@ -1,5 +1,5 @@
 name: Stock Track-B E Cash to Binance Futures Exec v1 Sharded
-# retry after shard syntax fix
+# retry after shard env fix
 
 on:
   workflow_dispatch:
