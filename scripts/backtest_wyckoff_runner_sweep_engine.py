@@ -112,6 +112,12 @@ def simulate(sym, a_params=None, b_params=None, start_ms=None, end_ms=None, fee_
         elif p["track"]=="B" and b_scale_mode=="25_25_50":
             tp1_fraction=.25 if tp1 is not None else 0.0
             tp2_fraction=.25 if tp1 is not None else .50
+        elif p["track"]=="B" and b_scale_mode=="15_25_60":
+            tp1_fraction=.15 if tp1 is not None else 0.0
+            tp2_fraction=.25 if tp1 is not None else .40
+        elif p["track"]=="B" and b_scale_mode=="10_30_60":
+            tp1_fraction=.10 if tp1 is not None else 0.0
+            tp2_fraction=.30 if tp1 is not None else .40
         else:
             tp1_fraction=.30 if tp1 is not None else 0.0
             tp2_fraction=.30 if tp1 is not None else .60
