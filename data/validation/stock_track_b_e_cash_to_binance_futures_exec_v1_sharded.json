@@ -55,77 +55,77 @@
     "V",
     "WMT"
   ],
-  "cash_signals_total": 0,
-  "daily_filter_symbols_available_min": 0,
+  "cash_signals_total": 1,
+  "daily_filter_symbols_available_min": 47,
   "modes": {
     "SAME_BAR_CLOSE": {
       "futures": {
-        "closed": 0,
-        "wins": 0,
+        "closed": 1,
+        "wins": 1,
         "losses": 0,
-        "win_rate": null,
-        "net_r": 0,
-        "avg_r": null,
+        "win_rate": 1.0,
+        "net_r": 0.06428002893000001,
+        "avg_r": 0.06428002893000001,
         "profit_factor": null,
         "max_drawdown_fixed_20k": 0,
         "max_consecutive_losses": 0,
         "outside_rth_exits": 0,
-        "outside_rth_exit_rate": null
+        "outside_rth_exit_rate": 0.0
       },
-      "executed_total": 0,
-      "closed_matched": 0,
+      "executed_total": 1,
+      "closed_matched": 1,
       "cash_benchmark_on_closed_matched": {
-        "trades": 0,
-        "net_r": 0,
-        "avg_r": null,
-        "win_rate": null
+        "trades": 1,
+        "net_r": 0.09355068750000006,
+        "avg_r": 0.09355068750000006,
+        "win_rate": 1.0
       },
       "execution_delta_r": {
-        "sum": 0,
-        "mean": null
+        "sum": -0.029270658570000052,
+        "mean": -0.029270658570000052
       },
-      "outcome_sign_match_rate": null,
+      "outcome_sign_match_rate": 1.0,
       "entry_basis_bps": {
-        "n": 0,
-        "mean": null,
-        "median": null,
-        "mean_abs": null,
-        "median_abs": null
+        "n": 1,
+        "mean": -141.3782627999849,
+        "median": -141.3782627999849,
+        "mean_abs": 141.3782627999849,
+        "median_abs": 141.3782627999849
       }
     },
     "NEXT_BAR_OPEN": {
       "futures": {
-        "closed": 0,
-        "wins": 0,
+        "closed": 1,
+        "wins": 1,
         "losses": 0,
-        "win_rate": null,
-        "net_r": 0,
-        "avg_r": null,
+        "win_rate": 1.0,
+        "net_r": 0.06427924113000026,
+        "avg_r": 0.06427924113000026,
         "profit_factor": null,
         "max_drawdown_fixed_20k": 0,
         "max_consecutive_losses": 0,
         "outside_rth_exits": 0,
-        "outside_rth_exit_rate": null
+        "outside_rth_exit_rate": 0.0
       },
-      "executed_total": 0,
-      "closed_matched": 0,
+      "executed_total": 1,
+      "closed_matched": 1,
       "cash_benchmark_on_closed_matched": {
-        "trades": 0,
-        "net_r": 0,
-        "avg_r": null,
-        "win_rate": null
+        "trades": 1,
+        "net_r": 0.09355068750000006,
+        "avg_r": 0.09355068750000006,
+        "win_rate": 1.0
       },
       "execution_delta_r": {
-        "sum": 0,
-        "mean": null
+        "sum": -0.0292714463699998,
+        "mean": -0.0292714463699998
       },
-      "outcome_sign_match_rate": null,
+      "outcome_sign_match_rate": 1.0,
       "entry_basis_bps": {
-        "n": 0,
-        "mean": null,
-        "median": null,
-        "mean_abs": null,
-        "median_abs": null
+        "n": 1,
+        "mean": -140.9108966419681,
+        "median": -140.9108966419681,
+        "mean_abs": 140.9108966419681,
+        "median_abs": 140.9108966419681
       }
     }
   },
@@ -1334,46 +1334,46 @@
       "cash_bars": 6448,
       "futures_bars": 23115,
       "eval_start": 1769610600000,
-      "cash_signals": 0,
+      "cash_signals": 1,
       "modes": {
         "SAME_BAR_CLOSE": {
-          "attempts": 0,
-          "executed": 0,
+          "attempts": 1,
+          "executed": 1,
           "no_match": 0,
           "late_invalid": 0,
           "overlap_skipped": 0,
           "summary": {
-            "closed": 0,
-            "wins": 0,
+            "closed": 1,
+            "wins": 1,
             "losses": 0,
-            "win_rate": null,
-            "net_r": 0,
-            "avg_r": null,
+            "win_rate": 1.0,
+            "net_r": 0.06428002893000001,
+            "avg_r": 0.06428002893000001,
             "profit_factor": null,
             "max_drawdown_fixed_20k": 0,
             "max_consecutive_losses": 0,
             "outside_rth_exits": 0,
-            "outside_rth_exit_rate": null
+            "outside_rth_exit_rate": 0.0
           }
         },
         "NEXT_BAR_OPEN": {
-          "attempts": 0,
-          "executed": 0,
+          "attempts": 1,
+          "executed": 1,
           "no_match": 0,
           "late_invalid": 0,
           "overlap_skipped": 0,
           "summary": {
-            "closed": 0,
-            "wins": 0,
+            "closed": 1,
+            "wins": 1,
             "losses": 0,
-            "win_rate": null,
-            "net_r": 0,
-            "avg_r": null,
+            "win_rate": 1.0,
+            "net_r": 0.06427924113000026,
+            "avg_r": 0.06427924113000026,
             "profit_factor": null,
             "max_drawdown_fixed_20k": 0,
             "max_consecutive_losses": 0,
             "outside_rth_exits": 0,
-            "outside_rth_exit_rate": null
+            "outside_rth_exit_rate": 0.0
           }
         }
       }
