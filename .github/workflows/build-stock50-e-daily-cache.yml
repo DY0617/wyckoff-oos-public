@@ -1,4 +1,5 @@
 name: Build Stock50 Recent E Daily Cache
+# rerun-cache
 
 on:
   workflow_dispatch:
