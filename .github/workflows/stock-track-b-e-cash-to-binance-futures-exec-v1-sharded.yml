@@ -1,5 +1,6 @@
 name: Stock Track-B E Cash to Binance Futures Exec v1 Sharded
 # retry after shard env fix
+# daily-cache-artifact
 
 on:
   workflow_dispatch:
@@ -10,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 jobs:
   shard:
@@ -31,6 +33,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install --disable-pip-version-check duckdb
+      - uses: actions/download-artifact@v4
+        with:
+          name: stock50-e-daily-cache
+          path: data/validation
+          run-id: 36593486243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: python -m py_compile scripts/backtest_stock_track_b_e_cash_to_binance_futures_exec_v1.py scripts/backtest_stock9_spot_vs_binance_same_window.py scripts/backtest_stock50_track_b_hf_5y_exact_touch.py scripts/backtest_wyckoff_stock_filter_engine.py scripts/wyckoff_status.py
       - name: Run shard
         env:
