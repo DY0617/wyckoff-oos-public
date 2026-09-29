@@ -30,6 +30,7 @@ FUTURES_FILTERS={
 }
 MODES={
     "BASELINE_30_30_40":{"runner":"pivot","scale":"30_30_40"},
+    "DETERMINISTIC_50_50_BE":{"runner":"none","scale":"50_50"},
     "FIXED_50_50":{"runner":"none","scale":"fixed_50_50"},
     "FIXED_TP2":{"runner":"none","scale":"fixed_tp2"},
 }
@@ -169,6 +170,7 @@ def main():
                 yrs[str(datetime.fromtimestamp(t["entry_t"]/1000,timezone.utc).year)].append(t)
             report["modes"][mode]={
                 "management":"30/30/40 with BE/TP1 stop + 4H pivot runner" if mode=="BASELINE_30_30_40"
+                    else "50% TP1 + 50% TP2; TP1 moves remaining SL to BE; no runner" if mode=="DETERMINISTIC_50_50_BE"
                     else "50% TP1 + 50% TP2; fixed original SL" if mode=="FIXED_50_50"
                     else "100% TP2; fixed original SL",
                 "summary":summarize(alltr),
