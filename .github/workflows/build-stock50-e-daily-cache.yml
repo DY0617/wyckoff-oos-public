@@ -1,4 +1,5 @@
 name: Build Stock50 Recent E Daily Cache
+# yahoo-fallback
 # rerun-cache
 
 on:
@@ -7,6 +8,7 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/build-stock50-e-daily-cache.yml"
+      - "scripts/build_stock50_e_daily_recent_cache.py"
 
 permissions:
   contents: write
