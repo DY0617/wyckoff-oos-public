@@ -41,6 +41,7 @@ def quantize_setup(direction,entry,stop,target,tick):
 def simulate(sym, a_params=None, b_params=None, start_ms=None, end_ms=None, fee_bps=0.0, slippage_bps=0.0, a_mode="snapshot", b_runner_mode="pivot", b_scale_mode="30_30_40", setup_filter=None, trigger_filter=None):
     D,H,M=dataset(sym); tick,qty_step,min_qty=symbol_filters(sym)
     a_cfg=w.params(w.STRUCT_DEFAULTS,a_params)
+    b_cfg=w.params(w.LOCAL_DEFAULTS,b_params)
     mode_map={"persistent":"v1","persistent_v2":"v2","persistent_v3":"v3","persistent_v4":"v4"}
     a_engine=PersistentStructuralWyckoff(D,H,a_cfg,mode=mode_map[a_mode]) if a_mode in mode_map else None
     import bisect
@@ -311,7 +312,7 @@ def simulate(sym, a_params=None, b_params=None, start_ms=None, end_ms=None, fee_
             test_t=s.get("test_open_ms"); ti=next((k for k,x in enumerate(H) if x["t"]==test_t),None)
             if ti is None:
                 audit["reason"]="TEST_NOT_FOUND"; setup_audit.append(audit); continue
-            window=12 if track=="A" else 9
+            window=12 if track=="A" else int(b_cfg["trigger_window"])
             expiry_hi=min(ti+window,len(H)-1)
             # If discovered after part of the formal trigger window elapsed, only remaining bars are eligible.
             if hi>=expiry_hi:
