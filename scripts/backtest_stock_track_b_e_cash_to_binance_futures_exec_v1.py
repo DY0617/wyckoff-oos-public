@@ -1,4 +1,4 @@
-import csv, io, json, math, statistics, sys, time, urllib.error, urllib.parse, urllib.request
+import csv, io, json, math, os, statistics, sys, time, urllib.error, urllib.parse, urllib.request
 from bisect import bisect_left, bisect_right
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -229,7 +229,7 @@ def exchange_universe():
         if not m:continue
         if m.get("status") not in (None,"TRADING"):continue
         syms.append(s)
-    return syms,meta
+    if REQUESTED:\n        syms=[s for s in syms if s in set(REQUESTED)]\n    return syms,meta
 
 def cash_engine(sym,M,daily,eval_start,eval_end):
     bars=cashhist.apply_splits(M,cashhist.detect_splits(M))
