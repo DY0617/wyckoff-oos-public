@@ -1,0 +1,617 @@
+{
+  "purpose": "Independent-universe OOS validation of stock Track-B E + 15/25/60",
+  "universe": "DJIA constituents frozen at 2000-01",
+  "symbols": [
+    "MMM",
+    "AA",
+    "MO",
+    "AXP",
+    "BA",
+    "CAT",
+    "C",
+    "KO",
+    "DD",
+    "EK",
+    "XOM",
+    "GE",
+    "GM",
+    "HPQ",
+    "HD",
+    "HON",
+    "INTC",
+    "IBM",
+    "IP",
+    "JNJ",
+    "JPM",
+    "MCD",
+    "MRK",
+    "MSFT",
+    "PG",
+    "SBC",
+    "UTX",
+    "WMT",
+    "DIS",
+    "T"
+  ],
+  "period": {
+    "start": "2000-01-01T00:00:00+00:00",
+    "end_exclusive": "2026-01-01T00:00:00+00:00"
+  },
+  "data": {
+    "chunks": [
+      "us30x2_15m_1999_2005.parquet",
+      "us30x2_15m_2005_2010.parquet",
+      "us30x2_15m_2010_2015.parquet",
+      "us30x2_15m_2015_2020.parquet",
+      "us30x2_15m_2020_2024.parquet",
+      "us30x2_15m_2024_2026.parquet"
+    ],
+    "session": "US RTH",
+    "provider": "Hugging Face mito0o852/OHLCV-1m"
+  },
+  "strategy": {
+    "signal": "TRACK_B_V1_0_FROZEN exact-touch, LONG only",
+    "filter": "SPY bull 2/3 + stock ret20>=SPY ret20 + breadth>=50% of available Dow2000",
+    "management": "15% TP1=>BE; 25% TP2=>TP1; 60% confirmed RTH 4H pivot runner"
+  },
+  "costs": {
+    "fee_bps": 4.0,
+    "slippage_bps": 2.0,
+    "risk_usd": 400.0
+  },
+  "raw_long_candidates": 1020,
+  "eligible_trades": 303,
+  "state_missing": 0,
+  "summary": {
+    "closed": 303,
+    "wins": 207,
+    "losses": 96,
+    "win_rate": 0.6831683168316832,
+    "net_r": 99.21289143013537,
+    "avg_r": 0.3274352852479715,
+    "profit_factor_r": 2.0386267724169045,
+    "max_drawdown_fixed_20k": 0.11251498681227033,
+    "max_consecutive_losses": 6,
+    "ending_equity_fixed_risk": 59685.15657205408
+  },
+  "by_symbol": {
+    "MMM": {
+      "trades": 10,
+      "wins": 7,
+      "losses": 3,
+      "net_r": 1.2342734908327138,
+      "win_rate": 0.7,
+      "avg_r": 0.12342734908327138
+    },
+    "AA": {
+      "trades": 15,
+      "wins": 9,
+      "losses": 6,
+      "net_r": 2.3347019870839323,
+      "win_rate": 0.6,
+      "avg_r": 0.15564679913892882
+    },
+    "MO": {
+      "trades": 5,
+      "wins": 4,
+      "losses": 1,
+      "net_r": 1.2731220970888804,
+      "win_rate": 0.8,
+      "avg_r": 0.2546244194177761
+    },
+    "AXP": {
+      "trades": 13,
+      "wins": 11,
+      "losses": 2,
+      "net_r": 9.83995316638642,
+      "win_rate": 0.8461538461538461,
+      "avg_r": 0.756919474337417
+    },
+    "BA": {
+      "trades": 13,
+      "wins": 10,
+      "losses": 3,
+      "net_r": 4.19102132895317,
+      "win_rate": 0.7692307692307693,
+      "avg_r": 0.3223862560733207
+    },
+    "CAT": {
+      "trades": 15,
+      "wins": 10,
+      "losses": 5,
+      "net_r": 4.864814272299821,
+      "win_rate": 0.6666666666666666,
+      "avg_r": 0.32432095148665474
+    },
+    "C": {
+      "trades": 10,
+      "wins": 7,
+      "losses": 3,
+      "net_r": 4.658446331465214,
+      "win_rate": 0.7,
+      "avg_r": 0.4658446331465214
+    },
+    "KO": {
+      "trades": 8,
+      "wins": 6,
+      "losses": 2,
+      "net_r": 1.3072040011127424,
+      "win_rate": 0.75,
+      "avg_r": 0.1634005001390928
+    },
+    "DD": {
+      "trades": 13,
+      "wins": 11,
+      "losses": 2,
+      "net_r": 7.568633758166655,
+      "win_rate": 0.8461538461538461,
+      "avg_r": 0.5822025967820503
+    },
+    "EK": {
+      "trades": 4,
+      "wins": 2,
+      "losses": 2,
+      "net_r": -0.33582523985161694,
+      "win_rate": 0.5,
+      "avg_r": -0.08395630996290424
+    },
+    "XOM": {
+      "trades": 11,
+      "wins": 8,
+      "losses": 3,
+      "net_r": 6.331277436194883,
+      "win_rate": 0.7272727272727273,
+      "avg_r": 0.5755706760177166
+    },
+    "GE": {
+      "trades": 5,
+      "wins": 5,
+      "losses": 0,
+      "net_r": 0.27524111971344223,
+      "win_rate": 1.0,
+      "avg_r": 0.05504822394268845
+    },
+    "GM": {
+      "trades": 12,
+      "wins": 7,
+      "losses": 5,
+      "net_r": 1.852984603809535,
+      "win_rate": 0.5833333333333334,
+      "avg_r": 0.15441538365079457
+    },
+    "HPQ": {
+      "trades": 13,
+      "wins": 8,
+      "losses": 5,
+      "net_r": 0.23292689402500277,
+      "win_rate": 0.6153846153846154,
+      "avg_r": 0.017917453386538676
+    },
+    "HD": {
+      "trades": 15,
+      "wins": 11,
+      "losses": 4,
+      "net_r": 9.329910974801505,
+      "win_rate": 0.7333333333333333,
+      "avg_r": 0.621994064986767
+    },
+    "HON": {
+      "trades": 11,
+      "wins": 7,
+      "losses": 4,
+      "net_r": 1.2273231905212076,
+      "win_rate": 0.6363636363636364,
+      "avg_r": 0.11157483550192797
+    },
+    "INTC": {
+      "trades": 9,
+      "wins": 5,
+      "losses": 4,
+      "net_r": 0.3320929168982536,
+      "win_rate": 0.5555555555555556,
+      "avg_r": 0.03689921298869484
+    },
+    "IBM": {
+      "trades": 7,
+      "wins": 4,
+      "losses": 3,
+      "net_r": 2.7190261011491583,
+      "win_rate": 0.5714285714285714,
+      "avg_r": 0.38843230016416547
+    },
+    "IP": {
+      "trades": 12,
+      "wins": 10,
+      "losses": 2,
+      "net_r": 7.259364581149754,
+      "win_rate": 0.8333333333333334,
+      "avg_r": 0.6049470484291462
+    },
+    "JNJ": {
+      "trades": 10,
+      "wins": 7,
+      "losses": 3,
+      "net_r": 5.798423592060685,
+      "win_rate": 0.7,
+      "avg_r": 0.5798423592060684
+    },
+    "JPM": {
+      "trades": 15,
+      "wins": 10,
+      "losses": 5,
+      "net_r": 4.878209767861138,
+      "win_rate": 0.6666666666666666,
+      "avg_r": 0.3252139845240759
+    },
+    "MCD": {
+      "trades": 8,
+      "wins": 3,
+      "losses": 5,
+      "net_r": -2.2141357072835124,
+      "win_rate": 0.375,
+      "avg_r": -0.27676696341043905
+    },
+    "MRK": {
+      "trades": 5,
+      "wins": 2,
+      "losses": 3,
+      "net_r": -1.3398525591403387,
+      "win_rate": 0.4,
+      "avg_r": -0.26797051182806775
+    },
+    "MSFT": {
+      "trades": 10,
+      "wins": 8,
+      "losses": 2,
+      "net_r": 8.024987190548995,
+      "win_rate": 0.8,
+      "avg_r": 0.8024987190548994
+    },
+    "PG": {
+      "trades": 5,
+      "wins": 2,
+      "losses": 3,
+      "net_r": -1.0013172451364178,
+      "win_rate": 0.4,
+      "avg_r": -0.20026344902728357
+    },
+    "UTX": {
+      "trades": 11,
+      "wins": 7,
+      "losses": 4,
+      "net_r": 2.699032000304917,
+      "win_rate": 0.6363636363636364,
+      "avg_r": 0.24536654548226516
+    },
+    "WMT": {
+      "trades": 7,
+      "wins": 4,
+      "losses": 3,
+      "net_r": 1.994880793081756,
+      "win_rate": 0.5714285714285714,
+      "avg_r": 0.28498297044025084
+    },
+    "DIS": {
+      "trades": 15,
+      "wins": 11,
+      "losses": 4,
+      "net_r": 7.5602971095485465,
+      "win_rate": 0.7333333333333333,
+      "avg_r": 0.5040198073032365
+    },
+    "T": {
+      "trades": 16,
+      "wins": 11,
+      "losses": 5,
+      "net_r": 6.315873476488929,
+      "win_rate": 0.6875,
+      "avg_r": 0.39474209228055807
+    }
+  },
+  "by_year": {
+    "2006": {
+      "trades": 26,
+      "wins": 19,
+      "losses": 7,
+      "net_r": 9.186110454905513,
+      "win_rate": 0.7307692307692307,
+      "avg_r": 0.35331194057328896
+    },
+    "2011": {
+      "trades": 19,
+      "wins": 12,
+      "losses": 7,
+      "net_r": 6.9180924651284865,
+      "win_rate": 0.631578947368421,
+      "avg_r": 0.36411012974360457
+    },
+    "2013": {
+      "trades": 10,
+      "wins": 7,
+      "losses": 3,
+      "net_r": 0.8011566417624223,
+      "win_rate": 0.7,
+      "avg_r": 0.08011566417624223
+    },
+    "2014": {
+      "trades": 14,
+      "wins": 9,
+      "losses": 5,
+      "net_r": 1.2257399067378882,
+      "win_rate": 0.6428571428571429,
+      "avg_r": 0.08755285048127773
+    },
+    "2015": {
+      "trades": 13,
+      "wins": 6,
+      "losses": 7,
+      "net_r": -3.7523838399622975,
+      "win_rate": 0.46153846153846156,
+      "avg_r": -0.2886449107663306
+    },
+    "2016": {
+      "trades": 25,
+      "wins": 13,
+      "losses": 12,
+      "net_r": 2.44029310708946,
+      "win_rate": 0.52,
+      "avg_r": 0.0976117242835784
+    },
+    "2021": {
+      "trades": 14,
+      "wins": 12,
+      "losses": 2,
+      "net_r": 7.718031118050074,
+      "win_rate": 0.8571428571428571,
+      "avg_r": 0.5512879370035767
+    },
+    "2025": {
+      "trades": 9,
+      "wins": 7,
+      "losses": 2,
+      "net_r": 3.945658117975624,
+      "win_rate": 0.7777777777777778,
+      "avg_r": 0.4384064575528471
+    },
+    "2000": {
+      "trades": 5,
+      "wins": 2,
+      "losses": 3,
+      "net_r": -1.2370122523300826,
+      "win_rate": 0.4,
+      "avg_r": -0.24740245046601653
+    },
+    "2002": {
+      "trades": 4,
+      "wins": 3,
+      "losses": 1,
+      "net_r": 0.08879512199716433,
+      "win_rate": 0.75,
+      "avg_r": 0.022198780499291082
+    },
+    "2003": {
+      "trades": 15,
+      "wins": 12,
+      "losses": 3,
+      "net_r": 7.328947537281981,
+      "win_rate": 0.8,
+      "avg_r": 0.4885965024854654
+    },
+    "2009": {
+      "trades": 16,
+      "wins": 10,
+      "losses": 6,
+      "net_r": 1.925790670361646,
+      "win_rate": 0.625,
+      "avg_r": 0.12036191689760288
+    },
+    "2020": {
+      "trades": 9,
+      "wins": 7,
+      "losses": 2,
+      "net_r": 8.03873592616066,
+      "win_rate": 0.7777777777777778,
+      "avg_r": 0.8931928806845177
+    },
+    "2022": {
+      "trades": 6,
+      "wins": 5,
+      "losses": 1,
+      "net_r": 5.949317314160252,
+      "win_rate": 0.8333333333333334,
+      "avg_r": 0.9915528856933754
+    },
+    "2023": {
+      "trades": 8,
+      "wins": 5,
+      "losses": 3,
+      "net_r": 2.150552093390908,
+      "win_rate": 0.625,
+      "avg_r": 0.2688190116738635
+    },
+    "2024": {
+      "trades": 13,
+      "wins": 11,
+      "losses": 2,
+      "net_r": 8.152804388678028,
+      "win_rate": 0.8461538461538461,
+      "avg_r": 0.6271387991290791
+    },
+    "2007": {
+      "trades": 16,
+      "wins": 11,
+      "losses": 5,
+      "net_r": 6.486907135253241,
+      "win_rate": 0.6875,
+      "avg_r": 0.40543169595332756
+    },
+    "2017": {
+      "trades": 18,
+      "wins": 14,
+      "losses": 4,
+      "net_r": 11.34643231183373,
+      "win_rate": 0.7777777777777778,
+      "avg_r": 0.6303573506574295
+    },
+    "2019": {
+      "trades": 16,
+      "wins": 11,
+      "losses": 5,
+      "net_r": 9.213295950982022,
+      "win_rate": 0.6875,
+      "avg_r": 0.5758309969363764
+    },
+    "2012": {
+      "trades": 9,
+      "wins": 8,
+      "losses": 1,
+      "net_r": 7.627129333192833,
+      "win_rate": 0.8888888888888888,
+      "avg_r": 0.8474588147992037
+    },
+    "2004": {
+      "trades": 10,
+      "wins": 7,
+      "losses": 3,
+      "net_r": 2.66958863645641,
+      "win_rate": 0.7,
+      "avg_r": 0.266958863645641
+    },
+    "2010": {
+      "trades": 6,
+      "wins": 6,
+      "losses": 0,
+      "net_r": 6.593277274351584,
+      "win_rate": 1.0,
+      "avg_r": 1.098879545725264
+    },
+    "2018": {
+      "trades": 7,
+      "wins": 3,
+      "losses": 4,
+      "net_r": -1.8974923798997219,
+      "win_rate": 0.42857142857142855,
+      "avg_r": -0.27107033998567454
+    },
+    "2005": {
+      "trades": 7,
+      "wins": 2,
+      "losses": 5,
+      "net_r": -4.4279484969971845,
+      "win_rate": 0.2857142857142857,
+      "avg_r": -0.6325640709995978
+    },
+    "2001": {
+      "trades": 5,
+      "wins": 3,
+      "losses": 2,
+      "net_r": -0.9316983708894142,
+      "win_rate": 0.6,
+      "avg_r": -0.18633967417788283
+    },
+    "2008": {
+      "trades": 3,
+      "wins": 2,
+      "losses": 1,
+      "net_r": 1.6527712644641421,
+      "win_rate": 0.6666666666666666,
+      "avg_r": 0.5509237548213807
+    }
+  },
+  "blocks": {
+    "2000_2005": {
+      "closed": 39,
+      "wins": 27,
+      "losses": 12,
+      "win_rate": 0.6923076923076923,
+      "net_r": 7.918620672516059,
+      "avg_r": 0.20304155570553997,
+      "profit_factor_r": 1.633902736394162,
+      "max_drawdown_fixed_20k": 0.0644122882160007,
+      "max_consecutive_losses": 2,
+      "ending_equity_fixed_risk": 23167.448269006418
+    },
+    "2005_2010": {
+      "closed": 68,
+      "wins": 44,
+      "losses": 24,
+      "win_rate": 0.6470588235294118,
+      "net_r": 14.823631027987359,
+      "avg_r": 0.21799457394099056,
+      "profit_factor_r": 1.582842187952779,
+      "max_drawdown_fixed_20k": 0.1303342568230606,
+      "max_consecutive_losses": 4,
+      "ending_equity_fixed_risk": 25929.452411194947
+    },
+    "2010_2015": {
+      "closed": 58,
+      "wins": 42,
+      "losses": 16,
+      "win_rate": 0.7241379310344828,
+      "net_r": 23.165395621173214,
+      "avg_r": 0.3994033727788485,
+      "profit_factor_r": 2.4437636272132033,
+      "max_drawdown_fixed_20k": 0.05730220261920747,
+      "max_consecutive_losses": 3,
+      "ending_equity_fixed_risk": 29266.158248469288
+    },
+    "2015_2020": {
+      "closed": 79,
+      "wins": 47,
+      "losses": 32,
+      "win_rate": 0.5949367088607594,
+      "net_r": 17.350145150043193,
+      "avg_r": 0.21962209050687587,
+      "profit_factor_r": 1.5978100171019642,
+      "max_drawdown_fixed_20k": 0.16447326094820985,
+      "max_consecutive_losses": 6,
+      "ending_equity_fixed_risk": 26940.058060017287
+    },
+    "2020_2024": {
+      "closed": 37,
+      "wins": 29,
+      "losses": 8,
+      "win_rate": 0.7837837837837838,
+      "net_r": 23.856636451761894,
+      "avg_r": 0.6447739581557268,
+      "profit_factor_r": 3.867507745042224,
+      "max_drawdown_fixed_20k": 0.03824201032231845,
+      "max_consecutive_losses": 2,
+      "ending_equity_fixed_risk": 29542.654580704755
+    },
+    "2024_2026": {
+      "closed": 22,
+      "wins": 18,
+      "losses": 4,
+      "win_rate": 0.8181818181818182,
+      "net_r": 12.098462506653652,
+      "avg_r": 0.5499301139388023,
+      "profit_factor_r": 3.8735347126618795,
+      "max_drawdown_fixed_20k": 0.018585705521557003,
+      "max_consecutive_losses": 1,
+      "ending_equity_fixed_risk": 24839.38500266146
+    }
+  },
+  "pass_criteria": {
+    "required": {
+      "net_r": ">0",
+      "profit_factor": ">1.30",
+      "max_drawdown_r": "<25",
+      "positive_blocks": ">=4/6"
+    },
+    "positive_blocks": 6,
+    "flags": {
+      "net_r_positive": true,
+      "profit_factor_gt_1_30": true,
+      "max_drawdown_lt_25r": true,
+      "at_least_4_of_6_blocks_positive": true
+    },
+    "passed_all": true
+  },
+  "errors": {},
+  "limitations": [
+    "Dow2000 membership is frozen at 2000-01; later constituent replacements are not added.",
+    "Ticker continuity around mergers/delistings/reorganizations can be imperfect in raw historical data.",
+    "Filter E is applied to completed Track-B trade candidates, matching the prior 53-stock filter study; filtered-out candidates may have occupied a one-position-per-symbol slot."
+  ]
+}
