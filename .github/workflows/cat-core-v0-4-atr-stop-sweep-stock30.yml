@@ -1,0 +1,30 @@
+name: CAT-Core v0.4 ATR Stop Sweep Stock30
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cat-core-v0-4-atr-stop-sweep-stock30.yml"
+      - "scripts/backtest_cat_core_v0_4_atr_stop_sweep_stock30.py"
+      - "strategy/cat_core_v0_4_atr_stop_sweep_frozen.md"
+permissions: {contents: write}
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install duckdb
+      - run: python -m py_compile scripts/backtest_cat_core_v0_4_atr_stop_sweep_stock30.py
+      - run: python scripts/backtest_cat_core_v0_4_atr_stop_sweep_stock30.py
+      - uses: actions/upload-artifact@v4
+        with: {name: cat-core-v0-4-atr-stop-sweep-stock30, path: data/validation/cat_core_v0_4_atr_stop_sweep_stock30.json, retention-days: 30}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/cat_core_v0_4_atr_stop_sweep_stock30.json
+          git commit -m "research: add CAT ATR stop sweep stock30 result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
