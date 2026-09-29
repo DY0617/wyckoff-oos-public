@@ -1,0 +1,2404 @@
+{
+  "purpose": "Sharded cash Track-B E signal -> Binance TradFi futures execution calibration",
+  "period": {
+    "end_exclusive": "2026-09-29T00:00:00Z"
+  },
+  "futures_supported_stock50": [
+    "AAOI",
+    "AAPL",
+    "AMAT",
+    "AMD",
+    "AMZN",
+    "AVGO",
+    "BABA",
+    "BE",
+    "CAT",
+    "COIN",
+    "COST",
+    "CRCL",
+    "CRM",
+    "CSCO",
+    "DIS",
+    "DRAM",
+    "EWY",
+    "GOOGL",
+    "HD",
+    "HOOD",
+    "IBM",
+    "INTC",
+    "JPM",
+    "KORU",
+    "LITE",
+    "LLY",
+    "META",
+    "MRVL",
+    "MSFT",
+    "MSTR",
+    "MU",
+    "MUU",
+    "NBIS",
+    "NFLX",
+    "NVDA",
+    "ORCL",
+    "QQQ",
+    "SKHY",
+    "SNDK",
+    "SNXX",
+    "SOXL",
+    "SOXS",
+    "SPCX",
+    "SPY",
+    "TQQQ",
+    "TSLA",
+    "TSM",
+    "UBER",
+    "V",
+    "WMT"
+  ],
+  "cash_signals_total": 0,
+  "daily_filter_symbols_available_min": 0,
+  "modes": {
+    "SAME_BAR_CLOSE": {
+      "futures": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_fixed_20k": 0,
+        "max_consecutive_losses": 0,
+        "outside_rth_exits": 0,
+        "outside_rth_exit_rate": null
+      },
+      "executed_total": 0,
+      "closed_matched": 0,
+      "cash_benchmark_on_closed_matched": {
+        "trades": 0,
+        "net_r": 0,
+        "avg_r": null,
+        "win_rate": null
+      },
+      "execution_delta_r": {
+        "sum": 0,
+        "mean": null
+      },
+      "outcome_sign_match_rate": null,
+      "entry_basis_bps": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "mean_abs": null,
+        "median_abs": null
+      }
+    },
+    "NEXT_BAR_OPEN": {
+      "futures": {
+        "closed": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": null,
+        "net_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_fixed_20k": 0,
+        "max_consecutive_losses": 0,
+        "outside_rth_exits": 0,
+        "outside_rth_exit_rate": null
+      },
+      "executed_total": 0,
+      "closed_matched": 0,
+      "cash_benchmark_on_closed_matched": {
+        "trades": 0,
+        "net_r": 0,
+        "avg_r": null,
+        "win_rate": null
+      },
+      "execution_delta_r": {
+        "sum": 0,
+        "mean": null
+      },
+      "outcome_sign_match_rate": null,
+      "entry_basis_bps": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "mean_abs": null,
+        "median_abs": null
+      }
+    }
+  },
+  "per_symbol": {
+    "AAPL": {
+      "cash_bars": 6446,
+      "futures_bars": 16590,
+      "eval_start": 1775484000000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "AMZN": {
+      "cash_bars": 6447,
+      "futures_bars": 21963,
+      "eval_start": 1770648300000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "AVGO": {
+      "cash_bars": 6448,
+      "futures_bars": 15247,
+      "eval_start": 1776692700000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "CRCL": {
+      "cash_bars": 3248,
+      "futures_bars": 21962,
+      "eval_start": 1770649200000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "MSFT": {
+      "cash_bars": 6446,
+      "futures_bars": 15248,
+      "eval_start": 1776691800000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "MU": {
+      "cash_bars": 3250,
+      "futures_bars": 16496,
+      "eval_start": 1775568600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "SNDK": {
+      "cash_bars": 3247,
+      "futures_bars": 16495,
+      "eval_start": 1775569500000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "SNXX": {
+      "cash_bars": 1170,
+      "futures_bars": 7565,
+      "eval_start": 1783606500000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "SOXL": {
+      "cash_bars": 3250,
+      "futures_bars": 12846,
+      "eval_start": 1778853600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "AMD": {
+      "cash_bars": 6446,
+      "futures_bars": 13712,
+      "eval_start": 1778074200000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "BABA": {
+      "cash_bars": 3247,
+      "futures_bars": 15246,
+      "eval_start": 1776693600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "INTC": {
+      "cash_bars": 6448,
+      "futures_bars": 22636,
+      "eval_start": 1770042600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "JPM": {
+      "cash_bars": 3240,
+      "futures_bars": 12559,
+      "eval_start": 1779111900000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "KORU": {
+      "cash_bars": 2754,
+      "futures_bars": 9198,
+      "eval_start": 1782136800000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "MSTR": {
+      "cash_bars": 3250,
+      "futures_bars": 21964,
+      "eval_start": 1770647400000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "NFLX": {
+      "cash_bars": 3250,
+      "futures_bars": 10466,
+      "eval_start": 1780995600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "SOXS": {
+      "cash_bars": 3250,
+      "futures_bars": 6913,
+      "eval_start": 1784193300000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "V": {
+      "cash_bars": 3236,
+      "futures_bars": 12559,
+      "eval_start": 1779111900000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "COST": {
+      "cash_bars": 3238,
+      "futures_bars": 10464,
+      "eval_start": 1780996500000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "GOOGL": {
+      "cash_bars": 3250,
+      "futures_bars": 17641,
+      "eval_start": 1774537200000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "LLY": {
+      "cash_bars": 3240,
+      "futures_bars": 11215,
+      "eval_start": 1780320600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "META": {
+      "cash_bars": 6447,
+      "futures_bars": 17643,
+      "eval_start": 1774535400000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "NBIS": {
+      "cash_bars": 3246,
+      "futures_bars": 11791,
+      "eval_start": 1779802200000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "NVDA": {
+      "cash_bars": 6448,
+      "futures_bars": 17642,
+      "eval_start": 1774536300000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "QQQ": {
+      "cash_bars": 3250,
+      "futures_bars": 16591,
+      "eval_start": 1775482200000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "TSLA": {
+      "cash_bars": 6448,
+      "futures_bars": 23115,
+      "eval_start": 1769610600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "UBER": {
+      "cash_bars": 3243,
+      "futures_bars": 12846,
+      "eval_start": 1778852700000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "WMT": {
+      "cash_bars": 3238,
+      "futures_bars": 12558,
+      "eval_start": 1779111900000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "AMAT": {
+      "cash_bars": 3229,
+      "futures_bars": 10560,
+      "eval_start": 1780910100000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "CAT": {
+      "cash_bars": 3232,
+      "futures_bars": 8255,
+      "eval_start": 1782984600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "EWY": {
+      "cash_bars": 3235,
+      "futures_bars": 18607,
+      "eval_start": 1773667800000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "HD": {
+      "cash_bars": 3235,
+      "futures_bars": 12845,
+      "eval_start": 1778853600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "MRVL": {
+      "cash_bars": 3240,
+      "futures_bars": 12844,
+      "eval_start": 1778854500000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "MUU": {
+      "cash_bars": 3242,
+      "futures_bars": 6913,
+      "eval_start": 1784192400000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "ORCL": {
+      "cash_bars": 3250,
+      "futures_bars": 12846,
+      "eval_start": 1778852700000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "SPY": {
+      "cash_bars": 3250,
+      "futures_bars": 16590,
+      "eval_start": 1775483100000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "TSM": {
+      "cash_bars": 3246,
+      "futures_bars": 16589,
+      "eval_start": 1775484000000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "AAOI": {
+      "cash_bars": 3231,
+      "futures_bars": 10559,
+      "eval_start": 1780911000000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "BE": {
+      "cash_bars": 3247,
+      "futures_bars": 11790,
+      "eval_start": 1779803100000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "COIN": {
+      "cash_bars": 3250,
+      "futures_bars": 21961,
+      "eval_start": 1770649200000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "CRM": {
+      "cash_bars": 3235,
+      "futures_bars": 11040,
+      "eval_start": 1780478100000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "CSCO": {
+      "cash_bars": 3235,
+      "futures_bars": 12845,
+      "eval_start": 1778853600000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "DIS": {
+      "cash_bars": 3233,
+      "futures_bars": 12846,
+      "eval_start": 1778852700000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "HOOD": {
+      "cash_bars": 3247,
+      "futures_bars": 22634,
+      "eval_start": 1770043500000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "IBM": {
+      "cash_bars": 3233,
+      "futures_bars": 11040,
+      "eval_start": 1780478100000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "LITE": {
+      "cash_bars": 3232,
+      "futures_bars": 12847,
+      "eval_start": 1778851800000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    },
+    "TQQQ": {
+      "cash_bars": 3250,
+      "futures_bars": 8526,
+      "eval_start": 1782740700000,
+      "cash_signals": 0,
+      "modes": {
+        "SAME_BAR_CLOSE": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        },
+        "NEXT_BAR_OPEN": {
+          "attempts": 0,
+          "executed": 0,
+          "no_match": 0,
+          "late_invalid": 0,
+          "overlap_skipped": 0,
+          "summary": {
+            "closed": 0,
+            "wins": 0,
+            "losses": 0,
+            "win_rate": null,
+            "net_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_fixed_20k": 0,
+            "max_consecutive_losses": 0,
+            "outside_rth_exits": 0,
+            "outside_rth_exit_rate": null
+          }
+        }
+      }
+    }
+  },
+  "errors": {},
+  "shards": [
+    "trades_01.json",
+    "trades_02.json",
+    "trades_03.json",
+    "trades_04.json",
+    "trades_05.json"
+  ],
+  "rules": {
+    "signal": "cash RTH Track B + E at trigger, LONG only",
+    "management": "15/25/60 + mapped cash 4H pivot runner",
+    "after_hours_management": true,
+    "fixed_risk_usd": 400.0
+  }
+}
