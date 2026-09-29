@@ -154,6 +154,8 @@ def main():
         "flags":pass_flags,
         "passed_all":all(pass_flags.values())
       },
+      "trades":[{"symbol":t["symbol"],"entry_t":t["entry_t"],"exit_t":t["exit_t"],
+                 "pnl":t["pnl"],"r":t["r"],"direction":t["direction"]} for t in eligible],
       "errors":errors,
       "limitations":[
         "Dow2000 membership is frozen at 2000-01; later constituent replacements are not added.",
