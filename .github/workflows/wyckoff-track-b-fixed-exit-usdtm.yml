@@ -1,0 +1,29 @@
+name: Wyckoff Track-B Fixed Exit USDTM
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/wyckoff-track-b-fixed-exit-usdtm.yml"
+      - "scripts/backtest_wyckoff_fixed_exit_engine.py"
+      - "scripts/backtest_track_b_fixed_exit_compare_usdtm.py"
+      - "scripts/wyckoff_status.py"
+permissions: {contents: write}
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m py_compile scripts/backtest_wyckoff_fixed_exit_engine.py scripts/backtest_track_b_fixed_exit_compare_usdtm.py scripts/wyckoff_status.py
+      - run: python scripts/backtest_track_b_fixed_exit_compare_usdtm.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/wyckoff_track_b_fixed_exit_compare.json data/validation/wyckoff_track_b_fixed_exit_compare_trades.json
+          git commit -m "research: add Track-B fixed exit comparison result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
