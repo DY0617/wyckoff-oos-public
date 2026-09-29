@@ -1,0 +1,37 @@
+name: Build Stock50 Recent E Daily Cache
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/build-stock50-e-daily-cache.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python -m py_compile scripts/build_stock50_e_daily_recent_cache.py scripts/backtest_stock_track_b_e_cash_to_binance_futures_exec_v1.py
+      - run: python scripts/build_stock50_e_daily_recent_cache.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock50-e-daily-cache
+          path: data/validation/stock50_e_daily_recent_cache.json
+          retention-days: 30
+          if-no-files-found: error
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/stock50_e_daily_recent_cache.json
+          git commit -m "research: add recent stock50 E daily cache [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
