@@ -1,0 +1,1053 @@
+{
+  "generated_at": "2026-09-30T04:08:28.356220+00:00",
+  "source": "data/validation/stock_track_b_structural_exact_candidate_trades_v2.json",
+  "fill_model": "15m exact touch: low <= entry <= high; trigger filter evaluated at actual first exact-touch 15m bar",
+  "management": "10/30/60; TP1=>BE; TP2=>TP1; confirmed 4H pivot runner",
+  "parity_vs_96_combo": {
+    "expected_96_combo": {
+      "trades": 86,
+      "net_r": 34.40605212776125,
+      "profit_factor": 2.038699188142955,
+      "max_drawdown_r": 6.167825161938435,
+      "max_consecutive_losses": 5
+    },
+    "actual_exact_baseline": {
+      "trades": 86,
+      "wins": 54,
+      "losses": 32,
+      "win_rate": 0.627906976744186,
+      "net_r": 33.52367048219163,
+      "avg_r": 0.3898101218859492,
+      "profit_factor": 2.012060587018885,
+      "max_drawdown_r": 6.167825161938435,
+      "max_consecutive_losses": 5,
+      "net_r_over_mdd": 5.435249800702158
+    },
+    "trades_diff": 0,
+    "net_r_diff": -0.8823816455696161,
+    "pf_diff": -0.026638601124069794,
+    "mdd_diff": 0.0
+  },
+  "candidates": {
+    "baseline_exact": {
+      "overrides": {},
+      "full": {
+        "trades": 86,
+        "wins": 54,
+        "losses": 32,
+        "win_rate": 0.627906976744186,
+        "net_r": 33.52367048219163,
+        "avg_r": 0.3898101218859492,
+        "profit_factor": 2.012060587018885,
+        "max_drawdown_r": 6.167825161938435,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 5.435249800702158
+      },
+      "early": {
+        "trades": 35,
+        "wins": 20,
+        "losses": 15,
+        "win_rate": 0.5714285714285714,
+        "net_r": 11.258009307885345,
+        "avg_r": 0.32165740879672416,
+        "profit_factor": 1.728818631147184,
+        "max_drawdown_r": 3.868260705662994,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 2.9103543335132573
+      },
+      "late": {
+        "trades": 51,
+        "wins": 34,
+        "losses": 17,
+        "win_rate": 0.6666666666666666,
+        "net_r": 22.265661174306285,
+        "avg_r": 0.4365815916530644,
+        "profit_factor": 2.259566250716763,
+        "max_drawdown_r": 6.167825161938438,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 3.6099695743172755
+      },
+      "recent_1y": {
+        "trades": 20,
+        "wins": 15,
+        "losses": 5,
+        "win_rate": 0.75,
+        "net_r": 11.340788410856703,
+        "avg_r": 0.5670394205428352,
+        "profit_factor": 3.1569116297957733,
+        "max_drawdown_r": 3.151070256544477,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 3.599027469255232
+      },
+      "years": {
+        "2021": {
+          "trades": 14,
+          "wins": 8,
+          "losses": 6,
+          "win_rate": 0.5714285714285714,
+          "net_r": -1.2898213919602792,
+          "avg_r": -0.09213009942573423,
+          "profit_factor": 0.7922828628326803,
+          "max_drawdown_r": 3.8657329713908437,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.3336550665826815
+        },
+        "2022": {
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate": 0.75,
+          "net_r": 4.681738302918693,
+          "avg_r": 1.1704345757296732,
+          "profit_factor": 5.620571139002363,
+          "max_drawdown_r": 1.013238009344779,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 4.620571139002363
+        },
+        "2023": {
+          "trades": 21,
+          "wins": 12,
+          "losses": 9,
+          "win_rate": 0.5714285714285714,
+          "net_r": 15.223322388563716,
+          "avg_r": 0.7249201137411293,
+          "profit_factor": 2.6459872462009844,
+          "max_drawdown_r": 3.080486025129541,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 4.941857312247843
+        },
+        "2024": {
+          "trades": 25,
+          "wins": 15,
+          "losses": 10,
+          "win_rate": 0.6,
+          "net_r": 3.682627779069392,
+          "avg_r": 0.1473051111627757,
+          "profit_factor": 1.3546459297014077,
+          "max_drawdown_r": 5.196902168600432,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.7086198007189259
+        },
+        "2025": {
+          "trades": 18,
+          "wins": 13,
+          "losses": 5,
+          "win_rate": 0.7222222222222222,
+          "net_r": 8.062843873096279,
+          "avg_r": 0.44793577072757107,
+          "profit_factor": 2.5433590418251693,
+          "max_drawdown_r": 3.151070256544477,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 2.5587635998754736
+        },
+        "2026": {
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate": 0.75,
+          "net_r": 3.1629595305038296,
+          "avg_r": 0.7907398826259574,
+          "profit_factor": 4.028192836507882,
+          "max_drawdown_r": 1.044504,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 3.0281928365078823
+        }
+      },
+      "rolling_6m": {
+        "months": 6,
+        "windows": 47,
+        "negative_windows": 12,
+        "worst": {
+          "start": "2024-04",
+          "trades": 6,
+          "wins": 1,
+          "losses": 5,
+          "win_rate": 0.16666666666666666,
+          "net_r": -4.18963958145434,
+          "avg_r": -0.6982732635757234,
+          "profit_factor": 0.19228918670132508,
+          "max_drawdown_r": 4.18963958145434,
+          "max_consecutive_losses": 4,
+          "net_r_over_mdd": -1.0
+        }
+      },
+      "rolling_9m": {
+        "months": 9,
+        "windows": 50,
+        "negative_windows": 5,
+        "worst": {
+          "start": "2024-04",
+          "trades": 17,
+          "wins": 7,
+          "losses": 10,
+          "win_rate": 0.4117647058823529,
+          "net_r": -2.736425910204971,
+          "avg_r": -0.16096623001205712,
+          "profit_factor": 0.7364755904739032,
+          "max_drawdown_r": 5.196902168600431,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": -0.5265494368430479
+        }
+      },
+      "rolling_12m": {
+        "months": 12,
+        "windows": 49,
+        "negative_windows": 2,
+        "worst": {
+          "start": "2024-04",
+          "trades": 19,
+          "wins": 8,
+          "losses": 11,
+          "win_rate": 0.42105263157894735,
+          "net_r": -2.851410917461565,
+          "avg_r": -0.15007425881376657,
+          "profit_factor": 0.74976198782732,
+          "max_drawdown_r": 6.167825161938439,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": -0.4623041092438192
+        }
+      },
+      "symbol_concentration": {
+        "profitable_symbols": 24,
+        "losing_symbols": 14,
+        "trading_symbols": 38,
+        "top1_share": 0.23325062847511904,
+        "top3_share": 0.5380562745216472,
+        "top5_share": 0.7472875250386684,
+        "top5": [
+          [
+            "WMT",
+            7.819417208763996
+          ],
+          [
+            "AAOI",
+            5.635346371681415
+          ],
+          [
+            "DELL",
+            4.582857667493929
+          ],
+          [
+            "SOXL",
+            3.597766594286221
+          ],
+          [
+            "TSM",
+            3.416432902623284
+          ]
+        ],
+        "bottom5": [
+          [
+            "JPM",
+            -1.0715095145631062
+          ],
+          [
+            "EWY",
+            -1.0748301886792462
+          ],
+          [
+            "LITE",
+            -2.0560107445747073
+          ],
+          [
+            "MRVL",
+            -2.061201155080214
+          ],
+          [
+            "AAPL",
+            -2.133320877677046
+          ]
+        ]
+      },
+      "leave_one_symbol_out": {
+        "cases": 38,
+        "min_net_r": 25.704253273427636,
+        "min_pf": 1.7759968190418318,
+        "max_mdd_r": 6.207741299035209,
+        "max_loss_streak": 6,
+        "largest_positive_dependency": {
+          "symbol": "WMT",
+          "trades": 83,
+          "wins": 51,
+          "losses": 32,
+          "win_rate": 0.6144578313253012,
+          "net_r": 25.704253273427636,
+          "avg_r": 0.30968979847503175,
+          "profit_factor": 1.7759968190418318,
+          "max_drawdown_r": 6.167825161938435,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 4.167474368769114,
+          "removed_net_r": 7.819417208763998
+        }
+      }
+    },
+    "robust54_like": {
+      "overrides": {
+        "ema_gap_atr_max": 1.5,
+        "rr_long_min": 1.3,
+        "return30_min": 0.0
+      },
+      "full": {
+        "trades": 42,
+        "wins": 29,
+        "losses": 13,
+        "win_rate": 0.6904761904761905,
+        "net_r": 28.044098102406277,
+        "avg_r": 0.6677166214858637,
+        "profit_factor": 3.074400685975196,
+        "max_drawdown_r": 2.1162143532727846,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 13.252012046433432
+      },
+      "early": {
+        "trades": 19,
+        "wins": 13,
+        "losses": 6,
+        "win_rate": 0.6842105263157895,
+        "net_r": 14.958824831598806,
+        "avg_r": 0.7873065700841476,
+        "profit_factor": 3.42185331899262,
+        "max_drawdown_r": 2.0479548693827736,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 7.304274647471698
+      },
+      "late": {
+        "trades": 23,
+        "wins": 16,
+        "losses": 7,
+        "win_rate": 0.6956521739130435,
+        "net_r": 13.08527327080747,
+        "avg_r": 0.5689249248177161,
+        "profit_factor": 2.7821204181250465,
+        "max_drawdown_r": 2.116214353272783,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 6.18334019451798
+      },
+      "recent_1y": {
+        "trades": 10,
+        "wins": 8,
+        "losses": 2,
+        "win_rate": 0.8,
+        "net_r": 6.295114443125263,
+        "avg_r": 0.6295114443125263,
+        "profit_factor": 3.9747054845317042,
+        "max_drawdown_r": 2.1162143532727837,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 2.974705484531704
+      },
+      "years": {
+        "2021": {
+          "trades": 4,
+          "wins": 2,
+          "losses": 2,
+          "win_rate": 0.5,
+          "net_r": -1.926221554390317,
+          "avg_r": -0.48155538859757924,
+          "profit_factor": 0.05944140508777187,
+          "max_drawdown_r": 2.0479548693827736,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.940558594912228
+        },
+        "2022": {
+          "trades": 3,
+          "wins": 3,
+          "losses": 0,
+          "win_rate": 1.0,
+          "net_r": 5.6949763122634725,
+          "avg_r": 1.8983254374211576,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "max_consecutive_losses": 0,
+          "net_r_over_mdd": null
+        },
+        "2023": {
+          "trades": 14,
+          "wins": 9,
+          "losses": 5,
+          "win_rate": 0.6428571428571429,
+          "net_r": 13.678509717789932,
+          "avg_r": 0.9770364084135666,
+          "profit_factor": 3.654364556112835,
+          "max_drawdown_r": 2.060543947646364,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 6.6383004028689
+        },
+        "2024": {
+          "trades": 10,
+          "wins": 6,
+          "losses": 4,
+          "win_rate": 0.6,
+          "net_r": 3.405865060439736,
+          "avg_r": 0.34058650604397356,
+          "profit_factor": 1.8105826965632454,
+          "max_drawdown_r": 2.1159113231871687,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 1.609644517289849
+        },
+        "2025": {
+          "trades": 8,
+          "wins": 6,
+          "losses": 2,
+          "win_rate": 0.75,
+          "net_r": 2.9835050357996216,
+          "avg_r": 0.3729381294749527,
+          "profit_factor": 2.4098312069311643,
+          "max_drawdown_r": 2.116214353272784,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 1.4098312069311638
+        },
+        "2026": {
+          "trades": 3,
+          "wins": 3,
+          "losses": 0,
+          "win_rate": 1.0,
+          "net_r": 4.20746353050383,
+          "avg_r": 1.4024878435012766,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "max_consecutive_losses": 0,
+          "net_r_over_mdd": null
+        }
+      },
+      "rolling_6m": {
+        "months": 6,
+        "windows": 36,
+        "negative_windows": 7,
+        "worst": {
+          "start": "2021-04",
+          "trades": 3,
+          "wins": 1,
+          "losses": 2,
+          "win_rate": 0.3333333333333333,
+          "net_r": -1.988502719624319,
+          "avg_r": -0.662834239874773,
+          "profit_factor": 0.029030009717144034,
+          "max_drawdown_r": 2.0479548693827736,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.9709699902828558
+        }
+      },
+      "rolling_9m": {
+        "months": 9,
+        "windows": 48,
+        "negative_windows": 5,
+        "worst": {
+          "start": "2021-04",
+          "trades": 4,
+          "wins": 2,
+          "losses": 2,
+          "win_rate": 0.5,
+          "net_r": -1.926221554390317,
+          "avg_r": -0.48155538859757924,
+          "profit_factor": 0.05944140508777187,
+          "max_drawdown_r": 2.0479548693827736,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.940558594912228
+        }
+      },
+      "rolling_12m": {
+        "months": 12,
+        "windows": 49,
+        "negative_windows": 0,
+        "worst": {
+          "start": "2023-09",
+          "trades": 5,
+          "wins": 2,
+          "losses": 3,
+          "win_rate": 0.4,
+          "net_r": 1.4000163249381594,
+          "avg_r": 0.2800032649876319,
+          "profit_factor": 1.4501074517638282,
+          "max_drawdown_r": 1.0884233191261226,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 1.2862792447907214
+        }
+      },
+      "symbol_concentration": {
+        "profitable_symbols": 19,
+        "losing_symbols": 8,
+        "trading_symbols": 27,
+        "top1_share": 0.25131350607768377,
+        "top3_share": 0.5805490169595761,
+        "top5_share": 0.7842995877719082,
+        "top5": [
+          [
+            "WMT",
+            7.04786061890224
+          ],
+          [
+            "AAOI",
+            5.635346371681415
+          ],
+          [
+            "SOXL",
+            3.597766594286221
+          ],
+          [
+            "DELL",
+            3.417121462674648
+          ],
+          [
+            "TSM",
+            2.2968795336076733
+          ]
+        ],
+        "bottom5": [
+          [
+            "LITE",
+            -1.030514691943128
+          ],
+          [
+            "BABA",
+            -1.031938202247191
+          ],
+          [
+            "GOOGL",
+            -1.0448989200863932
+          ],
+          [
+            "AAPL",
+            -1.071012403100775
+          ],
+          [
+            "JPM",
+            -1.0715095145631062
+          ]
+        ]
+      },
+      "leave_one_symbol_out": {
+        "cases": 38,
+        "min_net_r": 20.996237483504036,
+        "min_pf": 2.5530757765728174,
+        "max_mdd_r": 2.319614117066749,
+        "max_loss_streak": 2,
+        "largest_positive_dependency": {
+          "symbol": "WMT",
+          "trades": 40,
+          "wins": 27,
+          "losses": 13,
+          "win_rate": 0.675,
+          "net_r": 20.996237483504036,
+          "avg_r": 0.5249059370876009,
+          "profit_factor": 2.5530757765728174,
+          "max_drawdown_r": 2.1162143532727846,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.921602436460544,
+          "removed_net_r": 7.0478606189022415
+        }
+      }
+    },
+    "balanced65_like": {
+      "overrides": {
+        "ema_gap_atr_max": 1.5,
+        "rr_long_min": 1.3,
+        "return30_min": 0.0,
+        "target_distance_atr": 5.0
+      },
+      "full": {
+        "trades": 49,
+        "wins": 34,
+        "losses": 15,
+        "win_rate": 0.6938775510204082,
+        "net_r": 38.40196853455135,
+        "avg_r": 0.7837136435622725,
+        "profit_factor": 3.466731304637613,
+        "max_drawdown_r": 2.9505606848251,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 13.015142759833696
+      },
+      "early": {
+        "trades": 21,
+        "wins": 14,
+        "losses": 7,
+        "win_rate": 0.6666666666666666,
+        "net_r": 15.070287120518865,
+        "avg_r": 0.7176327200247078,
+        "profit_factor": 3.0928217819603736,
+        "max_drawdown_r": 2.9505606848251,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 5.107601141039464
+      },
+      "late": {
+        "trades": 28,
+        "wins": 20,
+        "losses": 8,
+        "win_rate": 0.7142857142857143,
+        "net_r": 23.331681414032488,
+        "avg_r": 0.833274336215446,
+        "profit_factor": 3.788530678586458,
+        "max_drawdown_r": 2.2023328977037586,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 10.594075690536632
+      },
+      "recent_1y": {
+        "trades": 12,
+        "wins": 9,
+        "losses": 3,
+        "win_rate": 0.75,
+        "net_r": 7.399100998536881,
+        "avg_r": 0.6165917498780734,
+        "profit_factor": 3.3558762356502463,
+        "max_drawdown_r": 2.1162143532727837,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 3.4963854144047213
+      },
+      "years": {
+        "2021": {
+          "trades": 4,
+          "wins": 2,
+          "losses": 2,
+          "win_rate": 0.5,
+          "net_r": -1.926221554390317,
+          "avg_r": -0.48155538859757924,
+          "profit_factor": 0.05944140508777187,
+          "max_drawdown_r": 2.0479548693827736,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.940558594912228
+        },
+        "2022": {
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate": 0.75,
+          "net_r": 4.670637181828689,
+          "avg_r": 1.1676592954571723,
+          "profit_factor": 5.559659045580178,
+          "max_drawdown_r": 1.0243391304347826,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 4.559659045580177
+        },
+        "2023": {
+          "trades": 15,
+          "wins": 10,
+          "losses": 5,
+          "win_rate": 0.6666666666666666,
+          "net_r": 14.814311137144774,
+          "avg_r": 0.9876207424763183,
+          "profit_factor": 3.8747709521690608,
+          "max_drawdown_r": 2.060543947646364,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 7.189514765781276
+        },
+        "2024": {
+          "trades": 13,
+          "wins": 9,
+          "losses": 4,
+          "win_rate": 0.6923076923076923,
+          "net_r": 12.548286648253136,
+          "avg_r": 0.965252819096395,
+          "profit_factor": 3.9864436341692135,
+          "max_drawdown_r": 2.1159113231871682,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 5.930440709278791
+        },
+        "2025": {
+          "trades": 10,
+          "wins": 7,
+          "losses": 3,
+          "win_rate": 0.7,
+          "net_r": 4.08749159121124,
+          "avg_r": 0.408749159121124,
+          "profit_factor": 2.301458691408451,
+          "max_drawdown_r": 2.1162143532727837,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 1.9315111368041813
+        },
+        "2026": {
+          "trades": 3,
+          "wins": 3,
+          "losses": 0,
+          "win_rate": 1.0,
+          "net_r": 4.20746353050383,
+          "avg_r": 1.4024878435012766,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "max_consecutive_losses": 0,
+          "net_r_over_mdd": null
+        }
+      },
+      "rolling_6m": {
+        "months": 6,
+        "windows": 44,
+        "negative_windows": 5,
+        "worst": {
+          "start": "2021-04",
+          "trades": 3,
+          "wins": 1,
+          "losses": 2,
+          "win_rate": 0.3333333333333333,
+          "net_r": -1.988502719624319,
+          "avg_r": -0.662834239874773,
+          "profit_factor": 0.029030009717144034,
+          "max_drawdown_r": 2.0479548693827736,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.9709699902828558
+        }
+      },
+      "rolling_9m": {
+        "months": 9,
+        "windows": 50,
+        "negative_windows": 3,
+        "worst": {
+          "start": "2021-04",
+          "trades": 4,
+          "wins": 2,
+          "losses": 2,
+          "win_rate": 0.5,
+          "net_r": -1.926221554390317,
+          "avg_r": -0.48155538859757924,
+          "profit_factor": 0.05944140508777187,
+          "max_drawdown_r": 2.0479548693827736,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.940558594912228
+        }
+      },
+      "rolling_12m": {
+        "months": 12,
+        "windows": 49,
+        "negative_windows": 0,
+        "worst": {
+          "start": "2021-04",
+          "trades": 6,
+          "wins": 3,
+          "losses": 3,
+          "win_rate": 0.5,
+          "net_r": 1.1261823111263172,
+          "avg_r": 0.1876970518543862,
+          "profit_factor": 1.3665607234181343,
+          "max_drawdown_r": 2.9505606848251,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.38168417172991437
+        }
+      },
+      "symbol_concentration": {
+        "profitable_symbols": 20,
+        "losing_symbols": 8,
+        "trading_symbols": 28,
+        "top1_share": 0.19891448653967136,
+        "top3_share": 0.5010027373149973,
+        "top5_share": 0.7012080606389063,
+        "top5": [
+          [
+            "AAOI",
+            7.638707853162898
+          ],
+          [
+            "WMT",
+            7.04786061890224
+          ],
+          [
+            "DELL",
+            4.552922882029488
+          ],
+          [
+            "MU",
+            4.090511932448208
+          ],
+          [
+            "SOXL",
+            3.597766594286221
+          ]
+        ],
+        "bottom5": [
+          [
+            "LITE",
+            -1.030514691943128
+          ],
+          [
+            "BABA",
+            -1.031938202247191
+          ],
+          [
+            "GOOGL",
+            -1.0448989200863932
+          ],
+          [
+            "AAPL",
+            -1.071012403100775
+          ],
+          [
+            "JPM",
+            -1.0715095145631062
+          ]
+        ]
+      },
+      "leave_one_symbol_out": {
+        "cases": 38,
+        "min_net_r": 30.763260681388452,
+        "min_pf": 2.9760627137442883,
+        "max_mdd_r": 3.344099978249268,
+        "max_loss_streak": 2,
+        "largest_positive_dependency": {
+          "symbol": "AAOI",
+          "trades": 46,
+          "wins": 31,
+          "losses": 15,
+          "win_rate": 0.6739130434782609,
+          "net_r": 30.763260681388452,
+          "avg_r": 0.6687665365519229,
+          "profit_factor": 2.9760627137442883,
+          "max_drawdown_r": 2.9505606848251,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 10.426242320520855,
+          "removed_net_r": 7.638707853162899
+        }
+      }
+    },
+    "maxnet113_like": {
+      "overrides": {
+        "return30_min": 0.0,
+        "target_distance_atr": 5.0
+      },
+      "full": {
+        "trades": 90,
+        "wins": 58,
+        "losses": 32,
+        "win_rate": 0.6444444444444445,
+        "net_r": 45.060414489051986,
+        "avg_r": 0.5006712721005776,
+        "profit_factor": 2.360714645411053,
+        "max_drawdown_r": 6.29509615272843,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 7.1580184632321835
+      },
+      "early": {
+        "trades": 36,
+        "wins": 21,
+        "losses": 15,
+        "win_rate": 0.5833333333333334,
+        "net_r": 12.382709606150183,
+        "avg_r": 0.34396415572639394,
+        "profit_factor": 1.8010535549680176,
+        "max_drawdown_r": 3.879361826752998,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 3.1919450051696865
+      },
+      "late": {
+        "trades": 54,
+        "wins": 37,
+        "losses": 17,
+        "win_rate": 0.6851851851851852,
+        "net_r": 32.67770488290181,
+        "avg_r": 0.6051426830167002,
+        "profit_factor": 2.850670277320513,
+        "max_drawdown_r": 6.2950961527284335,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 5.1909778802566136
+      },
+      "recent_1y": {
+        "trades": 20,
+        "wins": 15,
+        "losses": 5,
+        "win_rate": 0.75,
+        "net_r": 12.610410531638822,
+        "avg_r": 0.6305205265819411,
+        "profit_factor": 3.4075480206512165,
+        "max_drawdown_r": 3.1510702565444766,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 4.0019452138358975
+      },
+      "years": {
+        "2021": {
+          "trades": 14,
+          "wins": 8,
+          "losses": 6,
+          "win_rate": 0.5714285714285714,
+          "net_r": -1.2898213919602792,
+          "avg_r": -0.09213009942573423,
+          "profit_factor": 0.7922828628326803,
+          "max_drawdown_r": 3.8657329713908437,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.3336550665826815
+        },
+        "2022": {
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate": 0.75,
+          "net_r": 4.670637181828689,
+          "avg_r": 1.1676592954571723,
+          "profit_factor": 5.559659045580178,
+          "max_drawdown_r": 1.0243391304347826,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 4.559659045580177
+        },
+        "2023": {
+          "trades": 22,
+          "wins": 13,
+          "losses": 9,
+          "win_rate": 0.5909090909090909,
+          "net_r": 16.359123807918557,
+          "avg_r": 0.7435965367235707,
+          "profit_factor": 2.7687932016131547,
+          "max_drawdown_r": 3.080486025129541,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 5.310565824505119
+        },
+        "2024": {
+          "trades": 28,
+          "wins": 18,
+          "losses": 10,
+          "win_rate": 0.6428571428571429,
+          "net_r": 12.82504936688279,
+          "avg_r": 0.4580374773886711,
+          "profit_factor": 2.235083160463743,
+          "max_drawdown_r": 5.196902168600431,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 2.467825822154486
+        },
+        "2025": {
+          "trades": 19,
+          "wins": 13,
+          "losses": 6,
+          "win_rate": 0.6842105263157895,
+          "net_r": 8.287961993878397,
+          "avg_r": 0.4362085259935999,
+          "profit_factor": 2.3263490095905506,
+          "max_drawdown_r": 3.1510702565444766,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 2.630205396615667
+        },
+        "2026": {
+          "trades": 3,
+          "wins": 3,
+          "losses": 0,
+          "win_rate": 1.0,
+          "net_r": 4.20746353050383,
+          "avg_r": 1.4024878435012766,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "max_consecutive_losses": 0,
+          "net_r_over_mdd": null
+        }
+      },
+      "rolling_6m": {
+        "months": 6,
+        "windows": 47,
+        "negative_windows": 12,
+        "worst": {
+          "start": "2024-04",
+          "trades": 6,
+          "wins": 1,
+          "losses": 5,
+          "win_rate": 0.16666666666666666,
+          "net_r": -4.18963958145434,
+          "avg_r": -0.6982732635757234,
+          "profit_factor": 0.19228918670132508,
+          "max_drawdown_r": 4.18963958145434,
+          "max_consecutive_losses": 4,
+          "net_r_over_mdd": -1.0
+        }
+      },
+      "rolling_9m": {
+        "months": 9,
+        "windows": 50,
+        "negative_windows": 7,
+        "worst": {
+          "start": "2021-04",
+          "trades": 14,
+          "wins": 8,
+          "losses": 6,
+          "win_rate": 0.5714285714285714,
+          "net_r": -1.2898213919602792,
+          "avg_r": -0.09213009942573423,
+          "profit_factor": 0.7922828628326803,
+          "max_drawdown_r": 3.8657329713908437,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.3336550665826815
+        }
+      },
+      "rolling_12m": {
+        "months": 12,
+        "windows": 49,
+        "negative_windows": 1,
+        "worst": {
+          "start": "2024-04",
+          "trades": 20,
+          "wins": 9,
+          "losses": 11,
+          "win_rate": 0.45,
+          "net_r": -0.8480494359800816,
+          "avg_r": -0.04240247179900408,
+          "profit_factor": 0.9255757198009401,
+          "max_drawdown_r": 6.16782516193844,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": -0.13749569965332067
+        }
+      },
+      "symbol_concentration": {
+        "profitable_symbols": 27,
+        "losing_symbols": 11,
+        "trading_symbols": 38,
+        "top1_share": 0.17353185267889235,
+        "top3_share": 0.46996425552012705,
+        "top5_share": 0.640585822452282,
+        "top5": [
+          [
+            "WMT",
+            7.819417208763996
+          ],
+          [
+            "AAOI",
+            7.638707853162898
+          ],
+          [
+            "DELL",
+            5.71865908684877
+          ],
+          [
+            "MU",
+            4.090511932448208
+          ],
+          [
+            "SOXL",
+            3.597766594286221
+          ]
+        ],
+        "bottom5": [
+          [
+            "EWY",
+            -1.0748301886792462
+          ],
+          [
+            "LITE",
+            -2.0560107445747073
+          ],
+          [
+            "MRVL",
+            -2.061201155080214
+          ],
+          [
+            "IBM",
+            -2.065410052420598
+          ],
+          [
+            "AAPL",
+            -2.133320877677046
+          ]
+        ]
+      },
+      "leave_one_symbol_out": {
+        "cases": 38,
+        "min_net_r": 37.24099728028799,
+        "min_pf": 2.1245873120255707,
+        "max_mdd_r": 7.5715670162381805,
+        "max_loss_streak": 6,
+        "largest_positive_dependency": {
+          "symbol": "WMT",
+          "trades": 87,
+          "wins": 55,
+          "losses": 32,
+          "win_rate": 0.632183908045977,
+          "net_r": 37.24099728028799,
+          "avg_r": 0.42805744000331025,
+          "profit_factor": 2.1245873120255707,
+          "max_drawdown_r": 6.2950961527284335,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 5.915874257797782,
+          "removed_net_r": 7.819417208763994
+        }
+      }
+    }
+  }
+}
