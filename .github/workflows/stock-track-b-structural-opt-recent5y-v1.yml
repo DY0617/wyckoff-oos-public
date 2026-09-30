@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/stock-track-b-structural-opt-recent5y-v1.yml"
+      - "scripts/extract_stock53_recent5y_15m_cache.py"
       - "scripts/screen_stock_track_b_structural_shard_v1.py"
       - "scripts/merge_stock_track_b_structural_stage1_v1.py"
       - "scripts/merge_stock_track_b_structural_stage2_v1.py"
@@ -16,7 +17,28 @@ permissions:
   contents: write
 
 jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python -m py_compile scripts/extract_stock53_recent5y_15m_cache.py
+      - run: python scripts/extract_stock53_recent5y_15m_cache.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-recent5y-15m-cache
+          path: |
+            data/cache/stock53_recent5y_15m.parquet
+            data/cache/stock53_recent5y_15m_meta.json
+          retention-days: 7
+          if-no-files-found: error
+
   stage1:
+    needs: extract
     runs-on: ubuntu-latest
     timeout-minutes: 180
     strategy:
@@ -35,6 +57,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install --disable-pip-version-check duckdb
+      - uses: actions/download-artifact@v4
+        with:
+          name: stock53-recent5y-15m-cache
+          path: data/cache
       - run: python -m py_compile scripts/screen_stock_track_b_structural_shard_v1.py scripts/backtest_wyckoff_stock_filter_engine.py scripts/evaluate_stock53_filter_factorial_shard.py scripts/wyckoff_status.py
       - name: Run Stage 1 shard
         env:
@@ -42,6 +68,7 @@ jobs:
           EVAL_END: "2026-04-01"
           TRADE_SYMS: "${{ matrix.syms }}"
           OUT: "data/validation/stock_structural_stage1_shards/shard_${{ matrix.id }}.json"
+          DATA_PARQUET: "data/cache/stock53_recent5y_15m.parquet"
         run: python scripts/screen_stock_track_b_structural_shard_v1.py
       - uses: actions/upload-artifact@v4
         with:
@@ -68,7 +95,7 @@ jobs:
           retention-days: 7
 
   stage2:
-    needs: merge_stage1
+    needs: [merge_stage1, extract]
     runs-on: ubuntu-latest
     timeout-minutes: 180
     strategy:
@@ -89,6 +116,10 @@ jobs:
       - run: python -m pip install --disable-pip-version-check duckdb
       - uses: actions/download-artifact@v4
         with:
+          name: stock53-recent5y-15m-cache
+          path: data/cache
+      - uses: actions/download-artifact@v4
+        with:
           name: stock-struct-stage1-merged
           path: data/validation
       - run: python -m py_compile scripts/screen_stock_track_b_structural_shard_v1.py scripts/backtest_wyckoff_stock_filter_engine.py scripts/evaluate_stock53_filter_factorial_shard.py scripts/wyckoff_status.py
@@ -99,6 +130,7 @@ jobs:
           TRADE_SYMS: "${{ matrix.syms }}"
           OUT: "data/validation/stock_structural_stage2_shards/shard_${{ matrix.id }}.json"
           CONFIG_FILE: "data/validation/stock_track_b_e_recent5y_structural_stage1_v1.json"
+          DATA_PARQUET: "data/cache/stock53_recent5y_15m.parquet"
         run: python scripts/screen_stock_track_b_structural_shard_v1.py
       - uses: actions/upload-artifact@v4
         with:
