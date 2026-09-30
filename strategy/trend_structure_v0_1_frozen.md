@@ -111,6 +111,16 @@ Accept only planned risk between 0.70 and 2.80 current 1H ATR.
 - adverse-first when stop and target are both reachable in one 15m bar
 - gap through stop fills at open
 
+## Stock adapter
+The stock test uses the same signal/entry/exit rules, but respects the RTH market clock:
+- source: existing stock53 15m RTH cache
+- regime timeframe: previous completed RTH daily bar (instead of crypto 4H)
+- signal timeframe: six complete 60m bars aligned from 09:30 ET through 15:30 ET
+- execution timeframe: 15m RTH; the final 15:30-16:00 ET half-hour is execution-only
+- evaluation: 2021-04-01 through 2026-04-01 UTC
+
+The daily regime substitution is an asset-clock adaptation, so crypto and stock results are compared as sibling implementations, not as identical-timeframe experiments.
+
 ## Costs
 - 4 bps fee + 2 bps slippage per fill-equivalent
 - funding excluded from v0.1; add actual funding only if raw edge survives
