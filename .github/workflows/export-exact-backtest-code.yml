@@ -1,0 +1,24 @@
+name: Export Exact Backtest Code
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/export-exact-backtest-code.yml"
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exact-backtest-code
+          path: |
+            scripts/backtest_wyckoff_stock_filter_engine_exact.py
+            scripts/screen_stock_track_b_structural_shard_exact_v2.py
+            scripts/evaluate_stock53_filter_factorial_shard.py
+            scripts/wyckoff_status.py
+            scripts/wyckoff_structural_state.py
+          retention-days: 1
+          if-no-files-found: error
