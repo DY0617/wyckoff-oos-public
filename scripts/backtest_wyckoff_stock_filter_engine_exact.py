@@ -66,7 +66,7 @@ def simulate(sym, a_params=None, b_params=None, start_ms=None, end_ms=None, fee_
 
         # Locate the actual first 15m candle inside the triggering 4H bar that touches entry.
         # This prevents stop/TP events from being counted before the entry was actually reachable.
-        trigger_4h_open=H[trig]["t"]; trigger_4h_end=trigger_4h_open+4*60*60*1000
+        trigger_4h_open=H[trig]["t"]; trigger_4h_end=H[trig].get("ct",trigger_4h_open+4*60*60*1000-1)+1
         mi=bisect.bisect_left(mt,trigger_4h_open); entry_i=None
         while mi<len(M) and M[mi]["t"]<trigger_4h_end:
             z=M[mi]
@@ -218,7 +218,7 @@ def simulate(sym, a_params=None, b_params=None, start_ms=None, end_ms=None, fee_
         return True
 
     for hi in range(12,len(H)):
-        close_t=H[hi]["t"]+4*60*60*1000-1
+        close_t=H[hi].get("ct",H[hi]["t"]+4*60*60*1000-1)
         if H[hi]["t"]<start_t: continue
         if end_ms is not None and H[hi]["t"] > end_ms: break
         di=bisect.bisect_right(dc,close_t)-1
