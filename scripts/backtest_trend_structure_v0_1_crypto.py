@@ -497,17 +497,19 @@ def metrics(ts):
     }
 
 
-def simulate_symbol(sym, b15):
+def simulate_symbol(sym, b15, h1_override=None, h4_override=None, eval_start=None, eval_end=None):
     q15 = [dict(x) for x in b15]
-    h1 = enrich(aggregate(b15, 60))
-    h4 = enrich(aggregate(b15, 240))
+    h1 = enrich(h1_override if h1_override is not None else aggregate(b15, 60))
+    h4 = enrich(h4_override if h4_override is not None else aggregate(b15, 240))
     low_pivots, high_pivots = build_pivots(h1)
     t15 = [x["t"] for x in q15]
     ct1 = [x["ct"] for x in h1]
     ct4 = [x["ct"] for x in h4]
 
-    lo = int(EVAL_START.timestamp() * 1000)
-    hi = int(EVAL_END.timestamp() * 1000)
+    eval_start = eval_start or EVAL_START
+    eval_end = eval_end or EVAL_END
+    lo = int(eval_start.timestamp() * 1000)
+    hi = int(eval_end.timestamp() * 1000)
     trades = []
     st = defaultdict(int)
     busy_until = -1
