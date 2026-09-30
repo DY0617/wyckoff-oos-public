@@ -7,7 +7,7 @@ from zoneinfo import ZoneInfo
 import duckdb
 
 sys.path.insert(0,str(Path(__file__).parent))
-import backtest_wyckoff_stock_filter_engine as bt
+import backtest_wyckoff_stock_filter_engine_exact as bt
 import evaluate_stock53_filter_factorial_shard as ctxsrc
 import wyckoff_status as w
 
@@ -170,7 +170,8 @@ def aggregate_4h(bars):
     for _,g in sorted(groups.items()):
         g.sort(key=lambda x:x["t"])
         out.append({"t":g[0]["t"],"o":g[0]["o"],"h":max(x["h"] for x in g),
-                    "l":min(x["l"] for x in g),"c":g[-1]["c"],"v":sum(x["v"] for x in g)})
+                    "l":min(x["l"] for x in g),"c":g[-1]["c"],"v":sum(x["v"] for x in g),
+                    "ct":g[-1]["t"]+15*60*1000-1})
     return out
 
 def aggregate_daily(bars):
@@ -180,7 +181,8 @@ def aggregate_daily(bars):
     for _,g in sorted(groups.items()):
         g.sort(key=lambda x:x["t"])
         out.append({"t":g[0]["t"],"o":g[0]["o"],"h":max(x["h"] for x in g),
-                    "l":min(x["l"] for x in g),"c":g[-1]["c"],"v":sum(x["v"] for x in g)})
+                    "l":min(x["l"] for x in g),"c":g[-1]["c"],"v":sum(x["v"] for x in g),
+                    "ct":g[-1]["t"]+15*60*1000-1})
     return out
 
 def build_context():
@@ -260,16 +262,14 @@ def main():
                 H=w.enrich(aggregate_4h(bars));D=w.enrich(aggregate_daily(bars));M=bars
                 bt.dataset=lambda _s,D=D,H=H,M=M:(D,H,M)
                 bt.symbol_filters=lambda _s:(0.01,0.,0.)
-                def tf(_sym,p,trigger_open_ms):
-                    return p["direction"]=="LONG" and bool(overlay_state(sym,dailies,trigger_open_ms))
                 for name,ov in configs:
                     bt._CACHE.clear()
                     r=bt.simulate(sym,a_params=A_OFF,b_params=ov,start_ms=START_MS,end_ms=END_MS,
                                   fee_bps=FEE_BPS,slippage_bps=SLIPPAGE_BPS,
-                                  a_mode="snapshot",b_runner_mode="pivot",b_scale_mode="10_30_60",
-                                  trigger_filter=tf)
+                                  a_mode="snapshot",b_runner_mode="pivot",b_scale_mode="10_30_60")
                     ts=[{"symbol":sym,**t} for t in r["trades"]
-                        if t["track"]=="B" and t["direction"]=="LONG" and t["reason"]!="OPEN_MARK"]
+                        if t["track"]=="B" and t["direction"]=="LONG" and t["reason"]!="OPEN_MARK"
+                        and bool(overlay_state(sym,dailies,t["entry_t"]))]
                     output[name].extend(ts)
                     print("CFG",sym,name,len(ts),round(sum(t["r"] for t in ts),4),flush=True)
             except Exception as e:
