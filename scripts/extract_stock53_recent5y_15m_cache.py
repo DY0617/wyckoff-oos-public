@@ -29,13 +29,14 @@ def month_iter(a,b):
 
 def month_query(y,m):
     url=f"{HF_BASE}/ohlcv_{y:04d}-{m:02d}.parquet"
-    ph=",".join(["?"]*len(SOURCE))
+    ph_src=",".join(["?"]*len(SOURCE))
+    ph_sym=",".join(["?"]*len(SYMS))
     return f"""
     WITH src AS (
       SELECT ticker,timezone('America/New_York',timestamp) et,
              open,high,low,"close",volume
       FROM read_parquet('{url}')
-      WHERE ticker IN ({ph})
+      WHERE ticker IN ({ph_src})
     ),rth AS (
       SELECT * FROM src
       WHERE cast(et as time)>=time '09:30:00'
@@ -56,7 +57,7 @@ def month_query(y,m):
     )
     SELECT symbol,b,o,h,l,c,v
     FROM agg
-    WHERE symbol IN ({ph})
+    WHERE symbol IN ({ph_sym})
     ORDER BY symbol,b
     """
 
