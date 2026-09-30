@@ -1,0 +1,150 @@
+name: Stock53 Track-B Walk Forward v1
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock53-track-b-walk-forward-v1.yml"
+      - "scripts/extract_stock53_window_15m_cache_v1.py"
+      - "scripts/screen_stock_track_b_walk_forward_shard_v1.py"
+      - "scripts/build_stock_track_b_wf_configs_v1.py"
+      - "scripts/merge_stock53_track_b_walk_forward_v1.py"
+      - "scripts/backtest_wyckoff_stock_filter_engine_exact_conservative_ratchet.py"
+      - "scripts/evaluate_stock53_filter_factorial_shard.py"
+      - "scripts/wyckoff_status.py"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        include:
+          - {fold: "f01", cache_start: "2005-09-01", cache_end: "2015-04-01"}
+          - {fold: "f02", cache_start: "2008-09-01", cache_end: "2018-04-01"}
+          - {fold: "f03", cache_start: "2011-09-01", cache_end: "2021-04-01"}
+          - {fold: "f04", cache_start: "2014-09-01", cache_end: "2024-04-01"}
+          - {fold: "f05", cache_start: "2017-09-01", cache_end: "2026-04-01"}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python -m py_compile scripts/extract_stock53_window_15m_cache_v1.py
+      - name: Build fold cache
+        env:
+          CACHE_START: ${{ matrix.cache_start }}
+          CACHE_END: ${{ matrix.cache_end }}
+          CACHE_OUT: "data/cache/wf_${{ matrix.fold }}.parquet"
+          CACHE_META: "data/cache/wf_${{ matrix.fold }}_meta.json"
+        run: python scripts/extract_stock53_window_15m_cache_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-wf-cache-${{ matrix.fold }}
+          path: |
+            data/cache/wf_${{ matrix.fold }}.parquet
+            data/cache/wf_${{ matrix.fold }}_meta.json
+          retention-days: 7
+          if-no-files-found: error
+
+  evaluate:
+    needs: extract
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        include:
+          - {fold: "f01", start: "2006-04-01", end: "2015-04-01", shard: "01", syms: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
+          - {fold: "f01", start: "2006-04-01", end: "2015-04-01", shard: "02", syms: "AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SMCI,SOXS,V"}
+          - {fold: "f01", start: "2006-04-01", end: "2015-04-01", shard: "03", syms: "COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT"}
+          - {fold: "f01", start: "2006-04-01", end: "2015-04-01", shard: "04", syms: "AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM"}
+          - {fold: "f01", start: "2006-04-01", end: "2015-04-01", shard: "05", syms: "AAOI,AXTI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"}
+
+          - {fold: "f02", start: "2009-04-01", end: "2018-04-01", shard: "01", syms: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
+          - {fold: "f02", start: "2009-04-01", end: "2018-04-01", shard: "02", syms: "AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SMCI,SOXS,V"}
+          - {fold: "f02", start: "2009-04-01", end: "2018-04-01", shard: "03", syms: "COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT"}
+          - {fold: "f02", start: "2009-04-01", end: "2018-04-01", shard: "04", syms: "AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM"}
+          - {fold: "f02", start: "2009-04-01", end: "2018-04-01", shard: "05", syms: "AAOI,AXTI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"}
+
+          - {fold: "f03", start: "2012-04-01", end: "2021-04-01", shard: "01", syms: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
+          - {fold: "f03", start: "2012-04-01", end: "2021-04-01", shard: "02", syms: "AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SMCI,SOXS,V"}
+          - {fold: "f03", start: "2012-04-01", end: "2021-04-01", shard: "03", syms: "COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT"}
+          - {fold: "f03", start: "2012-04-01", end: "2021-04-01", shard: "04", syms: "AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM"}
+          - {fold: "f03", start: "2012-04-01", end: "2021-04-01", shard: "05", syms: "AAOI,AXTI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"}
+
+          - {fold: "f04", start: "2015-04-01", end: "2024-04-01", shard: "01", syms: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
+          - {fold: "f04", start: "2015-04-01", end: "2024-04-01", shard: "02", syms: "AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SMCI,SOXS,V"}
+          - {fold: "f04", start: "2015-04-01", end: "2024-04-01", shard: "03", syms: "COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT"}
+          - {fold: "f04", start: "2015-04-01", end: "2024-04-01", shard: "04", syms: "AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM"}
+          - {fold: "f04", start: "2015-04-01", end: "2024-04-01", shard: "05", syms: "AAOI,AXTI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"}
+
+          - {fold: "f05", start: "2018-04-01", end: "2026-04-01", shard: "01", syms: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
+          - {fold: "f05", start: "2018-04-01", end: "2026-04-01", shard: "02", syms: "AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SMCI,SOXS,V"}
+          - {fold: "f05", start: "2018-04-01", end: "2026-04-01", shard: "03", syms: "COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT"}
+          - {fold: "f05", start: "2018-04-01", end: "2026-04-01", shard: "04", syms: "AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM"}
+          - {fold: "f05", start: "2018-04-01", end: "2026-04-01", shard: "05", syms: "AAOI,AXTI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"}
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - uses: actions/download-artifact@v4
+        with:
+          name: stock53-wf-cache-${{ matrix.fold }}
+          path: data/cache
+      - name: Build configs
+        env:
+          OUT: "/tmp/wf_configs.json"
+        run: python scripts/build_stock_track_b_wf_configs_v1.py
+      - run: python -m py_compile scripts/screen_stock_track_b_walk_forward_shard_v1.py scripts/backtest_wyckoff_stock_filter_engine_exact_conservative_ratchet.py scripts/evaluate_stock53_filter_factorial_shard.py scripts/wyckoff_status.py
+      - name: Evaluate 32 structural configs
+        env:
+          EVAL_START: ${{ matrix.start }}
+          EVAL_END: ${{ matrix.end }}
+          WARMUP_START: ${{ matrix.start }}
+          TRADE_SYMS: ${{ matrix.syms }}
+          OUT: "data/validation/stock53_wf_shards/${{ matrix.fold }}_shard_${{ matrix.shard }}.json"
+          DATA_PARQUET: "data/cache/wf_${{ matrix.fold }}.parquet"
+          CONFIG_FILE: "/tmp/wf_configs.json"
+        run: python scripts/screen_stock_track_b_walk_forward_shard_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-wf-eval-${{ matrix.fold }}-${{ matrix.shard }}
+          path: data/validation/stock53_wf_shards/${{ matrix.fold }}_shard_${{ matrix.shard }}.json
+          retention-days: 7
+          if-no-files-found: error
+
+  merge:
+    needs: evaluate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: stock53-wf-eval-*
+          path: data/validation/stock53_wf_shards
+          merge-multiple: true
+      - run: python scripts/merge_stock53_track_b_walk_forward_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-track-b-walk-forward-final-v1
+          path: data/validation/stock53_track_b_walk_forward_v1.json
+          retention-days: 30
+      - name: Commit final result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock53_track_b_walk_forward_v1.json
+          git commit -m "validation: add Track-B rolling walk-forward v1 [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
