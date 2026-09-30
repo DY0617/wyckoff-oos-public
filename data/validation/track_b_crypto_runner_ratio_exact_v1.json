@@ -1,0 +1,1399 @@
+{
+  "market": "Binance USD-M perpetual",
+  "strategy": "Track B current setup logic; EXACT 15m entry touch; conservative same-bar TP1=>BE and TP2=>TP1 ratchet; confirmed 4H pivot runner",
+  "evaluation_period": {
+    "start_ms": 1632355200000,
+    "end_ms": 1790020800000
+  },
+  "costs": {
+    "fee_bps_per_fill": 4.0,
+    "slippage_bps_per_fill": 2.0
+  },
+  "grid": {
+    "tp1_pct": "10..40 step5",
+    "tp2_pct": "10..40 step5",
+    "runner_pct": "40..80",
+    "count": 39
+  },
+  "parity": {
+    "raw_corrected_engine": {
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 26.159441841316017,
+      "avg_r": 0.19817758970693952,
+      "profit_factor": 1.543089576642018,
+      "mdd_on_20k": 0.1347862036619354,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 3.8816200962122114
+    },
+    "replayed_30_30_40": {
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 26.159441841316017,
+      "avg_r": 0.19817758970693952,
+      "profit_factor": 1.543089576642018,
+      "mdd_on_20k": 0.1347862036619354,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 3.8816200962122114
+    },
+    "trades_match": true,
+    "net_r_abs_diff": 0.0
+  },
+  "named": {
+    "30_30_40": {
+      "fractions": [
+        0.3,
+        0.3,
+        0.39999999999999997
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 86,
+        "losses": 46,
+        "win_rate": 0.6515151515151515,
+        "net_r": 26.159441841316017,
+        "avg_r": 0.19817758970693952,
+        "profit_factor": 1.543089576642018,
+        "mdd_on_20k": 0.1347862036619354,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 3.8816200962122114
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 9.233748923100988,
+        "avg_r": 0.38473953846254116,
+        "profit_factor": 2.2510270395948617,
+        "mdd_on_20k": 0.04256296735050256,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 4.338865214477093
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 17,
+          "losses": 10,
+          "win_rate": 0.6296296296296297,
+          "net_r": 5.48163141784503,
+          "avg_r": 0.2030233858461122,
+          "profit_factor": 1.5138918286138274,
+          "mdd_on_20k": 0.04154969933100001,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 2.638590173265208
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 17.632407765906006,
+          "avg_r": 0.4007365401342274,
+          "profit_factor": 2.68275848681902,
+          "mdd_on_20k": 0.036968744425276354,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.53908932533307
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 20,
+          "losses": 11,
+          "win_rate": 0.6451612903225806,
+          "net_r": 1.88872146207498,
+          "avg_r": 0.060926498776612256,
+          "profit_factor": 1.1644408555750685,
+          "mdd_on_20k": 0.06882360038070037,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.5488586623272962
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 1.1566811954900014,
+          "avg_r": 0.03855603984966671,
+          "profit_factor": 1.0744472204506743,
+          "mdd_on_20k": 0.13776015264289307,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.16792681676077886
+        }
+      }
+    },
+    "25_25_50": {
+      "fractions": [
+        0.25,
+        0.25,
+        0.5
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 86,
+        "losses": 46,
+        "win_rate": 0.6515151515151515,
+        "net_r": 27.80409654416252,
+        "avg_r": 0.21063709503153424,
+        "profit_factor": 1.5772338382707394,
+        "mdd_on_20k": 0.1362478438116143,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 4.08139986165306
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 9.553860388277489,
+        "avg_r": 0.3980775161782287,
+        "profit_factor": 2.2943970837616723,
+        "mdd_on_20k": 0.044904173990202134,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 4.255221525892935
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 17,
+          "losses": 10,
+          "win_rate": 0.6296296296296297,
+          "net_r": 6.181774124962532,
+          "avg_r": 0.2289545972208345,
+          "profit_factor": 1.5795287875089397,
+          "mdd_on_20k": 0.04154969933100001,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 2.9756047453996106
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 17.389675057087505,
+          "avg_r": 0.3952198876610797,
+          "profit_factor": 2.659593157885175,
+          "mdd_on_20k": 0.0370266103212529,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.393068880035182
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 20,
+          "losses": 11,
+          "win_rate": 0.6451612903225806,
+          "net_r": 2.1304059433624816,
+          "avg_r": 0.06872277236653167,
+          "profit_factor": 1.1854830281135598,
+          "mdd_on_20k": 0.07590799131400054,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.5613126909260073
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 2.1022414187500007,
+          "avg_r": 0.07007471395833335,
+          "profit_factor": 1.135306107640074,
+          "mdd_on_20k": 0.1382115733108847,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.304206278590194
+        }
+      }
+    },
+    "20_20_60": {
+      "fractions": [
+        0.2,
+        0.2,
+        0.6000000000000001
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 86,
+        "losses": 46,
+        "win_rate": 0.6515151515151515,
+        "net_r": 29.44875124700903,
+        "avg_r": 0.22309660035612902,
+        "profit_factor": 1.6113780998994607,
+        "mdd_on_20k": 0.1376676212829967,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 4.2782392798772415
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 9.873971853453991,
+        "avg_r": 0.4114154938939163,
+        "profit_factor": 2.3377671279284833,
+        "mdd_on_20k": 0.04724762302858249,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 4.179669249172904
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 17,
+          "losses": 10,
+          "win_rate": 0.6296296296296297,
+          "net_r": 6.881916832080034,
+          "avg_r": 0.2548858085955568,
+          "profit_factor": 1.6451657464040514,
+          "mdd_on_20k": 0.04154969933100001,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.312619317534013
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 17.14694234826901,
+          "avg_r": 0.3897032351879321,
+          "profit_factor": 2.63642782895133,
+          "mdd_on_20k": 0.037084657652191245,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.247458886683743
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 20,
+          "losses": 11,
+          "win_rate": 0.6451612903225806,
+          "net_r": 2.3720904246499837,
+          "avg_r": 0.07651904595645108,
+          "profit_factor": 1.206525200652051,
+          "mdd_on_20k": 0.08546979118180024,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.5550710705737846
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 3.0478016420100036,
+          "avg_r": 0.10159338806700012,
+          "profit_factor": 1.196164994829474,
+          "mdd_on_20k": 0.1386550516410858,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.4396235991313698
+        }
+      }
+    },
+    "15_20_65": {
+      "fractions": [
+        0.15,
+        0.2,
+        0.6499999999999999
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 85,
+        "losses": 47,
+        "win_rate": 0.6439393939393939,
+        "net_r": 30.181956564123766,
+        "avg_r": 0.2286511860918467,
+        "profit_factor": 1.626457525338114,
+        "mdd_on_20k": 0.13926526934047048,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 4.334455633778449
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 10.085916375758488,
+        "avg_r": 0.4202465156566037,
+        "profit_factor": 2.366482260915649,
+        "mdd_on_20k": 0.04979065403598688,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 4.051329138383583
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 16,
+          "losses": 11,
+          "win_rate": 0.5925925925925926,
+          "net_r": 7.21521108954753,
+          "avg_r": 0.26723004035361225,
+          "profit_factor": 1.675717499757971,
+          "mdd_on_20k": 0.04311957614272706,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.346605757749088
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 17.086938392196256,
+          "avg_r": 0.3883395089135513,
+          "profit_factor": 2.6307013185583825,
+          "mdd_on_20k": 0.03709697097512805,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.212039658791724
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 20,
+          "losses": 11,
+          "win_rate": 0.6451612903225806,
+          "net_r": 2.351647078419981,
+          "avg_r": 0.0758595831748381,
+          "profit_factor": 1.204745308056779,
+          "mdd_on_20k": 0.09367406505420021,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.5020913904097806
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 3.5281600039599983,
+          "avg_r": 0.11760533346533328,
+          "profit_factor": 1.2270821957028455,
+          "mdd_on_20k": 0.13862221146886775,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.5090324222323296
+        }
+      }
+    },
+    "15_15_70": {
+      "fractions": [
+        0.15,
+        0.15,
+        0.7
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 85,
+        "losses": 47,
+        "win_rate": 0.6439393939393939,
+        "net_r": 31.093405949855516,
+        "avg_r": 0.2355561056807236,
+        "profit_factor": 1.6453755940008712,
+        "mdd_on_20k": 0.1390473091614075,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 4.472349179193677
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 10.194083318630488,
+        "avg_r": 0.4247534716096037,
+        "profit_factor": 2.381137172095294,
+        "mdd_on_20k": 0.04959331768882876,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 4.111071327227126
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 16,
+          "losses": 11,
+          "win_rate": 0.5925925925925926,
+          "net_r": 7.582059539197531,
+          "avg_r": 0.2808170199702789,
+          "profit_factor": 1.710073517081801,
+          "mdd_on_20k": 0.04339980963253785,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.494051980132689
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 16.904209639450507,
+          "avg_r": 0.38418658271478423,
+          "profit_factor": 2.613262500017484,
+          "mdd_on_20k": 0.03714288727274847,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.102259345278757
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 20,
+          "losses": 11,
+          "win_rate": 0.6451612903225806,
+          "net_r": 2.6137749059374813,
+          "avg_r": 0.08431531954637037,
+          "profit_factor": 1.227567373190542,
+          "mdd_on_20k": 0.0950315910496005,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.5500854772752896
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 3.993361865269999,
+          "avg_r": 0.13311206217566662,
+          "profit_factor": 1.2570238820188733,
+          "mdd_on_20k": 0.13909079541301006,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.5742093649565073
+        }
+      }
+    },
+    "10_20_70": {
+      "fractions": [
+        0.1,
+        0.2,
+        0.7
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 82,
+        "losses": 50,
+        "win_rate": 0.6212121212121212,
+        "net_r": 30.915161881238518,
+        "avg_r": 0.23420577182756452,
+        "profit_factor": 1.6407516998993543,
+        "mdd_on_20k": 0.14083774876295324,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 4.39018120536312
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 10.297860898062988,
+        "avg_r": 0.42907753741929117,
+        "profit_factor": 2.3951973939028153,
+        "mdd_on_20k": 0.05233396127426404,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 3.9354410204476937
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 15,
+          "losses": 12,
+          "win_rate": 0.5555555555555556,
+          "net_r": 7.548505347015033,
+          "avg_r": 0.2795742721116679,
+          "profit_factor": 1.7033763014957695,
+          "mdd_on_20k": 0.04655372606951328,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.242922096394057
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 17.026934436123508,
+          "avg_r": 0.38697578263917065,
+          "profit_factor": 2.6249748081654363,
+          "mdd_on_20k": 0.03710929247763505,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.176641913281028
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 18,
+          "losses": 13,
+          "win_rate": 0.5806451612903226,
+          "net_r": 2.3312037321899814,
+          "avg_r": 0.07520012039322521,
+          "profit_factor": 1.2026913408061355,
+          "mdd_on_20k": 0.1018783389266,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 0.4576446292218284
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 4.008518365909998,
+          "avg_r": 0.1336172788636666,
+          "profit_factor": 1.2579993965762175,
+          "mdd_on_20k": 0.1385897324791679,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.5784726320202022
+        }
+      }
+    },
+    "10_15_75": {
+      "fractions": [
+        0.1,
+        0.15,
+        0.75
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 82,
+        "losses": 50,
+        "win_rate": 0.6212121212121212,
+        "net_r": 31.82661126697027,
+        "avg_r": 0.24111069141644145,
+        "profit_factor": 1.6596425194112603,
+        "mdd_on_20k": 0.14061177743239817,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 4.526877029525003
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 10.40602784093499,
+        "avg_r": 0.4335844933722912,
+        "profit_factor": 2.4098523050824596,
+        "mdd_on_20k": 0.052137694650538316,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 3.991748354308008
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 15,
+          "losses": 12,
+          "win_rate": 0.5555555555555556,
+          "net_r": 7.915353796665032,
+          "avg_r": 0.2931612517283345,
+          "profit_factor": 1.7375595594868771,
+          "mdd_on_20k": 0.04680862505149451,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.3820065374521437
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 16.84420568337776,
+          "avg_r": 0.3828228564404036,
+          "profit_factor": 2.607535989624538,
+          "mdd_on_20k": 0.03728986699452549,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.034199926672118
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 18,
+          "losses": 13,
+          "win_rate": 0.5806451612903226,
+          "net_r": 2.5933315597074817,
+          "avg_r": 0.08365585676475748,
+          "profit_factor": 1.2254825881297702,
+          "mdd_on_20k": 0.10323586492200029,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 0.5024090342376402
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 4.4737202272199985,
+          "avg_r": 0.14912400757399996,
+          "profit_factor": 1.2879410828922453,
+          "mdd_on_20k": 0.13905585149766916,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.6434422110305781
+        }
+      }
+    },
+    "15_10_75": {
+      "fractions": [
+        0.15,
+        0.1,
+        0.75
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 85,
+        "losses": 47,
+        "win_rate": 0.6439393939393939,
+        "net_r": 32.00485533558727,
+        "avg_r": 0.24246102526960056,
+        "profit_factor": 1.6642936626636287,
+        "mdd_on_20k": 0.13883204726375134,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 4.6105860954113655
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 10.302250261502488,
+        "avg_r": 0.4292604275626037,
+        "profit_factor": 2.3957920832749386,
+        "mdd_on_20k": 0.04939581361501678,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 4.171305018597977
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 16,
+          "losses": 11,
+          "win_rate": 0.5925925925925926,
+          "net_r": 7.948907988847533,
+          "avg_r": 0.2944039995869457,
+          "profit_factor": 1.744429534405631,
+          "mdd_on_20k": 0.043676281516962484,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.6399197517583675
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 16.721480886704757,
+          "avg_r": 0.3800336565160172,
+          "profit_factor": 2.5958236814765856,
+          "mdd_on_20k": 0.037188917375841124,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 8.992722599430905
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 20,
+          "losses": 11,
+          "win_rate": 0.6451612903225806,
+          "net_r": 2.875902733454982,
+          "avg_r": 0.09277105591790265,
+          "profit_factor": 1.2503894383243053,
+          "mdd_on_20k": 0.09638911704500024,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.5967276849547937
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 4.458563726579999,
+          "avg_r": 0.14861879088599997,
+          "profit_factor": 1.286965568334901,
+          "mdd_on_20k": 0.13955638200326156,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.6389623552258323
+        }
+      }
+    },
+    "10_10_80": {
+      "fractions": [
+        0.1,
+        0.1,
+        0.8
+      ],
+      "overall": {
+        "trades": 132,
+        "wins": 82,
+        "losses": 50,
+        "win_rate": 0.6212121212121212,
+        "net_r": 32.738060652702025,
+        "avg_r": 0.24801561100531838,
+        "profit_factor": 1.6785333389231667,
+        "mdd_on_20k": 0.1403885817946123,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 4.663920702696124
+      },
+      "recent_1y": {
+        "trades": 24,
+        "wins": 17,
+        "losses": 7,
+        "win_rate": 0.7083333333333334,
+        "net_r": 10.51419478380699,
+        "avg_r": 0.43809144932529126,
+        "profit_factor": 2.424507216262105,
+        "mdd_on_20k": 0.05194126120030557,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 4.048494218598271
+      },
+      "symbols": {
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 15,
+          "losses": 12,
+          "win_rate": 0.5555555555555556,
+          "net_r": 8.282202246315034,
+          "avg_r": 0.30674823134500123,
+          "profit_factor": 1.7717428174779857,
+          "mdd_on_20k": 0.04706013066527745,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.5198381854158014
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 16.66147693063201,
+          "avg_r": 0.3786699302416366,
+          "profit_factor": 2.5900971710836393,
+          "mdd_on_20k": 0.03758820252265198,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 8.865269319857056
+        },
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 18,
+          "losses": 13,
+          "win_rate": 0.5806451612903226,
+          "net_r": 2.8554593872249843,
+          "avg_r": 0.09211159313628982,
+          "profit_factor": 1.2482738354534046,
+          "mdd_on_20k": 0.1045933909174002,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 0.5460114376595756
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 4.938922088529999,
+          "avg_r": 0.1646307362843333,
+          "profit_factor": 1.317882769208273,
+          "mdd_on_20k": 0.1395190052211994,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.7079927327032788
+        }
+      }
+    }
+  },
+  "best_by_symbol": {
+    "BTCUSDT": {
+      "max_net_r": {
+        "name": "10_10_80",
+        "trades": 27,
+        "wins": 15,
+        "losses": 12,
+        "win_rate": 0.5555555555555556,
+        "net_r": 8.282202246315034,
+        "avg_r": 0.30674823134500123,
+        "profit_factor": 1.7717428174779857,
+        "mdd_on_20k": 0.04706013066527745,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 3.5198381854158014
+      },
+      "max_net_r_over_mdd": {
+        "name": "20_10_70",
+        "trades": 27,
+        "wins": 17,
+        "losses": 10,
+        "win_rate": 0.6296296296296297,
+        "net_r": 7.615613731380035,
+        "avg_r": 0.2820597678288902,
+        "profit_factor": 1.713948342768,
+        "mdd_on_20k": 0.04154969933100001,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 3.665785242252315
+      },
+      "baseline_30_30_40": {
+        "trades": 27,
+        "wins": 17,
+        "losses": 10,
+        "win_rate": 0.6296296296296297,
+        "net_r": 5.48163141784503,
+        "avg_r": 0.2030233858461122,
+        "profit_factor": 1.5138918286138274,
+        "mdd_on_20k": 0.04154969933100001,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 2.638590173265208
+      },
+      "15_15_70": {
+        "trades": 27,
+        "wins": 16,
+        "losses": 11,
+        "win_rate": 0.5925925925925926,
+        "net_r": 7.582059539197531,
+        "avg_r": 0.2808170199702789,
+        "profit_factor": 1.710073517081801,
+        "mdd_on_20k": 0.04339980963253785,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 3.494051980132689
+      },
+      "10_15_75": {
+        "trades": 27,
+        "wins": 15,
+        "losses": 12,
+        "win_rate": 0.5555555555555556,
+        "net_r": 7.915353796665032,
+        "avg_r": 0.2931612517283345,
+        "profit_factor": 1.7375595594868771,
+        "mdd_on_20k": 0.04680862505149451,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 3.3820065374521437
+      }
+    },
+    "ETHUSDT": {
+      "max_net_r": {
+        "name": "20_40_40",
+        "trades": 44,
+        "wins": 34,
+        "losses": 10,
+        "win_rate": 0.7727272727272727,
+        "net_r": 17.87785735925201,
+        "avg_r": 0.40631493998300017,
+        "profit_factor": 2.706183103114924,
+        "mdd_on_20k": 0.03690224297404296,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 9.689306621186846
+      },
+      "max_net_r_over_mdd": {
+        "name": "20_40_40",
+        "trades": 44,
+        "wins": 34,
+        "losses": 10,
+        "win_rate": 0.7727272727272727,
+        "net_r": 17.87785735925201,
+        "avg_r": 0.40631493998300017,
+        "profit_factor": 2.706183103114924,
+        "mdd_on_20k": 0.03690224297404296,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 9.689306621186846
+      },
+      "baseline_30_30_40": {
+        "trades": 44,
+        "wins": 34,
+        "losses": 10,
+        "win_rate": 0.7727272727272727,
+        "net_r": 17.632407765906006,
+        "avg_r": 0.4007365401342274,
+        "profit_factor": 2.68275848681902,
+        "mdd_on_20k": 0.036968744425276354,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 9.53908932533307
+      },
+      "15_15_70": {
+        "trades": 44,
+        "wins": 34,
+        "losses": 10,
+        "win_rate": 0.7727272727272727,
+        "net_r": 16.904209639450507,
+        "avg_r": 0.38418658271478423,
+        "profit_factor": 2.613262500017484,
+        "mdd_on_20k": 0.03714288727274847,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 9.102259345278757
+      },
+      "10_15_75": {
+        "trades": 44,
+        "wins": 34,
+        "losses": 10,
+        "win_rate": 0.7727272727272727,
+        "net_r": 16.84420568337776,
+        "avg_r": 0.3828228564404036,
+        "profit_factor": 2.607535989624538,
+        "mdd_on_20k": 0.03728986699452549,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 9.034199926672118
+      }
+    },
+    "BNBUSDT": {
+      "max_net_r": {
+        "name": "40_10_50",
+        "trades": 31,
+        "wins": 20,
+        "losses": 11,
+        "win_rate": 0.6451612903225806,
+        "net_r": 2.9781194646049824,
+        "avg_r": 0.09606836982596717,
+        "profit_factor": 1.2592889013006654,
+        "mdd_on_20k": 0.057968300228447185,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 1.0274993238954793
+      },
+      "max_net_r_over_mdd": {
+        "name": "40_10_50",
+        "trades": 31,
+        "wins": 20,
+        "losses": 11,
+        "win_rate": 0.6451612903225806,
+        "net_r": 2.9781194646049824,
+        "avg_r": 0.09606836982596717,
+        "profit_factor": 1.2592889013006654,
+        "mdd_on_20k": 0.057968300228447185,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 1.0274993238954793
+      },
+      "baseline_30_30_40": {
+        "trades": 31,
+        "wins": 20,
+        "losses": 11,
+        "win_rate": 0.6451612903225806,
+        "net_r": 1.88872146207498,
+        "avg_r": 0.060926498776612256,
+        "profit_factor": 1.1644408555750685,
+        "mdd_on_20k": 0.06882360038070037,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 0.5488586623272962
+      },
+      "15_15_70": {
+        "trades": 31,
+        "wins": 20,
+        "losses": 11,
+        "win_rate": 0.6451612903225806,
+        "net_r": 2.6137749059374813,
+        "avg_r": 0.08431531954637037,
+        "profit_factor": 1.227567373190542,
+        "mdd_on_20k": 0.0950315910496005,
+        "max_consecutive_losses": 2,
+        "net_r_over_mdd": 0.5500854772752896
+      },
+      "10_15_75": {
+        "trades": 31,
+        "wins": 18,
+        "losses": 13,
+        "win_rate": 0.5806451612903226,
+        "net_r": 2.5933315597074817,
+        "avg_r": 0.08365585676475748,
+        "profit_factor": 1.2254825881297702,
+        "mdd_on_20k": 0.10323586492200029,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 0.5024090342376402
+      }
+    },
+    "SOLUSDT": {
+      "max_net_r": {
+        "name": "10_10_80",
+        "trades": 30,
+        "wins": 15,
+        "losses": 15,
+        "win_rate": 0.5,
+        "net_r": 4.938922088529999,
+        "avg_r": 0.1646307362843333,
+        "profit_factor": 1.317882769208273,
+        "mdd_on_20k": 0.1395190052211994,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 0.7079927327032788
+      },
+      "max_net_r_over_mdd": {
+        "name": "10_10_80",
+        "trades": 30,
+        "wins": 15,
+        "losses": 15,
+        "win_rate": 0.5,
+        "net_r": 4.938922088529999,
+        "avg_r": 0.1646307362843333,
+        "profit_factor": 1.317882769208273,
+        "mdd_on_20k": 0.1395190052211994,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 0.7079927327032788
+      },
+      "baseline_30_30_40": {
+        "trades": 30,
+        "wins": 15,
+        "losses": 15,
+        "win_rate": 0.5,
+        "net_r": 1.1566811954900014,
+        "avg_r": 0.03855603984966671,
+        "profit_factor": 1.0744472204506743,
+        "mdd_on_20k": 0.13776015264289307,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 0.16792681676077886
+      },
+      "15_15_70": {
+        "trades": 30,
+        "wins": 15,
+        "losses": 15,
+        "win_rate": 0.5,
+        "net_r": 3.993361865269999,
+        "avg_r": 0.13311206217566662,
+        "profit_factor": 1.2570238820188733,
+        "mdd_on_20k": 0.13909079541301006,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 0.5742093649565073
+      },
+      "10_15_75": {
+        "trades": 30,
+        "wins": 15,
+        "losses": 15,
+        "win_rate": 0.5,
+        "net_r": 4.4737202272199985,
+        "avg_r": 0.14912400757399996,
+        "profit_factor": 1.2879410828922453,
+        "mdd_on_20k": 0.13905585149766916,
+        "max_consecutive_losses": 5,
+        "net_r_over_mdd": 0.6434422110305781
+      }
+    }
+  },
+  "top10_overall_net_r": [
+    {
+      "name": "10_10_80",
+      "fractions": [
+        0.1,
+        0.1,
+        0.8
+      ],
+      "trades": 132,
+      "wins": 82,
+      "losses": 50,
+      "win_rate": 0.6212121212121212,
+      "net_r": 32.738060652702025,
+      "avg_r": 0.24801561100531838,
+      "profit_factor": 1.6785333389231667,
+      "mdd_on_20k": 0.1403885817946123,
+      "max_consecutive_losses": 5,
+      "net_r_over_mdd": 4.663920702696124
+    },
+    {
+      "name": "15_10_75",
+      "fractions": [
+        0.15,
+        0.1,
+        0.75
+      ],
+      "trades": 132,
+      "wins": 85,
+      "losses": 47,
+      "win_rate": 0.6439393939393939,
+      "net_r": 32.00485533558727,
+      "avg_r": 0.24246102526960056,
+      "profit_factor": 1.6642936626636287,
+      "mdd_on_20k": 0.13883204726375134,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.6105860954113655
+    },
+    {
+      "name": "10_15_75",
+      "fractions": [
+        0.1,
+        0.15,
+        0.75
+      ],
+      "trades": 132,
+      "wins": 82,
+      "losses": 50,
+      "win_rate": 0.6212121212121212,
+      "net_r": 31.82661126697027,
+      "avg_r": 0.24111069141644145,
+      "profit_factor": 1.6596425194112603,
+      "mdd_on_20k": 0.14061177743239817,
+      "max_consecutive_losses": 5,
+      "net_r_over_mdd": 4.526877029525003
+    },
+    {
+      "name": "20_10_70",
+      "fractions": [
+        0.2,
+        0.1,
+        0.7000000000000001
+      ],
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 31.271650018472528,
+      "avg_r": 0.2369064395338828,
+      "profit_factor": 1.6492228416971153,
+      "mdd_on_20k": 0.1372509101652219,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.556858673043098
+    },
+    {
+      "name": "15_15_70",
+      "fractions": [
+        0.15,
+        0.15,
+        0.7
+      ],
+      "trades": 132,
+      "wins": 85,
+      "losses": 47,
+      "win_rate": 0.6439393939393939,
+      "net_r": 31.093405949855516,
+      "avg_r": 0.2355561056807236,
+      "profit_factor": 1.6453755940008712,
+      "mdd_on_20k": 0.1390473091614075,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.472349179193677
+    },
+    {
+      "name": "10_20_70",
+      "fractions": [
+        0.1,
+        0.2,
+        0.7
+      ],
+      "trades": 132,
+      "wins": 82,
+      "losses": 50,
+      "win_rate": 0.6212121212121212,
+      "net_r": 30.915161881238518,
+      "avg_r": 0.23420577182756452,
+      "profit_factor": 1.6407516998993543,
+      "mdd_on_20k": 0.14083774876295324,
+      "max_consecutive_losses": 5,
+      "net_r_over_mdd": 4.39018120536312
+    },
+    {
+      "name": "25_10_65",
+      "fractions": [
+        0.25,
+        0.1,
+        0.65
+      ],
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 30.538444701357776,
+      "avg_r": 0.23135185379816497,
+      "profit_factor": 1.6340009509672213,
+      "mdd_on_20k": 0.13564458255059988,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.502714981627214
+    },
+    {
+      "name": "20_15_65",
+      "fractions": [
+        0.2,
+        0.15,
+        0.65
+      ],
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 30.360200632740778,
+      "avg_r": 0.2300015199450059,
+      "profit_factor": 1.6303004707982878,
+      "mdd_on_20k": 0.13745795768157612,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.41737985123724
+    },
+    {
+      "name": "15_20_65",
+      "fractions": [
+        0.15,
+        0.2,
+        0.6499999999999999
+      ],
+      "trades": 132,
+      "wins": 85,
+      "losses": 47,
+      "win_rate": 0.6439393939393939,
+      "net_r": 30.181956564123766,
+      "avg_r": 0.2286511860918467,
+      "profit_factor": 1.626457525338114,
+      "mdd_on_20k": 0.13926526934047048,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.334455633778449
+    },
+    {
+      "name": "10_25_65",
+      "fractions": [
+        0.1,
+        0.25,
+        0.65
+      ],
+      "trades": 132,
+      "wins": 82,
+      "losses": 50,
+      "win_rate": 0.6212121212121212,
+      "net_r": 30.003712495506775,
+      "avg_r": 0.22730085223868768,
+      "profit_factor": 1.6218608803874481,
+      "mdd_on_20k": 0.14106654788862,
+      "max_consecutive_losses": 5,
+      "net_r_over_mdd": 4.253838056517326
+    }
+  ],
+  "top10_overall_balanced": [
+    {
+      "name": "10_10_80",
+      "fractions": [
+        0.1,
+        0.1,
+        0.8
+      ],
+      "trades": 132,
+      "wins": 82,
+      "losses": 50,
+      "win_rate": 0.6212121212121212,
+      "net_r": 32.738060652702025,
+      "avg_r": 0.24801561100531838,
+      "profit_factor": 1.6785333389231667,
+      "mdd_on_20k": 0.1403885817946123,
+      "max_consecutive_losses": 5,
+      "net_r_over_mdd": 4.663920702696124
+    },
+    {
+      "name": "15_10_75",
+      "fractions": [
+        0.15,
+        0.1,
+        0.75
+      ],
+      "trades": 132,
+      "wins": 85,
+      "losses": 47,
+      "win_rate": 0.6439393939393939,
+      "net_r": 32.00485533558727,
+      "avg_r": 0.24246102526960056,
+      "profit_factor": 1.6642936626636287,
+      "mdd_on_20k": 0.13883204726375134,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.6105860954113655
+    },
+    {
+      "name": "20_10_70",
+      "fractions": [
+        0.2,
+        0.1,
+        0.7000000000000001
+      ],
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 31.271650018472528,
+      "avg_r": 0.2369064395338828,
+      "profit_factor": 1.6492228416971153,
+      "mdd_on_20k": 0.1372509101652219,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.556858673043098
+    },
+    {
+      "name": "10_15_75",
+      "fractions": [
+        0.1,
+        0.15,
+        0.75
+      ],
+      "trades": 132,
+      "wins": 82,
+      "losses": 50,
+      "win_rate": 0.6212121212121212,
+      "net_r": 31.82661126697027,
+      "avg_r": 0.24111069141644145,
+      "profit_factor": 1.6596425194112603,
+      "mdd_on_20k": 0.14061177743239817,
+      "max_consecutive_losses": 5,
+      "net_r_over_mdd": 4.526877029525003
+    },
+    {
+      "name": "25_10_65",
+      "fractions": [
+        0.25,
+        0.1,
+        0.65
+      ],
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 30.538444701357776,
+      "avg_r": 0.23135185379816497,
+      "profit_factor": 1.6340009509672213,
+      "mdd_on_20k": 0.13564458255059988,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.502714981627214
+    },
+    {
+      "name": "15_15_70",
+      "fractions": [
+        0.15,
+        0.15,
+        0.7
+      ],
+      "trades": 132,
+      "wins": 85,
+      "losses": 47,
+      "win_rate": 0.6439393939393939,
+      "net_r": 31.093405949855516,
+      "avg_r": 0.2355561056807236,
+      "profit_factor": 1.6453755940008712,
+      "mdd_on_20k": 0.1390473091614075,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.472349179193677
+    },
+    {
+      "name": "30_10_60",
+      "fractions": [
+        0.3,
+        0.1,
+        0.6
+      ],
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 29.805239384243023,
+      "avg_r": 0.22579726806244715,
+      "profit_factor": 1.6187790602373275,
+      "mdd_on_20k": 0.13401245758675798,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.4481296621170445
+    },
+    {
+      "name": "20_15_65",
+      "fractions": [
+        0.2,
+        0.15,
+        0.65
+      ],
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 30.360200632740778,
+      "avg_r": 0.2300015199450059,
+      "profit_factor": 1.6303004707982878,
+      "mdd_on_20k": 0.13745795768157612,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.41737985123724
+    },
+    {
+      "name": "35_10_55",
+      "fractions": [
+        0.35,
+        0.1,
+        0.55
+      ],
+      "trades": 132,
+      "wins": 86,
+      "losses": 46,
+      "win_rate": 0.6515151515151515,
+      "net_r": 29.072034067128275,
+      "avg_r": 0.22024268232672936,
+      "profit_factor": 1.6035571695074335,
+      "mdd_on_20k": 0.132353908791513,
+      "max_consecutive_losses": 3,
+      "net_r_over_mdd": 4.393075252945228
+    },
+    {
+      "name": "10_20_70",
+      "fractions": [
+        0.1,
+        0.2,
+        0.7
+      ],
+      "trades": 132,
+      "wins": 82,
+      "losses": 50,
+      "win_rate": 0.6212121212121212,
+      "net_r": 30.915161881238518,
+      "avg_r": 0.23420577182756452,
+      "profit_factor": 1.6407516998993543,
+      "mdd_on_20k": 0.14083774876295324,
+      "max_consecutive_losses": 5,
+      "net_r_over_mdd": 4.39018120536312
+    }
+  ]
+}
