@@ -1,0 +1,43 @@
+name: Track-B Crypto Runner Ratio Exact v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/track-b-crypto-runner-ratio-exact-v1.yml"
+      - "scripts/backtest_track_b_crypto_runner_ratio_exact_v1.py"
+      - "scripts/backtest_wyckoff_crypto_exact_conservative.py"
+      - "scripts/wyckoff_status.py"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Syntax check
+        run: python -m py_compile scripts/backtest_track_b_crypto_runner_ratio_exact_v1.py scripts/backtest_wyckoff_crypto_exact_conservative.py scripts/wyckoff_status.py
+      - name: Run exact conservative runner-ratio sweep
+        run: python scripts/backtest_track_b_crypto_runner_ratio_exact_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: track-b-crypto-runner-ratio-exact-v1
+          path: |
+            data/validation/track_b_crypto_runner_ratio_exact_v1.json
+            data/validation/track_b_crypto_runner_ratio_exact_trades_v1.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/track_b_crypto_runner_ratio_exact_v1.json data/validation/track_b_crypto_runner_ratio_exact_trades_v1.json
+          git commit -m "validation: add exact crypto runner ratio sweep [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
