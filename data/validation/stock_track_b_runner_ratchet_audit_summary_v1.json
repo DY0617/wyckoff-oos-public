@@ -1,0 +1,70 @@
+{
+  "baseline_exact": {
+    "trades": 86,
+    "wins": 54,
+    "losses": 32,
+    "win_rate": 0.627906976744186,
+    "net_r": 30.24460822859439,
+    "avg_r": 0.3516814910301673,
+    "profit_factor": 1.9130675584658212,
+    "max_drawdown_r": 6.167825161938435,
+    "max_consecutive_losses": 5,
+    "same_bar_causes": {
+      "TP1": 54,
+      "TP2": 38,
+      "TP1_SAME_BAR_RATCHET": 2,
+      "TP2_SAME_BAR_RATCHET": 3
+    }
+  },
+  "robust42_exact": {
+    "trades": 42,
+    "wins": 29,
+    "losses": 13,
+    "win_rate": 0.6904761904761905,
+    "net_r": 25.783508367893003,
+    "avg_r": 0.6138930563784049,
+    "profit_factor": 2.907186576294826,
+    "max_drawdown_r": 2.1162143532727846,
+    "max_consecutive_losses": 2,
+    "same_bar_causes": {
+      "TP1": 29,
+      "TP2": 20,
+      "TP1_SAME_BAR_RATCHET": 1,
+      "TP2_SAME_BAR_RATCHET": 2
+    }
+  },
+  "balanced49_exact": {
+    "trades": 49,
+    "wins": 34,
+    "losses": 15,
+    "win_rate": 0.6938775510204082,
+    "net_r": 36.141378800038076,
+    "avg_r": 0.7375791591844505,
+    "profit_factor": 3.32152344999211,
+    "max_drawdown_r": 2.9505606848251,
+    "max_consecutive_losses": 2,
+    "same_bar_causes": {
+      "TP1": 34,
+      "TP2": 25,
+      "TP1_SAME_BAR_RATCHET": 1,
+      "TP2_SAME_BAR_RATCHET": 2
+    }
+  },
+  "maxnet90_exact": {
+    "trades": 90,
+    "wins": 58,
+    "losses": 32,
+    "win_rate": 0.6444444444444445,
+    "net_r": 41.78135223545475,
+    "avg_r": 0.4642372470606083,
+    "profit_factor": 2.261694960788125,
+    "max_drawdown_r": 6.295096152728437,
+    "max_consecutive_losses": 5,
+    "same_bar_causes": {
+      "TP1": 58,
+      "TP2": 42,
+      "TP1_SAME_BAR_RATCHET": 2,
+      "TP2_SAME_BAR_RATCHET": 3
+    }
+  }
+}
