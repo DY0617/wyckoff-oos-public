@@ -1,0 +1,101 @@
+name: Stock53 Track-B Single Axis Invariance v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock53-track-b-single-axis-invariance-v1.yml"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  eval:
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        include:
+          - {fold: "f01", start: "2006-04-01", end: "2015-04-01"}
+          - {fold: "f02", start: "2009-04-01", end: "2018-04-01"}
+          - {fold: "f03", start: "2012-04-01", end: "2021-04-01"}
+          - {fold: "f04", start: "2015-04-01", end: "2024-04-01"}
+          - {fold: "f05", start: "2018-04-01", end: "2026-04-01"}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - name: Download fold cache
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/cache
+          for run_id in 36679960330 36679945671 36679654317; do
+            rm -rf data/cache/*
+            if gh run download "$run_id" -n "stock53-wf-cache-${{ matrix.fold }}" -D data/cache 2>/dev/null; then
+              test -f "data/cache/wf_${{ matrix.fold }}.parquet" && exit 0
+            fi
+          done
+          exit 1
+      - name: Build six configs
+        run: |
+          cat > /tmp/single_axis.json <<'JSON'
+          {
+            "stage2_configs": [
+              {"name":"baseline","overrides":{}},
+              {"name":"rr13","overrides":{"rr_long_min":1.3}},
+              {"name":"ema15","overrides":{"ema_gap_atr_max":1.5}},
+              {"name":"trigger12","overrides":{"trigger_window":12}},
+              {"name":"spread10","overrides":{"test_spread_max":1.0}},
+              {"name":"er06","overrides":{"range_er_max":0.6}}
+            ]
+          }
+          JSON
+      - name: Evaluate
+        env:
+          EVAL_START: ${{ matrix.start }}
+          EVAL_END: ${{ matrix.end }}
+          WARMUP_START: ${{ matrix.start }}
+          TRADE_SYMS: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX,AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SMCI,SOXS,V,COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT,AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM,AAOI,AXTI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"
+          OUT: "data/validation/stock53_wf_single/${{ matrix.fold }}.json"
+          DATA_PARQUET: "data/cache/wf_${{ matrix.fold }}.parquet"
+          CONFIG_FILE: "/tmp/single_axis.json"
+        run: |
+          python -m py_compile scripts/screen_stock_track_b_walk_forward_shard_v1.py
+          python scripts/screen_stock_track_b_walk_forward_shard_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-wf-single-${{ matrix.fold }}
+          path: data/validation/stock53_wf_single/${{ matrix.fold }}.json
+          retention-days: 7
+          if-no-files-found: error
+
+  merge:
+    needs: eval
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: stock53-wf-single-*
+          path: data/validation/stock53_wf_single
+          merge-multiple: true
+      - run: python scripts/merge_stock53_track_b_single_axis_invariance_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-track-b-single-axis-invariance-final-v1
+          path: data/validation/stock53_track_b_single_axis_invariance_v1.json
+          retention-days: 30
+      - name: Commit final
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock53_track_b_single_axis_invariance_v1.json
+          git commit -m "validation: add Track-B single-axis invariance v1 [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
