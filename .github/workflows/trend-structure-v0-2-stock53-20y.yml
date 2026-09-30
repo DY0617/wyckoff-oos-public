@@ -1,0 +1,141 @@
+name: Trend Structure v0.2 Stock53 20Y Robustness
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/trend-structure-v0-2-stock53-20y.yml"
+      - "scripts/trend_structure_v0_2_engine.py"
+      - "scripts/backtest_trend_structure_v0_2_stock53_shard.py"
+      - "scripts/merge_trend_structure_v0_2_stock53_20y.py"
+      - "strategy/trend_structure_v0_2_break_retest_frozen.md"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - name: Reuse five existing 20Y fold caches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/cache/folds
+          for f in f01 f02 f03 f04 f05; do
+            mkdir -p "data/cache/folds/$f"
+            gh run download 36679945671 -n "stock53-wf-cache-$f" -D "data/cache/folds/$f"
+          done
+      - name: Merge full 20Y cache
+        run: |
+          python - <<'PY'
+          import duckdb, pathlib, json
+          root=pathlib.Path("data/cache/folds")
+          files=sorted(root.glob("f*/wf_*.parquet"))
+          if len(files)!=5: raise RuntimeError(f"expected 5 caches got {len(files)}")
+          out=pathlib.Path("data/cache/stock53_20y_15m.parquet")
+          con=duckdb.connect()
+          fl=",".join("'" + str(p) + "'" for p in files)
+          con.execute(f"""
+            COPY (
+              SELECT symbol,b,o,h,l,c,v
+              FROM (
+                SELECT symbol,b,o,h,l,c,v,
+                       row_number() over(partition by symbol,b order by filename desc) rn
+                FROM read_parquet([{fl}], union_by_name=true, filename=true)
+                WHERE b >= TIMESTAMP '2005-09-01'
+                  AND b <  TIMESTAMP '2026-04-01'
+              )
+              WHERE rn=1
+              ORDER BY symbol,b
+            ) TO '{out}' (FORMAT PARQUET, COMPRESSION ZSTD)
+          """)
+          print(json.dumps({
+            "rows":con.execute(f"select count(*) from read_parquet('{out}')").fetchone()[0],
+            "symbols":con.execute(f"select count(distinct symbol) from read_parquet('{out}')").fetchone()[0],
+            "first":str(con.execute(f"select min(b) from read_parquet('{out}')").fetchone()[0]),
+            "last":str(con.execute(f"select max(b) from read_parquet('{out}')").fetchone()[0])
+          },indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trend-structure-stock53-20y-cache
+          path: data/cache/stock53_20y_15m.parquet
+          retention-days: 7
+          if-no-files-found: error
+
+  evaluate:
+    needs: cache
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        include:
+          - {id: "01", syms: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
+          - {id: "02", syms: "AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SMCI,SOXS,V"}
+          - {id: "03", syms: "COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT"}
+          - {id: "04", syms: "AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM"}
+          - {id: "05", syms: "AAOI,AXTI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - uses: actions/download-artifact@v4
+        with:
+          name: trend-structure-stock53-20y-cache
+          path: data/cache
+      - name: Compile
+        run: python -m py_compile scripts/backtest_trend_structure_v0_1_crypto.py scripts/backtest_trend_structure_v0_1_stock53.py scripts/trend_structure_v0_2_engine.py scripts/backtest_trend_structure_v0_2_stock53_shard.py
+      - name: Run shard
+        env:
+          DATA_PARQUET: "data/cache/stock53_20y_15m.parquet"
+          EVAL_START: "2006-04-01"
+          EVAL_END: "2026-04-01"
+          TRADE_SYMS: "${{ matrix.syms }}"
+          OUT: "data/validation/trend_structure_v0_2_stock53_20y_shards/shard_${{ matrix.id }}.json"
+        run: python scripts/backtest_trend_structure_v0_2_stock53_shard.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trend-structure-v0-2-stock53-20y-${{ matrix.id }}
+          path: data/validation/trend_structure_v0_2_stock53_20y_shards/shard_${{ matrix.id }}.json
+          retention-days: 7
+          if-no-files-found: error
+
+  merge:
+    needs: evaluate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: trend-structure-v0-2-stock53-20y-*
+          path: data/validation/trend_structure_v0_2_stock53_20y_shards
+          merge-multiple: true
+      - run: python -m py_compile scripts/trend_structure_v0_2_engine.py scripts/merge_trend_structure_v0_2_stock53_20y.py
+      - run: python scripts/merge_trend_structure_v0_2_stock53_20y.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trend-structure-v0-2-stock53-20y-final
+          path: data/validation/trend_structure_v0_2_stock53_20y.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/trend_structure_v0_2_stock53_20y.json
+          git commit -m "research: add Trend Structure v0.2 stock53 20Y result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
