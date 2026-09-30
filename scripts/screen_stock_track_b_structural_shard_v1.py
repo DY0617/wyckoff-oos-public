@@ -266,7 +266,7 @@ def main():
                     bt._CACHE.clear()
                     r=bt.simulate(sym,a_params=A_OFF,b_params=ov,start_ms=START_MS,end_ms=END_MS,
                                   fee_bps=FEE_BPS,slippage_bps=SLIPPAGE_BPS,
-                                  a_mode="snapshot",b_runner_mode="pivot",b_scale_mode="15_25_60",
+                                  a_mode="snapshot",b_runner_mode="pivot",b_scale_mode="10_30_60",
                                   trigger_filter=tf)
                     ts=[{"symbol":sym,**t} for t in r["trades"]
                         if t["track"]=="B" and t["direction"]=="LONG" and t["reason"]!="OPEN_MARK"]
