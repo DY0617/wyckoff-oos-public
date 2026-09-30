@@ -43,10 +43,18 @@ jobs:
           fl=",".join("'"+str(p)+"'" for p in files)
           con.execute(f"""
             COPY (
-              SELECT DISTINCT symbol,b,o,h,l,c,v
-              FROM read_parquet([{fl}], union_by_name=true)
-              WHERE b >= TIMESTAMP '2005-09-01'
-                AND b <  TIMESTAMP '2026-04-01'
+              SELECT symbol,b,o,h,l,c,v
+              FROM (
+                SELECT symbol,b,o,h,l,c,v,
+                       row_number() over(
+                         partition by symbol,b
+                         order by filename desc
+                       ) as rn
+                FROM read_parquet([{fl}], union_by_name=true, filename=true)
+                WHERE b >= TIMESTAMP '2005-09-01'
+                  AND b <  TIMESTAMP '2026-04-01'
+              )
+              WHERE rn=1
               ORDER BY symbol,b
             ) TO '{out}' (FORMAT PARQUET, COMPRESSION ZSTD)
           """)
