@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - ".github/workflows/stock-track-b-structural-opt-recent5y-v1.yml"
+      - ".github/workflows/stock-track-b-structural-opt-exact-recent5y-v2.yml"
       - "scripts/extract_stock53_recent5y_15m_cache.py"
       - "scripts/screen_stock_track_b_structural_shard_exact_v2.py"
       - "scripts/merge_stock_track_b_structural_stage1_exact_v2.py"
