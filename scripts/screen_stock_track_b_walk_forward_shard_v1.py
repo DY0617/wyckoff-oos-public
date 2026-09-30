@@ -101,8 +101,11 @@ def collect_15m():
         for s,et,o,h,l,cl,v in rows:
             if et.tzinfo is None:et=et.replace(tzinfo=NY)
             else:et=et.astimezone(NY)
+            ss=str(s); d=et.date()
+            if ss=="DELL" and d<datetime(2018,12,28).date():continue
+            if ss=="SNDK" and d<datetime(2025,2,24).date():continue
             t=int(et.astimezone(UTC).timestamp()*1000)
-            by[str(s)].append({"t":t,"o":float(o),"h":float(h),"l":float(l),"c":float(cl),"v":float(v or 0)})
+            by[ss].append({"t":t,"o":float(o),"h":float(h),"l":float(l),"c":float(cl),"v":float(v or 0)})
         print("CACHE_15M",cache,{s:len(v) for s,v in by.items()},flush=True)
         return by
 
@@ -202,6 +205,7 @@ def build_context():
         for s,d,first_b,last_b,o,h,l,cl,v in rows:
             s=str(s)
             if s not in by:continue
+            if s=="DELL" and d<datetime(2018,12,28).date():continue
             if s=="SNDK" and d<datetime(2025,2,24).date():continue
             et=first_b.replace(tzinfo=NY) if first_b.tzinfo is None else first_b.astimezone(NY)
             z=last_b.replace(tzinfo=NY) if last_b.tzinfo is None else last_b.astimezone(NY)
