@@ -94,11 +94,11 @@ def bits(name):
     return tuple(int(x) for x in name.split("_",1)[1])
 
 def main():
-    files=sorted(ROOT.glob("f*/shard_*.json"))
+    files=sorted(ROOT.glob("f*_shard_*.json"))
     if not files:raise RuntimeError("no walk-forward shards")
     raw=defaultdict(lambda:defaultdict(list));configs={}
     for p in files:
-        fold=p.parent.name
+        fold=p.name.split("_",1)[0]
         o=json.loads(p.read_text())
         configs.update(o.get("configs",{}))
         for name,ts in o["trades"].items():
