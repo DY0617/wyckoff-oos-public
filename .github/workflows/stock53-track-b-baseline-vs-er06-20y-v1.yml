@@ -1,0 +1,143 @@
+name: Stock53 Track-B Baseline vs ER06 20Y v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/stock53-track-b-baseline-vs-er06-20y-v1.yml"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - name: Download five existing fold caches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p data/cache/folds
+          for f in f01 f02 f03 f04 f05; do
+            mkdir -p "data/cache/folds/$f"
+            gh run download 36679945671 -n "stock53-wf-cache-$f" -D "data/cache/folds/$f"
+          done
+          find data/cache/folds -type f -name '*.parquet' -ls
+      - name: Merge and dedupe into full 20Y cache
+        run: |
+          python - <<'PY'
+          import duckdb, pathlib, json
+          from datetime import datetime, timezone
+          root=pathlib.Path("data/cache/folds")
+          files=sorted(root.glob("f*/wf_*.parquet"))
+          if len(files)!=5: raise RuntimeError(f"expected 5 caches got {len(files)}")
+          out=pathlib.Path("data/cache/stock53_20y_15m.parquet")
+          con=duckdb.connect()
+          fl=",".join("'"+str(p)+"'" for p in files)
+          con.execute(f"""
+            COPY (
+              SELECT DISTINCT symbol,b,o,h,l,c,v
+              FROM read_parquet([{fl}], union_by_name=true)
+              WHERE b >= TIMESTAMP '2005-09-01'
+                AND b <  TIMESTAMP '2026-04-01'
+              ORDER BY symbol,b
+            ) TO '{out}' (FORMAT PARQUET, COMPRESSION ZSTD)
+          """)
+          rows=con.execute(f"select count(*) from read_parquet('{out}')").fetchone()[0]
+          dup=con.execute(f"select count(*) from (select symbol,b,count(*) n from read_parquet('{out}') group by 1,2 having n>1)").fetchone()[0]
+          first,last=con.execute(f"select min(b),max(b) from read_parquet('{out}')").fetchone()
+          syms=con.execute(f"select count(distinct symbol) from read_parquet('{out}')").fetchone()[0]
+          print(json.dumps({"rows":rows,"duplicate_keys":dup,"first":str(first),"last":str(last),"symbols":syms},indent=2))
+          if dup: raise RuntimeError("duplicate keys remain")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-20y-15m-cache-v1
+          path: data/cache/stock53_20y_15m.parquet
+          retention-days: 7
+          if-no-files-found: error
+
+  evaluate:
+    needs: cache
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        include:
+          - {id: "01", syms: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
+          - {id: "02", syms: "AMD,BABA,INTC,JPM,KORU,MSTR,NFLX,SKHY,SMCI,SOXS,V"}
+          - {id: "03", syms: "COST,GOOGL,LLY,META,NBIS,NVDA,QQQ,TSLA,UBER,WMT"}
+          - {id: "04", syms: "AMAT,CAT,DRAM,EWY,HD,MRVL,MUU,ORCL,SPY,TSM"}
+          - {id: "05", syms: "AAOI,AXTI,BE,COIN,CRM,CSCO,DIS,HOOD,IBM,LITE,TQQQ"}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - uses: actions/download-artifact@v4
+        with:
+          name: stock53-20y-15m-cache-v1
+          path: data/cache
+      - name: Build two configs
+        run: |
+          cat > /tmp/baseline_er06.json <<'JSON'
+          {
+            "stage2_configs": [
+              {"name":"baseline","overrides":{}},
+              {"name":"er06","overrides":{"range_er_max":0.6}}
+            ]
+          }
+          JSON
+      - name: Evaluate full 20Y
+        env:
+          EVAL_START: "2006-04-01"
+          EVAL_END: "2026-04-01"
+          WARMUP_START: "2005-09-01"
+          TRADE_SYMS: ${{ matrix.syms }}
+          OUT: "data/validation/stock53_baseline_er06_20y_cache_shards/shard_${{ matrix.id }}.json"
+          DATA_PARQUET: "data/cache/stock53_20y_15m.parquet"
+          CONFIG_FILE: "/tmp/baseline_er06.json"
+        run: |
+          python -m py_compile scripts/screen_stock_track_b_walk_forward_shard_v1.py scripts/backtest_wyckoff_stock_filter_engine_exact_conservative_ratchet.py
+          python scripts/screen_stock_track_b_walk_forward_shard_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-baseline-er06-20y-${{ matrix.id }}
+          path: data/validation/stock53_baseline_er06_20y_cache_shards/shard_${{ matrix.id }}.json
+          retention-days: 7
+          if-no-files-found: error
+
+  merge:
+    needs: evaluate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: stock53-baseline-er06-20y-*
+          path: data/validation/stock53_baseline_er06_20y_cache_shards
+          merge-multiple: true
+      - run: python scripts/merge_stock53_baseline_vs_er06_cache20y_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stock53-baseline-vs-er06-20y-final-v1
+          path: data/validation/stock53_track_b_baseline_vs_er06_20y_v1.json
+          retention-days: 30
+      - name: Commit final
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/stock53_track_b_baseline_vs_er06_20y_v1.json
+          git commit -m "validation: add baseline vs ER0.6 20y v1 [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
