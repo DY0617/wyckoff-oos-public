@@ -1,0 +1,42 @@
+name: Trend Structure v0.2 Crypto8 5Y Robustness
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/trend-structure-v0-2-crypto8-5y.yml"
+      - "scripts/trend_structure_v0_2_engine.py"
+      - "scripts/backtest_trend_structure_v0_2_crypto8.py"
+      - "strategy/trend_structure_v0_2_break_retest_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_trend_structure_v0_1_crypto.py scripts/trend_structure_v0_2_engine.py scripts/backtest_trend_structure_v0_2_crypto8.py
+      - name: Run crypto8 5Y robustness
+        run: python scripts/backtest_trend_structure_v0_2_crypto8.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trend-structure-v0-2-crypto8-5y
+          path: data/validation/trend_structure_v0_2_crypto8_5y.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/trend_structure_v0_2_crypto8_5y.json
+          git commit -m "research: add Trend Structure v0.2 crypto8 5Y result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
