@@ -1,0 +1,40 @@
+name: SMC Liquidity FVG v0.1 Crypto Backtest
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/backtest_smc_liq_fvg_v01.py"
+      - ".github/workflows/smc-liq-fvg-v01-crypto.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_smc_liq_fvg_v01.py
+      - name: Run objective SMC v0.1
+        run: python scripts/backtest_smc_liq_fvg_v01.py --out data/validation/smc_liq_fvg_v01_crypto.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smc-liq-fvg-v01-crypto
+          path: data/validation/smc_liq_fvg_v01_crypto.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/smc_liq_fvg_v01_crypto.json
+          git commit -m "research: add SMC liquidity-FVG v0.1 crypto result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
