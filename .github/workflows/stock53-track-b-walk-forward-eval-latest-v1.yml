@@ -13,7 +13,7 @@ jobs:
   evaluate:
     strategy:
       fail-fast: false
-      max-parallel: 10
+      max-parallel: 25
       matrix:
         include:
           - {fold: "f01", start: "2006-04-01", end: "2015-04-01", shard: "01", syms: "AAPL,AMZN,AVGO,CRCL,DELL,MSFT,MU,SNDK,SNXX,SOXL,SPCX"}
@@ -59,10 +59,12 @@ jobs:
         run: |
           mkdir -p data/cache
           for i in {1..60}; do
-            rm -rf data/cache/*
-            if gh run download 36679654317 -n "stock53-wf-cache-${{ matrix.fold }}" -D data/cache; then
-              test -f "data/cache/wf_${{ matrix.fold }}.parquet" && exit 0
-            fi
+            for run_id in 36679960330 36679945671 36679654317; do
+              rm -rf data/cache/*
+              if gh run download "$run_id" -n "stock53-wf-cache-${{ matrix.fold }}" -D data/cache 2>/dev/null; then
+                test -f "data/cache/wf_${{ matrix.fold }}.parquet" && exit 0
+              fi
+            done
             sleep 15
           done
           echo "source cache artifact unavailable"
