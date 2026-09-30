@@ -90,6 +90,21 @@ def remote_15m(con,y,m):
     return con.execute(q,list(srcs)).fetchall()
 
 def collect_15m():
+    cache=os.environ.get("DATA_PARQUET")
+    if cache and Path(cache).exists():
+        con=duckdb.connect()
+        ph=",".join(["?"]*len(TRADE_SYMS))
+        rows=con.execute(f"SELECT symbol,b,o,h,l,c,v FROM read_parquet(?) WHERE symbol IN ({ph}) ORDER BY symbol,b",[cache,*TRADE_SYMS]).fetchall()
+        con.close()
+        by={s:[] for s in TRADE_SYMS}
+        for s,et,o,h,l,cl,v in rows:
+            if et.tzinfo is None:et=et.replace(tzinfo=NY)
+            else:et=et.astimezone(NY)
+            t=int(et.astimezone(UTC).timestamp()*1000)
+            by[str(s)].append({"t":t,"o":float(o),"h":float(h),"l":float(l),"c":float(cl),"v":float(v or 0)})
+        print("CACHE_15M",cache,{s:len(v) for s,v in by.items()},flush=True)
+        return by
+
     con=duckdb.connect();con.execute("INSTALL httpfs; LOAD httpfs;")
     by={s:[] for s in TRADE_SYMS};missing=[]
     for y,m in month_iter(WARMUP,END):
@@ -102,14 +117,14 @@ def collect_15m():
                 print("15M_RETRY",y,m,a+1,repr(e),flush=True);time.sleep(3*(a+1))
         if rows is None:
             missing.append(f"{y:04d}-{m:02d}");continue
-        for ticker,et,o,h,l,c,v in rows:
+        for ticker,et,o,h,l,cl,v in rows:
             d=et.date()
             s=canonical(str(ticker),d)
             if not s:continue
             if et.tzinfo is None:et=et.replace(tzinfo=NY)
             else:et=et.astimezone(NY)
             t=int(et.astimezone(UTC).timestamp()*1000)
-            by[s].append({"t":t,"o":float(o),"h":float(h),"l":float(l),"c":float(c),"v":float(v or 0)})
+            by[s].append({"t":t,"o":float(o),"h":float(h),"l":float(l),"c":float(cl),"v":float(v or 0)})
     con.close()
     if missing:raise RuntimeError("missing 15m months="+",".join(missing))
     for s in by:by[s].sort(key=lambda z:z["t"])
@@ -169,6 +184,34 @@ def aggregate_daily(bars):
     return out
 
 def build_context():
+    cache=os.environ.get("DATA_PARQUET")
+    if cache and Path(cache).exists():
+        con=duckdb.connect()
+        rows=con.execute("""
+          SELECT symbol,cast(b as date) d,min(b) first_b,max(b) last_b,
+                 arg_min(o,b) o,max(h) h,min(l) l,arg_max(c,b) c,sum(v) v
+          FROM read_parquet(?)
+          GROUP BY symbol,cast(b as date)
+          ORDER BY symbol,d
+        """,[cache]).fetchall()
+        con.close()
+        by={s:[] for s in ctxsrc.SYMS}
+        for s,d,first_b,last_b,o,h,l,cl,v in rows:
+            s=str(s)
+            if s not in by:continue
+            if s=="SNDK" and d<datetime(2025,2,24).date():continue
+            et=first_b.replace(tzinfo=NY) if first_b.tzinfo is None else first_b.astimezone(NY)
+            z=last_b.replace(tzinfo=NY) if last_b.tzinfo is None else last_b.astimezone(NY)
+            by[s].append({"t":int(et.astimezone(UTC).timestamp()*1000),
+                          "o":float(o),"h":float(h),"l":float(l),"c":float(cl),"v":float(v or 0),
+                          "ct":int(z.astimezone(UTC).timestamp()*1000)+15*60*1000-1})
+        dailies={}
+        for s,bars in by.items():
+            bars=ctxsrc.apply_splits(bars,ctxsrc.detect_splits(bars))
+            if bars:dailies[s]=w.enrich(bars)
+        print("CTX_CACHE",len(dailies),flush=True)
+        return dailies
+
     by,months=ctxsrc.collect()
     d={}
     for s in ctxsrc.SYMS:
