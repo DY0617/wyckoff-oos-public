@@ -58,6 +58,8 @@ def month_query(y,m):
     SELECT symbol,b,o,h,l,c,v
     FROM agg
     WHERE symbol IN ({ph_sym})
+      AND NOT (symbol='DELL' AND cast(b as date)<date '2018-12-28')
+      AND NOT (symbol='SNDK' AND cast(b as date)<date '2025-02-24')
     ORDER BY symbol,b
     """
 
