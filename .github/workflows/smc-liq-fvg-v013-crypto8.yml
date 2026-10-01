@@ -1,0 +1,41 @@
+name: SMC Liquidity FVG v0.1.3 Crypto8 Robustness
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/backtest_smc_liq_fvg_v01.py"
+      - "scripts/backtest_smc_liq_fvg_v013_crypto8_robustness.py"
+      - ".github/workflows/smc-liq-fvg-v013-crypto8.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  robustness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_trend_structure_v0_1_crypto.py scripts/backtest_smc_liq_fvg_v01.py scripts/backtest_smc_liq_fvg_v013_crypto8_robustness.py
+      - name: Run crypto8 robustness
+        run: python scripts/backtest_smc_liq_fvg_v013_crypto8_robustness.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smc-liq-fvg-v013-crypto8
+          path: data/validation/smc_liq_fvg_v013_crypto8_robustness.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/smc_liq_fvg_v013_crypto8_robustness.json
+          git commit -m "research: add SMC v0.1.3 crypto8 robustness result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
