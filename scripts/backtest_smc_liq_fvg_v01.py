@@ -254,7 +254,12 @@ def run_symbol(sym,root,cfg):
     H=aggregate_1h(M)
     D,Dclose=prepare_daily(aggregate_1d(M))
     candidates=[];setup_count=0
+    eval_lo=int(core.EVAL_START.timestamp()*1000)
+    eval_hi=int(core.EVAL_END.timestamp()*1000)
     for i in range(cfg["sweep_lookback"],len(H)-cfg["disp_max_bars"]):
+        signal_close=H[i]["t"]+HOUR-1
+        if signal_close<eval_lo or signal_close>=eval_hi:
+            continue
         s=find_setup(H,D,Dclose,i,cfg)
         if not s:continue
         setup_count+=1
