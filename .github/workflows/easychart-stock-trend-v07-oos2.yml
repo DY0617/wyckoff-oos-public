@@ -1,0 +1,89 @@
+name: EasyChart Stock Trend v0.7 Pristine OOS2
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/extract_stock53_recent5y_15m_cache.py"
+      - "scripts/extract_stock_oos2_20_recent5y_15m.py"
+      - "scripts/backtest_easychart_stock_trend_cont_v04_plateau.py"
+      - "scripts/backtest_easychart_stock_trend_cont_v07_pristine_oos2.py"
+      - ".github/workflows/easychart-stock-trend-v07-oos2.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  extract-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python scripts/extract_stock53_recent5y_15m_cache.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: easychart-stock-v07-original-cache
+          path: |
+            data/cache/stock53_recent5y_15m.parquet
+            data/cache/stock53_recent5y_15m_meta.json
+          retention-days: 7
+          if-no-files-found: error
+
+  extract-oos2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python scripts/extract_stock_oos2_20_recent5y_15m.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: easychart-stock-v07-oos2-cache
+          path: |
+            data/cache/stock_oos2_20_recent5y_15m.parquet
+            data/cache/stock_oos2_20_recent5y_15m_meta.json
+          retention-days: 7
+          if-no-files-found: error
+
+  validate:
+    needs: [extract-original, extract-oos2]
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - uses: actions/download-artifact@v4
+        with:
+          name: easychart-stock-v07-original-cache
+          path: data/cache
+      - uses: actions/download-artifact@v4
+        with:
+          name: easychart-stock-v07-oos2-cache
+          path: data/cache
+      - run: python -m py_compile scripts/backtest_easychart_stock_trend_cont_v04_plateau.py scripts/backtest_easychart_stock_trend_cont_v07_pristine_oos2.py
+      - run: python scripts/backtest_easychart_stock_trend_cont_v07_pristine_oos2.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: easychart-stock-trend-v07-oos2
+          path: data/validation/easychart_stock_trend_cont_v07_pristine_oos2.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/easychart_stock_trend_cont_v07_pristine_oos2.json
+          git commit -m "research: add stock trend v0.7 pristine OOS2 result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
