@@ -1,0 +1,65 @@
+name: EasyChart Stock Trend Continuation v0.5 Symbol OOS20
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/extract_stock_oos20_recent5y_15m.py"
+      - "scripts/backtest_easychart_stock_trend_cont_v04_plateau.py"
+      - "scripts/backtest_easychart_stock_trend_cont_v05_symbol_oos20.py"
+      - ".github/workflows/easychart-stock-trend-cont-v05-oos20.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python scripts/extract_stock_oos20_recent5y_15m.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: easychart-stock-oos20-cache
+          path: |
+            data/cache/stock_oos20_recent5y_15m.parquet
+            data/cache/stock_oos20_recent5y_15m_meta.json
+          retention-days: 7
+          if-no-files-found: error
+
+  backtest:
+    needs: extract
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - uses: actions/download-artifact@v4
+        with:
+          name: easychart-stock-oos20-cache
+          path: data/cache
+      - run: python -m py_compile scripts/backtest_easychart_stock_trend_cont_v04_plateau.py scripts/backtest_easychart_stock_trend_cont_v05_symbol_oos20.py
+      - run: python scripts/backtest_easychart_stock_trend_cont_v05_symbol_oos20.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: easychart-stock-trend-cont-v05-oos20
+          path: data/validation/easychart_stock_trend_cont_v05_symbol_oos20.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/easychart_stock_trend_cont_v05_symbol_oos20.json
+          git commit -m "research: add stock trend-continuation v0.5 symbol-OOS20 result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
