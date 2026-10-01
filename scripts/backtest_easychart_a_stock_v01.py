@@ -80,7 +80,7 @@ def aggregate_daily(M):
     out=[]
     for d in sorted(g):
         xs=g[d]
-        if len(xs)<24:continue
+        if len(xs)!=26:continue
         out.append({"t":xs[0]["t"],"ct":xs[-1]["t"]+15*60*1000-1,"date":d,
                     "o":xs[0]["o"],"h":max(x["h"] for x in xs),"l":min(x["l"] for x in xs),
                     "c":xs[-1]["c"],"v":sum(x["v"] for x in xs)})
@@ -175,7 +175,7 @@ def find_setup(H,D,Dclose,i):
         if not dc or not dc["ok"]:continue
         for j in range(i+1,min(len(H),i+1+DISP_MAX_BARS)):
             q=H[j];qa=q.get("atr")
-            if not qa or q["date"]!=s["date"] or j<2:continue
+            if not qa or q["date"]!=s["date"] or j<2 or H[j-2]["date"]!=s["date"]:continue
             strong=body(q)>=DISP_BODY_ATR*qa
             if direction=="LONG":
                 directional=q["c"]>q["o"] and clv(q)>=DISP_CLV and q["c"]>s["h"]
