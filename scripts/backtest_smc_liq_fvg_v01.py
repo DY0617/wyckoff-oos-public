@@ -1,5 +1,6 @@
 import argparse,bisect,json,math
 from pathlib import Path
+import backtest_trend_structure_v0_1_crypto as core
 
 MS15=15*60*1000
 HOUR=60*60*1000
@@ -66,6 +67,22 @@ def aggregate_1h(m15):
         out.append({"t":group[0]["t"],"o":group[0]["o"],"h":max(q["h"] for q in group),
                     "l":min(q["l"] for q in group),"c":group[-1]["c"],"v":sum(q["v"] for q in group)})
     return enrich(out)
+
+def aggregate_1d(m15):
+    out=[]; group=[]; key=None
+    for z in m15:
+        k=z["t"]//DAY
+        if key is None:key=k
+        if k!=key:
+            if len(group)>=92:
+                out.append({"t":key*DAY,"o":group[0]["o"],"h":max(q["h"] for q in group),
+                            "l":min(q["l"] for q in group),"c":group[-1]["c"],"v":sum(q["v"] for q in group)})
+            group=[]; key=k
+        group.append(z)
+    if group and len(group)>=92:
+        out.append({"t":key*DAY,"o":group[0]["o"],"h":max(q["h"] for q in group),
+                    "l":min(q["l"] for q in group),"c":group[-1]["c"],"v":sum(q["v"] for q in group)})
+    return out
 
 def prepare_daily(d):
     enrich(d)
@@ -233,9 +250,9 @@ def stats(trades):
             "pf":gp/gl if gl>0 else None,"mdd_r":mdd,"return_on_20k":sum(rs)*RISK_DOLLARS/CAPITAL}
 
 def run_symbol(sym,root,cfg):
-    M=load_json_bars(root/sym/"15m.json")
+    M=core.load_15m(sym)
     H=aggregate_1h(M)
-    D,Dclose=prepare_daily(load_json_bars(root/sym/"1d.json"))
+    D,Dclose=prepare_daily(aggregate_1d(M))
     candidates=[];setup_count=0
     for i in range(cfg["sweep_lookback"],len(H)-cfg["disp_max_bars"]):
         s=find_setup(H,D,Dclose,i,cfg)
@@ -272,7 +289,9 @@ def main():
     args=ap.parse_args()
     cfg=dict(DEFAULTS);cfg["cost_bps_per_side"]=args.cost_bps
     root=Path(args.root);syms=[s.strip() for s in args.symbols.split(",") if s.strip()]
-    result={"version":"0.1","strategy":"objective liquidity sweep + displacement + FVG first retest",
+    result={"version":"0.1.1","strategy":"objective liquidity sweep + displacement + FVG first retest",
+            "asset_class":"Binance USDT-M perpetual",
+            "period":{"fetch_start":core.FETCH_START.isoformat(),"eval_start":core.EVAL_START.isoformat(),"eval_end_exclusive":core.EVAL_END.isoformat()},
             "signal_tf":"1h","execution_tf":"15m","trend_tf":"1d",
             "rules":{"trend":"LONG: completed daily close>EMA200 and EMA50>EMA200; SHORT inverse",
                      "sweep":"20x1H prior extreme sweep, 0.05-1.50 ATR penetration, close back inside",
@@ -299,4 +318,4 @@ def main():
 if __name__=="__main__":
     main()
 
-# trigger: smc-liq-fvg-v01
+# trigger: smc-liq-fvg-v011-direct-binance-data
