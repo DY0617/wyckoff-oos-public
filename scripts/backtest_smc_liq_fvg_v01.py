@@ -23,6 +23,7 @@ DEFAULTS={
     "fvg_entry_depth":0.50,
     "tp_r":2.0,
     "trend_mode":"strict_1d",
+    "signal_minutes":60,
 }
 
 def load_json_bars(path):
@@ -55,21 +56,26 @@ def enrich(bars):
         x["atr"]=atr[i]; x["ema20"]=e20[i]; x["ema50"]=e50[i]; x["ema200"]=e200[i]
     return bars
 
-def aggregate_1h(m15):
+def aggregate_tf(m15,minutes=60):
+    ms=int(minutes)*60*1000
+    need=int(minutes)//15
     out=[]; group=[]; key=None
     for z in m15:
-        k=z["t"]//HOUR
+        k=z["t"]//ms
         if key is None:key=k
         if k!=key:
-            if len(group)==4 and [q["t"] for q in group]==[group[0]["t"]+i*MS15 for i in range(4)]:
+            if len(group)==need and [q["t"] for q in group]==[group[0]["t"]+i*MS15 for i in range(need)]:
                 out.append({"t":group[0]["t"],"o":group[0]["o"],"h":max(q["h"] for q in group),
                             "l":min(q["l"] for q in group),"c":group[-1]["c"],"v":sum(q["v"] for q in group)})
             group=[]; key=k
         group.append(z)
-    if len(group)==4 and [q["t"] for q in group]==[group[0]["t"]+i*MS15 for i in range(4)]:
+    if len(group)==need and [q["t"] for q in group]==[group[0]["t"]+i*MS15 for i in range(need)]:
         out.append({"t":group[0]["t"],"o":group[0]["o"],"h":max(q["h"] for q in group),
                     "l":min(q["l"] for q in group),"c":group[-1]["c"],"v":sum(q["v"] for q in group)})
     return enrich(out)
+
+def aggregate_1h(m15):
+    return aggregate_tf(m15,60)
 
 def aggregate_1d(m15):
     out=[]; group=[]; key=None
@@ -166,7 +172,8 @@ def find_setup(H,D,Dclose,i,cfg):
             if direction=="SHORT" and z["c"]>z["o"]:
                 ob=(min(z["o"],z["c"]),max(z["o"],z["c"]),k);break
         ob_overlap=bool(ob and ob[0]<=entry<=ob[1])
-        return {"direction":direction,"sweep_i":i,"disp_i":j,"signal_t":q["t"]+HOUR-1,
+        bar_ms=int(cfg.get("signal_minutes",60))*60*1000
+        return {"direction":direction,"sweep_i":i,"disp_i":j,"signal_t":q["t"]+bar_ms-1,
                 "entry":entry,"stop":stop,"risk":risk,"fvg_low":fvg_low,"fvg_high":fvg_high,
                 "ob_overlap":ob_overlap,"ob_i":ob[2] if ob else None,
                 "sweep_level":pl if direction=="LONG" else ph,
@@ -205,7 +212,8 @@ def simulate_trade(M,H,entry_i,setup,cfg,mode):
     cost_rate=cfg["cost_bps_per_side"]/10000.0
     pnl=-size*entry*cost_rate
     remain=1.0; stop=stop0; events=[]; tp1_done=False; tp2_done=False
-    hclose=[x["t"]+HOUR-1 for x in H]
+    bar_ms=int(cfg.get("signal_minutes",60))*60*1000
+    hclose=[x["t"]+bar_ms-1 for x in H]
     end_t=M[entry_i]["t"]+cfg["max_hold_hours"]*HOUR
     last=M[entry_i]
     for mi in range(entry_i,len(M)):
@@ -270,13 +278,14 @@ def stats(trades):
 
 def run_symbol(sym,root,cfg):
     M=core.load_15m(sym)
-    H=aggregate_1h(M)
+    signal_minutes=int(cfg.get("signal_minutes",60))
+    H=aggregate_tf(M,signal_minutes)
     D,Dclose=prepare_daily(aggregate_1d(M))
     candidates=[];setup_count=0
     eval_lo=int(core.EVAL_START.timestamp()*1000)
     eval_hi=int(core.EVAL_END.timestamp()*1000)
     for i in range(cfg["sweep_lookback"],len(H)-cfg["disp_max_bars"]):
-        signal_close=H[i]["t"]+HOUR-1
+        signal_close=H[i]["t"]+signal_minutes*60*1000-1
         if signal_close<eval_lo or signal_close>=eval_hi:
             continue
         s=find_setup(H,D,Dclose,i,cfg)
@@ -342,4 +351,4 @@ def main():
 if __name__=="__main__":
     main()
 
-# trigger: smc-liq-fvg-v014-parameter-hooks
+# trigger: smc-liq-fvg-v015-multitf-hooks
