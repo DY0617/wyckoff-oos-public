@@ -1,0 +1,4830 @@
+{
+  "version": "0.1",
+  "strategy": "EasyChart A adapted to US stocks RTH",
+  "period": {
+    "start": "2021-04-01T00:00:00-04:00",
+    "end_exclusive": "2026-04-01T00:00:00-04:00",
+    "holdout_start": "2024-04-01T00:00:00-04:00"
+  },
+  "fixed_from_crypto": {
+    "gap_min_atr": 0.1,
+    "ema50_slope5_min_atr": 0.1,
+    "normal_tp_r": 2.0,
+    "htf_tp_r": 3.0
+  },
+  "stock_adaptations": [
+    "RTH only 09:30-16:00 ET",
+    "1H bars anchored at 09:30 ET; incomplete 15:30-16:00 half-hour excluded from signal generation",
+    "daily/weekly/monthly built from RTH",
+    "sweep and displacement must complete in same session",
+    "entry is first 15m RTH bar with low<=entry<=high",
+    "same-bar STOP before TP",
+    "6 bps per side",
+    "48 RTH hours max hold"
+  ],
+  "variants": {
+    "base": {
+      "overall": {
+        "overall": {
+          "n": 47,
+          "win_rate": 0.23404255319148937,
+          "net_r": -12.283971957882372,
+          "avg_r": -0.261361105486859,
+          "pf": 0.6815002168856586,
+          "mdd_r": 18.23650969692727,
+          "max_ls": 9
+        },
+        "positive_symbols": 9,
+        "active_symbols": 26,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.146628445020765,
+            "avg_r": -1.146628445020765,
+            "pf": 0.0,
+            "mdd_r": 1.146628445020765,
+            "max_ls": 1
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.8535319095925042,
+            "avg_r": 2.8535319095925042,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.227284350936074,
+            "avg_r": -1.113642175468037,
+            "pf": 0.0,
+            "mdd_r": 2.227284350936074,
+            "max_ls": 2
+          },
+          "MU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0901635996673007,
+            "avg_r": -1.0901635996673007,
+            "pf": 0.0,
+            "mdd_r": 1.0901635996673007,
+            "max_ls": 1
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.9190755908172794,
+            "avg_r": 0.3063585302724265,
+            "pf": 1.4494514246794987,
+            "mdd_r": 2.0448830292899105,
+            "max_ls": 2
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.756444558109578,
+            "avg_r": 0.252148186036526,
+            "pf": 1.3476510566974111,
+            "mdd_r": 1.1356859197549063,
+            "max_ls": 1
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.082904765231929,
+            "avg_r": -1.082904765231929,
+            "pf": 0.0,
+            "mdd_r": 1.082904765231929,
+            "max_ls": 1
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.059769768666746,
+            "avg_r": -1.059769768666746,
+            "pf": 0.0,
+            "mdd_r": 1.059769768666746,
+            "max_ls": 1
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1025834534648413,
+            "avg_r": -1.1025834534648413,
+            "pf": 0.0,
+            "mdd_r": 1.1025834534648413,
+            "max_ls": 1
+          },
+          "COST": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.9045828184561024,
+            "avg_r": 2.9045828184561024,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 4,
+            "win_rate": 0.0,
+            "net_r": -4.635976758788688,
+            "avg_r": -1.158994189697172,
+            "pf": 0.0,
+            "mdd_r": 4.635976758788688,
+            "max_ls": 4
+          },
+          "LLY": {
+            "n": 2,
+            "win_rate": 0.5,
+            "net_r": 0.8071950272455977,
+            "avg_r": 0.40359751362279883,
+            "pf": 1.7385101865739534,
+            "mdd_r": 1.0930045948184985,
+            "max_ls": 1
+          },
+          "META": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1343525836028463,
+            "avg_r": -1.1343525836028463,
+            "pf": 0.0,
+            "mdd_r": 1.1343525836028463,
+            "max_ls": 1
+          },
+          "NBIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0112041134065266,
+            "avg_r": -1.0112041134065266,
+            "pf": 0.0,
+            "mdd_r": 1.0112041134065266,
+            "max_ls": 1
+          },
+          "NVDA": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0507447878543241,
+            "avg_r": -1.0507447878543241,
+            "pf": 0.0,
+            "mdd_r": 1.0507447878543241,
+            "max_ls": 1
+          },
+          "QQQ": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2734053966638132,
+            "avg_r": -1.1367026983319066,
+            "pf": 0.0,
+            "mdd_r": 2.2734053966638132,
+            "max_ls": 2
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 3,
+            "win_rate": 0.0,
+            "net_r": -3.23942640919596,
+            "avg_r": -1.0798088030653201,
+            "pf": 0.0,
+            "mdd_r": 3.2394264091959606,
+            "max_ls": 3
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 2,
+            "win_rate": 1.0,
+            "net_r": 4.463957920799121,
+            "avg_r": 2.2319789603995606,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.7607275518132344,
+            "avg_r": 2.7607275518132344,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0358370467200395,
+            "avg_r": -1.0358370467200395,
+            "pf": 0.0,
+            "mdd_r": 1.0358370467200395,
+            "max_ls": 1
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0538484611029464,
+            "avg_r": -1.0538484611029464,
+            "pf": 0.0,
+            "mdd_r": 1.0538484611029464,
+            "max_ls": 1
+          },
+          "CSCO": {
+            "n": 2,
+            "win_rate": 1.0,
+            "net_r": 2.577719037787462,
+            "avg_r": 1.288859518893731,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 3,
+            "win_rate": 0.0,
+            "net_r": -2.4415587228105036,
+            "avg_r": -0.8138529076035012,
+            "pf": 0.0,
+            "mdd_r": 2.4415587228105036,
+            "max_ls": 3
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.3681936740939644,
+            "avg_r": -1.1840968370469822,
+            "pf": 0.0,
+            "mdd_r": 2.3681936740939644,
+            "max_ls": 2
+          },
+          "LITE": {
+            "n": 3,
+            "win_rate": 0.0,
+            "net_r": -3.2064857707297016,
+            "avg_r": -1.068828590243234,
+            "pf": 0.0,
+            "mdd_r": 3.2064857707297016,
+            "max_ls": 3
+          },
+          "TQQQ": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8331617354537195,
+            "avg_r": 0.27772057848457316,
+            "pf": 1.3978618057512397,
+            "mdd_r": 2.094098311046846,
+            "max_ls": 2
+          }
+        },
+        "years": {
+          "2021": {
+            "n": 9,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.6086048861689763,
+            "avg_r": 0.06762276512988626,
+            "pf": 1.0887476372909055,
+            "mdd_r": 3.2924212518401053,
+            "max_ls": 3
+          },
+          "2022": {
+            "n": 13,
+            "win_rate": 0.15384615384615385,
+            "net_r": -5.978396354442135,
+            "avg_r": -0.45987664264939504,
+            "pf": 0.4965422142876346,
+            "mdd_r": 6.772568449933812,
+            "max_ls": 5
+          },
+          "2023": {
+            "n": 7,
+            "win_rate": 0.0,
+            "net_r": -7.727368406674591,
+            "avg_r": -1.1039097723820845,
+            "pf": 0.0,
+            "mdd_r": 7.727368406674591,
+            "max_ls": 7
+          },
+          "2024": {
+            "n": 8,
+            "win_rate": 0.375,
+            "net_r": 0.705453553972423,
+            "avg_r": 0.08818169424655288,
+            "pf": 1.1250531542079145,
+            "mdd_r": 4.508164550681689,
+            "max_ls": 4
+          },
+          "2025": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.5208404734129357,
+            "avg_r": -0.08680674556882262,
+            "pf": 0.8757313556739893,
+            "mdd_r": 2.0760241569383266,
+            "max_ls": 2
+          },
+          "2026": {
+            "n": 4,
+            "win_rate": 0.25,
+            "net_r": 0.6285748365058903,
+            "avg_r": 0.15714370912647257,
+            "pf": 1.2761742671777856,
+            "mdd_r": 2.276007981950212,
+            "max_ls": 3
+          }
+        }
+      },
+      "train": {
+        "overall": {
+          "n": 32,
+          "win_rate": 0.21875,
+          "net_r": -8.615965453915098,
+          "avg_r": -0.26924892043484683,
+          "pf": 0.6877459763161089,
+          "mdd_r": 16.145114795536546,
+          "max_ls": 9
+        },
+        "positive_symbols": 7,
+        "active_symbols": 20,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.146628445020765,
+            "avg_r": -1.146628445020765,
+            "pf": 0.0,
+            "mdd_r": 1.146628445020765,
+            "max_ls": 1
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.8535319095925042,
+            "avg_r": 2.8535319095925042,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.227284350936074,
+            "avg_r": -1.113642175468037,
+            "pf": 0.0,
+            "mdd_r": 2.227284350936074,
+            "max_ls": 2
+          },
+          "MU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0901635996673007,
+            "avg_r": -1.0901635996673007,
+            "pf": 0.0,
+            "mdd_r": 1.0901635996673007,
+            "max_ls": 1
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.9190755908172794,
+            "avg_r": 0.3063585302724265,
+            "pf": 1.4494514246794987,
+            "mdd_r": 2.0448830292899105,
+            "max_ls": 2
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 2,
+            "win_rate": 0.5,
+            "net_r": 1.796631668327865,
+            "avg_r": 0.8983158341639325,
+            "pf": 2.5819793457645384,
+            "mdd_r": 1.1356859197549063,
+            "max_ls": 1
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.082904765231929,
+            "avg_r": -1.082904765231929,
+            "pf": 0.0,
+            "mdd_r": 1.082904765231929,
+            "max_ls": 1
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COST": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 3,
+            "win_rate": 0.0,
+            "net_r": -3.5319589087804086,
+            "avg_r": -1.1773196362601361,
+            "pf": 0.0,
+            "mdd_r": 3.5319589087804086,
+            "max_ls": 3
+          },
+          "LLY": {
+            "n": 2,
+            "win_rate": 0.5,
+            "net_r": 0.8071950272455977,
+            "avg_r": 0.40359751362279883,
+            "pf": 1.7385101865739534,
+            "mdd_r": 1.0930045948184985,
+            "max_ls": 1
+          },
+          "META": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1343525836028463,
+            "avg_r": -1.1343525836028463,
+            "pf": 0.0,
+            "mdd_r": 1.1343525836028463,
+            "max_ls": 1
+          },
+          "NBIS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NVDA": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0507447878543241,
+            "avg_r": -1.0507447878543241,
+            "pf": 0.0,
+            "mdd_r": 1.0507447878543241,
+            "max_ls": 1
+          },
+          "QQQ": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2734053966638132,
+            "avg_r": -1.1367026983319066,
+            "pf": 0.0,
+            "mdd_r": 2.2734053966638132,
+            "max_ls": 2
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2003147156738754,
+            "avg_r": -1.1001573578369377,
+            "pf": 0.0,
+            "mdd_r": 2.2003147156738754,
+            "max_ls": 2
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.6388476280249256,
+            "avg_r": 2.6388476280249256,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.7607275518132344,
+            "avg_r": 2.7607275518132344,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0538484611029464,
+            "avg_r": -1.0538484611029464,
+            "pf": 0.0,
+            "mdd_r": 1.0538484611029464,
+            "max_ls": 1
+          },
+          "CSCO": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1330650403730869,
+            "avg_r": -1.1330650403730869,
+            "pf": 0.0,
+            "mdd_r": 1.1330650403730869,
+            "max_ls": 1
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1051054345352787,
+            "avg_r": -1.1051054345352787,
+            "pf": 0.0,
+            "mdd_r": 1.1051054345352787,
+            "max_ls": 1
+          },
+          "LITE": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.195360075747575,
+            "avg_r": -1.0976800378737874,
+            "pf": 0.0,
+            "mdd_r": 2.195360075747575,
+            "max_ls": 2
+          },
+          "TQQQ": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8331617354537195,
+            "avg_r": 0.27772057848457316,
+            "pf": 1.3978618057512397,
+            "mdd_r": 2.094098311046846,
+            "max_ls": 2
+          }
+        },
+        "years": {
+          "2021": {
+            "n": 9,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.6086048861689763,
+            "avg_r": 0.06762276512988626,
+            "pf": 1.0887476372909055,
+            "mdd_r": 3.2924212518401053,
+            "max_ls": 3
+          },
+          "2022": {
+            "n": 13,
+            "win_rate": 0.15384615384615385,
+            "net_r": -5.978396354442135,
+            "avg_r": -0.45987664264939504,
+            "pf": 0.4965422142876346,
+            "mdd_r": 6.772568449933812,
+            "max_ls": 5
+          },
+          "2023": {
+            "n": 7,
+            "win_rate": 0.0,
+            "net_r": -7.727368406674591,
+            "avg_r": -1.1039097723820845,
+            "pf": 0.0,
+            "mdd_r": 7.727368406674591,
+            "max_ls": 7
+          },
+          "2024": {
+            "n": 3,
+            "win_rate": 0.6666666666666666,
+            "net_r": 4.481194421032652,
+            "avg_r": 1.4937314736775507,
+            "pf": 4.954931324645864,
+            "mdd_r": 1.1330650403730869,
+            "max_ls": 1
+          }
+        }
+      },
+      "holdout": {
+        "overall": {
+          "n": 15,
+          "win_rate": 0.26666666666666666,
+          "net_r": -3.6680065039672742,
+          "avg_r": -0.2445337669311516,
+          "pf": 0.6657980328641341,
+          "mdd_r": 6.572589322423377,
+          "max_ls": 5
+        },
+        "positive_symbols": 3,
+        "active_symbols": 13,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.040187110218287,
+            "avg_r": -1.040187110218287,
+            "pf": 0.0,
+            "mdd_r": 1.040187110218287,
+            "max_ls": 1
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.059769768666746,
+            "avg_r": -1.059769768666746,
+            "pf": 0.0,
+            "mdd_r": 1.059769768666746,
+            "max_ls": 1
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1025834534648413,
+            "avg_r": -1.1025834534648413,
+            "pf": 0.0,
+            "mdd_r": 1.1025834534648413,
+            "max_ls": 1
+          },
+          "COST": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.9045828184561024,
+            "avg_r": 2.9045828184561024,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1040178500082793,
+            "avg_r": -1.1040178500082793,
+            "pf": 0.0,
+            "mdd_r": 1.1040178500082793,
+            "max_ls": 1
+          },
+          "LLY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "META": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NBIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0112041134065266,
+            "avg_r": -1.0112041134065266,
+            "pf": 0.0,
+            "mdd_r": 1.0112041134065266,
+            "max_ls": 1
+          },
+          "NVDA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "QQQ": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.039111693522085,
+            "avg_r": -1.039111693522085,
+            "pf": 0.0,
+            "mdd_r": 1.039111693522085,
+            "max_ls": 1
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 1.8251102927741953,
+            "avg_r": 1.8251102927741953,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0358370467200395,
+            "avg_r": -1.0358370467200395,
+            "pf": 0.0,
+            "mdd_r": 1.0358370467200395,
+            "max_ls": 1
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CSCO": {
+            "n": 2,
+            "win_rate": 1.0,
+            "net_r": 2.577719037787462,
+            "avg_r": 1.288859518893731,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -1.308493682437417,
+            "avg_r": -0.6542468412187085,
+            "pf": 0.0,
+            "mdd_r": 1.308493682437417,
+            "max_ls": 2
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.2630882395586855,
+            "avg_r": -1.2630882395586855,
+            "pf": 0.0,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "LITE": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0111256949821268,
+            "avg_r": -1.0111256949821268,
+            "pf": 0.0,
+            "mdd_r": 1.0111256949821268,
+            "max_ls": 1
+          },
+          "TQQQ": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          }
+        },
+        "years": {
+          "2024": {
+            "n": 5,
+            "win_rate": 0.2,
+            "net_r": -3.775740867060229,
+            "avg_r": -0.7551481734120458,
+            "pf": 0.16246604918418725,
+            "mdd_r": 4.508164550681689,
+            "max_ls": 4
+          },
+          "2025": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.5208404734129357,
+            "avg_r": -0.08680674556882262,
+            "pf": 0.8757313556739893,
+            "mdd_r": 2.0760241569383266,
+            "max_ls": 2
+          },
+          "2026": {
+            "n": 4,
+            "win_rate": 0.25,
+            "net_r": 0.6285748365058903,
+            "avg_r": 0.15714370912647257,
+            "pf": 1.2761742671777856,
+            "mdd_r": 2.276007981950212,
+            "max_ls": 3
+          }
+        }
+      }
+    },
+    "spy_daily_align": {
+      "overall": {
+        "overall": {
+          "n": 34,
+          "win_rate": 0.2647058823529412,
+          "net_r": -2.892223907661468,
+          "avg_r": -0.08506540904886671,
+          "pf": 0.8910397969881352,
+          "mdd_r": 10.591362151884404,
+          "max_ls": 7
+        },
+        "positive_symbols": 8,
+        "active_symbols": 21,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.146628445020765,
+            "avg_r": -1.146628445020765,
+            "pf": 0.0,
+            "mdd_r": 1.146628445020765,
+            "max_ls": 1
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.8535319095925042,
+            "avg_r": 2.8535319095925042,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1111542727539223,
+            "avg_r": -1.1111542727539223,
+            "pf": 0.0,
+            "mdd_r": 1.1111542727539223,
+            "max_ls": 1
+          },
+          "MU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0901635996673007,
+            "avg_r": -1.0901635996673007,
+            "pf": 0.0,
+            "mdd_r": 1.0901635996673007,
+            "max_ls": 1
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.9190755908172794,
+            "avg_r": 0.3063585302724265,
+            "pf": 1.4494514246794987,
+            "mdd_r": 2.0448830292899105,
+            "max_ls": 2
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 2,
+            "win_rate": 0.5,
+            "net_r": 1.8921304778644843,
+            "avg_r": 0.9460652389322421,
+            "pf": 2.819028960537123,
+            "mdd_r": 1.040187110218287,
+            "max_ls": 1
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.082904765231929,
+            "avg_r": -1.082904765231929,
+            "pf": 0.0,
+            "mdd_r": 1.082904765231929,
+            "max_ls": 1
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COST": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.9045828184561024,
+            "avg_r": 2.9045828184561024,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 4,
+            "win_rate": 0.0,
+            "net_r": -4.635976758788688,
+            "avg_r": -1.158994189697172,
+            "pf": 0.0,
+            "mdd_r": 4.635976758788688,
+            "max_ls": 4
+          },
+          "LLY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "META": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NBIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0112041134065266,
+            "avg_r": -1.0112041134065266,
+            "pf": 0.0,
+            "mdd_r": 1.0112041134065266,
+            "max_ls": 1
+          },
+          "NVDA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "QQQ": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2734053966638132,
+            "avg_r": -1.1367026983319066,
+            "pf": 0.0,
+            "mdd_r": 2.2734053966638132,
+            "max_ls": 2
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2003147156738754,
+            "avg_r": -1.1001573578369377,
+            "pf": 0.0,
+            "mdd_r": 2.2003147156738754,
+            "max_ls": 2
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 2,
+            "win_rate": 1.0,
+            "net_r": 4.463957920799121,
+            "avg_r": 2.2319789603995606,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.7607275518132344,
+            "avg_r": 2.7607275518132344,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0358370467200395,
+            "avg_r": -1.0358370467200395,
+            "pf": 0.0,
+            "mdd_r": 1.0358370467200395,
+            "max_ls": 1
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0538484611029464,
+            "avg_r": -1.0538484611029464,
+            "pf": 0.0,
+            "mdd_r": 1.0538484611029464,
+            "max_ls": 1
+          },
+          "CSCO": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 1.8452953541660013,
+            "avg_r": 1.8452953541660013,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -1.3588356338190872,
+            "avg_r": -0.6794178169095436,
+            "pf": 0.0,
+            "mdd_r": 1.3588356338190872,
+            "max_ls": 2
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.2630882395586855,
+            "avg_r": -1.2630882395586855,
+            "pf": 0.0,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "LITE": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.1013258182163357,
+            "avg_r": -1.0506629091081678,
+            "pf": 0.0,
+            "mdd_r": 2.1013258182163357,
+            "max_ls": 2
+          },
+          "TQQQ": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8331617354537195,
+            "avg_r": 0.27772057848457316,
+            "pf": 1.3978618057512397,
+            "mdd_r": 2.094098311046846,
+            "max_ls": 2
+          }
+        },
+        "years": {
+          "2021": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8948359717141106,
+            "avg_r": 0.14913932861901844,
+            "pf": 1.1915615336987482,
+            "mdd_r": 2.43935003441982,
+            "max_ls": 2
+          },
+          "2022": {
+            "n": 11,
+            "win_rate": 0.18181818181818182,
+            "net_r": -3.780286325088358,
+            "avg_r": -0.3436623931898507,
+            "pf": 0.6093358243603852,
+            "mdd_r": 5.667463015398533,
+            "max_ls": 5
+          },
+          "2023": {
+            "n": 4,
+            "win_rate": 0.0,
+            "net_r": -4.3717257923762265,
+            "avg_r": -1.0929314480940566,
+            "pf": 0.0,
+            "mdd_r": 4.3717257923762265,
+            "max_ls": 4
+          },
+          "2024": {
+            "n": 4,
+            "win_rate": 0.5,
+            "net_r": 3.218106181473966,
+            "avg_r": 0.8045265453684916,
+            "pf": 2.34303018443194,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "2025": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.5208404734129357,
+            "avg_r": -0.08680674556882262,
+            "pf": 0.8757313556739893,
+            "mdd_r": 2.0760241569383266,
+            "max_ls": 2
+          },
+          "2026": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 1.6676865300279753,
+            "avg_r": 0.5558955100093251,
+            "pf": 2.348283235732969,
+            "mdd_r": 1.2368962884281272,
+            "max_ls": 2
+          }
+        }
+      },
+      "train": {
+        "overall": {
+          "n": 24,
+          "win_rate": 0.25,
+          "net_r": -2.7759817247178225,
+          "avg_r": -0.11566590519657594,
+          "pf": 0.8601705459559075,
+          "mdd_r": 10.591362151884404,
+          "max_ls": 7
+        },
+        "positive_symbols": 6,
+        "active_symbols": 16,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.146628445020765,
+            "avg_r": -1.146628445020765,
+            "pf": 0.0,
+            "mdd_r": 1.146628445020765,
+            "max_ls": 1
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.8535319095925042,
+            "avg_r": 2.8535319095925042,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1111542727539223,
+            "avg_r": -1.1111542727539223,
+            "pf": 0.0,
+            "mdd_r": 1.1111542727539223,
+            "max_ls": 1
+          },
+          "MU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0901635996673007,
+            "avg_r": -1.0901635996673007,
+            "pf": 0.0,
+            "mdd_r": 1.0901635996673007,
+            "max_ls": 1
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.9190755908172794,
+            "avg_r": 0.3063585302724265,
+            "pf": 1.4494514246794987,
+            "mdd_r": 2.0448830292899105,
+            "max_ls": 2
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.932317588082771,
+            "avg_r": 2.932317588082771,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.082904765231929,
+            "avg_r": -1.082904765231929,
+            "pf": 0.0,
+            "mdd_r": 1.082904765231929,
+            "max_ls": 1
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COST": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 3,
+            "win_rate": 0.0,
+            "net_r": -3.5319589087804086,
+            "avg_r": -1.1773196362601361,
+            "pf": 0.0,
+            "mdd_r": 3.5319589087804086,
+            "max_ls": 3
+          },
+          "LLY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "META": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NBIS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NVDA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "QQQ": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2734053966638132,
+            "avg_r": -1.1367026983319066,
+            "pf": 0.0,
+            "mdd_r": 2.2734053966638132,
+            "max_ls": 2
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2003147156738754,
+            "avg_r": -1.1001573578369377,
+            "pf": 0.0,
+            "mdd_r": 2.2003147156738754,
+            "max_ls": 2
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.6388476280249256,
+            "avg_r": 2.6388476280249256,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.7607275518132344,
+            "avg_r": 2.7607275518132344,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0538484611029464,
+            "avg_r": -1.0538484611029464,
+            "pf": 0.0,
+            "mdd_r": 1.0538484611029464,
+            "max_ls": 1
+          },
+          "CSCO": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1330650403730869,
+            "avg_r": -1.1330650403730869,
+            "pf": 0.0,
+            "mdd_r": 1.1330650403730869,
+            "max_ls": 1
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "LITE": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0902001232342087,
+            "avg_r": -1.0902001232342087,
+            "pf": 0.0,
+            "mdd_r": 1.0902001232342087,
+            "max_ls": 1
+          },
+          "TQQQ": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8331617354537195,
+            "avg_r": 0.27772057848457316,
+            "pf": 1.3978618057512397,
+            "mdd_r": 2.094098311046846,
+            "max_ls": 2
+          }
+        },
+        "years": {
+          "2021": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8948359717141106,
+            "avg_r": 0.14913932861901844,
+            "pf": 1.1915615336987482,
+            "mdd_r": 2.43935003441982,
+            "max_ls": 2
+          },
+          "2022": {
+            "n": 11,
+            "win_rate": 0.18181818181818182,
+            "net_r": -3.780286325088358,
+            "avg_r": -0.3436623931898507,
+            "pf": 0.6093358243603852,
+            "mdd_r": 5.667463015398533,
+            "max_ls": 5
+          },
+          "2023": {
+            "n": 4,
+            "win_rate": 0.0,
+            "net_r": -4.3717257923762265,
+            "avg_r": -1.0929314480940566,
+            "pf": 0.0,
+            "mdd_r": 4.3717257923762265,
+            "max_ls": 4
+          },
+          "2024": {
+            "n": 3,
+            "win_rate": 0.6666666666666666,
+            "net_r": 4.481194421032652,
+            "avg_r": 1.4937314736775507,
+            "pf": 4.954931324645864,
+            "mdd_r": 1.1330650403730869,
+            "max_ls": 1
+          }
+        }
+      },
+      "holdout": {
+        "overall": {
+          "n": 10,
+          "win_rate": 0.3,
+          "net_r": -0.11624218294364594,
+          "avg_r": -0.011624218294364594,
+          "pf": 0.9826276825515669,
+          "mdd_r": 3.312920445366453,
+          "max_ls": 4
+        },
+        "positive_symbols": 3,
+        "active_symbols": 10,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.040187110218287,
+            "avg_r": -1.040187110218287,
+            "pf": 0.0,
+            "mdd_r": 1.040187110218287,
+            "max_ls": 1
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COST": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.9045828184561024,
+            "avg_r": 2.9045828184561024,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1040178500082793,
+            "avg_r": -1.1040178500082793,
+            "pf": 0.0,
+            "mdd_r": 1.1040178500082793,
+            "max_ls": 1
+          },
+          "LLY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "META": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NBIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0112041134065266,
+            "avg_r": -1.0112041134065266,
+            "pf": 0.0,
+            "mdd_r": 1.0112041134065266,
+            "max_ls": 1
+          },
+          "NVDA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "QQQ": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 1.8251102927741953,
+            "avg_r": 1.8251102927741953,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0358370467200395,
+            "avg_r": -1.0358370467200395,
+            "pf": 0.0,
+            "mdd_r": 1.0358370467200395,
+            "max_ls": 1
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CSCO": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 1.8452953541660013,
+            "avg_r": 1.8452953541660013,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -0.22577059344600034,
+            "avg_r": -0.22577059344600034,
+            "pf": 0.0,
+            "mdd_r": 0.22577059344600034,
+            "max_ls": 1
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.2630882395586855,
+            "avg_r": -1.2630882395586855,
+            "pf": 0.0,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "LITE": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0111256949821268,
+            "avg_r": -1.0111256949821268,
+            "pf": 0.0,
+            "mdd_r": 1.0111256949821268,
+            "max_ls": 1
+          },
+          "TQQQ": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          }
+        },
+        "years": {
+          "2024": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.2630882395586855,
+            "avg_r": -1.2630882395586855,
+            "pf": 0.0,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "2025": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.5208404734129357,
+            "avg_r": -0.08680674556882262,
+            "pf": 0.8757313556739893,
+            "mdd_r": 2.0760241569383266,
+            "max_ls": 2
+          },
+          "2026": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 1.6676865300279753,
+            "avg_r": 0.5558955100093251,
+            "pf": 2.348283235732969,
+            "mdd_r": 1.2368962884281272,
+            "max_ls": 2
+          }
+        }
+      }
+    },
+    "spy_daily_slope": {
+      "overall": {
+        "overall": {
+          "n": 34,
+          "win_rate": 0.2647058823529412,
+          "net_r": -2.892223907661468,
+          "avg_r": -0.08506540904886671,
+          "pf": 0.8910397969881352,
+          "mdd_r": 10.591362151884404,
+          "max_ls": 7
+        },
+        "positive_symbols": 8,
+        "active_symbols": 21,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.146628445020765,
+            "avg_r": -1.146628445020765,
+            "pf": 0.0,
+            "mdd_r": 1.146628445020765,
+            "max_ls": 1
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.8535319095925042,
+            "avg_r": 2.8535319095925042,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1111542727539223,
+            "avg_r": -1.1111542727539223,
+            "pf": 0.0,
+            "mdd_r": 1.1111542727539223,
+            "max_ls": 1
+          },
+          "MU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0901635996673007,
+            "avg_r": -1.0901635996673007,
+            "pf": 0.0,
+            "mdd_r": 1.0901635996673007,
+            "max_ls": 1
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.9190755908172794,
+            "avg_r": 0.3063585302724265,
+            "pf": 1.4494514246794987,
+            "mdd_r": 2.0448830292899105,
+            "max_ls": 2
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 2,
+            "win_rate": 0.5,
+            "net_r": 1.8921304778644843,
+            "avg_r": 0.9460652389322421,
+            "pf": 2.819028960537123,
+            "mdd_r": 1.040187110218287,
+            "max_ls": 1
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.082904765231929,
+            "avg_r": -1.082904765231929,
+            "pf": 0.0,
+            "mdd_r": 1.082904765231929,
+            "max_ls": 1
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COST": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.9045828184561024,
+            "avg_r": 2.9045828184561024,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 4,
+            "win_rate": 0.0,
+            "net_r": -4.635976758788688,
+            "avg_r": -1.158994189697172,
+            "pf": 0.0,
+            "mdd_r": 4.635976758788688,
+            "max_ls": 4
+          },
+          "LLY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "META": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NBIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0112041134065266,
+            "avg_r": -1.0112041134065266,
+            "pf": 0.0,
+            "mdd_r": 1.0112041134065266,
+            "max_ls": 1
+          },
+          "NVDA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "QQQ": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2734053966638132,
+            "avg_r": -1.1367026983319066,
+            "pf": 0.0,
+            "mdd_r": 2.2734053966638132,
+            "max_ls": 2
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2003147156738754,
+            "avg_r": -1.1001573578369377,
+            "pf": 0.0,
+            "mdd_r": 2.2003147156738754,
+            "max_ls": 2
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 2,
+            "win_rate": 1.0,
+            "net_r": 4.463957920799121,
+            "avg_r": 2.2319789603995606,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.7607275518132344,
+            "avg_r": 2.7607275518132344,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0358370467200395,
+            "avg_r": -1.0358370467200395,
+            "pf": 0.0,
+            "mdd_r": 1.0358370467200395,
+            "max_ls": 1
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0538484611029464,
+            "avg_r": -1.0538484611029464,
+            "pf": 0.0,
+            "mdd_r": 1.0538484611029464,
+            "max_ls": 1
+          },
+          "CSCO": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 1.8452953541660013,
+            "avg_r": 1.8452953541660013,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -1.3588356338190872,
+            "avg_r": -0.6794178169095436,
+            "pf": 0.0,
+            "mdd_r": 1.3588356338190872,
+            "max_ls": 2
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.2630882395586855,
+            "avg_r": -1.2630882395586855,
+            "pf": 0.0,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "LITE": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.1013258182163357,
+            "avg_r": -1.0506629091081678,
+            "pf": 0.0,
+            "mdd_r": 2.1013258182163357,
+            "max_ls": 2
+          },
+          "TQQQ": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8331617354537195,
+            "avg_r": 0.27772057848457316,
+            "pf": 1.3978618057512397,
+            "mdd_r": 2.094098311046846,
+            "max_ls": 2
+          }
+        },
+        "years": {
+          "2021": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8948359717141106,
+            "avg_r": 0.14913932861901844,
+            "pf": 1.1915615336987482,
+            "mdd_r": 2.43935003441982,
+            "max_ls": 2
+          },
+          "2022": {
+            "n": 11,
+            "win_rate": 0.18181818181818182,
+            "net_r": -3.780286325088358,
+            "avg_r": -0.3436623931898507,
+            "pf": 0.6093358243603852,
+            "mdd_r": 5.667463015398533,
+            "max_ls": 5
+          },
+          "2023": {
+            "n": 4,
+            "win_rate": 0.0,
+            "net_r": -4.3717257923762265,
+            "avg_r": -1.0929314480940566,
+            "pf": 0.0,
+            "mdd_r": 4.3717257923762265,
+            "max_ls": 4
+          },
+          "2024": {
+            "n": 4,
+            "win_rate": 0.5,
+            "net_r": 3.218106181473966,
+            "avg_r": 0.8045265453684916,
+            "pf": 2.34303018443194,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "2025": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.5208404734129357,
+            "avg_r": -0.08680674556882262,
+            "pf": 0.8757313556739893,
+            "mdd_r": 2.0760241569383266,
+            "max_ls": 2
+          },
+          "2026": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 1.6676865300279753,
+            "avg_r": 0.5558955100093251,
+            "pf": 2.348283235732969,
+            "mdd_r": 1.2368962884281272,
+            "max_ls": 2
+          }
+        }
+      },
+      "train": {
+        "overall": {
+          "n": 24,
+          "win_rate": 0.25,
+          "net_r": -2.7759817247178225,
+          "avg_r": -0.11566590519657594,
+          "pf": 0.8601705459559075,
+          "mdd_r": 10.591362151884404,
+          "max_ls": 7
+        },
+        "positive_symbols": 6,
+        "active_symbols": 16,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.146628445020765,
+            "avg_r": -1.146628445020765,
+            "pf": 0.0,
+            "mdd_r": 1.146628445020765,
+            "max_ls": 1
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.8535319095925042,
+            "avg_r": 2.8535319095925042,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1111542727539223,
+            "avg_r": -1.1111542727539223,
+            "pf": 0.0,
+            "mdd_r": 1.1111542727539223,
+            "max_ls": 1
+          },
+          "MU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0901635996673007,
+            "avg_r": -1.0901635996673007,
+            "pf": 0.0,
+            "mdd_r": 1.0901635996673007,
+            "max_ls": 1
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.9190755908172794,
+            "avg_r": 0.3063585302724265,
+            "pf": 1.4494514246794987,
+            "mdd_r": 2.0448830292899105,
+            "max_ls": 2
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.932317588082771,
+            "avg_r": 2.932317588082771,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.082904765231929,
+            "avg_r": -1.082904765231929,
+            "pf": 0.0,
+            "mdd_r": 1.082904765231929,
+            "max_ls": 1
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COST": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 3,
+            "win_rate": 0.0,
+            "net_r": -3.5319589087804086,
+            "avg_r": -1.1773196362601361,
+            "pf": 0.0,
+            "mdd_r": 3.5319589087804086,
+            "max_ls": 3
+          },
+          "LLY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "META": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NBIS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NVDA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "QQQ": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2734053966638132,
+            "avg_r": -1.1367026983319066,
+            "pf": 0.0,
+            "mdd_r": 2.2734053966638132,
+            "max_ls": 2
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 2,
+            "win_rate": 0.0,
+            "net_r": -2.2003147156738754,
+            "avg_r": -1.1001573578369377,
+            "pf": 0.0,
+            "mdd_r": 2.2003147156738754,
+            "max_ls": 2
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.6388476280249256,
+            "avg_r": 2.6388476280249256,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.7607275518132344,
+            "avg_r": 2.7607275518132344,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0538484611029464,
+            "avg_r": -1.0538484611029464,
+            "pf": 0.0,
+            "mdd_r": 1.0538484611029464,
+            "max_ls": 1
+          },
+          "CSCO": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1330650403730869,
+            "avg_r": -1.1330650403730869,
+            "pf": 0.0,
+            "mdd_r": 1.1330650403730869,
+            "max_ls": 1
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "LITE": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0902001232342087,
+            "avg_r": -1.0902001232342087,
+            "pf": 0.0,
+            "mdd_r": 1.0902001232342087,
+            "max_ls": 1
+          },
+          "TQQQ": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8331617354537195,
+            "avg_r": 0.27772057848457316,
+            "pf": 1.3978618057512397,
+            "mdd_r": 2.094098311046846,
+            "max_ls": 2
+          }
+        },
+        "years": {
+          "2021": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": 0.8948359717141106,
+            "avg_r": 0.14913932861901844,
+            "pf": 1.1915615336987482,
+            "mdd_r": 2.43935003441982,
+            "max_ls": 2
+          },
+          "2022": {
+            "n": 11,
+            "win_rate": 0.18181818181818182,
+            "net_r": -3.780286325088358,
+            "avg_r": -0.3436623931898507,
+            "pf": 0.6093358243603852,
+            "mdd_r": 5.667463015398533,
+            "max_ls": 5
+          },
+          "2023": {
+            "n": 4,
+            "win_rate": 0.0,
+            "net_r": -4.3717257923762265,
+            "avg_r": -1.0929314480940566,
+            "pf": 0.0,
+            "mdd_r": 4.3717257923762265,
+            "max_ls": 4
+          },
+          "2024": {
+            "n": 3,
+            "win_rate": 0.6666666666666666,
+            "net_r": 4.481194421032652,
+            "avg_r": 1.4937314736775507,
+            "pf": 4.954931324645864,
+            "mdd_r": 1.1330650403730869,
+            "max_ls": 1
+          }
+        }
+      },
+      "holdout": {
+        "overall": {
+          "n": 10,
+          "win_rate": 0.3,
+          "net_r": -0.11624218294364594,
+          "avg_r": -0.011624218294364594,
+          "pf": 0.9826276825515669,
+          "mdd_r": 3.312920445366453,
+          "max_ls": 4
+        },
+        "positive_symbols": 3,
+        "active_symbols": 10,
+        "symbols": {
+          "AAPL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMZN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AVGO": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DELL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MSFT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNDK": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SNXX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPCX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BABA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "INTC": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.040187110218287,
+            "avg_r": -1.040187110218287,
+            "pf": 0.0,
+            "mdd_r": 1.040187110218287,
+            "max_ls": 1
+          },
+          "JPM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "KORU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MSTR": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NFLX": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SKHY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SMCI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SOXS": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "V": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COST": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 2.9045828184561024,
+            "avg_r": 2.9045828184561024,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "GOOGL": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.1040178500082793,
+            "avg_r": -1.1040178500082793,
+            "pf": 0.0,
+            "mdd_r": 1.1040178500082793,
+            "max_ls": 1
+          },
+          "LLY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "META": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "NBIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0112041134065266,
+            "avg_r": -1.0112041134065266,
+            "pf": 0.0,
+            "mdd_r": 1.0112041134065266,
+            "max_ls": 1
+          },
+          "NVDA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "QQQ": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "TSLA": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "UBER": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "WMT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AMAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CAT": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "DRAM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "EWY": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "HD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MRVL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "MUU": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "ORCL": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "SPY": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 1.8251102927741953,
+            "avg_r": 1.8251102927741953,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "TSM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "AAOI": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0358370467200395,
+            "avg_r": -1.0358370467200395,
+            "pf": 0.0,
+            "mdd_r": 1.0358370467200395,
+            "max_ls": 1
+          },
+          "AXTI": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "BE": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "COIN": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CRM": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "CSCO": {
+            "n": 1,
+            "win_rate": 1.0,
+            "net_r": 1.8452953541660013,
+            "avg_r": 1.8452953541660013,
+            "pf": null,
+            "mdd_r": 0,
+            "max_ls": 0
+          },
+          "DIS": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -0.22577059344600034,
+            "avg_r": -0.22577059344600034,
+            "pf": 0.0,
+            "mdd_r": 0.22577059344600034,
+            "max_ls": 1
+          },
+          "HOOD": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          },
+          "IBM": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.2630882395586855,
+            "avg_r": -1.2630882395586855,
+            "pf": 0.0,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "LITE": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.0111256949821268,
+            "avg_r": -1.0111256949821268,
+            "pf": 0.0,
+            "mdd_r": 1.0111256949821268,
+            "max_ls": 1
+          },
+          "TQQQ": {
+            "n": 0,
+            "win_rate": null,
+            "net_r": 0.0,
+            "avg_r": null,
+            "pf": null,
+            "mdd_r": 0.0,
+            "max_ls": 0
+          }
+        },
+        "years": {
+          "2024": {
+            "n": 1,
+            "win_rate": 0.0,
+            "net_r": -1.2630882395586855,
+            "avg_r": -1.2630882395586855,
+            "pf": 0.0,
+            "mdd_r": 1.2630882395586855,
+            "max_ls": 1
+          },
+          "2025": {
+            "n": 6,
+            "win_rate": 0.3333333333333333,
+            "net_r": -0.5208404734129357,
+            "avg_r": -0.08680674556882262,
+            "pf": 0.8757313556739893,
+            "mdd_r": 2.0760241569383266,
+            "max_ls": 2
+          },
+          "2026": {
+            "n": 3,
+            "win_rate": 0.3333333333333333,
+            "net_r": 1.6676865300279753,
+            "avg_r": 0.5558955100093251,
+            "pf": 2.348283235732969,
+            "mdd_r": 1.2368962884281272,
+            "max_ls": 2
+          }
+        }
+      }
+    }
+  }
+}
