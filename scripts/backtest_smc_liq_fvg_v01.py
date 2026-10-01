@@ -20,6 +20,9 @@ DEFAULTS={
     "stop_buffer_atr":0.15,
     "max_hold_hours":48,
     "cost_bps_per_side":6.0,
+    "fvg_entry_depth":0.50,
+    "tp_r":2.0,
+    "trend_mode":"strict_1d",
 }
 
 def load_json_bars(path):
@@ -88,10 +91,22 @@ def prepare_daily(d):
     enrich(d)
     return d,[x["t"]+DAY-1 for x in d]
 
-def trend_at(d,dclose,hclose):
+def trend_at(d,dclose,hclose,mode="strict_1d"):
     di=bisect.bisect_right(dclose,hclose)-1
     if di<199:return None
     x=d[di]
+    if mode=="ema200_only":
+        if x["c"]>x["ema200"]:return "LONG"
+        if x["c"]<x["ema200"]:return "SHORT"
+        return None
+    if mode=="ema50_200":
+        if x["ema50"]>x["ema200"]:return "LONG"
+        if x["ema50"]<x["ema200"]:return "SHORT"
+        return None
+    if mode=="price_ema50":
+        if x["c"]>x["ema50"] and x["ema20"]>x["ema50"]:return "LONG"
+        if x["c"]<x["ema50"] and x["ema20"]<x["ema50"]:return "SHORT"
+        return None
     if x["c"]>x["ema200"] and x["ema50"]>x["ema200"]:return "LONG"
     if x["c"]<x["ema200"] and x["ema50"]<x["ema200"]:return "SHORT"
     return None
@@ -106,7 +121,7 @@ def body(x):
 def find_setup(H,D,Dclose,i,cfg):
     if i<cfg["sweep_lookback"] or not H[i].get("atr"):return None
     s=H[i]; A=s["atr"]
-    trend=trend_at(D,Dclose,s["t"]+HOUR-1)
+    trend=trend_at(D,Dclose,s["t"]+HOUR-1,cfg.get("trend_mode","strict_1d"))
     if trend is None:return None
     prev=H[i-cfg["sweep_lookback"]:i]
     ph=max(x["h"] for x in prev); pl=min(x["l"] for x in prev)
@@ -134,7 +149,11 @@ def find_setup(H,D,Dclose,i,cfg):
             if not (strong and directional and fvg):continue
             fvg_low,fvg_high=gap_low,gap_high
 
-        entry=(fvg_low+fvg_high)/2
+        depth=float(cfg.get("fvg_entry_depth",0.50))
+        if direction=="LONG":
+            entry=fvg_high-depth*(fvg_high-fvg_low)
+        else:
+            entry=fvg_low+depth*(fvg_high-fvg_low)
         stop=(s["l"]-cfg["stop_buffer_atr"]*A) if direction=="LONG" else (s["h"]+cfg["stop_buffer_atr"]*A)
         risk=abs(entry-stop)
         if risk<=0 or risk<0.10*qa or risk>4.0*qa:continue
@@ -181,7 +200,7 @@ def runner_pivot_stop(H,hclose_times,zclose,direction,stop):
 def simulate_trade(M,H,entry_i,setup,cfg,mode):
     direction=setup["direction"]; sign=1 if direction=="LONG" else -1
     entry=setup["entry"]; stop0=setup["stop"]; risk=setup["risk"]
-    tp1=entry+sign*risk; tp2=entry+sign*2*risk
+    tp1=entry+sign*risk; tp2=entry+sign*float(cfg.get("tp_r",2.0))*risk
     size=RISK_DOLLARS/risk
     cost_rate=cfg["cost_bps_per_side"]/10000.0
     pnl=-size*entry*cost_rate
@@ -323,4 +342,4 @@ def main():
 if __name__=="__main__":
     main()
 
-# trigger: smc-liq-fvg-v011-direct-binance-data
+# trigger: smc-liq-fvg-v014-parameter-hooks
