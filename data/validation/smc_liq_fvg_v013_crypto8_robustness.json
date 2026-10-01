@@ -29,7 +29,10 @@
         "retest_hours": 8,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 70,
@@ -284,7 +287,10 @@
         "retest_hours": 8,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 84,
@@ -539,7 +545,10 @@
         "retest_hours": 8,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 65,
@@ -794,7 +803,10 @@
         "retest_hours": 8,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 91,
@@ -1049,7 +1061,10 @@
         "retest_hours": 8,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 57,
@@ -1304,7 +1319,10 @@
         "retest_hours": 8,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 80,
@@ -1559,7 +1577,10 @@
         "retest_hours": 8,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 60,
@@ -1814,7 +1835,10 @@
         "retest_hours": 4,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 45,
@@ -2061,7 +2085,10 @@
         "retest_hours": 12,
         "stop_buffer_atr": 0.15,
         "max_hold_hours": 48,
-        "cost_bps_per_side": 6.0
+        "cost_bps_per_side": 6.0,
+        "fvg_entry_depth": 0.5,
+        "tp_r": 2.0,
+        "trend_mode": "strict_1d"
       },
       "summary": {
         "n": 83,
