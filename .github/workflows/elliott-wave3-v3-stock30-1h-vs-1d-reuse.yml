@@ -1,0 +1,49 @@
+name: Elliott Wave 3 v3 Stock30 1H vs 1D Reuse Cache
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/elliott-wave3-v3-stock30-1h-vs-1d-reuse.yml"
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - name: Reuse Stock53 RTH cache from prior validated run
+        uses: actions/download-artifact@v4
+        with:
+          name: elliott-stock30-rth-cache
+          path: data/cache
+          repository: DY0617/wyckoff-oos-public
+          run-id: 36990323853
+          github-token: ${{ github.token }}
+      - name: Compile
+        run: python -m py_compile scripts/backtest_elliott_wave3_v3_stock30_1h_vs_1d.py
+      - name: Run Stock30 1H vs 1D
+        run: python scripts/backtest_elliott_wave3_v3_stock30_1h_vs_1d.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elliott-wave3-v3-stock30-1h-vs-1d-reuse
+          path: data/validation/elliott_wave3_v3_stock30_1h_vs_1d_cross_asset_oos.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/elliott_wave3_v3_stock30_1h_vs_1d_cross_asset_oos.json
+          git commit -m "research: add Elliott Wave 3 v3 Stock30 1H vs 1D [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
