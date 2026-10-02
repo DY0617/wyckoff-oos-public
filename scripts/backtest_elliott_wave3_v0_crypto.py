@@ -177,7 +177,7 @@ def metrics(ts):
     }
 
 
-def simulate(sym, b15, tf):
+def simulate(sym, b15, tf, direction_filter=None):
     d = enrich_atr(aggregate(b15, tf))
     ps = zigzag(d)
     t15 = [x["t"] for x in b15]
@@ -186,7 +186,7 @@ def simulate(sym, b15, tf):
     by_known = defaultdict(list)
     for k in range(2, len(ps)):
         s = wave3_pattern(d, ps[k - 2], ps[k - 1], ps[k])
-        if s:
+        if s and (direction_filter is None or s["side"] == direction_filter):
             by_known[s["known_i"]].append(s)
     trades, st = [], defaultdict(int)
     busy_until = -1
