@@ -1,0 +1,41 @@
+name: Elliott Wave 3 v3 4H OOS4 Fib Fixed
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/elliott-wave3-v3-4h-oos4-fib.yml"
+      - "scripts/backtest_elliott_wave3_v3_4h_oos4_fib.py"
+      - "strategy/elliott_wave3_v3_4h_oos4_fib_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  oos4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_elliott_wave3_v3_4h_oos4_fib.py
+      - name: Run OOS4
+        run: python scripts/backtest_elliott_wave3_v3_4h_oos4_fib.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elliott-wave3-v3-4h-oos4-fib
+          path: data/validation/elliott_wave3_v3_4h_oos4_fib_fixed.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/elliott_wave3_v3_4h_oos4_fib_fixed.json
+          git commit -m "research: add Elliott Wave 3 v3 4H OOS4 fib [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
