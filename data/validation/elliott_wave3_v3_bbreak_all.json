@@ -1,0 +1,1536 @@
+{
+  "strategy": "Elliott Wave 3 v3 B-wave breakout frozen",
+  "purpose": "Predeclared DEV + two unseen-symbol holdouts with identical rules; only entry timing differs from v1.",
+  "rules": {
+    "macro_structure": "exact v1 frozen 5-wave impulse + ABC zigzag",
+    "signal_timeframes": [
+      "1H",
+      "4H"
+    ],
+    "pivot_reversal_atr": 1.5,
+    "entry": "B-wave extreme breakout after C pivot confirmation",
+    "sl": "C extreme +/- 0.15 ATR",
+    "tp1": "C +/- 1.0 x macro Wave 1 impulse length",
+    "tp2": "C +/- 1.618 x macro Wave 1 impulse length",
+    "tp1_fraction": 0.5,
+    "after_tp1": "breakeven",
+    "entry_valid_signal_bars": 12,
+    "max_hold_signal_bars": 48,
+    "execution": "15m, stop-first conservative intrabar convention"
+  },
+  "costs": {
+    "fee_bps": 4.0,
+    "slippage_bps": 2.0,
+    "per_fill_total_bps": 6.0
+  },
+  "groups": {
+    "DEV": {
+      "strategy": "Elliott Wave 3 v3 B-wave breakout frozen",
+      "group": "DEV",
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "BNBUSDT",
+        "SOLUSDT"
+      ],
+      "summary": {
+        "trades": 57,
+        "long": 31,
+        "short": 26,
+        "win_rate": 0.49122807017543857,
+        "total_r": 8.12684226138299,
+        "avg_r": 0.14257618002426298,
+        "profit_factor": 1.2767704325717253,
+        "max_drawdown_r": -6.617067254093539,
+        "max_losing_streak": 4,
+        "tp1_hit_rate": 0.42105263157894735,
+        "tp2_hit_rate": 0.17543859649122806,
+        "avg_hold_hours": 35.01315789473684
+      },
+      "timeframes": {
+        "1H": {
+          "trades": 48,
+          "long": 28,
+          "short": 20,
+          "win_rate": 0.5208333333333334,
+          "total_r": 8.618809674583149,
+          "avg_r": 0.17955853488714893,
+          "profit_factor": 1.3735794367100225,
+          "max_drawdown_r": -9.29973277203627,
+          "max_losing_streak": 5,
+          "tp1_hit_rate": 0.4375,
+          "tp2_hit_rate": 0.16666666666666666,
+          "avg_hold_hours": 23.458333333333332
+        },
+        "4H": {
+          "trades": 9,
+          "long": 3,
+          "short": 6,
+          "win_rate": 0.3333333333333333,
+          "total_r": -0.4919674132001588,
+          "avg_r": -0.054663045911128756,
+          "profit_factor": 0.9218134660394772,
+          "max_drawdown_r": -3.174632931142887,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.3333333333333333,
+          "tp2_hit_rate": 0.2222222222222222,
+          "avg_hold_hours": 96.63888888888889
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 31,
+          "long": 31,
+          "short": 0,
+          "win_rate": 0.45161290322580644,
+          "total_r": 2.8696365841079383,
+          "avg_r": 0.09256892206799801,
+          "profit_factor": 1.1685421423623832,
+          "max_drawdown_r": -8.358720848083498,
+          "max_losing_streak": 6,
+          "tp1_hit_rate": 0.3548387096774194,
+          "tp2_hit_rate": 0.16129032258064516,
+          "avg_hold_hours": 29.274193548387096
+        },
+        "SHORT": {
+          "trades": 26,
+          "long": 0,
+          "short": 26,
+          "win_rate": 0.5384615384615384,
+          "total_r": 5.257205677275052,
+          "avg_r": 0.20220021835673277,
+          "profit_factor": 1.42613703344517,
+          "max_drawdown_r": -4.152037731075076,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.19230769230769232,
+          "avg_hold_hours": 41.85576923076923
+        }
+      },
+      "symbols_metrics": {
+        "BNBUSDT": {
+          "trades": 18,
+          "long": 10,
+          "short": 8,
+          "win_rate": 0.5,
+          "total_r": 3.1547511192659154,
+          "avg_r": 0.17526395107032863,
+          "profit_factor": 1.3767899835888622,
+          "max_drawdown_r": -3.9238046973873266,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.3888888888888889,
+          "tp2_hit_rate": 0.05555555555555555,
+          "avg_hold_hours": 39.875
+        },
+        "BTCUSDT": {
+          "trades": 14,
+          "long": 9,
+          "short": 5,
+          "win_rate": 0.6428571428571429,
+          "total_r": 8.318641609063995,
+          "avg_r": 0.594188686361714,
+          "profit_factor": 2.570885349586644,
+          "max_drawdown_r": -2.0894269062124327,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.5714285714285714,
+          "tp2_hit_rate": 0.2857142857142857,
+          "avg_hold_hours": 31.517857142857142
+        },
+        "ETHUSDT": {
+          "trades": 8,
+          "long": 4,
+          "short": 4,
+          "win_rate": 0.375,
+          "total_r": -0.3353957971827548,
+          "avg_r": -0.04192447464784435,
+          "profit_factor": 0.9355788571531064,
+          "max_drawdown_r": -2.381135287177158,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.375,
+          "tp2_hit_rate": 0.25,
+          "avg_hold_hours": 55.1875
+        },
+        "SOLUSDT": {
+          "trades": 17,
+          "long": 8,
+          "short": 9,
+          "win_rate": 0.4117647058823529,
+          "total_r": -3.011154669764165,
+          "avg_r": -0.177126745280245,
+          "profit_factor": 0.7129116650534844,
+          "max_drawdown_r": -7.1445070179117565,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.35294117647058826,
+          "tp2_hit_rate": 0.17647058823529413,
+          "avg_hold_hours": 23.25
+        }
+      },
+      "years": {
+        "2021": {
+          "trades": 1,
+          "long": 0,
+          "short": 1,
+          "win_rate": 1.0,
+          "total_r": 0.7798693191701553,
+          "avg_r": 0.7798693191701553,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "max_losing_streak": 0,
+          "tp1_hit_rate": 1.0,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 48.0
+        },
+        "2022": {
+          "trades": 10,
+          "long": 7,
+          "short": 3,
+          "win_rate": 0.6,
+          "total_r": 5.334462920781117,
+          "avg_r": 0.5334462920781118,
+          "profit_factor": 2.2895902584985635,
+          "max_drawdown_r": -4.004377736341238,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.4,
+          "avg_hold_hours": 25.975
+        },
+        "2023": {
+          "trades": 17,
+          "long": 10,
+          "short": 7,
+          "win_rate": 0.5294117647058824,
+          "total_r": 4.970893361239491,
+          "avg_r": 0.2924054918376171,
+          "profit_factor": 1.6894474192891555,
+          "max_drawdown_r": -3.6764107701246855,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.47058823529411764,
+          "tp2_hit_rate": 0.17647058823529413,
+          "avg_hold_hours": 32.044117647058826
+        },
+        "2024": {
+          "trades": 10,
+          "long": 6,
+          "short": 4,
+          "win_rate": 0.6,
+          "total_r": 2.2456543770135644,
+          "avg_r": 0.22456543770135645,
+          "profit_factor": 1.5348821669406056,
+          "max_drawdown_r": -2.138561774235069,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 28.125
+        },
+        "2025": {
+          "trades": 9,
+          "long": 3,
+          "short": 6,
+          "win_rate": 0.3333333333333333,
+          "total_r": -1.8474082648901518,
+          "avg_r": -0.20526758498779463,
+          "profit_factor": 0.7032632550848082,
+          "max_drawdown_r": -3.0210343820462477,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.3333333333333333,
+          "tp2_hit_rate": 0.2222222222222222,
+          "avg_hold_hours": 46.111111111111114
+        },
+        "2026": {
+          "trades": 10,
+          "long": 5,
+          "short": 5,
+          "win_rate": 0.3,
+          "total_r": -3.3566294519311866,
+          "avg_r": -0.3356629451931187,
+          "profit_factor": 0.5578981218153207,
+          "max_drawdown_r": -5.282176263568131,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.2,
+          "tp2_hit_rate": 0.1,
+          "avg_hold_hours": 44.7
+        }
+      },
+      "symbol_timeframes": {
+        "BTCUSDT_1H": {
+          "metrics": {
+            "trades": 12,
+            "long": 9,
+            "short": 3,
+            "win_rate": 0.5833333333333334,
+            "total_r": 4.4245736438475936,
+            "avg_r": 0.3687144703206328,
+            "profit_factor": 1.8355327999362436,
+            "max_drawdown_r": -3.1950633759182248,
+            "max_losing_streak": 3,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.25,
+            "avg_hold_hours": 20.625
+          },
+          "stats": {
+            "patterns": 34,
+            "entry_expired": 13,
+            "cancelled_before_entry": 9,
+            "filled": 12,
+            "fill_rate": 0.35294117647058826
+          },
+          "pivots": 8245
+        },
+        "BTCUSDT_4H": {
+          "metrics": {
+            "trades": 2,
+            "long": 0,
+            "short": 2,
+            "win_rate": 1.0,
+            "total_r": 3.894067965216401,
+            "avg_r": 1.9470339826082006,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": 1.0,
+            "tp2_hit_rate": 0.5,
+            "avg_hold_hours": 96.875
+          },
+          "stats": {
+            "patterns": 9,
+            "cancelled_before_entry": 4,
+            "filled": 2,
+            "entry_expired": 3,
+            "fill_rate": 0.2222222222222222
+          },
+          "pivots": 1980
+        },
+        "ETHUSDT_1H": {
+          "metrics": {
+            "trades": 5,
+            "long": 2,
+            "short": 3,
+            "win_rate": 0.4,
+            "total_r": -0.19134628863779413,
+            "avg_r": -0.03826925772755883,
+            "profit_factor": 0.9393717639222866,
+            "max_drawdown_r": -2.1265972508958937,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.4,
+            "tp2_hit_rate": 0.2,
+            "avg_hold_hours": 14.85
+          },
+          "stats": {
+            "patterns": 28,
+            "filled": 5,
+            "entry_expired": 13,
+            "cancelled_before_entry": 10,
+            "fill_rate": 0.17857142857142858
+          },
+          "pivots": 8128
+        },
+        "ETHUSDT_4H": {
+          "metrics": {
+            "trades": 3,
+            "long": 2,
+            "short": 1,
+            "win_rate": 0.3333333333333333,
+            "total_r": -0.14404950854496068,
+            "avg_r": -0.04801650284832023,
+            "profit_factor": 0.9297402083300802,
+            "max_drawdown_r": -1.0340781614838233,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.3333333333333333,
+            "tp2_hit_rate": 0.3333333333333333,
+            "avg_hold_hours": 122.41666666666667
+          },
+          "stats": {
+            "patterns": 10,
+            "cancelled_before_entry": 5,
+            "filled": 3,
+            "entry_expired": 2,
+            "fill_rate": 0.3
+          },
+          "pivots": 2036
+        },
+        "BNBUSDT_1H": {
+          "metrics": {
+            "trades": 15,
+            "long": 9,
+            "short": 6,
+            "win_rate": 0.6,
+            "total_r": 6.381713644458895,
+            "avg_r": 0.42544757629725966,
+            "profit_factor": 2.2401931368314623,
+            "max_drawdown_r": -1.151835255173796,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.4666666666666667,
+            "tp2_hit_rate": 0.06666666666666667,
+            "avg_hold_hours": 35.81666666666667
+          },
+          "stats": {
+            "patterns": 39,
+            "entry_expired": 15,
+            "cancelled_before_entry": 9,
+            "filled": 15,
+            "fill_rate": 0.38461538461538464
+          },
+          "pivots": 8080
+        },
+        "BNBUSDT_4H": {
+          "metrics": {
+            "trades": 3,
+            "long": 1,
+            "short": 2,
+            "win_rate": 0.0,
+            "total_r": -3.226962525192979,
+            "avg_r": -1.0756541750643265,
+            "profit_factor": 0.0,
+            "max_drawdown_r": -3.226962525192979,
+            "max_losing_streak": 3,
+            "tp1_hit_rate": 0.0,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 60.166666666666664
+          },
+          "stats": {
+            "patterns": 8,
+            "filled": 3,
+            "cancelled_before_entry": 5,
+            "fill_rate": 0.375
+          },
+          "pivots": 2038
+        },
+        "SOLUSDT_1H": {
+          "metrics": {
+            "trades": 16,
+            "long": 8,
+            "short": 8,
+            "win_rate": 0.4375,
+            "total_r": -1.9961313250855452,
+            "avg_r": -0.12475820781784658,
+            "profit_factor": 0.7892948537618864,
+            "max_drawdown_r": -6.129483673233136,
+            "max_losing_streak": 4,
+            "tp1_hit_rate": 0.375,
+            "tp2_hit_rate": 0.1875,
+            "avg_hold_hours": 16.6875
+          },
+          "stats": {
+            "patterns": 32,
+            "entry_expired": 7,
+            "filled": 16,
+            "cancelled_before_entry": 9,
+            "fill_rate": 0.5
+          },
+          "pivots": 8063
+        },
+        "SOLUSDT_4H": {
+          "metrics": {
+            "trades": 1,
+            "long": 0,
+            "short": 1,
+            "win_rate": 0.0,
+            "total_r": -1.0150233446786199,
+            "avg_r": -1.0150233446786199,
+            "profit_factor": 0.0,
+            "max_drawdown_r": -1.0150233446786199,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.0,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 128.25
+          },
+          "stats": {
+            "patterns": 8,
+            "cancelled_before_entry": 3,
+            "entry_expired": 4,
+            "filled": 1,
+            "fill_rate": 0.125
+          },
+          "pivots": 1930
+        }
+      }
+    },
+    "OOS1": {
+      "strategy": "Elliott Wave 3 v3 B-wave breakout frozen",
+      "group": "OOS1",
+      "symbols": [
+        "XRPUSDT",
+        "ADAUSDT",
+        "DOGEUSDT",
+        "LINKUSDT"
+      ],
+      "summary": {
+        "trades": 56,
+        "long": 27,
+        "short": 29,
+        "win_rate": 0.39285714285714285,
+        "total_r": -6.171974388282013,
+        "avg_r": -0.11021382836217881,
+        "profit_factor": 0.8025224727326932,
+        "max_drawdown_r": -12.184890111337047,
+        "max_losing_streak": 6,
+        "tp1_hit_rate": 0.30357142857142855,
+        "tp2_hit_rate": 0.07142857142857142,
+        "avg_hold_hours": 45.5
+      },
+      "timeframes": {
+        "1H": {
+          "trades": 47,
+          "long": 24,
+          "short": 23,
+          "win_rate": 0.3617021276595745,
+          "total_r": -8.812486137023562,
+          "avg_r": -0.18749970504305452,
+          "profit_factor": 0.6748492550162345,
+          "max_drawdown_r": -13.141656501528029,
+          "max_losing_streak": 5,
+          "tp1_hit_rate": 0.2553191489361702,
+          "tp2_hit_rate": 0.06382978723404255,
+          "avg_hold_hours": 28.117021276595743
+        },
+        "4H": {
+          "trades": 9,
+          "long": 3,
+          "short": 6,
+          "win_rate": 0.5555555555555556,
+          "total_r": 2.640511748741548,
+          "avg_r": 0.29339019430461644,
+          "profit_factor": 1.636070380912507,
+          "max_drawdown_r": -2.046350118494458,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.5555555555555556,
+          "tp2_hit_rate": 0.1111111111111111,
+          "avg_hold_hours": 136.27777777777777
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 27,
+          "long": 27,
+          "short": 0,
+          "win_rate": 0.3333333333333333,
+          "total_r": -7.20265818022094,
+          "avg_r": -0.26676511778596074,
+          "profit_factor": 0.5412337498432906,
+          "max_drawdown_r": -8.485599049175793,
+          "max_losing_streak": 5,
+          "tp1_hit_rate": 0.25925925925925924,
+          "tp2_hit_rate": 0.037037037037037035,
+          "avg_hold_hours": 39.629629629629626
+        },
+        "SHORT": {
+          "trades": 29,
+          "long": 0,
+          "short": 29,
+          "win_rate": 0.4482758620689655,
+          "total_r": 1.030683791938926,
+          "avg_r": 0.0355408204116871,
+          "profit_factor": 1.0662648772516976,
+          "max_drawdown_r": -5.904462391761026,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.3448275862068966,
+          "tp2_hit_rate": 0.10344827586206896,
+          "avg_hold_hours": 50.96551724137931
+        }
+      },
+      "symbols_metrics": {
+        "ADAUSDT": {
+          "trades": 15,
+          "long": 5,
+          "short": 10,
+          "win_rate": 0.6,
+          "total_r": 5.277110263796146,
+          "avg_r": 0.3518073509197431,
+          "profit_factor": 2.0611202830659874,
+          "max_drawdown_r": -1.8174084396224917,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.4666666666666667,
+          "tp2_hit_rate": 0.06666666666666667,
+          "avg_hold_hours": 54.81666666666667
+        },
+        "DOGEUSDT": {
+          "trades": 18,
+          "long": 10,
+          "short": 8,
+          "win_rate": 0.3888888888888889,
+          "total_r": -1.7743641551087577,
+          "avg_r": -0.09857578639493098,
+          "profit_factor": 0.8359389766029435,
+          "max_drawdown_r": -5.592164309009386,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.2777777777777778,
+          "tp2_hit_rate": 0.1111111111111111,
+          "avg_hold_hours": 39.90277777777778
+        },
+        "LINKUSDT": {
+          "trades": 11,
+          "long": 8,
+          "short": 3,
+          "win_rate": 0.2727272727272727,
+          "total_r": -5.689132706172551,
+          "avg_r": -0.5171938823793228,
+          "profit_factor": 0.2384472047679074,
+          "max_drawdown_r": -5.6891327061725505,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.18181818181818182,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 47.15909090909091
+        },
+        "XRPUSDT": {
+          "trades": 12,
+          "long": 4,
+          "short": 8,
+          "win_rate": 0.25,
+          "total_r": -3.98558779079685,
+          "avg_r": -0.3321323158997375,
+          "profit_factor": 0.5015025864874952,
+          "max_drawdown_r": -3.985587790796851,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.25,
+          "tp2_hit_rate": 0.08333333333333333,
+          "avg_hold_hours": 40.729166666666664
+        }
+      },
+      "years": {
+        "2021": {
+          "trades": 4,
+          "long": 3,
+          "short": 1,
+          "win_rate": 0.0,
+          "total_r": -4.1784117261319444,
+          "avg_r": -1.0446029315329861,
+          "profit_factor": 0.0,
+          "max_drawdown_r": -4.1784117261319444,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.0,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 58.1875
+        },
+        "2022": {
+          "trades": 16,
+          "long": 5,
+          "short": 11,
+          "win_rate": 0.5625,
+          "total_r": 5.935638035940298,
+          "avg_r": 0.3709773772462686,
+          "profit_factor": 1.9144172143548484,
+          "max_drawdown_r": -2.0709997623563883,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.4375,
+          "tp2_hit_rate": 0.1875,
+          "avg_hold_hours": 28.5625
+        },
+        "2023": {
+          "trades": 9,
+          "long": 6,
+          "short": 3,
+          "win_rate": 0.6666666666666666,
+          "total_r": 4.006977358957856,
+          "avg_r": 0.44521970655087295,
+          "profit_factor": 2.558472120732686,
+          "max_drawdown_r": -1.0657179104516654,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.5555555555555556,
+          "tp2_hit_rate": 0.1111111111111111,
+          "avg_hold_hours": 66.44444444444444
+        },
+        "2024": {
+          "trades": 12,
+          "long": 7,
+          "short": 5,
+          "win_rate": 0.25,
+          "total_r": -5.844123526716701,
+          "avg_r": -0.48701029389305844,
+          "profit_factor": 0.3114627830054054,
+          "max_drawdown_r": -5.9825947957817025,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.16666666666666666,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 29.145833333333332
+        },
+        "2025": {
+          "trades": 10,
+          "long": 4,
+          "short": 6,
+          "win_rate": 0.4,
+          "total_r": -0.9161236338936425,
+          "avg_r": -0.09161236338936425,
+          "profit_factor": 0.7893830654489098,
+          "max_drawdown_r": -4.049433428372198,
+          "max_losing_streak": 5,
+          "tp1_hit_rate": 0.3,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 65.625
+        },
+        "2026": {
+          "trades": 5,
+          "long": 2,
+          "short": 3,
+          "win_rate": 0.0,
+          "total_r": -5.17593089643788,
+          "avg_r": -1.0351861792875758,
+          "profit_factor": 0.0,
+          "max_drawdown_r": -5.17593089643788,
+          "max_losing_streak": 5,
+          "tp1_hit_rate": 0.0,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 50.85
+        }
+      },
+      "symbol_timeframes": {
+        "XRPUSDT_1H": {
+          "metrics": {
+            "trades": 10,
+            "long": 4,
+            "short": 6,
+            "win_rate": 0.2,
+            "total_r": -3.8256228505995704,
+            "avg_r": -0.38256228505995704,
+            "profit_factor": 0.4518537317861619,
+            "max_drawdown_r": -3.8256228505995704,
+            "max_losing_streak": 4,
+            "tp1_hit_rate": 0.2,
+            "tp2_hit_rate": 0.1,
+            "avg_hold_hours": 26.45
+          },
+          "stats": {
+            "patterns": 31,
+            "filled": 10,
+            "cancelled_before_entry": 7,
+            "entry_expired": 14,
+            "fill_rate": 0.3225806451612903
+          },
+          "pivots": 8044
+        },
+        "XRPUSDT_4H": {
+          "metrics": {
+            "trades": 2,
+            "long": 0,
+            "short": 2,
+            "win_rate": 0.5,
+            "total_r": -0.1599649401972797,
+            "avg_r": -0.07998247009863985,
+            "profit_factor": 0.8425544701465255,
+            "max_drawdown_r": -1.016001790245489,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 112.125
+          },
+          "stats": {
+            "patterns": 10,
+            "cancelled_before_entry": 6,
+            "entry_expired": 2,
+            "filled": 2,
+            "fill_rate": 0.2
+          },
+          "pivots": 1965
+        },
+        "ADAUSDT_1H": {
+          "metrics": {
+            "trades": 12,
+            "long": 5,
+            "short": 7,
+            "win_rate": 0.5833333333333334,
+            "total_r": 4.040487602462276,
+            "avg_r": 0.3367073002051897,
+            "profit_factor": 2.019324532928118,
+            "max_drawdown_r": -2.9385827799941833,
+            "max_losing_streak": 4,
+            "tp1_hit_rate": 0.4166666666666667,
+            "tp2_hit_rate": 0.08333333333333333,
+            "avg_hold_hours": 31.166666666666668
+          },
+          "stats": {
+            "patterns": 35,
+            "cancelled_before_entry": 14,
+            "filled": 12,
+            "entry_expired": 9,
+            "fill_rate": 0.34285714285714286
+          },
+          "pivots": 8048
+        },
+        "ADAUSDT_4H": {
+          "metrics": {
+            "trades": 3,
+            "long": 0,
+            "short": 3,
+            "win_rate": 0.6666666666666666,
+            "total_r": 1.2366226613338696,
+            "avg_r": 0.41220755377795654,
+            "profit_factor": 2.2252734423182674,
+            "max_drawdown_r": -1.0092626010028656,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.6666666666666666,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 149.41666666666666
+          },
+          "stats": {
+            "patterns": 9,
+            "cancelled_before_entry": 4,
+            "filled": 3,
+            "entry_expired": 2,
+            "fill_rate": 0.3333333333333333
+          },
+          "pivots": 1984
+        },
+        "DOGEUSDT_1H": {
+          "metrics": {
+            "trades": 16,
+            "long": 9,
+            "short": 7,
+            "win_rate": 0.3125,
+            "total_r": -5.4642424349539445,
+            "avg_r": -0.34151515218462153,
+            "profit_factor": 0.49476594002023233,
+            "max_drawdown_r": -6.627835416364298,
+            "max_losing_streak": 3,
+            "tp1_hit_rate": 0.1875,
+            "tp2_hit_rate": 0.0625,
+            "avg_hold_hours": 29.421875
+          },
+          "stats": {
+            "patterns": 36,
+            "filled": 16,
+            "cancelled_before_entry": 14,
+            "entry_expired": 6,
+            "fill_rate": 0.4444444444444444
+          },
+          "pivots": 8204
+        },
+        "DOGEUSDT_4H": {
+          "metrics": {
+            "trades": 2,
+            "long": 1,
+            "short": 1,
+            "win_rate": 1.0,
+            "total_r": 3.689878279845187,
+            "avg_r": 1.8449391399225934,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": 1.0,
+            "tp2_hit_rate": 0.5,
+            "avg_hold_hours": 123.75
+          },
+          "stats": {
+            "patterns": 7,
+            "cancelled_before_entry": 4,
+            "filled": 2,
+            "entry_expired": 1,
+            "fill_rate": 0.2857142857142857
+          },
+          "pivots": 2014
+        },
+        "LINKUSDT_1H": {
+          "metrics": {
+            "trades": 9,
+            "long": 6,
+            "short": 3,
+            "win_rate": 0.3333333333333333,
+            "total_r": -3.563108453932323,
+            "avg_r": -0.39590093932581366,
+            "profit_factor": 0.3333022428187254,
+            "max_drawdown_r": -3.5631084539323226,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.2222222222222222,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 23.583333333333332
+          },
+          "stats": {
+            "patterns": 29,
+            "cancelled_before_entry": 13,
+            "filled": 9,
+            "entry_expired": 7,
+            "fill_rate": 0.3103448275862069
+          },
+          "pivots": 7951
+        },
+        "LINKUSDT_4H": {
+          "metrics": {
+            "trades": 2,
+            "long": 2,
+            "short": 0,
+            "win_rate": 0.0,
+            "total_r": -2.126024252240229,
+            "avg_r": -1.0630121261201144,
+            "profit_factor": 0.0,
+            "max_drawdown_r": -2.126024252240229,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.0,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 153.25
+          },
+          "stats": {
+            "patterns": 4,
+            "filled": 2,
+            "entry_expired": 1,
+            "cancelled_before_entry": 1,
+            "fill_rate": 0.5
+          },
+          "pivots": 1938
+        }
+      }
+    },
+    "OOS2": {
+      "strategy": "Elliott Wave 3 v3 B-wave breakout frozen",
+      "group": "OOS2",
+      "symbols": [
+        "LTCUSDT",
+        "BCHUSDT",
+        "ETCUSDT",
+        "DOTUSDT"
+      ],
+      "summary": {
+        "trades": 47,
+        "long": 30,
+        "short": 17,
+        "win_rate": 0.3829787234042553,
+        "total_r": -4.4924196028048256,
+        "avg_r": -0.09558339580435798,
+        "profit_factor": 0.8273060610014952,
+        "max_drawdown_r": -9.654941807646505,
+        "max_losing_streak": 6,
+        "tp1_hit_rate": 0.2765957446808511,
+        "tp2_hit_rate": 0.1276595744680851,
+        "avg_hold_hours": 48.87765957446808
+      },
+      "timeframes": {
+        "1H": {
+          "trades": 37,
+          "long": 24,
+          "short": 13,
+          "win_rate": 0.32432432432432434,
+          "total_r": -11.803862878627816,
+          "avg_r": -0.31902332104399506,
+          "profit_factor": 0.46582857421615415,
+          "max_drawdown_r": -11.803862878627816,
+          "max_losing_streak": 7,
+          "tp1_hit_rate": 0.21621621621621623,
+          "tp2_hit_rate": 0.05405405405405406,
+          "avg_hold_hours": 30.35135135135135
+        },
+        "4H": {
+          "trades": 10,
+          "long": 6,
+          "short": 4,
+          "win_rate": 0.6,
+          "total_r": 7.311443275822992,
+          "avg_r": 0.7311443275822992,
+          "profit_factor": 2.866951522503257,
+          "max_drawdown_r": -1.8839613366445156,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.4,
+          "avg_hold_hours": 117.425
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 30,
+          "long": 30,
+          "short": 0,
+          "win_rate": 0.3333333333333333,
+          "total_r": -3.839128378912876,
+          "avg_r": -0.12797094596376252,
+          "profit_factor": 0.7978164791469253,
+          "max_drawdown_r": -7.83558335675076,
+          "max_losing_streak": 7,
+          "tp1_hit_rate": 0.26666666666666666,
+          "tp2_hit_rate": 0.16666666666666666,
+          "avg_hold_hours": 44.041666666666664
+        },
+        "SHORT": {
+          "trades": 17,
+          "long": 0,
+          "short": 17,
+          "win_rate": 0.47058823529411764,
+          "total_r": -0.6532912238919497,
+          "avg_r": -0.03842889552305587,
+          "profit_factor": 0.9070105072680892,
+          "max_drawdown_r": -3.154134849993366,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.29411764705882354,
+          "tp2_hit_rate": 0.058823529411764705,
+          "avg_hold_hours": 57.411764705882355
+        }
+      },
+      "symbols_metrics": {
+        "BCHUSDT": {
+          "trades": 12,
+          "long": 7,
+          "short": 5,
+          "win_rate": 0.25,
+          "total_r": -3.4018844190612776,
+          "avg_r": -0.2834903682551065,
+          "profit_factor": 0.5359036011693215,
+          "max_drawdown_r": -6.690494083537672,
+          "max_losing_streak": 6,
+          "tp1_hit_rate": 0.16666666666666666,
+          "tp2_hit_rate": 0.08333333333333333,
+          "avg_hold_hours": 43.645833333333336
+        },
+        "DOTUSDT": {
+          "trades": 14,
+          "long": 9,
+          "short": 5,
+          "win_rate": 0.42857142857142855,
+          "total_r": -0.8247758765106719,
+          "avg_r": -0.05891256260790513,
+          "profit_factor": 0.8808167294545937,
+          "max_drawdown_r": -4.341485466133629,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.2857142857142857,
+          "tp2_hit_rate": 0.14285714285714285,
+          "avg_hold_hours": 50.75
+        },
+        "ETCUSDT": {
+          "trades": 13,
+          "long": 11,
+          "short": 2,
+          "win_rate": 0.46153846153846156,
+          "total_r": 3.063393296512354,
+          "avg_r": 0.23564563819325798,
+          "profit_factor": 1.4871131192747518,
+          "max_drawdown_r": -4.18933818190602,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.38461538461538464,
+          "tp2_hit_rate": 0.23076923076923078,
+          "avg_hold_hours": 44.48076923076923
+        },
+        "LTCUSDT": {
+          "trades": 8,
+          "long": 3,
+          "short": 5,
+          "win_rate": 0.375,
+          "total_r": -3.3291526037452295,
+          "avg_r": -0.4161440754681537,
+          "profit_factor": 0.39188386691053473,
+          "max_drawdown_r": -3.6571059712849445,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.25,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 60.59375
+        }
+      },
+      "years": {
+        "2021": {
+          "trades": 1,
+          "long": 0,
+          "short": 1,
+          "win_rate": 1.0,
+          "total_r": 1.980730571257081,
+          "avg_r": 1.980730571257081,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "max_losing_streak": 0,
+          "tp1_hit_rate": 1.0,
+          "tp2_hit_rate": 1.0,
+          "avg_hold_hours": 50.25
+        },
+        "2022": {
+          "trades": 13,
+          "long": 7,
+          "short": 6,
+          "win_rate": 0.38461538461538464,
+          "total_r": -4.71913185581785,
+          "avg_r": -0.36301014275521926,
+          "profit_factor": 0.4241725098121485,
+          "max_drawdown_r": -5.915412786662561,
+          "max_losing_streak": 4,
+          "tp1_hit_rate": 0.23076923076923078,
+          "tp2_hit_rate": 0.07692307692307693,
+          "avg_hold_hours": 59.96153846153846
+        },
+        "2023": {
+          "trades": 6,
+          "long": 6,
+          "short": 0,
+          "win_rate": 0.5,
+          "total_r": 2.2254635867485035,
+          "avg_r": 0.3709105977914173,
+          "profit_factor": 1.6659985488668885,
+          "max_drawdown_r": -3.3415441978587572,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.3333333333333333,
+          "avg_hold_hours": 42.791666666666664
+        },
+        "2024": {
+          "trades": 9,
+          "long": 5,
+          "short": 4,
+          "win_rate": 0.3333333333333333,
+          "total_r": -0.7605908948966659,
+          "avg_r": -0.08451009943296288,
+          "profit_factor": 0.7823576716687083,
+          "max_drawdown_r": -2.3363945895801796,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.2222222222222222,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 47.638888888888886
+        },
+        "2025": {
+          "trades": 8,
+          "long": 4,
+          "short": 4,
+          "win_rate": 0.5,
+          "total_r": 0.6668507958471961,
+          "avg_r": 0.08335634948089951,
+          "profit_factor": 1.2101003409993762,
+          "max_drawdown_r": -2.1442890283616602,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.375,
+          "tp2_hit_rate": 0.125,
+          "avg_hold_hours": 26.96875
+        },
+        "2026": {
+          "trades": 10,
+          "long": 8,
+          "short": 2,
+          "win_rate": 0.2,
+          "total_r": -3.88574180594309,
+          "avg_r": -0.388574180594309,
+          "profit_factor": 0.5023500726244343,
+          "max_drawdown_r": -7.067533439527688,
+          "max_losing_streak": 6,
+          "tp1_hit_rate": 0.1,
+          "tp2_hit_rate": 0.1,
+          "avg_hold_hours": 56.625
+        }
+      },
+      "symbol_timeframes": {
+        "LTCUSDT_1H": {
+          "metrics": {
+            "trades": 5,
+            "long": 2,
+            "short": 3,
+            "win_rate": 0.2,
+            "total_r": -3.641449751457598,
+            "avg_r": -0.7282899502915197,
+            "profit_factor": 0.15062135231426046,
+            "max_drawdown_r": -3.641449751457598,
+            "max_losing_streak": 3,
+            "tp1_hit_rate": 0.2,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 16.0
+          },
+          "stats": {
+            "patterns": 23,
+            "cancelled_before_entry": 12,
+            "entry_expired": 6,
+            "filled": 5,
+            "fill_rate": 0.21739130434782608
+          },
+          "pivots": 8087
+        },
+        "LTCUSDT_4H": {
+          "metrics": {
+            "trades": 3,
+            "long": 1,
+            "short": 2,
+            "win_rate": 0.6666666666666666,
+            "total_r": 0.31229714771236816,
+            "avg_r": 0.10409904923745605,
+            "profit_factor": 1.2630221167142517,
+            "max_drawdown_r": -1.1873417779982707,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.3333333333333333,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 134.91666666666666
+          },
+          "stats": {
+            "patterns": 6,
+            "filled": 3,
+            "entry_expired": 1,
+            "cancelled_before_entry": 2,
+            "fill_rate": 0.5
+          },
+          "pivots": 1968
+        },
+        "BCHUSDT_1H": {
+          "metrics": {
+            "trades": 10,
+            "long": 5,
+            "short": 5,
+            "win_rate": 0.2,
+            "total_r": -5.567779699427465,
+            "avg_r": -0.5567779699427465,
+            "profit_factor": 0.11821690596229302,
+            "max_drawdown_r": -5.674597730319261,
+            "max_losing_streak": 6,
+            "tp1_hit_rate": 0.1,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 35.55
+          },
+          "stats": {
+            "patterns": 27,
+            "cancelled_before_entry": 10,
+            "filled": 10,
+            "entry_expired": 7,
+            "fill_rate": 0.37037037037037035
+          },
+          "pivots": 8237
+        },
+        "BCHUSDT_4H": {
+          "metrics": {
+            "trades": 2,
+            "long": 2,
+            "short": 0,
+            "win_rate": 0.5,
+            "total_r": 2.165895280366188,
+            "avg_r": 1.082947640183094,
+            "profit_factor": 3.132004188719176,
+            "max_drawdown_r": -1.0158963532184109,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.5,
+            "avg_hold_hours": 84.125
+          },
+          "stats": {
+            "patterns": 7,
+            "cancelled_before_entry": 4,
+            "entry_expired": 1,
+            "filled": 2,
+            "fill_rate": 0.2857142857142857
+          },
+          "pivots": 2012
+        },
+        "ETCUSDT_1H": {
+          "metrics": {
+            "trades": 11,
+            "long": 9,
+            "short": 2,
+            "win_rate": 0.36363636363636365,
+            "total_r": -1.5021358362642512,
+            "avg_r": -0.1365578032967501,
+            "profit_factor": 0.7611439335556055,
+            "max_drawdown_r": -4.18933818190602,
+            "max_losing_streak": 4,
+            "tp1_hit_rate": 0.2727272727272727,
+            "tp2_hit_rate": 0.09090909090909091,
+            "avg_hold_hours": 30.068181818181817
+          },
+          "stats": {
+            "patterns": 20,
+            "entry_expired": 4,
+            "filled": 11,
+            "cancelled_before_entry": 5,
+            "fill_rate": 0.55
+          },
+          "pivots": 8216
+        },
+        "ETCUSDT_4H": {
+          "metrics": {
+            "trades": 2,
+            "long": 2,
+            "short": 0,
+            "win_rate": 1.0,
+            "total_r": 4.5655291327766045,
+            "avg_r": 2.2827645663883023,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": 1.0,
+            "tp2_hit_rate": 1.0,
+            "avg_hold_hours": 123.75
+          },
+          "stats": {
+            "patterns": 5,
+            "filled": 2,
+            "cancelled_before_entry": 3,
+            "fill_rate": 0.4
+          },
+          "pivots": 1994
+        },
+        "DOTUSDT_1H": {
+          "metrics": {
+            "trades": 11,
+            "long": 8,
+            "short": 3,
+            "win_rate": 0.45454545454545453,
+            "total_r": -1.0924975914785027,
+            "avg_r": -0.09931796286168205,
+            "profit_factor": 0.7901957392240743,
+            "max_drawdown_r": -3.514295554858737,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.2727272727272727,
+            "tp2_hit_rate": 0.09090909090909091,
+            "avg_hold_hours": 32.43181818181818
+          },
+          "stats": {
+            "patterns": 25,
+            "filled": 11,
+            "entry_expired": 6,
+            "cancelled_before_entry": 8,
+            "fill_rate": 0.44
+          },
+          "pivots": 8080
+        },
+        "DOTUSDT_4H": {
+          "metrics": {
+            "trades": 3,
+            "long": 1,
+            "short": 2,
+            "win_rate": 0.3333333333333333,
+            "total_r": 0.2677217149678307,
+            "avg_r": 0.08924057165594357,
+            "profit_factor": 1.1562874085471888,
+            "max_drawdown_r": -1.7130088562892505,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.3333333333333333,
+            "tp2_hit_rate": 0.3333333333333333,
+            "avg_hold_hours": 117.91666666666667
+          },
+          "stats": {
+            "patterns": 6,
+            "filled": 3,
+            "cancelled_before_entry": 2,
+            "entry_expired": 1,
+            "fill_rate": 0.5
+          },
+          "pivots": 1957
+        }
+      }
+    }
+  },
+  "combined_summary": {
+    "trades": 160,
+    "long": 88,
+    "short": 72,
+    "win_rate": 0.425,
+    "total_r": -2.537551729703849,
+    "avg_r": -0.015859698310649057,
+    "profit_factor": 0.9707084823142836,
+    "max_drawdown_r": -24.490428607981816,
+    "max_losing_streak": 13,
+    "tp1_hit_rate": 0.3375,
+    "tp2_hit_rate": 0.125,
+    "avg_hold_hours": 42.75625
+  },
+  "combined_timeframes": {
+    "1H": {
+      "trades": 132,
+      "long": 76,
+      "short": 56,
+      "win_rate": 0.4090909090909091,
+      "total_r": -11.99753934106823,
+      "avg_r": -0.09089044955354719,
+      "profit_factor": 0.8339927526001564,
+      "max_drawdown_r": -25.81702635491996,
+      "max_losing_streak": 10,
+      "tp1_hit_rate": 0.3106060606060606,
+      "tp2_hit_rate": 0.09848484848484848,
+      "avg_hold_hours": 27.049242424242426
+    },
+    "4H": {
+      "trades": 28,
+      "long": 12,
+      "short": 16,
+      "win_rate": 0.5,
+      "total_r": 9.45998761136438,
+      "avg_r": 0.3378567004058707,
+      "profit_factor": 1.6587844041678006,
+      "max_drawdown_r": -3.080322842951203,
+      "max_losing_streak": 3,
+      "tp1_hit_rate": 0.4642857142857143,
+      "tp2_hit_rate": 0.25,
+      "avg_hold_hours": 116.80357142857143
+    }
+  },
+  "combined_directions": {
+    "LONG": {
+      "trades": 88,
+      "long": 88,
+      "short": 0,
+      "win_rate": 0.375,
+      "total_r": -8.172149975025878,
+      "avg_r": -0.09286534062529407,
+      "profit_factor": 0.8419760274212706,
+      "max_drawdown_r": -20.893110390349946,
+      "max_losing_streak": 9,
+      "tp1_hit_rate": 0.29545454545454547,
+      "tp2_hit_rate": 0.125,
+      "avg_hold_hours": 37.48579545454545
+    },
+    "SHORT": {
+      "trades": 72,
+      "long": 0,
+      "short": 72,
+      "win_rate": 0.4861111111111111,
+      "total_r": 5.634598245322028,
+      "avg_r": 0.07825830896280594,
+      "profit_factor": 1.1613743496239166,
+      "max_drawdown_r": -6.1761178597868485,
+      "max_losing_streak": 4,
+      "tp1_hit_rate": 0.3888888888888889,
+      "tp2_hit_rate": 0.125,
+      "avg_hold_hours": 49.197916666666664
+    }
+  },
+  "combined_symbols": {
+    "ADAUSDT": {
+      "trades": 15,
+      "long": 5,
+      "short": 10,
+      "win_rate": 0.6,
+      "total_r": 5.277110263796146,
+      "avg_r": 0.3518073509197431,
+      "profit_factor": 2.0611202830659874,
+      "max_drawdown_r": -1.8174084396224917,
+      "max_losing_streak": 2,
+      "tp1_hit_rate": 0.4666666666666667,
+      "tp2_hit_rate": 0.06666666666666667,
+      "avg_hold_hours": 54.81666666666667
+    },
+    "BCHUSDT": {
+      "trades": 12,
+      "long": 7,
+      "short": 5,
+      "win_rate": 0.25,
+      "total_r": -3.4018844190612776,
+      "avg_r": -0.2834903682551065,
+      "profit_factor": 0.5359036011693215,
+      "max_drawdown_r": -6.690494083537672,
+      "max_losing_streak": 6,
+      "tp1_hit_rate": 0.16666666666666666,
+      "tp2_hit_rate": 0.08333333333333333,
+      "avg_hold_hours": 43.645833333333336
+    },
+    "BNBUSDT": {
+      "trades": 18,
+      "long": 10,
+      "short": 8,
+      "win_rate": 0.5,
+      "total_r": 3.1547511192659154,
+      "avg_r": 0.17526395107032863,
+      "profit_factor": 1.3767899835888622,
+      "max_drawdown_r": -3.9238046973873266,
+      "max_losing_streak": 4,
+      "tp1_hit_rate": 0.3888888888888889,
+      "tp2_hit_rate": 0.05555555555555555,
+      "avg_hold_hours": 39.875
+    },
+    "BTCUSDT": {
+      "trades": 14,
+      "long": 9,
+      "short": 5,
+      "win_rate": 0.6428571428571429,
+      "total_r": 8.318641609063995,
+      "avg_r": 0.594188686361714,
+      "profit_factor": 2.570885349586644,
+      "max_drawdown_r": -2.0894269062124327,
+      "max_losing_streak": 2,
+      "tp1_hit_rate": 0.5714285714285714,
+      "tp2_hit_rate": 0.2857142857142857,
+      "avg_hold_hours": 31.517857142857142
+    },
+    "DOGEUSDT": {
+      "trades": 18,
+      "long": 10,
+      "short": 8,
+      "win_rate": 0.3888888888888889,
+      "total_r": -1.7743641551087577,
+      "avg_r": -0.09857578639493098,
+      "profit_factor": 0.8359389766029435,
+      "max_drawdown_r": -5.592164309009386,
+      "max_losing_streak": 3,
+      "tp1_hit_rate": 0.2777777777777778,
+      "tp2_hit_rate": 0.1111111111111111,
+      "avg_hold_hours": 39.90277777777778
+    },
+    "DOTUSDT": {
+      "trades": 14,
+      "long": 9,
+      "short": 5,
+      "win_rate": 0.42857142857142855,
+      "total_r": -0.8247758765106719,
+      "avg_r": -0.05891256260790513,
+      "profit_factor": 0.8808167294545937,
+      "max_drawdown_r": -4.341485466133629,
+      "max_losing_streak": 2,
+      "tp1_hit_rate": 0.2857142857142857,
+      "tp2_hit_rate": 0.14285714285714285,
+      "avg_hold_hours": 50.75
+    },
+    "ETCUSDT": {
+      "trades": 13,
+      "long": 11,
+      "short": 2,
+      "win_rate": 0.46153846153846156,
+      "total_r": 3.063393296512354,
+      "avg_r": 0.23564563819325798,
+      "profit_factor": 1.4871131192747518,
+      "max_drawdown_r": -4.18933818190602,
+      "max_losing_streak": 4,
+      "tp1_hit_rate": 0.38461538461538464,
+      "tp2_hit_rate": 0.23076923076923078,
+      "avg_hold_hours": 44.48076923076923
+    },
+    "ETHUSDT": {
+      "trades": 8,
+      "long": 4,
+      "short": 4,
+      "win_rate": 0.375,
+      "total_r": -0.3353957971827548,
+      "avg_r": -0.04192447464784435,
+      "profit_factor": 0.9355788571531064,
+      "max_drawdown_r": -2.381135287177158,
+      "max_losing_streak": 2,
+      "tp1_hit_rate": 0.375,
+      "tp2_hit_rate": 0.25,
+      "avg_hold_hours": 55.1875
+    },
+    "LINKUSDT": {
+      "trades": 11,
+      "long": 8,
+      "short": 3,
+      "win_rate": 0.2727272727272727,
+      "total_r": -5.689132706172551,
+      "avg_r": -0.5171938823793228,
+      "profit_factor": 0.2384472047679074,
+      "max_drawdown_r": -5.6891327061725505,
+      "max_losing_streak": 3,
+      "tp1_hit_rate": 0.18181818181818182,
+      "tp2_hit_rate": 0.0,
+      "avg_hold_hours": 47.15909090909091
+    },
+    "LTCUSDT": {
+      "trades": 8,
+      "long": 3,
+      "short": 5,
+      "win_rate": 0.375,
+      "total_r": -3.3291526037452295,
+      "avg_r": -0.4161440754681537,
+      "profit_factor": 0.39188386691053473,
+      "max_drawdown_r": -3.6571059712849445,
+      "max_losing_streak": 3,
+      "tp1_hit_rate": 0.25,
+      "tp2_hit_rate": 0.0,
+      "avg_hold_hours": 60.59375
+    },
+    "SOLUSDT": {
+      "trades": 17,
+      "long": 8,
+      "short": 9,
+      "win_rate": 0.4117647058823529,
+      "total_r": -3.011154669764165,
+      "avg_r": -0.177126745280245,
+      "profit_factor": 0.7129116650534844,
+      "max_drawdown_r": -7.1445070179117565,
+      "max_losing_streak": 4,
+      "tp1_hit_rate": 0.35294117647058826,
+      "tp2_hit_rate": 0.17647058823529413,
+      "avg_hold_hours": 23.25
+    },
+    "XRPUSDT": {
+      "trades": 12,
+      "long": 4,
+      "short": 8,
+      "win_rate": 0.25,
+      "total_r": -3.98558779079685,
+      "avg_r": -0.3321323158997375,
+      "profit_factor": 0.5015025864874952,
+      "max_drawdown_r": -3.985587790796851,
+      "max_losing_streak": 4,
+      "tp1_hit_rate": 0.25,
+      "tp2_hit_rate": 0.08333333333333333,
+      "avg_hold_hours": 40.729166666666664
+    }
+  }
+}
