@@ -46,7 +46,7 @@ def main():
                 alltr = []
                 by_symbol = {}
                 for sym in SYMBOLS:
-                    ts, st, npiv = core.simulate(sym, cache[sym], 240)
+                    ts, st, npiv = core.simulate(sym, cache[sym], 240, direction_filter="LONG")
                     lt = long_only(ts)
                     alltr.extend(lt)
                     by_symbol[sym] = {
