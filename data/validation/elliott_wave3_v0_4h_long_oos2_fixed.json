@@ -1,0 +1,256 @@
+{
+  "strategy": "Elliott Wave 3 v0 4H LONG OOS2 fixed configs",
+  "purpose": "Second unseen-symbol holdout. Config A is the original baseline. Config B was selected only after development + OOS1 diagnostics and is tested here without further tuning.",
+  "symbols": [
+    "LTCUSDT",
+    "BCHUSDT",
+    "ETCUSDT",
+    "DOTUSDT"
+  ],
+  "configs": {
+    "A_ORIGINAL_BASELINE": {
+      "params": {
+        "pivot": 1.5,
+        "w1": 2.0,
+        "rlo": 0.382,
+        "rhi": 0.5
+      },
+      "metrics": {
+        "trades": 172,
+        "long": 172,
+        "short": 0,
+        "win_rate": 0.4069767441860465,
+        "total_r": -51.3831691504634,
+        "avg_r": -0.29873935552595,
+        "profit_factor": 0.5128286387602043,
+        "max_drawdown_r": -53.9284664860415,
+        "max_losing_streak": 10,
+        "tp1_hit_rate": 0.38953488372093026,
+        "tp2_hit_rate": 0.09302325581395349,
+        "avg_hold_hours": 62.49418604651163
+      },
+      "symbols": {
+        "LTCUSDT": {
+          "metrics": {
+            "trades": 49,
+            "long": 49,
+            "short": 0,
+            "win_rate": 0.5306122448979592,
+            "total_r": -3.9503965670358085,
+            "avg_r": -0.0806203381027716,
+            "profit_factor": 0.8236482395049973,
+            "max_drawdown_r": -7.038384651762782,
+            "max_losing_streak": 4,
+            "tp1_hit_rate": 0.5306122448979592,
+            "tp2_hit_rate": 0.10204081632653061,
+            "avg_hold_hours": 63.63265306122449
+          },
+          "stats": {
+            "patterns": 66,
+            "filled": 49,
+            "entry_expired": 4,
+            "cancelled_before_entry": 13,
+            "signal_while_busy": 6,
+            "fill_rate": 0.7424242424242424
+          },
+          "pivots": 1943
+        },
+        "BCHUSDT": {
+          "metrics": {
+            "trades": 36,
+            "long": 36,
+            "short": 0,
+            "win_rate": 0.3611111111111111,
+            "total_r": -14.746640048564984,
+            "avg_r": -0.4096288902379162,
+            "profit_factor": 0.4066527492423581,
+            "max_drawdown_r": -14.890377831977787,
+            "max_losing_streak": 6,
+            "tp1_hit_rate": 0.3055555555555556,
+            "tp2_hit_rate": 0.08333333333333333,
+            "avg_hold_hours": 73.61805555555556
+          },
+          "stats": {
+            "patterns": 51,
+            "filled": 36,
+            "cancelled_before_entry": 12,
+            "entry_expired": 3,
+            "signal_while_busy": 1,
+            "fill_rate": 0.7058823529411765
+          },
+          "pivots": 1977
+        },
+        "ETCUSDT": {
+          "metrics": {
+            "trades": 54,
+            "long": 54,
+            "short": 0,
+            "win_rate": 0.3333333333333333,
+            "total_r": -25.551524391440605,
+            "avg_r": -0.47317637761927045,
+            "profit_factor": 0.3225397522954872,
+            "max_drawdown_r": -27.53500787727054,
+            "max_losing_streak": 9,
+            "tp1_hit_rate": 0.3333333333333333,
+            "tp2_hit_rate": 0.05555555555555555,
+            "avg_hold_hours": 50.388888888888886
+          },
+          "stats": {
+            "patterns": 73,
+            "filled": 54,
+            "entry_expired": 3,
+            "cancelled_before_entry": 16,
+            "signal_while_busy": 3,
+            "fill_rate": 0.7397260273972602
+          },
+          "pivots": 1965
+        },
+        "DOTUSDT": {
+          "metrics": {
+            "trades": 33,
+            "long": 33,
+            "short": 0,
+            "win_rate": 0.3939393939393939,
+            "total_r": -7.1346081434220014,
+            "avg_r": -0.21620024677036367,
+            "profit_factor": 0.6520020063647038,
+            "max_drawdown_r": -12.838827563166038,
+            "max_losing_streak": 8,
+            "tp1_hit_rate": 0.36363636363636365,
+            "tp2_hit_rate": 0.15151515151515152,
+            "avg_hold_hours": 68.47727272727273
+          },
+          "stats": {
+            "patterns": 54,
+            "filled": 33,
+            "cancelled_before_entry": 19,
+            "signal_while_busy": 4,
+            "entry_expired": 2,
+            "fill_rate": 0.6111111111111112
+          },
+          "pivots": 1927
+        }
+      }
+    },
+    "B_CROSSSET_ROBUST_REGION": {
+      "params": {
+        "pivot": 2.0,
+        "w1": 2.0,
+        "rlo": 0.382,
+        "rhi": 0.45
+      },
+      "metrics": {
+        "trades": 58,
+        "long": 58,
+        "short": 0,
+        "win_rate": 0.4482758620689655,
+        "total_r": -10.918318715907093,
+        "avg_r": -0.18824687441219126,
+        "profit_factor": 0.676284856512614,
+        "max_drawdown_r": -15.694157478205106,
+        "max_losing_streak": 7,
+        "tp1_hit_rate": 0.3620689655172414,
+        "tp2_hit_rate": 0.10344827586206896,
+        "avg_hold_hours": 83.95258620689656
+      },
+      "symbols": {
+        "LTCUSDT": {
+          "metrics": {
+            "trades": 12,
+            "long": 12,
+            "short": 0,
+            "win_rate": 0.6666666666666666,
+            "total_r": 1.8663374461649416,
+            "avg_r": 0.15552812051374512,
+            "profit_factor": 1.414649102932342,
+            "max_drawdown_r": -2.352568922756734,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.16666666666666666,
+            "avg_hold_hours": 94.72916666666667
+          },
+          "stats": {
+            "patterns": 19,
+            "filled": 12,
+            "cancelled_before_entry": 4,
+            "entry_expired": 3,
+            "fill_rate": 0.631578947368421
+          },
+          "pivots": 1213
+        },
+        "BCHUSDT": {
+          "metrics": {
+            "trades": 15,
+            "long": 15,
+            "short": 0,
+            "win_rate": 0.26666666666666666,
+            "total_r": -8.56743964049608,
+            "avg_r": -0.5711626426997386,
+            "profit_factor": 0.2704803517122763,
+            "max_drawdown_r": -8.711344951393103,
+            "max_losing_streak": 8,
+            "tp1_hit_rate": 0.13333333333333333,
+            "tp2_hit_rate": 0.06666666666666667,
+            "avg_hold_hours": 80.91666666666667
+          },
+          "stats": {
+            "patterns": 18,
+            "filled": 15,
+            "cancelled_before_entry": 2,
+            "entry_expired": 1,
+            "fill_rate": 0.8333333333333334
+          },
+          "pivots": 1218
+        },
+        "ETCUSDT": {
+          "metrics": {
+            "trades": 19,
+            "long": 19,
+            "short": 0,
+            "win_rate": 0.3684210526315789,
+            "total_r": -3.147624072171288,
+            "avg_r": -0.16566442485112043,
+            "profit_factor": 0.7389034445592685,
+            "max_drawdown_r": -7.36033707091638,
+            "max_losing_streak": 5,
+            "tp1_hit_rate": 0.3684210526315789,
+            "tp2_hit_rate": 0.15789473684210525,
+            "avg_hold_hours": 74.5657894736842
+          },
+          "stats": {
+            "patterns": 25,
+            "entry_expired": 5,
+            "filled": 19,
+            "cancelled_before_entry": 1,
+            "fill_rate": 0.76
+          },
+          "pivots": 1195
+        },
+        "DOTUSDT": {
+          "metrics": {
+            "trades": 12,
+            "long": 12,
+            "short": 0,
+            "win_rate": 0.5833333333333334,
+            "total_r": -1.069592449404666,
+            "avg_r": -0.0891327041170555,
+            "profit_factor": 0.8029423383379246,
+            "max_drawdown_r": -2.2199017903057587,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 91.83333333333333
+          },
+          "stats": {
+            "patterns": 17,
+            "filled": 12,
+            "entry_expired": 2,
+            "cancelled_before_entry": 3,
+            "fill_rate": 0.7058823529411765
+          },
+          "pivots": 1190
+        }
+      }
+    }
+  }
+}
