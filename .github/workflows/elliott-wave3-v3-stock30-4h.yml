@@ -1,0 +1,67 @@
+name: Elliott Wave 3 v3 Stock30 4H Cross-Asset OOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/elliott-wave3-v3-stock30-4h.yml"
+      - "scripts/backtest_elliott_wave3_v3_stock30_4h.py"
+      - "strategy/elliott_wave3_v3_stock30_4h_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - run: python -m py_compile scripts/extract_stock53_recent5y_15m_cache.py
+      - run: python scripts/extract_stock53_recent5y_15m_cache.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elliott-stock30-rth-cache
+          path: |
+            data/cache/stock53_recent5y_15m.parquet
+            data/cache/stock53_recent5y_15m_meta.json
+          retention-days: 7
+          if-no-files-found: error
+
+  backtest:
+    needs: extract
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb
+      - uses: actions/download-artifact@v4
+        with:
+          name: elliott-stock30-rth-cache
+          path: data/cache
+      - name: Compile
+        run: python -m py_compile scripts/backtest_elliott_wave3_v3_stock30_4h.py
+      - name: Run Stock30 cross-asset OOS
+        run: python scripts/backtest_elliott_wave3_v3_stock30_4h.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elliott-wave3-v3-stock30-4h
+          path: data/validation/elliott_wave3_v3_stock30_4h_cross_asset_oos.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/elliott_wave3_v3_stock30_4h_cross_asset_oos.json
+          git commit -m "research: add Elliott Wave 3 v3 Stock30 cross-asset OOS [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
