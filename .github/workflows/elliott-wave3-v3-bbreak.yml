@@ -1,0 +1,47 @@
+name: Elliott Wave 3 v3 B-wave Breakout
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/elliott-wave3-v3-bbreak.yml"
+      - "scripts/backtest_elliott_wave3_v3_bbreak.py"
+      - "strategy/elliott_wave3_v3_bbreak_frozen.md"
+      - "scripts/backtest_elliott_wave3_v1_53_crypto.py"
+      - "scripts/backtest_elliott_wave3_v0_crypto.py"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_elliott_wave3_v3_bbreak.py
+      - name: Run DEV and OOS holdouts
+        run: python scripts/backtest_elliott_wave3_v3_bbreak.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elliott-wave3-v3-bbreak
+          path: |
+            data/validation/elliott_wave3_v3_bbreak_dev.json
+            data/validation/elliott_wave3_v3_bbreak_oos1.json
+            data/validation/elliott_wave3_v3_bbreak_oos2.json
+            data/validation/elliott_wave3_v3_bbreak_all.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/elliott_wave3_v3_bbreak_*.json
+          git commit -m "research: add Elliott Wave 3 v3 B-breakout results [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
