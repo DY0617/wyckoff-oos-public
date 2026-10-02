@@ -1,0 +1,41 @@
+name: Elliott Wave 3 v0 4H LONG OOS2 Fixed
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/elliott-wave3-v0-4h-long-oos2-fixed.yml"
+      - "scripts/backtest_elliott_wave3_v0_4h_long_oos2_fixed.py"
+      - "scripts/backtest_elliott_wave3_v0_crypto.py"
+
+permissions:
+  contents: write
+
+jobs:
+  oos2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_elliott_wave3_v0_4h_long_oos2_fixed.py
+      - name: Run OOS2 fixed
+        run: python scripts/backtest_elliott_wave3_v0_4h_long_oos2_fixed.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elliott-wave3-v0-4h-long-oos2-fixed
+          path: data/validation/elliott_wave3_v0_4h_long_oos2_fixed.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/elliott_wave3_v0_4h_long_oos2_fixed.json
+          git commit -m "research: add Elliott Wave 3 OOS2 fixed result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
