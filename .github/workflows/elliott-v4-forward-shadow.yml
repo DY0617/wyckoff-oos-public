@@ -1,0 +1,51 @@
+name: Elliott v4 Forward Shadow
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Covers US RTH in both EDT and EST. Script is shadow-only and may run just outside session.
+    - cron: "*/30 13-22 * * 1-5"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/elliott-v4-forward-shadow.yml"
+      - "scripts/elliott_v4_shadow_monitor.py"
+      - "strategy/elliott_v4_forward_shadow_frozen.md"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: elliott-v4-forward-shadow
+  cancel-in-progress: false
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Safety syntax check
+        run: |
+          python -m py_compile scripts/elliott_v4_shadow_monitor.py
+          ! grep -E "create_order|new_order|futures_create_order|place_order" scripts/elliott_v4_shadow_monitor.py
+      - name: Run shadow monitor
+        run: python scripts/elliott_v4_shadow_monitor.py
+      - name: Commit journal only when changed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/forward/elliott_v4_shadow_journal.json
+          if git diff --cached --quiet; then
+            echo "No new Elliott shadow event"
+            exit 0
+          fi
+          git commit -m "shadow: update Elliott v4 forward journal [skip ci]"
+          git pull --rebase origin main
+          git push
