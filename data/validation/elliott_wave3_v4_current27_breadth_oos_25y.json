@@ -1,0 +1,3636 @@
+{
+  "strategy": "Elliott v4 current27 25Y breadth-filter validation",
+  "purpose": "Cross-universe validation of the post-hoc DJIA2000 breadth 60-75% candidate. No tuning on current27.",
+  "period": {
+    "start": "2000-01-01T00:00:00+00:00",
+    "end_exclusive": "2026-01-01T00:00:00+00:00"
+  },
+  "universe": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "AMZN",
+    "META",
+    "GOOGL",
+    "TSLA",
+    "AVGO",
+    "AMD",
+    "NFLX",
+    "ORCL",
+    "JPM",
+    "BAC",
+    "GS",
+    "V",
+    "MA",
+    "XOM",
+    "CVX",
+    "JNJ",
+    "UNH",
+    "LLY",
+    "MRK",
+    "WMT",
+    "COST",
+    "HD",
+    "CAT",
+    "KO"
+  ],
+  "chunk_files": [
+    "us30x2_15m_1999_2005.parquet",
+    "us30x2_15m_2005_2010.parquet",
+    "us30x2_15m_2010_2015.parquet",
+    "us30x2_15m_2015_2020.parquet",
+    "us30x2_15m_2020_2024.parquet",
+    "us30x2_15m_2024_2026.parquet"
+  ],
+  "breadth_rule": "fraction of available current27 names above SMA200, prior completed RTH day; candidate requires >=10 names and 60%<=breadth<75%",
+  "configs": {
+    "BASELINE": {
+      "metrics": {
+        "trades": 192,
+        "total_r": 12.082577395945977,
+        "avg_r": 0.0629300906038853,
+        "profit_factor": 1.1208626783265807,
+        "win_rate": 0.484375,
+        "max_drawdown_r": -20.36543270876541,
+        "max_losing_streak": 8
+      },
+      "symbols": {
+        "AAPL": {
+          "metrics": {
+            "trades": 7,
+            "total_r": 2.9401789046474605,
+            "avg_r": 0.4200255578067801,
+            "profit_factor": 2.1615972440469893,
+            "win_rate": 0.7142857142857143,
+            "max_drawdown_r": -2.133233933862267,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 13,
+            "entry_expired": 2,
+            "filled": 7,
+            "cancelled_before_entry": 4
+          },
+          "bars15": 173022
+        },
+        "MSFT": {
+          "metrics": {
+            "trades": 3,
+            "total_r": 3.2221981116353815,
+            "avg_r": 1.0740660372117938,
+            "profit_factor": 5.634232589294192,
+            "win_rate": 0.6666666666666666,
+            "max_drawdown_r": -0.6953034940626777,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 8,
+            "filled": 3,
+            "cancelled_before_entry": 5
+          },
+          "bars15": 172937
+        },
+        "NVDA": {
+          "metrics": {
+            "trades": 10,
+            "total_r": 3.0816281035260733,
+            "avg_r": 0.30816281035260734,
+            "profit_factor": 1.5235476988221275,
+            "win_rate": 0.6,
+            "max_drawdown_r": -4.878940864363957,
+            "max_losing_streak": 3
+          },
+          "stats": {
+            "patterns": 19,
+            "cancelled_before_entry": 8,
+            "filled": 10,
+            "entry_expired": 1
+          },
+          "bars15": 172809
+        },
+        "AMZN": {
+          "metrics": {
+            "trades": 6,
+            "total_r": 1.4244541425320165,
+            "avg_r": 0.2374090237553361,
+            "profit_factor": 1.6931015147733681,
+            "win_rate": 0.6666666666666666,
+            "max_drawdown_r": -1.0323627792074472,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 12,
+            "filled": 6,
+            "cancelled_before_entry": 6
+          },
+          "bars15": 172870
+        },
+        "META": {
+          "metrics": {
+            "trades": 5,
+            "total_r": -1.4727100965948383,
+            "avg_r": -0.2945420193189677,
+            "profit_factor": 0.6526734506626225,
+            "win_rate": 0.2,
+            "max_drawdown_r": -3.195451574182248,
+            "max_losing_streak": 3
+          },
+          "stats": {
+            "patterns": 7,
+            "filled": 5,
+            "entry_expired": 2
+          },
+          "bars15": 102530
+        },
+        "GOOGL": {
+          "metrics": {
+            "trades": 11,
+            "total_r": -1.3294282294124249,
+            "avg_r": -0.12085711176476589,
+            "profit_factor": 0.7694535066922491,
+            "win_rate": 0.36363636363636365,
+            "max_drawdown_r": -4.319618557759157,
+            "max_losing_streak": 4
+          },
+          "stats": {
+            "patterns": 16,
+            "filled": 11,
+            "cancelled_before_entry": 4,
+            "entry_expired": 1
+          },
+          "bars15": 138287
+        },
+        "TSLA": {
+          "metrics": {
+            "trades": 4,
+            "total_r": -1.4265600383528163,
+            "avg_r": -0.3566400095882041,
+            "profit_factor": 0.38236812384700664,
+            "win_rate": 0.5,
+            "max_drawdown_r": -2.3097254099615863,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 9,
+            "entry_expired": 1,
+            "cancelled_before_entry": 4,
+            "filled": 4
+          },
+          "bars15": 101201
+        },
+        "AVGO": {
+          "metrics": {
+            "trades": 8,
+            "total_r": 4.352274994941953,
+            "avg_r": 0.5440343743677442,
+            "profit_factor": 5.0665289363599095,
+            "win_rate": 0.875,
+            "max_drawdown_r": -1.070267804079079,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 15,
+            "filled": 8,
+            "cancelled_before_entry": 6,
+            "entry_expired": 1
+          },
+          "bars15": 118305
+        },
+        "AMD": {
+          "metrics": {
+            "trades": 10,
+            "total_r": -0.30284083272603574,
+            "avg_r": -0.030284083272603575,
+            "profit_factor": 0.9207538734226081,
+            "win_rate": 0.5,
+            "max_drawdown_r": -2.386846089168678,
+            "max_losing_streak": 3
+          },
+          "stats": {
+            "patterns": 20,
+            "cancelled_before_entry": 9,
+            "filled": 10,
+            "entry_expired": 1
+          },
+          "bars15": 172826
+        },
+        "NFLX": {
+          "metrics": {
+            "trades": 6,
+            "total_r": 6.721057750457853,
+            "avg_r": 1.1201762917429756,
+            "profit_factor": 18.34574504919823,
+            "win_rate": 0.8333333333333334,
+            "max_drawdown_r": -0.3874758755760981,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 17,
+            "cancelled_before_entry": 10,
+            "filled": 6,
+            "entry_expired": 1
+          },
+          "bars15": 153856
+        },
+        "ORCL": {
+          "metrics": {
+            "trades": 9,
+            "total_r": -1.2353254622757293,
+            "avg_r": -0.13725838469730325,
+            "profit_factor": 0.7526726901763651,
+            "win_rate": 0.4444444444444444,
+            "max_drawdown_r": -2.5297986697807793,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 13,
+            "filled": 9,
+            "cancelled_before_entry": 2,
+            "entry_expired": 2
+          },
+          "bars15": 172802
+        },
+        "JPM": {
+          "metrics": {
+            "trades": 6,
+            "total_r": 2.415387329818235,
+            "avg_r": 0.40256455496970583,
+            "profit_factor": 2.7451916382877286,
+            "win_rate": 0.6666666666666666,
+            "max_drawdown_r": -1.275298645699386,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 13,
+            "cancelled_before_entry": 6,
+            "filled": 6,
+            "entry_expired": 1
+          },
+          "bars15": 172793
+        },
+        "BAC": {
+          "metrics": {
+            "trades": 11,
+            "total_r": -4.062945210626156,
+            "avg_r": -0.3693586555114687,
+            "profit_factor": 0.5210822840428216,
+            "win_rate": 0.2727272727272727,
+            "max_drawdown_r": -5.2578160078454586,
+            "max_losing_streak": 3
+          },
+          "stats": {
+            "patterns": 15,
+            "entry_expired": 1,
+            "filled": 11,
+            "cancelled_before_entry": 3
+          },
+          "bars15": 172818
+        },
+        "GS": {
+          "metrics": {
+            "trades": 7,
+            "total_r": -0.388112062066612,
+            "avg_r": -0.055444580295230285,
+            "profit_factor": 0.9189883671424074,
+            "win_rate": 0.42857142857142855,
+            "max_drawdown_r": -2.5339386248855167,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 18,
+            "cancelled_before_entry": 11,
+            "filled": 7
+          },
+          "bars15": 172678
+        },
+        "V": {
+          "metrics": {
+            "trades": 14,
+            "total_r": -7.765900520665292,
+            "avg_r": -0.5547071800475208,
+            "profit_factor": 0.34907421482591966,
+            "win_rate": 0.2857142857142857,
+            "max_drawdown_r": -7.765900520665292,
+            "max_losing_streak": 6
+          },
+          "stats": {
+            "patterns": 25,
+            "cancelled_before_entry": 10,
+            "filled": 14,
+            "entry_expired": 1
+          },
+          "bars15": 154086
+        },
+        "MA": {
+          "metrics": {
+            "trades": 4,
+            "total_r": -2.7457938901186685,
+            "avg_r": -0.6864484725296671,
+            "profit_factor": 0.26103497342943854,
+            "win_rate": 0.25,
+            "max_drawdown_r": -3.715729150081071,
+            "max_losing_streak": 3
+          },
+          "stats": {
+            "patterns": 15,
+            "filled": 4,
+            "cancelled_before_entry": 9,
+            "entry_expired": 2
+          },
+          "bars15": 127705
+        },
+        "XOM": {
+          "metrics": {
+            "trades": 5,
+            "total_r": 0.6609264882643171,
+            "avg_r": 0.1321852976528634,
+            "profit_factor": 1.3134367434859364,
+            "win_rate": 0.6,
+            "max_drawdown_r": -1.061523836319569,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 15,
+            "filled": 5,
+            "cancelled_before_entry": 8,
+            "entry_expired": 2
+          },
+          "bars15": 170055
+        },
+        "CVX": {
+          "metrics": {
+            "trades": 3,
+            "total_r": 1.841849870806876,
+            "avg_r": 0.6139499569356254,
+            "profit_factor": 2.762645531683236,
+            "win_rate": 0.6666666666666666,
+            "max_drawdown_r": -1.0449349217979202,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 13,
+            "filled": 3,
+            "cancelled_before_entry": 9,
+            "entry_expired": 1
+          },
+          "bars15": 157940
+        },
+        "JNJ": {
+          "metrics": {
+            "trades": 5,
+            "total_r": 4.618994967087997,
+            "avg_r": 0.9237989934175994,
+            "profit_factor": 47.011263655967575,
+            "win_rate": 0.8,
+            "max_drawdown_r": -0.10038835276563679,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 12,
+            "filled": 5,
+            "entry_expired": 3,
+            "cancelled_before_entry": 4
+          },
+          "bars15": 172667
+        },
+        "UNH": {
+          "metrics": {
+            "trades": 10,
+            "total_r": -4.353440996124559,
+            "avg_r": -0.4353440996124559,
+            "profit_factor": 0.3823680379096772,
+            "win_rate": 0.2,
+            "max_drawdown_r": -4.861274890103976,
+            "max_losing_streak": 5
+          },
+          "stats": {
+            "patterns": 18,
+            "cancelled_before_entry": 7,
+            "filled": 10,
+            "entry_expired": 1
+          },
+          "bars15": 172613
+        },
+        "LLY": {
+          "metrics": {
+            "trades": 3,
+            "total_r": -1.7043251958489551,
+            "avg_r": -0.5681083986163183,
+            "profit_factor": 0.20771378362709195,
+            "win_rate": 0.3333333333333333,
+            "max_drawdown_r": -2.151148361070028,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 11,
+            "filled": 3,
+            "cancelled_before_entry": 4,
+            "entry_expired": 4
+          },
+          "bars15": 172609
+        },
+        "MRK": {
+          "metrics": {
+            "trades": 8,
+            "total_r": 3.8104388558439726,
+            "avg_r": 0.47630485698049657,
+            "profit_factor": 2.6612377703654277,
+            "win_rate": 0.5,
+            "max_drawdown_r": -2.293734782472336,
+            "max_losing_streak": 4
+          },
+          "stats": {
+            "patterns": 16,
+            "cancelled_before_entry": 6,
+            "filled": 8,
+            "entry_expired": 2
+          },
+          "bars15": 172665
+        },
+        "WMT": {
+          "metrics": {
+            "trades": 5,
+            "total_r": -3.0497655021455294,
+            "avg_r": -0.6099531004291059,
+            "profit_factor": 0.4315063747568988,
+            "win_rate": 0.2,
+            "max_drawdown_r": -5.364643272545718,
+            "max_losing_streak": 4
+          },
+          "stats": {
+            "patterns": 12,
+            "filled": 5,
+            "cancelled_before_entry": 4,
+            "entry_expired": 3
+          },
+          "bars15": 172742
+        },
+        "COST": {
+          "metrics": {
+            "trades": 7,
+            "total_r": 3.1576399457545365,
+            "avg_r": 0.45109142082207665,
+            "profit_factor": 2.433479308415942,
+            "win_rate": 0.7142857142857143,
+            "max_drawdown_r": -2.20278027538735,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 13,
+            "filled": 7,
+            "entry_expired": 2,
+            "cancelled_before_entry": 4
+          },
+          "bars15": 172657
+        },
+        "HD": {
+          "metrics": {
+            "trades": 10,
+            "total_r": 2.4299408354465846,
+            "avg_r": 0.24299408354465846,
+            "profit_factor": 1.556275482060221,
+            "win_rate": 0.6,
+            "max_drawdown_r": -3.2993727702660474,
+            "max_losing_streak": 3
+          },
+          "stats": {
+            "patterns": 15,
+            "filled": 10,
+            "cancelled_before_entry": 4,
+            "entry_expired": 1
+          },
+          "bars15": 172648
+        },
+        "CAT": {
+          "metrics": {
+            "trades": 8,
+            "total_r": 3.6946933725100206,
+            "avg_r": 0.4618366715637526,
+            "profit_factor": 1.806665588217411,
+            "win_rate": 0.5,
+            "max_drawdown_r": -3.2791416640868407,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 14,
+            "filled": 8,
+            "cancelled_before_entry": 5,
+            "entry_expired": 1
+          },
+          "bars15": 172646
+        },
+        "KO": {
+          "metrics": {
+            "trades": 7,
+            "total_r": -2.4519382403696834,
+            "avg_r": -0.35027689148138336,
+            "profit_factor": 0.47196342776101063,
+            "win_rate": 0.14285714285714285,
+            "max_drawdown_r": -3.5072958742914904,
+            "max_losing_streak": 4
+          },
+          "stats": {
+            "patterns": 18,
+            "entry_expired": 4,
+            "filled": 7,
+            "cancelled_before_entry": 7
+          },
+          "bars15": 172669
+        }
+      },
+      "errors": {},
+      "trades": [
+        {
+          "symbol": "AAPL",
+          "mode": "BASELINE",
+          "entry_t": 1048257000000,
+          "exit_t": 1048519800000,
+          "r": -1.1654707063892358,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.4782608695652174,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "AAPL",
+          "mode": "BASELINE",
+          "entry_t": 1127136600000,
+          "exit_t": 1127930400000,
+          "r": 0.39791782266559494,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6956521739130435,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "AAPL",
+          "mode": "BASELINE",
+          "entry_t": 1272548700000,
+          "exit_t": 1273067100000,
+          "r": -1.3656810501386258,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "AAPL",
+          "mode": "BASELINE",
+          "entry_t": 1555424100000,
+          "exit_t": 1556548200000,
+          "r": 0.8206682695158962,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AAPL",
+          "mode": "BASELINE",
+          "entry_t": 1587652200000,
+          "exit_t": 1588689000000,
+          "r": 0.8354208159413673,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.48148148148148145,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AAPL",
+          "mode": "BASELINE",
+          "entry_t": 1598535000000,
+          "exit_t": 1599055200000,
+          "r": 1.0966722140795186,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AAPL",
+          "mode": "BASELINE",
+          "entry_t": 1638283500000,
+          "exit_t": 1639150200000,
+          "r": 2.3206515389729447,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.9,
+          "breadth_n": 10
+        },
+        {
+          "symbol": "MSFT",
+          "mode": "BASELINE",
+          "entry_t": 1088430300000,
+          "exit_t": 1089383400000,
+          "r": -0.6953034940626777,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7727272727272727,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "MSFT",
+          "mode": "BASELINE",
+          "entry_t": 1191255300000,
+          "exit_t": 1192120200000,
+          "r": 1.6369706719610089,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6956521739130435,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "MSFT",
+          "mode": "BASELINE",
+          "entry_t": 1715711400000,
+          "exit_t": 1716302700000,
+          "r": 2.28053093373705,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 982868400000,
+          "exit_t": 983304000000,
+          "r": -1.0071094620133518,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.3157894736842105,
+          "breadth_n": 19
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1026415800000,
+          "exit_t": 1026917100000,
+          "r": 0.5036974791695978,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.19047619047619047,
+          "breadth_n": 21
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1108145700000,
+          "exit_t": 1109269800000,
+          "r": 1.333029820055276,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6363636363636364,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1284388200000,
+          "exit_t": 1285249500000,
+          "r": 2.888697460991537,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.44,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1295879400000,
+          "exit_t": 1296747000000,
+          "r": 0.7054728195674064,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8846153846153846,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1508427000000,
+          "exit_t": 1508945400000,
+          "r": -1.0406373902281034,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1547754300000,
+          "exit_t": 1548686700000,
+          "r": -2.6024380796771758,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.4444444444444444,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1551105000000,
+          "exit_t": 1551279600000,
+          "r": -1.235865394458678,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5555555555555556,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1560864600000,
+          "exit_t": 1561732200000,
+          "r": 2.1730784125695815,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "BASELINE",
+          "entry_t": 1627480800000,
+          "exit_t": 1628519400000,
+          "r": 1.3637024375499835,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMZN",
+          "mode": "BASELINE",
+          "entry_t": 994948200000,
+          "exit_t": 995900400000,
+          "r": 0.593383042713514,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.45,
+          "breadth_n": 20
+        },
+        {
+          "symbol": "AMZN",
+          "mode": "BASELINE",
+          "entry_t": 1488292200000,
+          "exit_t": 1489159800000,
+          "r": 0.060451507322662114,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMZN",
+          "mode": "BASELINE",
+          "entry_t": 1532439000000,
+          "exit_t": 1532970000000,
+          "r": -1.0323627792074472,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMZN",
+          "mode": "BASELINE",
+          "entry_t": 1694108700000,
+          "exit_t": 1695132000000,
+          "r": 0.5390426227356647,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMZN",
+          "mode": "BASELINE",
+          "entry_t": 1746106200000,
+          "exit_t": 1747146600000,
+          "r": 2.286765296679051,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.4074074074074074,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMZN",
+          "mode": "BASELINE",
+          "entry_t": 1762785000000,
+          "exit_t": 1763058600000,
+          "r": -1.022825547711428,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "META",
+          "mode": "BASELINE",
+          "entry_t": 1427723100000,
+          "exit_t": 1427895900000,
+          "r": -1.0446795053578688,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6296296296296297,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "META",
+          "mode": "BASELINE",
+          "entry_t": 1446483600000,
+          "exit_t": 1447349400000,
+          "r": 2.7674209829452785,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.5925925925925926,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "META",
+          "mode": "BASELINE",
+          "entry_t": 1477666800000,
+          "exit_t": 1478022300000,
+          "r": -1.0527530528472195,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "META",
+          "mode": "BASELINE",
+          "entry_t": 1496411100000,
+          "exit_t": 1497031200000,
+          "r": -1.090603711640149,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "META",
+          "mode": "BASELINE",
+          "entry_t": 1601927100000,
+          "exit_t": 1602011700000,
+          "r": -1.0520948096948795,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1117114200000,
+          "exit_t": 1118241000000,
+          "r": 1.8531492937022485,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6086956521739131,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1219671000000,
+          "exit_t": 1219758300000,
+          "r": -1.032122698025017,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.3333333333333333,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1301491800000,
+          "exit_t": 1302019200000,
+          "r": -1.0557367948938943,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6923076923076923,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1321038000000,
+          "exit_t": 1321886700000,
+          "r": -1.1878283677233235,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5769230769230769,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1401983100000,
+          "exit_t": 1403018100000,
+          "r": -1.0439306971169222,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1552311000000,
+          "exit_t": 1553178600000,
+          "r": 1.8760890300909103,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.5555555555555556,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1567690200000,
+          "exit_t": 1568053800000,
+          "r": 0.2802737046064163,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.5925925925925926,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1636035300000,
+          "exit_t": 1637076600000,
+          "r": -0.04494682636446259,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1694195100000,
+          "exit_t": 1695234600000,
+          "r": -0.35519381216192686,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1697635800000,
+          "exit_t": 1697809500000,
+          "r": -1.0466621894338348,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "BASELINE",
+          "entry_t": 1719940500000,
+          "exit_t": 1721068200000,
+          "r": 0.42748112790738124,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "TSLA",
+          "mode": "BASELINE",
+          "entry_t": 1468855800000,
+          "exit_t": 1469719800000,
+          "r": 0.39516566919725976,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "TSLA",
+          "mode": "BASELINE",
+          "entry_t": 1485786600000,
+          "exit_t": 1485790200000,
+          "r": -1.0521997152463474,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "TSLA",
+          "mode": "BASELINE",
+          "entry_t": 1544117400000,
+          "exit_t": 1545078600000,
+          "r": -1.257525694715239,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.48148148148148145,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "TSLA",
+          "mode": "BASELINE",
+          "entry_t": 1610465400000,
+          "exit_t": 1611588600000,
+          "r": 0.48799970241151025,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 1.0,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "BASELINE",
+          "entry_t": 1008599400000,
+          "exit_t": 1010417400000,
+          "r": 1.3932105042696035,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5714285714285714,
+          "breadth_n": 21
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "BASELINE",
+          "entry_t": 1387207800000,
+          "exit_t": 1387221300000,
+          "r": 0.10836077463638057,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "BASELINE",
+          "entry_t": 1441287000000,
+          "exit_t": 1442413800000,
+          "r": 0.9178047385991673,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.3333333333333333,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "BASELINE",
+          "entry_t": 1485981900000,
+          "exit_t": 1487086200000,
+          "r": 0.25060400630168994,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "BASELINE",
+          "entry_t": 1602855000000,
+          "exit_t": 1603287900000,
+          "r": -1.070267804079079,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "BASELINE",
+          "entry_t": 1639599300000,
+          "exit_t": 1640723400000,
+          "r": 1.1384204232323059,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "BASELINE",
+          "entry_t": 1706891400000,
+          "exit_t": 1707928200000,
+          "r": 0.31113700686801005,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "BASELINE",
+          "entry_t": 1754314200000,
+          "exit_t": 1755181800000,
+          "r": 1.3030053451138746,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1086366600000,
+          "exit_t": 1087225200000,
+          "r": 0.7924038061039458,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6818181818181818,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1231446600000,
+          "exit_t": 1231789500000,
+          "r": -1.0141087862159393,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.041666666666666664,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1237913100000,
+          "exit_t": 1238003100000,
+          "r": 0.49139201429405477,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.08333333333333333,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1242066600000,
+          "exit_t": 1242930600000,
+          "r": -0.14214924377774443,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1402927200000,
+          "exit_t": 1403275500000,
+          "r": -1.0362765702583716,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1405004400000,
+          "exit_t": 1405691100000,
+          "r": -0.6857035032106775,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1577975400000,
+          "exit_t": 1579015800000,
+          "r": 0.9605649155264929,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1597325400000,
+          "exit_t": 1598365800000,
+          "r": 0.07329231051469795,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1700154000000,
+          "exit_t": 1701279000000,
+          "r": 1.2010283302550686,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMD",
+          "mode": "BASELINE",
+          "entry_t": 1727964000000,
+          "exit_t": 1729002600000,
+          "r": -0.943284105957563,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NFLX",
+          "mode": "BASELINE",
+          "entry_t": 1061923500000,
+          "exit_t": 1063049400000,
+          "r": 1.9989898544042,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7727272727272727,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "NFLX",
+          "mode": "BASELINE",
+          "entry_t": 1326812400000,
+          "exit_t": 1327678200000,
+          "r": 2.400042484602465,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6153846153846154,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "NFLX",
+          "mode": "BASELINE",
+          "entry_t": 1523975400000,
+          "exit_t": 1524145500000,
+          "r": 0.27710770753065594,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.5925925925925926,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NFLX",
+          "mode": "BASELINE",
+          "entry_t": 1625163300000,
+          "exit_t": 1626287400000,
+          "r": 1.878188972046242,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NFLX",
+          "mode": "BASELINE",
+          "entry_t": 1708630200000,
+          "exit_t": 1709667000000,
+          "r": 0.554204607450389,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "NFLX",
+          "mode": "BASELINE",
+          "entry_t": 1719495900000,
+          "exit_t": 1720629000000,
+          "r": -0.38747587557609814,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1251466200000,
+          "exit_t": 1251744300000,
+          "r": -1.1341298841326632,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.92,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1280760300000,
+          "exit_t": 1281620700000,
+          "r": -1.1698776062265697,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.28,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1344000600000,
+          "exit_t": 1345041000000,
+          "r": 1.2850158127320725,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6296296296296297,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1365514200000,
+          "exit_t": 1366216200000,
+          "r": 0.49492257163014497,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1386340200000,
+          "exit_t": 1386687600000,
+          "r": 0.4899252454211191,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1400510700000,
+          "exit_t": 1401463800000,
+          "r": -0.16089282056138896,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1504020600000,
+          "exit_t": 1504273500000,
+          "r": 1.4895098886423355,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1574087400000,
+          "exit_t": 1575041400000,
+          "r": -0.25925185149651864,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "BASELINE",
+          "entry_t": 1753972200000,
+          "exit_t": 1754055900000,
+          "r": -2.2705468182842607,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JPM",
+          "mode": "BASELINE",
+          "entry_t": 1005661800000,
+          "exit_t": 1006795800000,
+          "r": -0.31975268416398994,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.4,
+          "breadth_n": 20
+        },
+        {
+          "symbol": "JPM",
+          "mode": "BASELINE",
+          "entry_t": 1295621100000,
+          "exit_t": 1296660600000,
+          "r": 0.10872547911710659,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8846153846153846,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "JPM",
+          "mode": "BASELINE",
+          "entry_t": 1356028200000,
+          "exit_t": 1356101100000,
+          "r": -1.0642714406525027,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JPM",
+          "mode": "BASELINE",
+          "entry_t": 1486132200000,
+          "exit_t": 1487172600000,
+          "r": 1.1654132017955252,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JPM",
+          "mode": "BASELINE",
+          "entry_t": 1572615000000,
+          "exit_t": 1573659000000,
+          "r": 0.8235879314275193,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JPM",
+          "mode": "BASELINE",
+          "entry_t": 1703259000000,
+          "exit_t": 1704468600000,
+          "r": 1.7016848422945763,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1022162400000,
+          "exit_t": 1023134400000,
+          "r": -1.0463924549087362,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.47619047619047616,
+          "breadth_n": 21
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1046359800000,
+          "exit_t": 1046875500000,
+          "r": -1.0463133437006695,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.17391304347826086,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1119293100000,
+          "exit_t": 1119966300000,
+          "r": 0.6651126557641454,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7391304347826086,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1258558200000,
+          "exit_t": 1259333100000,
+          "r": -1.3574404748567324,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 1.0,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1359732600000,
+          "exit_t": 1360766700000,
+          "r": 1.4482339453054456,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1375295400000,
+          "exit_t": 1375883100000,
+          "r": -1.0689321451582958,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1527011100000,
+          "exit_t": 1527086700000,
+          "r": -1.0445392573119794,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1582213500000,
+          "exit_t": 1582555500000,
+          "r": -1.8075449329786357,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1701873900000,
+          "exit_t": 1702565100000,
+          "r": 2.3073058403682203,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1724859000000,
+          "exit_t": 1725634800000,
+          "r": -1.0987967359633695,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "BASELINE",
+          "entry_t": 1736951400000,
+          "exit_t": 1738078200000,
+          "r": -0.013638307185548053,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6296296296296297,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GS",
+          "mode": "BASELINE",
+          "entry_t": 1071498600000,
+          "exit_t": 1071602100000,
+          "r": -1.2317844651295544,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8181818181818182,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "GS",
+          "mode": "BASELINE",
+          "entry_t": 1213813800000,
+          "exit_t": 1214574300000,
+          "r": -1.0250958131029602,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.4583333333333333,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "GS",
+          "mode": "BASELINE",
+          "entry_t": 1288200600000,
+          "exit_t": 1289241000000,
+          "r": 2.661965117723767,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.76,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "GS",
+          "mode": "BASELINE",
+          "entry_t": 1476451800000,
+          "exit_t": 1477492200000,
+          "r": 0.7942986568964362,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GS",
+          "mode": "BASELINE",
+          "entry_t": 1563470100000,
+          "exit_t": 1564507800000,
+          "r": 0.946443066431216,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GS",
+          "mode": "BASELINE",
+          "entry_t": 1623331800000,
+          "exit_t": 1623353400000,
+          "r": -1.4633820871939194,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GS",
+          "mode": "BASELINE",
+          "entry_t": 1697207400000,
+          "exit_t": 1697565600000,
+          "r": -1.0705565376915973,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1077719400000,
+          "exit_t": 1077900300000,
+          "r": -1.495315409168504,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8181818181818182,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1130526000000,
+          "exit_t": 1131462000000,
+          "r": 0.6885389055016738,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.4782608695652174,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1234459800000,
+          "exit_t": 1235583000000,
+          "r": 0.2811805245352944,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.08333333333333333,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1253547000000,
+          "exit_t": 1253800800000,
+          "r": -1.0661903884414436,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.88,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1286287200000,
+          "exit_t": 1287153000000,
+          "r": 1.3394253546277517,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1294929000000,
+          "exit_t": 1294947000000,
+          "r": -1.0494307573809205,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.9230769230769231,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1393605900000,
+          "exit_t": 1393618500000,
+          "r": -1.096469646794843,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1445607000000,
+          "exit_t": 1445611500000,
+          "r": -1.3618878641931635,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.4444444444444444,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1474486200000,
+          "exit_t": 1474897500000,
+          "r": -1.2531515065118861,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1484167500000,
+          "exit_t": 1484233200000,
+          "r": -1.1039085640392645,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1510258500000,
+          "exit_t": 1510670700000,
+          "r": -1.1124830512677124,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1515686400000,
+          "exit_t": 1516811400000,
+          "r": 1.8555014598260464,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1521126900000,
+          "exit_t": 1521727200000,
+          "r": -1.0638013632079342,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "BASELINE",
+          "entry_t": 1534170600000,
+          "exit_t": 1534343400000,
+          "r": -1.327908214150386,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MA",
+          "mode": "BASELINE",
+          "entry_t": 1196951400000,
+          "exit_t": 1197922500000,
+          "r": 0.9699352599624027,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7391304347826086,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "MA",
+          "mode": "BASELINE",
+          "entry_t": 1369747800000,
+          "exit_t": 1370443500000,
+          "r": -1.2595688806962602,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MA",
+          "mode": "BASELINE",
+          "entry_t": 1425318300000,
+          "exit_t": 1426004100000,
+          "r": -1.047852684527344,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MA",
+          "mode": "BASELINE",
+          "entry_t": 1627569000000,
+          "exit_t": 1627920000000,
+          "r": -1.4083075848574673,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.9629629629629629,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "XOM",
+          "mode": "BASELINE",
+          "entry_t": 1089820800000,
+          "exit_t": 1090438200000,
+          "r": 0.5103900349881061,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.5,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "XOM",
+          "mode": "BASELINE",
+          "entry_t": 1109875500000,
+          "exit_t": 1110401100000,
+          "r": -1.0471200990203597,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6521739130434783,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "XOM",
+          "mode": "BASELINE",
+          "entry_t": 1405348200000,
+          "exit_t": 1406212200000,
+          "r": 1.0839964334016978,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "XOM",
+          "mode": "BASELINE",
+          "entry_t": 1414507500000,
+          "exit_t": 1415377800000,
+          "r": 1.1751839552144419,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5555555555555556,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "XOM",
+          "mode": "BASELINE",
+          "entry_t": 1423769400000,
+          "exit_t": 1424357100000,
+          "r": -1.061523836319569,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "CVX",
+          "mode": "BASELINE",
+          "entry_t": 1044909900000,
+          "exit_t": 1045080000000,
+          "r": -1.0449349217979202,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.17391304347826086,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "CVX",
+          "mode": "BASELINE",
+          "entry_t": 1549981800000,
+          "exit_t": 1551108600000,
+          "r": 0.484164271748231,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.4444444444444444,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "CVX",
+          "mode": "BASELINE",
+          "entry_t": 1665505800000,
+          "exit_t": 1666369800000,
+          "r": 2.402620520856565,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.14814814814814814,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JNJ",
+          "mode": "BASELINE",
+          "entry_t": 975354300000,
+          "exit_t": 975686400000,
+          "r": 0.3626224686715009,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.0,
+          "breadth_n": 1
+        },
+        {
+          "symbol": "JNJ",
+          "mode": "BASELINE",
+          "entry_t": 1260455400000,
+          "exit_t": 1261495800000,
+          "r": -0.10038835276563682,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 1.0,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "JNJ",
+          "mode": "BASELINE",
+          "entry_t": 1403184600000,
+          "exit_t": 1404225000000,
+          "r": 1.5516110275693418,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JNJ",
+          "mode": "BASELINE",
+          "entry_t": 1477927800000,
+          "exit_t": 1478702700000,
+          "r": 2.7181618234612537,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JNJ",
+          "mode": "BASELINE",
+          "entry_t": 1620919800000,
+          "exit_t": 1621956600000,
+          "r": 0.08698800015153739,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8076923076923077,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 959175900000,
+          "exit_t": 959867100000,
+          "r": -1.0289644416643733,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5555555555555556,
+          "breadth_n": 18
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 986401800000,
+          "exit_t": 986911200000,
+          "r": -1.2729826477918387,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.2,
+          "breadth_n": 20
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 1118327400000,
+          "exit_t": 1118424600000,
+          "r": -1.2019886372657456,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6521739130434783,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 1468503000000,
+          "exit_t": 1469543400000,
+          "r": -0.2660676570586611,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 1505136600000,
+          "exit_t": 1505829600000,
+          "r": -1.0912715063233578,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 1573137900000,
+          "exit_t": 1573849800000,
+          "r": 2.4332750331465074,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 1583847000000,
+          "exit_t": 1584021600000,
+          "r": -1.0711813072565548,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6296296296296297,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 1634218200000,
+          "exit_t": 1634219100000,
+          "r": -0.047816689314554614,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 1657132200000,
+          "exit_t": 1658169000000,
+          "r": 0.2618845343893836,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.2962962962962963,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "UNH",
+          "mode": "BASELINE",
+          "entry_t": 1716320700000,
+          "exit_t": 1716486300000,
+          "r": -1.068327676985364,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "LLY",
+          "mode": "BASELINE",
+          "entry_t": 1109946600000,
+          "exit_t": 1110396600000,
+          "r": -1.1071851362924132,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6521739130434783,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "LLY",
+          "mode": "BASELINE",
+          "entry_t": 1246458600000,
+          "exit_t": 1246542300000,
+          "r": -1.0439632247776152,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "LLY",
+          "mode": "BASELINE",
+          "entry_t": 1436535000000,
+          "exit_t": 1436881500000,
+          "r": 0.4468231652210733,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.48148148148148145,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MRK",
+          "mode": "BASELINE",
+          "entry_t": 1076683500000,
+          "exit_t": 1077725700000,
+          "r": -1.0550731891982177,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.9545454545454546,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "MRK",
+          "mode": "BASELINE",
+          "entry_t": 1194619500000,
+          "exit_t": 1195659000000,
+          "r": -0.10491869749495736,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6521739130434783,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "MRK",
+          "mode": "BASELINE",
+          "entry_t": 1415716200000,
+          "exit_t": 1416583800000,
+          "r": -0.005909337532156791,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MRK",
+          "mode": "BASELINE",
+          "entry_t": 1546615800000,
+          "exit_t": 1547134200000,
+          "r": -1.127833558247004,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.14814814814814814,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MRK",
+          "mode": "BASELINE",
+          "entry_t": 1549895400000,
+          "exit_t": 1550849400000,
+          "r": 1.6030041036339497,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.4444444444444444,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MRK",
+          "mode": "BASELINE",
+          "entry_t": 1632924900000,
+          "exit_t": 1633095900000,
+          "r": 2.773296591755092,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MRK",
+          "mode": "BASELINE",
+          "entry_t": 1702305000000,
+          "exit_t": 1703172600000,
+          "r": 0.6262601680251408,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MRK",
+          "mode": "BASELINE",
+          "entry_t": 1766068200000,
+          "exit_t": 1766501100000,
+          "r": 1.1016127749021263,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "WMT",
+          "mode": "BASELINE",
+          "entry_t": 1097073000000,
+          "exit_t": 1097261100000,
+          "r": -1.0856348402688707,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6363636363636364,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "WMT",
+          "mode": "BASELINE",
+          "entry_t": 1250861400000,
+          "exit_t": 1251467100000,
+          "r": -1.1819162817684492,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.84,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "WMT",
+          "mode": "BASELINE",
+          "entry_t": 1502200800000,
+          "exit_t": 1502977500000,
+          "r": -2.005217990326394,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "WMT",
+          "mode": "BASELINE",
+          "entry_t": 1620315900000,
+          "exit_t": 1620405900000,
+          "r": -1.0918741601820046,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "WMT",
+          "mode": "BASELINE",
+          "entry_t": 1634304600000,
+          "exit_t": 1634910300000,
+          "r": 2.3148777704001886,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "COST",
+          "mode": "BASELINE",
+          "entry_t": 1097159400000,
+          "exit_t": 1097243100000,
+          "r": 0.17471876048070514,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6363636363636364,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "COST",
+          "mode": "BASELINE",
+          "entry_t": 1112629500000,
+          "exit_t": 1113496200000,
+          "r": 0.6799419644478112,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.5217391304347826,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "COST",
+          "mode": "BASELINE",
+          "entry_t": 1238077800000,
+          "exit_t": 1238508900000,
+          "r": -1.0895713115944166,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.08333333333333333,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "COST",
+          "mode": "BASELINE",
+          "entry_t": 1293546600000,
+          "exit_t": 1294238700000,
+          "r": -1.1132089637929334,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8846153846153846,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "COST",
+          "mode": "BASELINE",
+          "entry_t": 1616419800000,
+          "exit_t": 1617287400000,
+          "r": 2.5109625460265192,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "COST",
+          "mode": "BASELINE",
+          "entry_t": 1620311400000,
+          "exit_t": 1620740700000,
+          "r": 0.6884693345941217,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "COST",
+          "mode": "BASELINE",
+          "entry_t": 1694093400000,
+          "exit_t": 1695133800000,
+          "r": 1.306327615592729,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1005661800000,
+          "exit_t": 1006795800000,
+          "r": 1.147596435054282,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.4,
+          "breadth_n": 20
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1209652200000,
+          "exit_t": 1210088700000,
+          "r": -1.0377060163518086,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5416666666666666,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1211217300000,
+          "exit_t": 1211291100000,
+          "r": -1.5877616383034632,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5416666666666666,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1269272700000,
+          "exit_t": 1270139400000,
+          "r": -0.6739051156107755,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.96,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1456344900000,
+          "exit_t": 1457382600000,
+          "r": 0.05074151829670893,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.4074074074074074,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1515096900000,
+          "exit_t": 1516221000000,
+          "r": 2.4820050348261398,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.8518518518518519,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1555075800000,
+          "exit_t": 1556202600000,
+          "r": 0.5894615282990461,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1589549400000,
+          "exit_t": 1590676200000,
+          "r": 1.1354328949000188,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.5555555555555556,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1596462300000,
+          "exit_t": 1597249800000,
+          "r": 1.3929362759786923,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "HD",
+          "mode": "BASELINE",
+          "entry_t": 1694107800000,
+          "exit_t": 1694792700000,
+          "r": -1.068860081642256,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7777777777777778,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "CAT",
+          "mode": "BASELINE",
+          "entry_t": 972574200000,
+          "exit_t": 972935100000,
+          "r": 2.535762447307888,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.42105263157894735,
+          "breadth_n": 19
+        },
+        {
+          "symbol": "CAT",
+          "mode": "BASELINE",
+          "entry_t": 976634100000,
+          "exit_t": 976805100000,
+          "r": -1.3441719327500827,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.47368421052631576,
+          "breadth_n": 19
+        },
+        {
+          "symbol": "CAT",
+          "mode": "BASELINE",
+          "entry_t": 1143059400000,
+          "exit_t": 1143643500000,
+          "r": -1.1682281669852705,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.782608695652174,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "CAT",
+          "mode": "BASELINE",
+          "entry_t": 1267453800000,
+          "exit_t": 1268321400000,
+          "r": 0.26924617148836966,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.88,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "CAT",
+          "mode": "BASELINE",
+          "entry_t": 1310567400000,
+          "exit_t": 1311001200000,
+          "r": -1.035987735839857,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7307692307692307,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "CAT",
+          "mode": "BASELINE",
+          "entry_t": 1508506200000,
+          "exit_t": 1508852700000,
+          "r": 3.5233905693848317,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "CAT",
+          "mode": "BASELINE",
+          "entry_t": 1620999900000,
+          "exit_t": 1621431900000,
+          "r": -1.0318166834679832,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8076923076923077,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "CAT",
+          "mode": "BASELINE",
+          "entry_t": 1753204500000,
+          "exit_t": 1753970400000,
+          "r": 1.9464987033721246,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "KO",
+          "mode": "BASELINE",
+          "entry_t": 1067271300000,
+          "exit_t": 1067360400000,
+          "r": -1.075683630355207,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8181818181818182,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "KO",
+          "mode": "BASELINE",
+          "entry_t": 1221151500000,
+          "exit_t": 1221676200000,
+          "r": -1.057417449023999,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.20833333333333334,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "KO",
+          "mode": "BASELINE",
+          "entry_t": 1354212900000,
+          "exit_t": 1355250600000,
+          "r": -0.024756813650975647,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "KO",
+          "mode": "BASELINE",
+          "entry_t": 1373031000000,
+          "exit_t": 1373982300000,
+          "r": -1.3494379812613087,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8148148148148148,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "KO",
+          "mode": "BASELINE",
+          "entry_t": 1515771000000,
+          "exit_t": 1516633200000,
+          "r": 2.1915625496853206,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.9259259259259259,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "KO",
+          "mode": "BASELINE",
+          "entry_t": 1704741300000,
+          "exit_t": 1705692600000,
+          "r": -0.091857712825234,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.8888888888888888,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "KO",
+          "mode": "BASELINE",
+          "entry_t": 1741019400000,
+          "exit_t": 1741273200000,
+          "r": -1.0443472029382799,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        }
+      ]
+    },
+    "MID_BREADTH_60_75": {
+      "metrics": {
+        "trades": 45,
+        "total_r": 3.302780519370715,
+        "avg_r": 0.07339512265268255,
+        "profit_factor": 1.1364965989497708,
+        "win_rate": 0.4222222222222222,
+        "max_drawdown_r": -5.502145124552303,
+        "max_losing_streak": 7
+      },
+      "symbols": {
+        "AAPL": {
+          "metrics": {
+            "trades": 1,
+            "total_r": 0.39791782266559494,
+            "avg_r": 0.39791782266559494,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 3,
+            "filled": 1,
+            "cancelled_before_entry": 2
+          },
+          "bars15": 173022
+        },
+        "MSFT": {
+          "metrics": {
+            "trades": 1,
+            "total_r": 1.6369706719610089,
+            "avg_r": 1.6369706719610089,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 3,
+            "cancelled_before_entry": 2,
+            "filled": 1
+          },
+          "bars15": 172937
+        },
+        "NVDA": {
+          "metrics": {
+            "trades": 2,
+            "total_r": 3.5061082326248574,
+            "avg_r": 1.7530541163124287,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 3,
+            "cancelled_before_entry": 1,
+            "filled": 2
+          },
+          "bars15": 172809
+        },
+        "AMZN": {
+          "metrics": {
+            "trades": 1,
+            "total_r": -1.022825547711428,
+            "avg_r": -1.022825547711428,
+            "profit_factor": 0.0,
+            "win_rate": 0.0,
+            "max_drawdown_r": -1.022825547711428,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 2,
+            "cancelled_before_entry": 1,
+            "filled": 1
+          },
+          "bars15": 172870
+        },
+        "META": {
+          "metrics": {
+            "trades": 2,
+            "total_r": -2.0967743150527482,
+            "avg_r": -1.0483871575263741,
+            "profit_factor": 0.0,
+            "win_rate": 0.0,
+            "max_drawdown_r": -2.0967743150527482,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 4,
+            "filled": 2,
+            "entry_expired": 2
+          },
+          "bars15": 102530
+        },
+        "GOOGL": {
+          "metrics": {
+            "trades": 3,
+            "total_r": -0.24924969062548064,
+            "avg_r": -0.08308323020849355,
+            "profit_factor": 0.8814451050996956,
+            "win_rate": 0.3333333333333333,
+            "max_drawdown_r": -2.102398984327729,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 4,
+            "filled": 3,
+            "cancelled_before_entry": 1
+          },
+          "bars15": 138287
+        },
+        "TSLA": {
+          "metrics": {
+            "trades": 0,
+            "total_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "win_rate": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 1,
+            "cancelled_before_entry": 1
+          },
+          "bars15": 101201
+        },
+        "AVGO": {
+          "metrics": {
+            "trades": 1,
+            "total_r": 1.3030053451138746,
+            "avg_r": 1.3030053451138746,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 5,
+            "cancelled_before_entry": 3,
+            "entry_expired": 1,
+            "filled": 1
+          },
+          "bars15": 118305
+        },
+        "AMD": {
+          "metrics": {
+            "trades": 1,
+            "total_r": 0.7924038061039458,
+            "avg_r": 0.7924038061039458,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 4,
+            "cancelled_before_entry": 2,
+            "filled": 1,
+            "entry_expired": 1
+          },
+          "bars15": 172826
+        },
+        "NFLX": {
+          "metrics": {
+            "trades": 1,
+            "total_r": 2.400042484602465,
+            "avg_r": 2.400042484602465,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 3,
+            "entry_expired": 1,
+            "filled": 1,
+            "cancelled_before_entry": 1
+          },
+          "bars15": 153856
+        },
+        "ORCL": {
+          "metrics": {
+            "trades": 2,
+            "total_r": -0.9855310055521882,
+            "avg_r": -0.4927655027760941,
+            "profit_factor": 0.5659499299393858,
+            "win_rate": 0.5,
+            "max_drawdown_r": -2.2705468182842607,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 3,
+            "filled": 2,
+            "cancelled_before_entry": 1
+          },
+          "bars15": 172802
+        },
+        "JPM": {
+          "metrics": {
+            "trades": 2,
+            "total_r": 0.6374134016420736,
+            "avg_r": 0.3187067008210368,
+            "profit_factor": 1.5989199534014338,
+            "win_rate": 0.5,
+            "max_drawdown_r": -1.0642714406525027,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 2,
+            "filled": 2
+          },
+          "bars15": 172793
+        },
+        "BAC": {
+          "metrics": {
+            "trades": 3,
+            "total_r": -0.39306490873338207,
+            "avg_r": -0.1310216362444607,
+            "profit_factor": 0.6285454143794592,
+            "win_rate": 0.3333333333333333,
+            "max_drawdown_r": -1.0581775644975275,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 4,
+            "filled": 3,
+            "cancelled_before_entry": 1
+          },
+          "bars15": 172818
+        },
+        "GS": {
+          "metrics": {
+            "trades": 1,
+            "total_r": -1.0705565376915973,
+            "avg_r": -1.0705565376915973,
+            "profit_factor": 0.0,
+            "win_rate": 0.0,
+            "max_drawdown_r": -1.0705565376915973,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 6,
+            "cancelled_before_entry": 5,
+            "filled": 1
+          },
+          "bars15": 172678
+        },
+        "V": {
+          "metrics": {
+            "trades": 3,
+            "total_r": -1.2416343660345204,
+            "avg_r": -0.4138781220115068,
+            "profit_factor": 0.5189439608487904,
+            "win_rate": 0.3333333333333333,
+            "max_drawdown_r": -2.581059720662272,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 7,
+            "cancelled_before_entry": 3,
+            "filled": 3,
+            "entry_expired": 1
+          },
+          "bars15": 154086
+        },
+        "MA": {
+          "metrics": {
+            "trades": 2,
+            "total_r": -0.07791742456494122,
+            "avg_r": -0.03895871228247061,
+            "profit_factor": 0.9256408599076238,
+            "win_rate": 0.5,
+            "max_drawdown_r": -1.047852684527344,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 5,
+            "filled": 2,
+            "cancelled_before_entry": 2,
+            "entry_expired": 1
+          },
+          "bars15": 127705
+        },
+        "XOM": {
+          "metrics": {
+            "trades": 2,
+            "total_r": -2.108643935339929,
+            "avg_r": -1.0543219676699644,
+            "profit_factor": 0.0,
+            "win_rate": 0.0,
+            "max_drawdown_r": -2.108643935339929,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 3,
+            "filled": 2,
+            "cancelled_before_entry": 1
+          },
+          "bars15": 170055
+        },
+        "CVX": {
+          "metrics": {
+            "trades": 0,
+            "total_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "win_rate": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 2,
+            "cancelled_before_entry": 2
+          },
+          "bars15": 157940
+        },
+        "JNJ": {
+          "metrics": {
+            "trades": 1,
+            "total_r": 2.7181618234612537,
+            "avg_r": 2.7181618234612537,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 1,
+            "filled": 1
+          },
+          "bars15": 172667
+        },
+        "UNH": {
+          "metrics": {
+            "trades": 3,
+            "total_r": -2.320986633836855,
+            "avg_r": -0.7736622112789516,
+            "profit_factor": 0.0,
+            "win_rate": 0.0,
+            "max_drawdown_r": -2.320986633836855,
+            "max_losing_streak": 3
+          },
+          "stats": {
+            "patterns": 6,
+            "cancelled_before_entry": 3,
+            "filled": 3
+          },
+          "bars15": 172613
+        },
+        "LLY": {
+          "metrics": {
+            "trades": 2,
+            "total_r": -2.151148361070028,
+            "avg_r": -1.075574180535014,
+            "profit_factor": 0.0,
+            "win_rate": 0.0,
+            "max_drawdown_r": -2.151148361070028,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 5,
+            "filled": 2,
+            "cancelled_before_entry": 1,
+            "entry_expired": 2
+          },
+          "bars15": 172609
+        },
+        "MRK": {
+          "metrics": {
+            "trades": 3,
+            "total_r": 0.9907847398750121,
+            "avg_r": 0.3302615799583374,
+            "profit_factor": 9.939838549267936,
+            "win_rate": 0.3333333333333333,
+            "max_drawdown_r": -0.11082803502711415,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 8,
+            "cancelled_before_entry": 3,
+            "entry_expired": 2,
+            "filled": 3
+          },
+          "bars15": 172665
+        },
+        "WMT": {
+          "metrics": {
+            "trades": 2,
+            "total_r": 1.229242930131318,
+            "avg_r": 0.614621465065659,
+            "profit_factor": 2.1322802884871317,
+            "win_rate": 0.5,
+            "max_drawdown_r": -1.0856348402688707,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 5,
+            "filled": 2,
+            "cancelled_before_entry": 1,
+            "entry_expired": 2
+          },
+          "bars15": 172742
+        },
+        "COST": {
+          "metrics": {
+            "trades": 1,
+            "total_r": 0.17471876048070514,
+            "avg_r": 0.17471876048070514,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 3,
+            "filled": 1,
+            "cancelled_before_entry": 2
+          },
+          "bars15": 172657
+        },
+        "HD": {
+          "metrics": {
+            "trades": 1,
+            "total_r": 1.3929362759786923,
+            "avg_r": 1.3929362759786923,
+            "profit_factor": null,
+            "win_rate": 1.0,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0
+          },
+          "stats": {
+            "patterns": 1,
+            "filled": 1
+          },
+          "bars15": 172648
+        },
+        "CAT": {
+          "metrics": {
+            "trades": 2,
+            "total_r": 0.9105109675322676,
+            "avg_r": 0.4552554837661338,
+            "profit_factor": 1.8788819944804969,
+            "win_rate": 0.5,
+            "max_drawdown_r": -1.035987735839857,
+            "max_losing_streak": 1
+          },
+          "stats": {
+            "patterns": 3,
+            "filled": 2,
+            "cancelled_before_entry": 1
+          },
+          "bars15": 172646
+        },
+        "KO": {
+          "metrics": {
+            "trades": 2,
+            "total_r": -1.0691040165892556,
+            "avg_r": -0.5345520082946278,
+            "profit_factor": 0.0,
+            "win_rate": 0.0,
+            "max_drawdown_r": -1.0691040165892556,
+            "max_losing_streak": 2
+          },
+          "stats": {
+            "patterns": 6,
+            "filled": 2,
+            "entry_expired": 1,
+            "cancelled_before_entry": 3
+          },
+          "bars15": 172669
+        }
+      },
+      "errors": {},
+      "trades": [
+        {
+          "symbol": "AAPL",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1127136600000,
+          "exit_t": 1127930400000,
+          "r": 0.39791782266559494,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6956521739130435,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "MSFT",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1191255300000,
+          "exit_t": 1192120200000,
+          "r": 1.6369706719610089,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6956521739130435,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1108145700000,
+          "exit_t": 1109269800000,
+          "r": 1.333029820055276,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6363636363636364,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "NVDA",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1560864600000,
+          "exit_t": 1561732200000,
+          "r": 2.1730784125695815,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMZN",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1762785000000,
+          "exit_t": 1763058600000,
+          "r": -1.022825547711428,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "META",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1427723100000,
+          "exit_t": 1427895900000,
+          "r": -1.0446795053578688,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6296296296296297,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "META",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1601927100000,
+          "exit_t": 1602011700000,
+          "r": -1.0520948096948795,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1117114200000,
+          "exit_t": 1118241000000,
+          "r": 1.8531492937022485,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6086956521739131,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1301491800000,
+          "exit_t": 1302019200000,
+          "r": -1.0557367948938943,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6923076923076923,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "GOOGL",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1697635800000,
+          "exit_t": 1697809500000,
+          "r": -1.0466621894338348,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AVGO",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1754314200000,
+          "exit_t": 1755181800000,
+          "r": 1.3030053451138746,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "AMD",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1086366600000,
+          "exit_t": 1087225200000,
+          "r": 0.7924038061039458,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6818181818181818,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "NFLX",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1326812400000,
+          "exit_t": 1327678200000,
+          "r": 2.400042484602465,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6153846153846154,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1344000600000,
+          "exit_t": 1345041000000,
+          "r": 1.2850158127320725,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6296296296296297,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "ORCL",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1753972200000,
+          "exit_t": 1754055900000,
+          "r": -2.2705468182842607,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JPM",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1356028200000,
+          "exit_t": 1356101100000,
+          "r": -1.0642714406525027,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JPM",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1703259000000,
+          "exit_t": 1704468600000,
+          "r": 1.7016848422945763,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1119293100000,
+          "exit_t": 1119966300000,
+          "r": 0.6651126557641454,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7391304347826086,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "BAC",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1527011100000,
+          "exit_t": 1527086700000,
+          "r": -1.0445392573119794,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "BAC",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1736951400000,
+          "exit_t": 1738078200000,
+          "r": -0.013638307185548053,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6296296296296297,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "GS",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1697207400000,
+          "exit_t": 1697565600000,
+          "r": -1.0705565376915973,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1286287200000,
+          "exit_t": 1287153000000,
+          "r": 1.3394253546277517,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6,
+          "breadth_n": 25
+        },
+        {
+          "symbol": "V",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1474486200000,
+          "exit_t": 1474897500000,
+          "r": -1.2531515065118861,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "V",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1534170600000,
+          "exit_t": 1534343400000,
+          "r": -1.327908214150386,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MA",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1196951400000,
+          "exit_t": 1197922500000,
+          "r": 0.9699352599624027,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7391304347826086,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "MA",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1425318300000,
+          "exit_t": 1426004100000,
+          "r": -1.047852684527344,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "XOM",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1109875500000,
+          "exit_t": 1110401100000,
+          "r": -1.0471200990203597,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6521739130434783,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "XOM",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1423769400000,
+          "exit_t": 1424357100000,
+          "r": -1.061523836319569,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "JNJ",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1477927800000,
+          "exit_t": 1478702700000,
+          "r": 2.7181618234612537,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "UNH",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1118327400000,
+          "exit_t": 1118424600000,
+          "r": -1.2019886372657456,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6521739130434783,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "UNH",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1583847000000,
+          "exit_t": 1584021600000,
+          "r": -1.0711813072565548,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6296296296296297,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "UNH",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1634218200000,
+          "exit_t": 1634219100000,
+          "r": -0.047816689314554614,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "LLY",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1109946600000,
+          "exit_t": 1110396600000,
+          "r": -1.1071851362924132,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6521739130434783,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "LLY",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1246458600000,
+          "exit_t": 1246542300000,
+          "r": -1.0439632247776152,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 24
+        },
+        {
+          "symbol": "MRK",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1194619500000,
+          "exit_t": 1195659000000,
+          "r": -0.10491869749495736,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6521739130434783,
+          "breadth_n": 23
+        },
+        {
+          "symbol": "MRK",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1415716200000,
+          "exit_t": 1416583800000,
+          "r": -0.005909337532156791,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "MRK",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1766068200000,
+          "exit_t": 1766501100000,
+          "r": 1.1016127749021263,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "WMT",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1097073000000,
+          "exit_t": 1097261100000,
+          "r": -1.0856348402688707,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6363636363636364,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "WMT",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1634304600000,
+          "exit_t": 1634910300000,
+          "r": 2.3148777704001886,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "COST",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1097159400000,
+          "exit_t": 1097243100000,
+          "r": 0.17471876048070514,
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "breadth200": 0.6363636363636364,
+          "breadth_n": 22
+        },
+        {
+          "symbol": "HD",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1596462300000,
+          "exit_t": 1597249800000,
+          "r": 1.3929362759786923,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7407407407407407,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "CAT",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1310567400000,
+          "exit_t": 1311001200000,
+          "r": -1.035987735839857,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7307692307692307,
+          "breadth_n": 26
+        },
+        {
+          "symbol": "CAT",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1753204500000,
+          "exit_t": 1753970400000,
+          "r": 1.9464987033721246,
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "KO",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1354212900000,
+          "exit_t": 1355250600000,
+          "r": -0.024756813650975647,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.6666666666666666,
+          "breadth_n": 27
+        },
+        {
+          "symbol": "KO",
+          "mode": "MID_BREADTH_60_75",
+          "entry_t": 1741019400000,
+          "exit_t": 1741273200000,
+          "r": -1.0443472029382799,
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "breadth200": 0.7037037037037037,
+          "breadth_n": 27
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Current27 is survivorship-biased and therefore secondary validation only.",
+    "The breadth filter was discovered post-hoc on the frozen DJIA2000 universe and is evaluated here without modification."
+  ]
+}
