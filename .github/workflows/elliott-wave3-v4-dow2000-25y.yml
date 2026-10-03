@@ -1,0 +1,80 @@
+name: Elliott Wave 3 v4 DJIA2000 25Y OOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/elliott-wave3-v4-dow2000-25y.yml"
+      - "scripts/backtest_elliott_wave3_v4_dow2000_25y.py"
+      - "strategy/elliott_wave3_v4_dow2000_25y_frozen.md"
+      - "scripts/extract_us_30x2_15m_hf.py"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    name: extract-${{ matrix.tag }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include:
+          - {tag: "1999_2005", start: "1999-07", end: "2005-01"}
+          - {tag: "2005_2010", start: "2005-01", end: "2010-01"}
+          - {tag: "2010_2015", start: "2010-01", end: "2015-01"}
+          - {tag: "2015_2020", start: "2015-01", end: "2020-01"}
+          - {tag: "2020_2024", start: "2020-01", end: "2024-01"}
+          - {tag: "2024_2026", start: "2024-01", end: "2026-01"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check duckdb pandas pyarrow
+      - run: python scripts/extract_us_30x2_15m_hf.py --start "${{ matrix.start }}" --end "${{ matrix.end }}" --tag "${{ matrix.tag }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elliott-dow2000-${{ matrix.tag }}
+          path: |
+            data/chunks_us30x2/us30x2_15m_${{ matrix.tag }}.parquet
+            data/chunks_us30x2/us30x2_15m_${{ matrix.tag }}.json
+          retention-days: 2
+          if-no-files-found: error
+
+  backtest:
+    needs: extract
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check pandas pyarrow
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: elliott-dow2000-*
+          path: data/tmp_us30x2_25y
+          merge-multiple: true
+      - name: Compile
+        run: python -m py_compile scripts/backtest_elliott_wave3_v4_dow2000_25y.py
+      - name: Run frozen DJIA2000 OOS
+        run: python scripts/backtest_elliott_wave3_v4_dow2000_25y.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: elliott-wave3-v4-dow2000-25y
+          path: data/validation/elliott_wave3_v4_dow2000_1h_long_25y.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/elliott_wave3_v4_dow2000_1h_long_25y.json
+          git commit -m "research: add Elliott v4 DJIA2000 25Y OOS [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
