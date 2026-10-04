@@ -1,0 +1,212 @@
+{
+  "strategy": "SR Range Reversion v5 frozen baseline",
+  "asset_class": "Binance USDT-M perpetual",
+  "rules": {
+    "zone_source": "4H+1D confirmed body-edge zones, >=2 interactions",
+    "signal_tf": "1H",
+    "range_regime": {
+      "4h_er20_max": 0.35,
+      "4h_ema20_50_gap_atr_max": 1.0,
+      "range_width_atr": [
+        3.0,
+        12.0
+      ]
+    },
+    "setup": "reject lower/upper boundary from inside a neutral HTF range",
+    "entry": "next 15m open",
+    "sl_buffer_atr": 0.15,
+    "risk_atr_range": [
+      0.35,
+      2.5
+    ],
+    "tp1": "range midpoint, 50%, then BE",
+    "tp2": "near edge of opposite HTF zone",
+    "max_hold_hours": 96,
+    "pair_cooldown_hours": 48,
+    "same_bar": "15m stop-first conservative"
+  },
+  "costs": {
+    "fee_bps": 4.0,
+    "slippage_bps": 2.0,
+    "per_fill_total_bps": 6.0
+  },
+  "summary": {
+    "trades": 1,
+    "long": 0,
+    "short": 1,
+    "win_rate": 0.0,
+    "total_r": -1.0341684426723419,
+    "avg_r": -1.0341684426723419,
+    "profit_factor": 0.0,
+    "max_drawdown_r": -1.0341684426723419,
+    "max_losing_streak": 1,
+    "tp1_hit_rate": 0.0,
+    "tp2_hit_rate": 0.0,
+    "avg_hold_hours": 1.25
+  },
+  "directions": {
+    "SHORT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0341684426723419,
+      "avg_r": -1.0341684426723419,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0341684426723419,
+      "max_losing_streak": 1,
+      "tp1_hit_rate": 0.0,
+      "tp2_hit_rate": 0.0,
+      "avg_hold_hours": 1.25
+    }
+  },
+  "symbols": {
+    "ETHUSDT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0341684426723419,
+      "avg_r": -1.0341684426723419,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0341684426723419,
+      "max_losing_streak": 1,
+      "tp1_hit_rate": 0.0,
+      "tp2_hit_rate": 0.0,
+      "avg_hold_hours": 1.25
+    }
+  },
+  "years": {
+    "2022": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "win_rate": 0.0,
+      "total_r": -1.0341684426723419,
+      "avg_r": -1.0341684426723419,
+      "profit_factor": 0.0,
+      "max_drawdown_r": -1.0341684426723419,
+      "max_losing_streak": 1,
+      "tp1_hit_rate": 0.0,
+      "tp2_hit_rate": 0.0,
+      "avg_hold_hours": 1.25
+    }
+  },
+  "details": {
+    "BTCUSDT": {
+      "metrics": {
+        "trades": 0,
+        "long": 0,
+        "short": 0,
+        "win_rate": null,
+        "total_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_losing_streak": 0,
+        "tp1_hit_rate": null,
+        "tp2_hit_rate": null,
+        "avg_hold_hours": null
+      },
+      "stats": {
+        "regime_reject": 22231,
+        "pair_reject": 21490,
+        "filled": 0
+      }
+    },
+    "ETHUSDT": {
+      "metrics": {
+        "trades": 1,
+        "long": 0,
+        "short": 1,
+        "win_rate": 0.0,
+        "total_r": -1.0341684426723419,
+        "avg_r": -1.0341684426723419,
+        "profit_factor": 0.0,
+        "max_drawdown_r": -1.0341684426723419,
+        "max_losing_streak": 1,
+        "tp1_hit_rate": 0.0,
+        "tp2_hit_rate": 0.0,
+        "avg_hold_hours": 1.25
+      },
+      "stats": {
+        "regime_reject": 22415,
+        "pair_reject": 21125,
+        "signals_short": 1,
+        "pair_cooldown": 1,
+        "filled": 1
+      }
+    },
+    "BNBUSDT": {
+      "metrics": {
+        "trades": 0,
+        "long": 0,
+        "short": 0,
+        "win_rate": null,
+        "total_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_losing_streak": 0,
+        "tp1_hit_rate": null,
+        "tp2_hit_rate": null,
+        "avg_hold_hours": null
+      },
+      "stats": {
+        "regime_reject": 19439,
+        "pair_reject": 24271,
+        "filled": 0
+      }
+    },
+    "SOLUSDT": {
+      "metrics": {
+        "trades": 0,
+        "long": 0,
+        "short": 0,
+        "win_rate": null,
+        "total_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_losing_streak": 0,
+        "tp1_hit_rate": null,
+        "tp2_hit_rate": null,
+        "avg_hold_hours": null
+      },
+      "stats": {
+        "regime_reject": 22359,
+        "pair_reject": 20933,
+        "filled": 0
+      }
+    }
+  },
+  "trades": [
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1H",
+      "direction": "SHORT",
+      "signal_t": 1658941200000,
+      "entry_t": 1658941200000,
+      "exit_t": 1658945700000,
+      "fill": 1484.03,
+      "initial_sl": 1537.0808971590538,
+      "tp1": 1384.0215764846287,
+      "tp2": 1269.11,
+      "risk": 53.050897159053875,
+      "risk_atr": 2.324041493452927,
+      "r": -1.0341684426723419,
+      "reason": "STOP",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "hold_hours": 1.25,
+      "support_zone_id": 50,
+      "resistance_zone_id": 46,
+      "range_width_atr": 4.2591140249974195,
+      "er20": 0.2299254231937812,
+      "ema_gap_atr": 0.039067488875672726,
+      "signal_clv": 0.16762177650429713,
+      "target1_r_at_fill": 1.8851410413575536,
+      "target2_r_at_fill": 4.051203872304749
+    }
+  ]
+}
