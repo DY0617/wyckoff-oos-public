@@ -125,3 +125,17 @@ The SR zone engine may remain available for chart annotation, diagnostics, or ex
 ## Change-control note
 
 This rejected experiment does not modify TRACK_B_V1_0_FROZEN.
+
+## 20/20/60 management cross-check
+
+Because later operational research considered 20/20/60 management, the same already-generated trade/event paths were replayed with 20% TP1 / 20% TP2 / 60% runner. The stop-ratchet and runner path is unchanged; only realized fractions differ.
+
+Core-4:
+- baseline: 132 trades, +29.45R, avg +0.223R, PF 1.611, MDD 13.77%
+- clear-to-TP1: 26 trades, +9.49R, avg +0.365R, PF 2.822, MDD 5.10%
+
+Alt-4 symbol OOS:
+- baseline: 116 trades, +6.04R, avg +0.052R, PF 1.125, MDD 16.07%
+- clear-to-TP1: 13 trades, +0.43R, avg +0.033R, PF 1.104, MDD 5.68%
+
+Conclusion is unchanged under 20/20/60: the apparent Core-4 improvement does not generalize. The SR clear-to-TP1 filter remains rejected.
