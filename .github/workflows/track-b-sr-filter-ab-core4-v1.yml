@@ -1,0 +1,42 @@
+name: Track B SR Filter AB Core4 v1
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/track-b-sr-filter-ab-core4-v1.yml"
+      - "scripts/analyze_track_b_sr_filter_ab_core4_v1.py"
+      - "scripts/backtest_sr_reclaim_v1_crypto.py"
+      - "strategy/track_b_v1_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/analyze_track_b_sr_filter_ab_core4_v1.py
+      - name: Run A/B
+        run: python scripts/analyze_track_b_sr_filter_ab_core4_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: track-b-sr-filter-ab-core4-v1
+          path: data/validation/track_b_sr_filter_ab_core4_v1.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/track_b_sr_filter_ab_core4_v1.json
+          git commit -m "research: add Track B SR filter A/B result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
