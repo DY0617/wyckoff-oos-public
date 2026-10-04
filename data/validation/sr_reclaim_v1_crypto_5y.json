@@ -1,0 +1,236 @@
+{
+  "strategy": "SR Reclaim v1 frozen",
+  "asset_class": "Binance USDT-M perpetual",
+  "period": {
+    "fetch_start": "2021-08-01T00:00:00+00:00",
+    "eval_start": "2021-10-01T00:00:00+00:00",
+    "eval_end_exclusive": "2026-10-01T00:00:00+00:00"
+  },
+  "rules": {
+    "signal_timeframe": "4H",
+    "execution_timeframe": "15m next-open market",
+    "zone_timeframes": [
+      "4H",
+      "1D"
+    ],
+    "zone_level": "pivot candle body edge (low pivot=min(open,close), high pivot=max(open,close))",
+    "zone_merge_atr": 0.45,
+    "zone_half_atr": 0.3,
+    "zone_max_half_atr": 0.65,
+    "zone_min_touches": 2,
+    "zone_max_age_days": 365,
+    "min_touch_separation_hours": 12,
+    "confirmation": {
+      "reclaim": "previous close outside zone, wick penetrates at least zone center, current close reclaims zone",
+      "clv_long_min": 0.65,
+      "clv_short_max": 0.35,
+      "bos_lookback_bars": 2,
+      "trend": "EMA20/EMA50 aligned and EMA50 slope over 6 bars agrees"
+    },
+    "entry": "first 15m open after confirmed 4H close",
+    "max_entry_gap_atr": 0.25,
+    "sl": "beyond signal extreme/zone edge plus ATR buffer",
+    "sl_buffer_atr": 0.15,
+    "risk_atr_range": [
+      0.35,
+      2.0
+    ],
+    "tp1": "1.0R, 50% size then stop to breakeven",
+    "tp2": "near edge of nearest pre-existing opposite S/R zone",
+    "min_target_r": 2.0,
+    "max_hold_signal_bars": 24,
+    "zone_signal_cooldown_bars": 6,
+    "intrabar": "15m stop-first conservative"
+  },
+  "costs": {
+    "fee_bps": 4.0,
+    "slippage_bps": 2.0,
+    "per_fill_total_bps": 6.0
+  },
+  "summary": {
+    "trades": 1,
+    "long": 0,
+    "short": 1,
+    "win_rate": 1.0,
+    "total_r": 1.79632422348787,
+    "avg_r": 1.79632422348787,
+    "profit_factor": null,
+    "max_drawdown_r": 0.0,
+    "max_losing_streak": 0,
+    "tp1_hit_rate": 1.0,
+    "tp2_hit_rate": 1.0,
+    "avg_hold_hours": 12.75
+  },
+  "directions": {
+    "SHORT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "win_rate": 1.0,
+      "total_r": 1.79632422348787,
+      "avg_r": 1.79632422348787,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_hit_rate": 1.0,
+      "tp2_hit_rate": 1.0,
+      "avg_hold_hours": 12.75
+    }
+  },
+  "symbols": {
+    "SOLUSDT": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "win_rate": 1.0,
+      "total_r": 1.79632422348787,
+      "avg_r": 1.79632422348787,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_hit_rate": 1.0,
+      "tp2_hit_rate": 1.0,
+      "avg_hold_hours": 12.75
+    }
+  },
+  "years": {
+    "2022": {
+      "trades": 1,
+      "long": 0,
+      "short": 1,
+      "win_rate": 1.0,
+      "total_r": 1.79632422348787,
+      "avg_r": 1.79632422348787,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0,
+      "max_losing_streak": 0,
+      "tp1_hit_rate": 1.0,
+      "tp2_hit_rate": 1.0,
+      "avg_hold_hours": 12.75
+    }
+  },
+  "symbol_details": {
+    "BTCUSDT": {
+      "metrics": {
+        "trades": 0,
+        "long": 0,
+        "short": 0,
+        "win_rate": null,
+        "total_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_losing_streak": 0,
+        "tp1_hit_rate": null,
+        "tp2_hit_rate": null,
+        "avg_hold_hours": null
+      },
+      "stats": {
+        "target_rr_filter": 12,
+        "risk_filter": 15,
+        "no_opposite_zone": 5,
+        "fill_rate": null
+      }
+    },
+    "ETHUSDT": {
+      "metrics": {
+        "trades": 0,
+        "long": 0,
+        "short": 0,
+        "win_rate": null,
+        "total_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_losing_streak": 0,
+        "tp1_hit_rate": null,
+        "tp2_hit_rate": null,
+        "avg_hold_hours": null
+      },
+      "stats": {
+        "no_opposite_zone": 4,
+        "target_rr_filter": 26,
+        "risk_filter": 11,
+        "fill_rate": null
+      }
+    },
+    "BNBUSDT": {
+      "metrics": {
+        "trades": 0,
+        "long": 0,
+        "short": 0,
+        "win_rate": null,
+        "total_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_losing_streak": 0,
+        "tp1_hit_rate": null,
+        "tp2_hit_rate": null,
+        "avg_hold_hours": null
+      },
+      "stats": {
+        "target_rr_filter": 13,
+        "risk_filter": 16,
+        "fill_rate": null
+      }
+    },
+    "SOLUSDT": {
+      "metrics": {
+        "trades": 1,
+        "long": 0,
+        "short": 1,
+        "win_rate": 1.0,
+        "total_r": 1.79632422348787,
+        "avg_r": 1.79632422348787,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_losing_streak": 0,
+        "tp1_hit_rate": 1.0,
+        "tp2_hit_rate": 1.0,
+        "avg_hold_hours": 12.75
+      },
+      "stats": {
+        "no_opposite_zone": 4,
+        "target_rr_filter": 11,
+        "risk_filter": 8,
+        "signals": 1,
+        "filled": 1,
+        "fill_rate": 1.0
+      }
+    }
+  },
+  "trades": [
+    {
+      "symbol": "SOLUSDT",
+      "timeframe": "4H",
+      "direction": "SHORT",
+      "signal_t": 1652256000000,
+      "entry_t": 1652256000000,
+      "exit_t": 1652301900000,
+      "signal_close": 62.55,
+      "fill": 62.57,
+      "initial_sl": 69.2140791884857,
+      "tp1": 55.9259208115143,
+      "tp2": 45.20847377363763,
+      "risk": 6.644079188485698,
+      "r": 1.79632422348787,
+      "reason": "TP2",
+      "tp1_hit": true,
+      "tp2_hit": true,
+      "hold_hours": 12.75,
+      "entry_gap_atr": 0.0044837020625439535,
+      "zone_id": 10,
+      "zone_center": 67.48533333333334,
+      "zone_lo": 66.42567743066957,
+      "zone_hi": 68.54498923599712,
+      "zone_touches": 3,
+      "zone_daily_touches": 0,
+      "target_zone_id": 9,
+      "target_zone_touches": 2,
+      "signal_clv": 0.2506361323155215,
+      "risk_ref_atr": 1.493987280118245,
+      "target_r_at_fill": 2.613082375124335
+    }
+  ]
+}
