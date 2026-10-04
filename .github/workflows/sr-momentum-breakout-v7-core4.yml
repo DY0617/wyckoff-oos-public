@@ -1,0 +1,42 @@
+name: SR Momentum Breakout v7 Core4 5Y
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/sr-momentum-breakout-v7-core4.yml"
+      - "scripts/backtest_sr_momentum_breakout_v7_core4.py"
+      - "scripts/sr_engine_v2.py"
+      - "strategy/sr_momentum_breakout_v7_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_sr_momentum_breakout_v7_core4.py
+      - name: Run v7
+        run: python scripts/backtest_sr_momentum_breakout_v7_core4.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sr-momentum-breakout-v7-core4
+          path: data/validation/sr_momentum_breakout_v7_core4_5y.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/sr_momentum_breakout_v7_core4_5y.json
+          git commit -m "research: add SR Momentum Breakout v7 Core4 result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
