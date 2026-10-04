@@ -1,0 +1,42 @@
+name: Track B SR Clear TP1 Alt4 OOS v1
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/track-b-sr-clear-tp1-alt4-oos-v1.yml"
+      - "scripts/backtest_track_b_sr_clear_tp1_alt4_oos_v1.py"
+      - "scripts/backtest_track_b_15_25_60_alt_oos_v1.py"
+      - "scripts/backtest_sr_reclaim_v1_crypto.py"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_track_b_sr_clear_tp1_alt4_oos_v1.py
+      - name: Run selected OOS
+        run: python scripts/backtest_track_b_sr_clear_tp1_alt4_oos_v1.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: track-b-sr-clear-tp1-alt4-oos-v1
+          path: data/validation/track_b_sr_clear_tp1_alt4_oos_v1.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/track_b_sr_clear_tp1_alt4_oos_v1.json
+          git commit -m "research: add Track B SR clear-to-TP1 alt4 OOS [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
