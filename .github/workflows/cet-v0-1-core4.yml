@@ -1,0 +1,41 @@
+name: CET v0.1 Core4 5Y
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cet-v0-1-core4.yml"
+      - "scripts/backtest_cet_v0_1_core4.py"
+      - "strategy/cet_v0_1_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_cet_v0_1_core4.py
+      - name: Run CET
+        run: python scripts/backtest_cet_v0_1_core4.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cet-v0-1-core4
+          path: data/validation/cet_v0_1_core4_5y.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/cet_v0_1_core4_5y.json
+          git commit -m "research: add CET v0.1 Core4 result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
