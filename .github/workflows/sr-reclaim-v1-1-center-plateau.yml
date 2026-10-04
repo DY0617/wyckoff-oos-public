@@ -1,0 +1,41 @@
+name: SR Reclaim v1.1 Center Plateau
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/sr-reclaim-v1-1-center-plateau.yml"
+      - "scripts/analyze_sr_reclaim_v1_1_center_plateau.py"
+      - "scripts/backtest_sr_reclaim_v1_1_retest.py"
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/analyze_sr_reclaim_v1_1_center_plateau.py
+      - name: Run plateau
+        run: python scripts/analyze_sr_reclaim_v1_1_center_plateau.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sr-reclaim-v1-1-center-plateau
+          path: data/validation/sr_reclaim_v1_1_center_plateau.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/sr_reclaim_v1_1_center_plateau.json
+          git commit -m "research: add SR Reclaim v1.1 center plateau [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
