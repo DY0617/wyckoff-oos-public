@@ -1,0 +1,775 @@
+{
+  "strategy": "SR Reclaim v1.1 zone-center unseen8 symbol OOS",
+  "selection_history": "valid6 and valid12 selected on BTC/ETH/BNB/SOL research universe before this run",
+  "symbols": [
+    "LTCUSDT",
+    "BCHUSDT",
+    "ETCUSDT",
+    "TRXUSDT",
+    "XLMUSDT",
+    "DOTUSDT",
+    "FILUSDT",
+    "UNIUSDT"
+  ],
+  "candidate_stats": {
+    "LTCUSDT": {
+      "candidates": 26,
+      "no_opposite_zone": 2
+    },
+    "BCHUSDT": {
+      "candidates": 24
+    },
+    "ETCUSDT": {
+      "candidates": 22,
+      "no_opposite_zone": 2
+    },
+    "TRXUSDT": {
+      "candidates": 25
+    },
+    "XLMUSDT": {
+      "candidates": 34,
+      "no_opposite_zone": 1
+    },
+    "DOTUSDT": {
+      "no_opposite_zone": 2,
+      "candidates": 52
+    },
+    "FILUSDT": {
+      "candidates": 28
+    },
+    "UNIUSDT": {
+      "candidates": 28,
+      "no_opposite_zone": 1
+    }
+  },
+  "configs": [
+    {
+      "name": "valid6_r2",
+      "entry_valid_4h_bars": 6,
+      "min_target_r": 2.0,
+      "summary": {
+        "trades": 30,
+        "long": 20,
+        "short": 10,
+        "win_rate": 0.5333333333333333,
+        "total_r": -3.7091420111526134,
+        "avg_r": -0.12363806703842045,
+        "profit_factor": 0.7573291523229864,
+        "max_drawdown_r": -5.73544212151517,
+        "max_losing_streak": 4,
+        "tp1_hit_rate": 0.5333333333333333,
+        "tp2_hit_rate": 0.1,
+        "avg_hold_hours": 3.658333333333333
+      },
+      "directions": {
+        "LONG": {
+          "trades": 20,
+          "long": 20,
+          "short": 0,
+          "win_rate": 0.5,
+          "total_r": -6.041845648502523,
+          "avg_r": -0.30209228242512615,
+          "profit_factor": 0.44503455675395703,
+          "max_drawdown_r": -6.591983644526481,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 2.525
+        },
+        "SHORT": {
+          "trades": 10,
+          "long": 0,
+          "short": 10,
+          "win_rate": 0.6,
+          "total_r": 2.3327036373499093,
+          "avg_r": 0.23327036373499094,
+          "profit_factor": 1.5304279907468135,
+          "max_drawdown_r": -2.201420325866027,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.6,
+          "tp2_hit_rate": 0.3,
+          "avg_hold_hours": 5.925
+        }
+      },
+      "symbols": {
+        "BCHUSDT": {
+          "trades": 4,
+          "long": 2,
+          "short": 2,
+          "win_rate": 0.75,
+          "total_r": 1.5195867597561967,
+          "avg_r": 0.3798966899390492,
+          "profit_factor": 2.411272415414576,
+          "max_drawdown_r": -1.0767494235404598,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.75,
+          "tp2_hit_rate": 0.25,
+          "avg_hold_hours": 6.1875
+        },
+        "DOTUSDT": {
+          "trades": 2,
+          "long": 2,
+          "short": 0,
+          "win_rate": 1.0,
+          "total_r": 1.4945795545161766,
+          "avg_r": 0.7472897772580883,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "max_losing_streak": 0,
+          "tp1_hit_rate": 1.0,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 3.625
+        },
+        "ETCUSDT": {
+          "trades": 1,
+          "long": 1,
+          "short": 0,
+          "win_rate": 0.0,
+          "total_r": -1.1118623774002532,
+          "avg_r": -1.1118623774002532,
+          "profit_factor": 0.0,
+          "max_drawdown_r": -1.1118623774002532,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.0,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 0.25
+        },
+        "FILUSDT": {
+          "trades": 4,
+          "long": 3,
+          "short": 1,
+          "win_rate": 0.5,
+          "total_r": -0.1972205150251155,
+          "avg_r": -0.049305128756278876,
+          "profit_factor": 0.9096930462922882,
+          "max_drawdown_r": -2.1838906853556503,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.25,
+          "avg_hold_hours": 2.1875
+        },
+        "LTCUSDT": {
+          "trades": 7,
+          "long": 4,
+          "short": 3,
+          "win_rate": 0.2857142857142857,
+          "total_r": -4.68152244779867,
+          "avg_r": -0.6687889211140957,
+          "profit_factor": 0.13956841811588902,
+          "max_drawdown_r": -4.68152244779867,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.2857142857142857,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 4.607142857142857
+        },
+        "TRXUSDT": {
+          "trades": 2,
+          "long": 1,
+          "short": 1,
+          "win_rate": 0.5,
+          "total_r": -0.724906916445502,
+          "avg_r": -0.362453458222751,
+          "profit_factor": 0.3606743783220806,
+          "max_drawdown_r": -1.1338618254387698,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 0.25
+        },
+        "UNIUSDT": {
+          "trades": 4,
+          "long": 2,
+          "short": 2,
+          "win_rate": 0.5,
+          "total_r": 0.44125459751756835,
+          "avg_r": 0.11031364937939209,
+          "profit_factor": 1.2050371274743148,
+          "max_drawdown_r": -2.1520716903959,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.25,
+          "avg_hold_hours": 6.1875
+        },
+        "XLMUSDT": {
+          "trades": 6,
+          "long": 5,
+          "short": 1,
+          "win_rate": 0.6666666666666666,
+          "total_r": -0.44905066627301377,
+          "avg_r": -0.07484177771216896,
+          "profit_factor": 0.7945155003503417,
+          "max_drawdown_r": -2.185326226740337,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.6666666666666666,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 1.875
+        }
+      },
+      "stats": {
+        "orders": 64.0,
+        "expired": 34.0,
+        "filled": 30.0,
+        "target_rr_filter": 153.0,
+        "risk_filter": 14.0
+      },
+      "details": {
+        "LTCUSDT": {
+          "metrics": {
+            "trades": 7,
+            "long": 4,
+            "short": 3,
+            "win_rate": 0.2857142857142857,
+            "total_r": -4.68152244779867,
+            "avg_r": -0.6687889211140957,
+            "profit_factor": 0.13956841811588902,
+            "max_drawdown_r": -4.68152244779867,
+            "max_losing_streak": 3,
+            "tp1_hit_rate": 0.2857142857142857,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 4.607142857142857
+          },
+          "stats": {
+            "orders": 11,
+            "expired": 4,
+            "filled": 7,
+            "target_rr_filter": 15,
+            "fill_rate": 0.6363636363636364
+          }
+        },
+        "BCHUSDT": {
+          "metrics": {
+            "trades": 4,
+            "long": 2,
+            "short": 2,
+            "win_rate": 0.75,
+            "total_r": 1.5195867597561967,
+            "avg_r": 0.3798966899390492,
+            "profit_factor": 2.411272415414576,
+            "max_drawdown_r": -1.0767494235404598,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.75,
+            "tp2_hit_rate": 0.25,
+            "avg_hold_hours": 6.1875
+          },
+          "stats": {
+            "target_rr_filter": 13,
+            "risk_filter": 2,
+            "orders": 9,
+            "filled": 4,
+            "expired": 5,
+            "fill_rate": 0.4444444444444444
+          }
+        },
+        "ETCUSDT": {
+          "metrics": {
+            "trades": 1,
+            "long": 1,
+            "short": 0,
+            "win_rate": 0.0,
+            "total_r": -1.1118623774002532,
+            "avg_r": -1.1118623774002532,
+            "profit_factor": 0.0,
+            "max_drawdown_r": -1.1118623774002532,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.0,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 0.25
+          },
+          "stats": {
+            "target_rr_filter": 16,
+            "orders": 4,
+            "expired": 3,
+            "filled": 1,
+            "risk_filter": 1,
+            "fill_rate": 0.25
+          }
+        },
+        "TRXUSDT": {
+          "metrics": {
+            "trades": 2,
+            "long": 1,
+            "short": 1,
+            "win_rate": 0.5,
+            "total_r": -0.724906916445502,
+            "avg_r": -0.362453458222751,
+            "profit_factor": 0.3606743783220806,
+            "max_drawdown_r": -1.1338618254387698,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 0.25
+          },
+          "stats": {
+            "orders": 4,
+            "filled": 2,
+            "target_rr_filter": 18,
+            "risk_filter": 2,
+            "expired": 2,
+            "fill_rate": 0.5
+          }
+        },
+        "XLMUSDT": {
+          "metrics": {
+            "trades": 6,
+            "long": 5,
+            "short": 1,
+            "win_rate": 0.6666666666666666,
+            "total_r": -0.44905066627301377,
+            "avg_r": -0.07484177771216896,
+            "profit_factor": 0.7945155003503417,
+            "max_drawdown_r": -2.185326226740337,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.6666666666666666,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 1.875
+          },
+          "stats": {
+            "target_rr_filter": 20,
+            "orders": 10,
+            "filled": 6,
+            "expired": 4,
+            "risk_filter": 1,
+            "fill_rate": 0.6
+          }
+        },
+        "DOTUSDT": {
+          "metrics": {
+            "trades": 2,
+            "long": 2,
+            "short": 0,
+            "win_rate": 1.0,
+            "total_r": 1.4945795545161766,
+            "avg_r": 0.7472897772580883,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": 1.0,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 3.625
+          },
+          "stats": {
+            "target_rr_filter": 38,
+            "orders": 11,
+            "expired": 9,
+            "filled": 2,
+            "risk_filter": 3,
+            "fill_rate": 0.18181818181818182
+          }
+        },
+        "FILUSDT": {
+          "metrics": {
+            "trades": 4,
+            "long": 3,
+            "short": 1,
+            "win_rate": 0.5,
+            "total_r": -0.1972205150251155,
+            "avg_r": -0.049305128756278876,
+            "profit_factor": 0.9096930462922882,
+            "max_drawdown_r": -2.1838906853556503,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.25,
+            "avg_hold_hours": 2.1875
+          },
+          "stats": {
+            "risk_filter": 4,
+            "target_rr_filter": 17,
+            "orders": 7,
+            "filled": 4,
+            "expired": 3,
+            "fill_rate": 0.5714285714285714
+          }
+        },
+        "UNIUSDT": {
+          "metrics": {
+            "trades": 4,
+            "long": 2,
+            "short": 2,
+            "win_rate": 0.5,
+            "total_r": 0.44125459751756835,
+            "avg_r": 0.11031364937939209,
+            "profit_factor": 1.2050371274743148,
+            "max_drawdown_r": -2.1520716903959,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.25,
+            "avg_hold_hours": 6.1875
+          },
+          "stats": {
+            "orders": 8,
+            "filled": 4,
+            "target_rr_filter": 16,
+            "expired": 4,
+            "risk_filter": 1,
+            "fill_rate": 0.5
+          }
+        }
+      }
+    },
+    {
+      "name": "valid12_r2",
+      "entry_valid_4h_bars": 12,
+      "min_target_r": 2.0,
+      "summary": {
+        "trades": 38,
+        "long": 25,
+        "short": 13,
+        "win_rate": 0.5526315789473685,
+        "total_r": -3.2291405399444955,
+        "avg_r": -0.0849773826301183,
+        "profit_factor": 0.8260005428417003,
+        "max_drawdown_r": -5.85866811536901,
+        "max_losing_streak": 5,
+        "tp1_hit_rate": 0.5526315789473685,
+        "tp2_hit_rate": 0.10526315789473684,
+        "avg_hold_hours": 4.328947368421052
+      },
+      "directions": {
+        "LONG": {
+          "trades": 25,
+          "long": 25,
+          "short": 0,
+          "win_rate": 0.56,
+          "total_r": -3.568879926790069,
+          "avg_r": -0.14275519707160275,
+          "profit_factor": 0.7023567275027224,
+          "max_drawdown_r": -5.190256975940047,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.56,
+          "tp2_hit_rate": 0.04,
+          "avg_hold_hours": 3.64
+        },
+        "SHORT": {
+          "trades": 13,
+          "long": 0,
+          "short": 13,
+          "win_rate": 0.5384615384615384,
+          "total_r": 0.3397393868455737,
+          "avg_r": 0.026133798988121053,
+          "profit_factor": 1.051727434009972,
+          "max_drawdown_r": -2.8953345469742926,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.5384615384615384,
+          "tp2_hit_rate": 0.23076923076923078,
+          "avg_hold_hours": 5.653846153846154
+        }
+      },
+      "symbols": {
+        "BCHUSDT": {
+          "trades": 5,
+          "long": 3,
+          "short": 2,
+          "win_rate": 0.8,
+          "total_r": 2.1167758782661017,
+          "avg_r": 0.42335517565322034,
+          "profit_factor": 2.9658946009053166,
+          "max_drawdown_r": -1.0767494235404595,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.8,
+          "tp2_hit_rate": 0.2,
+          "avg_hold_hours": 5.0
+        },
+        "DOTUSDT": {
+          "trades": 5,
+          "long": 4,
+          "short": 1,
+          "win_rate": 0.6,
+          "total_r": -0.15176943131806092,
+          "avg_r": -0.030353886263612184,
+          "profit_factor": 0.9308939743053426,
+          "max_drawdown_r": -1.6463489858342375,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.6,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 7.25
+        },
+        "ETCUSDT": {
+          "trades": 2,
+          "long": 2,
+          "short": 0,
+          "win_rate": 0.5,
+          "total_r": 0.891563522705074,
+          "avg_r": 0.445781761352537,
+          "profit_factor": 1.801864997707468,
+          "max_drawdown_r": -1.1118623774002532,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.5,
+          "avg_hold_hours": 2.875
+        },
+        "FILUSDT": {
+          "trades": 5,
+          "long": 3,
+          "short": 2,
+          "win_rate": 0.4,
+          "total_r": -1.274712541659949,
+          "avg_r": -0.2549425083319898,
+          "profit_factor": 0.6091496600587646,
+          "max_drawdown_r": -3.2613827119904837,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.4,
+          "tp2_hit_rate": 0.2,
+          "avg_hold_hours": 2.65
+        },
+        "LTCUSDT": {
+          "trades": 8,
+          "long": 5,
+          "short": 3,
+          "win_rate": 0.375,
+          "total_r": -4.255430729334932,
+          "avg_r": -0.5319288411668665,
+          "profit_factor": 0.21788114125958913,
+          "max_drawdown_r": -4.681522447798671,
+          "max_losing_streak": 3,
+          "tp1_hit_rate": 0.375,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 5.9375
+        },
+        "TRXUSDT": {
+          "trades": 3,
+          "long": 1,
+          "short": 2,
+          "win_rate": 0.6666666666666666,
+          "total_r": -0.5477711698472847,
+          "avg_r": -0.1825903899490949,
+          "profit_factor": 0.516897775762656,
+          "max_drawdown_r": -1.1338618254387698,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.6666666666666666,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 0.25
+        },
+        "UNIUSDT": {
+          "trades": 4,
+          "long": 2,
+          "short": 2,
+          "win_rate": 0.5,
+          "total_r": 0.44125459751756835,
+          "avg_r": 0.11031364937939209,
+          "profit_factor": 1.2050371274743148,
+          "max_drawdown_r": -2.1520716903959,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.5,
+          "tp2_hit_rate": 0.25,
+          "avg_hold_hours": 6.1875
+        },
+        "XLMUSDT": {
+          "trades": 6,
+          "long": 5,
+          "short": 1,
+          "win_rate": 0.6666666666666666,
+          "total_r": -0.44905066627301377,
+          "avg_r": -0.07484177771216896,
+          "profit_factor": 0.7945155003503417,
+          "max_drawdown_r": -2.185326226740337,
+          "max_losing_streak": 2,
+          "tp1_hit_rate": 0.6666666666666666,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 1.875
+        }
+      },
+      "stats": {
+        "orders": 64.0,
+        "filled": 38.0,
+        "target_rr_filter": 153.0,
+        "expired": 26.0,
+        "risk_filter": 13.0,
+        "signal_while_busy": 1.0
+      },
+      "details": {
+        "LTCUSDT": {
+          "metrics": {
+            "trades": 8,
+            "long": 5,
+            "short": 3,
+            "win_rate": 0.375,
+            "total_r": -4.255430729334932,
+            "avg_r": -0.5319288411668665,
+            "profit_factor": 0.21788114125958913,
+            "max_drawdown_r": -4.681522447798671,
+            "max_losing_streak": 3,
+            "tp1_hit_rate": 0.375,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 5.9375
+          },
+          "stats": {
+            "orders": 11,
+            "filled": 8,
+            "target_rr_filter": 15,
+            "expired": 3,
+            "fill_rate": 0.7272727272727273
+          }
+        },
+        "BCHUSDT": {
+          "metrics": {
+            "trades": 5,
+            "long": 3,
+            "short": 2,
+            "win_rate": 0.8,
+            "total_r": 2.1167758782661017,
+            "avg_r": 0.42335517565322034,
+            "profit_factor": 2.9658946009053166,
+            "max_drawdown_r": -1.0767494235404595,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.8,
+            "tp2_hit_rate": 0.2,
+            "avg_hold_hours": 5.0
+          },
+          "stats": {
+            "target_rr_filter": 13,
+            "risk_filter": 1,
+            "orders": 9,
+            "filled": 5,
+            "signal_while_busy": 1,
+            "expired": 4,
+            "fill_rate": 0.5555555555555556
+          }
+        },
+        "ETCUSDT": {
+          "metrics": {
+            "trades": 2,
+            "long": 2,
+            "short": 0,
+            "win_rate": 0.5,
+            "total_r": 0.891563522705074,
+            "avg_r": 0.445781761352537,
+            "profit_factor": 1.801864997707468,
+            "max_drawdown_r": -1.1118623774002532,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.5,
+            "avg_hold_hours": 2.875
+          },
+          "stats": {
+            "target_rr_filter": 16,
+            "orders": 4,
+            "expired": 2,
+            "filled": 2,
+            "risk_filter": 1,
+            "fill_rate": 0.5
+          }
+        },
+        "TRXUSDT": {
+          "metrics": {
+            "trades": 3,
+            "long": 1,
+            "short": 2,
+            "win_rate": 0.6666666666666666,
+            "total_r": -0.5477711698472847,
+            "avg_r": -0.1825903899490949,
+            "profit_factor": 0.516897775762656,
+            "max_drawdown_r": -1.1338618254387698,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.6666666666666666,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 0.25
+          },
+          "stats": {
+            "orders": 4,
+            "filled": 3,
+            "target_rr_filter": 18,
+            "risk_filter": 2,
+            "expired": 1,
+            "fill_rate": 0.75
+          }
+        },
+        "XLMUSDT": {
+          "metrics": {
+            "trades": 6,
+            "long": 5,
+            "short": 1,
+            "win_rate": 0.6666666666666666,
+            "total_r": -0.44905066627301377,
+            "avg_r": -0.07484177771216896,
+            "profit_factor": 0.7945155003503417,
+            "max_drawdown_r": -2.185326226740337,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.6666666666666666,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 1.875
+          },
+          "stats": {
+            "target_rr_filter": 20,
+            "orders": 10,
+            "filled": 6,
+            "expired": 4,
+            "risk_filter": 1,
+            "fill_rate": 0.6
+          }
+        },
+        "DOTUSDT": {
+          "metrics": {
+            "trades": 5,
+            "long": 4,
+            "short": 1,
+            "win_rate": 0.6,
+            "total_r": -0.15176943131806092,
+            "avg_r": -0.030353886263612184,
+            "profit_factor": 0.9308939743053426,
+            "max_drawdown_r": -1.6463489858342375,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.6,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 7.25
+          },
+          "stats": {
+            "target_rr_filter": 38,
+            "orders": 11,
+            "expired": 6,
+            "filled": 5,
+            "risk_filter": 3,
+            "fill_rate": 0.45454545454545453
+          }
+        },
+        "FILUSDT": {
+          "metrics": {
+            "trades": 5,
+            "long": 3,
+            "short": 2,
+            "win_rate": 0.4,
+            "total_r": -1.274712541659949,
+            "avg_r": -0.2549425083319898,
+            "profit_factor": 0.6091496600587646,
+            "max_drawdown_r": -3.2613827119904837,
+            "max_losing_streak": 3,
+            "tp1_hit_rate": 0.4,
+            "tp2_hit_rate": 0.2,
+            "avg_hold_hours": 2.65
+          },
+          "stats": {
+            "risk_filter": 4,
+            "target_rr_filter": 17,
+            "orders": 7,
+            "filled": 5,
+            "expired": 2,
+            "fill_rate": 0.7142857142857143
+          }
+        },
+        "UNIUSDT": {
+          "metrics": {
+            "trades": 4,
+            "long": 2,
+            "short": 2,
+            "win_rate": 0.5,
+            "total_r": 0.44125459751756835,
+            "avg_r": 0.11031364937939209,
+            "profit_factor": 1.2050371274743148,
+            "max_drawdown_r": -2.1520716903959,
+            "max_losing_streak": 2,
+            "tp1_hit_rate": 0.5,
+            "tp2_hit_rate": 0.25,
+            "avg_hold_hours": 6.1875
+          },
+          "stats": {
+            "orders": 8,
+            "filled": 4,
+            "target_rr_filter": 16,
+            "expired": 4,
+            "risk_filter": 1,
+            "fill_rate": 0.5
+          }
+        }
+      }
+    }
+  ]
+}
