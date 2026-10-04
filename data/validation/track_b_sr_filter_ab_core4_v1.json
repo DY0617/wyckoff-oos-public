@@ -1,0 +1,6784 @@
+{
+  "strategy": "Frozen Track B signal logic + structural SR filter A/B v1",
+  "management": "15/25/60 frozen selected runner allocation",
+  "sr_engine": "SR Reclaim v1 zone engine; 4H+1D body-edge pivot clusters; only confirmed/known zones at trade entry",
+  "period": {
+    "start_ms": 1632355200000,
+    "end_ms": 1790020800000
+  },
+  "costs": {
+    "fee_bps": 4.0,
+    "slippage_bps": 2.0
+  },
+  "counts": {
+    "total": 132,
+    "with_backing": 130,
+    "block_before_tp1": 106,
+    "block_before_tp2": 124,
+    "tp2_in_zone": 120,
+    "zero_active_zones": 0
+  },
+  "variants": [
+    {
+      "name": "baseline",
+      "rule": "no SR filter",
+      "summary": {
+        "trades": 132,
+        "wins": 85,
+        "losses": 47,
+        "win_rate": 0.6439393939393939,
+        "net_r": 29.27050717839202,
+        "avg_r": 0.22174626650296986,
+        "profit_factor": 1.6075394566753565,
+        "mdd_on_20k": 0.13948597885485584,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 4.196910315817459
+      },
+      "symbols": {
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 20,
+          "losses": 11,
+          "win_rate": 0.6451612903225806,
+          "net_r": 2.089519250902481,
+          "avg_r": 0.06740384680330584,
+          "profit_factor": 1.1819232429230158,
+          "mdd_on_20k": 0.0923165390588003,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.4526857857120441
+        },
+        "BTCUSDT": {
+          "trades": 27,
+          "wins": 16,
+          "losses": 11,
+          "win_rate": 0.5925925925925926,
+          "net_r": 6.848362639897531,
+          "avg_r": 0.2536430607369456,
+          "profit_factor": 1.641361482434141,
+          "mdd_on_20k": 0.04283550375254842,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.1975170314135037
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 17.26966714494201,
+          "avg_r": 0.3924924351123184,
+          "profit_factor": 2.6481401370992814,
+          "mdd_on_20k": 0.037051168061439606,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.322063539969813
+        },
+        "SOLUSDT": {
+          "trades": 30,
+          "wins": 15,
+          "losses": 15,
+          "win_rate": 0.5,
+          "net_r": 3.0629581426500008,
+          "avg_r": 0.10209860475500003,
+          "profit_factor": 1.1971405093868182,
+          "mdd_on_20k": 0.138150601132811,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.443423064037981
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 121,
+          "wins": 78,
+          "losses": 43,
+          "win_rate": 0.6446280991735537,
+          "net_r": 29.180981971606524,
+          "avg_r": 0.24116514026121094,
+          "profit_factor": 1.6623774365637496,
+          "mdd_on_20k": 0.10941089090714652,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 5.334200595509542
+        },
+        "SHORT": {
+          "trades": 11,
+          "wins": 7,
+          "losses": 4,
+          "win_rate": 0.6363636363636364,
+          "net_r": 0.08952520678549764,
+          "avg_r": 0.008138655162317966,
+          "profit_factor": 1.0217090790708407,
+          "mdd_on_20k": 0.04326658325383996,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.04138307213225679
+        }
+      },
+      "kept_fraction": 1.0,
+      "trades": 132
+    },
+    {
+      "name": "backing_zone",
+      "rule": "at least one active HTF SR zone overlaps the initial Entry-SL risk corridor",
+      "summary": {
+        "trades": 130,
+        "wins": 83,
+        "losses": 47,
+        "win_rate": 0.6384615384615384,
+        "net_r": 27.73361649215452,
+        "avg_r": 0.2133355114781117,
+        "profit_factor": 1.575639711078347,
+        "mdd_on_20k": 0.14247445165946718,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 3.8931353894158574
+      },
+      "symbols": {
+        "BNBUSDT": {
+          "trades": 31,
+          "wins": 20,
+          "losses": 11,
+          "win_rate": 0.6451612903225806,
+          "net_r": 2.089519250902481,
+          "avg_r": 0.06740384680330584,
+          "profit_factor": 1.1819232429230158,
+          "mdd_on_20k": 0.0923165390588003,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.4526857857120441
+        },
+        "BTCUSDT": {
+          "trades": 26,
+          "wins": 15,
+          "losses": 11,
+          "win_rate": 0.5769230769230769,
+          "net_r": 6.756894453660032,
+          "avg_r": 0.25988055591000125,
+          "profit_factor": 1.6327953222283311,
+          "mdd_on_20k": 0.04444213809550561,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 3.0407602978684545
+        },
+        "ETHUSDT": {
+          "trades": 44,
+          "wins": 34,
+          "losses": 10,
+          "win_rate": 0.7727272727272727,
+          "net_r": 17.26966714494201,
+          "avg_r": 0.3924924351123184,
+          "profit_factor": 2.6481401370992814,
+          "mdd_on_20k": 0.037051168061439606,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 9.322063539969813
+        },
+        "SOLUSDT": {
+          "trades": 29,
+          "wins": 14,
+          "losses": 15,
+          "win_rate": 0.4827586206896552,
+          "net_r": 1.6175356426500018,
+          "avg_r": 0.055777091125862134,
+          "profit_factor": 1.104109095094413,
+          "mdd_on_20k": 0.14175863692256854,
+          "max_consecutive_losses": 5,
+          "net_r_over_mdd": 0.22820981885337013
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 119,
+          "wins": 76,
+          "losses": 43,
+          "win_rate": 0.6386554621848739,
+          "net_r": 27.644091285369026,
+          "avg_r": 0.23230328811234474,
+          "profit_factor": 1.6274916430006945,
+          "mdd_on_20k": 0.11175146877670718,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 4.947423347178591
+        },
+        "SHORT": {
+          "trades": 11,
+          "wins": 7,
+          "losses": 4,
+          "win_rate": 0.6363636363636364,
+          "net_r": 0.08952520678549764,
+          "avg_r": 0.008138655162317966,
+          "profit_factor": 1.0217090790708407,
+          "mdd_on_20k": 0.04326658325383996,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.04138307213225679
+        }
+      },
+      "kept_fraction": 0.9848484848484849,
+      "trades": 130
+    },
+    {
+      "name": "clear_to_tp1",
+      "rule": "no active HTF SR zone blocks price between Entry and Track-B TP1",
+      "summary": {
+        "trades": 26,
+        "wins": 21,
+        "losses": 5,
+        "win_rate": 0.8076923076923077,
+        "net_r": 9.301514432260747,
+        "avg_r": 0.3577505550869518,
+        "profit_factor": 2.7856115927265623,
+        "mdd_on_20k": 0.05118793473841824,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 3.6342604872783246
+      },
+      "symbols": {
+        "BNBUSDT": {
+          "trades": 12,
+          "wins": 9,
+          "losses": 3,
+          "win_rate": 0.75,
+          "net_r": 1.5711572570574892,
+          "avg_r": 0.13092977142145742,
+          "profit_factor": 1.5043330667582127,
+          "mdd_on_20k": 0.03879652177114345,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.8099474825736073
+        },
+        "BTCUSDT": {
+          "trades": 4,
+          "wins": 4,
+          "losses": 0,
+          "win_rate": 1.0,
+          "net_r": 2.250255574777501,
+          "avg_r": 0.5625638936943752,
+          "profit_factor": null,
+          "mdd_on_20k": 0.0,
+          "max_consecutive_losses": 0,
+          "net_r_over_mdd": null
+        },
+        "ETHUSDT": {
+          "trades": 5,
+          "wins": 4,
+          "losses": 1,
+          "win_rate": 0.8,
+          "net_r": 1.7619129525182624,
+          "avg_r": 0.3523825905036525,
+          "profit_factor": 2.689207121546098,
+          "mdd_on_20k": 0.020153499303961767,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 1.7484933270838046
+        },
+        "SOLUSDT": {
+          "trades": 5,
+          "wins": 4,
+          "losses": 1,
+          "win_rate": 0.8,
+          "net_r": 3.718188647907494,
+          "avg_r": 0.7436377295814988,
+          "profit_factor": 4.538471479030999,
+          "mdd_on_20k": 0.01918585169355833,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 3.875969341674709
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 22,
+          "wins": 18,
+          "losses": 4,
+          "win_rate": 0.8181818181818182,
+          "net_r": 9.468503100665753,
+          "avg_r": 0.43038650457571603,
+          "profit_factor": 3.2727464257722043,
+          "mdd_on_20k": 0.05041780198491953,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 3.7560158229420146
+        },
+        "SHORT": {
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate": 0.75,
+          "net_r": -0.16698866840500654,
+          "avg_r": -0.041747167101251634,
+          "profit_factor": 0.839902165720464,
+          "mdd_on_20k": 0.02084016901228206,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": -0.16025653948064675
+        }
+      },
+      "kept_fraction": 0.19696969696969696,
+      "trades": 26
+    },
+    {
+      "name": "clear_to_tp2",
+      "rule": "no active HTF SR zone blocks price between Entry and Track-B TP2",
+      "summary": {
+        "trades": 8,
+        "wins": 5,
+        "losses": 3,
+        "win_rate": 0.625,
+        "net_r": 0.7380082296895001,
+        "avg_r": 0.09225102871118751,
+        "profit_factor": 1.2379360180552885,
+        "mdd_on_20k": 0.05761004934958307,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 0.25620815743836584
+      },
+      "symbols": {
+        "BNBUSDT": {
+          "trades": 2,
+          "wins": 0,
+          "losses": 2,
+          "win_rate": 0.0,
+          "net_r": -2.050919260299999,
+          "avg_r": -1.0254596301499994,
+          "profit_factor": 0.0,
+          "mdd_on_20k": 0.04101838520599995,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -1.0000000000000007
+        },
+        "BTCUSDT": {
+          "trades": 4,
+          "wins": 4,
+          "losses": 0,
+          "win_rate": 1.0,
+          "net_r": 2.250255574777501,
+          "avg_r": 0.5625638936943752,
+          "profit_factor": null,
+          "mdd_on_20k": 0.0,
+          "max_consecutive_losses": 0,
+          "net_r_over_mdd": null
+        },
+        "ETHUSDT": {
+          "trades": 1,
+          "wins": 1,
+          "losses": 0,
+          "win_rate": 1.0,
+          "net_r": 1.5894614072120041,
+          "avg_r": 1.5894614072120041,
+          "profit_factor": null,
+          "mdd_on_20k": 0.0,
+          "max_consecutive_losses": 0,
+          "net_r_over_mdd": null
+        },
+        "SOLUSDT": {
+          "trades": 1,
+          "wins": 0,
+          "losses": 1,
+          "win_rate": 0.0,
+          "net_r": -1.0507894920000063,
+          "avg_r": -1.0507894920000063,
+          "profit_factor": 0.0,
+          "mdd_on_20k": 0.02101578984000007,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": -1.0000000000000024
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 8,
+          "wins": 5,
+          "losses": 3,
+          "win_rate": 0.625,
+          "net_r": 0.7380082296895001,
+          "avg_r": 0.09225102871118751,
+          "profit_factor": 1.2379360180552885,
+          "mdd_on_20k": 0.05761004934958307,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 0.25620815743836584
+        }
+      },
+      "kept_fraction": 0.06060606060606061,
+      "trades": 8
+    },
+    {
+      "name": "backing_and_clear_tp1",
+      "rule": "backing zone present AND no blocking SR before TP1",
+      "summary": {
+        "trades": 25,
+        "wins": 20,
+        "losses": 5,
+        "win_rate": 0.8,
+        "net_r": 9.210046246023246,
+        "avg_r": 0.36840184984092983,
+        "profit_factor": 2.768052446320803,
+        "mdd_on_20k": 0.05126532037066219,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 3.593090291617066
+      },
+      "symbols": {
+        "BNBUSDT": {
+          "trades": 12,
+          "wins": 9,
+          "losses": 3,
+          "win_rate": 0.75,
+          "net_r": 1.5711572570574892,
+          "avg_r": 0.13092977142145742,
+          "profit_factor": 1.5043330667582127,
+          "mdd_on_20k": 0.03879652177114345,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.8099474825736073
+        },
+        "BTCUSDT": {
+          "trades": 3,
+          "wins": 3,
+          "losses": 0,
+          "win_rate": 1.0,
+          "net_r": 2.1587873885400013,
+          "avg_r": 0.7195957961800005,
+          "profit_factor": null,
+          "mdd_on_20k": 0.0,
+          "max_consecutive_losses": 0,
+          "net_r_over_mdd": null
+        },
+        "ETHUSDT": {
+          "trades": 5,
+          "wins": 4,
+          "losses": 1,
+          "win_rate": 0.8,
+          "net_r": 1.7619129525182624,
+          "avg_r": 0.3523825905036525,
+          "profit_factor": 2.689207121546098,
+          "mdd_on_20k": 0.020153499303961767,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 1.7484933270838046
+        },
+        "SOLUSDT": {
+          "trades": 5,
+          "wins": 4,
+          "losses": 1,
+          "win_rate": 0.8,
+          "net_r": 3.718188647907494,
+          "avg_r": 0.7436377295814988,
+          "profit_factor": 4.538471479030999,
+          "mdd_on_20k": 0.01918585169355833,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": 3.875969341674709
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 21,
+          "wins": 17,
+          "losses": 4,
+          "win_rate": 0.8095238095238095,
+          "net_r": 9.377034914428254,
+          "avg_r": 0.44652547211563115,
+          "profit_factor": 3.2507911081118523,
+          "mdd_on_20k": 0.05049287486173145,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 3.7142012373453146
+        },
+        "SHORT": {
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate": 0.75,
+          "net_r": -0.16698866840500654,
+          "avg_r": -0.041747167101251634,
+          "profit_factor": 0.839902165720464,
+          "mdd_on_20k": 0.02084016901228206,
+          "max_consecutive_losses": 1,
+          "net_r_over_mdd": -0.16025653948064675
+        }
+      },
+      "kept_fraction": 0.1893939393939394,
+      "trades": 25
+    },
+    {
+      "name": "tp2_in_sr_zone",
+      "rule": "Track-B TP2 lies inside an already-active HTF SR zone",
+      "summary": {
+        "trades": 120,
+        "wins": 78,
+        "losses": 42,
+        "win_rate": 0.65,
+        "net_r": 24.15998031008751,
+        "avg_r": 0.20133316925072925,
+        "profit_factor": 1.5607937488959873,
+        "mdd_on_20k": 0.15520038732343483,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 3.1133917545886716
+      },
+      "symbols": {
+        "BNBUSDT": {
+          "trades": 29,
+          "wins": 20,
+          "losses": 9,
+          "win_rate": 0.6896551724137931,
+          "net_r": 4.14043851120248,
+          "avg_r": 0.14277374176560276,
+          "profit_factor": 1.438847523838158,
+          "mdd_on_20k": 0.0923165390588003,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.8970090415901012
+        },
+        "BTCUSDT": {
+          "trades": 21,
+          "wins": 11,
+          "losses": 10,
+          "win_rate": 0.5238095238095238,
+          "net_r": -0.6815222873699737,
+          "avg_r": -0.03245344225571303,
+          "profit_factor": 0.9293930446418757,
+          "mdd_on_20k": 0.06504369058553452,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.2095583080341206
+        },
+        "ETHUSDT": {
+          "trades": 42,
+          "wins": 32,
+          "losses": 10,
+          "win_rate": 0.7619047619047619,
+          "net_r": 15.617519277255003,
+          "avg_r": 0.37184569707750004,
+          "profit_factor": 2.4904665009889606,
+          "mdd_on_20k": 0.03816017956359903,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 8.185244124035803
+        },
+        "SOLUSDT": {
+          "trades": 28,
+          "wins": 15,
+          "losses": 13,
+          "win_rate": 0.5357142857142857,
+          "net_r": 5.083544809000001,
+          "avg_r": 0.18155517175000005,
+          "profit_factor": 1.3761035786991813,
+          "mdd_on_20k": 0.10257076199704941,
+          "max_consecutive_losses": 4,
+          "net_r_over_mdd": 0.9912268779179464
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 109,
+          "wins": 71,
+          "losses": 38,
+          "win_rate": 0.6513761467889908,
+          "net_r": 24.070455103302013,
+          "avg_r": 0.220829863333046,
+          "profit_factor": 1.6178581686120546,
+          "mdd_on_20k": 0.12171678742428586,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 3.955157807344378
+        },
+        "SHORT": {
+          "trades": 11,
+          "wins": 7,
+          "losses": 4,
+          "win_rate": 0.6363636363636364,
+          "net_r": 0.08952520678549764,
+          "avg_r": 0.008138655162317966,
+          "profit_factor": 1.0217090790708407,
+          "mdd_on_20k": 0.04326658325383996,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.04138307213225679
+        }
+      },
+      "kept_fraction": 0.9090909090909091,
+      "trades": 120
+    },
+    {
+      "name": "backing_and_tp2_in_zone",
+      "rule": "backing zone present AND Track-B TP2 lies inside active HTF SR zone",
+      "summary": {
+        "trades": 119,
+        "wins": 77,
+        "losses": 42,
+        "win_rate": 0.6470588235294118,
+        "net_r": 22.71455781008751,
+        "avg_r": 0.1908786370595589,
+        "profit_factor": 1.5272430633362328,
+        "mdd_on_20k": 0.15890910121909618,
+        "max_consecutive_losses": 3,
+        "net_r_over_mdd": 2.8588114382158354
+      },
+      "symbols": {
+        "BNBUSDT": {
+          "trades": 29,
+          "wins": 20,
+          "losses": 9,
+          "win_rate": 0.6896551724137931,
+          "net_r": 4.14043851120248,
+          "avg_r": 0.14277374176560276,
+          "profit_factor": 1.438847523838158,
+          "mdd_on_20k": 0.0923165390588003,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.8970090415901012
+        },
+        "BTCUSDT": {
+          "trades": 21,
+          "wins": 11,
+          "losses": 10,
+          "win_rate": 0.5238095238095238,
+          "net_r": -0.6815222873699737,
+          "avg_r": -0.03245344225571303,
+          "profit_factor": 0.9293930446418757,
+          "mdd_on_20k": 0.06504369058553452,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": -0.2095583080341206
+        },
+        "ETHUSDT": {
+          "trades": 42,
+          "wins": 32,
+          "losses": 10,
+          "win_rate": 0.7619047619047619,
+          "net_r": 15.617519277255003,
+          "avg_r": 0.37184569707750004,
+          "profit_factor": 2.4904665009889606,
+          "mdd_on_20k": 0.03816017956359903,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 8.185244124035803
+        },
+        "SOLUSDT": {
+          "trades": 27,
+          "wins": 14,
+          "losses": 13,
+          "win_rate": 0.5185185185185185,
+          "net_r": 3.6381223090000017,
+          "avg_r": 0.13474527070370376,
+          "profit_factor": 1.269164701319785,
+          "mdd_on_20k": 0.10524957032096179,
+          "max_consecutive_losses": 4,
+          "net_r_over_mdd": 0.6913324772548594
+        }
+      },
+      "directions": {
+        "LONG": {
+          "trades": 108,
+          "wins": 70,
+          "losses": 38,
+          "win_rate": 0.6481481481481481,
+          "net_r": 22.625032603302014,
+          "avg_r": 0.20949104262316678,
+          "profit_factor": 1.5807559993806075,
+          "mdd_on_20k": 0.12462047018897152,
+          "max_consecutive_losses": 3,
+          "net_r_over_mdd": 3.631029889229908
+        },
+        "SHORT": {
+          "trades": 11,
+          "wins": 7,
+          "losses": 4,
+          "win_rate": 0.6363636363636364,
+          "net_r": 0.08952520678549764,
+          "avg_r": 0.008138655162317966,
+          "profit_factor": 1.0217090790708407,
+          "mdd_on_20k": 0.04326658325383996,
+          "max_consecutive_losses": 2,
+          "net_r_over_mdd": 0.04138307213225679
+        }
+      },
+      "kept_fraction": 0.9015151515151515,
+      "trades": 119
+    }
+  ],
+  "annotated_trades": [
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1634420700000,
+      "trigger_4h_open_ms": 1634414400000,
+      "exit_t": 1634459400000,
+      "entry": 156.91,
+      "stop": 166.78,
+      "target": 144.29,
+      "tp1": 149.52,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 40.52,
+      "reason": "STOP",
+      "pnl": -407.8019512800002,
+      "r": -1.0195048782000005,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1634459400000,
+          "price": 166.78,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 79,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1634599800000,
+      "trigger_4h_open_ms": 1634587200000,
+      "exit_t": 1635075000000,
+      "entry": 158.29,
+      "stop": 151.84,
+      "target": 167.71,
+      "tp1": 163.08,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 62.01,
+      "reason": "STOP",
+      "pnl": 1054.339299702001,
+      "r": 2.6358482492550026,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1634738400000,
+          "price": 163.08,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1634738400000,
+          "price": 158.29,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1634742900000,
+          "price": 167.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1634742900000,
+          "price": 163.08,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1634845500000,
+          "price": 175.98
+        },
+        {
+          "type": "TRAIL",
+          "t": 1634960700000,
+          "price": 189.37
+        },
+        {
+          "type": "TRAIL",
+          "t": 1635032700000,
+          "price": 190.64000000000001
+        },
+        {
+          "type": "STOP",
+          "t": 1635075000000,
+          "price": 190.64000000000001,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 80,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1635122700000,
+      "trigger_4h_open_ms": 1635120000000,
+      "exit_t": 1635321600000,
+      "entry": 61852.200000000004,
+      "stop": 59261.200000000004,
+      "target": 66750.0,
+      "tp1": 63896.9,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.154,
+      "reason": "STOP",
+      "pnl": -410.20487816,
+      "r": -1.0255121954000002,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1635321600000,
+          "price": 59261.200000000004,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 56,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1635690600000,
+      "trigger_4h_open_ms": 1635681600000,
+      "exit_t": 1635739200000,
+      "entry": 193.0,
+      "stop": 185.64000000000001,
+      "target": 205.3,
+      "tp1": 197.8,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 54.34,
+      "reason": "STOP",
+      "pnl": 370.28199780000057,
+      "r": 0.9257049945000014,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1635692400000,
+          "price": 197.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1635692400000,
+          "price": 193.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1635718500000,
+          "price": 205.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1635718500000,
+          "price": 197.8,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1635739200000,
+          "price": 197.8,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 83,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1635711300000,
+      "trigger_4h_open_ms": 1635710400000,
+      "exit_t": 1635943500000,
+      "entry": 4268.61,
+      "stop": 4136.67,
+      "target": 4467.89,
+      "tp1": 4405.61,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 3.031,
+      "reason": "STOP",
+      "pnl": 582.1680521048013,
+      "r": 1.4554201302620031,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1635845400000,
+          "price": 4405.61,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1635845400000,
+          "price": 4268.61,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1635848100000,
+          "price": 4467.89,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1635848100000,
+          "price": 4405.61,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1635939900000,
+          "price": 4509.68
+        },
+        {
+          "type": "STOP",
+          "t": 1635943500000,
+          "price": 4509.68,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 66,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": false,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1635713100000,
+      "trigger_4h_open_ms": 1635710400000,
+      "exit_t": 1635738300000,
+      "entry": 61054.8,
+      "stop": 59729.3,
+      "target": 63069.700000000004,
+      "tp1": 62395.4,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.301,
+      "reason": "STOP",
+      "pnl": -420.78910846,
+      "r": -1.05197277115,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1635738300000,
+          "price": 59729.3,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 54,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1637959500000,
+      "trigger_4h_open_ms": 1637956800000,
+      "exit_t": 1638385200000,
+      "entry": 4120.45,
+      "stop": 3878.78,
+      "target": 4558.29,
+      "tp1": 4335.99,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1.655,
+      "reason": "STOP",
+      "pnl": 643.9487422180003,
+      "r": 1.609871855545001,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1638144900000,
+          "price": 4335.99,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1638144900000,
+          "price": 4120.45,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1638271800000,
+          "price": 4558.29,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1638271800000,
+          "price": 4335.99,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1638315900000,
+          "price": 4488.04
+        },
+        {
+          "type": "TRAIL",
+          "t": 1638344700000,
+          "price": 4566.150000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1638373500000,
+          "price": 4616.1
+        },
+        {
+          "type": "STOP",
+          "t": 1638385200000,
+          "price": 4616.1,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 64,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1647997200000,
+      "trigger_4h_open_ms": 1647993600000,
+      "exit_t": 1648222200000,
+      "entry": 89.76,
+      "stop": 86.03,
+      "target": 94.59,
+      "tp1": 92.36,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 107.23,
+      "reason": "STOP",
+      "pnl": 663.7008785019993,
+      "r": 1.6592521962549984,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1648039500000,
+          "price": 92.36,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1648039500000,
+          "price": 89.76,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1648045800000,
+          "price": 94.59,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1648045800000,
+          "price": 92.36,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1648194300000,
+          "price": 99.94
+        },
+        {
+          "type": "STOP",
+          "t": 1648222200000,
+          "price": 99.94,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 63,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1648816200000,
+      "trigger_4h_open_ms": 1648814400000,
+      "exit_t": 1648826100000,
+      "entry": 3305.87,
+      "stop": 3194.83,
+      "target": 3447.7400000000002,
+      "tp1": 3424.25,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 3.602,
+      "reason": "STOP",
+      "pnl": 437.2276886796006,
+      "r": 1.0930692216990014,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1648824300000,
+          "price": 3424.25,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1648824300000,
+          "price": 3305.87,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1648826100000,
+          "price": 3447.7400000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1648826100000,
+          "price": 3424.25,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1648826100000,
+          "price": 3424.25,
+          "fraction": 0.39999999999999997,
+          "cause": "TP2_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 42,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1659362400000,
+      "trigger_4h_open_ms": 1659355200000,
+      "exit_t": 1659374100000,
+      "entry": 289.05,
+      "stop": 280.15000000000003,
+      "target": 300.5,
+      "tp1": 295.71,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 44.94,
+      "reason": "STOP",
+      "pnl": -415.31390879999896,
+      "r": -1.0382847719999975,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1659374100000,
+          "price": 280.15000000000003,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 40,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1660608000000,
+      "trigger_4h_open_ms": 1660608000000,
+      "exit_t": 1660675500000,
+      "entry": 320.53000000000003,
+      "stop": 312.04,
+      "target": 333.0,
+      "tp1": 327.16,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 47.11,
+      "reason": "STOP",
+      "pnl": -417.84412362000046,
+      "r": -1.0446103090500012,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1660675500000,
+          "price": 312.04,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 40,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1660696200000,
+      "trigger_4h_open_ms": 1660694400000,
+      "exit_t": 1660720500000,
+      "entry": 317.86,
+      "stop": 310.32,
+      "target": 327.33,
+      "tp1": 323.49,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 53.050000000000004,
+      "reason": "BE",
+      "pnl": 69.31272152999992,
+      "r": 0.1732818038249998,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1660712400000,
+          "price": 323.49,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1660712400000,
+          "price": 317.86,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1660720500000,
+          "price": 317.86,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 40,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1667265300000,
+      "trigger_4h_open_ms": 1667260800000,
+      "exit_t": 1667383200000,
+      "entry": 1579.41,
+      "stop": 1534.31,
+      "target": 1665.0,
+      "tp1": 1637.4,
+      "fib1618": 1675.73,
+      "runner_mode": "pivot",
+      "size": 8.869,
+      "reason": "STOP",
+      "pnl": -416.56124960800116,
+      "r": -1.041403124020003,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1667383200000,
+          "price": 1534.31,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 58,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1667407500000,
+      "trigger_4h_open_ms": 1667404800000,
+      "exit_t": 1667412000000,
+      "entry": 1568.7,
+      "stop": 1523.21,
+      "target": 1634.93,
+      "tp1": 1599.42,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 8.793000000000001,
+      "reason": "BE",
+      "pnl": 64.43537130720007,
+      "r": 0.16108842826800018,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1667412000000,
+          "price": 1599.42,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1667412000000,
+          "price": 1568.7,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1667412000000,
+          "price": 1568.7,
+          "fraction": 0.7,
+          "cause": "TP1_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 58,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1667536200000,
+      "trigger_4h_open_ms": 1667534400000,
+      "exit_t": 1667658600000,
+      "entry": 1550.63,
+      "stop": 1492.22,
+      "target": 1622.5,
+      "tp1": 1600.89,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.848,
+      "reason": "STOP",
+      "pnl": 436.5110929535997,
+      "r": 1.0912777323839993,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1667565000000,
+          "price": 1600.89,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1667565000000,
+          "price": 1550.63,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1667567700000,
+          "price": 1622.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1667567700000,
+          "price": 1600.89,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1667634300000,
+          "price": 1623.14
+        },
+        {
+          "type": "STOP",
+          "t": 1667658600000,
+          "price": 1623.14,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 58,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1670592600000,
+      "trigger_4h_open_ms": 1670587200000,
+      "exit_t": 1670795100000,
+      "entry": 288.22,
+      "stop": 292.87,
+      "target": 280.0,
+      "tp1": 284.38,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 86.02,
+      "reason": "BE",
+      "pnl": 69.4032757440008,
+      "r": 0.17350818936000198,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1670795100000,
+          "price": 284.38,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1670795100000,
+          "price": 288.22,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1670795100000,
+          "price": 288.22,
+          "fraction": 0.7,
+          "cause": "TP1_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 40,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1671633900000,
+      "trigger_4h_open_ms": 1671624000000,
+      "exit_t": 1672643700000,
+      "entry": 16752.2,
+      "stop": 17094.2,
+      "target": 16210.0,
+      "tp1": 16481.2,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 1.169,
+      "reason": "BE",
+      "pnl": 71.59673765999999,
+      "r": 0.17899184414999997,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1672262100000,
+          "price": 16481.2,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1672262100000,
+          "price": 16752.2,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1672643700000,
+          "price": 16752.2,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 53,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1674100800000,
+      "trigger_4h_open_ms": 1674100800000,
+      "exit_t": 1674246600000,
+      "entry": 21.6,
+      "stop": 20.0,
+      "target": 24.3,
+      "tp1": 23.82,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 250.0,
+      "reason": "STOP",
+      "pnl": 584.1653999999996,
+      "r": 1.4604134999999991,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1674244800000,
+          "price": 23.82,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1674244800000,
+          "price": 21.6,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1674246600000,
+          "price": 24.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1674246600000,
+          "price": 23.82,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1674246600000,
+          "price": 23.82,
+          "fraction": 0.39999999999999997,
+          "cause": "TP2_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 57,
+      "sr_backing_zone": false,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1674101700000,
+      "trigger_4h_open_ms": 1674100800000,
+      "exit_t": 1674269100000,
+      "entry": 290.91,
+      "stop": 279.42,
+      "target": 306.0,
+      "tp1": 302.55,
+      "fib1618": 308.76,
+      "runner_mode": "pivot",
+      "size": 34.81,
+      "reason": "STOP",
+      "pnl": 428.8001274299994,
+      "r": 1.0720003185749984,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1674250200000,
+          "price": 302.55,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1674250200000,
+          "price": 290.91,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1674262800000,
+          "price": 306.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1674262800000,
+          "price": 302.55,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1674269100000,
+          "price": 302.55,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 32,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1674101700000,
+      "trigger_4h_open_ms": 1674100800000,
+      "exit_t": 1674244800000,
+      "entry": 20841.2,
+      "stop": 20290.0,
+      "target": 21672.0,
+      "tp1": 21497.100000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.725,
+      "reason": "STOP",
+      "pnl": 495.1282650500006,
+      "r": 1.2378206626250015,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1674243000000,
+          "price": 21497.100000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1674243000000,
+          "price": 20841.2,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1674244800000,
+          "price": 21672.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1674244800000,
+          "price": 21497.100000000002,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1674244800000,
+          "price": 21497.100000000002,
+          "fraction": 0.39999999999999997,
+          "cause": "TP2_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 53,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1674633600000,
+      "trigger_4h_open_ms": 1674633600000,
+      "exit_t": 1675105200000,
+      "entry": 304.09000000000003,
+      "stop": 291.11,
+      "target": 324.08,
+      "tp1": 314.08,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 30.810000000000002,
+      "reason": "BE",
+      "pnl": 81.03935197799957,
+      "r": 0.20259837994499894,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1674987300000,
+          "price": 314.08,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1674987300000,
+          "price": 304.09000000000003,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1675105200000,
+          "price": 304.09000000000003,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 31,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1674649800000,
+      "trigger_4h_open_ms": 1674648000000,
+      "exit_t": 1674783000000,
+      "entry": 1560.14,
+      "stop": 1504.5,
+      "target": 1650.0,
+      "tp1": 1611.8,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 7.189,
+      "reason": "BE",
+      "pnl": 97.88925717479968,
+      "r": 0.2447231429369992,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1674683100000,
+          "price": 1611.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1674683100000,
+          "price": 1560.14,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1674783000000,
+          "price": 1560.14,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 45,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1675126800000,
+      "trigger_4h_open_ms": 1675123200000,
+      "exit_t": 1675234800000,
+      "entry": 307.59000000000003,
+      "stop": 299.43,
+      "target": 321.26,
+      "tp1": 313.92,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 49.01,
+      "reason": "BE",
+      "pnl": 74.92416492599976,
+      "r": 0.1873104123149994,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1675138500000,
+          "price": 313.92,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1675138500000,
+          "price": 307.59000000000003,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1675234800000,
+          "price": 307.59000000000003,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 31,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1675151100000,
+      "trigger_4h_open_ms": 1675137600000,
+      "exit_t": 1675374300000,
+      "entry": 1578.27,
+      "stop": 1521.1100000000001,
+      "target": 1663.68,
+      "tp1": 1620.82,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.997,
+      "reason": "STOP",
+      "pnl": 428.4415466672002,
+      "r": 1.0711038666680006,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1675280700000,
+          "price": 1620.82,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1675280700000,
+          "price": 1578.27,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1675297800000,
+          "price": 1663.68,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1675297800000,
+          "price": 1620.82,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1675367100000,
+          "price": 1640.21
+        },
+        {
+          "type": "STOP",
+          "t": 1675374300000,
+          "price": 1640.21,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 45,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1675173600000,
+      "trigger_4h_open_ms": 1675166400000,
+      "exit_t": 1675269900000,
+      "entry": 24.34,
+      "stop": 22.68,
+      "target": 26.86,
+      "tp1": 25.6,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 240.96,
+      "reason": "STOP",
+      "pnl": -406.79156352000007,
+      "r": -1.0169789088,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1675269900000,
+          "price": 22.68,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 60,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1675868400000,
+      "trigger_4h_open_ms": 1675857600000,
+      "exit_t": 1675911600000,
+      "entry": 23.38,
+      "stop": 22.32,
+      "target": 24.75,
+      "tp1": 24.490000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 377.35,
+      "reason": "STOP",
+      "pnl": -410.3379369999995,
+      "r": -1.0258448424999989,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1675911600000,
+          "price": 22.32,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 59,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1677067200000,
+      "trigger_4h_open_ms": 1677067200000,
+      "exit_t": 1677078900000,
+      "entry": 309.13,
+      "stop": 303.43,
+      "target": 319.59000000000003,
+      "tp1": 314.02,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 70.17,
+      "reason": "STOP",
+      "pnl": -425.7590011199992,
+      "r": -1.064397502799998,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1677078900000,
+          "price": 303.43,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 31,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1677639600000,
+      "trigger_4h_open_ms": 1677628800000,
+      "exit_t": 1677716100000,
+      "entry": 1624.8400000000001,
+      "stop": 1670.78,
+      "target": 1556.08,
+      "tp1": 1592.58,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 8.707,
+      "reason": "STOP",
+      "pnl": -417.2165580039985,
+      "r": -1.0430413950099962,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1677716100000,
+          "price": 1670.78,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 45,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1678933800000,
+      "trigger_4h_open_ms": 1678924800000,
+      "exit_t": 1678950000000,
+      "entry": 308.39,
+      "stop": 298.25,
+      "target": 319.75,
+      "tp1": 315.99,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 39.44,
+      "reason": "STOP",
+      "pnl": 329.43029868800073,
+      "r": 0.8235757467200018,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1678949100000,
+          "price": 315.99,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1678949100000,
+          "price": 308.39,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1678950000000,
+          "price": 319.75,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1678950000000,
+          "price": 315.99,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1678950000000,
+          "price": 315.99,
+          "fraction": 0.39999999999999997,
+          "cause": "TP2_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 30,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1678963500000,
+      "trigger_4h_open_ms": 1678953600000,
+      "exit_t": 1679353200000,
+      "entry": 1666.77,
+      "stop": 1599.89,
+      "target": 1779.05,
+      "tp1": 1722.9,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 5.98,
+      "reason": "STOP",
+      "pnl": 443.2685369320005,
+      "r": 1.1081713423300013,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1679019300000,
+          "price": 1722.9,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1679019300000,
+          "price": 1666.77,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1679092200000,
+          "price": 1779.05,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1679092200000,
+          "price": 1722.9,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1679183100000,
+          "price": 1730.89
+        },
+        {
+          "type": "STOP",
+          "t": 1679353200000,
+          "price": 1730.89,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 42,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1679582700000,
+      "trigger_4h_open_ms": 1679572800000,
+      "exit_t": 1679928300000,
+      "entry": 326.24,
+      "stop": 314.42,
+      "target": 339.5,
+      "tp1": 336.86,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 33.84,
+      "reason": "STOP",
+      "pnl": -412.99676063999976,
+      "r": -1.0324919015999994,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1679928300000,
+          "price": 314.42,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 30,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1679983200000,
+      "trigger_4h_open_ms": 1679976000000,
+      "exit_t": 1680145200000,
+      "entry": 1728.63,
+      "stop": 1675.71,
+      "target": 1800.0,
+      "tp1": 1766.69,
+      "fib1618": 1821.17,
+      "runner_mode": "pivot",
+      "size": 7.558,
+      "reason": "STOP",
+      "pnl": 347.2886806075994,
+      "r": 0.8682217015189986,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1680029100000,
+          "price": 1766.69,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1680029100000,
+          "price": 1728.63,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1680070500000,
+          "price": 1800.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1680070500000,
+          "price": 1766.69,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1680145200000,
+          "price": 1766.69,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 42,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1680508800000,
+      "trigger_4h_open_ms": 1680508800000,
+      "exit_t": 1680552000000,
+      "entry": 1796.1100000000001,
+      "stop": 1755.31,
+      "target": 1842.8,
+      "tp1": 1827.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 9.803,
+      "reason": "BE",
+      "pnl": 69.66117476339964,
+      "r": 0.17415293690849912,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1680546600000,
+          "price": 1827.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1680546600000,
+          "price": 1796.1100000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1680552000000,
+          "price": 1796.1100000000001,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 41,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1681795800000,
+      "trigger_4h_open_ms": 1681790400000,
+      "exit_t": 1681828200000,
+      "entry": 2091.1,
+      "stop": 2047.67,
+      "target": 2146.1,
+      "tp1": 2126.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 9.21,
+      "reason": "BE",
+      "pnl": 73.26000558000027,
+      "r": 0.18315001395000066,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1681817400000,
+          "price": 2126.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1681817400000,
+          "price": 2091.1,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1681828200000,
+          "price": 2091.1,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 37,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1683420300000,
+      "trigger_4h_open_ms": 1683417600000,
+      "exit_t": 1683509400000,
+      "entry": 28891.0,
+      "stop": 28227.600000000002,
+      "target": 29840.0,
+      "tp1": 29402.9,
+      "fib1618": 29843.7,
+      "runner_mode": "pivot",
+      "size": 0.602,
+      "reason": "STOP",
+      "pnl": -419.9980383199986,
+      "r": -1.0499950957999966,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1683509400000,
+          "price": 28227.600000000002,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 43,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1683420300000,
+      "trigger_4h_open_ms": 1683417600000,
+      "exit_t": 1683509400000,
+      "entry": 1907.1200000000001,
+      "stop": 1841.4,
+      "target": 2023.66,
+      "tp1": 1965.38,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.086,
+      "reason": "STOP",
+      "pnl": -413.6600156320002,
+      "r": -1.0341500390800005,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1683509400000,
+          "price": 1841.4,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 32,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1685573100000,
+      "trigger_4h_open_ms": 1685563200000,
+      "exit_t": 1685588400000,
+      "entry": 1870.32,
+      "stop": 1839.5,
+      "target": 1917.0,
+      "tp1": 1893.65,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 12.978,
+      "reason": "STOP",
+      "pnl": -428.8695863759991,
+      "r": -1.0721739659399978,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1685588400000,
+          "price": 1839.5,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 29,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1685609100000,
+      "trigger_4h_open_ms": 1685606400000,
+      "exit_t": 1685941200000,
+      "entry": 1860.75,
+      "stop": 1832.18,
+      "target": 1917.0,
+      "tp1": 1888.8700000000001,
+      "fib1618": 1921.54,
+      "runner_mode": "pivot",
+      "size": 14.0,
+      "reason": "BE",
+      "pnl": 86.77253760000049,
+      "r": 0.21693134400000122,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1685682900000,
+          "price": 1888.8700000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1685682900000,
+          "price": 1860.75,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1685941200000,
+          "price": 1860.75,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 29,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1688029200000,
+      "trigger_4h_open_ms": 1688025600000,
+      "exit_t": 1688130000000,
+      "entry": 1851.1200000000001,
+      "stop": 1805.3,
+      "target": 1912.65,
+      "tp1": 1899.56,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 8.729000000000001,
+      "reason": "STOP",
+      "pnl": 437.4471642981989,
+      "r": 1.0936179107454973,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1688100300000,
+          "price": 1899.56,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1688100300000,
+          "price": 1851.1200000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1688129100000,
+          "price": 1912.65,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1688129100000,
+          "price": 1899.56,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1688130000000,
+          "price": 1899.56,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 29,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1688621400000,
+      "trigger_4h_open_ms": 1688616000000,
+      "exit_t": 1688643900000,
+      "entry": 1918.82,
+      "stop": 1887.3500000000001,
+      "target": 1977.52,
+      "tp1": 1944.74,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 12.71,
+      "reason": "BE",
+      "pnl": 69.50781758400028,
+      "r": 0.1737695439600007,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1688633100000,
+          "price": 1944.74,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1688633100000,
+          "price": 1918.82,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1688643900000,
+          "price": 1918.82,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 28,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1688622300000,
+      "trigger_4h_open_ms": 1688616000000,
+      "exit_t": 1688635800000,
+      "entry": 30594.9,
+      "stop": 30099.4,
+      "target": 31395.2,
+      "tp1": 31136.100000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.807,
+      "reason": "STOP",
+      "pnl": 469.54872293400024,
+      "r": 1.1738718073350005,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1688633100000,
+          "price": 31136.100000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1688633100000,
+          "price": 30594.9,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1688634000000,
+          "price": 31395.2,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1688634000000,
+          "price": 31136.100000000002,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1688635800000,
+          "price": 31136.100000000002,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 48,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": false,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1695233700000,
+      "trigger_4h_open_ms": 1695225600000,
+      "exit_t": 1695237300000,
+      "entry": 1634.51,
+      "stop": 1612.32,
+      "target": 1668.64,
+      "tp1": 1653.91,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 18.026,
+      "reason": "STOP",
+      "pnl": -435.1133545480009,
+      "r": -1.0877833863700024,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1695237300000,
+          "price": 1612.32,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 27,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1695355200000,
+      "trigger_4h_open_ms": 1695355200000,
+      "exit_t": 1695416400000,
+      "entry": 19.72,
+      "stop": 19.17,
+      "target": 20.54,
+      "tp1": 20.13,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 727.27,
+      "reason": "STOP",
+      "pnl": -416.9686181799979,
+      "r": -1.0424215454499948,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1695416400000,
+          "price": 19.17,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 42,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1695369600000,
+      "trigger_4h_open_ms": 1695369600000,
+      "exit_t": 1695597300000,
+      "entry": 26711.100000000002,
+      "stop": 26292.5,
+      "target": 27480.0,
+      "tp1": 27389.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.9550000000000001,
+      "reason": "STOP",
+      "pnl": -430.13406280000214,
+      "r": -1.0753351570000054,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1695597300000,
+          "price": 26292.5,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 49,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1696555800000,
+      "trigger_4h_open_ms": 1696550400000,
+      "exit_t": 1696627800000,
+      "entry": 1621.93,
+      "stop": 1595.92,
+      "target": 1662.8500000000001,
+      "tp1": 1652.6200000000001,
+      "fib1618": 1678.24,
+      "runner_mode": "pivot",
+      "size": 15.378,
+      "reason": "STOP",
+      "pnl": 488.903967010801,
+      "r": 1.2222599175270026,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1696619700000,
+          "price": 1652.6200000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1696619700000,
+          "price": 1621.93,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1696627800000,
+          "price": 1662.8500000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1696627800000,
+          "price": 1652.6200000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1696627800000,
+          "price": 1652.6200000000001,
+          "fraction": 0.39999999999999997,
+          "cause": "TP2_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 27,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1696728600000,
+      "trigger_4h_open_ms": 1696723200000,
+      "exit_t": 1697229900000,
+      "entry": 1637.93,
+      "stop": 1669.57,
+      "target": 1601.28,
+      "tp1": 1614.22,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 12.642,
+      "reason": "STOP",
+      "pnl": 607.0746249792011,
+      "r": 1.5176865624480027,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1696840200000,
+          "price": 1614.22,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1696840200000,
+          "price": 1637.93,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1696844700000,
+          "price": 1601.28,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1696844700000,
+          "price": 1614.22,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1696952700000,
+          "price": 1599.68
+        },
+        {
+          "type": "TRAIL",
+          "t": 1697010300000,
+          "price": 1581.23
+        },
+        {
+          "type": "TRAIL",
+          "t": 1697082300000,
+          "price": 1574.5
+        },
+        {
+          "type": "TRAIL",
+          "t": 1697197500000,
+          "price": 1559.55
+        },
+        {
+          "type": "TRAIL",
+          "t": 1697226300000,
+          "price": 1558.31
+        },
+        {
+          "type": "STOP",
+          "t": 1697229900000,
+          "price": 1558.31,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 27,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1696920300000,
+      "trigger_4h_open_ms": 1696910400000,
+      "exit_t": 1697100300000,
+      "entry": 22.27,
+      "stop": 21.36,
+      "target": 23.64,
+      "tp1": 22.95,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 439.56,
+      "reason": "STOP",
+      "pnl": -411.50640168000007,
+      "r": -1.0287660042000002,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1697100300000,
+          "price": 21.36,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 42,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1698382800000,
+      "trigger_4h_open_ms": 1698379200000,
+      "exit_t": 1698417900000,
+      "entry": 224.18,
+      "stop": 217.54,
+      "target": 233.51,
+      "tp1": 229.32,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 60.24,
+      "reason": "BE",
+      "pnl": 76.62882211199975,
+      "r": 0.19157205527999938,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1698408000000,
+          "price": 229.32,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1698408000000,
+          "price": 224.18,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1698417900000,
+          "price": 224.18,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 32,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1698461100000,
+      "trigger_4h_open_ms": 1698451200000,
+      "exit_t": 1698900300000,
+      "entry": 1786.8400000000001,
+      "stop": 1726.6200000000001,
+      "target": 1872.64,
+      "tp1": 1852.43,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.642,
+      "reason": "STOP",
+      "pnl": 461.39184492839956,
+      "r": 1.153479612320999,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1698867000000,
+          "price": 1852.43,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1698867000000,
+          "price": 1786.8400000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1698894000000,
+          "price": 1872.64,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1698894000000,
+          "price": 1852.43,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1698900300000,
+          "price": 1852.43,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 28,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1699801200000,
+      "trigger_4h_open_ms": 1699790400000,
+      "exit_t": 1699909200000,
+      "entry": 2063.73,
+      "stop": 2002.27,
+      "target": 2139.6,
+      "tp1": 2109.81,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.508,
+      "reason": "BE",
+      "pnl": 73.79570623679986,
+      "r": 0.18448926559199966,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1699890300000,
+          "price": 2109.81,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1699890300000,
+          "price": 2063.73,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1699909200000,
+          "price": 2063.73,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 29,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1700375400000,
+      "trigger_4h_open_ms": 1700366400000,
+      "exit_t": 1700578800000,
+      "entry": 59.71,
+      "stop": 53.18,
+      "target": 68.35000000000001,
+      "tp1": 64.03,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 61.25,
+      "reason": "STOP",
+      "pnl": -404.1112075000001,
+      "r": -1.0102780187500002,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1700578800000,
+          "price": 53.18,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 50,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1700658000000,
+      "trigger_4h_open_ms": 1700654400000,
+      "exit_t": 1701081000000,
+      "entry": 55.43,
+      "stop": 50.53,
+      "target": 62.15,
+      "tp1": 59.53,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 81.63,
+      "reason": "BE",
+      "pnl": 94.91495598000003,
+      "r": 0.23728738995000007,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1700740800000,
+          "price": 59.53,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1700740800000,
+          "price": 55.43,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1701081000000,
+          "price": 55.43,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 50,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1701163800000,
+      "trigger_4h_open_ms": 1701158400000,
+      "exit_t": 1701291600000,
+      "entry": 55.480000000000004,
+      "stop": 53.03,
+      "target": 59.730000000000004,
+      "tp1": 58.84,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 163.26,
+      "reason": "STOP",
+      "pnl": 580.9195358279999,
+      "r": 1.4522988395699996,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1701224100000,
+          "price": 58.84,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1701224100000,
+          "price": 55.480000000000004,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1701244800000,
+          "price": 59.730000000000004,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1701244800000,
+          "price": 58.84,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1701291600000,
+          "price": 58.84,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 51,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1701170100000,
+      "trigger_4h_open_ms": 1701158400000,
+      "exit_t": 1701214200000,
+      "entry": 37154.0,
+      "stop": 36605.4,
+      "target": 37886.5,
+      "tp1": 37662.5,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.729,
+      "reason": "STOP",
+      "pnl": 386.93116962,
+      "r": 0.96732792405,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1701187200000,
+          "price": 37662.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1701187200000,
+          "price": 37154.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1701189900000,
+          "price": 37886.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1701189900000,
+          "price": 37662.5,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1701214200000,
+          "price": 37662.5,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 53,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": false,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1701178200000,
+      "trigger_4h_open_ms": 1701172800000,
+      "exit_t": 1701438300000,
+      "entry": 2030.47,
+      "stop": 1977.66,
+      "target": 2094.96,
+      "tp1": 2080.6,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 7.574,
+      "reason": "STOP",
+      "pnl": 393.61148821679933,
+      "r": 0.9840287205419983,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1701394200000,
+          "price": 2080.6,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1701394200000,
+          "price": 2030.47,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1701403200000,
+          "price": 2094.96,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1701403200000,
+          "price": 2080.6,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1701438300000,
+          "price": 2080.6,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 28,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1701720900000,
+      "trigger_4h_open_ms": 1701720000000,
+      "exit_t": 1701859500000,
+      "entry": 61.47,
+      "stop": 58.550000000000004,
+      "target": 65.62,
+      "tp1": 63.63,
+      "fib1618": 67.75,
+      "runner_mode": "pivot",
+      "size": 136.98,
+      "reason": "STOP",
+      "pnl": 367.32307496400057,
+      "r": 0.9183076874100015,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1701821700000,
+          "price": 63.63,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1701821700000,
+          "price": 61.47,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1701851400000,
+          "price": 65.62,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1701851400000,
+          "price": 63.63,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1701859500000,
+          "price": 63.63,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 52,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1703665800000,
+      "trigger_4h_open_ms": 1703664000000,
+      "exit_t": 1703767500000,
+      "entry": 113.15,
+      "stop": 100.79,
+      "target": 126.93,
+      "tp1": 122.41,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 32.36,
+      "reason": "STOP",
+      "pnl": -404.12345903999994,
+      "r": -1.0103086475999998,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1703767500000,
+          "price": 100.79,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 63,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1704587400000,
+      "trigger_4h_open_ms": 1704585600000,
+      "exit_t": 1704672900000,
+      "entry": 307.86,
+      "stop": 298.08,
+      "target": 326.6,
+      "tp1": 318.24,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 40.89,
+      "reason": "STOP",
+      "pnl": -414.77033196000116,
+      "r": -1.0369258299000028,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1704672900000,
+          "price": 298.08,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 31,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1707748200000,
+      "trigger_4h_open_ms": 1707739200000,
+      "exit_t": 1707831000000,
+      "entry": 318.59000000000003,
+      "stop": 314.46,
+      "target": 324.8,
+      "tp1": 322.97,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 96.85000000000001,
+      "reason": "STOP",
+      "pnl": 440.0606960099991,
+      "r": 1.1001517400249978,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1707757200000,
+          "price": 322.97,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1707757200000,
+          "price": 318.59000000000003,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1707763500000,
+          "price": 324.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1707763500000,
+          "price": 322.97,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1707831000000,
+          "price": 322.97,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 32,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1708202700000,
+      "trigger_4h_open_ms": 1708200000000,
+      "exit_t": 1708422300000,
+      "entry": 2781.37,
+      "stop": 2706.35,
+      "target": 2870.98,
+      "tp1": 2837.62,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 5.331,
+      "reason": "STOP",
+      "pnl": 414.5154810348003,
+      "r": 1.0362887025870007,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1708281900000,
+          "price": 2837.62,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1708281900000,
+          "price": 2781.37,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1708293600000,
+          "price": 2870.98,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1708293600000,
+          "price": 2837.62,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1708371900000,
+          "price": 2874.83
+        },
+        {
+          "type": "STOP",
+          "t": 1708422300000,
+          "price": 2874.83,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 32,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1708246800000,
+      "trigger_4h_open_ms": 1708243200000,
+      "exit_t": 1708442100000,
+      "entry": 109.89,
+      "stop": 104.89,
+      "target": 117.4,
+      "tp1": 115.24000000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 80.0,
+      "reason": "STOP",
+      "pnl": -410.30944,
+      "r": -1.0257736,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1708442100000,
+          "price": 104.89,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 60,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1708555500000,
+      "trigger_4h_open_ms": 1708545600000,
+      "exit_t": 1709654400000,
+      "entry": 51496.5,
+      "stop": 50343.4,
+      "target": 53090.9,
+      "tp1": 52528.5,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.34600000000000003,
+      "reason": "STOP",
+      "pnl": 2064.0234591200006,
+      "r": 5.1600586478000015,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1708961400000,
+          "price": 52528.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1708961400000,
+          "price": 51496.5,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1708963200000,
+          "price": 53090.9,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1708963200000,
+          "price": 52528.5,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1709077500000,
+          "price": 55961.600000000006
+        },
+        {
+          "type": "TRAIL",
+          "t": 1709250300000,
+          "price": 59977.9
+        },
+        {
+          "type": "TRAIL",
+          "t": 1709322300000,
+          "price": 60762.700000000004
+        },
+        {
+          "type": "TRAIL",
+          "t": 1709408700000,
+          "price": 61248.5
+        },
+        {
+          "type": "TRAIL",
+          "t": 1709538300000,
+          "price": 61986.3
+        },
+        {
+          "type": "TRAIL",
+          "t": 1709639100000,
+          "price": 64603.700000000004
+        },
+        {
+          "type": "STOP",
+          "t": 1709654400000,
+          "price": 64603.700000000004,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 56,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1710864000000,
+      "trigger_4h_open_ms": 1710864000000,
+      "exit_t": 1711462500000,
+      "entry": 532.15,
+      "stop": 491.86,
+      "target": 590.75,
+      "tp1": 562.35,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 9.92,
+      "reason": "STOP",
+      "pnl": 451.0994611200002,
+      "r": 1.1277486528000005,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1710988200000,
+          "price": 562.35,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1710988200000,
+          "price": 532.15,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1711376100000,
+          "price": 590.75,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1711376100000,
+          "price": 562.35,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1711395900000,
+          "price": 570.24
+        },
+        {
+          "type": "TRAIL",
+          "t": 1711424700000,
+          "price": 580.9
+        },
+        {
+          "type": "STOP",
+          "t": 1711462500000,
+          "price": 580.9,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 49,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1711697400000,
+      "trigger_4h_open_ms": 1711684800000,
+      "exit_t": 1711986300000,
+      "entry": 3540.14,
+      "stop": 3442.06,
+      "target": 3684.4500000000003,
+      "tp1": 3668.52,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 4.078,
+      "reason": "STOP",
+      "pnl": -417.05428695999973,
+      "r": -1.0426357173999994,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1711986300000,
+          "price": 3442.06,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 45,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1711976400000,
+      "trigger_4h_open_ms": 1711972800000,
+      "exit_t": 1711982700000,
+      "entry": 69911.7,
+      "stop": 68681.90000000001,
+      "target": 71495.5,
+      "tp1": 71228.3,
+      "fib1618": 71859.1,
+      "runner_mode": "pivot",
+      "size": 0.325,
+      "reason": "STOP",
+      "pnl": -426.71075199999626,
+      "r": -1.0667768799999906,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1711982700000,
+          "price": 68681.90000000001,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 57,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1712692800000,
+      "trigger_4h_open_ms": 1712692800000,
+      "exit_t": 1712752200000,
+      "entry": 581.85,
+      "stop": 569.29,
+      "target": 601.02,
+      "tp1": 590.87,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 31.84,
+      "reason": "BE",
+      "pnl": 63.876019775999836,
+      "r": 0.1596900494399996,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1712740500000,
+          "price": 590.87,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1712740500000,
+          "price": 581.85,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1712752200000,
+          "price": 581.85,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 51,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1715766300000,
+      "trigger_4h_open_ms": 1715760000000,
+      "exit_t": 1715779800000,
+      "entry": 145.4,
+      "stop": 151.72,
+      "target": 137.78,
+      "tp1": 140.22,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 63.29,
+      "reason": "STOP",
+      "pnl": -411.2756348799996,
+      "r": -1.028189087199999,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1715779800000,
+          "price": 151.72,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 76,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1716562800000,
+      "trigger_4h_open_ms": 1716552000000,
+      "exit_t": 1716839100000,
+      "entry": 68098.40000000001,
+      "stop": 65879.5,
+      "target": 70715.3,
+      "tp1": 69762.3,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.18,
+      "reason": "STOP",
+      "pnl": 336.0441671999989,
+      "r": 0.8401104179999973,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1716822000000,
+          "price": 69762.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1716822000000,
+          "price": 68098.40000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1716826500000,
+          "price": 70715.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1716826500000,
+          "price": 69762.3,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1716839100000,
+          "price": 69762.3,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 65,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1716932700000,
+      "trigger_4h_open_ms": 1716926400000,
+      "exit_t": 1717055100000,
+      "entry": 602.98,
+      "stop": 591.88,
+      "target": 615.29,
+      "tp1": 611.29,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 36.03,
+      "reason": "STOP",
+      "pnl": -425.76348348000084,
+      "r": -1.064408708700002,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1717055100000,
+          "price": 591.88,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 50,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1717245900000,
+      "trigger_4h_open_ms": 1717243200000,
+      "exit_t": 1717425900000,
+      "entry": 67880.0,
+      "stop": 66472.5,
+      "target": 69568.8,
+      "tp1": 68895.5,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.28400000000000003,
+      "reason": "STOP",
+      "pnl": 322.4261957040003,
+      "r": 0.8060654892600008,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1717394400000,
+          "price": 68895.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1717394400000,
+          "price": 67880.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1717417800000,
+          "price": 69568.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1717417800000,
+          "price": 68895.5,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1717425900000,
+          "price": 68895.5,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 65,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1717732800000,
+      "trigger_4h_open_ms": 1717732800000,
+      "exit_t": 1717782300000,
+      "entry": 170.88,
+      "stop": 166.85,
+      "target": 175.78,
+      "tp1": 173.88,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 99.25,
+      "reason": "STOP",
+      "pnl": -420.08932150000015,
+      "r": -1.0502233037500004,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1717782300000,
+          "price": 166.85,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 76,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1722111300000,
+      "trigger_4h_open_ms": 1722110400000,
+      "exit_t": 1722222000000,
+      "entry": 3223.17,
+      "stop": 3341.17,
+      "target": 3085.57,
+      "tp1": 3134.69,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 3.3890000000000002,
+      "reason": "STOP",
+      "pnl": -413.2499289560001,
+      "r": -1.0331248223900003,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1722222000000,
+          "price": 3341.17,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 45,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1722357000000,
+      "trigger_4h_open_ms": 1722355200000,
+      "exit_t": 1722458700000,
+      "entry": 576.74,
+      "stop": 564.95,
+      "target": 597.64,
+      "tp1": 587.1800000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 33.92,
+      "reason": "BE",
+      "pnl": 82.69807257600054,
+      "r": 0.20674518144000134,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1722383100000,
+          "price": 587.1800000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1722383100000,
+          "price": 576.74,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1722458700000,
+          "price": 576.74,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 54,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1722514500000,
+      "trigger_4h_open_ms": 1722513600000,
+      "exit_t": 1722525300000,
+      "entry": 573.9300000000001,
+      "stop": 560.92,
+      "target": 593.34,
+      "tp1": 589.47,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 30.740000000000002,
+      "reason": "STOP",
+      "pnl": -420.85857340000325,
+      "r": -1.0521464335000081,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1722525300000,
+          "price": 560.92,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 54,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1729210500000,
+      "trigger_4h_open_ms": 1729209600000,
+      "exit_t": 1729392300000,
+      "entry": 593.29,
+      "stop": 582.67,
+      "target": 606.6800000000001,
+      "tp1": 600.34,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 37.660000000000004,
+      "reason": "BE",
+      "pnl": 52.79114778000078,
+      "r": 0.13197786945000195,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1729263600000,
+          "price": 600.34,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1729263600000,
+          "price": 593.29,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1729392300000,
+          "price": 593.29,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 56,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1729634400000,
+      "trigger_4h_open_ms": 1729627200000,
+      "exit_t": 1729674000000,
+      "entry": 67667.2,
+      "stop": 66350.8,
+      "target": 69566.0,
+      "tp1": 68716.90000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.303,
+      "reason": "STOP",
+      "pnl": -423.2336723999982,
+      "r": -1.0580841809999955,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1729674000000,
+          "price": 66350.8,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 49,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1730506500000,
+      "trigger_4h_open_ms": 1730505600000,
+      "exit_t": 1730601000000,
+      "entry": 167.3,
+      "stop": 161.99,
+      "target": 177.24,
+      "tp1": 173.59,
+      "fib1618": 180.78,
+      "runner_mode": "pivot",
+      "size": 75.32000000000001,
+      "reason": "STOP",
+      "pnl": -414.8304736800002,
+      "r": -1.0370761842000005,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1730601000000,
+          "price": 161.99,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 48,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1730664000000,
+      "trigger_4h_open_ms": 1730664000000,
+      "exit_t": 1730740500000,
+      "entry": 68734.8,
+      "stop": 67229.6,
+      "target": 71650.0,
+      "tp1": 69879.6,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.265,
+      "reason": "STOP",
+      "pnl": -420.49633959999926,
+      "r": -1.0512408489999983,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1730740500000,
+          "price": 67229.6,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 48,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1731504600000,
+      "trigger_4h_open_ms": 1731499200000,
+      "exit_t": 1731528000000,
+      "entry": 209.82,
+      "stop": 199.0,
+      "target": 225.69,
+      "tp1": 217.92000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 36.96,
+      "reason": "BE",
+      "pnl": 80.45297568000025,
+      "r": 0.20113243920000062,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1731513600000,
+          "price": 217.92000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1731513600000,
+          "price": 209.82,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1731528000000,
+          "price": 209.82,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 45,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1732089600000,
+      "trigger_4h_open_ms": 1732089600000,
+      "exit_t": 1732114800000,
+      "entry": 236.75,
+      "stop": 228.76,
+      "target": 248.66,
+      "tp1": 242.49,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 50.06,
+      "reason": "BE",
+      "pnl": 71.92955200800013,
+      "r": 0.17982388002000033,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1732111200000,
+          "price": 242.49,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1732111200000,
+          "price": 236.75,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1732114800000,
+          "price": 236.75,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 49,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1732110300000,
+      "trigger_4h_open_ms": 1732104000000,
+      "exit_t": 1732129200000,
+      "entry": 617.46,
+      "stop": 602.4300000000001,
+      "target": 635.0,
+      "tp1": 628.72,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 26.61,
+      "reason": "STOP",
+      "pnl": -419.42506373999925,
+      "r": -1.0485626593499981,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1732129200000,
+          "price": 602.4300000000001,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 53,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1732161600000,
+      "trigger_4h_open_ms": 1732161600000,
+      "exit_t": 1732281300000,
+      "entry": 3106.94,
+      "stop": 3012.71,
+      "target": 3228.0,
+      "tp1": 3177.6,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 4.244,
+      "reason": "STOP",
+      "pnl": 527.3205581695995,
+      "r": 1.3183013954239988,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1732190400000,
+          "price": 3177.6,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1732190400000,
+          "price": 3106.94,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1732191300000,
+          "price": 3228.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1732191300000,
+          "price": 3177.6,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1732261500000,
+          "price": 3283.29
+        },
+        {
+          "type": "STOP",
+          "t": 1732281300000,
+          "price": 3283.29,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 34,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1732673700000,
+      "trigger_4h_open_ms": 1732665600000,
+      "exit_t": 1732812300000,
+      "entry": 3351.6,
+      "stop": 3232.91,
+      "target": 3549.91,
+      "tp1": 3450.75,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 3.37,
+      "reason": "STOP",
+      "pnl": 536.3493695720002,
+      "r": 1.3408734239300006,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1732703400000,
+          "price": 3450.75,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1732703400000,
+          "price": 3351.6,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1732721400000,
+          "price": 3549.91,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1732721400000,
+          "price": 3450.75,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1732779900000,
+          "price": 3536.69
+        },
+        {
+          "type": "STOP",
+          "t": 1732812300000,
+          "price": 3536.69,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 33,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1733257800000,
+      "trigger_4h_open_ms": 1733256000000,
+      "exit_t": 1733436900000,
+      "entry": 3600.88,
+      "stop": 3483.9700000000003,
+      "target": 3766.0,
+      "tp1": 3682.17,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 3.4210000000000003,
+      "reason": "STOP",
+      "pnl": 434.5049642053996,
+      "r": 1.086262410513499,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1733273100000,
+          "price": 3682.17,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1733273100000,
+          "price": 3600.88,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1733323500000,
+          "price": 3766.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1733323500000,
+          "price": 3682.17,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1733384700000,
+          "price": 3744.6
+        },
+        {
+          "type": "STOP",
+          "t": 1733436900000,
+          "price": 3744.6,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 31,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1737248400000,
+      "trigger_4h_open_ms": 1737244800000,
+      "exit_t": 1737277200000,
+      "entry": 3351.02,
+      "stop": 3205.51,
+      "target": 3524.85,
+      "tp1": 3460.14,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 2.748,
+      "reason": "STOP",
+      "pnl": -410.67188666399943,
+      "r": -1.0266797166599986,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1737277200000,
+          "price": 3205.51,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 30,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1740009600000,
+      "trigger_4h_open_ms": 1740009600000,
+      "exit_t": 1740324600000,
+      "entry": 651.21,
+      "stop": 626.23,
+      "target": 681.85,
+      "tp1": 672.51,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 16.01,
+      "reason": "BE",
+      "pnl": 89.73147113999978,
+      "r": 0.22432867784999946,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1740244500000,
+          "price": 672.51,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1740244500000,
+          "price": 651.21,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1740324600000,
+          "price": 651.21,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 35,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1742774400000,
+      "trigger_4h_open_ms": 1742774400000,
+      "exit_t": 1742822100000,
+      "entry": 624.28,
+      "stop": 616.63,
+      "target": 637.01,
+      "tp1": 630.64,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 52.28,
+      "reason": "BE",
+      "pnl": 60.52555977600021,
+      "r": 0.1513138994400005,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1742814000000,
+          "price": 630.64,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1742814000000,
+          "price": 624.28,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1742822100000,
+          "price": 624.28,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 28,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1743555600000,
+      "trigger_4h_open_ms": 1743552000000,
+      "exit_t": 1743606900000,
+      "entry": 607.14,
+      "stop": 620.17,
+      "target": 586.48,
+      "tp1": 596.39,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 30.69,
+      "reason": "BE",
+      "pnl": 76.67488322999999,
+      "r": 0.19168720807499998,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1743571800000,
+          "price": 596.39,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1743571800000,
+          "price": 607.14,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1743606900000,
+          "price": 607.14,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 28,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1744805700000,
+      "trigger_4h_open_ms": 1744804800000,
+      "exit_t": 1744825500000,
+      "entry": 84150.90000000001,
+      "stop": 82768.0,
+      "target": 86443.0,
+      "tp1": 85461.3,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.289,
+      "reason": "BE",
+      "pnl": 84.35998087199948,
+      "r": 0.2108999521799987,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1744824600000,
+          "price": 85461.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1744824600000,
+          "price": 84150.90000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1744825500000,
+          "price": 84150.90000000001,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 50,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1745283600000,
+      "trigger_4h_open_ms": 1745280000000,
+      "exit_t": 1745467200000,
+      "entry": 137.44,
+      "stop": 132.98,
+      "target": 143.25,
+      "tp1": 140.71,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 89.68,
+      "reason": "STOP",
+      "pnl": 592.5163339520002,
+      "r": 1.4812908348800005,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1745322300000,
+          "price": 140.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1745322300000,
+          "price": 137.44,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1745329500000,
+          "price": 143.25,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1745329500000,
+          "price": 140.71,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1745379900000,
+          "price": 142.32
+        },
+        {
+          "type": "TRAIL",
+          "t": 1745437500000,
+          "price": 147.57
+        },
+        {
+          "type": "STOP",
+          "t": 1745467200000,
+          "price": 147.57,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 37,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1745555400000,
+      "trigger_4h_open_ms": 1745553600000,
+      "exit_t": 1746364500000,
+      "entry": 604.33,
+      "stop": 590.88,
+      "target": 620.26,
+      "tp1": 614.4,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 29.73,
+      "reason": "STOP",
+      "pnl": -421.1886559800014,
+      "r": -1.0529716399500035,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1746364500000,
+          "price": 590.88,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 28,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1746557100000,
+      "trigger_4h_open_ms": 1746547200000,
+      "exit_t": 1746585900000,
+      "entry": 94939.0,
+      "stop": 93216.70000000001,
+      "target": 96868.3,
+      "tp1": 96427.90000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.232,
+      "reason": "STOP",
+      "pnl": 349.41997641600165,
+      "r": 0.8735499410400042,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1746573300000,
+          "price": 96427.90000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1746573300000,
+          "price": 94939.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1746575100000,
+          "price": 96868.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1746575100000,
+          "price": 96427.90000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1746585900000,
+          "price": 96427.90000000001,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 50,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1747642500000,
+      "trigger_4h_open_ms": 1747641600000,
+      "exit_t": 1747847700000,
+      "entry": 2416.27,
+      "stop": 2292.65,
+      "target": 2591.88,
+      "tp1": 2508.96,
+      "fib1618": 2632.3,
+      "runner_mode": "pivot",
+      "size": 3.235,
+      "reason": "STOP",
+      "pnl": 370.71785425400026,
+      "r": 0.9267946356350006,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1747673100000,
+          "price": 2508.96,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1747673100000,
+          "price": 2416.27,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1747804500000,
+          "price": 2591.88,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1747804500000,
+          "price": 2508.96,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1747847700000,
+          "price": 2508.96,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 48,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1748060100000,
+      "trigger_4h_open_ms": 1748059200000,
+      "exit_t": 1748308500000,
+      "entry": 108413.5,
+      "stop": 106307.70000000001,
+      "target": 111959.5,
+      "tp1": 110186.40000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.189,
+      "reason": "BE",
+      "pnl": 75.8749341420005,
+      "r": 0.18968733535500124,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1748242800000,
+          "price": 110186.40000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1748242800000,
+          "price": 108413.5,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1748308500000,
+          "price": 108413.5,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 50,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": false,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1748202300000,
+      "trigger_4h_open_ms": 1748188800000,
+      "exit_t": 1748281500000,
+      "entry": 2527.79,
+      "stop": 2443.61,
+      "target": 2687.8,
+      "tp1": 2587.76,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 4.751,
+      "reason": "BE",
+      "pnl": 71.01251950740036,
+      "r": 0.17753129876850088,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1748242800000,
+          "price": 2587.76,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1748242800000,
+          "price": 2527.79,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1748281500000,
+          "price": 2527.79,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 48,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1751688900000,
+      "trigger_4h_open_ms": 1751688000000,
+      "exit_t": 1751893200000,
+      "entry": 108262.0,
+      "stop": 106980.3,
+      "target": 110484.0,
+      "tp1": 109372.90000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.312,
+      "reason": "BE",
+      "pnl": 63.3845590560008,
+      "r": 0.158461397640002,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1751837400000,
+          "price": 109372.90000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1751837400000,
+          "price": 108262.0,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1751893200000,
+          "price": 108262.0,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 52,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1751692500000,
+      "trigger_4h_open_ms": 1751688000000,
+      "exit_t": 1752332400000,
+      "entry": 656.22,
+      "stop": 648.92,
+      "target": 665.0,
+      "tp1": 661.67,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 54.79,
+      "reason": "STOP",
+      "pnl": 770.8195254299987,
+      "r": 1.9270488135749968,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1751809500000,
+          "price": 661.67,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1751809500000,
+          "price": 656.22,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1752084900000,
+          "price": 665.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1752084900000,
+          "price": 661.67,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1752176700000,
+          "price": 665.89
+        },
+        {
+          "type": "TRAIL",
+          "t": 1752248700000,
+          "price": 682.71
+        },
+        {
+          "type": "STOP",
+          "t": 1752332400000,
+          "price": 682.71,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 30,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1751696100000,
+      "trigger_4h_open_ms": 1751688000000,
+      "exit_t": 1751900400000,
+      "entry": 2526.02,
+      "stop": 2462.67,
+      "target": 2635.0,
+      "tp1": 2580.5,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.314,
+      "reason": "BE",
+      "pnl": 83.99495005440002,
+      "r": 0.20998737513600005,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1751837400000,
+          "price": 2580.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1751837400000,
+          "price": 2526.02,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1751900400000,
+          "price": 2526.02,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 49,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1751933700000,
+      "trigger_4h_open_ms": 1751932800000,
+      "exit_t": 1751985900000,
+      "entry": 108286.1,
+      "stop": 107276.1,
+      "target": 109684.70000000001,
+      "tp1": 109079.1,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.396,
+      "reason": "BE",
+      "pnl": 42.694320239999996,
+      "r": 0.10673580059999999,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1751982300000,
+          "price": 109079.1,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1751982300000,
+          "price": 108286.1,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1751985900000,
+          "price": 108286.1,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 52,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1752626700000,
+      "trigger_4h_open_ms": 1752624000000,
+      "exit_t": 1752848100000,
+      "entry": 118043.70000000001,
+      "stop": 115287.6,
+      "target": 123300.0,
+      "tp1": 120671.8,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.145,
+      "reason": "BE",
+      "pnl": 93.7141527899996,
+      "r": 0.234285381974999,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1752786900000,
+          "price": 120671.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1752786900000,
+          "price": 118043.70000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1752848100000,
+          "price": 118043.70000000001,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 52,
+      "sr_backing_zone": false,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": false,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1753470900000,
+      "trigger_4h_open_ms": 1753459200000,
+      "exit_t": 1753702200000,
+      "entry": 116702.40000000001,
+      "stop": 114300.6,
+      "target": 119469.8,
+      "tp1": 118494.6,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.166,
+      "reason": "STOP",
+      "pnl": 322.6153998239993,
+      "r": 0.8065384995599983,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1753628400000,
+          "price": 118494.6,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1753628400000,
+          "price": 116702.40000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1753633800000,
+          "price": 119469.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1753633800000,
+          "price": 118494.6,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1753702200000,
+          "price": 118494.6,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 56,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1753748100000,
+      "trigger_4h_open_ms": 1753747200000,
+      "exit_t": 1753806600000,
+      "entry": 118377.3,
+      "stop": 117150.5,
+      "target": 119812.0,
+      "tp1": 119297.20000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.326,
+      "reason": "STOP",
+      "pnl": -446.00603768000093,
+      "r": -1.1150150942000023,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1753806600000,
+          "price": 117150.5,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 56,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1753840800000,
+      "trigger_4h_open_ms": 1753833600000,
+      "exit_t": 1753901100000,
+      "entry": 118002.3,
+      "stop": 116666.70000000001,
+      "target": 119812.0,
+      "tp1": 119262.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.299,
+      "reason": "STOP",
+      "pnl": -441.4440185999974,
+      "r": -1.1036100464999934,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1753901100000,
+          "price": 116666.70000000001,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 56,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1753921800000,
+      "trigger_4h_open_ms": 1753920000000,
+      "exit_t": 1754055900000,
+      "entry": 795.04,
+      "stop": 761.74,
+      "target": 841.62,
+      "tp1": 820.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 12.01,
+      "reason": "STOP",
+      "pnl": -411.1511566799994,
+      "r": -1.0278778916999984,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1754055900000,
+          "price": 761.74,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 34,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": false,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1755791100000,
+      "trigger_4h_open_ms": 1755777600000,
+      "exit_t": 1755871200000,
+      "entry": 181.94,
+      "stop": 174.51,
+      "target": 195.75,
+      "tp1": 189.46,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 53.83,
+      "reason": "BE",
+      "pnl": 109.61501947200014,
+      "r": 0.27403754868000035,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1755871200000,
+          "price": 189.46,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1755871200000,
+          "price": 181.94,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1755871200000,
+          "price": 181.94,
+          "fraction": 0.7,
+          "cause": "TP1_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 38,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1756779300000,
+      "trigger_4h_open_ms": 1756771200000,
+      "exit_t": 1756827900000,
+      "entry": 200.34,
+      "stop": 194.59,
+      "target": 206.99,
+      "tp1": 204.45000000000002,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 69.56,
+      "reason": "BE",
+      "pnl": 68.99323903200028,
+      "r": 0.1724830975800007,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1756821600000,
+          "price": 204.45000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1756821600000,
+          "price": 200.34,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1756827900000,
+          "price": 200.34,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 39,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1757232900000,
+      "trigger_4h_open_ms": 1757232000000,
+      "exit_t": 1757892600000,
+      "entry": 203.4,
+      "stop": 198.31,
+      "target": 209.95000000000002,
+      "tp1": 206.81,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 78.58,
+      "reason": "STOP",
+      "pnl": 1369.2810169599998,
+      "r": 3.4232025423999994,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1757285100000,
+          "price": 206.81,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1757285100000,
+          "price": 203.4,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1757324700000,
+          "price": 209.95000000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1757324700000,
+          "price": 206.81,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1757403900000,
+          "price": 209.73000000000002
+        },
+        {
+          "type": "TRAIL",
+          "t": 1757447100000,
+          "price": 210.49
+        },
+        {
+          "type": "TRAIL",
+          "t": 1757591100000,
+          "price": 220.43
+        },
+        {
+          "type": "TRAIL",
+          "t": 1757619900000,
+          "price": 220.78
+        },
+        {
+          "type": "TRAIL",
+          "t": 1757807100000,
+          "price": 234.31
+        },
+        {
+          "type": "TRAIL",
+          "t": 1757879100000,
+          "price": 240.13
+        },
+        {
+          "type": "STOP",
+          "t": 1757892600000,
+          "price": 240.13,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 39,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1758060000000,
+      "trigger_4h_open_ms": 1758052800000,
+      "exit_t": 1758132000000,
+      "entry": 4511.81,
+      "stop": 4405.84,
+      "target": 4668.0,
+      "tp1": 4591.26,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 3.774,
+      "reason": "STOP",
+      "pnl": -420.12390666000096,
+      "r": -1.0503097666500023,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1758132000000,
+          "price": 4405.84,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 60,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1758614400000,
+      "trigger_4h_open_ms": 1758614400000,
+      "exit_t": 1758822300000,
+      "entry": 1007.71,
+      "stop": 957.48,
+      "target": 1084.28,
+      "tp1": 1045.99,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 7.96,
+      "reason": "STOP",
+      "pnl": -409.2165474400001,
+      "r": -1.0230413686000004,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1758822300000,
+          "price": 957.48,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 36,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": false,
+      "sr_tp2_in_zone": false
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1765809900000,
+      "trigger_4h_open_ms": 1765800000000,
+      "exit_t": 1765809900000,
+      "entry": 3099.31,
+      "stop": 3163.84,
+      "target": 3022.51,
+      "tp1": 3044.71,
+      "fib1618": 2996.7000000000003,
+      "runner_mode": "pivot",
+      "size": 6.198,
+      "reason": "BE",
+      "pnl": 78.53272588799982,
+      "r": 0.19633181471999955,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1765809900000,
+          "price": 3044.71,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1765809900000,
+          "price": 3099.31,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1765809900000,
+          "price": 3099.31,
+          "fraction": 0.7,
+          "cause": "TP1_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 59,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1767921300000,
+      "trigger_4h_open_ms": 1767916800000,
+      "exit_t": 1768505400000,
+      "entry": 91481.6,
+      "stop": 88959.70000000001,
+      "target": 94415.3,
+      "tp1": 93372.8,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.158,
+      "reason": "STOP",
+      "pnl": 457.2028490439997,
+      "r": 1.1430071226099994,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1768319100000,
+          "price": 93372.8,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1768319100000,
+          "price": 91481.6,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1768335300000,
+          "price": 94415.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1768335300000,
+          "price": 93372.8,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1768391100000,
+          "price": 94087.1
+        },
+        {
+          "type": "TRAIL",
+          "t": 1768419900000,
+          "price": 94297.3
+        },
+        {
+          "type": "TRAIL",
+          "t": 1768463100000,
+          "price": 95376.1
+        },
+        {
+          "type": "STOP",
+          "t": 1768505400000,
+          "price": 95376.1,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 47,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1767921300000,
+      "trigger_4h_open_ms": 1767916800000,
+      "exit_t": 1768341600000,
+      "entry": 3141.16,
+      "stop": 3038.85,
+      "target": 3308.0,
+      "tp1": 3224.57,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 3.9090000000000003,
+      "reason": "STOP",
+      "pnl": 408.899164841401,
+      "r": 1.0222479121035024,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1768341600000,
+          "price": 3224.57,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1768341600000,
+          "price": 3141.16,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1768341600000,
+          "price": 3308.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1768341600000,
+          "price": 3224.57,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1768341600000,
+          "price": 3224.57,
+          "fraction": 0.39999999999999997,
+          "cause": "TP2_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 59,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1768565700000,
+      "trigger_4h_open_ms": 1768564800000,
+      "exit_t": 1768778100000,
+      "entry": 143.74,
+      "stop": 140.11,
+      "target": 148.8,
+      "tp1": 146.44,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 110.19,
+      "reason": "STOP",
+      "pnl": -418.7561588999995,
+      "r": -1.0468903972499988,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1768778100000,
+          "price": 140.11,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 41,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1768642200000,
+      "trigger_4h_open_ms": 1768636800000,
+      "exit_t": 1768779900000,
+      "entry": 3301.5,
+      "stop": 3238.25,
+      "target": 3403.77,
+      "tp1": 3365.66,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.324,
+      "reason": "BE",
+      "pnl": 96.59689418879972,
+      "r": 0.2414922354719993,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1768760100000,
+          "price": 3365.66,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1768760100000,
+          "price": 3301.5,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1768779900000,
+          "price": 3301.5,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 59,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1768662000000,
+      "trigger_4h_open_ms": 1768651200000,
+      "exit_t": 1768779900000,
+      "entry": 95604.0,
+      "stop": 93964.70000000001,
+      "target": 97932.1,
+      "tp1": 96863.6,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.244,
+      "reason": "STOP",
+      "pnl": -427.7420576799972,
+      "r": -1.069355144199993,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1768779900000,
+          "price": 93964.70000000001,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 47,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1774359900000,
+      "trigger_4h_open_ms": 1774353600000,
+      "exit_t": 1774704600000,
+      "entry": 70037.8,
+      "stop": 72103.3,
+      "target": 67300.0,
+      "tp1": 68109.5,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.193,
+      "reason": "STOP",
+      "pnl": 501.4358032100006,
+      "r": 1.2535895080250015,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1774600200000,
+          "price": 68109.5,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1774600200000,
+          "price": 70037.8,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1774607400000,
+          "price": 67300.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1774607400000,
+          "price": 68109.5,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1774698300000,
+          "price": 66836.0
+        },
+        {
+          "type": "STOP",
+          "t": 1774704600000,
+          "price": 66836.0,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 60,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1776669300000,
+      "trigger_4h_open_ms": 1776657600000,
+      "exit_t": 1776791700000,
+      "entry": 628.98,
+      "stop": 616.42,
+      "target": 649.19,
+      "tp1": 639.08,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 31.84,
+      "reason": "BE",
+      "pnl": 72.38524704000022,
+      "r": 0.18096311760000056,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1776767400000,
+          "price": 639.08,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1776767400000,
+          "price": 628.98,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1776791700000,
+          "price": 628.98,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 52,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1776687300000,
+      "trigger_4h_open_ms": 1776686400000,
+      "exit_t": 1776934800000,
+      "entry": 2321.2000000000003,
+      "stop": 2240.88,
+      "target": 2441.65,
+      "tp1": 2374.15,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 4.98,
+      "reason": "BE",
+      "pnl": 65.18834441999972,
+      "r": 0.1629708610499993,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1776825900000,
+          "price": 2374.15,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1776825900000,
+          "price": 2321.2000000000003,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1776934800000,
+          "price": 2321.2000000000003,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 56,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1776729600000,
+      "trigger_4h_open_ms": 1776729600000,
+      "exit_t": 1776915000000,
+      "entry": 85.45,
+      "stop": 82.39,
+      "target": 89.43,
+      "tp1": 87.73,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 130.71,
+      "reason": "BE",
+      "pnl": 75.94899321600006,
+      "r": 0.18987248304000015,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1776826800000,
+          "price": 87.73,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1776826800000,
+          "price": 85.45,
+          "cause": "TP1"
+        },
+        {
+          "type": "BE",
+          "t": 1776915000000,
+          "price": 85.45,
+          "fraction": 0.7
+        }
+      ],
+      "sr_active_zones": 45,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1777433400000,
+      "trigger_4h_open_ms": 1777420800000,
+      "exit_t": 1777485600000,
+      "entry": 2306.4700000000003,
+      "stop": 2248.35,
+      "target": 2403.9900000000002,
+      "tp1": 2355.2200000000003,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.882000000000001,
+      "reason": "STOP",
+      "pnl": -418.7896027440024,
+      "r": -1.046974006860006,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1777485600000,
+          "price": 2248.35,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 54,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "SHORT",
+      "source": null,
+      "entry_t": 1783890000000,
+      "trigger_4h_open_ms": 1783886400000,
+      "exit_t": 1784031300000,
+      "entry": 578.78,
+      "stop": 586.44,
+      "target": 569.96,
+      "tp1": 573.0500000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 52.21,
+      "reason": "STOP",
+      "pnl": 311.5087826219955,
+      "r": 0.7787719565549888,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1783907100000,
+          "price": 573.0500000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1783907100000,
+          "price": 578.78,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1783911600000,
+          "price": 569.96,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1783911600000,
+          "price": 573.0500000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1784031300000,
+          "price": 573.0500000000001,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 55,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1783900800000,
+      "trigger_4h_open_ms": 1783900800000,
+      "exit_t": 1783949400000,
+      "entry": 77.10000000000001,
+      "stop": 75.3,
+      "target": 79.64,
+      "tp1": 78.84,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 222.22,
+      "reason": "STOP",
+      "pnl": -420.31579680000254,
+      "r": -1.0507894920000063,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1783949400000,
+          "price": 75.3,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 53,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": false,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1783987200000,
+      "trigger_4h_open_ms": 1783987200000,
+      "exit_t": 1784248200000,
+      "entry": 1779.05,
+      "stop": 1741.42,
+      "target": 1848.0,
+      "tp1": 1810.6100000000001,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 10.629,
+      "reason": "STOP",
+      "pnl": 618.3307338570007,
+      "r": 1.5458268346425017,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1784032200000,
+          "price": 1810.6100000000001,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1784032200000,
+          "price": 1779.05,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1784033100000,
+          "price": 1848.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1784033100000,
+          "price": 1810.6100000000001,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1784101500000,
+          "price": 1854.53
+        },
+        {
+          "type": "STOP",
+          "t": 1784248200000,
+          "price": 1854.53,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 55,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1784398500000,
+      "trigger_4h_open_ms": 1784390400000,
+      "exit_t": 1784809800000,
+      "entry": 1857.3700000000001,
+      "stop": 1795.1200000000001,
+      "target": 1946.75,
+      "tp1": 1904.04,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.425,
+      "reason": "STOP",
+      "pnl": 370.09436501499914,
+      "r": 0.9252359125374978,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1784562300000,
+          "price": 1904.04,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1784562300000,
+          "price": 1857.3700000000001,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1784621700000,
+          "price": 1946.75,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1784621700000,
+          "price": 1904.04,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1784677500000,
+          "price": 1905.0
+        },
+        {
+          "type": "STOP",
+          "t": 1784809800000,
+          "price": 1905.0,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 55,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1785725100000,
+      "trigger_4h_open_ms": 1785715200000,
+      "exit_t": 1786104000000,
+      "entry": 1863.45,
+      "stop": 1814.78,
+      "target": 1936.57,
+      "tp1": 1921.91,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 8.218,
+      "reason": "STOP",
+      "pnl": 497.88050525359995,
+      "r": 1.244701263134,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1785953700000,
+          "price": 1921.91,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1785953700000,
+          "price": 1863.45,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1786104000000,
+          "price": 1936.57,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1786104000000,
+          "price": 1921.91,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1786104000000,
+          "price": 1921.91,
+          "fraction": 0.39999999999999997,
+          "cause": "TP2_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 56,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1786797900000,
+      "trigger_4h_open_ms": 1786795200000,
+      "exit_t": 1786915800000,
+      "entry": 75.35000000000001,
+      "stop": 74.43,
+      "target": 76.60000000000001,
+      "tp1": 76.41,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 434.78000000000003,
+      "reason": "STOP",
+      "pnl": -439.0704090400008,
+      "r": -1.097676022600002,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1786915800000,
+          "price": 74.43,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 52,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1788307200000,
+      "trigger_4h_open_ms": 1788307200000,
+      "exit_t": 1788795000000,
+      "entry": 684.77,
+      "stop": 673.27,
+      "target": 704.4,
+      "tp1": 695.23,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 34.78,
+      "reason": "STOP",
+      "pnl": 1019.7211012680009,
+      "r": 2.5493027531700023,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1788403500000,
+          "price": 695.23,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1788403500000,
+          "price": 684.77,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1788430500000,
+          "price": 704.4,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1788430500000,
+          "price": 695.23,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1788551100000,
+          "price": 706.15
+        },
+        {
+          "type": "TRAIL",
+          "t": 1788723900000,
+          "price": 737.1800000000001
+        },
+        {
+          "type": "TRAIL",
+          "t": 1788781500000,
+          "price": 737.6
+        },
+        {
+          "type": "STOP",
+          "t": 1788795000000,
+          "price": 737.6,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 55,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BTCUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1788318900000,
+      "trigger_4h_open_ms": 1788307200000,
+      "exit_t": 1788533100000,
+      "entry": 77648.8,
+      "stop": 76145.6,
+      "target": 79384.3,
+      "tp1": 78774.0,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 0.266,
+      "reason": "STOP",
+      "pnl": 323.0108399559995,
+      "r": 0.8075270998899987,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1788442200000,
+          "price": 78774.0,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1788442200000,
+          "price": 77648.8,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1788444900000,
+          "price": 79384.3,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1788444900000,
+          "price": 78774.0,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1788533100000,
+          "price": 78774.0,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 64,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1788379200000,
+      "trigger_4h_open_ms": 1788379200000,
+      "exit_t": 1788447600000,
+      "entry": 99.88,
+      "stop": 96.83,
+      "target": 104.98,
+      "tp1": 104.33,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 131.14000000000001,
+      "reason": "STOP",
+      "pnl": 593.0618969800007,
+      "r": 1.4826547424500018,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1788446700000,
+          "price": 104.33,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1788446700000,
+          "price": 99.88,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1788447600000,
+          "price": 104.98,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1788447600000,
+          "price": 104.33,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1788447600000,
+          "price": 104.33,
+          "fraction": 0.39999999999999997,
+          "cause": "TP2_SAME_BAR_RATCHET"
+        }
+      ],
+      "sr_active_zones": 53,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1788402600000,
+      "trigger_4h_open_ms": 1788393600000,
+      "exit_t": 1788525000000,
+      "entry": 2406.27,
+      "stop": 2345.73,
+      "target": 2490.2400000000002,
+      "tp1": 2466.9500000000003,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 6.607,
+      "reason": "STOP",
+      "pnl": 427.7297524106018,
+      "r": 1.0693243810265045,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1788446700000,
+          "price": 2466.9500000000003,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1788446700000,
+          "price": 2406.27,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1788447600000,
+          "price": 2490.2400000000002,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1788447600000,
+          "price": 2466.9500000000003,
+          "cause": "TP2"
+        },
+        {
+          "type": "STOP",
+          "t": 1788525000000,
+          "price": 2466.9500000000003,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 57,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": false,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "SOLUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1788915600000,
+      "trigger_4h_open_ms": 1788912000000,
+      "exit_t": 1788991200000,
+      "entry": 103.85000000000001,
+      "stop": 101.19,
+      "target": 107.36,
+      "tp1": 105.88,
+      "fib1618": null,
+      "runner_mode": "pivot",
+      "size": 150.37,
+      "reason": "STOP",
+      "pnl": -418.4833188800016,
+      "r": -1.046208297200004,
+      "events": [
+        {
+          "type": "STOP",
+          "t": 1788991200000,
+          "price": 101.19,
+          "fraction": 1.0
+        }
+      ],
+      "sr_active_zones": 53,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    },
+    {
+      "symbol": "BNBUSDT",
+      "track": "B",
+      "direction": "LONG",
+      "source": null,
+      "entry_t": 1789581600000,
+      "trigger_4h_open_ms": 1789574400000,
+      "exit_t": 1789871400000,
+      "entry": 717.01,
+      "stop": 703.97,
+      "target": 734.13,
+      "tp1": 729.66,
+      "fib1618": 738.07,
+      "runner_mode": "pivot",
+      "size": 30.67,
+      "reason": "STOP",
+      "pnl": 728.345461514,
+      "r": 1.820863653785,
+      "events": [
+        {
+          "type": "TP1",
+          "t": 1789647300000,
+          "price": 729.66,
+          "fraction": 0.3
+        },
+        {
+          "type": "BE_MOVE",
+          "t": 1789647300000,
+          "price": 717.01,
+          "cause": "TP1"
+        },
+        {
+          "type": "TP2",
+          "t": 1789674300000,
+          "price": 734.13,
+          "fraction": 0.3
+        },
+        {
+          "type": "STOP_TO_TP1",
+          "t": 1789674300000,
+          "price": 729.66,
+          "cause": "TP2"
+        },
+        {
+          "type": "TRAIL",
+          "t": 1789760700000,
+          "price": 742.35
+        },
+        {
+          "type": "TRAIL",
+          "t": 1789803900000,
+          "price": 756.24
+        },
+        {
+          "type": "STOP",
+          "t": 1789871400000,
+          "price": 756.24,
+          "fraction": 0.39999999999999997
+        }
+      ],
+      "sr_active_zones": 55,
+      "sr_backing_zone": true,
+      "sr_block_before_tp1": true,
+      "sr_block_before_tp2": true,
+      "sr_tp2_in_zone": true
+    }
+  ]
+}
