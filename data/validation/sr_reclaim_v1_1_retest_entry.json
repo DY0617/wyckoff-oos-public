@@ -1,0 +1,563 @@
+{
+  "strategy": "SR Reclaim v1.1 retest-entry diagnostic",
+  "base_confirmation": "same as SR Reclaim v1",
+  "entry_valid_4h_bars": 3,
+  "min_target_r": 2.0,
+  "risk_atr_range": [
+    0.35,
+    2.0
+  ],
+  "candidate_stats": {
+    "BTCUSDT": {
+      "candidates": 28,
+      "no_opposite_zone": 3,
+      "zone_cooldown": 1
+    },
+    "ETHUSDT": {
+      "no_opposite_zone": 4,
+      "candidates": 37
+    },
+    "BNBUSDT": {
+      "candidates": 29
+    },
+    "SOLUSDT": {
+      "candidates": 23,
+      "no_opposite_zone": 1
+    }
+  },
+  "variants": {
+    "zone_edge": {
+      "summary": {
+        "trades": 0,
+        "long": 0,
+        "short": 0,
+        "win_rate": null,
+        "total_r": 0,
+        "avg_r": null,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0,
+        "max_losing_streak": 0,
+        "tp1_hit_rate": null,
+        "tp2_hit_rate": null,
+        "avg_hold_hours": null
+      },
+      "directions": {},
+      "symbols": {},
+      "details": {
+        "BTCUSDT": {
+          "metrics": {
+            "trades": 0,
+            "long": 0,
+            "short": 0,
+            "win_rate": null,
+            "total_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": null,
+            "tp2_hit_rate": null,
+            "avg_hold_hours": null
+          },
+          "stats": {
+            "target_rr_filter": 28,
+            "orders": 0,
+            "fill_rate": null
+          }
+        },
+        "ETHUSDT": {
+          "metrics": {
+            "trades": 0,
+            "long": 0,
+            "short": 0,
+            "win_rate": null,
+            "total_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": null,
+            "tp2_hit_rate": null,
+            "avg_hold_hours": null
+          },
+          "stats": {
+            "target_rr_filter": 35,
+            "orders": 1,
+            "expired": 1,
+            "filled": 0,
+            "fill_rate": 0.0
+          }
+        },
+        "BNBUSDT": {
+          "metrics": {
+            "trades": 0,
+            "long": 0,
+            "short": 0,
+            "win_rate": null,
+            "total_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": null,
+            "tp2_hit_rate": null,
+            "avg_hold_hours": null
+          },
+          "stats": {
+            "target_rr_filter": 27,
+            "orders": 1,
+            "expired": 1,
+            "risk_filter": 1,
+            "filled": 0,
+            "fill_rate": 0.0
+          }
+        },
+        "SOLUSDT": {
+          "metrics": {
+            "trades": 0,
+            "long": 0,
+            "short": 0,
+            "win_rate": null,
+            "total_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": null,
+            "tp2_hit_rate": null,
+            "avg_hold_hours": null
+          },
+          "stats": {
+            "target_rr_filter": 22,
+            "orders": 0,
+            "fill_rate": null
+          }
+        }
+      },
+      "trades": []
+    },
+    "zone_center": {
+      "summary": {
+        "trades": 9,
+        "long": 6,
+        "short": 3,
+        "win_rate": 0.7777777777777778,
+        "total_r": 3.2662820928084306,
+        "avg_r": 0.3629202325342701,
+        "profit_factor": 2.441978407852003,
+        "max_drawdown_r": -1.1575628540005383,
+        "max_losing_streak": 1,
+        "tp1_hit_rate": 0.7777777777777778,
+        "tp2_hit_rate": 0.2222222222222222,
+        "avg_hold_hours": 8.027777777777779
+      },
+      "directions": {
+        "LONG": {
+          "trades": 6,
+          "long": 6,
+          "short": 0,
+          "win_rate": 0.8333333333333334,
+          "total_r": 3.553333755894721,
+          "avg_r": 0.5922222926491202,
+          "profit_factor": 4.069668090691056,
+          "max_drawdown_r": -1.1575628540005383,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.8333333333333334,
+          "tp2_hit_rate": 0.3333333333333333,
+          "avg_hold_hours": 10.416666666666666
+        },
+        "SHORT": {
+          "trades": 3,
+          "long": 0,
+          "short": 3,
+          "win_rate": 0.6666666666666666,
+          "total_r": -0.28705166308629054,
+          "avg_r": -0.09568388769543018,
+          "profit_factor": 0.740829050219908,
+          "max_drawdown_r": -1.1075765371460629,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.6666666666666666,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 3.25
+        }
+      },
+      "symbols": {
+        "BNBUSDT": {
+          "trades": 6,
+          "long": 6,
+          "short": 0,
+          "win_rate": 0.8333333333333334,
+          "total_r": 3.553333755894721,
+          "avg_r": 0.5922222926491202,
+          "profit_factor": 4.069668090691056,
+          "max_drawdown_r": -1.1575628540005383,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.8333333333333334,
+          "tp2_hit_rate": 0.3333333333333333,
+          "avg_hold_hours": 10.416666666666666
+        },
+        "BTCUSDT": {
+          "trades": 1,
+          "long": 0,
+          "short": 1,
+          "win_rate": 0.0,
+          "total_r": -1.1075765371460629,
+          "avg_r": -1.1075765371460629,
+          "profit_factor": 0.0,
+          "max_drawdown_r": -1.1075765371460629,
+          "max_losing_streak": 1,
+          "tp1_hit_rate": 0.0,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 0.75
+        },
+        "ETHUSDT": {
+          "trades": 2,
+          "long": 0,
+          "short": 2,
+          "win_rate": 1.0,
+          "total_r": 0.8205248740597724,
+          "avg_r": 0.4102624370298862,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0,
+          "max_losing_streak": 0,
+          "tp1_hit_rate": 1.0,
+          "tp2_hit_rate": 0.0,
+          "avg_hold_hours": 4.5
+        }
+      },
+      "details": {
+        "BTCUSDT": {
+          "metrics": {
+            "trades": 1,
+            "long": 0,
+            "short": 1,
+            "win_rate": 0.0,
+            "total_r": -1.1075765371460629,
+            "avg_r": -1.1075765371460629,
+            "profit_factor": 0.0,
+            "max_drawdown_r": -1.1075765371460629,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.0,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 0.75
+          },
+          "stats": {
+            "target_rr_filter": 23,
+            "orders": 5,
+            "expired": 4,
+            "filled": 1,
+            "fill_rate": 0.2
+          }
+        },
+        "ETHUSDT": {
+          "metrics": {
+            "trades": 2,
+            "long": 0,
+            "short": 2,
+            "win_rate": 1.0,
+            "total_r": 0.8205248740597724,
+            "avg_r": 0.4102624370298862,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": 1.0,
+            "tp2_hit_rate": 0.0,
+            "avg_hold_hours": 4.5
+          },
+          "stats": {
+            "orders": 7,
+            "expired": 5,
+            "filled": 2,
+            "target_rr_filter": 27,
+            "risk_filter": 2,
+            "fill_rate": 0.2857142857142857
+          }
+        },
+        "BNBUSDT": {
+          "metrics": {
+            "trades": 6,
+            "long": 6,
+            "short": 0,
+            "win_rate": 0.8333333333333334,
+            "total_r": 3.553333755894721,
+            "avg_r": 0.5922222926491202,
+            "profit_factor": 4.069668090691056,
+            "max_drawdown_r": -1.1575628540005383,
+            "max_losing_streak": 1,
+            "tp1_hit_rate": 0.8333333333333334,
+            "tp2_hit_rate": 0.3333333333333333,
+            "avg_hold_hours": 10.416666666666666
+          },
+          "stats": {
+            "target_rr_filter": 13,
+            "orders": 13,
+            "filled": 6,
+            "expired": 7,
+            "risk_filter": 3,
+            "fill_rate": 0.46153846153846156
+          }
+        },
+        "SOLUSDT": {
+          "metrics": {
+            "trades": 0,
+            "long": 0,
+            "short": 0,
+            "win_rate": null,
+            "total_r": 0,
+            "avg_r": null,
+            "profit_factor": null,
+            "max_drawdown_r": 0.0,
+            "max_losing_streak": 0,
+            "tp1_hit_rate": null,
+            "tp2_hit_rate": null,
+            "avg_hold_hours": null
+          },
+          "stats": {
+            "target_rr_filter": 15,
+            "orders": 5,
+            "expired": 5,
+            "risk_filter": 2,
+            "filled": 0,
+            "fill_rate": 0.0
+          }
+        }
+      },
+      "trades": [
+        {
+          "symbol": "BTCUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "SHORT",
+          "signal_t": 1663948800000,
+          "entry_t": 1663971300000,
+          "exit_t": 1663974000000,
+          "signal_close": 18704.4,
+          "order_entry": 19054.225,
+          "fill": 19054.225,
+          "initial_sl": 19267.964111491154,
+          "tp1": 18840.485888508843,
+          "tp2": 18584.9,
+          "risk": 213.7391114911552,
+          "r": -1.1075765371460629,
+          "reason": "STOP",
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "hold_hours": 0.75,
+          "zone_id": 57,
+          "zone_touches": 4,
+          "target_zone_id": 54,
+          "target_r_at_fill": 2.1957843687369234,
+          "risk_atr": 0.4449295097517947
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "SHORT",
+          "signal_t": 1645502400000,
+          "entry_t": 1645532100000,
+          "exit_t": 1645542000000,
+          "signal_close": 2518.6,
+          "order_entry": 2615.016666666667,
+          "fill": 2615.016666666667,
+          "initial_sl": 2656.118523079896,
+          "tp1": 2573.9148102534377,
+          "tp2": 2512.9798808910373,
+          "risk": 41.10185641322914,
+          "r": 0.423952596893653,
+          "reason": "STOP",
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "hold_hours": 2.75,
+          "zone_id": 3,
+          "zone_touches": 6,
+          "target_zone_id": 1,
+          "target_r_at_fill": 2.482534724217172,
+          "risk_atr": 0.436649666230288
+        },
+        {
+          "symbol": "ETHUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "SHORT",
+          "signal_t": 1725033600000,
+          "entry_t": 1725042600000,
+          "exit_t": 1725065100000,
+          "signal_close": 2448.04,
+          "order_entry": 2533.186,
+          "fill": 2533.186,
+          "initial_sl": 2562.491793253249,
+          "tp1": 2503.8802067467514,
+          "tp2": 2445.043155413468,
+          "risk": 29.305793253248794,
+          "r": 0.3965722771661193,
+          "reason": "STOP",
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "hold_hours": 6.25,
+          "zone_id": 86,
+          "zone_touches": 5,
+          "target_zone_id": 85,
+          "target_r_at_fill": 3.007693524104174,
+          "risk_atr": 0.5355853848069534
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "LONG",
+          "signal_t": 1646193600000,
+          "entry_t": 1646227800000,
+          "exit_t": 1646279100000,
+          "signal_close": 413.12,
+          "order_entry": 404.4916666666666,
+          "fill": 404.4916666666666,
+          "initial_sl": 399.4511170898887,
+          "tp1": 409.5322162434445,
+          "tp2": 417.9353129781109,
+          "risk": 5.040549576777892,
+          "r": 0.403402960836608,
+          "reason": "STOP",
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "hold_hours": 14.25,
+          "zone_id": 18,
+          "zone_touches": 6,
+          "target_zone_id": 21,
+          "target_r_at_fill": 2.6670993126186016,
+          "risk_atr": 0.4218700947959033
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "LONG",
+          "signal_t": 1660536000000,
+          "entry_t": 1660550400000,
+          "exit_t": 1660568400000,
+          "signal_close": 323.72,
+          "order_entry": 315.28499999999997,
+          "fill": 315.28499999999997,
+          "initial_sl": 312.3370999446967,
+          "tp1": 318.2329000553032,
+          "tp2": 323.7241384661106,
+          "risk": 2.9479000553032506,
+          "r": 0.3713571142500691,
+          "reason": "STOP",
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "hold_hours": 5.0,
+          "zone_id": 53,
+          "zone_touches": 2,
+          "target_zone_id": 3,
+          "target_r_at_fill": 2.862762749004567,
+          "risk_atr": 0.4654553582739185
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "LONG",
+          "signal_t": 1761566400000,
+          "entry_t": 1761571800000,
+          "exit_t": 1761572700000,
+          "signal_close": 1180.04,
+          "order_entry": 1147.935,
+          "fill": 1147.935,
+          "initial_sl": 1137.77060717028,
+          "tp1": 1158.0993928297198,
+          "tp2": 1168.7114541057529,
+          "risk": 10.164392829719873,
+          "r": 1.0598452539635779,
+          "reason": "BE_AFTER_TP1",
+          "tp1_hit": true,
+          "tp2_hit": false,
+          "hold_hours": 0.25,
+          "zone_id": 105,
+          "zone_touches": 2,
+          "target_zone_id": 104,
+          "target_r_at_fill": 2.0440428123757894,
+          "risk_atr": 0.5208050449384444
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "LONG",
+          "signal_t": 1773158400000,
+          "entry_t": 1773179100000,
+          "exit_t": 1773250200000,
+          "signal_close": 649.27,
+          "order_entry": 639.7990909090909,
+          "fill": 639.7990909090909,
+          "initial_sl": 632.8615416500472,
+          "tp1": 646.7366401681345,
+          "tp2": 654.3958536585366,
+          "risk": 6.937549259043635,
+          "r": 1.4404130952331102,
+          "reason": "TP2",
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "hold_hours": 19.75,
+          "zone_id": 33,
+          "zone_touches": 33,
+          "target_zone_id": 32,
+          "target_r_at_fill": 2.10402293438388,
+          "risk_atr": 0.7388449852929451
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "LONG",
+          "signal_t": 1778457600000,
+          "entry_t": 1778470200000,
+          "exit_t": 1778540400000,
+          "signal_close": 664.13,
+          "order_entry": 650.5511363636364,
+          "fill": 650.5511363636364,
+          "initial_sl": 643.4536285119782,
+          "tp1": 657.6486442152946,
+          "tp2": 665.4104387181849,
+          "risk": 7.097507851658179,
+          "r": 1.4358781856118938,
+          "reason": "TP2",
+          "tp1_hit": true,
+          "tp2_hit": true,
+          "hold_hours": 19.5,
+          "zone_id": 34,
+          "zone_touches": 44,
+          "target_zone_id": 79,
+          "target_r_at_fill": 2.0935943524285006,
+          "risk_atr": 1.0056505881464537
+        },
+        {
+          "symbol": "BNBUSDT",
+          "timeframe": "4H",
+          "variant": "zone_center",
+          "direction": "LONG",
+          "signal_t": 1783440000000,
+          "entry_t": 1783461600000,
+          "exit_t": 1783475100000,
+          "signal_close": 585.07,
+          "order_entry": 577.0278571428572,
+          "fill": 577.0278571428572,
+          "initial_sl": 572.6498795643224,
+          "tp1": 581.405834721392,
+          "tp2": 587.3236124497928,
+          "risk": 4.3779775785347965,
+          "r": -1.157562854000538,
+          "reason": "STOP",
+          "tp1_hit": false,
+          "tp2_hit": false,
+          "hold_hours": 3.75,
+          "zone_id": 72,
+          "zone_touches": 14,
+          "target_zone_id": 37,
+          "target_r_at_fill": 2.3517149465122014,
+          "risk_atr": 0.5846716617532238
+        }
+      ]
+    }
+  }
+}
