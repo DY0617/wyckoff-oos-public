@@ -1,0 +1,41 @@
+name: SR Trend Pullback v3 Core4 5Y
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/sr-trend-pullback-v3-core4.yml"
+      - "scripts/backtest_sr_trend_pullback_v3_core4.py"
+      - "strategy/sr_trend_pullback_v3_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_sr_trend_pullback_v3_core4.py
+      - name: Run v3
+        run: python scripts/backtest_sr_trend_pullback_v3_core4.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sr-trend-pullback-v3-core4
+          path: data/validation/sr_trend_pullback_v3_core4_5y.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+DY0617@users.noreply.github.com"
+          git add data/validation/sr_trend_pullback_v3_core4_5y.json
+          git commit -m "research: add SR Trend Pullback v3 Core4 result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
