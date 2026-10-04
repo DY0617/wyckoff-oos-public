@@ -1,0 +1,41 @@
+name: SR Reclaim v1 Crypto 5Y
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/sr-reclaim-v1-crypto-5y.yml"
+      - "scripts/backtest_sr_reclaim_v1_crypto.py"
+      - "strategy/sr_reclaim_v1_frozen.md"
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: python -m py_compile scripts/backtest_sr_reclaim_v1_crypto.py
+      - name: Run SR Reclaim v1
+        run: python scripts/backtest_sr_reclaim_v1_crypto.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sr-reclaim-v1-crypto-5y
+          path: data/validation/sr_reclaim_v1_crypto_5y.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/validation/sr_reclaim_v1_crypto_5y.json
+          git commit -m "research: add SR Reclaim v1 result [skip ci]" || exit 0
+          git pull --rebase origin main
+          git push
