@@ -1,0 +1,69 @@
+name: Stacker v4 — multi-angle rebuy ablations
+
+on:
+  push:
+    branches: [research/stacker-rotation-v4-ablation]
+    paths:
+      - ".github/workflows/stacker-rotation-v4.yml"
+      - "scripts/stacker_rotation_v4_core.py"
+      - "scripts/backtest_stacker_rotation_v4.py"
+      - "tests/test_stacker_rotation_v4.py"
+      - "strategy/stacker_rotation_v4_frozen.md"
+  workflow_dispatch:
+
+permissions: {contents: read}
+
+concurrency:
+  group: stacker-rotation-v4-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Python syntax
+        run: python -m py_compile scripts/stacker_rotation_v4_core.py scripts/backtest_stacker_rotation_v4.py tests/test_stacker_rotation_v4.py
+      - name: Invariant tests
+        run: python -m unittest discover -s tests -p 'test_stacker_rotation_v4.py' -v
+
+  crypto:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: BTC/ETH 5y 7-arm ablation and stressed fees
+        run: python scripts/backtest_stacker_rotation_v4.py --market crypto --out data/validation/stacker_rotation_v4_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stacker-rotation-v4-crypto
+          path: data/validation/stacker_rotation_v4_crypto.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  stock:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install DuckDB
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: Stock RTH 4.5y 7-arm ablation and stressed fees
+        run: python scripts/backtest_stacker_rotation_v4.py --market stock --out data/validation/stacker_rotation_v4_stock.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stacker-rotation-v4-stock
+          path: data/validation/stacker_rotation_v4_stock.json
+          retention-days: 30
+          if-no-files-found: warn
