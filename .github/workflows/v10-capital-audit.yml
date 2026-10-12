@@ -1,0 +1,50 @@
+name: V10 independent stock capital-feasibility audit
+
+on:
+  push:
+    branches: [research/v10-capital-audit]
+    paths:
+      - ".github/workflows/v10-capital-audit.yml"
+      - "scripts/entry_v10_audited_cash_engine.py"
+      - "scripts/audit_v10_cash_feasibility.py"
+      - "tests/test_v10_cash_audit.py"
+  workflow_dispatch:
+
+permissions: {contents: read}
+
+concurrency:
+  group: v10-capital-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Syntax
+        run: python -m py_compile scripts/entry_v10_audited_cash_engine.py scripts/audit_v10_cash_feasibility.py tests/test_v10_cash_audit.py
+      - name: Cash conservation, old-engine parity, no artificial margin
+        run: python -m unittest discover -s tests -p 'test_v10_cash_audit.py' -v
+
+  stock_audit:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install stock data engine
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: Recheck original vs cash-backed stock positions at both cost levels
+        run: python scripts/audit_v10_cash_feasibility.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: entry-v10-cash-feasibility-audit
+          path: data/validation/entry_v10_cash_feasibility.json
+          retention-days: 30
+          if-no-files-found: warn
