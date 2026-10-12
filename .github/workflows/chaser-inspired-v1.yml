@@ -1,0 +1,73 @@
+name: Chaser-inspired v1 — frozen backtest
+
+on:
+  push:
+    branches: [research/chaser-inspired-v1]
+    paths:
+      - ".github/workflows/chaser-inspired-v1.yml"
+      - "scripts/chaser_v1_core.py"
+      - "scripts/backtest_chaser_v1.py"
+      - "tests/test_chaser_v1.py"
+      - "strategy/chaser_inspired_v1_frozen.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: chaser-v1-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Syntax
+        run: python -m py_compile scripts/chaser_v1_core.py scripts/backtest_chaser_v1.py tests/test_chaser_v1.py
+      - name: Execute invariant tests
+        run: python -m unittest discover -s tests -p 'test_chaser_v1.py' -v
+
+  crypto:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Backtest Binance BTC/ETH 5y, funding and cost stress
+        run: python scripts/backtest_chaser_v1.py --market crypto --out data/validation/chaser_inspired_v1_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chaser-inspired-v1-crypto
+          path: data/validation/chaser_inspired_v1_crypto.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  stock:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install DuckDB
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: Backtest US RTH stock29 ~4.5y plus cost stress
+        run: python scripts/backtest_chaser_v1.py --market stock --out data/validation/chaser_inspired_v1_stock.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: chaser-inspired-v1-stock
+          path: data/validation/chaser_inspired_v1_stock.json
+          if-no-files-found: warn
+          retention-days: 30
