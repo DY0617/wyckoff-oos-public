@@ -1,0 +1,80 @@
+name: ARM v1 Swing — research backtest
+
+on:
+  push:
+    branches: [research/arm-v1-swing]
+    paths:
+      - ".github/workflows/arm-v1-swing.yml"
+      - "scripts/arm_v1_swing_core.py"
+      - "scripts/backtest_arm_v1_swing.py"
+      - "tests/test_arm_v1_swing.py"
+      - "strategy/arm_v1_swing_frozen.md"
+  pull_request:
+    paths:
+      - ".github/workflows/arm-v1-swing.yml"
+      - "scripts/arm_v1_swing_core.py"
+      - "scripts/backtest_arm_v1_swing.py"
+      - "tests/test_arm_v1_swing.py"
+      - "strategy/arm_v1_swing_frozen.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: arm-v1-swing-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Syntax check
+        run: python -m py_compile scripts/arm_v1_swing_core.py scripts/backtest_arm_v1_swing.py tests/test_arm_v1_swing.py
+      - name: Offline invariants
+        run: python -m unittest discover -s tests -p 'test_arm_v1_swing.py' -v
+
+  crypto:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Binance USDT-M BTC/ETH backtest, fees and funding
+        run: python scripts/backtest_arm_v1_swing.py --market crypto --out data/validation/arm_v1_swing_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: arm-v1-swing-crypto
+          path: data/validation/arm_v1_swing_crypto.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  stock:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install DuckDB
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: Run US RTH research-universe backtest
+        run: python scripts/backtest_arm_v1_swing.py --market stock --out data/validation/arm_v1_swing_stock.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: arm-v1-swing-stock
+          path: data/validation/arm_v1_swing_stock.json
+          if-no-files-found: warn
+          retention-days: 30
