@@ -126,7 +126,7 @@ def test_retest_signal(pack,i,watch,mode):
         return None
     return {"side":watch["side"],"sign":sign,"close":b["c"],
             "hour_index":i,"parent_tp_t":watch["tp_time"],
-            "signal_t":b["ct"]}
+            "signal_t":b["ct"],"valid_entry_t":h[i+1]["t"]}
 
 
 def results_metrics(trades,curve,signals,missed):
@@ -204,7 +204,8 @@ def simulate(packs,market,mode,start_ms,end_ms,cost=.0006,funding=None):
                            for k,p in positions.items())
             if eq<=0:continue
             # Retest confirmation is a COMPLETED PREVIOUS 1H candle.
-            is_child=(mode!="control" and sym in pending and t>pending[sym]["signal_t"])
+            is_child=(mode!="control" and sym in pending and
+                      t==pending[sym]["valid_entry_t"])
             if is_child:
                 signal=pending.pop(sym)
                 new=child_entry(sym,b,packs[sym]["hour"][signal["hour_index"]],
@@ -254,6 +255,11 @@ def simulate(packs,market,mode,start_ms,end_ms,cost=.0006,funding=None):
                                     "tp":p["cycle_tp"],"atr":p["atr"],
                                     "tp_time":b["ct"],"bars_remaining":WATCH_HOURS[market]}
             marks[sym]=b["c"];last_close[sym]=b["ct"]
+            # Any pending signal not executed at its one designated next
+            # 1H bar OPEN is cancelled (e.g. concurrency / capital cap).
+            if sym in pending and t>=pending[sym]["valid_entry_t"]:
+                pending.pop(sym,None)
+                missed+=1
             if mode=="control" or sym in positions or sym not in watch or sym in pending:
                 continue
             w=watch[sym]
