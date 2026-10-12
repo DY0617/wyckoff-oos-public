@@ -34,6 +34,16 @@ HF = "https://huggingface.co/datasets/mito0o852/OHLCV-1m/resolve/main/data"
 VISION = "https://data.binance.vision/data/futures/um/monthly"
 
 
+def normalize_exchange_ts(value):
+    """Binance Vision changed some kline timestamps from milliseconds to microseconds."""
+    ts = int(value)
+    while ts >= 100_000_000_000_000:
+        ts //= 1000
+    if ts < 10_000_000_000:
+        ts *= 1000
+    return ts
+
+
 def month_range(start, end):
     y, m = start.year, start.month
     while (y, m) <= (end.year, end.month):
@@ -70,9 +80,7 @@ def collect_crypto(start, end):
             for row in rows:
                 if not row or not row[0].isdigit():
                     continue
-                ts = int(row[0])
-                if ts < 10_000_000_000:
-                    ts *= 1000
+                ts = normalize_exchange_ts(row[0])
                 dt = datetime.fromtimestamp(ts/1000, UTC)
                 if dt < start or dt >= end:
                     continue
@@ -210,9 +218,7 @@ def funding_rows(text):
     result = []
     for row in lines:
         try:
-            ts, rate = int(float(row[ti])), float(row[ri])
-            if ts < 10_000_000_000:
-                ts *= 1000
+            ts, rate = normalize_exchange_ts(row[ti]), float(row[ri])
             result.append((ts, rate))
         except (ValueError, IndexError):
             pass
