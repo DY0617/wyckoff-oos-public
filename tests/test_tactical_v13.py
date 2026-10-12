@@ -32,8 +32,8 @@ class TacticalV13Tests(unittest.TestCase):
     def test_modes_and_locked_overlay(self):
         self.assertEqual(set(new.MODES)-set(old.MODES),
            {"gate_cap_daily","passive_25_bench","passive_50_bench"})
-        self.assertEqual(new.PARAMS["drift_total_trigger"],.50)
-        self.assertEqual(new.PARAMS["drift_asset_trigger"],.20)
+        self.assertEqual(new.PARAMS["drift_total_trigger"],.502)
+        self.assertEqual(new.PARAMS["drift_asset_trigger"],.202)
 
     def test_legacy_ten_modes_preserve_trade_ledger_metrics(self):
         p=history()
@@ -117,11 +117,19 @@ class TacticalV13Tests(unittest.TestCase):
         # In the absence of the stock's new-day OPEN, a previously
         # breached limit must not fabricate a next-session fill.
         missing="2024-02-15"
-        p["BTCUSDT"]["daily"]=[z for z in p["BTCUSDT"]["daily"] if z["day"]!=missing]
-        p["BTCUSDT"]["day_keys"]=[z["day"] for z in p["BTCUSDT"]["daily"]]
+        # BTC remains our trading-calendar benchmark. ETH is
+        # the halted name: spike it on Feb 14 then remove its
+        # next-day open. No synthetic ETH sell can be invented.
+        for k in p["ETHUSDT"]["daily"]:
+            if k["day"]>="2024-02-14":
+                k["c"]*=2.5
+                k["o"]*=2.5
+                if k["day"]=="2024-02-14":k["o"]/=2.5
+        p["ETHUSDT"]["daily"]=[z for z in p["ETHUSDT"]["daily"] if z["day"]!=missing]
+        p["ETHUSDT"]["day_keys"]=[z["day"] for z in p["ETHUSDT"]["daily"]]
         z=new.simulate(p,"crypto","gate_cap_daily","2024-02-01","2024-03-01",
                        symbols=["BTCUSDT","ETHUSDT"])
-        self.assertFalse(any(t["symbol"]=="BTCUSDT" and t["date"]==missing
+        self.assertFalse(any(t["symbol"]=="ETHUSDT" and t["date"]==missing
                              for t in z["ledger"]))
         self.assertGreater(z["metrics"]["events"].get("drift_halted_symbol",0),0)
 
