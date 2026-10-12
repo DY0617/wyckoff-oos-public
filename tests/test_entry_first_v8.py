@@ -54,19 +54,19 @@ class EntryFirstV8Tests(unittest.TestCase):
     def test_choch_must_break_prior_confirmed_pivot_next_open(self):
         bars=[candle(i) for i in range(38)]
         bars[10]["h"]=105
-        bars[17].update(o=100,h=107,l=99,c=106)
-        bars[19].update(o=105.7,h=108,l=104.9,c=107)
+        bars[27].update(o=100,h=107,l=99,c=106)
+        bars[29].update(o=105.7,h=108,l=104.9,c=107)
         cache=v8.precompute_signals({"hour":bars,"h4":[]},"stock")
-        self.assertIn(bars[18]["t"],cache["choch"])
-        self.assertNotIn(bars[17]["t"],cache["choch"])
-        self.assertIn(bars[20]["t"],cache["breakout_retest"])
+        self.assertIn(bars[28]["t"],cache["choch"])
+        self.assertNotIn(bars[27]["t"],cache["choch"])
+        self.assertIn(bars[30]["t"],cache["breakout_retest"])
 
     def test_retest_cannot_be_the_breakout_candle(self):
         bars=[candle(i) for i in range(38)]
         bars[10]["h"]=105
-        bars[17].update(o=100,h=107,l=99,c=106)
+        bars[27].update(o=100,h=107,l=99,c=106)
         cache=v8.precompute_signals({"hour":bars,"h4":[]},"stock")
-        self.assertNotIn(bars[18]["t"],cache["breakout_retest"])
+        self.assertNotIn(bars[28]["t"],cache["breakout_retest"])
 
     def test_entry_has_fixed_two_r_and_risk_cap(self):
         p=entry()
@@ -123,7 +123,8 @@ class EntryFirstV8Tests(unittest.TestCase):
     def test_no_trade_portfolio_is_flat_and_not_nan(self):
         packs={"BTCUSDT":{"hour":[candle(0)],"h4":[]}}
         r=v8.simulate(packs,"crypto","sweep",0,4_000_000,
-                     precomputed={"BTCUSDT":{x:{} for x in v8.MODES}})
+                     precomputed={"BTCUSDT":{x:{} for x in v8.MODES}},
+                     trade_symbols=["BTCUSDT"])
         self.assertEqual(r["metrics"]["trade_count"],0)
         self.assertEqual(r["metrics"]["return_pct"],0)
         self.assertEqual(r["metrics"]["max_mtm_dd_pct"],0)
