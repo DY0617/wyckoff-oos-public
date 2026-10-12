@@ -295,12 +295,13 @@ def evaluate(trades,curve,rejects,candidates):
     }
 
 
-def simulate(packs,market,mode,start_ms,end_ms,cost=.0006,funding=None,trade_symbols=None):
+def simulate(packs,market,mode,start_ms,end_ms,cost=.0006,funding=None,trade_symbols=None,precomputed=None):
     if mode not in MODES:raise ValueError(mode)
     symbols=(sorted(s for s in packs if s!="SPY") if market=="stock" else
              sorted(trade_symbols or ["BTCUSDT","ETHUSDT"]))
     if not all(s in packs for s in symbols):raise ValueError("unavailable universe")
-    sigs={s:precompute_signals(packs[s],market)[mode] for s in symbols}
+    sigs={s:(precomputed[s][mode] if precomputed is not None else
+             precompute_signals(packs[s],market)[mode]) for s in symbols}
     events=defaultdict(list)
     for s in symbols:
         for b in packs[s]["hour"]:
