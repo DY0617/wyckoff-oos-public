@@ -1,0 +1,86 @@
+name: Tactical v13 — causal daily drift cap and passive risk references
+
+on:
+  push:
+    branches: [research/tactical-v13-drift-risk]
+    paths:
+      - ".github/workflows/tactical-v13-drift.yml"
+      - "scripts/tactical_allocation_v13_core.py"
+      - "scripts/backtest_tactical_v13.py"
+      - "tests/test_tactical_v13.py"
+      - "strategy/tactical_v13_frozen.md"
+  workflow_dispatch:
+
+permissions: {contents: read}
+concurrency:
+  group: tactical-v13-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Syntax
+        run: python -m py_compile scripts/tactical_allocation_v13_core.py scripts/backtest_tactical_v13.py tests/test_tactical_v13.py
+      - name: No lookahead, cap gap, exact v12 parity, nonnegative cash, benchmark tests
+        run: python -m unittest discover -s tests -p 'test_tactical_v13.py' -v
+
+  btc_eth_spot:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: BTC / ETH official Binance spot v13
+        run: python scripts/backtest_tactical_v13.py --cohort btc_eth_spot --out data/validation/tactical_v13_btc_eth.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tactical-v13-btc-eth
+          path: data/validation/tactical_v13_btc_eth.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  five_crypto_spot:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Five asset crypto spot v13 drift risk
+        run: python scripts/backtest_tactical_v13.py --cohort five_crypto_spot --out data/validation/tactical_v13_five_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tactical-v13-five-crypto
+          path: data/validation/tactical_v13_five_crypto.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  stocks:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install DuckDB historical source
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: US stock drawdown cap and cash benchmark v13
+        run: python scripts/backtest_tactical_v13.py --cohort stock --out data/validation/tactical_v13_stock.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tactical-v13-stock
+          path: data/validation/tactical_v13_stock.json
+          retention-days: 30
+          if-no-files-found: warn
