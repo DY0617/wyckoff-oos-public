@@ -43,7 +43,9 @@ class TacticalV11Tests(unittest.TestCase):
         self.assertEqual(c1,c2)
 
     def test_monthly_rebalance_at_daily_open_only(self):
-        p=data()
+        # Opposing returns create material target-weight drift (>1% band)
+        # so each month actually requires a rebalance transaction.
+        p=data(reverse_b=True)
         x=m.simulate(p,"crypto","equal_monthly",
                      "2024-09-01","2025-01-01",symbols=["BTCUSDT","ETHUSDT"])
         traded_days=[r["date"] for r in x["ledger"]]
