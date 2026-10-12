@@ -41,6 +41,15 @@ class TestARM(unittest.TestCase):
         self.assertEqual(p["legs"][0]["exit_px"],80)
         self.assertLess(p["r"],-2.)
 
+    def test_pre_entry_gap_is_not_charged_as_post_entry_gap(self):
+        p = position()
+        # The order is triggered above 100 later inside this candle.
+        # Opening at 80 was BEFORE entry, so cannot be the stop exit.
+        self.assertTrue(arm.update_position(p, candle(o=80,h=105,l=78,c=100),1,"crypto",entry_bar=True))
+        self.assertEqual(p["legs"][0]["reason"],"STOP")
+        self.assertEqual(p["legs"][0]["exit_px"],90)
+        self.assertGreater(p["r"],-1.5)
+
     def test_breakeven_activates_only_after_tp1_candle(self):
         p = position()
         self.assertFalse(arm.update_position(p,candle(o=105,h=121,l=95,c=120),1,"crypto"))
