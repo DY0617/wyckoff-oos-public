@@ -236,6 +236,7 @@ def simulate(raw_packs, market, mode, start_ms, end_ms, funding=None):
     positions, marks, entries, trades, curve = {}, {}, [], [], []
     balance = STARTING_EQUITY
     rates = funding or {}
+    rate_times = {s:[time for time, _ in rates.get(s, [])] for s in syms}
     previous_bar_end = {s:start_ms-1 for s in syms}
     for timestamp in sorted(events):
         bars = sorted(events[timestamp],key=lambda x:x[0])
@@ -254,9 +255,11 @@ def simulate(raw_packs, market, mode, start_ms, end_ms, funding=None):
             if px_reason is not None:
                 end_t = min(end_t,b["ct"])
             if market=="crypto":
-                for ft, rate in rates.get(s,[]):
-                    if previous_bar_end[s] < ft <= end_t and ft > p["entry_t"]:
-                        p["funding"] += p["sign"] * p["qty"] * b["c"] * rate
+                rate_rows = rates.get(s, [])
+                t0=bisect_right(rate_times[s],max(previous_bar_end[s],p["entry_t"]))
+                t1=bisect_right(rate_times[s],end_t)
+                for ft, rate in rate_rows[t0:t1]:
+                    p["funding"] += p["sign"] * p["qty"] * b["c"] * rate
             previous_bar_end[s]=b["ct"]
             p["unrealized_trough"]=min(p["unrealized_trough"],
                 p["sign"]*(p["qty"]*b["c"]-p["cost_basis"])-p["fees"]-p["funding"])
@@ -288,6 +291,14 @@ def simulate(raw_packs, market, mode, start_ms, end_ms, funding=None):
                                 planned_tp=p["tp"],risk_budget=p["max_risk_budget"]))
             # ENTRY candle may touch every level; still apply adverse path conservatively.
             closing=apply_bar(p,b,market,is_entry_bar=True)
+            # A funding settlement can occur in the same hour as the first fill.
+            # As intrabar timestamps are unknown, use the post-adverse qty at close.
+            if market=="crypto":
+                rows=rates.get(s, [])
+                i0=bisect_right(rate_times[s],timestamp-1)
+                i1=bisect_right(rate_times[s],b["ct"])
+                for ft, rate in rows[i0:i1]:
+                    p["funding"] += p["sign"] * p["qty"] * b["c"] * rate
             p["unrealized_trough"]=min(p["unrealized_trough"],
                  p["sign"]*(p["qty"]*b["c"]-p["cost_basis"])-p["fees"])
             if closing:
