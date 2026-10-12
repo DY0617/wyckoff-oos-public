@@ -63,7 +63,7 @@ def retrieve_zip(url, optional=False):
 def collect_crypto(start, end):
     result = {s: [] for s in CRYPTO}
     for sym in CRYPTO:
-        for y, m in month_range(start, end):
+        for y, m in month_range(start, end - timedelta(milliseconds=1)):
             url = f"{VISION}/klines/{sym}/1h/{sym}-1h-{y:04d}-{m:02d}.zip"
             rows = csv.reader(io.StringIO(retrieve_zip(url)))
             count = 0
@@ -155,7 +155,7 @@ def collect_stocks(start, end):
              arg_max("close", et), sum(volume)
       FROM rth GROUP BY ticker,d,slot ORDER BY ticker,d,slot
     """
-    for y, m in month_range(start, end):
+    for y, m in month_range(start, end - timedelta(milliseconds=1)):
         uri = f"{HF}/ohlcv_{y:04d}-{m:02d}.parquet"
         last_error = None
         rows = None
