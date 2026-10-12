@@ -11,7 +11,7 @@ MS=3600000
 
 def make_pack():
     hh=[]
-    for i in range(94):
+    for i in range(110):
         t=i*4*MS
         x=dict(t=t,ct=t+4*MS-1,o=100,h=101,l=99,c=100,
                atr14=4,ema20=100,ema50=100,ema200=100,
@@ -20,7 +20,7 @@ def make_pack():
     hh[90].update(o=100,h=107,l=99,c=106,v=80)
     # Future price must not alter earlier signals.
     bars=[]
-    for j in range(94*4):
+    for j in range(110*4):
         b=dict(t=j*MS,ct=(j+1)*MS-1,o=100,h=101,l=99,c=100,
                atr14=2,ema20=100,day="2025-01-02",v=10)
         bars.append(b)
