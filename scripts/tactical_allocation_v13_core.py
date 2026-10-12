@@ -38,8 +38,8 @@ PARAMS={
     "gate_cap_single_asset":0.20,
     "crashguard_trailing_daily":30,
     "crashguard_drawdown":0.15,
-    "drift_total_trigger":0.50,
-    "drift_asset_trigger":0.20,
+    "drift_total_trigger":0.502,
+    "drift_asset_trigger":0.202,
     "drift_total_post_open_target":0.48,
     "drift_asset_post_open_target":0.19,
 }
@@ -195,8 +195,10 @@ def simulate(packs,market,mode,start_day,end_day,symbols=None,
         at_open_equity=cash+sum(qty[s]*px for s,px in current_open_marks.items())
         month=day[:7]
         # OUTSIDE monthly rebalance, a completed prior-day position
-        # weight >50% gross or >20% single-name triggers a NEXT OPEN
+        # weight >50.2% gross or >20.2% single-name triggers a NEXT OPEN
         # defensive sale, not a fictional previous-close execution.
+        # Small 0.2 percentage-point execution/fee tolerance prevents
+        # next-day micro-sells triggered solely by yesterday's buy fees.
         # Sell towards 48% and 19% buffers; gap and intraday
         # overshoots remain possible and are measured explicitly.
         if mode=="gate_cap_daily" and last_month is not None and month==last_month and qty:
