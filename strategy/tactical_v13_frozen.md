@@ -34,8 +34,8 @@ no incremental outside cash deposits.
 3. `gate_cap_daily` — EXACT same `gate_cap` monthly
    selection/weights. On EVERY other reference trading-day,
    inspect holdings' **last FULLY CLOSED daily mark**;
-   if last day gross risky exposure is >50%, OR ANY
-   single asset is >20%, SELL at NEXT day's actual
+   if last day gross risky exposure is >50.2%, OR ANY
+   single asset is >20.2%, SELL at NEXT day's actual
    opening price to targets <=48% total and <=19%
    each symbol. No unearned fill at the prior CLOSE.
    Any untradable name cannot be sold until an
@@ -55,7 +55,11 @@ no incremental outside cash deposits.
    is near v12 stock gate mean exposure, but exact
    time-variation and correlation differ.
 
-No optimization of 50/20/48/19 numbers once results
+The 0.2 percentage-point monitoring tolerance was added
+BEFORE V13 market backtests, after a synthetic unit test
+revealed a fee-only microbreach could cause pointless
+next-day churn. It is NOT market-tuned.
+No optimization of 50.2/20.2/48/19 numbers once results
 are inspected. These are operationally meaningful
 human-readable control thresholds; NOT guaranteed
 optimal statistical parameters.
@@ -66,7 +70,8 @@ optimal statistical parameters.
   completed DAY only; buys and sells use that
   month's NEXT available actual daily open.
 - On non-monthly trade dates in arm 3, if YESTERDAY's
-  holdings exceed caps by last completed CLOSE, compute
+  holdings exceed monitoring tolerance (50.2% aggregate
+  or 20.2% per name) by last completed CLOSE, compute
   CURRENT OPEN pre-sale equity and sell down
   to 48%/19% buffers by **current OPEN quotation**.
   If there are no valid OPEN prints, log inability to sell
