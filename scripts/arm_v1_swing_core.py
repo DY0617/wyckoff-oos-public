@@ -176,11 +176,14 @@ def record_leg(pos, fraction, price, time_ms, reason):
     pos["legs"].append(dict(fraction=fraction, exit_px=price, exit_t=time_ms, reason=reason))
 
 
-def update_position(pos, bar, i, market):
+def update_position(pos, bar, i, market, entry_bar=False):
     sign = pos["sign"]
     stop = pos["active_stop"]
-    # GAP: if the stop was passed at the open, fill at actual open, not planned stop.
-    if sign * (bar["o"] - stop) <= 0:
+    # On entry candle, the bar open PRECEDES the stop order fill.
+    # It is not a valid post-entry stop fill. Intrabar adverse-first
+    # assumes stop-touch after entry if both levels lie in the OHLC.
+    # For already-open positions a genuine overnight gap uses open fill.
+    if not entry_bar and sign * (bar["o"] - stop) <= 0:
         record_leg(pos, pos["remaining"], bar["o"], bar["ct"], "GAP_STOP")
     elif (bar["l"] <= stop if sign > 0 else bar["h"] >= stop):
         record_leg(pos, pos["remaining"], stop, bar["ct"], "STOP")
@@ -235,7 +238,7 @@ def run_symbol(sym, pack, benchmark, market, stock_ranks=None):
                                        risk=risk, tp1=entry+pending["sign"]*2*risk,
                                        tp2=entry+pending["sign"]*3.5*risk,
                                        stage=0, remaining=1.0, r=-COST*entry/risk, legs=[])
-                            if update_position(pos, bar, i, market):
+                            if update_position(pos, bar, i, market, entry_bar=True):
                                 pos["exit_t"] = bar["ct"]
                                 trades.append(pos)
                                 pos = None
