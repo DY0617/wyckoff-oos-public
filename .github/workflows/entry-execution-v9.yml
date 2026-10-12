@@ -1,0 +1,86 @@
+name: Entry execution v9 — resting limits vs market sweep
+
+on:
+  push:
+    branches: [research/entry-execution-v9]
+    paths:
+      - ".github/workflows/entry-execution-v9.yml"
+      - "scripts/entry_execution_v9_core.py"
+      - "scripts/backtest_entry_execution_v9.py"
+      - "tests/test_entry_execution_v9.py"
+      - "strategy/entry_execution_v9_frozen.md"
+  workflow_dispatch:
+
+permissions: {contents: read}
+concurrency:
+  group: entry-execution-v9-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Compile
+        run: python -m py_compile scripts/entry_execution_v9_core.py scripts/backtest_entry_execution_v9.py tests/test_entry_execution_v9.py
+      - name: Limit, gap, stop-first, market-parity tests
+        run: python -m unittest discover -s tests -p 'test_entry_execution_v9.py' -v
+
+  known_crypto:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: BTC ETH 8-way market-vs-limit fills
+        run: python scripts/backtest_entry_execution_v9.py --cohort known_crypto --out data/validation/entry_execution_v9_known_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: entry-execution-v9-known-crypto
+          path: data/validation/entry_execution_v9_known_crypto.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  new_crypto:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: BNB SOL XRP 8-way market-vs-limit fills
+        run: python scripts/backtest_entry_execution_v9.py --cohort new_crypto --out data/validation/entry_execution_v9_new_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: entry-execution-v9-new-crypto
+          path: data/validation/entry_execution_v9_new_crypto.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  stocks:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install DuckDB
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: US RTH 8-way market-vs-limit fills
+        run: python scripts/backtest_entry_execution_v9.py --cohort stock --out data/validation/entry_execution_v9_stock.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: entry-execution-v9-stocks
+          path: data/validation/entry_execution_v9_stock.json
+          if-no-files-found: warn
+          retention-days: 30
