@@ -132,8 +132,8 @@ class EntryFirstV8Tests(unittest.TestCase):
     def test_disjoint_mode_records(self):
         h=[candle(i) for i in range(38)]
         h[10]["h"]=105
-        h[17].update(o=100,h=107,l=99,c=106)
-        h[19].update(o=105,h=108,l=104.9,c=107)
+        h[27].update(o=100,h=107,l=99,c=106)
+        h[29].update(o=105,h=108,l=104.9,c=107)
         cache=v8.precompute_signals({"hour":h,"h4":[]},"stock")
         self.assertFalse(cache["sweep"])
         self.assertFalse(cache["sweep_choch"])
