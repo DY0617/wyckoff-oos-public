@@ -335,27 +335,49 @@ def simulate(raw_packs, market, mode, start_ms, end_ms, funding=None):
     previous_bar_end = {s:start_ms-1 for s in syms}
     for timestamp in sorted(events):
         bars = sorted(events[timestamp],key=lambda x:x[0])
-        # Close previous holdings first, then admit NEW cycles.
-        # Account for hourly settlements using the most recent observed mark.
-        for s, b in bars:
-            marks[s]=b["c"]
-            if s not in positions:
+        # All entries are admitted at the OPEN from previously known marks.
+        # Do not use the current hour's close, high, low, or exits to size
+        # or admit entries at its open (prevents lookahead across symbols).
+        new_entries=set()
+        for s,b in bars:
+            if s in positions or timestamp not in signals.get(s,{}):
+                continue
+            if len(positions)>=PARAMS["max_open_cycles"] or balance<=0:
+                continue
+            floating=sum(p["sign"]*(p["qty"]*marks.get(k,p["avg"])-p["cost_basis"])
+                         -p["fees"]-p["funding"] for k,p in positions.items())
+            equity=balance+floating
+            if equity<=0:
+                continue
+            x=signals[s][timestamp]
+            p=entry_cycle(s,market,x["side"],b["o"],x["atr"],timestamp,equity,mode,
+                          structure=x.get("structure"))
+            if p is None:
+                continue
+            positions[s]=p
+            new_entries.add(s)
+            entries.append(dict(symbol=s,side=x["side"],entry_t=timestamp,
+                                signal_t=x["signal_t"],entry=b["o"],stop=p["stop"],
+                                planned_tp=p["tp"],risk_budget=p["max_risk_budget"],
+                                stop_source=p["stop_source"],tp_source=p["tp_source"]))
+        # AFTER ALL OPEN ORDERS: resolve intrabar fills and closing marks.
+        for s,b in bars:
+            p=positions.get(s)
+            if p is None:
+                marks[s]=b["c"]
                 previous_bar_end[s]=b["ct"]
                 continue
-            p=positions[s]
-            px_reason=apply_bar(p,b,market)
-            # Charge funding only while this instrument's position was held.
-            # Binance futures funding timestamps are within the bar interval.
-            end_t = b["ct"]
-            if px_reason is not None:
-                end_t = min(end_t,b["ct"])
+            is_entry=(s in new_entries)
+            px_reason=apply_bar(p,b,market,is_entry_bar=is_entry)
+            # Charge funding rates in the current candle; proxy quantity after
+            # adverse-first fills. This approximation is reported explicitly.
             if market=="crypto":
-                rate_rows = rates.get(s, [])
-                t0=bisect_right(rate_times[s],max(previous_bar_end[s],p["entry_t"]))
-                t1=bisect_right(rate_times[s],end_t)
-                for ft, rate in rate_rows[t0:t1]:
-                    p["funding"] += p["sign"] * p["qty"] * b["c"] * rate
-            previous_bar_end[s]=b["ct"]
+                rate_rows=rates.get(s,[])
+                after=(timestamp-1 if is_entry else max(previous_bar_end[s],p["entry_t"]))
+                t0=bisect_right(rate_times[s],after)
+                t1=bisect_right(rate_times[s],b["ct"])
+                for ft,rate in rate_rows[t0:t1]:
+                    p["funding"]+=p["sign"]*p["qty"]*b["c"]*rate
             p["unrealized_trough"]=min(p["unrealized_trough"],
                 p["sign"]*(p["qty"]*b["c"]-p["cost_basis"])-p["fees"]-p["funding"])
             if px_reason is not None:
@@ -364,48 +386,11 @@ def simulate(raw_packs, market, mode, start_ms, end_ms, funding=None):
                 balance+=completed["pnl"]
                 trades.append(completed)
                 del positions[s]
-        # Admit entries if account constraints pass and no current position.
-        # Mark-to-market risk sizing uses current portfolio equity.
-        for s,b in bars:
-            if s in positions or s not in signals or timestamp not in signals[s]:
-                continue
-            if len(positions) >= PARAMS["max_open_cycles"] or balance <= 0:
-                continue
-            floating = sum(p["sign"]*(p["qty"]*marks.get(k,p["avg"])-p["cost_basis"])
-                           -p["fees"]-p["funding"] for k,p in positions.items())
-            equity = balance + floating
-            if equity <= 0:
-                continue
-            x=signals[s][timestamp]
-            p=entry_cycle(s,market,x["side"],b["o"],x["atr"],timestamp,equity,mode,
-                          structure=x.get("structure"))
-            if not p:
-                continue
-            positions[s]=p
-            entries.append(dict(symbol=s,side=x["side"],entry_t=timestamp,
-                                signal_t=x["signal_t"],entry=b["o"],stop=p["stop"],
-                                planned_tp=p["tp"],risk_budget=p["max_risk_budget"]))
-            # ENTRY candle may touch every level; still apply adverse path conservatively.
-            closing=apply_bar(p,b,market,is_entry_bar=True)
-            # A funding settlement can occur in the same hour as the first fill.
-            # As intrabar timestamps are unknown, use the post-adverse qty at close.
-            if market=="crypto":
-                rows=rates.get(s, [])
-                i0=bisect_right(rate_times[s],timestamp-1)
-                i1=bisect_right(rate_times[s],b["ct"])
-                for ft, rate in rows[i0:i1]:
-                    p["funding"] += p["sign"] * p["qty"] * b["c"] * rate
-            p["unrealized_trough"]=min(p["unrealized_trough"],
-                 p["sign"]*(p["qty"]*b["c"]-p["cost_basis"])-p["fees"])
-            if closing:
-                px,reason=closing
-                completed=close_cycle(p,px,b["ct"],reason)
-                balance+=completed["pnl"]
-                trades.append(completed)
-                del positions[s]
-        float_pnl = sum(p["sign"]*(p["qty"]*marks.get(s,p["avg"])-p["cost_basis"])
-                        -p["fees"]-p["funding"] for s,p in positions.items())
-        curve.append(dict(t=max(b["ct"] for _,b in bars), equity=balance+float_pnl,
+            marks[s]=b["c"]
+            previous_bar_end[s]=b["ct"]
+        float_pnl=sum(p["sign"]*(p["qty"]*marks.get(s,p["avg"])-p["cost_basis"])
+                       -p["fees"]-p["funding"] for s,p in positions.items())
+        curve.append(dict(t=max(b["ct"] for _,b in bars),equity=balance+float_pnl,
                           realized_equity=balance,open_cycles=len(positions),
                           floating_pnl=float_pnl))
     # Explicitly liquidate all remaining positions at observed final completed bar.
