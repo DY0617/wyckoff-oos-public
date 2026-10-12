@@ -1,0 +1,86 @@
+name: V11 — strategic dual-momentum and cash-funded asset allocation
+
+on:
+  push:
+    branches: [research/tactical-allocation-v11]
+    paths:
+      - ".github/workflows/tactical-allocation-v11.yml"
+      - "scripts/tactical_allocation_v11_core.py"
+      - "scripts/backtest_tactical_allocation_v11.py"
+      - "tests/test_tactical_allocation_v11.py"
+      - "strategy/tactical_allocation_v11_frozen.md"
+  workflow_dispatch:
+
+permissions: {contents: read}
+concurrency:
+  group: tactical-allocation-v11-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Compile
+        run: python -m py_compile scripts/tactical_allocation_v11_core.py scripts/backtest_tactical_allocation_v11.py tests/test_tactical_allocation_v11.py
+      - name: Cash conservation, no future data, monthly next-open entry
+        run: python -m unittest discover -s tests -p 'test_tactical_allocation_v11.py' -v
+
+  btc_eth:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Run 7 portfolio modes on BTC/ETH historical futures PRICE proxy
+        run: python scripts/backtest_tactical_allocation_v11.py --cohort btc_eth --out data/validation/tactical_allocation_v11_btc_eth.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tactical-allocation-v11-btc-eth
+          path: data/validation/tactical_allocation_v11_btc_eth.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  five_crypto:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Run all five crypto names with 7 portfolio modes
+        run: python scripts/backtest_tactical_allocation_v11.py --cohort five_crypto --out data/validation/tactical_allocation_v11_five_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tactical-allocation-v11-five-crypto
+          path: data/validation/tactical_allocation_v11_five_crypto.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  stocks:
+    needs: unit
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install DuckDB
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: Run selected 29 US stocks vs SPY benchmark with cash only
+        run: python scripts/backtest_tactical_allocation_v11.py --cohort stock --out data/validation/tactical_allocation_v11_stock.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tactical-allocation-v11-stock
+          path: data/validation/tactical_allocation_v11_stock.json
+          retention-days: 30
+          if-no-files-found: warn
