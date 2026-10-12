@@ -25,7 +25,7 @@ def make_pack():
                atr14=2,ema20=100,day="2025-01-02",v=10)
         bars.append(b)
     bars[90*4+3].update(o=103,h=107,l=102,c=106)
-    bars[91*4].update(o=106,h=108,l=105,c=107)
+    bars[91*4].update(o=105,h=108,l=104,c=107)
     daily=[
       dict(day="2025-01-01",c=115,ema200=100,ema50=110,ret20=.10),
       dict(day="2025-01-02",c=80,ema200=100,ema50=80,ret20=-.20)
