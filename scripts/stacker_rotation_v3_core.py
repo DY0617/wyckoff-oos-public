@@ -182,7 +182,8 @@ def process_bar(p,b,market,mode,fee,pack,entry_bar=False):
         added=False
     if sign*(adverse-oldstop)<=0:
         return finish(p,oldstop,b["ct"],"STOP",fee)
-    if p["cycle_phase"]=="LADDER" and not added and sign*(favorable-p["cycle_tp"])>=0:
+    if (p["cycle_phase"]=="LADDER" and p["rotation_count"]==0 and
+            not added and sign*(favorable-p["cycle_tp"])>=0):
         if mode=="static":
             return finish(p,p["cycle_tp"],b["ct"],"TP_FULL",fee)
         # Realise 50%, keep rest as core, prepare a rebuy at a known level.
