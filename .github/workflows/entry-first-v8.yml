@@ -1,0 +1,87 @@
+name: Entry First v8 — price-action signal and MAE/MFE study
+
+on:
+  push:
+    branches: [research/entry-first-v8]
+    paths:
+      - ".github/workflows/entry-first-v8.yml"
+      - "scripts/entry_first_v8_core.py"
+      - "scripts/backtest_entry_first_v8.py"
+      - "tests/test_entry_first_v8.py"
+      - "strategy/entry_first_v8_frozen.md"
+  workflow_dispatch:
+
+permissions: {contents: read}
+
+concurrency:
+  group: entry-first-v8-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Compile
+        run: python -m py_compile scripts/entry_first_v8_core.py scripts/backtest_entry_first_v8.py tests/test_entry_first_v8.py
+      - name: Causal pivot, pattern and execution tests
+        run: python -m unittest discover -s tests -p 'test_entry_first_v8.py' -v
+
+  known_crypto:
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: BTC/ETH 5-year 5-pattern MAE/MFE evaluation
+        run: python scripts/backtest_entry_first_v8.py --cohort known_crypto --out data/validation/entry_first_v8_known_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: entry-first-v8-known-crypto
+          path: data/validation/entry_first_v8_known_crypto.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  new_crypto:
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: BNB/SOL/XRP futures structural signal test
+        run: python scripts/backtest_entry_first_v8.py --cohort new_crypto --out data/validation/entry_first_v8_new_crypto.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: entry-first-v8-new-crypto
+          path: data/validation/entry_first_v8_new_crypto.json
+          retention-days: 30
+          if-no-files-found: warn
+
+  stocks:
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: DuckDB remote RTH
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: Selected RTH US stock patterns, cost stress and MAE
+        run: python scripts/backtest_entry_first_v8.py --cohort stock --out data/validation/entry_first_v8_stock.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: entry-first-v8-stocks
+          path: data/validation/entry_first_v8_stock.json
+          retention-days: 30
+          if-no-files-found: warn
