@@ -1,0 +1,11 @@
+{
+  "hours": 59160,
+  "ohlc_discrepancies": [],
+  "volume_discrepancies": [
+    1657944000000
+  ],
+  "zero_volume_hours": [
+    1730145600000
+  ],
+  "strategy_performance_computed": false
+}

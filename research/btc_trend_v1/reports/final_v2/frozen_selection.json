@@ -1,0 +1,91 @@
+{
+  "controls": [
+    {
+      "config": {
+        "daily_rule": "vol_trend",
+        "id": "daily_vol_trend",
+        "kind": "daily"
+      },
+      "label": "daily_vol_trend",
+      "scale": 0.13679745802815835
+    },
+    {
+      "config": {
+        "adx": 20,
+        "id": "D_trail",
+        "initial_atr": 2,
+        "kind": "D",
+        "lookback": 20,
+        "mode": "trail",
+        "structure_window": 5,
+        "trail_atr": 3
+      },
+      "label": "D_trail",
+      "scale": 0.8131544856547304
+    },
+    {
+      "config": {
+        "adx": 20,
+        "id": "C_simple_trail",
+        "initial_atr": 2,
+        "kind": "C_simple",
+        "lookback": 20,
+        "mode": "trail",
+        "structure_window": 5,
+        "trail_atr": 3
+      },
+      "label": "winner_native_risk",
+      "scale": 1.0
+    },
+    {
+      "config": {
+        "adx": 20,
+        "id": "D_fixed3",
+        "initial_atr": 2,
+        "kind": "D",
+        "lookback": 20,
+        "mode": "fixed3",
+        "structure_window": 5,
+        "trail_atr": 3
+      },
+      "label": "runner_up_common_risk",
+      "scale": 0.6624923474185875
+    },
+    {
+      "config": {
+        "adx": 20,
+        "id": "D_fixed3",
+        "initial_atr": 2,
+        "kind": "D",
+        "lookback": 20,
+        "mode": "fixed3",
+        "structure_window": 5,
+        "trail_atr": 3
+      },
+      "label": "runner_up_native_risk",
+      "scale": 1.0
+    }
+  ],
+  "created_utc": "2026-10-13T06:46:01.408369+00:00",
+  "declared_native_risk_fraction": 0.005,
+  "engine_sha256": "54244f29811d3f6b71858be69195a20f2e3701284ed9d607cbe9556d29da38da",
+  "primary_common_train_vol_target_pct": 2,
+  "ranking_uses_candidate_holdout": false,
+  "selection_spec_sha256": "98f2d19d827d3fa3f76d1be79b95b371f432bc56b64dc2fbfa8717ac624a2f5d",
+  "winner": {
+    "config": {
+      "adx": 20,
+      "id": "C_simple_trail",
+      "initial_atr": 2,
+      "kind": "C_simple",
+      "lookback": 20,
+      "mode": "trail",
+      "structure_window": 5,
+      "trail_atr": 3
+    },
+    "label": "C_simple_trail",
+    "scale": 0.6028463670717366
+  },
+  "winner_neighbor_fraction": 0.8333333333333334,
+  "winner_score": 0.7250467151622771
+}
