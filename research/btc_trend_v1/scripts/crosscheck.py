@@ -31,7 +31,7 @@ def main():
     result['funding_schema_samples']=funding[:3]
     if funding:
         ts=[int(r[0]) for r in funding]
-        result['funding']={'rows':len(ts),'duplicates':len(ts)-len(set(ts)),'nonincreasing':sum(b<=a for a,b in zip(ts,ts[1:])), 'interval_counts':dict(__import__('collections').Counter((b-a)//1000 for a,b in zip(ts,ts[1:])))}
+        result['funding']={'rows':len(ts),'duplicates':len(ts)-len(set(ts)),'nonincreasing':sum(b<=a for a,b in zip(ts,ts[1:])), 'nominal_missing_or_duplicate_slots':sum(b//28800000-a//28800000!=1 for a,b in zip(ts,ts[1:])), 'settlement_offset_ms_min':min(t%28800000 for t in ts),'settlement_offset_ms_max':max(t%28800000 for t in ts),'declared_intervals_all_8h':all(float(r[1])==8 for r in funding),'finite_rates':all(math.isfinite(float(r[2])) for r in funding)}
     (ROOT/'reports/crosscheck.json').write_text(json.dumps(result,indent=2))
     print(json.dumps(result,indent=2))
 if __name__=='__main__':main()
