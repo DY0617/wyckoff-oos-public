@@ -1,0 +1,129 @@
+{
+  "not_used_for_reselection": true,
+  "results": [
+    {
+      "return_pct": 23.817138539260263,
+      "cagr_pct": 3.2139331676544813,
+      "mdd_pct": -4.288374582154408,
+      "intrabar_low_mdd_pct": -4.398694461679298,
+      "sharpe": 0.9927496338115559,
+      "realized_vol_pct": 3.239253798483086,
+      "episodes": 87,
+      "win_rate": 0.41379310344827586,
+      "profit_factor": 1.797032659831074,
+      "avg_episode_pnl": 27.37602130949456,
+      "final_equity": 12381.713853926027,
+      "annual": {
+        "2020": {
+          "return_pct": 8.492083568831932,
+          "days": 366
+        },
+        "2021": {
+          "return_pct": -0.5639458683607046,
+          "days": 365
+        },
+        "2022": {
+          "return_pct": 0.0,
+          "days": 365
+        },
+        "2023": {
+          "return_pct": 7.097813933959141,
+          "days": 365
+        },
+        "2024": {
+          "return_pct": 4.064604879364553,
+          "days": 366
+        },
+        "2025": {
+          "return_pct": 2.5915346848317755,
+          "days": 365
+        },
+        "2026": {
+          "return_pct": 0.37918352569779046,
+          "days": 273
+        }
+      },
+      "model_id": "D_fixed3",
+      "config": {
+        "adx": 20,
+        "id": "D_fixed3",
+        "initial_atr": 2,
+        "kind": "D",
+        "lookback": 20,
+        "mode": "fixed3",
+        "structure_window": 5,
+        "trail_atr": 3
+      },
+      "scale": 1.0,
+      "risk_fraction": 0.005,
+      "expectancy_net_r": 0.5002563787525475,
+      "total_net_r": 43.52230495147163,
+      "profit_factor_r": 1.827535472989985,
+      "fees_paid": 157.95189414553693,
+      "slippage_cost": 63.180876650562844,
+      "net_funding_paid": 371.9620774973719,
+      "invalid_stop_rejections": 0,
+      "fee_bps": 5,
+      "slip_bps": 2,
+      "candidate_holdout_evaluated": true,
+      "label": "runner_up_native_risk"
+    },
+    {
+      "return_pct": 13.623820581061397,
+      "cagr_pct": 1.909229948722868,
+      "mdd_pct": -2.891935928091438,
+      "intrabar_low_mdd_pct": -2.9124744697369254,
+      "sharpe": 0.9079604103849485,
+      "realized_vol_pct": 2.107433732309804,
+      "episodes": 34,
+      "win_rate": 0.29411764705882354,
+      "profit_factor": 3.3837072262479353,
+      "avg_episode_pnl": 40.0700605325335,
+      "final_equity": 11362.382058106139,
+      "annual": {
+        "2020": {
+          "return_pct": 4.952591828975494,
+          "days": 366
+        },
+        "2021": {
+          "return_pct": -0.5561155630015358,
+          "days": 365
+        },
+        "2022": {
+          "return_pct": 0.0,
+          "days": 365
+        },
+        "2023": {
+          "return_pct": 3.2059456412658838,
+          "days": 365
+        },
+        "2024": {
+          "return_pct": 4.199931282727576,
+          "days": 366
+        },
+        "2025": {
+          "return_pct": 0.7742150092589162,
+          "days": 365
+        },
+        "2026": {
+          "return_pct": 0.456158412533636,
+          "days": 273
+        }
+      },
+      "market": "um",
+      "strategy": "vol_trend",
+      "start": "2020-01-01T00:00:00+00:00",
+      "end_exclusive": "2026-10-01T00:00:00+00:00",
+      "fee_bps": 5,
+      "slip_bps": 2,
+      "funding_boundary_convention": "before",
+      "net_funding_paid": 341.4809551556473,
+      "fees_paid": 28.450565079585623,
+      "slippage_cost": 11.380295779589215,
+      "mean_target_weight": 0.029479937361824343,
+      "exposure_scale": 0.13679745802815835,
+      "mdd_sampling": "4H mark close",
+      "label": "daily_vol_trend"
+    }
+  ]
+}

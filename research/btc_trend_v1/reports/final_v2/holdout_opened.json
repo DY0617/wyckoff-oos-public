@@ -1,0 +1,29 @@
+{
+  "opened_utc": "2026-10-13T06:47:34.251185+00:00",
+  "frozen_registry_sha256": "c2bfdb32d09f4e644e30086e57d82df31f3647632daee60c2c760b8c15de8bed",
+  "data_sha256": {
+    "spot_1d.json": "6bb7258021562a43585a88456486a81e74e5f48d5189416c43e4aa193dbdbbb8",
+    "um_1d.json": "1bdcf460ab16ac4cd4c48764925d5be80e30b723cb7535ff8c4bf46eea903528",
+    "um_4h_canonical.json": "16a1b58dbffee597750b93e1b4b54a5eaef2a73b8c6389742f689696d35b1035",
+    "um_mark4h.json": "0b7c49bee9d56f2457f84a44d60f3e1e35f3608a2e28c9bbf1327a677e54f25d",
+    "um_funding.json": "6c5d5193019079c25aa4db694bc32904ce68dc8ed6865c5ef3146cb74f013665",
+    "um_1h_train_validation.json": "d1d698377cde591a6c52e6c297f8a4b3c2e1cf2e2cf72df731efb16e5fef117d",
+    "um_1h_holdout.json": "2f885ad15199a786aac22b16f88bf0af0a0987dea62a7e2d6796ffe324a27382"
+  },
+  "winner_fixed_before_opening": {
+    "config": {
+      "adx": 20,
+      "id": "C_simple_trail",
+      "initial_atr": 2,
+      "kind": "C_simple",
+      "lookback": 20,
+      "mode": "trail",
+      "structure_window": 5,
+      "trail_atr": 3
+    },
+    "label": "C_simple_trail",
+    "scale": 0.6028463670717366
+  },
+  "kind": "retrospective holdout, not provably untouched across earlier projects",
+  "no_reselection_after_opening": true
+}

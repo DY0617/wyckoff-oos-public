@@ -31,6 +31,12 @@ jobs:
           python scripts/entry_robustness.py
           python scripts/compare_entry_risk.py
           python scripts/test_causal_engine.py
+      - name: Reproduce sealed v2 results (replay, not new OOS)
+        working-directory: research/btc_trend_v1
+        run: |
+          python scripts/collect_holdout_1h.py
+          python scripts/test_selection_v2.py
+          python scripts/open_final_holdout_v2.py --replay
       - name: Upload research reports
         uses: actions/upload-artifact@v4
         with:

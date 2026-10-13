@@ -1,0 +1,14 @@
+{
+  "D_trail": "PASS",
+  "D_fixed2": "PASS",
+  "D_fixed3": "PASS",
+  "D_structure": "PASS",
+  "D_split": "PASS",
+  "D_regime": "PASS",
+  "C_simple_trail": "PASS",
+  "C_simple_fixed2": "PASS",
+  "C_simple_fixed3": "PASS",
+  "C_simple_structure": "PASS",
+  "C_simple_split": "PASS",
+  "C_simple_regime": "PASS"
+}

@@ -1,0 +1,23 @@
+{
+  "descriptive_not_multiplicity_adjusted": true,
+  "results": {
+    "winner_native_risk": {
+      "trades": 40,
+      "mean_net_R": 0.016624261810116097,
+      "block5_CI95_mean_R": [
+        -0.3470073522992194,
+        0.38171944005301534
+      ],
+      "selection_winner": true
+    },
+    "runner_up_native_risk": {
+      "trades": 20,
+      "mean_net_R": 0.3018967549068424,
+      "block5_CI95_mean_R": [
+        -0.08225007510882386,
+        0.6901083608025191
+      ],
+      "selection_winner": false
+    }
+  }
+}

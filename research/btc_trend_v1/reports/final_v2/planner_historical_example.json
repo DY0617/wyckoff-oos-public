@@ -1,0 +1,25 @@
+{
+  "not_current_trade_advice": true,
+  "historical_entry_utc": "2020-02-06T16:00:00+00:00",
+  "plan": {
+    "action": "RESEARCH_PLAN_ONLY",
+    "strategy": "D_fixed3",
+    "signal_available_ms": 1581004800000,
+    "daily_available_ms": 1580947200000,
+    "entry_reference": 9800.13,
+    "assumed_entry_fill": 9802.090026,
+    "initial_sl_reference": 9531.90563301948,
+    "tp_reference": 10612.64320494156,
+    "qty_continuous_btc": 0.17745799453060193,
+    "notional_at_assumed_fill": 1739.4592382223757,
+    "planned_loss_including_stop_fill_cost": 50.0,
+    "risk_fraction_used": 0.005,
+    "exit_rules": [
+      "initial stop",
+      "fixed 3R target",
+      "closed daily regime invalidation"
+    ],
+    "live_orders_enabled": false,
+    "qualification": "pre-frozen runner-up/control; requires new forward validation before promotion"
+  }
+}
