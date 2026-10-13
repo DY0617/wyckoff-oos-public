@@ -1,0 +1,189 @@
+{
+  "method": "circular moving-block bootstrap of chronological trade net R, fixed seed 20261013, 3000 replicates per block length. Three block lengths reported without selection. No multiplicity adjustment across entry candidates. May understate regime and model uncertainty.",
+  "results": {
+    "A_train": {
+      "trades": 55,
+      "expectancy_R": -0.02993575213103076,
+      "block_mean_R_CI95": {
+        "3": [
+          -0.3897489056190599,
+          0.37616685985944104
+        ],
+        "5": [
+          -0.44751236881495826,
+          0.4628588437057778
+        ],
+        "10": [
+          -0.5001874485843036,
+          0.5260285808575286
+        ]
+      },
+      "largest_trade_R": 5.936735673747397,
+      "total_R": -1.6464663672066917,
+      "total_R_excluding_best_trade": -7.583202040954089,
+      "terminal_trade_count": 0,
+      "net_R_excluding_terminal": -1.6464663672066917
+    },
+    "A_validation": {
+      "trades": 58,
+      "expectancy_R": 0.08825176118480031,
+      "block_mean_R_CI95": {
+        "3": [
+          -0.27634974060145223,
+          0.47195035151111264
+        ],
+        "5": [
+          -0.28692295513693117,
+          0.5030062314290394
+        ],
+        "10": [
+          -0.3240422551678948,
+          0.4988659238815377
+        ]
+      },
+      "largest_trade_R": 7.0150344806400415,
+      "total_R": 5.118602148718418,
+      "total_R_excluding_best_trade": -1.8964323319216234,
+      "terminal_trade_count": 0,
+      "net_R_excluding_terminal": 5.118602148718418
+    },
+    "B_train": {
+      "trades": 40,
+      "expectancy_R": -0.12287600851551324,
+      "block_mean_R_CI95": {
+        "3": [
+          -0.39528698358612135,
+          0.15939099197217502
+        ],
+        "5": [
+          -0.33477561172623865,
+          0.09230671820073667
+        ],
+        "10": [
+          -0.28299488437064724,
+          0.0358945326124291
+        ]
+      },
+      "largest_trade_R": 2.5605926889863047,
+      "total_R": -4.915040340620529,
+      "total_R_excluding_best_trade": -7.4756330296068345,
+      "terminal_trade_count": 0,
+      "net_R_excluding_terminal": -4.915040340620529
+    },
+    "B_validation": {
+      "trades": 35,
+      "expectancy_R": 0.2506992810284642,
+      "block_mean_R_CI95": {
+        "3": [
+          -0.22882582537486376,
+          0.7452661552484623
+        ],
+        "5": [
+          -0.16568963755060387,
+          0.6540053857851446
+        ],
+        "10": [
+          -0.07624878115031254,
+          0.601061794605703
+        ]
+      },
+      "largest_trade_R": 5.756391295261362,
+      "total_R": 8.774474835996248,
+      "total_R_excluding_best_trade": 3.018083540734886,
+      "terminal_trade_count": 0,
+      "net_R_excluding_terminal": 8.774474835996248
+    },
+    "C_simple_train": {
+      "trades": 72,
+      "expectancy_R": 0.1645321471876083,
+      "block_mean_R_CI95": {
+        "3": [
+          -0.15073909856175602,
+          0.5002595718539556
+        ],
+        "5": [
+          -0.13905453465014916,
+          0.49098805860878847
+        ],
+        "10": [
+          -0.13941056159666088,
+          0.5000555650229102
+        ]
+      },
+      "largest_trade_R": 5.345472429784558,
+      "total_R": 11.846314597507797,
+      "total_R_excluding_best_trade": 6.500842167723239,
+      "terminal_trade_count": 0,
+      "net_R_excluding_terminal": 11.846314597507797
+    },
+    "C_simple_validation": {
+      "trades": 94,
+      "expectancy_R": 0.2787910208483802,
+      "block_mean_R_CI95": {
+        "3": [
+          -0.03457663168021032,
+          0.6323232686055287
+        ],
+        "5": [
+          -0.003483321832481389,
+          0.6142793385983938
+        ],
+        "10": [
+          0.010651526604340936,
+          0.601327011545059
+        ]
+      },
+      "largest_trade_R": 9.400702503951415,
+      "total_R": 26.20635595974774,
+      "total_R_excluding_best_trade": 16.805653455796325,
+      "terminal_trade_count": 0,
+      "net_R_excluding_terminal": 26.20635595974774
+    },
+    "D_train": {
+      "trades": 33,
+      "expectancy_R": 0.0321467033838233,
+      "block_mean_R_CI95": {
+        "3": [
+          -0.2536477432743187,
+          0.33522653849520284
+        ],
+        "5": [
+          -0.22228627398832207,
+          0.25357795107032965
+        ],
+        "10": [
+          -0.15423562217283773,
+          0.21070924909277705
+        ]
+      },
+      "largest_trade_R": 2.7370257643740525,
+      "total_R": 1.0608412116661687,
+      "total_R_excluding_best_trade": -1.6761845527078838,
+      "terminal_trade_count": 0,
+      "net_R_excluding_terminal": 1.0608412116661687
+    },
+    "D_validation": {
+      "trades": 33,
+      "expectancy_R": 0.5337324938529979,
+      "block_mean_R_CI95": {
+        "3": [
+          0.1386276816407363,
+          0.9497911220557745
+        ],
+        "5": [
+          0.11991131667049579,
+          0.9401277467268898
+        ],
+        "10": [
+          0.17524408374022396,
+          0.8336716573063877
+        ]
+      },
+      "largest_trade_R": 5.190882138038532,
+      "total_R": 17.61317229714893,
+      "total_R_excluding_best_trade": 12.4222901591104,
+      "terminal_trade_count": 0,
+      "net_R_excluding_terminal": 17.61317229714893
+    }
+  }
+}

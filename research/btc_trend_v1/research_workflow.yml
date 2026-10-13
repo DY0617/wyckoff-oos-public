@@ -1,0 +1,38 @@
+name: BTC trend independent research v1
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install plotting dependency
+        run: pip install -r research/btc_trend_v1/requirements.txt
+      - name: Acquire and validate official data
+        working-directory: research/btc_trend_v1
+        run: |
+          python scripts/audit_data.py
+          python scripts/collect_mark_price.py
+          python scripts/collect_execution_1h.py
+          python scripts/inspect_execution_anomalies.py
+          python scripts/build_canonical_execution.py
+      - name: Run frozen research and causal checks
+        working-directory: research/btc_trend_v1
+        run: |
+          python scripts/baseline.py
+          python scripts/entries_v1.py
+          python scripts/verify_execution_1h.py
+          python scripts/entry_robustness.py
+          python scripts/compare_entry_risk.py
+          python scripts/test_causal_engine.py
+      - name: Upload research reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: btc-trend-v1-reports
+          path: research/btc_trend_v1/reports

@@ -1,0 +1,29 @@
+{
+  "policy": "Use verified daily 4H counterparts only on identified anomaly dates. Preserve monthly originals. For cross-timeframe aggregation and execution, zero-volume 1H bars provide no tradable print; skip them and use first nonzero-volume hourly open. This changes source handling, not entry thresholds. No holdout strategy evaluation.",
+  "changes": [
+    {
+      "time_ms": 1699617600000,
+      "monthly": [
+        1699617600000,
+        "37098.90",
+        "37276",
+        "36821.20",
+        "37118.40",
+        "68307.178",
+        1699631999999
+      ],
+      "daily": [
+        1699617600000,
+        "37098.90",
+        "37276",
+        "36821.20",
+        "37092.60",
+        "80360.473",
+        1699631999999
+      ],
+      "source_url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/4h/BTCUSDT-4h-2023-11-10.zip",
+      "sha256": "ab55883c69693ea57eb78da22d5762d221b89c7d2730e7407cc058c83c5e46df"
+    }
+  ],
+  "canonical_sha256": "16a1b58dbffee597750b93e1b4b54a5eaef2a73b8c6389742f689696d35b1035"
+}

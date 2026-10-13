@@ -1,0 +1,2 @@
+entry_ms,entry_price_reference,equity_before,initial_qty,exit_ms,exit_price_reference,net_pnl,terminal
+1609459200000,28948.19,10000.0,0.3452030644392976,1790812799999,83576.9,5506.275797846536,True

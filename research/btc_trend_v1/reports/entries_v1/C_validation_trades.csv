@@ -1,0 +1,2 @@
+strategy,signal_bar_open_ms,signal_available_ms,entry_ms,entry_utc,entry_price,initial_sl,tp,qty,equity_before,planned_initial_loss,planned_risk_fraction,nominal_cap_bound,daily_source_open_ms,exit_ms,exit_price,exit_reason,net_pnl,terminal,net_r
+C,1733140800000,1733155200000,1733155200000,2024-12-02T16:00:00+00:00,97126.02132,94669.1703317451,,0.019442596686364756,10000.0,50.0,0.005,False,1733011200000,1733155200000,94650.23649767875,INTRABAR_STOP,-50.0,False,-1.0

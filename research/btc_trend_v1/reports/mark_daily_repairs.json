@@ -1,0 +1,56 @@
+[
+  {
+    "day": "2021-07-01",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2021-07-01.zip",
+    "sha256": "9db2a7e19de4230277225d3d7d79b21c705bee2adae70d5e81c0ed49f43edabc",
+    "status": "ok"
+  },
+  {
+    "day": "2021-07-24",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2021-07-24.zip",
+    "sha256": "786729d7c38f1dca33822a485d45c8bc64922c76aa418d73027a2ebeb5a80893",
+    "status": "ok"
+  },
+  {
+    "day": "2021-07-25",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2021-07-25.zip",
+    "sha256": "9657c0edd6af1ec6b62faceaa10653dd0e0481293e397bdf6eff166c82a22639",
+    "status": "ok"
+  },
+  {
+    "day": "2021-07-26",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2021-07-26.zip",
+    "sha256": "5ff53be1dc6833fc9f5e0310a33149abacba59b283ae1ba232d8ef1906695a9b",
+    "status": "ok"
+  },
+  {
+    "day": "2021-07-27",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2021-07-27.zip",
+    "sha256": "02eb0ed46283579e09bcd21a44afd2a99fe9af7979050b4146789598778f9d26",
+    "status": "ok"
+  },
+  {
+    "day": "2022-07-31",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2022-07-31.zip",
+    "sha256": "b026a9590d9adb38e31f30916099bbb52a0f4f25c8557e423185558a849b3b63",
+    "status": "ok"
+  },
+  {
+    "day": "2022-10-02",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2022-10-02.zip",
+    "sha256": "2a255025c93a00011007869ec0b9f7b571cf0c04f2c878d24e43297b2a5fdcd5",
+    "status": "ok"
+  },
+  {
+    "day": "2023-02-24",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2023-02-24.zip",
+    "sha256": "3f5013f7bc063d061c883a5ab86db0e30aa6bbf378e7a53f27a9e5c485b4939b",
+    "status": "ok"
+  },
+  {
+    "day": "2026-06-29",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/4h/BTCUSDT-4h-2026-06-29.zip",
+    "sha256": "319835dcbe69a5437f605d405adaa60e62d376ed550ac3eba8b7e3717ab97035",
+    "status": "ok"
+  }
+]
