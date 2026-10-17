@@ -183,8 +183,9 @@ def resim(M,t,target_r,cost_bps=6.0,max_hold=48):
     end=t["entry_t"]+max_hold*smc.HOUR
     last=M[i]; reason="TIME"; exit_t=last["t"]
     for j in range(i,len(M)):
-        z=M[j]; last=z
+        z=M[j]
         if z["t"]>=end: break
+        last=z
         hit_stop=z["l"]<=stop if direction=="LONG" else z["h"]>=stop
         if hit_stop:
             pnl+=size*sign*(stop-entry)-size*stop*cr; reason="STOP"; exit_t=z["t"]; break
@@ -192,7 +193,7 @@ def resim(M,t,target_r,cost_bps=6.0,max_hold=48):
         if hit_tp:
             pnl+=size*sign*(target-entry)-size*target*cr; reason="TP"; exit_t=z["t"]; break
     if reason=="TIME":
-        px=last["c"]; pnl+=size*sign*(px-entry)-size*px*cr; exit_t=last["t"]
+        px=last["c"]; pnl+=size*sign*(px-entry)-size*px*cr; exit_t=last["t"]+smc.MS15
     q=dict(t); q["r"]=pnl/smc.RISK_DOLLARS; q["exit_t"]=exit_t; q["target_r"]=target_r; q["reason_synth"]=reason
     return q
 
