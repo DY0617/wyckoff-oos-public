@@ -1,0 +1,34 @@
+name: SMC v0.5 timeout regression
+
+on:
+  push:
+    branches: [research/smc-v05-timeout-lookahead-fix]
+    paths:
+      - "scripts/backtest_smc_liq_fvg_v01.py"
+      - "scripts/backtest_smc_liq_fvg_v04_htf_plateau.py"
+      - "scripts/backtest_easychart_synthesis_v01.py"
+      - "tests/test_smc_timeout_no_lookahead.py"
+      - ".github/workflows/smc-v05-timeout-regression.yml"
+  pull_request:
+    paths:
+      - "scripts/backtest_smc_liq_fvg_v01.py"
+      - "scripts/backtest_smc_liq_fvg_v04_htf_plateau.py"
+      - "scripts/backtest_easychart_synthesis_v01.py"
+      - "tests/test_smc_timeout_no_lookahead.py"
+
+permissions:
+  contents: read
+
+jobs:
+  timeout-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify Python syntax
+        run: python -m compileall -q scripts/backtest_smc_liq_fvg_v01.py scripts/backtest_smc_liq_fvg_v04_htf_plateau.py scripts/backtest_easychart_synthesis_v01.py tests/test_smc_timeout_no_lookahead.py
+      - name: Check synthetic timeout regressions
+        run: python -m unittest discover -s tests -p 'test_smc_timeout_no_lookahead.py' -v
