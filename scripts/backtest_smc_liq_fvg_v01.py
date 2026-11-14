@@ -217,8 +217,9 @@ def simulate_trade(M,H,entry_i,setup,cfg,mode):
     end_t=M[entry_i]["t"]+cfg["max_hold_hours"]*HOUR
     last=M[entry_i]
     for mi in range(entry_i,len(M)):
-        z=M[mi]; last=z
+        z=M[mi]
         if z["t"]>=end_t:break
+        last=z
         hit_stop=z["l"]<=stop if direction=="LONG" else z["h"]>=stop
         if hit_stop:
             pnl+=remain*size*sign*(stop-entry)-remain*size*stop*cost_rate
@@ -251,7 +252,7 @@ def simulate_trade(M,H,entry_i,setup,cfg,mode):
     if remain>0:
         px=last["c"]
         pnl+=remain*size*sign*(px-entry)-remain*size*px*cost_rate
-        events.append({"type":"TIME_EXIT","t":last["t"],"price":px,"fraction":remain})
+        events.append({"type":"TIME_EXIT","t":last["t"]+MS15,"price":px,"fraction":remain})
         remain=0
     return {"entry_t":M[entry_i]["t"],"exit_t":events[-1]["t"],"direction":direction,
             "entry":entry,"stop":stop0,"tp1":tp1,"tp2":tp2,"pnl":pnl,"r":pnl/RISK_DOLLARS,
